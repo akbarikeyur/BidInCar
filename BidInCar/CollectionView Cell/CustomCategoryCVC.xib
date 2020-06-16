@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomCategoryCVC" id="gTV-IL-0wX" customClass="CustomCategoryCVC" customModule="BidInCar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yMl-3E-Y6P" customClass="View" customModule="BidInCar" customModuleProvider="target">
+                        <rect key="frame" x="5" y="5" width="80" height="80"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="X8b-5D-dgX" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="5" y="53" width="70" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="207-4P-UQr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGu-kE-ej8">
+                                <rect key="frame" x="20" y="15" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5ej-Ke-04a"/>
+                                </constraints>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="X8b-5D-dgX" firstAttribute="leading" secondItem="yMl-3E-Y6P" secondAttribute="leading" constant="5" id="DR7-Rf-jfr"/>
+                            <constraint firstAttribute="trailing" secondItem="X8b-5D-dgX" secondAttribute="trailing" constant="5" id="KzJ-Fh-gNH"/>
+                            <constraint firstItem="NGu-kE-ej8" firstAttribute="leading" secondItem="yMl-3E-Y6P" secondAttribute="leading" constant="20" id="MDB-ms-Uhw"/>
+                            <constraint firstAttribute="width" constant="80" id="UB3-XJ-Ief"/>
+                            <constraint firstAttribute="trailing" secondItem="NGu-kE-ej8" secondAttribute="trailing" constant="20" id="Was-HP-G7F"/>
+                            <constraint firstItem="NGu-kE-ej8" firstAttribute="top" secondItem="yMl-3E-Y6P" secondAttribute="top" constant="15" id="YrA-FE-uUX"/>
+                            <constraint firstAttribute="height" constant="80" id="axz-yp-8fe"/>
+                            <constraint firstAttribute="bottom" secondItem="X8b-5D-dgX" secondAttribute="bottom" constant="10" id="gkw-Zu-RNI"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="backgroundColorTypeAdapter">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="yMl-3E-Y6P" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="gvE-u1-e0W"/>
+                <constraint firstItem="yMl-3E-Y6P" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="i5m-1k-qst"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="catLbl" destination="X8b-5D-dgX" id="QyV-80-CQO"/>
+                <outlet property="cateBtn" destination="NGu-kE-ej8" id="seZ-gm-yuZ"/>
+                <outlet property="outerView" destination="yMl-3E-Y6P" id="eta-bQ-re1"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="154"/>
+        </collectionViewCell>
+    </objects>
+</document>

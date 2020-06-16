@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomAuctionCategoryCVC" id="gTV-IL-0wX" customClass="CustomAuctionCategoryCVC" customModule="BidInCar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNy-xx-4MB">
+                        <rect key="frame" x="5" y="15" width="25" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="VZr-5O-bcW"/>
+                            <constraint firstAttribute="height" constant="20" id="zeZ-wh-2Fm"/>
+                        </constraints>
+                        <state key="normal" image="cat_bike"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oaP-Om-4U5" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                        <rect key="frame" x="40" y="16.5" width="55" height="17"/>
+                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                <integer key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                <real key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nqm-Df-Ntj" customClass="ImageView" customModule="BidInCar" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="48" width="100" height="2"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="grH-MQ-Zcw"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="backgroundColorTypeAdapter">
+                                <integer key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="nqm-Df-Ntj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="BMh-if-YHJ"/>
+                <constraint firstAttribute="bottom" secondItem="nqm-Df-Ntj" secondAttribute="bottom" id="EQc-9N-LHj"/>
+                <constraint firstItem="oaP-Om-4U5" firstAttribute="leading" secondItem="bNy-xx-4MB" secondAttribute="trailing" constant="10" id="Hjc-6v-uSq"/>
+                <constraint firstItem="bNy-xx-4MB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="UIR-hL-eWy"/>
+                <constraint firstAttribute="trailing" secondItem="oaP-Om-4U5" secondAttribute="trailing" constant="5" id="a6A-JV-9z2"/>
+                <constraint firstItem="oaP-Om-4U5" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="afb-pw-4oJ"/>
+                <constraint firstAttribute="trailing" secondItem="nqm-Df-Ntj" secondAttribute="trailing" id="eIV-jc-OVe"/>
+                <constraint firstItem="bNy-xx-4MB" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="kvo-ap-EBp"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="catImgBtn" destination="bNy-xx-4MB" id="i3F-tq-xRP"/>
+                <outlet property="catLbl" destination="oaP-Om-4U5" id="st5-sE-0bI"/>
+                <outlet property="seperatorImg" destination="nqm-Df-Ntj" id="1eJ-hp-fwl"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="154"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="cat_bike" width="44.5" height="26.5"/>
+    </resources>
+</document>

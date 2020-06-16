@@ -1,0 +1,129 @@
+//Side menu
+"menu_home" = "Home";
+"menu_auction" = "My Auction";
+"menu_bookmark" = "Bookmark";
+"menu_post" = "Post Auction";
+"menu_package" = "Package";
+"menu_calc" = "Shipping Calculator";
+"menu_profile" = "My Profile";
+"menu_contact" = "Contact us";
+"menu_terms" = "Terms and Conditions";
+"menu_privacy" = "Privacy Policy";
+"menu_logout" = "Logout";
+
+
+//Login-signup
+"enter_email" = "Please enter email";
+"enter_password" = "Please enter password";
+
+"enter_fname" = "Please enter full name";
+"enter_lname" = "Please enter last name";
+"invalid_email" = "Invalid email";
+"enter_address" = "Please enter street address";
+"enter_building" = "Please enter building name";
+"enter_flat_number" = "Please enter flat number";
+"enter_po_box" = "Please enter PO Box";
+"select_city" = "Please select city";
+"select_country" = "Please select country";
+"enter_phone" = "Please enter phone number";
+"enter_password" = "Please enter password";
+"enter_confirm_password" = "Please enter confirm password";
+"invalid_match_password" = "Password and confirm password must be same";
+"select_account_type" = "Please select account type";
+"enter_company_name" = "Please enter company name";
+"enter_company_code" = "Please enter country code";
+"enter_company_phone" = "Please enter company phone number";
+"enter_company_address" = "Please enter company address";
+"enter_company_building" = "Please enter building name";
+"enter_company_suit" = "Please enter Suit number";
+"enter_po_box" = "Please enter PO Box";
+
+//Guest User Message
+"bookmark_login_msg" = "Please login/signup to bookmark this auction.";
+"bookmark_list_login_msg" = "Please login/signup to see your bookmark auctions.";
+"my_auction_list_login_msg" = "Please login/signup to see your auctions.";
+"post_auction_login_msg" = "Please login/signup to post an auction.";
+"bid_login_msg" = "Please login/signup to bid this auction.";
+"add_deposite_login_msg" = "Please login/signup to add deposite.";
+
+//Auction detail
+"enter_bid_price" = "Please enter your bid price";
+"add_bookmark" = "bookmark added to your list";
+"remove_bookmark" = "bookmark removed successfully";
+
+//Payment detail
+"enter_card_name" = "Please enter card name";
+"enter_card_number" = "Please enter card number";
+"enter_csv_number" = "Please enter CSV number";
+"enter_expire_date" = "Please select expire date";
+"enter_expire_year" = "Please select year";
+"card_add_success" = "Card Inserted Successfully";
+"card_agreement" = "Please accept the terms of use rules of flight and privacy policy.";
+
+"delete_title" = "Delete";
+"delete_card" = "Are you sure want to delete this card?";
+
+//Change Password
+"enter_current_pwd" = "Please enter current password";
+"enter_new_pwd" = "Please enter new password";
+"different_pwd" = "Current password and new password must be different";
+"change_pwd_success" = "Password update successfully";
+
+//Month Data
+"month_jan" = "January";
+"month_feb" = "February";
+"month_mar" = "March";
+"month_apr" = "April";
+"month_may" = "May";
+"month_jun" = "June";
+"month_jul" = "July";
+"month_aug" = "August";
+"month_sept" = "September";
+"month_oct" = "October";
+"month_nov" = "November";
+"month_dec" = "December";
+
+//Shipping Calculator
+"select_country" = "Select Country";
+
+//Post Auction
+"condition_new" = "New";
+"condition_used" = "Used";
+"select_start_date" = "Select start date";
+"select_end_date" = "Select end date";
+"transmission_automatic" = "Automatic";
+"transmission_manual" = "Manual";
+
+"fuel_gas" = "Gasoline";
+"fuel_diesel" = "Diesel";
+"fuel_hybrid" = "Hybrid";
+"fuel_electric" = "Electric";
+
+"enter_auction_title" = "Please enter auction title";
+"enter_auction_price" = "Please enter auction price";
+"enter_auction_increment" = "Please enter minimum bid increment";
+"enter_auction_year" = "Please enter auction year";
+"enter_auction_category" = "Please select category";
+"enter_auction_make" = "Please select make";
+"auction_make_not_found" = "Model not available";
+"enter_auction_condition" = "Please select condition";
+"enter_auction_start" = "Please select start date";
+"enter_auction_end" = "Please select end date";
+"enter_auction_vin" = "Please enter VIN";
+"enter_auction_transmission" = "Please select transmission";
+"enter_auction_fuel" = "Please select fuel type";
+"enter_auction_auto_check" = "Please select auto check document";
+"enter_auction_image" = "Please select image";
+"enter_auction_body" = "Please select body type";
+"enter_auction_country" = "Please select country";
+"enter_auction_motor" = "Please enter motor number";
+"enter_auction_color" = "Please select color";
+"enter_auction_milage" = "Please enter milage";
+"enter_auction_address" = "Please enter address";
+"enter_auction_desc" = "Please enter description";
+"enter_auction_terms" = "Please enter terms and condition";
+"agree_auction_terms" = "Please agree terms and condition";
+"enter_body_condition" = "Please select body condition";
+
+//Profile
+"enter_deposite" = "Please enter your deposite amount";

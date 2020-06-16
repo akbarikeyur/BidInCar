@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomCarCVC" id="gTV-IL-0wX" customClass="CustomCarCVC" customModule="BidInCar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Usu-bg-yhR" customClass="View" customModule="BidInCar" customModuleProvider="target">
+                        <rect key="frame" x="10" y="10" width="80" height="80"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp1" translatesAutoresizingMaskIntoConstraints="NO" id="xNI-AY-P3W">
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xNI-AY-P3W" secondAttribute="trailing" id="Bgq-yS-76o"/>
+                            <constraint firstAttribute="bottom" secondItem="xNI-AY-P3W" secondAttribute="bottom" id="JJc-Yz-3dF"/>
+                            <constraint firstAttribute="height" constant="80" id="XR3-JX-8ZP"/>
+                            <constraint firstItem="xNI-AY-P3W" firstAttribute="top" secondItem="Usu-bg-yhR" secondAttribute="top" id="YM8-dH-I9V"/>
+                            <constraint firstItem="xNI-AY-P3W" firstAttribute="leading" secondItem="Usu-bg-yhR" secondAttribute="leading" id="xEP-pX-xdk"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="40"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderColorTypeAdapter">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gw-UG-vPW" customClass="Button" customModule="BidInCar" customModuleProvider="target">
+                        <rect key="frame" x="65" y="13" width="22" height="22"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="22" id="UeW-0x-WvZ"/>
+                            <constraint firstAttribute="height" constant="22" id="dU1-iL-7fg"/>
+                        </constraints>
+                        <state key="normal" image="star_off"/>
+                        <state key="selected" image="star_on"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderColorTypeAdapter">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="11"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toyota Corolla" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZIw-u3-aMS" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                        <rect key="frame" x="5" y="100" width="90" height="42"/>
+                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <color key="highlightedColor" red="0.40784313725490196" green="0.38431372549019605" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                <integer key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="ZIw-u3-aMS" firstAttribute="top" secondItem="Usu-bg-yhR" secondAttribute="bottom" constant="10" id="E35-kB-GHw"/>
+                <constraint firstAttribute="bottom" secondItem="ZIw-u3-aMS" secondAttribute="bottom" constant="8" id="O4L-ET-YPH"/>
+                <constraint firstAttribute="trailing" secondItem="ZIw-u3-aMS" secondAttribute="trailing" constant="5" id="Ou0-Yn-gaz"/>
+                <constraint firstItem="Usu-bg-yhR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="PKl-PD-vVx"/>
+                <constraint firstItem="ZIw-u3-aMS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="VzK-LB-Tnw"/>
+                <constraint firstItem="8gw-UG-vPW" firstAttribute="top" secondItem="Usu-bg-yhR" secondAttribute="top" constant="3" id="YJ6-OL-Lzl"/>
+                <constraint firstAttribute="trailing" secondItem="Usu-bg-yhR" secondAttribute="trailing" constant="10" id="cyE-Xh-Bpp"/>
+                <constraint firstItem="Usu-bg-yhR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="lAC-OF-Wjb"/>
+                <constraint firstItem="8gw-UG-vPW" firstAttribute="trailing" secondItem="Usu-bg-yhR" secondAttribute="trailing" constant="-3" id="pnH-JR-XCa"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="imgView" destination="xNI-AY-P3W" id="wAh-Zq-922"/>
+                <outlet property="outerView" destination="Usu-bg-yhR" id="Qv6-0b-ica"/>
+                <outlet property="starBtn" destination="8gw-UG-vPW" id="0o1-97-mrx"/>
+                <outlet property="titleLbl" destination="ZIw-u3-aMS" id="Eha-Zr-cs9"/>
+            </connections>
+            <point key="canvasLocation" x="133" y="154"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="star_off" width="15.5" height="14.5"/>
+        <image name="star_on" width="15.5" height="14.5"/>
+        <image name="temp1" width="114" height="109"/>
+    </resources>
+</document>
