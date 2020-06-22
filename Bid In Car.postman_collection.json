@@ -1,0 +1,2170 @@
+{
+	"id": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+	"name": "Bid In Car",
+	"description": null,
+	"order": [],
+	"folders": [
+		{
+			"owner": "1369513",
+			"lastUpdatedBy": "1369513",
+			"lastRevision": 13634788314,
+			"folder": null,
+			"id": "101efbce-b809-47f0-a15f-bff6d3ca1618",
+			"name": "Add Auction",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"911c29d2-100f-40bc-93df-c96b615e02c4",
+				"649f2e7b-7c51-4a34-b91f-5d09d07e7bc3",
+				"397dce0a-742c-47d8-84a2-5e06e3fbe534",
+				"ca2a65d4-9db0-4617-b2ea-74744e54ab4c",
+				"8af271b4-c4db-4ab9-8e83-0180a7f562c9",
+				"01151bce-6de1-4fcb-bdec-46651aa8fc4d",
+				"5d72bb40-f3b3-4195-92e9-fc7ae32ffa5c",
+				"deac63c8-3b9f-41b8-993f-5a998e130721"
+			],
+			"folders_order": []
+		},
+		{
+			"owner": "1369513",
+			"lastUpdatedBy": "1369513",
+			"lastRevision": 11039368549,
+			"folder": null,
+			"id": "1bb7b92c-6911-43d1-97d1-9a96da749529",
+			"name": "Auction Action",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"a04bb14e-2ba8-4308-bb1f-bb0f1f9d2f1c",
+				"b00c4f9f-bf01-4bed-996b-9db18d7d8c2e",
+				"f47a347d-0056-4cd6-bb97-2482dcf77a6d",
+				"cc7be95b-b181-4020-a53c-5331e67bd1fe",
+				"99b36ead-f4aa-44b6-b8a9-017978d61fa6"
+			],
+			"folders_order": []
+		},
+		{
+			"owner": "1369513",
+			"lastUpdatedBy": "1369513",
+			"lastRevision": 11039380534,
+			"folder": null,
+			"id": "26099667-9852-4c9e-875f-8ec4fad72d37",
+			"name": "Home & Bookmark",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"5df9711c-0a5a-4ec8-a1af-40cb63eff837",
+				"d3ad3f4b-22b1-40ac-9f17-e85809502395",
+				"81e4c599-47cd-4d61-8d17-43ea60ded74f",
+				"1e22a947-c9b2-4ba5-add2-721d6fbf56b9",
+				"522f02f4-9ccb-4484-8665-3ecf2daecfa1",
+				"f83b4d4a-0218-4b8f-b574-3f51d00ab673",
+				"89c49a42-c1ed-4dc9-9e50-3c1f0e1aa10d",
+				"49e55ba0-30f4-439a-984c-14f18987e10c",
+				"14f35e57-e92e-5522-3cfb-e1f5d7892a23"
+			],
+			"folders_order": []
+		},
+		{
+			"owner": "1369513",
+			"lastUpdatedBy": "1369513",
+			"lastRevision": 11039382167,
+			"folder": null,
+			"id": "f8d23e4a-b33b-4805-8b4e-68e835a9bb36",
+			"name": "Login",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"b36ff6d8-21d4-43dc-8196-0631c738f606",
+				"2a20242f-980f-434b-bca9-faa55730cf30",
+				"d6265036-fe4e-454f-a33f-9c5da7972014",
+				"beac6468-75e7-42a0-b7ea-a4fc2e061aac",
+				"e4471627-39c0-49f6-b840-705f6a8700db",
+				"eb8840f6-f944-4cd8-982a-f2086e38ebe3"
+			],
+			"folders_order": []
+		},
+		{
+			"owner": "1369513",
+			"lastUpdatedBy": "1369513",
+			"lastRevision": 11986533287,
+			"folder": null,
+			"id": "1521c4be-ecbc-49b6-8401-e71c50e5eb70",
+			"name": "Package",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"e779c05a-7d20-4b6b-8c91-294c8757dee7",
+				"f969f27f-0e1b-4420-a4e6-b0afa13711a2",
+				"588dc742-906b-40b8-b3d3-9c3b90536e66",
+				"5cc34803-ae84-4abe-a263-fad9f6c99d23"
+			],
+			"folders_order": []
+		},
+		{
+			"owner": "1369513",
+			"lastUpdatedBy": "1369513",
+			"lastRevision": 11986530741,
+			"folder": null,
+			"id": "9a54d05a-968d-43c7-a416-bdb39f9dcec7",
+			"name": "Payment",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"142ad157-2fb3-4fcc-b30e-f7f2e11177bf",
+				"bb0cd019-47cc-4197-a92c-8a2a745ca726",
+				"ce4bc2e2-f80b-4bd5-ada9-94ba33ca5dc7",
+				"deffa6a1-ab90-4ba8-8620-180a2183ebba",
+				"0098048f-7cc3-4a0c-9e7e-126bed8ac10f",
+				"3dcf164b-6d73-47e4-989a-ca9ac0772e09",
+				"df59163b-3eb4-45d8-b95a-2c4ea33d30e3"
+			],
+			"folders_order": []
+		},
+		{
+			"owner": "1369513",
+			"lastUpdatedBy": "1369513",
+			"lastRevision": 11986534797,
+			"folder": null,
+			"id": "7fd2a85a-0617-4d6d-8560-e8239db6c662",
+			"name": "Profile",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [
+				"b77f28aa-6aa8-4bed-8b7c-bb9dc2268bab",
+				"52492ed9-b46c-4461-ad5d-dc05028acbb7",
+				"9e1f12ef-c70d-4bc5-90e8-2481ec5478dd",
+				"ed1ea3ba-5fc9-4bc7-8611-e2cb9286d6e3",
+				"17c9a59b-7a83-4979-8481-c9f1e6aecb91",
+				"174e473f-eb0b-4cd5-a61c-681b047fe370",
+				"970b247d-f085-4659-8133-cae1ddf11699"
+			],
+			"folders_order": []
+		}
+	],
+	"folders_order": [
+		"f8d23e4a-b33b-4805-8b4e-68e835a9bb36",
+		"26099667-9852-4c9e-875f-8ec4fad72d37",
+		"101efbce-b809-47f0-a15f-bff6d3ca1618",
+		"9a54d05a-968d-43c7-a416-bdb39f9dcec7",
+		"1bb7b92c-6911-43d1-97d1-9a96da749529",
+		"7fd2a85a-0617-4d6d-8560-e8239db6c662",
+		"1521c4be-ecbc-49b6-8401-e71c50e5eb70"
+	],
+	"timestamp": 0,
+	"owner": "1369513",
+	"public": false,
+	"requests": [
+		{
+			"id": "0098048f-7cc3-4a0c-9e7e-126bed8ac10f",
+			"headers": "",
+			"headerData": [],
+			"url": "https://bidincars.com/user/save_card",
+			"folder": "9a54d05a-968d-43c7-a416-bdb39f9dcec7",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "paypal_email",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "type",
+					"value": "paypal",
+					"type": "text"
+				},
+				{
+					"key": "userid",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822992119,
+			"name": "save_paypal",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "01151bce-6de1-4fcb-bdec-46651aa8fc4d",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/auctions/confirm_auction",
+			"folder": "101efbce-b809-47f0-a15f-bff6d3ca1618",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "auctionid",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822953326,
+			"name": "confirm auction",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "142ad157-2fb3-4fcc-b30e-f7f2e11177bf",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/user/save_card",
+			"folder": "9a54d05a-968d-43c7-a416-bdb39f9dcec7",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "card_name",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "card_number",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "csv",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "card_month",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "exp_year",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "type",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "userid",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822972791,
+			"name": "save_card",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "14f35e57-e92e-5522-3cfb-e1f5d7892a23",
+			"headers": "Content-Type: application/json\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/auctions/apicategories",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"data": null,
+			"dataMode": "params",
+			"name": "getCategory",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1592822526808,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "26099667-9852-4c9e-875f-8ec4fad72d37"
+		},
+		{
+			"id": "174e473f-eb0b-4cd5-a61c-681b047fe370",
+			"headers": "",
+			"headerData": [],
+			"url": "https://bidincars.com/admin/setting/get_featured_price",
+			"folder": "7fd2a85a-0617-4d6d-8560-e8239db6c662",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": null,
+			"dataMode": null,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822441474,
+			"name": "get_featured_price",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "17c9a59b-7a83-4979-8481-c9f1e6aecb91",
+			"headers": "",
+			"headerData": [],
+			"url": "https://bidincars.com/payment/deposite_amount",
+			"folder": "7fd2a85a-0617-4d6d-8560-e8239db6c662",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "userid",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "deposite_amount",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592823057195,
+			"name": "Deposite amount",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "1e22a947-c9b2-4ba5-add2-721d6fbf56b9",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/user/getmybookmarks",
+			"folder": "26099667-9852-4c9e-875f-8ec4fad72d37",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "userid",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "usertype",
+					"value": "buyer / seller",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822628414,
+			"name": "get my bookmarks",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "2a20242f-980f-434b-bca9-faa55730cf30",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/getcities",
+			"folder": "f8d23e4a-b33b-4805-8b4e-68e835a9bb36",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "countryid",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822426266,
+			"name": "get cities",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "397dce0a-742c-47d8-84a2-5e06e3fbe534",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/auctions/save_auction",
+			"folder": "101efbce-b809-47f0-a15f-bff6d3ca1618",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "auto_check_upload",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "auction_minbid",
+					"value": "321",
+					"type": "text"
+				},
+				{
+					"key": "auction_price",
+					"value": "123",
+					"type": "text"
+				},
+				{
+					"key": "auction_start_end",
+					"value": "2019/11/20 - 2019/11/30",
+					"type": "text"
+				},
+				{
+					"key": "userid",
+					"value": "24",
+					"type": "text"
+				},
+				{
+					"key": "auction_year",
+					"value": "2019",
+					"type": "text"
+				},
+				{
+					"key": "categories",
+					"value": "4",
+					"type": "text"
+				},
+				{
+					"key": "childcat",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "bodytype",
+					"value": "Coupe",
+					"type": "text"
+				},
+				{
+					"key": "country",
+					"value": "1",
+					"type": "text"
+				},
+				{
+					"key": "vin",
+					"value": "321",
+					"type": "text"
+				},
+				{
+					"key": "motorno",
+					"value": "123",
+					"type": "text"
+				},
+				{
+					"key": "extcolor",
+					"value": "Black",
+					"type": "text"
+				},
+				{
+					"key": "millage",
+					"value": "31223",
+					"type": "text"
+				},
+				{
+					"key": "tranmission",
+					"value": "Manual",
+					"type": "text"
+				},
+				{
+					"key": "fueltype",
+					"value": "Gasoline",
+					"type": "text"
+				},
+				{
+					"key": "desc",
+					"value": "asdasdasdasd",
+					"type": "text"
+				},
+				{
+					"key": "auction_title",
+					"value": "asdasdasd",
+					"type": "text"
+				},
+				{
+					"key": "auction_lat",
+					"value": "-37.889401175129265",
+					"type": "text"
+				},
+				{
+					"key": "auction_long",
+					"value": "144.80422411607464",
+					"type": "text"
+				},
+				{
+					"key": "auction_address",
+					"value": "asdasdasd",
+					"type": "text"
+				},
+				{
+					"key": "bodycondition",
+					"value": "new",
+					"type": "text"
+				},
+				{
+					"key": "auctionid",
+					"value": "0",
+					"type": "text"
+				},
+				{
+					"key": "mediaid",
+					"value": "[1, 2]",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822570408,
+			"name": "post an auction",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "3dcf164b-6d73-47e4-989a-ca9ac0772e09",
+			"headers": "",
+			"headerData": [],
+			"url": "https://bidincars.com/user/save_card",
+			"folder": "9a54d05a-968d-43c7-a416-bdb39f9dcec7",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "bank_name",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "type",
+					"value": "bank",
+					"type": "text"
+				},
+				{
+					"key": "userid",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "account_number",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592823005831,
+			"name": "save_bank",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "49e55ba0-30f4-439a-984c-14f18987e10c",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/auctions/getbidsonly",
+			"folder": "26099667-9852-4c9e-875f-8ec4fad72d37",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "auctionid",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822894141,
+			"name": "get bids",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "522f02f4-9ccb-4484-8665-3ecf2daecfa1",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/user/remove_bookmark",
+			"folder": "26099667-9852-4c9e-875f-8ec4fad72d37",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "bookmarkid",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822875432,
+			"name": "remove_bookmark",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "52492ed9-b46c-4461-ad5d-dc05028acbb7",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/user/upload_profile_pic",
+			"folder": "7fd2a85a-0617-4d6d-8560-e8239db6c662",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "userid",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "myfile",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822464939,
+			"name": "upload profile pic",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "588dc742-906b-40b8-b3d3-9c3b90536e66",
+			"headers": "",
+			"headerData": [],
+			"url": "https://bidincars.com/payment/getpackages",
+			"folder": "1521c4be-ecbc-49b6-8401-e71c50e5eb70",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "userid",
+					"value": "44",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592823085757,
+			"name": "Get My Packages",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "5cc34803-ae84-4abe-a263-fad9f6c99d23",
+			"headers": "",
+			"headerData": [],
+			"url": "https://bidincars.com/payment/package_history",
+			"folder": "1521c4be-ecbc-49b6-8401-e71c50e5eb70",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "userid",
+					"value": "4",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592823090278,
+			"name": "package_history",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "5d72bb40-f3b3-4195-92e9-fc7ae32ffa5c",
+			"headers": "",
+			"headerData": [],
+			"url": "https://bidincars.com/auctions/upload_doc",
+			"folder": "101efbce-b809-47f0-a15f-bff6d3ca1618",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "upload_doc",
+					"type": "file",
+					"value": ""
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822958351,
+			"name": "upload doc",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "5df9711c-0a5a-4ec8-a1af-40cb63eff837",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/auctions/searchauctions",
+			"folder": "26099667-9852-4c9e-875f-8ec4fad72d37",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "auctionstatus",
+					"value": "active",
+					"type": "text"
+				},
+				{
+					"key": "userid",
+					"value": "0",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822604066,
+			"name": "featured auction",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "649f2e7b-7c51-4a34-b91f-5d09d07e7bc3",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/auctions/getChildCat",
+			"folder": "101efbce-b809-47f0-a15f-bff6d3ca1618",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "catid",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822925206,
+			"name": "getChildCat",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "81e4c599-47cd-4d61-8d17-43ea60ded74f",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/auctions/getsingleauction",
+			"folder": "26099667-9852-4c9e-875f-8ec4fad72d37",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "auctionid",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822621041,
+			"name": "getsingleauction",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "89c49a42-c1ed-4dc9-9e50-3c1f0e1aa10d",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/auctions/getsingleauction",
+			"folder": "26099667-9852-4c9e-875f-8ec4fad72d37",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "auctionid",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "userid",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822889029,
+			"name": "auction details",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "8af271b4-c4db-4ab9-8e83-0180a7f562c9",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/auctions/upload_file_gallary",
+			"folder": "101efbce-b809-47f0-a15f-bff6d3ca1618",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "myfile",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822946423,
+			"name": "auction gallary",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "911c29d2-100f-40bc-93df-c96b615e02c4",
+			"headers": "",
+			"headerData": [],
+			"url": "https://bidincars.com/auctions/getCategories",
+			"folder": "101efbce-b809-47f0-a15f-bff6d3ca1618",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": null,
+			"dataMode": null,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822919134,
+			"name": "getCategories",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "970b247d-f085-4659-8133-cae1ddf11699",
+			"headers": "",
+			"headerData": [],
+			"url": "https://bidincars.com/admin/faq/getfaqs",
+			"folder": "7fd2a85a-0617-4d6d-8560-e8239db6c662",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": null,
+			"dataMode": null,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592823067308,
+			"name": "faq",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "99b36ead-f4aa-44b6-b8a9-017978d61fa6",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/auctions/searchprofileseaction",
+			"folder": "1bb7b92c-6911-43d1-97d1-9a96da749529",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "auctionstatus",
+					"value": "win",
+					"type": "text"
+				},
+				{
+					"key": "userid",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "usertype",
+					"value": "buyer / seller",
+					"type": "text"
+				},
+				{
+					"key": "pagename",
+					"value": "profile",
+					"type": "text"
+				},
+				{
+					"key": "filters",
+					"value": "{\"auctionstatus\":\"win\",\"userid\":\"4\",\"usertype\":\"buyer\",\"pagename\":\"profile\"}",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592823043584,
+			"name": "my auction won",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "9e1f12ef-c70d-4bc5-90e8-2481ec5478dd",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/user/update_profile",
+			"folder": "7fd2a85a-0617-4d6d-8560-e8239db6c662",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "user_name",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "user_lastname",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "user_email",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "user_streetaddress",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "user_buildingname",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "user_flatnumber",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "user_pobox",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "user_countryid",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "user_cityid",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "user_phonenumber",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822337628,
+			"name": "upload profile",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "a04bb14e-2ba8-4308-bb1f-bb0f1f9d2f1c",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/auctions/insertbid",
+			"folder": "1bb7b92c-6911-43d1-97d1-9a96da749529",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "auctionid",
+					"type": "text",
+					"value": ""
+				},
+				{
+					"key": "userid",
+					"type": "text",
+					"value": ""
+				},
+				{
+					"key": "bidamount",
+					"value": "",
+					"description": null,
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592823021360,
+			"name": "insert bid",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "b00c4f9f-bf01-4bed-996b-9db18d7d8c2e",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/auctions/delete_withdraw_auction",
+			"folder": "1bb7b92c-6911-43d1-97d1-9a96da749529",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "auctionid_userid",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "usertype",
+					"value": "buyer / seller",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592823027825,
+			"name": "auction withdraw",
+			"description": "Buyer : To withdraw Auction\nSeller : To cancel Auction",
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "b36ff6d8-21d4-43dc-8196-0631c738f606",
+			"headers": "",
+			"headerData": [],
+			"url": "https://bidincars.com/getcountries",
+			"folder": "f8d23e4a-b33b-4805-8b4e-68e835a9bb36",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": null,
+			"dataMode": null,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822420068,
+			"name": "getcountries",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "b77f28aa-6aa8-4bed-8b7c-bb9dc2268bab",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/user/getprofile",
+			"folder": "7fd2a85a-0617-4d6d-8560-e8239db6c662",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "userid",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822315664,
+			"name": "get profile",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "bb0cd019-47cc-4197-a92c-8a2a745ca726",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/user/getcard",
+			"folder": "9a54d05a-968d-43c7-a416-bdb39f9dcec7",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "userid",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822979063,
+			"name": "get card",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "beac6468-75e7-42a0-b7ea-a4fc2e061aac",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/user/user_auth",
+			"folder": "f8d23e4a-b33b-4805-8b4e-68e835a9bb36",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "email",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "password",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "user_token",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822301348,
+			"name": "login",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "ca2a65d4-9db0-4617-b2ea-74744e54ab4c",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/auctions/removepicture",
+			"folder": "101efbce-b809-47f0-a15f-bff6d3ca1618",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "mediaid",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822941446,
+			"name": "remove picture auction",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "cc7be95b-b181-4020-a53c-5331e67bd1fe",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/auctions/searchprofileseaction",
+			"folder": "1bb7b92c-6911-43d1-97d1-9a96da749529",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "auctionstatus",
+					"value": "close",
+					"type": "text"
+				},
+				{
+					"key": "userid",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "usertype",
+					"value": "buyer / seller",
+					"type": "text"
+				},
+				{
+					"key": "pagename",
+					"value": "profile",
+					"type": "text"
+				},
+				{
+					"key": "filters",
+					"value": "{\"auctionstatus\":\"close\",\"userid\":\"4\",\"usertype\":\"buyer\",\"pagename\":\"profile\"}",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592823038975,
+			"name": "my auction close",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "ce4bc2e2-f80b-4bd5-ada9-94ba33ca5dc7",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/user/removecard",
+			"folder": "9a54d05a-968d-43c7-a416-bdb39f9dcec7",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "userid",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "cardid",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822983343,
+			"name": "remove card",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "d3ad3f4b-22b1-40ac-9f17-e85809502395",
+			"headers": "",
+			"headerData": [],
+			"url": "https://bidincars.com/auctions/searchauctions?userid=0&usertype=0&pagename=searchbar&auctionstatus=active",
+			"folder": "26099667-9852-4c9e-875f-8ec4fad72d37",
+			"queryParams": [
+				{
+					"key": "userid",
+					"value": "0",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "usertype",
+					"value": "0",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "pagename",
+					"value": "searchbar",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "auctionstatus",
+					"value": "active",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": null,
+			"dataMode": null,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822613254,
+			"name": "search page",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "d6265036-fe4e-454f-a33f-9c5da7972014",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/user/register",
+			"folder": "f8d23e4a-b33b-4805-8b4e-68e835a9bb36",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "firstname",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "lastname",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "email",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "address",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "buildingname",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "flat_number",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "pobox",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "country",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "city",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "phone_number",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "password",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "confirm_password",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "user_accountype",
+					"value": "buyer / seller",
+					"type": "text"
+				},
+				{
+					"key": "user_postingtype",
+					"value": "company / individual",
+					"type": "text"
+				},
+				{
+					"key": "company_name",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "company_email",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "company_address",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "company_phone",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822294122,
+			"name": "singup",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "deac63c8-3b9f-41b8-993f-5a998e130721",
+			"headers": "",
+			"headerData": [],
+			"url": "https://bidincars.com/auctions/apicategories",
+			"folder": "101efbce-b809-47f0-a15f-bff6d3ca1618",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": null,
+			"dataMode": null,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822963247,
+			"name": "Auction Type",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "deffa6a1-ab90-4ba8-8620-180a2183ebba",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/user/cardfeatured",
+			"folder": "9a54d05a-968d-43c7-a416-bdb39f9dcec7",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "userid",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "cardid",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822987903,
+			"name": "card primary",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "df59163b-3eb4-45d8-b95a-2c4ea33d30e3",
+			"headers": "",
+			"headerData": [],
+			"url": "https://bidincars.com/payment/get_featured_auction",
+			"folder": "9a54d05a-968d-43c7-a416-bdb39f9dcec7",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "userid",
+					"value": "4",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592823012296,
+			"name": "get_featured_auction",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "e4471627-39c0-49f6-b840-705f6a8700db",
+			"headers": "",
+			"headerData": [],
+			"url": "https://bidincars.com/user/verified_account/31",
+			"folder": "f8d23e4a-b33b-4805-8b4e-68e835a9bb36",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": null,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822589164,
+			"name": "verified user account",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "e779c05a-7d20-4b6b-8c91-294c8757dee7",
+			"headers": "",
+			"headerData": [],
+			"url": "https://bidincars.com/packages/api_packages",
+			"folder": "1521c4be-ecbc-49b6-8401-e71c50e5eb70",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "type",
+					"value": "multiple",
+					"description": "single / multiple",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592823074821,
+			"name": "api_packages",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "eb8840f6-f944-4cd8-982a-f2086e38ebe3",
+			"headers": "",
+			"headerData": [],
+			"url": "https://bidincars.com/user/resend_email/31",
+			"folder": "f8d23e4a-b33b-4805-8b4e-68e835a9bb36",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": null,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822596611,
+			"name": "resend email",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "ed1ea3ba-5fc9-4bc7-8611-e2cb9286d6e3",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/user/update_password",
+			"folder": "7fd2a85a-0617-4d6d-8560-e8239db6c662",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "userid",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "ppassword",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "current_password",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822363485,
+			"name": "update_password",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "f47a347d-0056-4cd6-bb97-2482dcf77a6d",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/auctions/searchprofileseaction",
+			"folder": "1bb7b92c-6911-43d1-97d1-9a96da749529",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "auctionstatus",
+					"value": "active",
+					"type": "text"
+				},
+				{
+					"key": "userid",
+					"value": "4",
+					"type": "text"
+				},
+				{
+					"key": "usertype",
+					"value": "buyer",
+					"type": "text",
+					"description": "buyer / seller"
+				},
+				{
+					"key": "pagename",
+					"value": "profile",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592823033268,
+			"name": "my auction",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "f83b4d4a-0218-4b8f-b574-3f51d00ab673",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bidincars.com/user/save_auction",
+			"folder": "26099667-9852-4c9e-875f-8ec4fad72d37",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "auction_minbid",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "auction_price",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "auction_start_end",
+					"value": "",
+					"description": "example YYYY/MM/DD - YYYY/MM/DD",
+					"type": "text"
+				},
+				{
+					"key": "userid",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "auction_year",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "categories",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "childcat",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "bodytype",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "country",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "vin",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "motorno",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "extcolor",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "millage",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "tranmission",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "fueltype",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "desc",
+					"value": "",
+					"type": "text"
+				},
+				{
+					"key": "auction_title",
+					"value": "",
+					"type": "text"
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592822884789,
+			"name": "insert bookmark",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		},
+		{
+			"id": "f969f27f-0e1b-4420-a4e6-b0afa13711a2",
+			"headers": "",
+			"headerData": [],
+			"url": "https://bidincars.com/payment/package_purchase",
+			"folder": "1521c4be-ecbc-49b6-8401-e71c50e5eb70",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "packageid",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "userid",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1592823081485,
+			"name": "Purchase package",
+			"description": null,
+			"collectionId": "c6385721-7273-4ec7-a21f-bedfba3373a7",
+			"responses": []
+		}
+	]
+}
