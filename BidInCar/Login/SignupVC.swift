@@ -269,12 +269,12 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             param["password"] = passwordTxt.myTxt.text
             param["confirm_password"] = confirmPasswordTxt.myTxt.text
             
-            param["user_accountype"] = ""
-            param["user_postingtype"] = ""
-            param["company_name"] = ""
-            param["company_email"] = ""
-            param["company_address"] = ""
-            param["company_phone"] = ""
+//            param["user_accountype"] = ""
+//            param["user_postingtype"] = ""
+//            param["company_name"] = ""
+//            param["company_email"] = ""
+//            param["company_address"] = ""
+//            param["company_phone"] = ""
             
             if buyerBtn.isSelected {
                 param["user_accountype"] = "buyer"

@@ -197,6 +197,7 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         if let data = AppModel.shared.AUCTION_DATA[String(self.selectedCategory.id)], data.count > 0 {
             arrAuctionData = data
             tblView.reloadData()
+            noDataLbl.isHidden = (arrAuctionData.count > 0)
         }
         else{
             serviceCallToGetAuction()

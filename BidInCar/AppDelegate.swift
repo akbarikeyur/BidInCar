@@ -15,6 +15,8 @@ import GoogleSignIn
 import TwitterKit
 import UserNotifications
 import Firebase
+import FirebaseMessaging
+import FirebaseInstanceID
 import GooglePlaces
 
 @UIApplicationMain

@@ -181,6 +181,8 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate, PayPalPaymen
         }
         else if selectedTab == 1 {
             //paypal
+            paypalPaymentCompleted()
+            /*
             if amount == 0 {
                 return
             }
@@ -198,7 +200,7 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate, PayPalPaymen
             else{
                 displayToast("Payment not possible")
             }
-            
+            */
         }
         else if selectedTab == 2 {
             //bank

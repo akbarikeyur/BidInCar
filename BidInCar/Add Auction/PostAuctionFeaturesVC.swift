@@ -421,7 +421,6 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
     func serviceCallToPostAuction()
     {
         APIManager.shared.serviceCallToPostAuction(param) { (code, auctionid) in
-            
             if code == 100 {
                 if AppModel.shared.AUCTION_DATA[String(self.selectedAuctionType.id)] != nil {
                     AppModel.shared.AUCTION_DATA[String(self.selectedAuctionType.id)] = [AuctionModel]()
