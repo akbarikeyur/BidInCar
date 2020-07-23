@@ -965,10 +965,10 @@ public class APIManager {
             APIManager().networkErrorMsg()
             return
         }
-        showLoader()
+        //showLoader()
         let headerParams :[String : String] = getJsonHeader()
         Alamofire.request(API.GET_AUCTION_BID, method: .post, parameters: ["auctionid":auctionid], encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
-            removeLoader()
+            //removeLoader()
             switch response.result {
             case .success:
                 print(response.result.value!)

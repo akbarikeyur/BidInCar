@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,7 +38,7 @@
                                     <constraint firstAttribute="height" constant="60" id="GQJ-Iy-3Ta"/>
                                     <constraint firstAttribute="width" constant="60" id="bfz-Ag-mTQ"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="temp1"/>
+                                <state key="normal" backgroundImage="ic_placeholder"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
@@ -715,10 +715,10 @@
     <resources>
         <image name="close" width="15" height="15"/>
         <image name="eye" width="32" height="16"/>
+        <image name="ic_placeholder" width="348" height="179"/>
         <image name="reminder" width="24" height="22"/>
         <image name="schedule" width="22" height="22"/>
         <image name="star_off" width="15.5" height="14.5"/>
         <image name="star_on" width="15.5" height="14.5"/>
-        <image name="temp1" width="114" height="109"/>
     </resources>
 </document>

@@ -223,7 +223,7 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
         let dict = (searchTxt.text?.trimmed != "") ? arrSearchAuctionData[indexPath.row] : arrAuctionData[indexPath.row]
         for temp in dict.pictures {
             if temp.type == "auction" {
-                setImageViewImage(cell.imgView, temp.path, "temp1")
+                setImageViewImage(cell.imgView, temp.path, IMAGE.AUCTION_PLACEHOLDER)
                 break
             }
         }

@@ -67,12 +67,12 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
             auction.pictures.remove(at: index!)
         }
         if auction.pictures.count > 0 {
-            setImageViewImage(coverImgView, auction.pictures[0].path, IMAGE.CAR_PLACEHOLDER)
+            setImageViewImage(coverImgView, auction.pictures[0].path, IMAGE.AUCTION_PLACEHOLDER)
         }
         if auction.pictures.count > 1 {
-            setButtonBackgroundImage(profileImgBtn, auction.pictures[1].path)
+            setButtonBackgroundImage(profileImgBtn, auction.pictures[1].path, IMAGE.AUCTION_PLACEHOLDER)
         }else if auction.pictures.count > 0 {
-            setButtonBackgroundImage(profileImgBtn, auction.pictures[0].path)
+            setButtonBackgroundImage(profileImgBtn, auction.pictures[0].path, IMAGE.AUCTION_PLACEHOLDER)
         }
         
         titleLbl.text = auction.auction_title

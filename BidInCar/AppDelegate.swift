@@ -47,10 +47,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         //PayPal
         //Live
-        //PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: PAYPAL_CLIENT_ID)
+        PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentProduction: PAYPAL_CLIENT_ID])
         
         //Sandbox
-        PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentSandbox: PAYPAL_CLIENT_ID])
+//        PayPalMobile.initializeWithClientIds(forEnvironments: [PayPalEnvironmentSandbox: PAYPAL_CLIENT_ID])
 
         //Firebase
         FirebaseApp.configure()

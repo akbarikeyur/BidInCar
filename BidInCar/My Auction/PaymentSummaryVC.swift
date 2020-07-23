@@ -81,7 +81,7 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     {
         for temp in auctionData.pictures {
            if temp.type == "auction" {
-               setImageViewImage(carImgView, temp.path, IMAGE.CAR_PLACEHOLDER)
+               setImageViewImage(carImgView, temp.path, IMAGE.AUCTION_PLACEHOLDER)
                break
            }
         }

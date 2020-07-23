@@ -42,7 +42,7 @@ class BookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let dict = arrAuctionData[indexPath.row]
         for temp in dict.pictures {
             if temp.type == "auction" {
-                setButtonBackgroundImage(cell.profilePicBtn, temp.path)
+                setButtonBackgroundImage(cell.profilePicBtn, temp.path, IMAGE.AUCTION_PLACEHOLDER)
                 break
             }
         }

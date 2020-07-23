@@ -72,10 +72,15 @@ class PostAuctionDetailVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         serviceCallToGetAuctionDetail()
     }
     
     func setUIDesigning() {
+        
+        if selectedAuctionType.id == -1 {
+            selectedAuctionType.id = myAuction.cattype
+        }
         
         titleLbl.text = ""
         priceLbl.text = ""
@@ -195,19 +200,19 @@ class PostAuctionDetailVC: UIViewController {
             for i in 0..<pictureData.count
             {
                 if i == 0 {
-                    setButtonBackgroundImage(imgBtn1, pictureData[i].path)
+                    setButtonBackgroundImage(imgBtn1, pictureData[i].path, IMAGE.AUCTION_PLACEHOLDER)
                 }else if i == 1 {
-                    setButtonBackgroundImage(imgBtn2, pictureData[i].path)
+                    setButtonBackgroundImage(imgBtn2, pictureData[i].path, IMAGE.AUCTION_PLACEHOLDER)
                 }else if i == 2 {
-                    setButtonBackgroundImage(imgBtn3, pictureData[i].path)
+                    setButtonBackgroundImage(imgBtn3, pictureData[i].path, IMAGE.AUCTION_PLACEHOLDER)
                 }else if i == 3 {
-                    setButtonBackgroundImage(imgBtn4, pictureData[i].path)
+                    setButtonBackgroundImage(imgBtn4, pictureData[i].path, IMAGE.AUCTION_PLACEHOLDER)
                 }else if i == 4 {
-                    setButtonBackgroundImage(imgBtn5, pictureData[i].path)
+                    setButtonBackgroundImage(imgBtn5, pictureData[i].path, IMAGE.AUCTION_PLACEHOLDER)
                 }else if i == 5 {
-                    setButtonBackgroundImage(imgBtn6, pictureData[i].path)
+                    setButtonBackgroundImage(imgBtn6, pictureData[i].path, IMAGE.AUCTION_PLACEHOLDER)
                 }else if i == 6 {
-                    setButtonBackgroundImage(imgBtn7, pictureData[i].path)
+                    setButtonBackgroundImage(imgBtn7, pictureData[i].path, IMAGE.AUCTION_PLACEHOLDER)
                 }
             }
         }
@@ -273,8 +278,14 @@ class PostAuctionDetailVC: UIViewController {
         APIManager.shared.serviceCallToGetAuctionDetail(myAuction.auctionid) { (data) in
             if let tempData : [String : Any] = data["auction"] as? [String : Any] {
                 self.myAuction = AuctionModel.init(dict: tempData)
-                self.setUIDesigning()
             }
+            if let tempData : [[String : Any]] = data["pictures"] as? [[String : Any]], tempData.count > 0 {
+                self.myAuction.pictures = [PictureModel]()
+                for temp in tempData {
+                    self.myAuction.pictures.append(PictureModel.init(dict: temp))
+                }
+            }
+            self.setUIDesigning()
         }
     }
     

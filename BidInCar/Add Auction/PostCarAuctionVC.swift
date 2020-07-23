@@ -92,7 +92,7 @@ class PostCarAuctionVC: UploadImageVC {
         {
             serviceCallToGetCategoryList()
         }
-        fillData()
+        //fillData()
     }
     
     func fillData()

@@ -231,6 +231,7 @@ class AuctionModel : AppModel
     var doors : String!
     var auction_horse_power : String!
     var warranty : String!
+    var auction_age : String!
     
     override init(){
         auctionid = "0"
@@ -299,6 +300,7 @@ class AuctionModel : AppModel
         doors = ""
         auction_horse_power = ""
         warranty = ""
+        auction_age = ""
     }
     
     init(dict : [String : Any])
@@ -369,6 +371,7 @@ class AuctionModel : AppModel
         doors = ""
         auction_horse_power = ""
         warranty = ""
+        auction_age = ""
         
         if let temp = dict["auctionid"] as? String {
             auctionid = temp
@@ -602,6 +605,9 @@ class AuctionModel : AppModel
         }
         if let temp = dict["warranty"] as? String {
             warranty = temp
+        }
+        if let temp = dict["auction_age"] as? String {
+            auction_age = temp
         }
     }
 }

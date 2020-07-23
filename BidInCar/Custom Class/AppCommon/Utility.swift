@@ -530,36 +530,45 @@ func attributedStringWithColor(_ mainString : String, _ strings: [String], color
 
 func setImageViewImage(_ imgView : UIImageView, _ strUrl : String, _ placeHolderImg : String)
 {
+    if strUrl == "" {
+        imgView.image = UIImage(named: placeHolderImg)
+    }
     imgView.sd_setImage(with: URL(string: strUrl), placeholderImage: UIImage.init(named: placeHolderImg )) { (image, error, SDImageCacheType, url) in
         if image != nil {
             imgView.image = image?.imageCropped(toFit: CGSize(width: imgView.frame.size.width, height: imgView.frame.size.height))
         }else{
-            imgView.image = nil
+            imgView.image = UIImage(named: placeHolderImg)
         }
     }
 }
 
 func setImageViewImageWithAspectfit(_ imgView : UIImageView, _ strUrl : String, _ placeHolderImg : String)
 {
+    if strUrl == "" {
+        imgView.image = UIImage(named: placeHolderImg)
+    }
     imgView.sd_setImage(with: URL(string: strUrl), placeholderImage: UIImage.init(named: placeHolderImg )) { (image, error, SDImageCacheType, url) in
         if image != nil {
             imgView.image = image
             imgView.contentMode = .scaleAspectFit
         }else{
-            imgView.image = nil
+            imgView.image = UIImage(named: placeHolderImg)
         }
     }
 }
 
-func setButtonBackgroundImage(_ button : UIButton, _ strUrl : String)
+func setButtonBackgroundImage(_ button : UIButton, _ strUrl : String, _ placeholder : String)
 {
+    if strUrl == "" {
+        button.setBackgroundImage(UIImage(named: placeholder), for: .normal)
+    }
     button.sd_setBackgroundImage(with: URL(string: strUrl), for: UIControl.State.normal, completed: { (image, error, SDImageCacheType, url) in
         if image != nil{
             button.setBackgroundImage(image?.imageCropped(toFit: CGSize(width: button.frame.size.width, height: button.frame.size.height)), for: .normal)
         }
         else
         {
-            button.setBackgroundImage(nil, for: .normal)
+            button.setBackgroundImage(UIImage(named: placeholder), for: .normal)
         }
     })
 }

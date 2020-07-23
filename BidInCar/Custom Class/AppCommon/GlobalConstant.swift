@@ -28,11 +28,11 @@ let TWITTER_ACCESS_TOKEN = "1190881448661848064-dHUwLCyujB5e8RMw67aIjmCsEVapjK"
 let TWITTER_ACCESS_SECRET_TOKEN = "IWNPQlN5nKTISnZbqR3lwbOED4IIS1NnR3k7DLWbHDXrf"
 
 //Sandbox
-let PAYPAL_CLIENT_ID = "ASkI6VdfQAeRyNDe5Enbel_8DOG_8uwd6OnHewxnUsd8GdKajObFyCCpMgiNhnr5kpBJ3LfAfgyDCrmA"
-let PAYPAL_SECRET = "EMT6w-Fo4NxdNJkOoQL4DGEHPXbLMh9zdi3bU1azcaJ_JMxQtb371iUekDiiucN-KzyagSW0JJFgNXQq"
+//let PAYPAL_CLIENT_ID = "ASkI6VdfQAeRyNDe5Enbel_8DOG_8uwd6OnHewxnUsd8GdKajObFyCCpMgiNhnr5kpBJ3LfAfgyDCrmA"
+//let PAYPAL_SECRET = "EMT6w-Fo4NxdNJkOoQL4DGEHPXbLMh9zdi3bU1azcaJ_JMxQtb371iUekDiiucN-KzyagSW0JJFgNXQq"
 //Live
-//let PAYPAL_CLIENT_ID = "AbVf36WY8U_488ArYrh5iZ1azxmyZ-6MgO5gQRStHgnBfgnrDZFfL01K5f6cTs8bAvnPUvVLhS1bdTYY"
-//let PAYPAL_SECRET = "EJcHmbghyDMOs9zxGqKsu7793Rff6V8RlrdtOQmCic_IdWUd_ROqc7JaBBKSaLmlR2vudFKInEmgjrc_"
+let PAYPAL_CLIENT_ID = "AbVf36WY8U_488ArYrh5iZ1azxmyZ-6MgO5gQRStHgnBfgnrDZFfL01K5f6cTs8bAvnPUvVLhS1bdTYY"
+let PAYPAL_SECRET = "EJcHmbghyDMOs9zxGqKsu7793Rff6V8RlrdtOQmCic_IdWUd_ROqc7JaBBKSaLmlR2vudFKInEmgjrc_"
 
 
 let TERMS_URL = "http://anglotestserver.website/auction_new/terms-and-condition"
@@ -41,6 +41,10 @@ let POLICY_URL = "http://anglotestserver.website/auction_new/privacy-policy"
 let MONTH_ARRAY = [NSLocalizedString("month_jan", comment: ""), NSLocalizedString("month_feb", comment: ""), NSLocalizedString("month_mar", comment: ""), NSLocalizedString("month_apr", comment: ""), NSLocalizedString("month_may", comment: ""), NSLocalizedString("month_jun", comment: ""), NSLocalizedString("month_jul", comment: ""), NSLocalizedString("month_aug", comment: ""), NSLocalizedString("month_sept", comment: ""), NSLocalizedString("month_oct", comment: ""), NSLocalizedString("month_nov", comment: ""), NSLocalizedString("month_dec", comment: "")]
 
 let CAR_COLOR = ["White","Yellow","Blue","Red","Green","Black","Brown","Azure","Ivory","Teal","Silver","Purple","Navy blue","Pea green","Gray","Orange","Maroon","Charcoal","Aquamarine","Coral","Fuchsia","Wheat","Lime","Crimson","Khaki","Hot pink","Magenta","Olden","Plum","Olive","Cyan"]
+
+let BOAT_LENGTH = ["Select Boat Length", "Less than 10 feet", "10-15 feet", "15-20 feet", "20-25 feet", "25-30 feet", "30+ feet", "50+ feet", "100+ feet"]
+let BOAT_AGE = ["Select Boat Age", "New", "Less than 1 year", "1-2 years", "2-4 years", "4-8 years", "8+ years"]
+let BOAT_WARRANTY = ["Select Boat Warranty", "0-6 Months", "6 month - 1 year", "1 year +"]
 
 struct SCREEN
 {
@@ -105,8 +109,8 @@ struct MEDIA {
 }
 
 struct IMAGE {
-    static var USER_PLACEHOLDER = "avatar_placeholder"
-    static var CAR_PLACEHOLDER = "temp1"
+    static var USER_PLACEHOLDER = "user_placeholder"
+    static var AUCTION_PLACEHOLDER = "ic_placeholder"
 }
 
 struct STORYBOARD {

@@ -61,7 +61,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     
     func setUserDetail()
     {
-        setButtonBackgroundImage(profilePicBtn, AppModel.shared.currentUser.profile_pic)
+        setButtonBackgroundImage(profilePicBtn, AppModel.shared.currentUser.profile_pic, IMAGE.USER_PLACEHOLDER)
         
         usernameLbl.text = AppModel.shared.currentUser.user_name + " " + AppModel.shared.currentUser.user_lastname
         addressLbl.text = AppModel.shared.currentUser.city_name + ", " + AppModel.shared.currentUser.country_name

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1857,7 +1857,7 @@ dG8gYmlkLiDigJxEZXBvc2l0Ig
                                                     <constraint firstAttribute="height" constant="70" id="2qG-8h-dMs"/>
                                                     <constraint firstAttribute="width" constant="70" id="56O-OJ-D52"/>
                                                 </constraints>
-                                                <state key="normal" image="temp1"/>
+                                                <state key="normal" backgroundImage="ic_placeholder"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="10"/>
@@ -2836,6 +2836,7 @@ dG8gYmlkLiDigJxEZXBvc2l0Ig
         <image name="expand" width="15" height="15"/>
         <image name="filter" width="21" height="19"/>
         <image name="ic_pdf" width="27" height="36"/>
+        <image name="ic_placeholder" width="348" height="179"/>
         <image name="info" width="20" height="20"/>
         <image name="more" width="4" height="18"/>
         <image name="notification" width="22.5" height="23"/>
@@ -2845,7 +2846,6 @@ dG8gYmlkLiDigJxEZXBvc2l0Ig
         <image name="search" width="20.5" height="20.5"/>
         <image name="star_off" width="15.5" height="14.5"/>
         <image name="star_on" width="15.5" height="14.5"/>
-        <image name="temp1" width="114" height="109"/>
         <image name="temp_banner" width="369" height="166"/>
         <image name="temp_car" width="414" height="223"/>
         <image name="temp_car2" width="516" height="388"/>

@@ -38,6 +38,8 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
     @IBOutlet weak var constraintSeparatorTopSpace: NSLayoutConstraint!
     @IBOutlet weak var boatLengthView: UIView!
     @IBOutlet weak var boatLengthTxt: FloatingTextfiledView!
+    @IBOutlet weak var boatAgeTxt: FloatingTextfiledView!
+    @IBOutlet weak var boatWarrantyTxt: FloatingTextfiledView!
     @IBOutlet weak var milageView: UIView!
     @IBOutlet weak var constraintWidthMilageView: NSLayoutConstraint!
     
@@ -100,6 +102,16 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         if selectedAuctionType.id == 1 {
             bodyTypeView.isHidden = false
             motorColorView.isHidden = false
+            scrapView.isHidden = false
+            
+            interiorColorTxt.trailingSpace.constant = 10
+            interiorColorTxt.myTxt.textAlignment = .left
+            cylinderTxt.leftSpace.constant = 10
+            cylinderTxt.myTxt.textAlignment = .left
+            doorTxt.trailingSpace.constant = 10
+            doorTxt.myTxt.textAlignment = .left
+            horsePowerTxt.leftSpace.constant = 10
+            horsePowerTxt.myTxt.textAlignment = .left
         }
         else {
             mechanicalView.isHidden = false
@@ -349,6 +361,11 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
                 param["bodytype"] = bodyTypeTxt.myTxt.text
                 param["motorno"] = motorTxt.myTxt.text
                 param["extcolor"] = colorTxt.myTxt.text
+                param["interior_color"] = interiorColorTxt.myTxt.text
+                param["no_of_cylinder"] = cylinderTxt.myTxt.text
+                param["doors"] = doorTxt.myTxt.text
+                param["horsepower"] = horsePowerTxt.myTxt.text
+                param["warranty"] = warrantyTxt.myTxt.text
             }
             else {
                 param["mechanical"] = mechanicalTxt.myTxt.text
@@ -359,6 +376,8 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
                 }
                 else if selectedAuctionType.id == 3 {
                     param["boat_length"] = boatLengthTxt.myTxt.text
+                    param["auction_age"] = boatAgeTxt.myTxt.text
+                    param["boat_warranty"] = boatWarrantyTxt.myTxt.text
                 }
                 else if selectedAuctionType.id == 4 {
                     param["engineno"] = motorTxt.myTxt.text
@@ -481,6 +500,51 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         dropDown.dataSource = CAR_COLOR
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.colorTxt.myTxt.text = item
+        }
+        dropDown.show()
+    }
+    
+    @IBAction func clickToSelectBoatLength(_ sender: UIButton) {
+        self.view.endEditing(true)
+        let dropDown = DropDown()
+        dropDown.anchorView = sender
+        dropDown.dataSource = BOAT_LENGTH
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            if index == 0 {
+                self.boatLengthTxt.myTxt.text = ""
+            }else{
+                self.boatLengthTxt.myTxt.text = item
+            }
+        }
+        dropDown.show()
+    }
+    
+    @IBAction func clickToSelectBoatAge(_ sender: UIButton) {
+        self.view.endEditing(true)
+        let dropDown = DropDown()
+        dropDown.anchorView = sender
+        dropDown.dataSource = BOAT_AGE
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            if index == 0 {
+                self.boatAgeTxt.myTxt.text = ""
+            }else{
+                self.boatAgeTxt.myTxt.text = item
+            }
+        }
+        dropDown.show()
+    }
+    
+    @IBAction func clickToSelectBoatWarranty(_ sender: UIButton) {
+        self.view.endEditing(true)
+        let dropDown = DropDown()
+        dropDown.anchorView = sender
+        dropDown.dataSource = BOAT_WARRANTY
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            if index == 0 {
+                self.boatWarrantyTxt.myTxt.text = ""
+            }else{
+                self.boatWarrantyTxt.myTxt.text = item
+            }
         }
         dropDown.show()
     }

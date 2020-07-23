@@ -58,7 +58,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @objc func updateUserData()
     {
-        setButtonBackgroundImage(profilePicBtn, AppModel.shared.currentUser.profile_pic)
+        setButtonBackgroundImage(profilePicBtn, AppModel.shared.currentUser.profile_pic, IMAGE.USER_PLACEHOLDER)
         userNameLbl.text = AppModel.shared.currentUser.user_name
         if isUserBuyer() {
             userTypeLbl.text = "Buyer"

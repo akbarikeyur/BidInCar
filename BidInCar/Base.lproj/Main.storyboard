@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZcA-ak-AO1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZcA-ak-AO1">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1376,7 +1376,7 @@ for signing up</string>
                                             <constraint firstAttribute="height" constant="70" id="ivc-WQ-gfO"/>
                                             <constraint firstAttribute="width" constant="70" id="jOv-CZ-WdW"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="temp_user"/>
+                                        <state key="normal" backgroundImage="user_placeholder"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="35"/>
@@ -1991,7 +1991,7 @@ Notificaitions</string>
         <image name="spalsh_cat" width="344" height="29"/>
         <image name="splash_bg" width="414" height="896"/>
         <image name="splash_title" width="231" height="45"/>
-        <image name="temp_user" width="29" height="29"/>
         <image name="twitter" width="23.5" height="19.5"/>
+        <image name="user_placeholder" width="50" height="50"/>
     </resources>
 </document>
