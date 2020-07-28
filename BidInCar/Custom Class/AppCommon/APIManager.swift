@@ -33,6 +33,7 @@ struct API {
     static let UPLOAD_AUCTION_IMAGE         =       BASE_URL + "auctions/upload_file_gallary"
     static let REMOVE_AUCTION_IMAGE         =       BASE_URL + "auctions/removepicture"
     static let UPLOAD_AUCTION_DOC           =       BASE_URL + "auctions/upload_doc"
+    static let DECRESE_LEFT_AUCTION         =       BASE_URL + "payment/package_decrease"
     
     static let SEARCH_FEATURED_AUCTION      =       BASE_URL + "auctions/searchauctions"
     static let GET_AUCTION_DETAIL           =       BASE_URL + "auctions/getsingleauction"
@@ -785,6 +786,43 @@ public class APIManager {
                             if let data : [[String : Any]] = result["data"] as? [[String : Any]] {
                                 completion(data)
                             }
+                            return
+                        }
+                        else
+                        {
+                            self.handleStatusCode(result)
+                        }
+                    }
+                }
+                if let error = response.result.error
+                {
+                    displayToast(error.localizedDescription)
+                    return
+                }
+                break
+            case .failure(let error):
+                print(error)
+                break
+            }
+        }
+    }
+    
+    func serviceCallToDecreseLeftAuction(_ param : [String : Any], _ completion: @escaping () -> Void) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        let headerParams :[String : String] = getJsonHeader()
+        Alamofire.request(API.DECRESE_LEFT_AUCTION, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
+            switch response.result {
+            case .success:
+                print(response.result.value!)
+                if let result = response.result.value as? [String:Any] {
+                
+                    if let status = result["status"] as? String {
+                        if(status == "success") {
+                            completion()
                             return
                         }
                         else

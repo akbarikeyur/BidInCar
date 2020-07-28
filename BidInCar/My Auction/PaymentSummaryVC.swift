@@ -203,7 +203,7 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         arrBillingData.append(dict)
     
         dict = [String:String]()
-        dict["title"] = "Deposite amount"
+        dict["title"] = "Deposit amount"
         dict["value"] = "AED " + AppModel.shared.currentUser.user_deposit
         arrBillingData.append(dict)
         

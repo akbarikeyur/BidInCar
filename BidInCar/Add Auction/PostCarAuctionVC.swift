@@ -153,7 +153,7 @@ class PostCarAuctionVC: UploadImageVC {
         else{
             serviceCallToGetCategoryList()
         }
-        conditionTxt.myTxt.text = currentAuction.auction_body_condition
+        conditionTxt.myTxt.text = currentAuction.body_condition
         conditionTxt.setTextFieldValue()
         if let date : Date = getDateFromDateString(strDate: currentAuction.auction_created_on, format: "YYYY-MM-dd") {
             selectedStartDate = date
@@ -427,7 +427,7 @@ class PostCarAuctionVC: UploadImageVC {
     }
     
     @IBAction func clickToSubmitAuction(_ sender: Any) {
-        self.view.endEditing(true)
+        self.view.endEditing(true)        
 //        let vc : PostAuctionFeaturesVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PostAuctionFeaturesVC") as! PostAuctionFeaturesVC
 //        vc.myAuction = myAuction
 //        vc.selectedAuctionType = selectedAuctionType
@@ -494,7 +494,7 @@ class PostCarAuctionVC: UploadImageVC {
             param["categories_name"] = categoryTxt.myTxt.text //category_name
             param["childcat_name"] = selectMakeTxt.myTxt.text //catchild_name
             param["auction_start_end"] = getDateStringFromDate(date: selectedStartDate!, format: "YYYY/MM/dd") + " - " + getDateStringFromDate(date: selectedEndDate!, format: "YYYY/MM/dd") //YYYY/MM/DD - YYYY/MM/DD //auction_created_on - auction_end
-            param["bodycondition"] = conditionTxt.myTxt.text //auction_body_condition
+            param["condition"] = conditionTxt.myTxt.text //bodycondition
             if selectedAuctionType.id == 1 {
                 param["vin"] = vinTxt.myTxt.text //auction_vin
                 param["tranmission"] = transmissionTxt.myTxt.text //auction_transmission

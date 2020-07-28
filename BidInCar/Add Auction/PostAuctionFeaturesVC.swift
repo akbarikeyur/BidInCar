@@ -49,6 +49,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
     @IBOutlet weak var doorTxt: FloatingTextfiledView!
     @IBOutlet weak var horsePowerTxt: FloatingTextfiledView!
     @IBOutlet weak var warrantyTxt: FloatingTextfiledView!
+    @IBOutlet weak var createAuctionLbl: Label!
     
     
     var arrBodyData = ["Sedan", "Coupe", "Crossover", "Hard Top Convertible", "Hatchback", "Pick Up Truck", "Soft Top Convertible", "Sports Car", "SUV", "Utility Truck", "Van", "Wagon", "Other"]
@@ -87,6 +88,9 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         hideViewBasedOnAuctionType()
         if myAuction.auctionid != "" && myAuction.auctionid != "0" {
             setupData()
+        }
+        else{
+            createAuctionLbl.text = "Create Auction"
         }
     }
     
@@ -162,6 +166,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
     
     func setupData()
     {
+        createAuctionLbl.text = "Update Auction"
         bodyTypeTxt.myTxt.text = myAuction.auction_bodytype
         for temp in arrCountryData {
             if temp.countryid == myAuction.countryid {
@@ -180,12 +185,15 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         driveTxt.myTxt.text = myAuction.drive_system
         engineTxt.myTxt.text = myAuction.engine_size
         boatLengthTxt.myTxt.text = myAuction.boat_length
+        boatAgeTxt.myTxt.text = myAuction.auction_age
+        
         
         interiorColorTxt.myTxt.text = myAuction.interior_color
         cylinderTxt.myTxt.text = myAuction.no_of_cylinder
         doorTxt.myTxt.text = myAuction.doors
         horsePowerTxt.myTxt.text = myAuction.auction_horse_power
         warrantyTxt.myTxt.text = myAuction.warranty
+        boatWarrantyTxt.myTxt.text = myAuction.warranty
         
         latitudeTxt.myTxt.text = myAuction.auction_lat
         longitudeTxt.myTxt.text = myAuction.auction_long
@@ -375,9 +383,9 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
                     param["engine_size"] = engineTxt.myTxt.text
                 }
                 else if selectedAuctionType.id == 3 {
-                    param["boat_length"] = boatLengthTxt.myTxt.text
+                    param["auction_boat_length"] = boatLengthTxt.myTxt.text
                     param["auction_age"] = boatAgeTxt.myTxt.text
-                    param["boat_warranty"] = boatWarrantyTxt.myTxt.text
+                    param["warranty"] = boatWarrantyTxt.myTxt.text
                 }
                 else if selectedAuctionType.id == 4 {
                     param["engineno"] = motorTxt.myTxt.text
@@ -444,15 +452,20 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
                 if AppModel.shared.AUCTION_DATA[String(self.selectedAuctionType.id)] != nil {
                     AppModel.shared.AUCTION_DATA[String(self.selectedAuctionType.id)] = [AuctionModel]()
                 }
-                AppDelegate().sharedDelegate().getPackageHistory()
+                
+                AppDelegate().sharedDelegate().serviceCallToDecreseLeftAuction()
                 NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_HOME), object: nil)
             }
             else{
                 self.myAuction = AuctionModel.init(dict: self.param)
                 self.myAuction.auctionid = String(auctionid)
-                let vc : PostAuctionDetailVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PostAuctionDetailVC") as! PostAuctionDetailVC
-                vc.myAuction = self.myAuction
-                self.navigationController?.pushViewController(vc, animated: true)
+                showAlert("Success", message: "You have not purchase any package so we save your auction into draft. Please purchase package to activate your auction.") {
+                    
+                }
+                NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_DRAFT), object: nil)
+//                let vc : PostAuctionDetailVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PostAuctionDetailVC") as! PostAuctionDetailVC
+//                vc.myAuction = self.myAuction
+//                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }

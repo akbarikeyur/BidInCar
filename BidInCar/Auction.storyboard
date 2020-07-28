@@ -1427,6 +1427,7 @@
                         <outlet property="constraintSeparatorTopSpace" destination="RsQ-3J-ebG" id="1O0-sX-bEv"/>
                         <outlet property="constraintWidthMilageView" destination="2EU-RJ-Z8k" id="Qpl-6n-ZFp"/>
                         <outlet property="countryTxt" destination="DGs-yc-wEG" id="frU-0g-MAt"/>
+                        <outlet property="createAuctionLbl" destination="r1D-3q-aVC" id="qKi-Hg-p90"/>
                         <outlet property="cylinderTxt" destination="ljn-ST-FfP" id="UkG-Ab-CiA"/>
                         <outlet property="descCountLbl" destination="Acx-Ux-VIe" id="TwS-EU-zsz"/>
                         <outlet property="descTxtView" destination="ufy-Qc-6yh" id="uKa-bu-3U9"/>

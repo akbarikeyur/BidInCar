@@ -44,7 +44,7 @@
 "my_auction_list_login_msg" = "Please login/signup to see your auctions.";
 "post_auction_login_msg" = "Please login/signup to post an auction.";
 "bid_login_msg" = "Please login/signup to bid this auction.";
-"add_deposite_login_msg" = "Please login/signup to add deposite.";
+"add_deposite_login_msg" = "Please login/signup to add deposit.";
 
 //Auction detail
 "enter_bid_price" = "Please enter your bid price";
@@ -126,4 +126,4 @@
 "enter_body_condition" = "Please select body condition";
 
 //Profile
-"enter_deposite" = "Please enter your deposite amount";
+"enter_deposite" = "Please enter your deposit amount";

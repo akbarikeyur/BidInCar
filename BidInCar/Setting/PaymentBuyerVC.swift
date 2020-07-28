@@ -34,8 +34,8 @@ class PaymentBuyerVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @objc func updateDepositeAmount()
     {
-        depositeAmountLbl.text = "Deposite Amount : AED " + AppModel.shared.currentUser.user_deposit
-        depositeAmountLbl.attributedText = attributedStringWithColor(depositeAmountLbl.text!, ["Deposite Amount :"], color: LightGrayColor)
+        depositeAmountLbl.text = "Deposit Amount : AED " + AppModel.shared.currentUser.user_deposit
+        depositeAmountLbl.attributedText = attributedStringWithColor(depositeAmountLbl.text!, ["Deposit Amount :"], color: LightGrayColor)
     }
     
     //MARK:- Tableview Method

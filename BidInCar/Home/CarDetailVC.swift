@@ -83,6 +83,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }
         titleLbl.text = auctionData.auction_title
         if auctionData.active_auction_price == "" {
+            auctionData.active_auction_price = auctionData.auction_price
             auctionPriceLbl.text = displayPriceWithCurrency(auctionData.auction_price)
         }else{
             auctionPriceLbl.text = displayPriceWithCurrency(auctionData.active_auction_price)
@@ -340,8 +341,8 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         else{
             let price : Int = Int(myBidTxt!.text!) ?? 0
             
-            if Int(auctionData.auction_bidprice)! > price {
-                showAlert("", message: "Your bid should be more than current price") {
+            if Int(auctionData.active_auction_price)! > price {
+                showAlert("", message: "Your bid is lower than current bid") {
                     
                 }
             }
@@ -541,6 +542,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                 self.auctionData.active_auction_price = String(arrBid.max()!)
             }
             if self.auctionData.active_auction_price == "" {
+                self.auctionData.active_auction_price = self.auctionData.auction_price
                 self.auctionPriceLbl.text = displayPriceWithCurrency(self.auctionData.auction_price)
             }else{
                 self.auctionPriceLbl.text = displayPriceWithCurrency(self.auctionData.active_auction_price)

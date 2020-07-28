@@ -45,7 +45,7 @@ class ContactUsVC: UploadImageVC {
         self.view.endEditing(true)
         let dropDown = DropDown()
         dropDown.anchorView = sender
-        dropDown.dataSource = ["Deposite", "Account", "Payment", "Billing", "Featured", "Document Featured", "Shipment", "Others"]
+        dropDown.dataSource = ["Deposit", "Account", "Payment", "Billing", "Featured", "Document Featured", "Shipment", "Others"]
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.interestedTxtView.myTxt.text = item
         }

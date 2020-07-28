@@ -396,7 +396,7 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate, PayPalPaymen
         }
         print(paymentParam)
         APIManager.shared.serviceCallToDepositeAmount(paymentParam) {
-            displayToast("Deposite added successfully")
+            displayToast("Deposit added successfully")
             AppModel.shared.currentUser.user_deposit = String(amount)
             NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
             self.navigationController?.popViewController(animated: true)

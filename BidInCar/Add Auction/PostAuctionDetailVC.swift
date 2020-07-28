@@ -157,7 +157,7 @@ class PostAuctionDetailVC: UIViewController {
         makeLbl.text = myAuction.catchild_name
         startDateLbl.text = myAuction.auction_start
         endDateLbl.text = myAuction.auction_end
-        conditionLbl.text = myAuction.auction_body_condition
+        conditionLbl.text = myAuction.body_condition
         vinLbl.text = myAuction.auction_vin
         transmissionLbl.text = myAuction.auction_transmission
         fuelTypeLbl.text = myAuction.auction_fueltype
@@ -264,7 +264,7 @@ class PostAuctionDetailVC: UIViewController {
                 if AppModel.shared.AUCTION_DATA[String(self.myAuction.categorytype)] != nil {
                     AppModel.shared.AUCTION_DATA[String(self.myAuction.categorytype)] = [AuctionModel]()
                 }
-                AppDelegate().sharedDelegate().getPackageHistory()
+                AppDelegate().sharedDelegate().serviceCallToDecreseLeftAuction()
                 NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_HOME), object: nil)
             }
         }

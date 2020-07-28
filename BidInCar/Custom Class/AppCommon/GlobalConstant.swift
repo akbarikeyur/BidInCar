@@ -128,6 +128,7 @@ struct NOTIFICATION {
     static var WITHDRAW_BID_DATA            =   "WITHDRAW_BID_DATA"
     static var AUCTION_FEATURED_DATA        =   "AUCTION_FEATURED_DATA"
     static var REMOVE_AUCTION_DATA          =   "REMOVE_AUCTION_DATA"
+    static var REDIRECT_TO_DRAFT            =   "REDIRECT_TO_DRAFT"
 }
 
 

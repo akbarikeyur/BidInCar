@@ -31,6 +31,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Do any additional setup after loading the view.
         
         NotificationCenter.default.addObserver(self, selector: #selector(redirectToHomePage), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_HOME), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(redirectToMyAuctionDraft), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_DRAFT), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateUserData), name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
         
         tblView.register(UINib.init(nibName: "CustomSideMenuTVC", bundle: nil), forCellReuseIdentifier: "CustomSideMenuTVC")
@@ -52,6 +53,13 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @objc func redirectToHomePage()
     {
         let navController = STORYBOARD.HOME.instantiateViewController(withIdentifier: "HomeVCNav") as! UINavigationController
+        navController.isNavigationBarHidden = true
+        menuContainerViewController.centerViewController = navController
+    }
+    
+    @objc func redirectToMyAuctionDraft()
+    {
+        let navController = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "MyAuctionSellerVCNav") as! UINavigationController
         navController.isNavigationBarHidden = true
         menuContainerViewController.centerViewController = navController
     }

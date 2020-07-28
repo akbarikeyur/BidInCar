@@ -174,6 +174,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         getPackageHistory()
     }
     
+    func serviceCallToDecreseLeftAuction() {
+        APIManager.shared.serviceCallToDecreseLeftAuction(["userid":AppModel.shared.currentUser.userid!]) {
+            self.getPackageHistory()
+        }
+    }
+    
     func getPackageHistory()
     {
         if isUserLogin() && !isUserBuyer() {

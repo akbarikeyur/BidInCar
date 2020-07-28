@@ -1462,7 +1462,7 @@ dG8gYmlkLiDigJxEZXBvc2l0Ig
                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D32-YT-D8V" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
-                                            <state key="normal" title="Add Deposite">
+                                            <state key="normal" title="Add Deposit">
                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
@@ -1505,7 +1505,7 @@ dG8gYmlkLiDigJxEZXBvc2l0Ig
                                         <constraint firstAttribute="height" constant="45" id="n0w-M7-VAL"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Deposite Amount"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Deposit Amount"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieF-jM-Fzz" customClass="View" customModule="BidInCar" customModuleProvider="target">
@@ -1514,7 +1514,7 @@ dG8gYmlkLiDigJxEZXBvc2l0Ig
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjX-sz-n3E" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="260" height="45"/>
                                             <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
-                                            <state key="normal" title="Deposite Now"/>
+                                            <state key="normal" title="Deposit Now"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
                                                     <integer key="value" value="1"/>
