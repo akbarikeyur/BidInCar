@@ -309,7 +309,7 @@ class MyAuctionVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         param["pagename"] = "profile"
         param["usertype"] = getUserType()
         print(param)
-        APIManager.shared.serviceCallToGetMyAuction(param) { (data) in
+        APIManager.shared.serviceCallToGetMyAuction(param) { (data, package) in
             var arrAuction = [AuctionModel]()
             for temp in data {
                 arrAuction.append(AuctionModel.init(dict: temp))

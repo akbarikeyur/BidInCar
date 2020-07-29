@@ -1105,6 +1105,7 @@ class PackageModel : AppModel
     var remaining_auction : Int!
     var active_auction : Int!
     var auctionsleft : Int!
+    var featured_price : String!
     
     override init(){
         packageid = ""
@@ -1127,6 +1128,7 @@ class PackageModel : AppModel
         remaining_auction = 0
         active_auction = 0
         auctionsleft = 0
+        featured_price = ""
     }
     
     init(dict : [String : Any])
@@ -1151,6 +1153,7 @@ class PackageModel : AppModel
         remaining_auction = 0
         active_auction = 0
         auctionsleft = 0
+        featured_price = ""
         
         if let temp = dict["packageid"] as? String {
             packageid = temp
@@ -1215,10 +1218,13 @@ class PackageModel : AppModel
         if let temp = dict["auctionsleft"] as? Int {
             auctionsleft = temp
         }
+        if let temp = dict["featured_price"] as? String {
+            featured_price = temp
+        }
     }
     
     func dictionary() -> [String:Any]  {
-        return ["packageid":packageid!, "package_title":package_title!, "catid":catid!, "package_decription":package_decription!, "days":days!, "number_of_auction":number_of_auction!, "type":type!, "extras":extras!, "package_createdon":package_createdon!, "package_status":package_status!, "package_price":package_price!, "package_savings":package_savings!, "package_boughton":package_boughton!, "package_expireon":package_expireon!, "auction_history":auction_history.dictionary(), "remaining_auction":remaining_auction!, "active_auction":active_auction!, "auctionsleft":auctionsleft!]
+        return ["packageid":packageid!, "package_title":package_title!, "catid":catid!, "package_decription":package_decription!, "days":days!, "number_of_auction":number_of_auction!, "type":type!, "extras":extras!, "package_createdon":package_createdon!, "package_status":package_status!, "package_price":package_price!, "package_savings":package_savings!, "package_boughton":package_boughton!, "package_expireon":package_expireon!, "auction_history":auction_history.dictionary(), "remaining_auction":remaining_auction!, "active_auction":active_auction!, "auctionsleft":auctionsleft!, "featured_price" : featured_price!]
     }
 }
 

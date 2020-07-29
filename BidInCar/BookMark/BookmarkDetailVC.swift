@@ -146,9 +146,9 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
             self.sortLbl.text = item
             self.arrBidData = self.arrBidData.sorted(by: { (temp1 : BidModel, temp2 : BidModel) -> Bool in
                 if index == 0 {
-                    return temp1.bidprice < temp2.bidprice
-                }else{
                     return temp1.bidprice > temp2.bidprice
+                }else{
+                    return temp1.bidprice < temp2.bidprice
                 }
             })
             self.bidCV.reloadData()
@@ -162,14 +162,6 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        var newLable : UILabel = UILabel.init()
-//        newLable.font = UIFont.init(name: APP_REGULAR, size: 14.0)
-//        newLable.text = "#" + String(indexPath.row)
-//        var width = newLable.intrinsicContentSize.width + 10
-//        newLable = UILabel.init()
-//        newLable.font = UIFont.init(name: APP_REGULAR, size: 14.0)
-//        newLable.text = " AED " + arrBidData[indexPath.row].bidprice
-//        width += newLable.intrinsicContentSize.width + 10
         return CGSize(width: bidCV.frame.size.width/3, height: 50)
     }
     
@@ -177,7 +169,6 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
         let cell : CustomBidPriceCVC = bidCV.dequeueReusableCell(withReuseIdentifier: "CustomBidPriceCVC", for: indexPath) as! CustomBidPriceCVC
         cell.numberLbl.text = "#" + String(indexPath.row)
         cell.priceLbl.text = "AED " + arrBidData[indexPath.row].bidprice
-        constraintHeightBidCV.constant = collectionView.contentSize.height + 45
         return cell
     }
     
@@ -210,17 +201,12 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
             self.arrBidData = [BidModel]()
             for temp in data {
                 let newBid = BidModel.init(dict: temp)
-                let index = self.auction.bidlist.firstIndex { (tempBid) -> Bool in
-                    tempBid.bidid == newBid.bidid
-                }
-                if index == nil {
-                    self.arrBidData.append(newBid)
-                }
+                self.arrBidData.append(newBid)
             }
             self.auction.bidlist = self.arrBidData
             if self.arrBidData.count > 0 {
                 self.arrBidData = self.arrBidData.sorted { (temp1, temp2) -> Bool in
-                    return temp1.bidprice < temp2.bidprice
+                    return temp1.bidprice > temp2.bidprice
                 }
             }
             if self.auction.bidlist.count == 0 {
@@ -228,6 +214,7 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
                 self.constraintHeightBidCV.constant = 0
             }else{
                 self.bidView.isHidden = false
+                self.constraintHeightBidCV.constant = CGFloat((Int(self.arrBidData.count/3) + 1) * 50) + 45
             }
             self.bidCV.reloadData()
         }

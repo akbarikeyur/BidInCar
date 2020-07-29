@@ -81,8 +81,10 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             addDepositeView.isHidden = true
             
             var remaining = 0
-            for temp in getPackageHistory() {
-                remaining += temp.auctionsleft
+            let arrPackageData = getPackageHistory()
+            for i in 0..<arrPackageData.count {
+                let package = arrPackageData[i]
+                remaining += package.auctionsleft
             }
             
             subTitleLbl.text = "Your current package auctions Left: " + String(remaining)

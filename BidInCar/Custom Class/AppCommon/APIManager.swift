@@ -957,7 +957,7 @@ public class APIManager {
         }
     }
     
-    func serviceCallToGetMyAuction(_ param : [String : Any], _ completion: @escaping (_ data : [[String : Any]]) -> Void) {
+    func serviceCallToGetMyAuction(_ param : [String : Any], _ completion: @escaping (_ data : [[String : Any]], _ package : PackageModel) -> Void) {
         if !APIManager.isConnectedToNetwork()
         {
             APIManager().networkErrorMsg()
@@ -974,7 +974,11 @@ public class APIManager {
                     if let status = result["status"] as? String {
                         if(status == "success") {
                             if let data : [[String : Any]] = result["data"] as? [[String : Any]] {
-                                completion(data)
+                                var package = PackageModel.init(dict: [String : Any]())
+                                if let packagesDict : [String : Any] = result["packages"] as? [String : Any] {
+                                    package = PackageModel.init(dict: packagesDict)
+                                }
+                                completion(data, package)
                             }
                             return
                         }

@@ -31,6 +31,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
     var selectedAuction = AuctionModel.init()
     var refreshControl = UIRefreshControl.init()
     
+    var packagePrice = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +51,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
         tblView.register(UINib.init(nibName: "CustomDraftAuctionTVC", bundle: nil), forCellReuseIdentifier: "CustomDraftAuctionTVC")
         
         clickToSelectTab(activeBtn)
-        
-        featuredTitleLbl.attributedText = attributedStringWithColor(featuredTitleLbl.text!, ["Do you wish to continue?"], color: YellowColor, font: UIFont.init(name: APP_REGULAR, size: 16))
-        featuredPriceLbl.attributedText = attributedStringWithColor(featuredPriceLbl.text!, ["Euro 40"], color: YellowColor, font: UIFont.init(name: APP_BOLD, size: 30))
+        setupPrice()
     }
     
     @objc func refreshAuctionList()
@@ -271,29 +270,16 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBAction func clickToMakeFeatured(_ sender: UIButton) {
         if activeBtn.isSelected {
             selectedAuction = arrActiveAuction[sender.tag]
-            for temp in getFeaturedPriceData() {
-                if temp.type == "featured_price" {
-                    featuredPriceLbl.text = "Payment AED " + temp.featured_price
-                    break
-                }
-            }
             displaySubViewtoParentView(self.view, subview: featureContainerView)
         }
     }
     
     @IBAction func clickToPayMakeFeatured(_ sender: Any) {
         featureContainerView.removeFromSuperview()
-        var price = ""
-        for temp in getFeaturedPriceData() {
-            if temp.type == "featured_price" {
-                price = temp.featured_price
-                break
-            }
-        }
         let vc : SelectPaymentMethodVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "SelectPaymentMethodVC") as! SelectPaymentMethodVC
         vc.paymentType = PAYMENT.FEATURED
         vc.paymentParam = ["auctionid":selectedAuction.auctionid!]
-        vc.amount = Int(price) ?? 0
+        vc.amount = Int(packagePrice) ?? 0
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -347,6 +333,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
         }
     }
     
+    //MARK:- Button click event
     func serviceCallToGetAuction(_ type : Int)
     {
         if !isUserLogin() {
@@ -371,7 +358,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
         param["pagename"] = "profile"
         param["usertype"] = getUserType()
         print(param)
-        APIManager.shared.serviceCallToGetMyAuction(param) { (data) in
+        APIManager.shared.serviceCallToGetMyAuction(param) { (data, package) in
             var arrAuction = [AuctionModel]()
             for temp in data {
                 arrAuction.append(AuctionModel.init(dict: temp))
@@ -391,7 +378,15 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
             }
             self.noDataFoundLbl.isHidden = (arrAuction.count > 0)
             self.tblView.reloadData()
+            self.packagePrice = package.featured_price
+            self.setupPrice()
         }
+    }
+    
+    func setupPrice() {
+        featuredTitleLbl.attributedText = attributedStringWithColor(featuredTitleLbl.text!, ["Do you wish to continue?"], color: YellowColor, font: UIFont.init(name: APP_REGULAR, size: 16))
+        featuredPriceLbl.text = "Payment Euro " + packagePrice
+        featuredPriceLbl.attributedText = attributedStringWithColor(featuredPriceLbl.text!, [("Euro " + packagePrice)], color: YellowColor, font: UIFont.init(name: APP_BOLD, size: 30))
     }
     
     
