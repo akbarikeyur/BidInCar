@@ -10,7 +10,11 @@ import UIKit
 
 class CustomNotificationTVC: UITableViewCell {
 
+    @IBOutlet weak var titleLbl: Label!
+    @IBOutlet weak var messageLbl: Label!
+    @IBOutlet weak var timeLbl: Label!
     @IBOutlet weak var newBtn: Button!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

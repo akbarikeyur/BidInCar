@@ -96,8 +96,8 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func setupMenu()
     {
         arrMenuData = [[String : Any]]()
-        let arrMenuTitle : [String] = [NSLocalizedString("menu_home", comment: ""), NSLocalizedString("menu_auction", comment: ""), NSLocalizedString("menu_bookmark", comment: ""), NSLocalizedString("menu_calc", comment: ""), NSLocalizedString("menu_profile", comment: ""), NSLocalizedString("menu_contact", comment: ""), NSLocalizedString("menu_terms", comment: ""), NSLocalizedString("menu_privacy", comment: "")]
-        let arrMenuImage : [String] = ["menu_home", "menu_auction", "menu_bookmark", "menu_calculator", "menu_profile", "menu_contact", "menu_terms","menu_privacy"]
+        let arrMenuTitle : [String] = [NSLocalizedString("menu_home", comment: ""), NSLocalizedString("menu_auction", comment: ""), NSLocalizedString("menu_bookmark", comment: ""), NSLocalizedString("menu_profile", comment: ""), NSLocalizedString("menu_contact", comment: ""), NSLocalizedString("menu_terms", comment: ""), NSLocalizedString("menu_privacy", comment: ""), NSLocalizedString("menu_how_sell", comment: ""), NSLocalizedString("menu_how_buy", comment: ""), NSLocalizedString("menu_calc", comment: "")]
+        let arrMenuImage : [String] = ["menu_home", "menu_auction", "menu_bookmark", "menu_profile", "menu_contact", "menu_terms","menu_privacy", "menu_help", "menu_help", "menu_calculator"]
         
         for i in 0..<arrMenuTitle.count {
             arrMenuData.append(["title" : arrMenuTitle[i], "image" : arrMenuImage[i]])
@@ -240,6 +240,12 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //            navController.isNavigationBarHidden = true
     //            screenType = 0
     //            menuContainerViewController.centerViewController = navController
+                break
+            case NSLocalizedString("menu_how_sell", comment: ""):
+                
+                break
+            case NSLocalizedString("menu_how_buy", comment: ""):
+                
                 break
             case NSLocalizedString("menu_logout", comment: ""):
                 showAlertWithOption("Logout", message: "Are you sure want to logout?", completionConfirm: {

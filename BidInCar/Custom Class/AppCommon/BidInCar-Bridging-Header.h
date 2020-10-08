@@ -11,7 +11,6 @@
 
 
 #import "UIImage+ProportionalFill.h"
-#import "PayPalMobile.h"
-
+#import <paytabs-iOS/paytabs_iOS.h>
 
 #endif /* BidInCar_Bridging_Header_h */

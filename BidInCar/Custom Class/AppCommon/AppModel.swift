@@ -1455,3 +1455,25 @@ class BidAuctionModel : AppModel
         return ["bidid":bidid!, "userid":userid!, "auctionid":auctionid!, "bidprice":bidprice!, "bidon":bidon!, "auction_price":auction_price!, "auction_title":auction_title!, "auction_status":auction_status!]
     }
 }
+
+class NotificationModel : AppModel
+{
+    var notificationid : String!
+    var userid : String!
+    var auctionid : String!
+    var createdon : String!
+    var status : String!
+    var auction_title : String!
+    var message : String!
+    
+    init(dict : [String : Any])
+    {
+        notificationid = dict["notificationid"] as? String ?? ""
+        userid = dict["userid"] as? String ?? ""
+        auctionid = dict["auctionid"] as? String ?? ""
+        createdon = dict["createdon"] as? String ?? ""
+        status = dict["status"] as? String ?? ""
+        auction_title = dict["auction_title"] as? String ?? ""
+        message = dict["message"] as? String ?? ""
+    }
+}

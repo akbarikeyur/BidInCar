@@ -12,11 +12,14 @@ class NotificationVC: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var tblView: UITableView!
     
+    var arrData = [NotificationModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         tblView.register(UINib.init(nibName: "CustomNotificationTVC", bundle: nil), forCellReuseIdentifier: "CustomNotificationTVC")
+        serviceCallToGetNotification()
     }
     
     //MARK:- Button click event
@@ -26,12 +29,21 @@ class NotificationVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK:- Tablewview method
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return arrData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : CustomNotificationTVC = tblView.dequeueReusableCell(withIdentifier: "CustomNotificationTVC") as! CustomNotificationTVC
-        cell.newBtn.isHidden = (indexPath.row > 2)
+        let dict = arrData[indexPath.row]
+        cell.titleLbl.text = dict.auction_title
+        cell.messageLbl.text = dict.message
+        cell.timeLbl.text = dict.createdon
+        if let date = getDateFromDateString(strDate: dict.createdon, format: "YYYY-MM-dd") {
+            if let strDate : String = getDateStringFromDate(date: date, format: "d MMM, yyyy") {
+                cell.timeLbl.text = strDate
+            }
+        }
+        cell.newBtn.isHidden = (dict.status == "read")
         cell.contentView.backgroundColor = WhiteColor
         cell.selectionStyle = .none
         return cell
@@ -47,4 +59,18 @@ class NotificationVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     */
 
+}
+
+extension NotificationVC {
+    func serviceCallToGetNotification() {
+        APIManager.shared.serviceCallToGetNotification { (dict) in
+            self.arrData = [NotificationModel]()
+            if let data = dict["data"] as? [[String : Any]] {
+                for temp in data {
+                    self.arrData.append(NotificationModel.init(dict: temp))
+                }
+            }
+            self.tblView.reloadData()
+        }
+    }
 }

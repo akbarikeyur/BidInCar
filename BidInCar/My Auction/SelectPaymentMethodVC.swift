@@ -9,7 +9,7 @@
 import UIKit
 import DropDown
 
-class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate, PayPalPaymentDelegate {
+class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var paymentTabView: UIView!
     @IBOutlet weak var visaView: View!
@@ -45,29 +45,13 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate, PayPalPaymen
     var selectedTab = 0
     var arrYearData = [String]()
     var selectedMonth = 0
-    var payPalConfig = PayPalConfiguration()
     var isAddCardBank = false
     var paymentType = ""
     var paymentParam = [String : Any]()
     var amount = 0
     var isFromAuction : Bool = false
     var isFromProfile : Bool = false
-    
-    //Set environment connection.
-
-    var environment:String = PayPalEnvironmentNoNetwork {
-        willSet(newEnvironment) {
-            if (newEnvironment != environment) {
-                PayPalMobile.preconnect(withEnvironment: newEnvironment)
-            }
-        }
-    }
-    
-    var acceptCreditCards : Bool = true {
-        didSet{
-            payPalConfig.acceptCreditCards = acceptCreditCards
-        }
-    }
+    var initialSetupViewController: PTFWInitialSetupViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,17 +106,6 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate, PayPalPaymen
         for i in 0...30{
             arrYearData.append(String(year + i))
         }
-        
-        setupPaypalConfiguration()
-    }
-    
-    func setupPaypalConfiguration()
-    {
-        payPalConfig.acceptCreditCards = acceptCreditCards
-        payPalConfig.merchantName = "Asif Issoufaly"
-        payPalConfig.languageOrLocale = Locale.preferredLanguages[0]
-        payPalConfig.payPalShippingAddressOption = .payPal
-        PayPalMobile.preconnect(withEnvironment: environment)
     }
     
     //MARK;- Button click event
@@ -181,25 +154,10 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate, PayPalPaymen
         }
         else if selectedTab == 1 {
             //paypal
-//            paypalPaymentCompleted()
-            
             if amount == 0 {
                 return
             }
-            let item1 = PayPalItem(name: "Bid In Cars", withQuantity: 1, withPrice: NSDecimalNumber(value: amount), withCurrency: "USD", withSku: "SKU2019")
-            let items = [item1]
-            let subTotal = PayPalItem.totalPrice(forItems: items)
-            
-            let payment = PayPalPayment(amount: subTotal, currencyCode: "USD", shortDescription: "Bid In Cars", intent: .sale)
-            payment.items = items
-            
-            if payment.processable {
-                let paymentVC = PayPalPaymentViewController(payment: payment, configuration: payPalConfig, delegate: self)!
-                self.present(paymentVC, animated: true, completion: nil)
-            }
-            else{
-                displayToast("Payment not possible")
-            }
+            paytab()
             
         }
         else if selectedTab == 2 {
@@ -336,21 +294,68 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate, PayPalPaymen
         }
     }
     
-    
-    func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController) {
-        print("Paypal payment cancelled")
-        paymentViewController.dismiss(animated: true, completion: nil)
-    }
-    
-    func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController, didComplete completedPayment: PayPalPayment) {
-        print("Paypal Payment Success..!")
-        paymentViewController.dismiss(animated: true) {
-            print(completedPayment.confirmation)
-            self.paypalPaymentCompleted()
+    func paytab() {
+        let bundle = Bundle(url: Bundle.main.url(forResource: "Resources", withExtension: "bundle")!)
+        self.initialSetupViewController = PTFWInitialSetupViewController.init(
+            bundle: bundle,
+            andWithViewFrame: self.view.frame,
+            andWithAmount: 5.0,
+            andWithCustomerTitle: "PayTabs Sample App",
+            andWithCurrencyCode: "USD",
+            andWithTaxAmount: 0.0,
+            andWithSDKLanguage: "en",
+            andWithShippingAddress: "Manama",
+            andWithShippingCity: "Manama",
+            andWithShippingCountry: "BHR",
+            andWithShippingState: "Manama",
+            andWithShippingZIPCode: "123456",
+            andWithBillingAddress: "Manama",
+            andWithBillingCity: "Manama",
+            andWithBillingCountry: "BHR",
+            andWithBillingState: "Manama",
+            andWithBillingZIPCode: "12345",
+            andWithOrderID: "12345",
+            andWithPhoneNumber: "0097333109781",
+            andWithCustomerEmail: "rhegazy@paytabs.com",
+            andIsTokenization:false,
+            andIsPreAuth: false,
+            andWithMerchantEmail: "rhegazy@paytabs.com",
+            andWithMerchantSecretKey: "BIueZNfPLblJnMmPYARDEoP5x1WqseI3XciX0yNLJ8v7URXTrOw6dmbKn8bQnTUk6ch6L5SudnC8fz2HozNBVZlj7w9uq4Pwg7D1",
+            andWithAssigneeCode: "SDK",
+            andWithThemeColor:UIColor.red,
+            andIsThemeColorLight: false)
+        
+        
+        self.initialSetupViewController.didReceiveBackButtonCallback = {
+            
         }
+        
+        self.initialSetupViewController.didStartPreparePaymentPage = {
+            // Start Prepare Payment Page
+            // Show loading indicator
+        }
+        self.initialSetupViewController.didFinishPreparePaymentPage = {
+            // Finish Prepare Payment Page
+            // Stop loading indicator
+        }
+        
+        self.initialSetupViewController.didReceiveFinishTransactionCallback = {(responseCode, result, transactionID, tokenizedCustomerEmail, tokenizedCustomerPassword, token, transactionState) in
+            print("Response Code: \(responseCode)")
+            print("Response Result: \(result)")
+            
+            // In Case you are using tokenization
+            print("Tokenization Cutomer Email: \(tokenizedCustomerEmail)");
+            print("Tokenization Customer Password: \(tokenizedCustomerPassword)");
+            print("TOkenization Token: \(token)");
+        }
+
+        self.view.addSubview(initialSetupViewController.view)
+        self.addChild(initialSetupViewController)
+        
+        initialSetupViewController.didMove(toParent: self)
     }
     
-    func paypalPaymentCompleted()
+    func paytabPaymentCompleted()
     {
         if paymentType == PAYMENT.PACKAGE {
             serviceCallToPurchasePackage()

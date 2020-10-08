@@ -140,6 +140,8 @@
 		18F9E1ED2355BE5000B5E071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F9E1EB2355BE5000B5E071 /* Main.storyboard */; };
 		18F9E1EF2355BE5200B5E071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F9E1EE2355BE5200B5E071 /* Assets.xcassets */; };
 		18F9E1F22355BE5200B5E071 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F9E1F02355BE5200B5E071 /* LaunchScreen.storyboard */; };
+		79AC70A0252DCB4B00068CB6 /* Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 79AC709F252DCB4B00068CB6 /* Resources.bundle */; };
+		79AC70A2252DCB5F00068CB6 /* paytabs-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79AC70A1252DCB5F00068CB6 /* paytabs-iOS.framework */; };
 		DE97AE46EC9810F92CD99B1D /* Pods_BidInCar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679A98F506DE538FDAF3F264 /* Pods_BidInCar.framework */; };
 /* End PBXBuildFile section */
 
@@ -284,6 +286,10 @@
 		18F9E1F32355BE5200B5E071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5794612B94290DCDCF8FD7D1 /* Pods-BidInCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BidInCar.release.xcconfig"; path = "Target Support Files/Pods-BidInCar/Pods-BidInCar.release.xcconfig"; sourceTree = "<group>"; };
 		679A98F506DE538FDAF3F264 /* Pods_BidInCar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BidInCar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79AC7098252DC7DD00068CB6 /* Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Resources.bundle; path = "../../../../../Downloads/paytabs-ios-library-sample-master/samples/sample.swift/sample.swift/Resources.bundle"; sourceTree = "<group>"; };
+		79AC7099252DC7DE00068CB6 /* paytabs-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "paytabs-iOS.framework"; path = "../../../../../Downloads/paytabs-ios-library-sample-master/samples/sample.swift/sample.swift/paytabs-iOS.framework"; sourceTree = "<group>"; };
+		79AC709F252DCB4B00068CB6 /* Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resources.bundle; sourceTree = "<group>"; };
+		79AC70A1252DCB5F00068CB6 /* paytabs-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "paytabs-iOS.framework"; sourceTree = "<group>"; };
 		C6F347BE9FFF42B2A927ACF1 /* Pods-BidInCar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BidInCar.debug.xcconfig"; path = "Target Support Files/Pods-BidInCar/Pods-BidInCar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -293,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE97AE46EC9810F92CD99B1D /* Pods_BidInCar.framework in Frameworks */,
+				79AC70A2252DCB5F00068CB6 /* paytabs-iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +611,8 @@
 			isa = PBXGroup;
 			children = (
 				185C75F12383C8D400342A55 /* BidInCar.entitlements */,
+				79AC70A1252DCB5F00068CB6 /* paytabs-iOS.framework */,
+				79AC709F252DCB4B00068CB6 /* Resources.bundle */,
 				18F9E1E72355BE5000B5E071 /* AppDelegate.swift */,
 				18F9E1EB2355BE5000B5E071 /* Main.storyboard */,
 				188CFC552355FEBF00C18B2A /* Home.storyboard */,
@@ -632,6 +641,8 @@
 		250043E20129204A98D0ED7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				79AC7099252DC7DE00068CB6 /* paytabs-iOS.framework */,
+				79AC7098252DC7DD00068CB6 /* Resources.bundle */,
 				679A98F506DE538FDAF3F264 /* Pods_BidInCar.framework */,
 			);
 			name = Frameworks;
@@ -734,6 +745,7 @@
 				18AEE1B223F6A5B90099286D /* CustomDraftAuctionTVC.xib in Resources */,
 				18D2402B2359BAC900A078D4 /* Auction.storyboard in Resources */,
 				188CFC5E2356031500C18B2A /* CustomCarTVC.xib in Resources */,
+				79AC70A0252DCB4B00068CB6 /* Resources.bundle in Resources */,
 				18A6E2DE235D83C100268205 /* CustomPrivacyPolicyTVC.xib in Resources */,
 				18D8DEB123DDED10001EC3BE /* CustomFeaturedAuctionTVC.xib in Resources */,
 				188CFC632356037700C18B2A /* CustomCarCVC.xib in Resources */,
@@ -1059,6 +1071,10 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JRJ7A3W5NN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BidInCar",
+				);
 				INFOPLIST_FILE = BidInCar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1082,6 +1098,10 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JRJ7A3W5NN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BidInCar",
+				);
 				INFOPLIST_FILE = BidInCar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

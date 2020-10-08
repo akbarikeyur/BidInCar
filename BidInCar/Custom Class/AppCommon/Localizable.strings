@@ -10,7 +10,8 @@
 "menu_terms" = "Terms and Conditions";
 "menu_privacy" = "Privacy Policy";
 "menu_logout" = "Logout";
-
+"menu_how_sell" = "How to sell?";
+"menu_how_buy" = "How to buy?";
 
 //Login-signup
 "enter_email" = "Please enter email";

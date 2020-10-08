@@ -70,7 +70,10 @@ struct API {
     static let CONTACT_UPLOAD               =       BASE_URL + "contactupload"
     
     static let SHIPPING_CALCULATOR          =       BASE_URL + "admin/shipping/getshippingprices"
-    static let FAQ                          =       BASE_URL + "/admin/faq/getfaqs"
+    static let FAQ                          =       BASE_URL + "admin/faq/getfaqs"
+    
+    static let GET_NOTIFICATION             =       BASE_URL + "notification/getnotification"
+    
 }
 
 
@@ -1769,6 +1772,43 @@ public class APIManager {
             }
         }
     }
+    
+    func serviceCallToGetNotification(_ completion: @escaping (_ data : [String : Any]) -> Void) {
+        if !isUserLogin() {
+            return
+        }
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        showLoader()
+        let headerParams :[String : String] = getJsonHeader()
+        Alamofire.request(API.GET_NOTIFICATION, method: .post, parameters: ["userid" : AppModel.shared.currentUser.userid!], encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
+            removeLoader()
+            switch response.result {
+            case .success:
+                print(response.result.value!)
+                if let result = response.result.value as? [String:Any] {
+                    print(result)
+                    if let data = result["data"] as? [String : Any] {
+                        completion(data)
+                    }
+                    return
+                }
+                if let error = response.result.error
+                {
+                    displayToast(error.localizedDescription)
+                    return
+                }
+                break
+            case .failure(let error):
+                print(error)
+                break
+            }
+        }
+    }
+    
     //MARK:- Get City Country Data
     func serviceCallToGetCountryList(_ completion: @escaping (_ data : [[String : Any]]) -> Void) {
         if !APIManager.isConnectedToNetwork()

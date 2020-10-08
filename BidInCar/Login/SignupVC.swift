@@ -198,7 +198,6 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             let vc : LoginVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
             self.navigationController?.pushViewController(vc, animated: true)
         }
-        
     }
     
     @IBAction func clickToSignup(_ sender: Any) {

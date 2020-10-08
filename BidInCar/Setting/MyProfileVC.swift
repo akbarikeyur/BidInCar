@@ -11,18 +11,18 @@ import UIKit
 class MyProfileVC: UploadImageVC {
 
     @IBOutlet weak var personalBtn: Button!
-    @IBOutlet weak var billingBtn: Button!
+//    @IBOutlet weak var billingBtn: Button!
     @IBOutlet weak var paymentBtn: Button!
     @IBOutlet weak var settingBtn: Button!
     @IBOutlet weak var personalImg: UIImageView!
-    @IBOutlet weak var billingImg: UIImageView!
+//    @IBOutlet weak var billingImg: UIImageView!
     @IBOutlet weak var paymentImg: UIImageView!
     @IBOutlet weak var settingImg: UIImageView!
     
     @IBOutlet weak var mainContainerView: UIView!
     
     var profileVC : ProfileVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileVC
-    var billingVC : BillingInfoVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "BillingInfoVC") as! BillingInfoVC
+//    var billingVC : BillingInfoVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "BillingInfoVC") as! BillingInfoVC
     var paymentSellerVC : PaymentSellerVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PaymentSellerVC") as! PaymentSellerVC
     var paymentBuyerVC : PaymentBuyerVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PaymentBuyerVC") as! PaymentBuyerVC
     var settingVC : SettingsVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "SettingsVC") as! SettingsVC
@@ -49,11 +49,11 @@ class MyProfileVC: UploadImageVC {
             personalImg.isHidden = false
             displaySubViewtoParentView(mainContainerView, subview: profileVC.view)
         }
-        else if sender == billingBtn {
-            billingBtn.isSelected = true
-            billingImg.isHidden = false
-            displaySubViewtoParentView(mainContainerView, subview: billingVC.view)
-        }
+//        else if sender == billingBtn {
+//            billingBtn.isSelected = true
+//            billingImg.isHidden = false
+//            displaySubViewtoParentView(mainContainerView, subview: billingVC.view)
+//        }
         else if sender == paymentBtn {
             paymentBtn.isSelected = true
             paymentImg.isHidden = false
@@ -81,15 +81,15 @@ class MyProfileVC: UploadImageVC {
     
     func resetAllTab() {
         personalBtn.isSelected = false
-        billingBtn.isSelected = false
+//        billingBtn.isSelected = false
         paymentBtn.isSelected = false
         settingBtn.isSelected = false
         personalImg.isHidden = true
-        billingImg.isHidden = true
+//        billingImg.isHidden = true
         paymentImg.isHidden = true
         settingImg.isHidden = true
         profileVC.view.removeFromSuperview()
-        billingVC.view.removeFromSuperview()
+//        billingVC.view.removeFromSuperview()
         paymentSellerVC.view.removeFromSuperview()
         paymentBuyerVC.view.removeFromSuperview()
         settingVC.view.removeFromSuperview()
