@@ -15,7 +15,10 @@ class HomeVC: UploadImageVC {
     @IBOutlet var headerView: UIView!
     @IBOutlet weak var searchTxt: UITextField!
     @IBOutlet var noDataLbl: UILabel!
+    @IBOutlet weak var featureView: UIView!
+    @IBOutlet weak var featureCV: UICollectionView!
     
+    var arrFeatureAuctionData : [AuctionModel] = [AuctionModel]()
     var arrAuctionData : [AuctionModel] = [AuctionModel]()
     var arrSearchAuctionData : [AuctionModel] = [AuctionModel]()
     var selectedCategory = AuctionTypeModel.init(dict: [String : Any]())
@@ -29,7 +32,7 @@ class HomeVC: UploadImageVC {
         NotificationCenter.default.addObserver(self, selector: #selector(updateFeatureAuctionData(_:)), name: NSNotification.Name.init(NOTIFICATION.AUCTION_FEATURED_DATA), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeAuctionData(_:)), name: NSNotification.Name.init(NOTIFICATION.REMOVE_AUCTION_DATA), object: nil)
         
-        
+        featureCV.register(UINib.init(nibName: "CustomCarCVC", bundle: nil), forCellWithReuseIdentifier: "CustomCarCVC")
         categoryCV.register(UINib.init(nibName: "CustomAuctionCategoryCVC", bundle: nil), forCellWithReuseIdentifier: "CustomAuctionCategoryCVC")
         tblView.register(UINib.init(nibName: "CustomCarTVC", bundle: nil), forCellReuseIdentifier: "CustomCarTVC")
         searchTxt.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
@@ -163,44 +166,67 @@ class HomeVC: UploadImageVC {
 extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       return AppModel.shared.AUCTION_TYPE.count
+        if collectionView == featureCV {
+            return arrFeatureAuctionData.count
+        }
+        return AppModel.shared.AUCTION_TYPE.count
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-       let newLable : UILabel = UILabel.init()
-       newLable.font = UIFont.init(name: APP_REGULAR, size: 14.0)
-       newLable.text = AppModel.shared.AUCTION_TYPE[indexPath.row].name
-       let width = newLable.intrinsicContentSize.width + 45
-       return CGSize(width: width, height: collectionView.frame.size.height)
+        if collectionView == featureCV {
+            return CGSize(width: 100, height: collectionView.frame.size.height)
+        }
+        else {
+            let newLable : UILabel = UILabel.init()
+            newLable.font = UIFont.init(name: APP_REGULAR, size: 14.0)
+            newLable.text = AppModel.shared.AUCTION_TYPE[indexPath.row].name
+            let width = newLable.intrinsicContentSize.width + 45
+            return CGSize(width: width, height: collectionView.frame.size.height)
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-       let cell : CustomAuctionCategoryCVC = categoryCV.dequeueReusableCell(withReuseIdentifier: "CustomAuctionCategoryCVC", for: indexPath) as! CustomAuctionCategoryCVC
-       let dict = AppModel.shared.AUCTION_TYPE[indexPath.row]
-       setButtonImage(cell.catImgBtn, dict.img)
-       cell.catLbl.text = dict.name
-       if selectedCategory.id == dict.id {
-           cell.catImgBtn.tintColor = DarkGrayColor
-           cell.catLbl.textColor = DarkGrayColor
-           cell.seperatorImg.isHidden = false
-       }else{
-           cell.catImgBtn.tintColor = LightGrayColor
-           cell.catLbl.textColor = LightGrayColor
-           cell.seperatorImg.isHidden = true
-       }
-       return cell
+        if collectionView == featureCV {
+            let cell : CustomCarCVC = featureCV.dequeueReusableCell(withReuseIdentifier: "CustomCarCVC", for: indexPath) as! CustomCarCVC
+            cell.setupDetails(arrFeatureAuctionData[indexPath.row])
+            return cell
+        }
+        else{
+            let cell : CustomAuctionCategoryCVC = categoryCV.dequeueReusableCell(withReuseIdentifier: "CustomAuctionCategoryCVC", for: indexPath) as! CustomAuctionCategoryCVC
+            let dict = AppModel.shared.AUCTION_TYPE[indexPath.row]
+            setButtonImage(cell.catImgBtn, dict.img)
+            cell.catLbl.text = dict.name
+            if selectedCategory.id == dict.id {
+                cell.catImgBtn.tintColor = DarkGrayColor
+                cell.catLbl.textColor = DarkGrayColor
+                cell.seperatorImg.isHidden = false
+            }else{
+                cell.catImgBtn.tintColor = LightGrayColor
+                cell.catLbl.textColor = LightGrayColor
+                cell.seperatorImg.isHidden = true
+            }
+            return cell
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedCategory = AppModel.shared.AUCTION_TYPE[indexPath.row]
-        categoryCV.reloadData()
-        if let data = AppModel.shared.AUCTION_DATA[String(self.selectedCategory.id)], data.count > 0 {
-            arrAuctionData = data
-            tblView.reloadData()
-            noDataLbl.isHidden = (arrAuctionData.count > 0)
+        if collectionView == featureCV {
+            let vc : CarDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "CarDetailVC") as! CarDetailVC
+            vc.auctionData = arrFeatureAuctionData[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
         }
-        else{
-            serviceCallToGetAuction()
+        else {
+            selectedCategory = AppModel.shared.AUCTION_TYPE[indexPath.row]
+            categoryCV.reloadData()
+            if let data = AppModel.shared.AUCTION_DATA[String(self.selectedCategory.id)], data.count > 0 {
+                arrAuctionData = data
+                tblView.reloadData()
+                noDataLbl.isHidden = (arrAuctionData.count > 0)
+                setupFeatureAuction()
+            }
+            else{
+                serviceCallToGetAuction()
+            }
         }
     }
 }
@@ -306,6 +332,7 @@ extension HomeVC {
         }
         APIManager.shared.serviceCallToGetAuction(param) { (data) in
             self.arrAuctionData = [AuctionModel]()
+            self.arrFeatureAuctionData = [AuctionModel]()
             for temp in data {
                 let auction = AuctionModel.init(dict: temp)
                 if self.selectedCategory.id == -1 {
@@ -314,11 +341,14 @@ extension HomeVC {
                 else if auction.cattype == self.selectedCategory.id {
                     self.arrAuctionData.append(auction)
                 }
+                if auction.auction_featured == "yes" {
+                    self.arrFeatureAuctionData.append(auction)
+                }
             }
             AppModel.shared.AUCTION_DATA[String(self.selectedCategory.id)] = self.arrAuctionData
             self.tblView.reloadData()
             self.noDataLbl.isHidden = (self.arrAuctionData.count > 0)
-        
+            self.setupFeatureAuction()
         }
     }
     
@@ -330,6 +360,7 @@ extension HomeVC {
         if (selectedCategory.id != -1) && (AppModel.shared.AUCTION_DATA[String(self.selectedCategory.id)] != nil) {
             arrAuctionData = AppModel.shared.AUCTION_DATA[String(self.selectedCategory.id)]!
             self.tblView.reloadData()
+            setupFeatureAuction()
         }
         else{
             if AppModel.shared.AUCTION_TYPE.count == 0 {
@@ -338,6 +369,17 @@ extension HomeVC {
                 serviceCallToGetAuctionCategoryList()
             }
         }
+    }
+    
+    func setupFeatureAuction() {
+        arrFeatureAuctionData = [AuctionModel]()
+        for temp in arrAuctionData {
+            if temp.auction_featured == "yes" {
+                arrFeatureAuctionData.append(temp)
+            }
+        }
+        self.featureCV.reloadData()
+        featureView.isHidden = (self.arrFeatureAuctionData.count == 0)
     }
     
     func serviceCallToAddBookmark(_ auctionid : String, _ type : Int)

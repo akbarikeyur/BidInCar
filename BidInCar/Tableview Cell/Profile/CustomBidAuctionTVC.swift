@@ -15,6 +15,7 @@ class CustomBidAuctionTVC: UITableViewCell {
     @IBOutlet weak var currentBidLbl: Label!
     @IBOutlet weak var yourBidLbl: Label!
     @IBOutlet weak var statusLbl: Label!
+    @IBOutlet weak var viewBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -50,6 +50,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     var selectedImgIndex = 0
     var autoCheckData = PictureModel.init()
     var isFirstTimeIncrese = true
+    var isFromPayment = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +63,11 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         setTextFieldPlaceholderColor(myBidTxt, LightGrayColor)
         depositeTxt.myTxt.keyboardType = .numberPad
         myMapView.showsUserLocation = true
-        setAuctionData()
+        
+        if !isFromPayment {
+            setAuctionData()
+        }
+        
         serviceCallToGetAuctionDetail()
     }
     
@@ -263,7 +268,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: Double(self.auctionData.auction_lat)!, longitude: Double(self.auctionData.auction_long)!)
             self.myMapView.addAnnotation(annotation)
-            let region: MKCoordinateRegion = MKCoordinateRegion(center: annotation.coordinate, span: MKCoordinateSpan(latitudeDelta: 1.0, longitudeDelta: 1.0))
+            let region: MKCoordinateRegion = MKCoordinateRegion(center: annotation.coordinate, span: MKCoordinateSpan(latitudeDelta: 5000, longitudeDelta: 5000))
             self.myMapView.setRegion(region, animated: true)
         }
         carCV.reloadData()
@@ -514,7 +519,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     //MARK:- Service called
     func serviceCallToGetAuctionDetail()
     {
-        APIManager.shared.serviceCallToGetAuctionDetail(auctionData.auctionid) { (data) in
+        APIManager.shared.serviceCallToGetAuctionDetail(auctionData.auctionid, isFromPayment) { (data) in
             if let tempData : [String : Any] = data["auction"] as? [String : Any] {
                 self.auctionData = AuctionModel.init(dict: tempData)
             }
@@ -546,6 +551,10 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                 self.auctionPriceLbl.text = displayPriceWithCurrency(self.auctionData.auction_price)
             }else{
                 self.auctionPriceLbl.text = displayPriceWithCurrency(self.auctionData.active_auction_price)
+            }
+            
+            if self.isFromPayment {
+                self.setAuctionData()
             }
         }
     }

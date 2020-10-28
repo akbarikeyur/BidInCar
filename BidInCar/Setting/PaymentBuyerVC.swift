@@ -55,16 +55,29 @@ class PaymentBuyerVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.currentBidLbl.text = dict.auction_price
         cell.yourBidLbl.text = dict.bidprice
         cell.statusLbl.text = dict.auction_status
+        cell.viewBtn.tag = indexPath.row
+        cell.viewBtn.addTarget(self, action: #selector(clickToViewAction(_:)), for: .touchUpInside)
         cell.selectionStyle = .none
         return cell
     }
     
     //MARK:- Button click event
+    @objc @IBAction func clickToViewAction(_ sender: UIButton) {
+        let dict = arrBidAuction[sender.tag]
+        let tempAuction = AuctionModel.init()
+        tempAuction.auctionid = dict.auctionid
+        let vc : CarDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "CarDetailVC") as! CarDetailVC
+        vc.auctionData = tempAuction
+        vc.isFromPayment = true
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func clickToAddDeposite(_ sender: Any) {
         self.view.endEditing(true)
         depositeTxt.myTxt.text = ""
         displaySubViewtoParentView(self.view, subview: depositeView)
     }
+    
     @IBAction func clickToCloseDepositeView(_ sender: Any) {
         depositeView.removeFromSuperview()
     }
@@ -72,10 +85,10 @@ class PaymentBuyerVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func clickToDepositeNow(_ sender: Any) {
         self.view.endEditing(true)
         if depositeTxt.myTxt.text?.trimmed == "" {
-            displayToast("Please enter deposite amount")
+            displayToast("Please enter deposit amount")
         }
         else if Int(depositeTxt.myTxt.text!) == nil || Int(depositeTxt.myTxt.text!) == 0 {
-            displayToast("Please enter deposite amount")
+            displayToast("Please enter deposit amount")
         }
         else{
             depositeView.removeFromSuperview()

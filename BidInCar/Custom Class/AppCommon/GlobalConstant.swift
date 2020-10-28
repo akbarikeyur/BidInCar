@@ -34,6 +34,7 @@ let TWITTER_ACCESS_SECRET_TOKEN = "IWNPQlN5nKTISnZbqR3lwbOED4IIS1NnR3k7DLWbHDXrf
 let PAYPAL_CLIENT_ID = "AbVf36WY8U_488ArYrh5iZ1azxmyZ-6MgO5gQRStHgnBfgnrDZFfL01K5f6cTs8bAvnPUvVLhS1bdTYY"
 let PAYPAL_SECRET = "EJcHmbghyDMOs9zxGqKsu7793Rff6V8RlrdtOQmCic_IdWUd_ROqc7JaBBKSaLmlR2vudFKInEmgjrc_"
 
+let PAYTAB_KEY = "VxmCXzfYr4rMSsyHanFmqXNbL1A62L4XjrAg0QfsUGeN9MvjaaFA8tLTumZw74uqv4HwVWYPDcDMY858iLJreukIRkfZpJqUO7qJ"
 
 let TERMS_URL = "http://anglotestserver.website/auction_new/terms-and-condition"
 let POLICY_URL = "http://anglotestserver.website/auction_new/privacy-policy"

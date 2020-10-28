@@ -175,7 +175,7 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
     //MARK:- Service Call
     func serviceCallToGetAuctionDetail()
     {
-        APIManager.shared.serviceCallToGetAuctionDetail(auction.auctionid) { (data) in
+        APIManager.shared.serviceCallToGetAuctionDetail(auction.auctionid, false) { (data) in
             if let tempData : [String : Any] = data["auction"] as? [String : Any] {
                 if let your_bid : Int = tempData["your_bid"] as? Int {
                     self.auction.your_bid = your_bid

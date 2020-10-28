@@ -70,9 +70,9 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toyota Corolla" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZIw-u3-aMS" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                        <rect key="frame" x="5" y="100" width="90" height="42"/>
-                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toyota Corolla" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIw-u3-aMS" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                        <rect key="frame" x="5" y="100" width="90" height="18.5"/>
+                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                         <nil key="textColor"/>
                         <color key="highlightedColor" red="0.40784313725490196" green="0.38431372549019605" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <userDefinedRuntimeAttributes>
@@ -81,7 +81,7 @@
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                <real key="value" value="15"/>
+                                <real key="value" value="13"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
@@ -89,7 +89,7 @@
             </view>
             <constraints>
                 <constraint firstItem="ZIw-u3-aMS" firstAttribute="top" secondItem="Usu-bg-yhR" secondAttribute="bottom" constant="10" id="E35-kB-GHw"/>
-                <constraint firstAttribute="bottom" secondItem="ZIw-u3-aMS" secondAttribute="bottom" constant="8" id="O4L-ET-YPH"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZIw-u3-aMS" secondAttribute="bottom" constant="8" id="O4L-ET-YPH"/>
                 <constraint firstAttribute="trailing" secondItem="ZIw-u3-aMS" secondAttribute="trailing" constant="5" id="Ou0-Yn-gaz"/>
                 <constraint firstItem="Usu-bg-yhR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="PKl-PD-vVx"/>
                 <constraint firstItem="ZIw-u3-aMS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="VzK-LB-Tnw"/>
@@ -105,7 +105,7 @@
                 <outlet property="starBtn" destination="8gw-UG-vPW" id="0o1-97-mrx"/>
                 <outlet property="titleLbl" destination="ZIw-u3-aMS" id="Eha-Zr-cs9"/>
             </connections>
-            <point key="canvasLocation" x="133" y="154"/>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </collectionViewCell>
     </objects>
     <resources>

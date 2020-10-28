@@ -8,6 +8,7 @@
 
 import UIKit
 import DropDown
+import MapKit
 
 class ContactUsVC: UploadImageVC {
 
@@ -18,6 +19,8 @@ class ContactUsVC: UploadImageVC {
     @IBOutlet weak var commentTxtView: FloatingTextview!
     @IBOutlet weak var attachBtn: Button!
     @IBOutlet var sucessView: UIView!
+    @IBOutlet weak var addressMapView: MKMapView!
+    
     var selectedImage : UIImage?
     
     override func viewDidLoad() {
@@ -32,6 +35,15 @@ class ContactUsVC: UploadImageVC {
             emailTxtView.myTxt.text = AppModel.shared.currentUser.user_email
             phoneTxtView.myTxt.text = AppModel.shared.currentUser.user_phonenumber
         }
+        
+        let annotation = MKPointAnnotation()
+        let centerCoordinate = CLLocationCoordinate2D(latitude: 25.225560, longitude:55.284800)
+        annotation.coordinate = centerCoordinate
+        annotation.title = ""
+        addressMapView.addAnnotation(annotation)
+        
+        let region = MKCoordinateRegion(center: centerCoordinate, latitudinalMeters: CLLocationDistance(exactly: 5000)!, longitudinalMeters: CLLocationDistance(exactly: 5000)!)
+        addressMapView.setRegion(addressMapView.regionThatFits(region), animated: true)
         
     }
     

@@ -7364,8 +7364,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q3Y-z9-Gsk">
                                                 <rect key="frame" x="0.0" y="528" width="320" height="38"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deposite Adjusted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMw-z2-j3Z" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="20" y="10" width="108" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deposit Adjusted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMw-z2-j3Z" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="10" width="100.5" height="17"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="12"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
@@ -8241,20 +8241,13 @@ dXRpb246A
                     <rect key="frame" x="0.0" y="0.0" width="320" height="260"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="summary_success" translatesAutoresizingMaskIntoConstraints="NO" id="dhn-vB-aWO">
-                            <rect key="frame" x="142" y="60" width="36" height="45"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paytab" translatesAutoresizingMaskIntoConstraints="NO" id="ie9-hx-56d">
+                            <rect key="frame" x="32" y="20" width="256" height="170"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="45" id="arf-qi-KBL"/>
-                                <constraint firstAttribute="width" constant="36" id="vcE-RM-aIF"/>
+                                <constraint firstAttribute="height" constant="170" id="hH9-Zo-Pyj"/>
                             </constraints>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paypal_logo" translatesAutoresizingMaskIntoConstraints="NO" id="ie9-hx-56d">
-                            <rect key="frame" x="85" y="115" width="150.5" height="45"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="45" id="2Kn-wr-faM"/>
-                            </constraints>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secure Paymentsystems" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VqK-rI-PPc" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simple and Trusted Payments" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VqK-rI-PPc" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                             <rect key="frame" x="20" y="165" width="280" height="17"/>
                             <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="12"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -8318,24 +8311,22 @@ dXRpb246A
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="VqK-rI-PPc" firstAttribute="top" secondItem="ie9-hx-56d" secondAttribute="bottom" constant="5" id="1K8-Ao-XSP"/>
                         <constraint firstItem="vbE-Fz-DWx" firstAttribute="leading" secondItem="cKo-j7-GUY" secondAttribute="leading" id="2GJ-Jd-cmj"/>
                         <constraint firstAttribute="trailing" secondItem="VqK-rI-PPc" secondAttribute="trailing" constant="20" id="3s7-3n-Zgo"/>
-                        <constraint firstItem="dhn-vB-aWO" firstAttribute="centerX" secondItem="cKo-j7-GUY" secondAttribute="centerX" id="53U-Bf-TWa"/>
+                        <constraint firstItem="QMb-YE-0oH" firstAttribute="top" secondItem="ie9-hx-56d" secondAttribute="bottom" constant="2" id="65X-TK-fHA"/>
                         <constraint firstItem="ie9-hx-56d" firstAttribute="centerX" secondItem="cKo-j7-GUY" secondAttribute="centerX" id="9LJ-ln-zrC"/>
                         <constraint firstItem="QMb-YE-0oH" firstAttribute="top" secondItem="vbE-Fz-DWx" secondAttribute="bottom" constant="10" id="Cs6-aX-RKU"/>
                         <constraint firstAttribute="trailing" secondItem="KdL-GZ-wKr" secondAttribute="trailing" constant="10" id="H9A-p1-qnU"/>
                         <constraint firstItem="QMb-YE-0oH" firstAttribute="leading" secondItem="cKo-j7-GUY" secondAttribute="leading" id="HYY-EN-C4c"/>
                         <constraint firstItem="KdL-GZ-wKr" firstAttribute="leading" secondItem="Eia-aD-07R" secondAttribute="trailing" constant="10" id="N8X-PK-1tK"/>
                         <constraint firstItem="vbE-Fz-DWx" firstAttribute="trailing" secondItem="cKo-j7-GUY" secondAttribute="trailing" id="RQy-kS-mP1"/>
+                        <constraint firstItem="ie9-hx-56d" firstAttribute="top" secondItem="cKo-j7-GUY" secondAttribute="top" constant="20" id="Xza-qb-ire"/>
                         <constraint firstItem="QMb-YE-0oH" firstAttribute="trailing" secondItem="cKo-j7-GUY" secondAttribute="trailing" id="Yie-Wd-i4g"/>
                         <constraint firstAttribute="bottom" secondItem="KdL-GZ-wKr" secondAttribute="bottom" constant="14" id="Z8z-Lk-L5k"/>
-                        <constraint firstItem="ie9-hx-56d" firstAttribute="top" secondItem="dhn-vB-aWO" secondAttribute="bottom" constant="10" id="awf-qe-hxZ"/>
                         <constraint firstItem="vbE-Fz-DWx" firstAttribute="top" secondItem="VqK-rI-PPc" secondAttribute="bottom" id="dwu-uG-Vvt"/>
                         <constraint firstItem="KdL-GZ-wKr" firstAttribute="top" secondItem="Eia-aD-07R" secondAttribute="top" id="htl-SJ-FkU"/>
                         <constraint firstItem="Eia-aD-07R" firstAttribute="top" secondItem="QMb-YE-0oH" secondAttribute="bottom" constant="20" id="jJr-X4-tm0"/>
                         <constraint firstItem="VqK-rI-PPc" firstAttribute="leading" secondItem="cKo-j7-GUY" secondAttribute="leading" constant="20" id="kq1-m6-Xjf"/>
-                        <constraint firstItem="dhn-vB-aWO" firstAttribute="top" secondItem="cKo-j7-GUY" secondAttribute="top" constant="60" id="mhk-fM-Yi6"/>
                         <constraint firstItem="Eia-aD-07R" firstAttribute="leading" secondItem="cKo-j7-GUY" secondAttribute="leading" constant="20" id="x5e-BM-b2O"/>
                     </constraints>
                 </view>
@@ -9126,13 +9117,13 @@ Registration Package!</string>
         <image name="info_green" width="15" height="15"/>
         <image name="line_border" width="101" height="385"/>
         <image name="map_pin" width="30" height="30"/>
-        <image name="more" width="4" height="18"/>
+        <image name="more" width="20" height="20"/>
         <image name="next_arrow" width="18.5" height="16"/>
         <image name="no" width="15.5" height="19"/>
         <image name="notification" width="22.5" height="23"/>
         <image name="odometer" width="45" height="44"/>
-        <image name="paypal_logo" width="150.5" height="40.5"/>
         <image name="paypal_name" width="66" height="19"/>
+        <image name="paytab" width="256" height="256"/>
         <image name="question" width="15" height="15"/>
         <image name="select_blue" width="18" height="18"/>
         <image name="select_circle" width="11" height="11"/>

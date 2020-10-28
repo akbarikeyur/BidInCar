@@ -15,6 +15,7 @@ target 'BidInCar' do
   pod 'Alamofire'
   pod 'AlamofireJsonToObjects'
   pod 'SDWebImage'
+  pod 'SDWebImageWebPCoder'
   pod 'SKPhotoBrowser'
   
   pod 'FBSDKLoginKit'
@@ -32,5 +33,5 @@ target 'BidInCar' do
   pod 'PINCache'
   pod 'MBProgressHUD', '~> 1.1.0'
   pod 'ActionSheetPicker-3.0'
-  pod 'AFNetworking'
+  pod 'AFNetworking', '~> 3.0.4'
 end

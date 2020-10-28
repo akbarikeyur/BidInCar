@@ -1,7 +1,7 @@
 //Side menu
 "menu_home" = "Home";
 "menu_auction" = "My Auction";
-"menu_bookmark" = "Bookmark";
+"menu_bookmark" = "Wish List";
 "menu_post" = "Post Auction";
 "menu_package" = "Package";
 "menu_calc" = "Shipping Calculator";
@@ -40,17 +40,18 @@
 "enter_po_box" = "Please enter PO Box";
 
 //Guest User Message
-"bookmark_login_msg" = "Please login/signup to bookmark this auction.";
-"bookmark_list_login_msg" = "Please login/signup to see your bookmark auctions.";
+"bookmark_login_msg" = "Please login/signup to add wish list.";
+"bookmark_list_login_msg" = "Please login/signup to see your wish list.";
 "my_auction_list_login_msg" = "Please login/signup to see your auctions.";
 "post_auction_login_msg" = "Please login/signup to post an auction.";
 "bid_login_msg" = "Please login/signup to bid this auction.";
 "add_deposite_login_msg" = "Please login/signup to add deposit.";
+"my_profile_login_msg" = "Please login/signup to see your profile.";
 
 //Auction detail
 "enter_bid_price" = "Please enter your bid price";
-"add_bookmark" = "bookmark added to your list";
-"remove_bookmark" = "bookmark removed successfully";
+"add_bookmark" = "Auction added to your wish list";
+"remove_bookmark" = "Auction removed from wish list";
 
 //Payment detail
 "enter_card_name" = "Please enter card name";

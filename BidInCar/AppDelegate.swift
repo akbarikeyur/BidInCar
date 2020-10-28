@@ -18,6 +18,7 @@ import Firebase
 import FirebaseMessaging
 import FirebaseInstanceID
 import GooglePlaces
+import SDWebImageWebPCoder
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -44,6 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         //Twitter
         TWTRTwitter.sharedInstance().start(withConsumerKey: TWITTER_API_KEY, consumerSecret: TWITTER_API_SECRET_KEY)
+        
+        let WebPCoder = SDImageWebPCoder.shared
+        SDImageCodersManager.shared.addCoder(WebPCoder)
+        SDWebImageDownloader.shared.setValue("image/webp,image/*,*/*;q=0.8", forHTTPHeaderField:"Accept")
         
         //PayPal
         //Live

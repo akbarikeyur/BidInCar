@@ -298,8 +298,8 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
         let bundle = Bundle(url: Bundle.main.url(forResource: "Resources", withExtension: "bundle")!)
         self.initialSetupViewController = PTFWInitialSetupViewController.init(
             bundle: bundle,
-            andWithViewFrame: self.view.frame,
-            andWithAmount: 5.0,
+            andWithViewFrame: UIApplication.topViewController()!.view.frame,
+            andWithAmount: Float(amount),
             andWithCustomerTitle: "PayTabs Sample App",
             andWithCurrencyCode: "USD",
             andWithTaxAmount: 0.0,
@@ -319,12 +319,11 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             andWithCustomerEmail: "rhegazy@paytabs.com",
             andIsTokenization:false,
             andIsPreAuth: false,
-            andWithMerchantEmail: "rhegazy@paytabs.com",
-            andWithMerchantSecretKey: "BIueZNfPLblJnMmPYARDEoP5x1WqseI3XciX0yNLJ8v7URXTrOw6dmbKn8bQnTUk6ch6L5SudnC8fz2HozNBVZlj7w9uq4Pwg7D1",
+            andWithMerchantEmail: "info@bidincars.com",
+            andWithMerchantSecretKey: "VxmCXzfYr4rMSsyHanFmqXNbL1A62L4XjrAg0QfsUGeN9MvjaaFA8tLTumZw74uqv4HwVWYPDcDMY858iLJreukIRkfZpJqUO7qJ",
             andWithAssigneeCode: "SDK",
-            andWithThemeColor:UIColor.red,
+            andWithThemeColor:UIColor.blue,
             andIsThemeColorLight: false)
-        
         
         self.initialSetupViewController.didReceiveBackButtonCallback = {
             
@@ -347,6 +346,15 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             print("Tokenization Cutomer Email: \(tokenizedCustomerEmail)");
             print("Tokenization Customer Password: \(tokenizedCustomerPassword)");
             print("TOkenization Token: \(token)");
+            
+            if responseCode == 100 {
+                self.paytabPaymentCompleted()
+            }
+            else{
+                showAlert("Error", message: result) {
+                    
+                }
+            }
         }
 
         self.view.addSubview(initialSetupViewController.view)

@@ -888,16 +888,18 @@ public class APIManager {
         }
     }
     
-    func serviceCallToGetAuctionDetail(_ auctionid : String, _ completion: @escaping (_ data : [String : Any]) -> Void) {
+    func serviceCallToGetAuctionDetail(_ auctionid : String, _ isLoaderDisplay : Bool, _ completion: @escaping (_ data : [String : Any]) -> Void) {
         if !APIManager.isConnectedToNetwork()
         {
             APIManager().networkErrorMsg()
             return
         }
-//        showLoader()
+        if isLoaderDisplay {
+            showLoader()
+        }
         let headerParams :[String : String] = getJsonHeader()
         Alamofire.request(API.GET_AUCTION_DETAIL, method: .post, parameters: ["auctionid":auctionid], encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
-//            removeLoader()
+            removeLoader()
             switch response.result {
             case .success:
                 print(response.result.value!)

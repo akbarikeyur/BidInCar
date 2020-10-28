@@ -13,6 +13,7 @@ class LoginVC: UIViewController {
 
     @IBOutlet weak var unameTxt: FloatingTextfiledView!
     @IBOutlet weak var passwordTxt: FloatingTextfiledView!
+    @IBOutlet weak var keepBtn: Button!
     
     @IBOutlet weak var signupLbl: Label!
     
@@ -67,6 +68,10 @@ class LoginVC: UIViewController {
     @IBAction func clickToBack(_ sender: Any) {
         self.view.endEditing(true)
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func clickToKeepLogin(_ sender: Any) {
+        keepBtn.isSelected = !keepBtn.isSelected
     }
     
     @IBAction func clickToSocialLogin(_ sender: UIButton) {

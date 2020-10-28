@@ -1,19 +1,19 @@
 PODS:
   - ActionSheetPicker-3.0 (2.6.0)
-  - AFNetworking (4.0.1):
-    - AFNetworking/NSURLSession (= 4.0.1)
-    - AFNetworking/Reachability (= 4.0.1)
-    - AFNetworking/Security (= 4.0.1)
-    - AFNetworking/Serialization (= 4.0.1)
-    - AFNetworking/UIKit (= 4.0.1)
-  - AFNetworking/NSURLSession (4.0.1):
+  - AFNetworking (3.0.4):
+    - AFNetworking/NSURLSession (= 3.0.4)
+    - AFNetworking/Reachability (= 3.0.4)
+    - AFNetworking/Security (= 3.0.4)
+    - AFNetworking/Serialization (= 3.0.4)
+    - AFNetworking/UIKit (= 3.0.4)
+  - AFNetworking/NSURLSession (3.0.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (4.0.1)
-  - AFNetworking/Security (4.0.1)
-  - AFNetworking/Serialization (4.0.1)
-  - AFNetworking/UIKit (4.0.1):
+  - AFNetworking/Reachability (3.0.4)
+  - AFNetworking/Security (3.0.4)
+  - AFNetworking/Serialization (3.0.4)
+  - AFNetworking/UIKit (3.0.4):
     - AFNetworking/NSURLSession
   - Alamofire (4.9.1)
   - AlamofireJsonToObjects (2.4.1):
@@ -126,6 +126,15 @@ PODS:
   - GTMSessionFetcher/Full (1.3.0):
     - GTMSessionFetcher/Core (= 1.3.0)
   - IQKeyboardManagerSwift (6.5.2)
+  - libwebp (1.1.0):
+    - libwebp/demux (= 1.1.0)
+    - libwebp/mux (= 1.1.0)
+    - libwebp/webp (= 1.1.0)
+  - libwebp/demux (1.1.0):
+    - libwebp/webp
+  - libwebp/mux (1.1.0):
+    - libwebp/demux
+  - libwebp/webp (1.1.0)
   - Lockbox (3.0.6)
   - Mantle (2.1.4):
     - Mantle/extobjc (= 2.1.4)
@@ -155,6 +164,9 @@ PODS:
   - SDWebImage (5.2.5):
     - SDWebImage/Core (= 5.2.5)
   - SDWebImage/Core (5.2.5)
+  - SDWebImageWebPCoder (0.3.1):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.0)
   - SKPhotoBrowser (6.1.0)
   - Toaster (2.2.0)
   - TwitterCore (3.2.0)
@@ -163,7 +175,7 @@ PODS:
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
-  - AFNetworking
+  - AFNetworking (~> 3.0.4)
   - Alamofire
   - AlamofireJsonToObjects
   - BIObjCHelpers
@@ -184,6 +196,7 @@ DEPENDENCIES:
   - Reachability
   - SBJson
   - SDWebImage
+  - SDWebImageWebPCoder
   - SKPhotoBrowser
   - Toaster
   - TwitterKit
@@ -218,6 +231,7 @@ SPEC REPOS:
     - GTMAppAuth
     - GTMSessionFetcher
     - IQKeyboardManagerSwift
+    - libwebp
     - Lockbox
     - Mantle
     - MBProgressHUD
@@ -231,6 +245,7 @@ SPEC REPOS:
     - Reachability
     - SBJson
     - SDWebImage
+    - SDWebImageWebPCoder
     - SKPhotoBrowser
     - Toaster
     - TwitterCore
@@ -238,7 +253,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: f47ea288343f6fb86285f1cca1f849bd2a40a54e
-  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireJsonToObjects: 2f652417f69ca86f229b704cdd00370bb892af45
   AppAuth: bce82c76043657c99d91e7882e8a9e1a93650cd4
@@ -265,6 +280,7 @@ SPEC CHECKSUMS:
   GTMAppAuth: 4deac854479704f348309e7b66189e604cf5e01e
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
   IQKeyboardManagerSwift: c75366f1f19590e8caeae45fcd5815c9289d6099
+  libwebp: 946cb3063cea9236285f7e9a8505d806d30e07f3
   Lockbox: 4291a0b8b1aed35474881c4e592961dec3ca695e
   Mantle: bf2e1b464f82465b9074e9de970739a2615e093a
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
@@ -278,11 +294,12 @@ SPEC CHECKSUMS:
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SBJson: 31813d1508edec904663cd59e71e0225d9dd8e07
   SDWebImage: 4eabf2fa6695c95c47724214417a9c036c965e4a
+  SDWebImageWebPCoder: ce58a29621c2806dd5c36695ed192cf67163ff9d
   SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
   Toaster: c1a81b376edcc2470157b4d1ee1e9341d3b96455
   TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
   TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
 
-PODFILE CHECKSUM: 0165a12e56839bec07ef383a433bb89f5e6eb0f8
+PODFILE CHECKSUM: 7d01d0587fbcf5243e787846f99cf1bb0adfc32e
 
 COCOAPODS: 1.9.3
