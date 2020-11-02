@@ -140,6 +140,10 @@
 		18F9E1ED2355BE5000B5E071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F9E1EB2355BE5000B5E071 /* Main.storyboard */; };
 		18F9E1EF2355BE5200B5E071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F9E1EE2355BE5200B5E071 /* Assets.xcassets */; };
 		18F9E1F22355BE5200B5E071 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F9E1F02355BE5200B5E071 /* LaunchScreen.storyboard */; };
+		7979923C25503F67008DBA48 /* CustomInfoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7979923A25503F67008DBA48 /* CustomInfoCVC.swift */; };
+		7979923D25503F67008DBA48 /* CustomInfoCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7979923B25503F67008DBA48 /* CustomInfoCVC.xib */; };
+		799643092550497F00B772B1 /* buyer_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 799643082550497F00B772B1 /* buyer_info.json */; };
+		7996430B25504A6B00B772B1 /* seller_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 7996430A25504A6B00B772B1 /* seller_info.json */; };
 		79AC70A0252DCB4B00068CB6 /* Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 79AC709F252DCB4B00068CB6 /* Resources.bundle */; };
 		79AC70A2252DCB5F00068CB6 /* paytabs-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79AC70A1252DCB5F00068CB6 /* paytabs-iOS.framework */; };
 		DE97AE46EC9810F92CD99B1D /* Pods_BidInCar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679A98F506DE538FDAF3F264 /* Pods_BidInCar.framework */; };
@@ -286,6 +290,10 @@
 		18F9E1F32355BE5200B5E071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5794612B94290DCDCF8FD7D1 /* Pods-BidInCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BidInCar.release.xcconfig"; path = "Target Support Files/Pods-BidInCar/Pods-BidInCar.release.xcconfig"; sourceTree = "<group>"; };
 		679A98F506DE538FDAF3F264 /* Pods_BidInCar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BidInCar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7979923A25503F67008DBA48 /* CustomInfoCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInfoCVC.swift; sourceTree = "<group>"; };
+		7979923B25503F67008DBA48 /* CustomInfoCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomInfoCVC.xib; sourceTree = "<group>"; };
+		799643082550497F00B772B1 /* buyer_info.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = buyer_info.json; sourceTree = "<group>"; };
+		7996430A25504A6B00B772B1 /* seller_info.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = seller_info.json; sourceTree = "<group>"; };
 		79AC7098252DC7DD00068CB6 /* Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Resources.bundle; path = "../../../../../Downloads/paytabs-ios-library-sample-master/samples/sample.swift/sample.swift/Resources.bundle"; sourceTree = "<group>"; };
 		79AC7099252DC7DE00068CB6 /* paytabs-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "paytabs-iOS.framework"; path = "../../../../../Downloads/paytabs-ios-library-sample-master/samples/sample.swift/sample.swift/paytabs-iOS.framework"; sourceTree = "<group>"; };
 		79AC709F252DCB4B00068CB6 /* Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resources.bundle; sourceTree = "<group>"; };
@@ -362,6 +370,8 @@
 				188CFC582355FF1E00C18B2A /* HomeVC.swift */,
 				184B2C81235738B600A374E9 /* CarDetailVC.swift */,
 				18D8D7AA237E5F1100B9A578 /* MapVC.swift */,
+				799643082550497F00B772B1 /* buyer_info.json */,
+				7996430A25504A6B00B772B1 /* seller_info.json */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -403,6 +413,8 @@
 				1820C352240A895F008DFF5F /* CustomCategoryCVC.xib */,
 				1863D642241666E800EA6B1B /* CustomAuctionCategoryCVC.swift */,
 				1863D643241666E800EA6B1B /* CustomAuctionCategoryCVC.xib */,
+				7979923A25503F67008DBA48 /* CustomInfoCVC.swift */,
+				7979923B25503F67008DBA48 /* CustomInfoCVC.xib */,
 			);
 			path = "CollectionView Cell";
 			sourceTree = "<group>";
@@ -743,12 +755,15 @@
 				18F9E1EF2355BE5200B5E071 /* Assets.xcassets in Resources */,
 				18B245022355C19600AEFDC6 /* Poppins-Medium.ttf in Resources */,
 				18AEE1B223F6A5B90099286D /* CustomDraftAuctionTVC.xib in Resources */,
+				799643092550497F00B772B1 /* buyer_info.json in Resources */,
+				7979923D25503F67008DBA48 /* CustomInfoCVC.xib in Resources */,
 				18D2402B2359BAC900A078D4 /* Auction.storyboard in Resources */,
 				188CFC5E2356031500C18B2A /* CustomCarTVC.xib in Resources */,
 				79AC70A0252DCB4B00068CB6 /* Resources.bundle in Resources */,
 				18A6E2DE235D83C100268205 /* CustomPrivacyPolicyTVC.xib in Resources */,
 				18D8DEB123DDED10001EC3BE /* CustomFeaturedAuctionTVC.xib in Resources */,
 				188CFC632356037700C18B2A /* CustomCarCVC.xib in Resources */,
+				7996430B25504A6B00B772B1 /* seller_info.json in Resources */,
 				18262FA42383A24F002E063F /* CustomMultiAuctionPackageTVC.xib in Resources */,
 				18B245042355C19600AEFDC6 /* Poppins-Bold.ttf in Resources */,
 				18A33EAC23F2C6CE00BE0065 /* GoogleService-Info.plist in Resources */,
@@ -859,6 +874,7 @@
 				181AD909235873E40006CACF /* BookmarkVC.swift in Sources */,
 				18B85ACD236022D300F6B2C6 /* PaymentSummaryVC.swift in Sources */,
 				18B85AD023602A1100F6B2C6 /* CustomFaqTVC.swift in Sources */,
+				7979923C25503F67008DBA48 /* CustomInfoCVC.swift in Sources */,
 				18C7BD3D23608A7F008C4783 /* SelectPaymentMethodVC.swift in Sources */,
 				18B244D92355C19600AEFDC6 /* Data+RUI.swift in Sources */,
 				182848F7235EEA0B009DBDF7 /* PostAuctionFeaturesVC.swift in Sources */,

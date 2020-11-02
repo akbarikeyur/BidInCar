@@ -28,7 +28,7 @@ class SelectAuctionCategoryVC: UIViewController, UICollectionViewDelegate, UICol
     }
     
     @IBAction func clickToNext(_ sender: Any) {
-        if selectedType.id == 0 {
+        if selectedType.id == 0 || selectedType.id == -1 {
             displayToast("Please select auction type")
         }else{
             let vc : PostCarAuctionVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PostCarAuctionVC") as! PostCarAuctionVC

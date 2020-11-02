@@ -526,6 +526,30 @@ func attributedStringWithColor(_ mainString : String, _ strings: [String], color
     return attributedString
 }
 
+func getAttributeStringWithColor(_ main_string : String, _ substring : [String], color : UIColor?, font : UIFont?, isUnderLine : Bool) -> NSMutableAttributedString
+{
+    let attribute = NSMutableAttributedString.init(string: main_string)
+    
+    for sub_string in substring{
+        let range = (main_string as NSString).range(of: sub_string)
+        if let newColor = color{
+            attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: newColor , range: range)
+        }
+        if let newFont = font {
+            attribute.addAttribute(NSAttributedString.Key.font, value: newFont , range: range)
+        }
+        
+        if isUnderLine{
+            attribute.addAttribute(NSAttributedString.Key.underlineStyle , value: NSUnderlineStyle.single.rawValue, range: range)
+            if let newColor = color{
+                attribute.addAttribute(NSAttributedString.Key.underlineColor , value: newColor, range: range)
+            }
+        }
+    }
+    
+    return attribute
+}
+
 //MARK:- Set Image
 
 func setImageViewImage(_ imgView : UIImageView, _ strUrl : String, _ placeHolderImg : String)
@@ -672,4 +696,20 @@ func displayFullScreenImage(_ arrImg : [String], _ index : Int) {
     let browser = SKPhotoBrowser(photos: images)
     browser.initializePageIndex(index)
     UIApplication.topViewController()!.present(browser, animated: true, completion: {})
+}
+
+//MARK:- Get Json from file
+func getJsonFromFile(_ file : String) -> [[String : Any]]
+{
+    if let filePath = Bundle.main.path(forResource: file, ofType: "json"), let data = NSData(contentsOfFile: filePath) {
+        do {
+            if let json : [[String : Any]] = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions.allowFragments) as? [[String : Any]] {
+                return json
+            }
+        }
+        catch {
+            //Handle error
+        }
+    }
+    return [[String : Any]]()
 }

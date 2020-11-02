@@ -96,8 +96,8 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func setupMenu()
     {
         arrMenuData = [[String : Any]]()
-        let arrMenuTitle : [String] = [NSLocalizedString("menu_home", comment: ""), NSLocalizedString("menu_auction", comment: ""), NSLocalizedString("menu_bookmark", comment: ""), NSLocalizedString("menu_profile", comment: ""), NSLocalizedString("menu_contact", comment: ""), NSLocalizedString("menu_terms", comment: ""), NSLocalizedString("menu_privacy", comment: ""), NSLocalizedString("menu_calc", comment: "")]
-        let arrMenuImage : [String] = ["menu_home", "menu_auction", "menu_bookmark", "menu_profile", "menu_contact", "menu_terms","menu_privacy", "menu_calculator"]
+        let arrMenuTitle : [String] = [NSLocalizedString("menu_home", comment: ""), NSLocalizedString("menu_auction", comment: ""), NSLocalizedString("menu_bookmark", comment: ""), NSLocalizedString("menu_profile", comment: ""), NSLocalizedString("menu_contact", comment: ""), NSLocalizedString("menu_terms", comment: ""), NSLocalizedString("menu_privacy", comment: ""), NSLocalizedString("menu_calc", comment: ""), NSLocalizedString("menu_logout", comment: "")]
+        let arrMenuImage : [String] = ["menu_home", "menu_auction", "menu_bookmark", "menu_profile", "menu_contact", "menu_terms","menu_privacy", "menu_calculator", "logout"]
         
         for i in 0..<arrMenuTitle.count {
             arrMenuData.append(["title" : arrMenuTitle[i], "image" : arrMenuImage[i]])
@@ -128,7 +128,8 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func clickToPostAuction(_ sender: UIButton) {
         self.menuContainerViewController.toggleLeftSideMenuCompletion(nil)
         if !isUserLogin() {
-            AppDelegate().sharedDelegate().showLoginPopup("post_auction_login_msg")
+            AppDelegate().sharedDelegate().navigateToLogin()
+            //AppDelegate().sharedDelegate().showLoginPopup("post_auction_login_msg")
             return
         }
         let navController = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PostAuctionVCNav") as! UINavigationController
@@ -139,7 +140,8 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func clickToAddDeposite(_ sender: UIButton) {
         self.menuContainerViewController.toggleLeftSideMenuCompletion(nil)
         if !isUserLogin() {
-            AppDelegate().sharedDelegate().showLoginPopup("add_deposite_login_msg")
+            AppDelegate().sharedDelegate().navigateToLogin()
+//            AppDelegate().sharedDelegate().showLoginPopup("add_deposite_login_msg")
             return
         }
         let navController = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "MyProfileVCNav") as! UINavigationController

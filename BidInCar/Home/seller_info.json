@@ -1,0 +1,26 @@
+[
+    {
+        "image" : "active_auction",
+        "name" : "Active Auctions:",
+        "value" : "0",
+        "link" : ""
+    },
+    {
+        "image" : "total_auction",
+        "name" : "Total Auctions:",
+        "value" : "0",
+        "link" : ""
+    },
+    {
+        "image" : "package_info",
+        "name" : "Package:",
+        "value" : "",
+        "link" : "Add More"
+    },
+    {
+        "image" : "remaining_limit",
+        "name" : "Remaining Auction Limit:",
+        "value" : "0",
+        "link" : ""
+    }
+]

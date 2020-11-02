@@ -302,6 +302,9 @@ class PostCarAuctionVC: UploadImageVC {
     
     @IBAction func clickToSelectStartDate(_ sender: UIButton) {
         self.view.endEditing(true)
+        if myAuction.auctionid != "" && myAuction.auctionid != "0" {
+            return
+        }
         DatePickerManager.shared.showPicker(title: "select_start_date", selected: selectedStartDate, min: Date(), max: nil) { (date, isCancel) in
             if !isCancel {
                 self.startDateTxt.myTxt.text = getDateStringFromDate(date: date!, format: "dd-MM-yyyy")
@@ -314,6 +317,9 @@ class PostCarAuctionVC: UploadImageVC {
     
     @IBAction func clickToSelectEndDate(_ sender: UIButton) {
         self.view.endEditing(true)
+        if myAuction.auctionid != "" && myAuction.auctionid != "0" {
+            return
+        }
         DatePickerManager.shared.showPicker(title: "select_end_date", selected: selectedEndDate, min: selectedStartDate, max: nil) { (date, isCancel) in
             if !isCancel {
                 self.endDateTxt.myTxt.text = getDateStringFromDate(date: date!, format: "dd-MM-yyyy")

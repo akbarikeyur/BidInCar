@@ -1,0 +1,32 @@
+[
+    {
+        "image" : "active_auction",
+        "name" : "Active Auctions:",
+        "value" : "0",
+        "link" : ""
+    },
+    {
+        "image" : "total_auction",
+        "name" : "Total Auctions:",
+        "value" : "0",
+        "link" : ""
+    },
+    {
+        "image" : "deposit_amount",
+        "name" : "Deposit Amount:",
+        "value" : "0",
+        "link" : "Add More"
+    },
+    {
+        "image" : "total_bidding_limit",
+        "name" : "Total Bidding Limit:",
+        "value" : "0",
+        "link" : "Increase More"
+    },
+    {
+        "image" : "remaining_limit",
+        "name" : "Remaining Bidding Limit:",
+        "value" : "0",
+        "link" : ""
+    }
+]

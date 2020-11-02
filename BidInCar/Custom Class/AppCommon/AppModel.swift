@@ -1477,3 +1477,20 @@ class NotificationModel : AppModel
         message = dict["message"] as? String ?? ""
     }
 }
+
+class InfoModel : AppModel
+{
+    var image, name, value, link : String!
+    
+    init(dict : [String : Any])
+    {
+        image = dict["image"] as? String ?? ""
+        name = dict["name"] as? String ?? ""
+        value = dict["value"] as? String ?? ""
+        link = dict["link"] as? String ?? ""
+    }
+    
+    func dictionary() -> [String : Any] {
+        return ["image" : image!, "name" : name!, "value" : value!, "link" : link!]
+    }
+}

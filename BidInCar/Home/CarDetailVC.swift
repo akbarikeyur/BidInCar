@@ -20,7 +20,6 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var remainingTimeLbl: Label!
     @IBOutlet weak var endTimeLbl: Label!
     @IBOutlet weak var auctionStatusBtn: Button!
-    @IBOutlet weak var mainImgView: UIImageView!
     @IBOutlet weak var auctionDescLbl: Label!
     @IBOutlet weak var auctionTermsLbl: Label!
     @IBOutlet weak var lotLbl: Label!
@@ -47,7 +46,6 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     var auctionData : AuctionModel = AuctionModel.init()
     var auctionDetailData : [[String : Any]] = [[String : Any]]()
     var arrFeatureData : [AuctionModel] = [AuctionModel]()
-    var selectedImgIndex = 0
     var autoCheckData = PictureModel.init()
     var isFirstTimeIncrese = true
     var isFromPayment = false
@@ -109,11 +107,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }else{
             reportView.isHidden = true
         }
-        if auctionData.pictures.count > 0 {
-            setImageViewImage(mainImgView, auctionData.pictures[0].path, "")
-        }else{
-            mainImgView.image = nil
-        }
+
         if auctionData.pictures.count == 0 {
             pictureView.isHidden = true
             constraintHeightPictureView.constant = 0
@@ -264,13 +258,12 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         tblView.reloadData()
         
         auctionTermsLbl.text = ""// auctionData.auction_terms.html2String
-        delay(1.0) {
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D(latitude: Double(self.auctionData.auction_lat)!, longitude: Double(self.auctionData.auction_long)!)
-            self.myMapView.addAnnotation(annotation)
-            let region: MKCoordinateRegion = MKCoordinateRegion(center: annotation.coordinate, span: MKCoordinateSpan(latitudeDelta: 5000, longitudeDelta: 5000))
-            self.myMapView.setRegion(region, animated: true)
-        }
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: Double(self.auctionData.auction_lat)!, longitude: Double(self.auctionData.auction_long)!)
+        self.myMapView.addAnnotation(annotation)
+        let region: MKCoordinateRegion = MKCoordinateRegion(center: annotation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+        self.myMapView.setRegion(region, animated: true)
+        
         carCV.reloadData()
         if arrFeatureData.count == 0 {
             constraintHeightCarCV.constant = 0
@@ -411,14 +404,6 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }
     }
     
-    @IBAction func clickToMainImageView(_ sender: Any) {
-        var arrImage = [String]()
-        for temp in auctionData.pictures {
-            arrImage.append(temp.path)
-        }
-        displayFullScreenImage(arrImage, selectedImgIndex)
-    }
-    
     @IBAction func clickToIncreseBid(_ sender: Any) {
         
         var price = 0
@@ -462,7 +447,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == imageCV {
-            return CGSize(width: 90, height: 70)
+            return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
         }
         return CGSize(width: 100, height: 150)
     }
@@ -470,7 +455,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == imageCV {
             let cell : CustomImageCVC = imageCV.dequeueReusableCell(withReuseIdentifier: "CustomImageCVC", for: indexPath) as! CustomImageCVC
-            cell.transperentImgView.isHidden = (selectedImgIndex == indexPath.row)
+            cell.transperentImgView.isHidden = true
             setImageViewImage(cell.imgView, auctionData.pictures[indexPath.row].path, "")
             return cell
         }else{
@@ -495,9 +480,11 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == imageCV {
-            selectedImgIndex = indexPath.row
-            setImageViewImage(mainImgView, auctionData.pictures[selectedImgIndex].path, "")
-            imageCV.reloadData()
+            var arrImg = [String]()
+            for temp in auctionData.pictures {
+                arrImg.append(temp.path)
+            }
+            displayFullScreenImage(arrImg, indexPath.row)
         }
     }
     

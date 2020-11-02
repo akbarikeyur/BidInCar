@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DropDown
 
 class HomeVC: UploadImageVC {
 
@@ -17,12 +18,20 @@ class HomeVC: UploadImageVC {
     @IBOutlet var noDataLbl: UILabel!
     @IBOutlet weak var featureView: UIView!
     @IBOutlet weak var featureCV: UICollectionView!
+    @IBOutlet var filterView: UIView!
+    @IBOutlet weak var makeLbl: Label!
+    @IBOutlet weak var modelLbl: Label!
+    @IBOutlet weak var minPriceTxt: TextField!
+    @IBOutlet weak var maxPriceTxt: TextField!
+    @IBOutlet weak var infoCV: UICollectionView!
+    @IBOutlet weak var constraintHeightInfoCV: NSLayoutConstraint!
     
     var arrFeatureAuctionData : [AuctionModel] = [AuctionModel]()
     var arrAuctionData : [AuctionModel] = [AuctionModel]()
     var arrSearchAuctionData : [AuctionModel] = [AuctionModel]()
     var selectedCategory = AuctionTypeModel.init(dict: [String : Any]())
     var refreshControl = UIRefreshControl.init()
+    var arrInfo = [InfoModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +43,30 @@ class HomeVC: UploadImageVC {
         
         featureCV.register(UINib.init(nibName: "CustomCarCVC", bundle: nil), forCellWithReuseIdentifier: "CustomCarCVC")
         categoryCV.register(UINib.init(nibName: "CustomAuctionCategoryCVC", bundle: nil), forCellWithReuseIdentifier: "CustomAuctionCategoryCVC")
+        infoCV.register(UINib.init(nibName: "CustomInfoCVC", bundle: nil), forCellWithReuseIdentifier: "CustomInfoCVC")
+        
         tblView.register(UINib.init(nibName: "CustomCarTVC", bundle: nil), forCellReuseIdentifier: "CustomCarTVC")
+        
+        arrInfo = [InfoModel]()
+        if isUserLogin() {
+            if isUserBuyer() {
+                for temp in getJsonFromFile("buyer_info") {
+                    arrInfo.append(InfoModel.init(dict: temp))
+                }
+            }
+            else{
+                for temp in getJsonFromFile("seller_info") {
+                    arrInfo.append(InfoModel.init(dict: temp))
+                }
+            }
+        }
+        infoCV.reloadData()
+        if arrInfo.count == 0 {
+            constraintHeightInfoCV.constant = 0
+        }else{
+            constraintHeightInfoCV.constant = 40
+        }
+        
         searchTxt.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         tblView.tableHeaderView = headerView
         tblView.reloadData()
@@ -138,6 +170,40 @@ class HomeVC: UploadImageVC {
         AppDelegate().sharedDelegate().getPackageHistory()
     }
     
+    @IBAction func clickToFilter(_ sender: Any) {
+        displaySubViewtoParentView(self.view, subview: filterView)
+    }
+    
+    @IBAction func clickToSelectMake(_ sender: UIButton) {
+        let dropDown = DropDown()
+        dropDown.anchorView = sender
+        dropDown.dataSource = ["make"]
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.makeLbl.text = item
+        }
+        dropDown.show()
+    }
+    
+    @IBAction func clickToSelectModel(_ sender: UIButton) {
+        let dropDown = DropDown()
+        dropDown.anchorView = sender
+        dropDown.dataSource = ["model"]
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.modelLbl.text = item
+        }
+        dropDown.show()
+    }
+    
+    @IBAction func clickToCloseFilterView(_ sender: Any) {
+        self.view.endEditing(true)
+        filterView.removeFromSuperview()
+    }
+    
+    @IBAction func clickToApplyFilter(_ sender: Any) {
+        self.view.endEditing(true)
+        filterView.removeFromSuperview()
+    }
+    
     @objc func textFieldDidChange(_ textField: UITextField)
     {
         if textField == searchTxt {
@@ -169,12 +235,26 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         if collectionView == featureCV {
             return arrFeatureAuctionData.count
         }
+        else if collectionView == infoCV {
+            return arrInfo.count
+        }
         return AppModel.shared.AUCTION_TYPE.count
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == featureCV {
             return CGSize(width: 100, height: collectionView.frame.size.height)
+        }
+        else if collectionView == infoCV {
+            let newLable : UILabel = UILabel.init()
+            newLable.font = UIFont.init(name: APP_REGULAR, size: 14.0)
+            let dict = arrInfo[indexPath.row]
+            newLable.text = dict.name + " " + dict.value
+            if dict.link != "" {
+                newLable.text = newLable.text! + " " + dict.link
+            }
+            let width = newLable.intrinsicContentSize.width + 45
+            return CGSize(width: width, height: collectionView.frame.size.height)
         }
         else {
             let newLable : UILabel = UILabel.init()
@@ -189,6 +269,11 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         if collectionView == featureCV {
             let cell : CustomCarCVC = featureCV.dequeueReusableCell(withReuseIdentifier: "CustomCarCVC", for: indexPath) as! CustomCarCVC
             cell.setupDetails(arrFeatureAuctionData[indexPath.row])
+            return cell
+        }
+        else if collectionView == infoCV {
+            let cell : CustomInfoCVC = infoCV.dequeueReusableCell(withReuseIdentifier: "CustomInfoCVC", for: indexPath) as! CustomInfoCVC
+            cell.setupDetails(arrInfo[indexPath.row])
             return cell
         }
         else{
@@ -215,7 +300,7 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             vc.auctionData = arrFeatureAuctionData[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
         }
-        else {
+        else if collectionView == categoryCV {
             selectedCategory = AppModel.shared.AUCTION_TYPE[indexPath.row]
             categoryCV.reloadData()
             if let data = AppModel.shared.AUCTION_DATA[String(self.selectedCategory.id)], data.count > 0 {
@@ -226,6 +311,14 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             }
             else{
                 serviceCallToGetAuction()
+            }
+        }
+        else if collectionView == infoCV {
+            if isUserBuyer() {
+                let dict = arrInfo[indexPath.row]
+                if dict.name == "Deposit Amount" {
+                    
+                }
             }
         }
     }
