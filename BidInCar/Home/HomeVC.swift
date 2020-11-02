@@ -177,7 +177,7 @@ class HomeVC: UploadImageVC {
     @IBAction func clickToSelectMake(_ sender: UIButton) {
         let dropDown = DropDown()
         dropDown.anchorView = sender
-        dropDown.dataSource = ["make"]
+        dropDown.dataSource = ["Make1", "Make2", "Make3"]
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.makeLbl.text = item
         }
@@ -187,7 +187,7 @@ class HomeVC: UploadImageVC {
     @IBAction func clickToSelectModel(_ sender: UIButton) {
         let dropDown = DropDown()
         dropDown.anchorView = sender
-        dropDown.dataSource = ["model"]
+        dropDown.dataSource = ["Model1", "Model2", "Model3"]
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.modelLbl.text = item
         }
