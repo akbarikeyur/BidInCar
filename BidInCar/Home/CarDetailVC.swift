@@ -417,7 +417,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             price += Int(auctionData.auction_bidprice)!
         }
         else{
-            price += 1
+            price += 100
         }
         myBidTxt.text = String(price)
     }
@@ -431,7 +431,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                 price = Int(auctionData.active_auction_price)!
             }
             if price > 0 {
-                price -= 1
+                price -= 100
             }
             myBidTxt.text = String(price)
         }

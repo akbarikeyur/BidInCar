@@ -96,13 +96,20 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func setupMenu()
     {
         arrMenuData = [[String : Any]]()
-        var arrMenuTitle : [String] = [NSLocalizedString("menu_home", comment: ""), NSLocalizedString("menu_auction", comment: ""), NSLocalizedString("menu_bookmark", comment: ""), NSLocalizedString("menu_profile", comment: ""), NSLocalizedString("menu_contact", comment: ""), NSLocalizedString("menu_terms", comment: ""), NSLocalizedString("menu_privacy", comment: ""), NSLocalizedString("menu_calc", comment: "")]
+        var arrMenuTitle = [String]()
+        
         if isUserLogin() {
-            arrMenuTitle.append(NSLocalizedString("menu_logout", comment: ""))
+            arrMenuTitle = [NSLocalizedString("menu_home", comment: ""), NSLocalizedString("menu_auction", comment: ""), NSLocalizedString("menu_bookmark", comment: ""), NSLocalizedString("menu_profile", comment: ""), NSLocalizedString("menu_contact", comment: ""), NSLocalizedString("menu_terms", comment: ""), NSLocalizedString("menu_privacy", comment: ""), NSLocalizedString("menu_calc", comment: ""), NSLocalizedString("menu_logout", comment: "")]
         }
-        var arrMenuImage : [String] = ["menu_home", "menu_auction", "menu_bookmark", "menu_profile", "menu_contact", "menu_terms","menu_privacy", "menu_calculator", "logout"]
+        else{
+            arrMenuTitle = [NSLocalizedString("menu_home", comment: ""), NSLocalizedString("menu_auction", comment: ""), NSLocalizedString("menu_bookmark", comment: ""), NSLocalizedString("menu_contact", comment: ""), NSLocalizedString("menu_terms", comment: ""), NSLocalizedString("menu_privacy", comment: ""), NSLocalizedString("menu_calc", comment: "")]
+        }
+        
+        var arrMenuImage = [String]()
         if isUserLogin() {
-            arrMenuImage.append("logout")
+            arrMenuImage = ["menu_home", "menu_auction", "menu_bookmark", "menu_profile", "menu_contact", "menu_terms","menu_privacy", "menu_calculator", "logout"]
+        }else{
+            arrMenuImage = ["menu_home", "menu_auction", "menu_bookmark", "menu_contact", "menu_terms","menu_privacy", "menu_calculator"]
         }
         for i in 0..<arrMenuTitle.count {
             arrMenuData.append(["title" : arrMenuTitle[i], "image" : arrMenuImage[i]])

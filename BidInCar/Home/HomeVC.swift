@@ -33,6 +33,12 @@ class HomeVC: UploadImageVC {
     var refreshControl = UIRefreshControl.init()
     var arrInfo = [InfoModel]()
     
+    var dictFilter = [String : String]()
+    var arrMake = [CategoryModel]()
+    var selectedMake = CategoryModel.init()
+    var arrModel = [ChildCategoryModel]()
+    var selectedModel = ChildCategoryModel.init()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -152,7 +158,7 @@ class HomeVC: UploadImageVC {
     @objc func refreshAuctionList()
     {
         refreshControl.endRefreshing()
-        serviceCallToGetAuction()
+        serviceCallToGetAuction("")
     }
     
     //MARK:- Button click event
@@ -172,14 +178,24 @@ class HomeVC: UploadImageVC {
     
     @IBAction func clickToFilter(_ sender: Any) {
         displaySubViewtoParentView(self.view, subview: filterView)
+        serviceCallToSelectMake()
     }
     
     @IBAction func clickToSelectMake(_ sender: UIButton) {
         let dropDown = DropDown()
         dropDown.anchorView = sender
-        dropDown.dataSource = ["Make1", "Make2", "Make3"]
+        var arrData = [String]()
+        for temp in arrMake {
+            arrData.append(temp.category_name)
+        }
+        dropDown.dataSource = arrData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.makeLbl.text = item
+            self.selectedMake = self.arrMake[index]
+            self.modelLbl.text = ""
+            self.arrModel = [ChildCategoryModel]()
+            self.selectedModel = ChildCategoryModel.init()
+            self.serviceCallToSelectModel()
         }
         dropDown.show()
     }
@@ -187,9 +203,14 @@ class HomeVC: UploadImageVC {
     @IBAction func clickToSelectModel(_ sender: UIButton) {
         let dropDown = DropDown()
         dropDown.anchorView = sender
-        dropDown.dataSource = ["Model1", "Model2", "Model3"]
+        var arrData = [String]()
+        for temp in arrModel {
+            arrData.append(temp.catchild_name)
+        }
+        dropDown.dataSource = arrData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.modelLbl.text = item
+            self.selectedModel = self.arrModel[index]
         }
         dropDown.show()
     }
@@ -201,7 +222,37 @@ class HomeVC: UploadImageVC {
     
     @IBAction func clickToApplyFilter(_ sender: Any) {
         self.view.endEditing(true)
-        filterView.removeFromSuperview()
+        
+        if minPriceTxt.text?.trimmed != "" && maxPriceTxt.text?.trimmed != "" && (Int(minPriceTxt.text!)! > Int(maxPriceTxt.text!)!) {
+            displayToast("Invalid price")
+        }
+        else{
+            //{"auction_title":"","carmake":"0","carmodel":null,"min_price":"","max_price":"","cattype":"1"}
+            var param = [String : Any]()
+            param["auction_title"] = ""
+            param["cattype"] = selectedCategory.id
+            if selectedMake.categoryid != "" {
+                param["carmake"] = selectedMake.categoryid
+            }else{
+                param["carmake"] = 0
+            }
+            if selectedModel.catchild_id != "" {
+                param["carmodel"] = selectedModel.catchild_id
+            }else{
+                param["carmodel"] = ""
+            }
+            if minPriceTxt.text?.trimmed != "" && maxPriceTxt.text?.trimmed != "" {
+                param["min_price"] = minPriceTxt.text
+                param["max_price"] = maxPriceTxt.text
+            }else{
+                param["min_price"] = ""
+                param["max_price"] = ""
+            }
+            serviceCallToGetAuction(APIManager.shared.convertToJson(param))
+            filterView.removeFromSuperview()
+        }
+        
+        
     }
     
     @objc func textFieldDidChange(_ textField: UITextField)
@@ -310,7 +361,7 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
                 setupFeatureAuction()
             }
             else{
-                serviceCallToGetAuction()
+                serviceCallToGetAuction("")
             }
         }
         else if collectionView == infoCV {
@@ -404,16 +455,16 @@ extension HomeVC {
                     self.selectedCategory = AppModel.shared.AUCTION_TYPE.first!
                 }
                 self.categoryCV.reloadData()
-                self.serviceCallToGetAuction()
+                self.serviceCallToGetAuction("")
             }
         }else{
             selectedCategory = AppModel.shared.AUCTION_TYPE.first!
             categoryCV.reloadData()
-            serviceCallToGetAuction()
+            serviceCallToGetAuction("")
         }
     }
     
-    func serviceCallToGetAuction()
+    func serviceCallToGetAuction(_ filter : String)
     {
         var param = [String : Any]()
         param["auctionstatus"] = "active"
@@ -423,6 +474,8 @@ extension HomeVC {
         if selectedCategory.id != -1 {
             param["cattype"] = selectedCategory.id
         }
+        param["filters"] = filter
+        print(param)
         APIManager.shared.serviceCallToGetAuction(param) { (data) in
             self.arrAuctionData = [AuctionModel]()
             self.arrFeatureAuctionData = [AuctionModel]()
@@ -531,4 +584,36 @@ extension HomeVC {
             }
         }
     }
+    
+    func serviceCallToSelectMake() {
+        
+        APIManager.shared.serviceCallToGetCategoryList(["cattype" : selectedCategory.id!]) { (data) in
+            self.arrMake = [CategoryModel]()
+            for temp in data {
+                self.arrMake.append(CategoryModel.init(dict: temp))
+            }
+        }
+    }
+    
+    func serviceCallToSelectModel()
+    {
+        APIManager.shared.serviceCallToGetChildCategory(selectedMake.categoryid) { (data) in
+            self.arrModel = [ChildCategoryModel]()
+            if data.count > 0 {
+                for temp in data {
+                    self.arrModel.append(ChildCategoryModel.init(dict: temp))
+                }
+            }
+        }
+    }
 }
+
+/*
+    https://bidincars.com/auctions/searchauctions
+    auctionstatus: active
+    userid: 0
+    usertype:0
+    pagename: searchbar
+    orderby: latest / featured / highest / lowest
+    filters: {"auction_title":"","carmake":"0","carmodel":null,"min_price":"","max_price":"","cattype":"1"}
+ */
