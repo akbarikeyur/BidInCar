@@ -385,8 +385,8 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func setupPrice() {
         featuredTitleLbl.attributedText = attributedStringWithColor(featuredTitleLbl.text!, ["Do you wish to continue?"], color: YellowColor, font: UIFont.init(name: APP_REGULAR, size: 16))
-        featuredPriceLbl.text = "Payment Euro " + packagePrice
-        featuredPriceLbl.attributedText = attributedStringWithColor(featuredPriceLbl.text!, [("Euro " + packagePrice)], color: YellowColor, font: UIFont.init(name: APP_BOLD, size: 30))
+        featuredPriceLbl.text = "Payment AED " + packagePrice
+        featuredPriceLbl.attributedText = attributedStringWithColor(featuredPriceLbl.text!, [("AED " + packagePrice)], color: YellowColor, font: UIFont.init(name: APP_BOLD, size: 30))
     }
     
     

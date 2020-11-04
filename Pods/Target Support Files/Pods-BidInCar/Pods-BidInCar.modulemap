@@ -1,0 +1,6 @@
+framework module Pods_BidInCar {
+  umbrella header "Pods-BidInCar-umbrella.h"
+
+  export *
+  module * { export * }
+}
