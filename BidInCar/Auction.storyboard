@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wFs-eb-Et6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wFs-eb-Et6">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -2434,57 +2434,62 @@
                                                             <constraint firstItem="ByE-po-aCB" firstAttribute="leading" secondItem="u4a-M8-HFU" secondAttribute="trailing" id="xiZ-7M-tJt"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1B-7t-c6O">
-                                                        <rect key="frame" x="0.0" y="410" width="320" height="45"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dRg-4B-hPJ">
+                                                        <rect key="frame" x="0.0" y="410" width="320" height="60"/>
                                                         <subviews>
-                                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgM-bJ-RsC" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="160" height="45"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Auction Start"/>
-                                                                </userDefinedRuntimeAttributes>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1B-7t-c6O">
+                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                                                <subviews>
+                                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgM-bJ-RsC" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="45"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Auction Start"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lz-tu-ctC">
+                                                                        <rect key="frame" x="20" y="0.0" width="120" height="45"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="15" maxY="0.0"/>
+                                                                        <connections>
+                                                                            <action selector="clickToSelectStartDate:" destination="CEu-2L-ydR" eventType="touchUpInside" id="sgJ-Qi-eMH"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VoO-TH-ioZ" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
+                                                                        <rect key="frame" x="160" y="0.0" width="160" height="45"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Auction End"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ku8-4a-lhu">
+                                                                        <rect key="frame" x="180" y="0.0" width="120" height="45"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="15" maxY="0.0"/>
+                                                                        <connections>
+                                                                            <action selector="clickToSelectEndDate:" destination="CEu-2L-ydR" eventType="touchUpInside" id="y9a-iT-Hej"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="Ku8-4a-lhu" firstAttribute="trailing" secondItem="VoO-TH-ioZ" secondAttribute="trailing" constant="-20" id="2U5-nQ-2Ui"/>
+                                                                    <constraint firstItem="rgM-bJ-RsC" firstAttribute="leading" secondItem="e1B-7t-c6O" secondAttribute="leading" id="4bc-RT-Ayx"/>
+                                                                    <constraint firstItem="VoO-TH-ioZ" firstAttribute="leading" secondItem="rgM-bJ-RsC" secondAttribute="trailing" id="6F3-dP-9X9"/>
+                                                                    <constraint firstItem="Ku8-4a-lhu" firstAttribute="bottom" secondItem="VoO-TH-ioZ" secondAttribute="bottom" id="7Ch-2Q-l1x"/>
+                                                                    <constraint firstItem="4lz-tu-ctC" firstAttribute="bottom" secondItem="rgM-bJ-RsC" secondAttribute="bottom" id="7vU-5E-lXm"/>
+                                                                    <constraint firstItem="rgM-bJ-RsC" firstAttribute="top" secondItem="e1B-7t-c6O" secondAttribute="top" id="8PA-Xx-1QJ"/>
+                                                                    <constraint firstItem="VoO-TH-ioZ" firstAttribute="top" secondItem="e1B-7t-c6O" secondAttribute="top" id="DBw-6X-a1v"/>
+                                                                    <constraint firstItem="VoO-TH-ioZ" firstAttribute="width" secondItem="rgM-bJ-RsC" secondAttribute="width" id="DZ4-bI-Cfd"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="rgM-bJ-RsC" secondAttribute="bottom" constant="15" id="JCq-98-6On"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="VoO-TH-ioZ" secondAttribute="trailing" id="TFj-oh-R0I"/>
+                                                                    <constraint firstItem="4lz-tu-ctC" firstAttribute="trailing" secondItem="rgM-bJ-RsC" secondAttribute="trailing" constant="-20" id="W4F-wu-eNU"/>
+                                                                    <constraint firstAttribute="height" constant="60" id="Xq3-iP-rAM"/>
+                                                                    <constraint firstItem="Ku8-4a-lhu" firstAttribute="top" secondItem="VoO-TH-ioZ" secondAttribute="top" id="YMs-3U-xDj"/>
+                                                                    <constraint firstItem="4lz-tu-ctC" firstAttribute="top" secondItem="rgM-bJ-RsC" secondAttribute="top" id="fZe-bz-QT1"/>
+                                                                    <constraint firstItem="4lz-tu-ctC" firstAttribute="leading" secondItem="rgM-bJ-RsC" secondAttribute="leading" constant="20" id="gNC-9c-6KP"/>
+                                                                    <constraint firstItem="Ku8-4a-lhu" firstAttribute="leading" secondItem="VoO-TH-ioZ" secondAttribute="leading" constant="20" id="mMX-6g-Hlp"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="VoO-TH-ioZ" secondAttribute="bottom" constant="15" id="s3F-DV-Q7R"/>
+                                                                </constraints>
                                                             </view>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lz-tu-ctC">
-                                                                <rect key="frame" x="20" y="0.0" width="120" height="45"/>
-                                                                <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="15" maxY="0.0"/>
-                                                                <connections>
-                                                                    <action selector="clickToSelectStartDate:" destination="CEu-2L-ydR" eventType="touchUpInside" id="sgJ-Qi-eMH"/>
-                                                                </connections>
-                                                            </button>
-                                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VoO-TH-ioZ" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
-                                                                <rect key="frame" x="160" y="0.0" width="160" height="45"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Auction End"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </view>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ku8-4a-lhu">
-                                                                <rect key="frame" x="180" y="0.0" width="120" height="45"/>
-                                                                <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="15" maxY="0.0"/>
-                                                                <connections>
-                                                                    <action selector="clickToSelectEndDate:" destination="CEu-2L-ydR" eventType="touchUpInside" id="y9a-iT-Hej"/>
-                                                                </connections>
-                                                            </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstItem="Ku8-4a-lhu" firstAttribute="trailing" secondItem="VoO-TH-ioZ" secondAttribute="trailing" constant="-20" id="2U5-nQ-2Ui"/>
-                                                            <constraint firstItem="rgM-bJ-RsC" firstAttribute="leading" secondItem="e1B-7t-c6O" secondAttribute="leading" id="4bc-RT-Ayx"/>
-                                                            <constraint firstItem="VoO-TH-ioZ" firstAttribute="leading" secondItem="rgM-bJ-RsC" secondAttribute="trailing" id="6F3-dP-9X9"/>
-                                                            <constraint firstItem="Ku8-4a-lhu" firstAttribute="bottom" secondItem="VoO-TH-ioZ" secondAttribute="bottom" id="7Ch-2Q-l1x"/>
-                                                            <constraint firstItem="4lz-tu-ctC" firstAttribute="bottom" secondItem="rgM-bJ-RsC" secondAttribute="bottom" id="7vU-5E-lXm"/>
-                                                            <constraint firstItem="rgM-bJ-RsC" firstAttribute="top" secondItem="e1B-7t-c6O" secondAttribute="top" id="8PA-Xx-1QJ"/>
-                                                            <constraint firstItem="VoO-TH-ioZ" firstAttribute="top" secondItem="e1B-7t-c6O" secondAttribute="top" id="DBw-6X-a1v"/>
-                                                            <constraint firstItem="VoO-TH-ioZ" firstAttribute="width" secondItem="rgM-bJ-RsC" secondAttribute="width" id="DZ4-bI-Cfd"/>
-                                                            <constraint firstAttribute="bottom" secondItem="rgM-bJ-RsC" secondAttribute="bottom" id="JCq-98-6On"/>
-                                                            <constraint firstAttribute="trailing" secondItem="VoO-TH-ioZ" secondAttribute="trailing" id="TFj-oh-R0I"/>
-                                                            <constraint firstItem="4lz-tu-ctC" firstAttribute="trailing" secondItem="rgM-bJ-RsC" secondAttribute="trailing" constant="-20" id="W4F-wu-eNU"/>
-                                                            <constraint firstAttribute="height" constant="45" id="Xq3-iP-rAM"/>
-                                                            <constraint firstItem="Ku8-4a-lhu" firstAttribute="top" secondItem="VoO-TH-ioZ" secondAttribute="top" id="YMs-3U-xDj"/>
-                                                            <constraint firstItem="4lz-tu-ctC" firstAttribute="top" secondItem="rgM-bJ-RsC" secondAttribute="top" id="fZe-bz-QT1"/>
-                                                            <constraint firstItem="4lz-tu-ctC" firstAttribute="leading" secondItem="rgM-bJ-RsC" secondAttribute="leading" constant="20" id="gNC-9c-6KP"/>
-                                                            <constraint firstItem="Ku8-4a-lhu" firstAttribute="leading" secondItem="VoO-TH-ioZ" secondAttribute="leading" constant="20" id="mMX-6g-Hlp"/>
-                                                            <constraint firstAttribute="bottom" secondItem="VoO-TH-ioZ" secondAttribute="bottom" id="s3F-DV-Q7R"/>
-                                                        </constraints>
-                                                    </view>
+                                                    </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IFn-Dn-i8X">
                                                         <rect key="frame" x="0.0" y="470" width="320" height="60"/>
                                                         <subviews>
@@ -2610,15 +2615,14 @@
                                                     <constraint firstAttribute="trailing" secondItem="25C-ps-hSJ" secondAttribute="trailing" id="EvD-dM-D1X"/>
                                                     <constraint firstAttribute="trailing" secondItem="skz-NZ-OfI" secondAttribute="trailing" id="Isc-Tt-MkO"/>
                                                     <constraint firstItem="lui-Fd-LNJ" firstAttribute="top" secondItem="n7z-5P-dPG" secondAttribute="top" id="LkZ-np-RxT"/>
-                                                    <constraint firstAttribute="trailing" secondItem="e1B-7t-c6O" secondAttribute="trailing" id="LtL-oa-1Bs"/>
                                                     <constraint firstItem="EwZ-YY-XhO" firstAttribute="trailing" secondItem="JW3-Zj-q0U" secondAttribute="trailing" constant="-20" id="Lyh-PD-9oR"/>
-                                                    <constraint firstItem="IFn-Dn-i8X" firstAttribute="top" secondItem="e1B-7t-c6O" secondAttribute="bottom" constant="15" id="Pnr-1V-Dyg"/>
+                                                    <constraint firstItem="dRg-4B-hPJ" firstAttribute="leading" secondItem="NeK-ho-Q0r" secondAttribute="leading" id="MoG-75-UcV"/>
                                                     <constraint firstItem="rqe-sq-rHl" firstAttribute="leading" secondItem="FoL-ta-BBX" secondAttribute="leading" constant="-30" id="Qb0-SU-FEY"/>
                                                     <constraint firstAttribute="trailing" secondItem="9sx-u1-uNs" secondAttribute="trailing" id="ROg-Xe-FRB"/>
                                                     <constraint firstItem="8jK-as-ZBv" firstAttribute="top" secondItem="skz-NZ-OfI" secondAttribute="bottom" constant="15" id="Rav-J7-cPo"/>
                                                     <constraint firstItem="EwZ-YY-XhO" firstAttribute="leading" secondItem="JW3-Zj-q0U" secondAttribute="leading" constant="20" id="Usu-8M-GMk"/>
                                                     <constraint firstAttribute="trailing" secondItem="W4v-V6-IeL" secondAttribute="trailing" id="W9J-L2-sgF"/>
-                                                    <constraint firstItem="e1B-7t-c6O" firstAttribute="top" secondItem="25C-ps-hSJ" secondAttribute="bottom" constant="15" id="WZf-j8-YRE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="dRg-4B-hPJ" secondAttribute="trailing" id="Wky-uh-3DI"/>
                                                     <constraint firstItem="lui-Fd-LNJ" firstAttribute="bottom" secondItem="n7z-5P-dPG" secondAttribute="bottom" id="a3y-gQ-Eox"/>
                                                     <constraint firstAttribute="trailing" secondItem="JW3-Zj-q0U" secondAttribute="trailing" id="aDQ-Po-X4r"/>
                                                     <constraint firstItem="JW3-Zj-q0U" firstAttribute="leading" secondItem="NeK-ho-Q0r" secondAttribute="leading" id="ahO-j3-hGz"/>
@@ -2626,12 +2630,12 @@
                                                     <constraint firstItem="25C-ps-hSJ" firstAttribute="top" secondItem="n7z-5P-dPG" secondAttribute="bottom" constant="15" id="dD1-6G-Pf1"/>
                                                     <constraint firstItem="MZM-oL-JB5" firstAttribute="leading" secondItem="NeK-ho-Q0r" secondAttribute="leading" constant="20" id="dLz-Re-nkZ"/>
                                                     <constraint firstItem="FoL-ta-BBX" firstAttribute="top" secondItem="Pul-Jz-5AL" secondAttribute="top" constant="-10" id="ePd-r3-mce"/>
-                                                    <constraint firstItem="e1B-7t-c6O" firstAttribute="leading" secondItem="NeK-ho-Q0r" secondAttribute="leading" id="ezy-PY-bzB"/>
                                                     <constraint firstItem="MZM-oL-JB5" firstAttribute="top" secondItem="NeK-ho-Q0r" secondAttribute="top" constant="20" id="fqA-A2-cGu"/>
                                                     <constraint firstItem="n7z-5P-dPG" firstAttribute="top" secondItem="JW3-Zj-q0U" secondAttribute="bottom" constant="15" id="h2T-Qm-Z0C"/>
                                                     <constraint firstItem="rqe-sq-rHl" firstAttribute="top" secondItem="W4v-V6-IeL" secondAttribute="bottom" id="hhf-Qy-Uym"/>
                                                     <constraint firstItem="EwZ-YY-XhO" firstAttribute="bottom" secondItem="JW3-Zj-q0U" secondAttribute="bottom" id="hwv-jt-aZs"/>
                                                     <constraint firstItem="lui-Fd-LNJ" firstAttribute="trailing" secondItem="n7z-5P-dPG" secondAttribute="trailing" constant="-20" id="j0e-XM-7vw"/>
+                                                    <constraint firstItem="dRg-4B-hPJ" firstAttribute="top" secondItem="25C-ps-hSJ" secondAttribute="bottom" constant="15" id="nmX-SQ-Ehd"/>
                                                     <constraint firstItem="FoL-ta-BBX" firstAttribute="bottom" secondItem="Pul-Jz-5AL" secondAttribute="bottom" constant="5" id="nt5-Cj-n0f"/>
                                                     <constraint firstItem="rqe-sq-rHl" firstAttribute="trailing" secondItem="FoL-ta-BBX" secondAttribute="trailing" constant="35" id="on5-h6-Krt"/>
                                                     <constraint firstItem="n7z-5P-dPG" firstAttribute="leading" secondItem="NeK-ho-Q0r" secondAttribute="leading" id="oxd-No-8TS"/>
@@ -2641,6 +2645,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="n7z-5P-dPG" secondAttribute="trailing" id="rUI-p2-iWO"/>
                                                     <constraint firstItem="skz-NZ-OfI" firstAttribute="top" secondItem="9sx-u1-uNs" secondAttribute="bottom" constant="15" id="uMj-kd-gcs"/>
                                                     <constraint firstItem="9sx-u1-uNs" firstAttribute="leading" secondItem="NeK-ho-Q0r" secondAttribute="leading" id="v7U-5b-mWx"/>
+                                                    <constraint firstItem="IFn-Dn-i8X" firstAttribute="top" secondItem="dRg-4B-hPJ" secondAttribute="bottom" id="wVu-vz-KFE"/>
                                                     <constraint firstItem="rqe-sq-rHl" firstAttribute="bottom" secondItem="FoL-ta-BBX" secondAttribute="bottom" id="zvd-J3-LeE"/>
                                                 </constraints>
                                             </view>
@@ -2960,6 +2965,7 @@
                         <outlet property="autoCheckTxt" destination="rqe-sq-rHl" id="MXa-v3-Xo4"/>
                         <outlet property="categoryTxt" destination="n7z-5P-dPG" id="dzJ-BX-7uA"/>
                         <outlet property="conditionTxt" destination="ByE-po-aCB" id="s1m-NN-xSx"/>
+                        <outlet property="dateView" destination="e1B-7t-c6O" id="E5A-x4-6eV"/>
                         <outlet property="endDateTxt" destination="VoO-TH-ioZ" id="mRj-FC-lVf"/>
                         <outlet property="fuelTypeTxt" destination="spn-kr-ONF" id="djQ-PP-iAh"/>
                         <outlet property="fuelView" destination="U0j-xr-a6m" id="b8E-17-ads"/>

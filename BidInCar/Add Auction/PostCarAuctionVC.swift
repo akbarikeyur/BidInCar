@@ -22,6 +22,7 @@ class PostCarAuctionVC: UploadImageVC {
     @IBOutlet weak var categoryTxt: FloatingTextfiledView!
     @IBOutlet weak var selectMakeTxt: FloatingTextfiledView!
     @IBOutlet weak var conditionTxt: FloatingTextfiledView!
+    @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var startDateTxt: FloatingTextfiledView!
     @IBOutlet weak var endDateTxt: FloatingTextfiledView!
     @IBOutlet weak var vinTransamissionView: UIView!
@@ -82,6 +83,7 @@ class PostCarAuctionVC: UploadImageVC {
         vinTxt.trailingSpace.constant = 10
         transmissionTxt.leftSpace.constant = 10
         
+        dateView.isHidden = true
         priceTxt.myTxt.keyboardType = .numberPad
         minBidIncrementTxt.myTxt.keyboardType = .numberPad
         vinTxt.myTxt.keyboardType = .numbersAndPunctuation
@@ -155,6 +157,7 @@ class PostCarAuctionVC: UploadImageVC {
         }
         conditionTxt.myTxt.text = currentAuction.body_condition
         conditionTxt.setTextFieldValue()
+        /*
         if let date : Date = getDateFromDateString(strDate: currentAuction.auction_created_on, format: "YYYY-MM-dd") {
             selectedStartDate = date
             startDateTxt.myTxt.text = getDateStringFromDate(date: selectedStartDate!, format: "dd-MM-yyyy")
@@ -165,6 +168,7 @@ class PostCarAuctionVC: UploadImageVC {
             endDateTxt.myTxt.text = getDateStringFromDate(date: selectedEndDate!, format: "dd-MM-yyyy")
             endDateTxt.setTextFieldValue()
         }
+        */
         vinTxt.myTxt.text = currentAuction.auction_vin
         vinTxt.setTextFieldValue()
         transmissionTxt.myTxt.text = currentAuction.auction_transmission
@@ -448,6 +452,9 @@ class PostCarAuctionVC: UploadImageVC {
         else if minBidIncrementTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_auction_increment")
         }
+        else if Int(minBidIncrementTxt.myTxt.text!)! < 100 {
+            displayToast("enter_auction_increment")
+        }
         else if yearTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_auction_year")
         }
@@ -460,12 +467,12 @@ class PostCarAuctionVC: UploadImageVC {
         else if conditionTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_auction_condition")
         }
-        else if startDateTxt.myTxt.text?.trimmed == "" {
-            displayToast("enter_auction_start")
-        }
-        else if endDateTxt.myTxt.text?.trimmed == "" {
-            displayToast("enter_auction_end")
-        }
+//        else if startDateTxt.myTxt.text?.trimmed == "" {
+//            displayToast("enter_auction_start")
+//        }
+//        else if endDateTxt.myTxt.text?.trimmed == "" {
+//            displayToast("enter_auction_end")
+//        }
         else if selectedAuctionType.id == 1 && vinTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_auction_vin")
         }
@@ -499,7 +506,7 @@ class PostCarAuctionVC: UploadImageVC {
             }
             param["categories_name"] = categoryTxt.myTxt.text //category_name
             param["childcat_name"] = selectMakeTxt.myTxt.text //catchild_name
-            param["auction_start_end"] = getDateStringFromDate(date: selectedStartDate!, format: "YYYY/MM/dd") + " - " + getDateStringFromDate(date: selectedEndDate!, format: "YYYY/MM/dd") //YYYY/MM/DD - YYYY/MM/DD //auction_created_on - auction_end
+            //param["auction_start_end"] = getDateStringFromDate(date: selectedStartDate!, format: "YYYY/MM/dd") + " - " + getDateStringFromDate(date: selectedEndDate!, format: "YYYY/MM/dd") //YYYY/MM/DD - YYYY/MM/DD //auction_created_on - auction_end
             param["condition"] = conditionTxt.myTxt.text //bodycondition
             if selectedAuctionType.id == 1 {
                 param["vin"] = vinTxt.myTxt.text //auction_vin

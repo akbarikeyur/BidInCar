@@ -104,6 +104,7 @@
 "enter_auction_title" = "Please enter auction title";
 "enter_auction_price" = "Please enter auction price";
 "enter_auction_increment" = "Please enter minimum bid increment";
+"auction_bid_limit" = "Minimum bid increment should be 100.";
 "enter_auction_year" = "Please enter auction year";
 "enter_auction_category" = "Please select category";
 "enter_auction_make" = "Please select make";

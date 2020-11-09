@@ -220,7 +220,17 @@ class PostAuctionDetailVC: UIViewController {
     
     //MARK:- Button click event
     @IBAction func clickToBack(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        var isRedirect = false
+        for controller in self.navigationController!.viewControllers as Array {
+            if controller.isKind(of: MyAuctionSellerVC.self) {
+                isRedirect = true
+                self.navigationController!.popToViewController(controller, animated: true)
+                break
+            }
+        }
+        if !isRedirect {
+            AppDelegate().sharedDelegate().navigateToDashBoard()
+        }
     }
     
     @IBAction func clickToViewReport(_ sender: Any) {

@@ -13,12 +13,14 @@ class HomeVC: UploadImageVC {
 
     @IBOutlet weak var categoryCV: UICollectionView!
     @IBOutlet weak var tblView: UITableView!
+    @IBOutlet weak var constraintHeightTblView: NSLayoutConstraint!
     @IBOutlet var headerView: UIView!
     @IBOutlet weak var searchTxt: UITextField!
     @IBOutlet var noDataLbl: UILabel!
     @IBOutlet weak var featureView: UIView!
     @IBOutlet weak var featureCV: UICollectionView!
     @IBOutlet var filterView: UIView!
+    @IBOutlet weak var categoryLbl: Label!
     @IBOutlet weak var makeLbl: Label!
     @IBOutlet weak var modelLbl: Label!
     @IBOutlet weak var minPriceTxt: TextField!
@@ -38,6 +40,7 @@ class HomeVC: UploadImageVC {
     var selectedMake = CategoryModel.init()
     var arrModel = [ChildCategoryModel]()
     var selectedModel = ChildCategoryModel.init()
+    var selectedFilterCategory = AuctionTypeModel.init(dict: [String : Any]())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +78,7 @@ class HomeVC: UploadImageVC {
         
         searchTxt.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         tblView.tableHeaderView = headerView
-        tblView.reloadData()
+        updateTableviewHeight()
         setTextFieldPlaceholderColor(searchTxt, LightGrayColor)
         
         refreshControl.tintColor = BlueColor
@@ -113,7 +116,7 @@ class HomeVC: UploadImageVC {
                     self.arrSearchAuctionData[index2!] = auction
                 }
             }
-            tblView.reloadData()
+            updateTableviewHeight()
             categoryCV.reloadData()
         }
     }
@@ -128,7 +131,7 @@ class HomeVC: UploadImageVC {
                 if index != nil {
                     if let auction_featured = dict["auction_featured"] as? String {
                         arrAuctionData[index!].auction_featured = auction_featured
-                        tblView.reloadData()
+                        updateTableviewHeight()
                     }
                 }
             }
@@ -150,7 +153,7 @@ class HomeVC: UploadImageVC {
                     self.arrSearchAuctionData.remove(at: index2!)
                 }
             }
-            tblView.reloadData()
+            updateTableviewHeight()
             categoryCV.reloadData()
         }
     }
@@ -178,10 +181,29 @@ class HomeVC: UploadImageVC {
     
     @IBAction func clickToFilter(_ sender: Any) {
         displaySubViewtoParentView(self.view, subview: filterView)
-        serviceCallToSelectMake()
+    }
+    
+    @IBAction func clickToSelectCategory(_ sender: UIButton) {
+        let dropDown = DropDown()
+        dropDown.anchorView = sender
+        var arrData = [String]()
+        for temp in AppModel.shared.AUCTION_TYPE {
+            arrData.append(temp.name)
+        }
+        dropDown.dataSource = arrData
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.categoryLbl.text = item
+            self.selectedFilterCategory = AppModel.shared.AUCTION_TYPE[index]
+            self.serviceCallToSelectMake()
+        }
+        dropDown.show()
     }
     
     @IBAction func clickToSelectMake(_ sender: UIButton) {
+        if selectedFilterCategory.id == -1 {
+            displayToast("Please select category")
+            return
+        }
         let dropDown = DropDown()
         dropDown.anchorView = sender
         var arrData = [String]()
@@ -230,7 +252,7 @@ class HomeVC: UploadImageVC {
             //{"auction_title":"","carmake":"0","carmodel":null,"min_price":"","max_price":"","cattype":"1"}
             var param = [String : Any]()
             param["auction_title"] = ""
-            param["cattype"] = selectedCategory.id
+            param["cattype"] = selectedFilterCategory.id
             if selectedMake.categoryid != "" {
                 param["carmake"] = selectedMake.categoryid
             }else{
@@ -248,6 +270,8 @@ class HomeVC: UploadImageVC {
                 param["min_price"] = ""
                 param["max_price"] = ""
             }
+            selectedCategory = selectedFilterCategory
+            categoryCV.reloadData()
             serviceCallToGetAuction(APIManager.shared.convertToJson(param))
             filterView.removeFromSuperview()
         }
@@ -263,7 +287,7 @@ class HomeVC: UploadImageVC {
                 let nameTxt: NSString = result.auction_title! as NSString
                 return (nameTxt.range(of: textField.text!, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
             })
-            tblView.reloadData()
+            updateTableviewHeight()
         }
     }
     
@@ -353,10 +377,11 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         }
         else if collectionView == categoryCV {
             selectedCategory = AppModel.shared.AUCTION_TYPE[indexPath.row]
+            selectedFilterCategory = selectedCategory
             categoryCV.reloadData()
             if let data = AppModel.shared.AUCTION_DATA[String(self.selectedCategory.id)], data.count > 0 {
                 arrAuctionData = data
-                tblView.reloadData()
+                updateTableviewHeight()
                 noDataLbl.isHidden = (arrAuctionData.count > 0)
                 setupFeatureAuction()
             }
@@ -438,6 +463,11 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
             serviceCallToAddBookmark(dict.auctionid, 2)
         }
     }
+    
+    func updateTableviewHeight() {
+        tblView.reloadData()
+        constraintHeightTblView.constant = CGFloat((130 * arrAuctionData.count) + 200)
+    }
 }
 
 //MARK:- Service called
@@ -492,7 +522,7 @@ extension HomeVC {
                 }
             }
             AppModel.shared.AUCTION_DATA[String(self.selectedCategory.id)] = self.arrAuctionData
-            self.tblView.reloadData()
+            self.updateTableviewHeight()
             self.noDataLbl.isHidden = (self.arrAuctionData.count > 0)
             self.setupFeatureAuction()
         }
@@ -505,7 +535,7 @@ extension HomeVC {
         }
         if (selectedCategory.id != -1) && (AppModel.shared.AUCTION_DATA[String(self.selectedCategory.id)] != nil) {
             arrAuctionData = AppModel.shared.AUCTION_DATA[String(self.selectedCategory.id)]!
-            self.tblView.reloadData()
+            self.updateTableviewHeight()
             setupFeatureAuction()
         }
         else{
@@ -554,7 +584,7 @@ extension HomeVC {
                         self.arrSearchAuctionData[index1!].bookmarkid = String(bookmarkId)
                     }
                 }
-                self.tblView.reloadData()
+                self.updateTableviewHeight()
             }
         }
     }
@@ -580,14 +610,14 @@ extension HomeVC {
                         self.arrSearchAuctionData[index1!].bookmarkid = ""
                     }
                 }
-                self.tblView.reloadData()
+                self.updateTableviewHeight()
             }
         }
     }
     
     func serviceCallToSelectMake() {
         
-        APIManager.shared.serviceCallToGetCategoryList(["cattype" : selectedCategory.id!]) { (data) in
+        APIManager.shared.serviceCallToGetCategoryList(["cattype" : selectedFilterCategory.id!]) { (data) in
             self.arrMake = [CategoryModel]()
             for temp in data {
                 self.arrMake.append(CategoryModel.init(dict: temp))
