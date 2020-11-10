@@ -1446,7 +1446,7 @@ for signing up</string>
                                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="14"/>
                                                 <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="5" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
-                                                <state key="normal" title="Add Deposit" image="deposite_white"/>
+                                                <state key="normal" title="Bid Now" image="deposite_white"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
                                                         <integer key="value" value="1"/>

@@ -83,6 +83,8 @@ class PostCarAuctionVC: UploadImageVC {
         vinTxt.trailingSpace.constant = 10
         transmissionTxt.leftSpace.constant = 10
         
+        minBidIncrementTxt.myTxt.text = "100"
+        minBidIncrementTxt.myTxt.isUserInteractionEnabled = false
         dateView.isHidden = true
         priceTxt.myTxt.keyboardType = .numberPad
         minBidIncrementTxt.myTxt.keyboardType = .numberPad
@@ -102,7 +104,7 @@ class PostCarAuctionVC: UploadImageVC {
         if PLATFORM.isSimulator {
             titleTxt.myTxt.text = "Old Boat 1"
             priceTxt.myTxt.text = "600000"
-            minBidIncrementTxt.myTxt.text = "5000"
+            minBidIncrementTxt.myTxt.text = "100"
             yearTxt.myTxt.text = "2018"
             vinTxt.myTxt.text = "5646"
             transmissionTxt.myTxt.text = NSLocalizedString("transmission_automatic", comment: "")
@@ -452,9 +454,9 @@ class PostCarAuctionVC: UploadImageVC {
         else if minBidIncrementTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_auction_increment")
         }
-        else if Int(minBidIncrementTxt.myTxt.text!)! < 100 {
-            displayToast("enter_auction_increment")
-        }
+//        else if Int(minBidIncrementTxt.myTxt.text!)! < 100 {
+//            displayToast("enter_auction_increment")
+//        }
         else if yearTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_auction_year")
         }

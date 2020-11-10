@@ -90,6 +90,11 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
         self.menuContainerViewController.toggleLeftSideMenuCompletion {}
     }
     
+    @IBAction func clickToNotification(_ sender: Any) {
+        let vc : NotificationVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "NotificationVC") as! NotificationVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func clickToSelectTab(_ sender: Button) {
         activeBtn.isSelected = false
         closedBtn.isSelected = false
@@ -99,6 +104,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
         draftImg.isHidden = true
         sender.isSelected = true
         self.noDataFoundLbl.isHidden = true
+        noDataFoundLbl.text = "You have no any Auction yet"
         if sender == activeBtn {
             activeImg.isHidden = false
             if arrActiveAuction.count == 0 {
@@ -116,6 +122,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
             }
         }
         else if sender == draftBtn {
+            noDataFoundLbl.text = "No Auction in Draft"
             draftImg.isHidden = false
             if arrDraftAuction.count == 0 {
                 serviceCallToGetAuction(3)
@@ -161,11 +168,9 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.winningPriceView.isHidden = true
             cell.payNowVew.isHidden = true
             cell.winnerView.isHidden = true
-            cell.schedulaerbtn.isHidden = true
             cell.makeFeatureBtn.isHidden = true
             cell.bidNowBtn.isHidden = true
             cell.leftActionView.isHidden = false
-            cell.constraintWidthLeftActionView.constant = (SCREEN.WIDTH - 145)/2
             var dict = AuctionModel.init()
             if activeBtn.isSelected {
                 dict = arrActiveAuction[indexPath.row]
@@ -176,7 +181,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
                     cell.makeFeatureBtn.tag = indexPath.row
                     cell.makeFeatureBtn.addTarget(self, action: #selector(clickToMakeFeatured(_:)), for: .touchUpInside)
                 }else{
-                    cell.schedulaerbtn.isHidden = false
+//                    cell.schedulaerbtn.isHidden = false
                 }
                 
             }
@@ -187,7 +192,6 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
                 cell.winnerBtn.tag = indexPath.row
                 cell.winnerBtn.addTarget(self, action: #selector(clickToOpenFeaturedView(_:)), for: .touchUpInside)
                 cell.leftActionView.isHidden = true
-                cell.constraintWidthLeftActionView.constant = 0
                 cell.winnerLbl.text = "Winner: " + dict.auction_winner.winner_name
                 cell.winnerStatusLbl.text = "Winner: " + dict.auction_winner.status
                 cell.winnerPriceLbl.text = "AED " + dict.auction_winner.winneing_price

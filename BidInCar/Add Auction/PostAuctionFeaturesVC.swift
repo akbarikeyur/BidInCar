@@ -460,12 +460,10 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
                 self.myAuction = AuctionModel.init(dict: self.param)
                 self.myAuction.auctionid = String(auctionid)
                 showAlert("Success", message: "You have not purchase any package so we save your auction into draft. Please purchase package to activate your auction.") {
-                    
+                    let vc : PostAuctionDetailVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PostAuctionDetailVC") as! PostAuctionDetailVC
+                    vc.myAuction = self.myAuction
+                    UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
                 }
-//                NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_DRAFT), object: nil)
-                let vc : PostAuctionDetailVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PostAuctionDetailVC") as! PostAuctionDetailVC
-                vc.myAuction = self.myAuction
-                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }

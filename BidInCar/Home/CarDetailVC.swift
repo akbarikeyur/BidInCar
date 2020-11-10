@@ -340,9 +340,13 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             let price : Int = Int(myBidTxt!.text!) ?? 0
             
             if Int(auctionData.active_auction_price)! > price {
-                showAlert("", message: "Your bid is lower than current bid") {
-                    
-                }
+                displayToast("Your bid is lower than current bid")
+//                showAlert("", message: "Your bid is lower than current bid") {
+//
+//                }
+            }
+            else if (Int(auctionData.active_auction_price)! + Int(auctionData.auction_bidprice)!) > price {
+                displayToast("Your bid amount is lower")
             }
             else if Int(AppModel.shared.currentUser.user_deposit) == 0 {
                 displaySubViewtoParentView(self.view, subview: bidNowView)
@@ -543,6 +547,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             if self.isFromPayment {
                 self.setAuctionData()
             }
+            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_AUCTION_DATA), object: self.auctionData)
         }
     }
     
@@ -560,7 +565,6 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                 self.auctionData.your_bid = Int(self.myBidTxt.text!) ?? 0
                 self.auctionData.is_bid = 1
                 self.myBidTxt.text = ""
-                NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_AUCTION_DATA), object: self.auctionData)
                 self.serviceCallToGetAuctionDetail()
             }
             else if let message = dict["message"] as? String {

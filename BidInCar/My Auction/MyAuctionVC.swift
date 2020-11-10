@@ -88,6 +88,11 @@ class MyAuctionVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         self.menuContainerViewController.toggleLeftSideMenuCompletion {}
     }
     
+    @IBAction func clickToNotification(_ sender: Any) {
+        let vc : NotificationVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "NotificationVC") as! NotificationVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @IBAction func clickToSelectTab(_ sender: Button) {
         activeBtn.isSelected = false
         closedBtn.isSelected = false

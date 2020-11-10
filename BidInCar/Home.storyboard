@@ -2255,7 +2255,7 @@ dG8gYmlkLiDigJxEZXBvc2l0Ig
                                                     <action selector="clickToBack:" destination="sWZ-0N-RbM" eventType="touchUpInside" id="q4G-Fp-X4J"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WW5-i6-MSP">
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WW5-i6-MSP">
                                                 <rect key="frame" x="250" y="110" width="50" height="90"/>
                                                 <subviews>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8h-hd-1De" customClass="View" customModule="BidInCar" customModuleProvider="target">

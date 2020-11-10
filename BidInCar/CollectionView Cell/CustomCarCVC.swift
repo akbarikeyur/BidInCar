@@ -27,7 +27,7 @@ class CustomCarCVC: UICollectionViewCell {
                 break
             }
         }
-        starBtn.isSelected = true
+        starBtn.isSelected = (dict.bookmark == "yes")
         titleLbl.text = dict.auction_title
     }
 }

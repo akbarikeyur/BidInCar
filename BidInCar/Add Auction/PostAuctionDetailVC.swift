@@ -270,7 +270,7 @@ class PostAuctionDetailVC: UIViewController {
         }
         
         if isPackageAvailable {
-            APIManager.shared.serviceCallToConfirmAuction(["auctionid" : myAuction.auctionid!, "userid" : AppModel.shared.currentUser.userid!]) { (data) in
+            APIManager.shared.serviceCallToConfirmAuction(["auctionid" : myAuction.auctionid!, "userid" : AppModel.shared.currentUser.userid!]) {
                 if AppModel.shared.AUCTION_DATA[String(self.myAuction.categorytype)] != nil {
                     AppModel.shared.AUCTION_DATA[String(self.myAuction.categorytype)] = [AuctionModel]()
                 }

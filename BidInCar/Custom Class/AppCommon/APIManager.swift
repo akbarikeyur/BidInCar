@@ -732,11 +732,11 @@ public class APIManager {
                                 else {
                                     if let data : [String : Any] = result["data"] as? [String : Any] {
                                         if let auctionid : Int = data["auctionid"] as? Int {
-                                            completion(100, auctionid)
+                                            completion(101, auctionid)
                                             return
                                         }
                                         else if let auctionid : String = data["auctionid"] as? String {
-                                            completion(100, Int(auctionid)!)
+                                            completion(101, Int(auctionid)!)
                                             return
                                         }
                                     }
@@ -769,7 +769,7 @@ public class APIManager {
         }
     }
     
-    func serviceCallToConfirmAuction(_ param : [String : Any], _ completion: @escaping (_ data : [[String : Any]]) -> Void) {
+    func serviceCallToConfirmAuction(_ param : [String : Any], _ completion: @escaping () -> Void) {
         if !APIManager.isConnectedToNetwork()
         {
             APIManager().networkErrorMsg()
@@ -786,9 +786,7 @@ public class APIManager {
                 
                     if let status = result["status"] as? String {
                         if(status == "success") {
-                            if let data : [[String : Any]] = result["data"] as? [[String : Any]] {
-                                completion(data)
-                            }
+                            completion()
                             return
                         }
                         else

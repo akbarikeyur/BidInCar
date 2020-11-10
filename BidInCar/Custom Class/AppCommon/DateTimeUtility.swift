@@ -184,7 +184,8 @@ func getDifferenceFromCurrentTimeInHourInDays(_ timestamp : Double) -> String
 
 func getRemaingTimeInDayHourMinuteSecond(_ endDate : Date) -> String
 {
-    let lastDate = Calendar.current.date(byAdding: .day, value: 1, to: endDate)!
+//    let lastDate = Calendar.current.date(byAdding: .day, value: 1, to: endDate)!
+    let lastDate = endDate
     let diffDateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: Date(), to: lastDate)
     let countdown = "\(diffDateComponents.day ?? 0)d \(diffDateComponents.hour ?? 0)h \(diffDateComponents.minute ?? 0)m \(diffDateComponents.second ?? 0)s"
     if diffDateComponents.day! < 0 && diffDateComponents.hour! < 0 && diffDateComponents.minute! < 0  && diffDateComponents.second! < 0 {

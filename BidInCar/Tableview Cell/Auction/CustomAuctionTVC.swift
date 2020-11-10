@@ -13,9 +13,7 @@ class CustomAuctionTVC: UITableViewCell {
     @IBOutlet weak var profilePicBtn: Button!
     @IBOutlet weak var nameLbl: Label!
     @IBOutlet weak var addressLbl: Label!
-    @IBOutlet weak var schedulaerbtn: Button!
     @IBOutlet weak var makeFeatureBtn: Button!
-    @IBOutlet weak var reminderBtn: Button!
     @IBOutlet weak var eyeBtn: Button!
     @IBOutlet weak var bookmarkBtn: Button!
     @IBOutlet weak var currentBidLbl: Label!
@@ -38,7 +36,6 @@ class CustomAuctionTVC: UITableViewCell {
     @IBOutlet weak var winnerBtn: UIButton!
     
     @IBOutlet weak var leftActionView: UIView!
-    @IBOutlet weak var constraintWidthLeftActionView: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()

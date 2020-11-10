@@ -49,12 +49,15 @@
                                             <action selector="clickToSideMenu:" destination="qNc-cJ-Sxq" eventType="touchUpInside" id="7ue-0F-DZy"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Jv-jb-mtS">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Jv-jb-mtS">
                                         <rect key="frame" x="280" y="0.0" width="40" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="8GH-bM-J7r"/>
                                         </constraints>
                                         <state key="normal" image="notification"/>
+                                        <connections>
+                                            <action selector="clickToNotification:" destination="qNc-cJ-Sxq" eventType="touchUpInside" id="UtH-lE-jkf"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Auctions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="179-XK-pN9" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                         <rect key="frame" x="105" y="9.5" width="110.5" height="25.5"/>
@@ -1653,12 +1656,15 @@
                                             <action selector="clickToSideMenu:" destination="frK-vq-ozb" eventType="touchUpInside" id="wpG-yf-i9E"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqf-iT-SjD">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqf-iT-SjD">
                                         <rect key="frame" x="280" y="0.0" width="40" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="tgL-Pb-INo"/>
                                         </constraints>
                                         <state key="normal" image="notification"/>
+                                        <connections>
+                                            <action selector="clickToNotification:" destination="frK-vq-ozb" eventType="touchUpInside" id="ax0-3A-beq"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Auctions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lf6-6d-exa" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                         <rect key="frame" x="105" y="9.5" width="110.5" height="25.5"/>

@@ -66,7 +66,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.94583588839999999" green="0.9426137805" blue="0.99607163669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.94509803921568625" green="0.94117647058823528" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="nPs-xR-PX8" secondAttribute="trailing" constant="5" id="5ag-9l-rPd"/>
                                     <constraint firstAttribute="width" constant="50" id="Dyx-HL-dap"/>
@@ -146,27 +146,10 @@
                                 <rect key="frame" x="0.0" y="72" width="300" height="42.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLL-bX-ZoL">
-                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="42.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="42.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9i-mt-hoV" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="1" y="0.0" width="83.5" height="42.5"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
-                                                <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title="Scheduler" image="schedule">
-                                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
-                                                        <integer key="value" value="3"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfP-RM-5qE" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="1" y="0.0" width="83.5" height="42.5"/>
+                                                <rect key="frame" x="1" y="0.0" width="147" height="42.5"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
                                                 <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="Make Featured">
@@ -183,7 +166,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YZH-vy-HPF" customClass="ImageView" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="85.5" y="5" width="1" height="32.5"/>
+                                                <rect key="frame" x="149" y="5" width="1" height="32.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="1" id="1Bo-up-2FZ"/>
                                                 </constraints>
@@ -197,49 +180,16 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="mfP-RM-5qE" firstAttribute="leading" secondItem="jLL-bX-ZoL" secondAttribute="leading" constant="1" id="81r-Rk-KT9"/>
-                                            <constraint firstItem="YZH-vy-HPF" firstAttribute="leading" secondItem="y9i-mt-hoV" secondAttribute="trailing" constant="1" id="FdM-CD-GTG"/>
                                             <constraint firstItem="YZH-vy-HPF" firstAttribute="top" secondItem="jLL-bX-ZoL" secondAttribute="top" constant="5" id="Gqd-2S-Hs5"/>
-                                            <constraint firstAttribute="bottom" secondItem="y9i-mt-hoV" secondAttribute="bottom" id="Pn3-BR-Je3"/>
                                             <constraint firstAttribute="bottom" secondItem="mfP-RM-5qE" secondAttribute="bottom" id="SM9-6T-1R5"/>
-                                            <constraint firstAttribute="width" constant="86.5" id="XIJ-d7-SxC"/>
                                             <constraint firstItem="mfP-RM-5qE" firstAttribute="top" secondItem="jLL-bX-ZoL" secondAttribute="top" id="cDs-d0-1bo"/>
                                             <constraint firstAttribute="bottom" secondItem="YZH-vy-HPF" secondAttribute="bottom" constant="5" id="eMK-JX-L3x"/>
-                                            <constraint firstAttribute="trailing" secondItem="YZH-vy-HPF" secondAttribute="trailing" id="ers-IX-dfe"/>
-                                            <constraint firstItem="y9i-mt-hoV" firstAttribute="leading" secondItem="jLL-bX-ZoL" secondAttribute="leading" constant="1" id="h2S-7e-UlB"/>
+                                            <constraint firstAttribute="trailing" secondItem="YZH-vy-HPF" secondAttribute="trailing" constant="10" id="ers-IX-dfe"/>
                                             <constraint firstItem="YZH-vy-HPF" firstAttribute="leading" secondItem="mfP-RM-5qE" secondAttribute="trailing" constant="1" id="jDt-dn-f0V"/>
-                                            <constraint firstItem="y9i-mt-hoV" firstAttribute="top" secondItem="jLL-bX-ZoL" secondAttribute="top" id="pvh-QJ-M9I"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Onk-lC-Lrj" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="88.5" y="0.0" width="83.5" height="42.5"/>
-                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
-                                        <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Reminder" image="reminder">
-                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
-                                                <integer key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KeW-fg-5Hd" customClass="ImageView" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="174" y="5" width="1" height="32.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="1" id="z8A-uK-60F"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="backgroundColorTypeAdapter">
-                                                <integer key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bct-ao-jGS" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="180" y="0.0" width="35" height="42.5"/>
+                                        <rect key="frame" x="160" y="0.0" width="35" height="42.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="gV0-4h-7p7"/>
                                         </constraints>
@@ -259,7 +209,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yQ5-gi-dDA" customClass="ImageView" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="220" y="5" width="1" height="32.5"/>
+                                        <rect key="frame" x="205" y="5" width="1" height="32.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="Hr7-Pt-P6M"/>
                                         </constraints>
@@ -270,7 +220,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUp-OT-Vdb" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="226" y="4.5" width="34" height="34"/>
+                                        <rect key="frame" x="216" y="4.5" width="34" height="34"/>
                                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="NaW-qD-Vmb"/>
@@ -296,7 +246,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8oP-JI-b7q" customClass="ImageView" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="265" y="5" width="1" height="32.5"/>
+                                        <rect key="frame" x="260" y="5" width="1" height="32.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="TTn-6i-sZT"/>
                                         </constraints>
@@ -330,30 +280,24 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="8oP-JI-b7q" secondAttribute="bottom" constant="5" id="5xL-uJ-szv"/>
-                                    <constraint firstItem="Onk-lC-Lrj" firstAttribute="leading" secondItem="jLL-bX-ZoL" secondAttribute="trailing" constant="2" id="7cZ-Kd-Py8"/>
-                                    <constraint firstItem="8oP-JI-b7q" firstAttribute="leading" secondItem="hUp-OT-Vdb" secondAttribute="trailing" constant="5" id="8lP-Gx-JVR"/>
-                                    <constraint firstItem="KeW-fg-5Hd" firstAttribute="top" secondItem="weC-y5-4oq" secondAttribute="top" constant="5" id="AFk-1j-vVE"/>
+                                    <constraint firstItem="8oP-JI-b7q" firstAttribute="leading" secondItem="hUp-OT-Vdb" secondAttribute="trailing" constant="10" id="8lP-Gx-JVR"/>
                                     <constraint firstItem="8oP-JI-b7q" firstAttribute="top" secondItem="weC-y5-4oq" secondAttribute="top" constant="5" id="Db5-gl-TH0"/>
-                                    <constraint firstAttribute="bottom" secondItem="Onk-lC-Lrj" secondAttribute="bottom" id="GOk-aQ-L37"/>
                                     <constraint firstItem="jLL-bX-ZoL" firstAttribute="top" secondItem="weC-y5-4oq" secondAttribute="top" id="HQd-0b-4v2"/>
-                                    <constraint firstItem="hUp-OT-Vdb" firstAttribute="leading" secondItem="yQ5-gi-dDA" secondAttribute="trailing" constant="5" id="LDn-YO-UPl"/>
-                                    <constraint firstItem="KeW-fg-5Hd" firstAttribute="leading" secondItem="Onk-lC-Lrj" secondAttribute="trailing" constant="2" id="N9d-8g-hAf"/>
+                                    <constraint firstItem="hUp-OT-Vdb" firstAttribute="leading" secondItem="yQ5-gi-dDA" secondAttribute="trailing" constant="10" id="LDn-YO-UPl"/>
                                     <constraint firstAttribute="bottom" secondItem="jLL-bX-ZoL" secondAttribute="bottom" id="Ouq-rQ-sTi"/>
                                     <constraint firstItem="Bct-ao-jGS" firstAttribute="top" secondItem="weC-y5-4oq" secondAttribute="top" id="PJm-hf-l4h"/>
                                     <constraint firstItem="16g-sP-jZi" firstAttribute="top" secondItem="weC-y5-4oq" secondAttribute="top" constant="5" id="QQH-VY-EVK"/>
-                                    <constraint firstItem="yQ5-gi-dDA" firstAttribute="leading" secondItem="Bct-ao-jGS" secondAttribute="trailing" constant="5" id="U8K-07-BCc"/>
+                                    <constraint firstItem="yQ5-gi-dDA" firstAttribute="leading" secondItem="Bct-ao-jGS" secondAttribute="trailing" constant="10" id="U8K-07-BCc"/>
                                     <constraint firstAttribute="bottom" secondItem="Bct-ao-jGS" secondAttribute="bottom" id="VvK-qB-DP4"/>
                                     <constraint firstAttribute="bottom" secondItem="yQ5-gi-dDA" secondAttribute="bottom" constant="5" id="YFD-fH-zjb"/>
                                     <constraint firstAttribute="height" constant="42.5" id="ZxB-we-vDV"/>
                                     <constraint firstItem="hUp-OT-Vdb" firstAttribute="centerY" secondItem="weC-y5-4oq" secondAttribute="centerY" id="bCi-OO-HCW"/>
                                     <constraint firstItem="yQ5-gi-dDA" firstAttribute="top" secondItem="weC-y5-4oq" secondAttribute="top" constant="5" id="coD-8D-GQo"/>
-                                    <constraint firstItem="16g-sP-jZi" firstAttribute="leading" secondItem="8oP-JI-b7q" secondAttribute="trailing" constant="2" id="cul-rI-yJ7"/>
+                                    <constraint firstItem="16g-sP-jZi" firstAttribute="leading" secondItem="8oP-JI-b7q" secondAttribute="trailing" constant="7" id="cul-rI-yJ7"/>
                                     <constraint firstAttribute="bottom" secondItem="16g-sP-jZi" secondAttribute="bottom" constant="5" id="cv5-Mg-Mqy"/>
                                     <constraint firstAttribute="trailing" secondItem="16g-sP-jZi" secondAttribute="trailing" constant="2" id="g7E-Zi-CRc"/>
                                     <constraint firstItem="jLL-bX-ZoL" firstAttribute="leading" secondItem="weC-y5-4oq" secondAttribute="leading" id="hgY-fu-3Le"/>
-                                    <constraint firstItem="Bct-ao-jGS" firstAttribute="leading" secondItem="KeW-fg-5Hd" secondAttribute="trailing" constant="5" id="kYP-9d-mtA"/>
-                                    <constraint firstItem="Onk-lC-Lrj" firstAttribute="top" secondItem="weC-y5-4oq" secondAttribute="top" id="tLr-Mp-gOS"/>
-                                    <constraint firstAttribute="bottom" secondItem="KeW-fg-5Hd" secondAttribute="bottom" constant="5" id="tzD-rF-0dz"/>
+                                    <constraint firstItem="Bct-ao-jGS" firstAttribute="leading" secondItem="jLL-bX-ZoL" secondAttribute="trailing" id="wRA-4s-0lg"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kj2-eb-vYc">
@@ -687,7 +631,6 @@
                 <outlet property="bidLbl" destination="16g-sP-jZi" id="EJ9-Yb-qyR"/>
                 <outlet property="bidNowBtn" destination="hXR-dz-sSK" id="MYm-wv-b13"/>
                 <outlet property="bookmarkBtn" destination="hUp-OT-Vdb" id="NZX-ht-OuJ"/>
-                <outlet property="constraintWidthLeftActionView" destination="XIJ-d7-SxC" id="oQB-wE-xi4"/>
                 <outlet property="currentBidLbl" destination="F0t-aj-Xwi" id="b95-DS-CBC"/>
                 <outlet property="eyeBtn" destination="Bct-ao-jGS" id="hfW-U0-vOb"/>
                 <outlet property="leftActionView" destination="jLL-bX-ZoL" id="6Oi-Sw-3dJ"/>
@@ -697,8 +640,6 @@
                 <outlet property="payNowBtn" destination="1Xr-w1-Bn0" id="1e7-Io-iPz"/>
                 <outlet property="payNowVew" destination="4Mb-C7-mIS" id="byp-gw-1ee"/>
                 <outlet property="profilePicBtn" destination="cdP-V5-8yf" id="Qyh-xK-3r5"/>
-                <outlet property="reminderBtn" destination="Onk-lC-Lrj" id="DVL-pH-7c5"/>
-                <outlet property="schedulaerbtn" destination="y9i-mt-hoV" id="iSy-da-3x3"/>
                 <outlet property="winnerBottomView" destination="KcF-1o-tfY" id="dKJ-Qm-4y5"/>
                 <outlet property="winnerBtn" destination="6Rz-fA-zMr" id="Zow-rV-jtJ"/>
                 <outlet property="winnerLbl" destination="yma-64-mHN" id="ydE-fG-ZXx"/>
@@ -716,8 +657,6 @@
         <image name="close" width="15" height="15"/>
         <image name="eye" width="32" height="16"/>
         <image name="ic_placeholder" width="348" height="179"/>
-        <image name="reminder" width="24" height="22"/>
-        <image name="schedule" width="22" height="22"/>
         <image name="star_off" width="15.5" height="14.5"/>
         <image name="star_on" width="15.5" height="14.5"/>
     </resources>

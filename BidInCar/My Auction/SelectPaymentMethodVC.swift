@@ -157,8 +157,11 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             if amount == 0 {
                 return
             }
-            paytab()
-            
+//            if PLATFORM.isSimulator {
+//                paytabPaymentCompleted()
+//            }else{
+                paytab()
+//            }
         }
         else if selectedTab == 2 {
             //bank
@@ -301,7 +304,7 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             andWithViewFrame: UIApplication.topViewController()!.view.frame,
             andWithAmount: Float(amount),
             andWithCustomerTitle: "PayTabs Sample App",
-            andWithCurrencyCode: "USD",
+            andWithCurrencyCode: "AED",
             andWithTaxAmount: 0.0,
             andWithSDKLanguage: "en",
             andWithShippingAddress: "Manama",
