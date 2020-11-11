@@ -73,7 +73,6 @@ struct API {
     static let FAQ                          =       BASE_URL + "admin/faq/getfaqs"
     
     static let GET_NOTIFICATION             =       BASE_URL + "notification/getnotification"
-    
 }
 
 
@@ -245,7 +244,7 @@ public class APIManager {
             case .success:
                 print(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
-                
+                    
                     if let status = result["status"] as? String {
                         if(status == "success") {
                             if let data : [[String : Any]] = result["data"] as? [[String : Any]], data.count > 0 {

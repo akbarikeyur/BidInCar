@@ -566,6 +566,9 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                 self.auctionData.is_bid = 1
                 self.myBidTxt.text = ""
                 self.serviceCallToGetAuctionDetail()
+                delay(5.0) {
+                    AppDelegate().sharedDelegate().serviceCallToGetUserProfile()
+                }
             }
             else if let message = dict["message"] as? String {
                 self.bidNowDescLbl.text = message

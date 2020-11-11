@@ -27,6 +27,7 @@ class PostAuctionDetailVC: UIViewController {
     @IBOutlet weak var makeLbl: Label!
     @IBOutlet weak var conditionLbl: Label!
     @IBOutlet weak var yearLbl: Label!
+    @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var startDateLbl: Label!
     @IBOutlet weak var endDateLbl: Label!
     @IBOutlet weak var transmissionView: UIView!
@@ -72,7 +73,7 @@ class PostAuctionDetailVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        dateView.isHidden = true
         serviceCallToGetAuctionDetail()
     }
     

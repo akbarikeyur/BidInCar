@@ -179,6 +179,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         getPackageHistory()
     }
     
+    func serviceCallToGetUserProfile() {
+        APIManager.shared.serviceCallToGetUserProfile(AppModel.shared.currentUser.userid) { (dict) in
+            AppModel.shared.currentUser = UserModel.init(dict: dict)
+            setLoginUserData()
+            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
+        }
+    }
+    
     func serviceCallToDecreseLeftAuction() {
         APIManager.shared.serviceCallToDecreseLeftAuction(["userid":AppModel.shared.currentUser.userid!]) {
             self.getPackageHistory()

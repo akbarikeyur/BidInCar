@@ -156,9 +156,13 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //            AppDelegate().sharedDelegate().showLoginPopup("add_deposite_login_msg")
             return
         }
-        let navController = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "MyProfileVCNav") as! UINavigationController
+        let navController = STORYBOARD.HOME.instantiateViewController(withIdentifier: "HomeVCNav") as! UINavigationController
         navController.isNavigationBarHidden = true
         menuContainerViewController.centerViewController = navController
+        
+//        let navController = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "MyProfileVCNav") as! UINavigationController
+//        navController.isNavigationBarHidden = true
+//        menuContainerViewController.centerViewController = navController
     }
     
     // MARK: - Tableview Method

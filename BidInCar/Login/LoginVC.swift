@@ -26,8 +26,8 @@ class LoginVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if PLATFORM.isSimulator {
-            unameTxt.myTxt.text = "ktest@gmail.com"
-            passwordTxt.myTxt.text = "ktest"
+            unameTxt.myTxt.text = "buyer@abc.com"
+            passwordTxt.myTxt.text = "abc"
         }
     }
     

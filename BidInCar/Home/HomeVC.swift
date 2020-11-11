@@ -88,11 +88,7 @@ class HomeVC: UploadImageVC {
         if arrAuctionData.count == 0 {
             if AppModel.shared.AUCTION_DATA.count == 0 {
                 if isUserLogin() {
-                    APIManager.shared.serviceCallToGetUserProfile(AppModel.shared.currentUser.userid) { (dict) in
-                        AppModel.shared.currentUser = UserModel.init(dict: dict)
-                        setLoginUserData()
-                        NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
-                    }
+                    AppDelegate().sharedDelegate().serviceCallToGetUserProfile()
                 }
                 serviceCallToGetAuctionCategoryList()                
             }else{
@@ -170,8 +166,12 @@ class HomeVC: UploadImageVC {
     }
     
     @IBAction func clickToNotification(_ sender: Any) {
-        let vc : NotificationVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "NotificationVC") as! NotificationVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        if PLATFORM.isSimulator {
+            AppDelegate().sharedDelegate().serviceCallToGetUserProfile()
+        }else{
+            let vc : NotificationVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "NotificationVC") as! NotificationVC
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func clickToReload(_ sender: Any) {
