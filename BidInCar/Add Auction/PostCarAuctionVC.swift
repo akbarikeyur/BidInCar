@@ -604,10 +604,10 @@ extension PostCarAuctionVC {
 
 extension PostCarAuctionVC: UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        print(urls)
+        printData(urls)
         autoCheckTxt.myTxt.text = urls.first!.absoluteString.components(separatedBy: "/").last
         APIManager.shared.serviceCallToUploadAuctionDocument(urls.first!) { (docId,path) in
-            print(docId)
+            printData(docId)
             self.autoCheckDoc = docId
             self.autoCheckDocPath = path
         }

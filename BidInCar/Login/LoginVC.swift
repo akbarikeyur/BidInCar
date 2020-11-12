@@ -58,11 +58,16 @@ class LoginVC: UIViewController {
             param["email"] = unameTxt.myTxt.text
             param["password"] = passwordTxt.myTxt.text
             param["user_token"] = getPushToken()
-            print(param)
+            printData(param)
             APIManager.shared.serviceCallToUserLogin(param) {
-                if isUserLogin() {
+                if AppModel.shared.currentUser.verified {
+                    setLoginUserData()
                     AppDelegate().sharedDelegate().navigateToDashBoard()
+                }else{
+                    let vc : VerificationVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "VerificationVC") as! VerificationVC
+                    self.navigationController?.pushViewController(vc, animated: true)
                 }
+                
             }
         }
     }

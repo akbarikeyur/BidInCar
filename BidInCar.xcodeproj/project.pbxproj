@@ -140,6 +140,7 @@
 		18F9E1ED2355BE5000B5E071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F9E1EB2355BE5000B5E071 /* Main.storyboard */; };
 		18F9E1EF2355BE5200B5E071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F9E1EE2355BE5200B5E071 /* Assets.xcassets */; };
 		18F9E1F22355BE5200B5E071 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F9E1F02355BE5200B5E071 /* LaunchScreen.storyboard */; };
+		794BFA76255D24A0004AAB91 /* VerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BFA75255D24A0004AAB91 /* VerificationVC.swift */; };
 		7979923C25503F67008DBA48 /* CustomInfoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7979923A25503F67008DBA48 /* CustomInfoCVC.swift */; };
 		7979923D25503F67008DBA48 /* CustomInfoCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7979923B25503F67008DBA48 /* CustomInfoCVC.xib */; };
 		799643092550497F00B772B1 /* buyer_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 799643082550497F00B772B1 /* buyer_info.json */; };
@@ -290,6 +291,7 @@
 		18F9E1F32355BE5200B5E071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5794612B94290DCDCF8FD7D1 /* Pods-BidInCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BidInCar.release.xcconfig"; path = "Target Support Files/Pods-BidInCar/Pods-BidInCar.release.xcconfig"; sourceTree = "<group>"; };
 		679A98F506DE538FDAF3F264 /* Pods_BidInCar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BidInCar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		794BFA75255D24A0004AAB91 /* VerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationVC.swift; sourceTree = "<group>"; };
 		7979923A25503F67008DBA48 /* CustomInfoCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInfoCVC.swift; sourceTree = "<group>"; };
 		7979923B25503F67008DBA48 /* CustomInfoCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomInfoCVC.xib; sourceTree = "<group>"; };
 		799643082550497F00B772B1 /* buyer_info.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = buyer_info.json; sourceTree = "<group>"; };
@@ -581,6 +583,7 @@
 				188CFC532355E16400C18B2A /* SignupVC.swift */,
 				181AD90123586D580006CACF /* SideMenuVC.swift */,
 				18CB9149235C67540005C9D0 /* NotificationSettingVC.swift */,
+				794BFA75255D24A0004AAB91 /* VerificationVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -921,6 +924,7 @@
 				189CDB4523DEE40300E1138C /* CustomBidAuctionTVC.swift in Sources */,
 				18B244F52355C19600AEFDC6 /* DisablePasteForTextField.swift in Sources */,
 				18F9E1E82355BE5000B5E071 /* AppDelegate.swift in Sources */,
+				794BFA76255D24A0004AAB91 /* VerificationVC.swift in Sources */,
 				183BE48A235F24F70076363A /* PostAuctionDetailVC.swift in Sources */,
 				1820C353240A895F008DFF5F /* CustomCategoryCVC.swift in Sources */,
 				18B244DE2355C19600AEFDC6 /* Date+RUI.swift in Sources */,

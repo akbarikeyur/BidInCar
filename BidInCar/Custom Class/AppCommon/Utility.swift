@@ -195,6 +195,13 @@ func openUrlInSafari(strUrl : String)
     }
 }
 
+func printData(_ items: Any..., separator: String = " ", terminator: String = "\n")
+{
+    #if DEBUG
+//        print(items)
+    #endif
+}
+
 //MARK:- Color function
 func colorFromHex(hex : String) -> UIColor
 {

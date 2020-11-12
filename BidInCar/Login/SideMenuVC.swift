@@ -33,9 +33,10 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.addObserver(self, selector: #selector(redirectToHomePage), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_HOME), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(redirectToMyAuctionDraft), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_DRAFT), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateUserData), name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(redirectToMyProfile), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_MY_PROFILE), object: nil)
         
         tblView.register(UINib.init(nibName: "CustomSideMenuTVC", bundle: nil), forCellReuseIdentifier: "CustomSideMenuTVC")
-        
+        subTitleLbl.isHidden = true
         if isUserLogin() {
             profileView.isHidden = false
             loginView.isHidden = true
@@ -64,6 +65,13 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         menuContainerViewController.centerViewController = navController
     }
     
+    @objc func redirectToMyProfile()
+    {
+        let navController = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "MyProfileVCNav") as! UINavigationController
+        navController.isNavigationBarHidden = true
+        menuContainerViewController.centerViewController = navController
+    }
+    
     @objc func updateUserData()
     {
         setButtonBackgroundImage(profilePicBtn, AppModel.shared.currentUser.profile_pic, IMAGE.USER_PLACEHOLDER)
@@ -72,9 +80,9 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             userTypeLbl.text = "Buyer"
             postAuctionView.isHidden = true
             addDepositeView.isHidden = false
-            subTitleLbl.text = "Your current bidding Limit: " + AppModel.shared.currentUser.user_deposit
-            let myLimit = "Limit: " + AppModel.shared.currentUser.user_deposit
-            subTitleLbl.attributedText = attributedStringWithColor(subTitleLbl.text!, [myLimit], color: RedColor, font: UIFont.init(name: APP_BOLD, size: 14))
+//            subTitleLbl.text = "Your current bidding Limit: " + AppModel.shared.currentUser.biding_limit
+//            let myLimit = "Limit: " + AppModel.shared.currentUser.biding_limit
+//            subTitleLbl.attributedText = attributedStringWithColor(subTitleLbl.text!, [myLimit], color: RedColor, font: UIFont.init(name: APP_BOLD, size: 14))
         }else{
             userTypeLbl.text = "Seller"
             postAuctionView.isHidden = false
@@ -87,9 +95,9 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 remaining += package.auctionsleft
             }
             
-            subTitleLbl.text = "Your current package auctions Left: " + String(remaining)
-            let myLeft = "Left: " + String(remaining)
-            subTitleLbl.attributedText = attributedStringWithColor(subTitleLbl.text!, [myLeft], color: RedColor, font: UIFont.init(name: APP_BOLD, size: 14))
+//            subTitleLbl.text = "Your current package auctions Left: " + String(remaining)
+//            let myLeft = "Left: " + String(remaining)
+//            subTitleLbl.attributedText = attributedStringWithColor(subTitleLbl.text!, [myLeft], color: RedColor, font: UIFont.init(name: APP_BOLD, size: 14))
         }
     }
     

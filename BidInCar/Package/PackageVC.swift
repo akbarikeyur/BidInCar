@@ -110,7 +110,7 @@ class PackageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 param["featured"] = selectedPackage.isFeatured ? "true" : "false"
             }
             param["userid"] = AppModel.shared.currentUser.userid
-            print(param)
+            printData(param)
             let vc : SelectPaymentMethodVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "SelectPaymentMethodVC") as! SelectPaymentMethodVC
             vc.paymentType = PAYMENT.PACKAGE
             vc.paymentParam = param
@@ -149,6 +149,7 @@ class PackageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             cell.contentView.backgroundColor = WhiteColor
             let dict = singlePackage.packages[indexPath.row]
             cell.selectBtn.isSelected = (selectedSingle.packageid == dict.packageid)
+            cell.typeLbl.text = "Single Auction"
             cell.titleLbl.text = dict.package_title
             cell.totalAuctionLbl.text = dict.number_of_auction
             cell.validityLbl.text = dict.days + " days"
@@ -166,7 +167,6 @@ class PackageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     cell.socialValueLbl.text = single_social_desc
                 }
             }
-            
             var totalPrice : Int = Int(dict.package_price)!
             if dict.isFeatured {
                 totalPrice += Int(singlePackage.featured_price.featured_price)!

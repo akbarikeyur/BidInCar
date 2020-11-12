@@ -110,6 +110,7 @@ class UserModel : AppModel
     var country_name : String!
     var sortname : String!
     var phonecode : String!
+    var verified : Bool!
     
     override init(){
         userid = ""
@@ -134,6 +135,7 @@ class UserModel : AppModel
         country_name = ""
         sortname = ""
         phonecode = ""
+        verified = false
     }
     
     init(dict : [String : Any])
@@ -160,6 +162,7 @@ class UserModel : AppModel
         country_name = ""
         sortname = ""
         phonecode = ""
+        verified = false
         
         userid = AppModel.shared.getStringValue(dict, "userid")
         if let temp = dict["profile_pic"] as? String {
@@ -217,10 +220,21 @@ class UserModel : AppModel
         if let temp = dict["phonecode"] as? String {
             phonecode = temp
         }
+        if let temp = dict["verified"] as? Bool {
+            verified = temp
+        }
+        else if let temp = dict["verified"] as? String {
+            if temp == "true" {
+                verified = true
+            }
+            else{
+                verified = false
+            }
+        }
     }
     
     func dictionary() -> [String:Any]  {
-        return ["userid":userid!, "profile_pic":profile_pic!, "user_accountype":user_accountype!, "user_buildingname":user_buildingname!, "user_cityid":user_cityid!, "user_countryid":user_countryid!, "user_deposit":user_deposit!, "user_email":user_email!, "user_flatnumber":user_flatnumber!, "user_lastname":user_lastname!, "user_name":user_name!, "user_password":user_password!, "user_phonenumber":user_phonenumber!, "user_pobox":user_pobox!, "user_postingtype":user_postingtype!, "user_status":user_status!, "user_streetaddress":user_streetaddress!, "city_name":city_name!, "country_name":country_name!, "sortname":sortname!, "phonecode":phonecode!, "user_limit" : user_limit!]
+        return ["userid":userid!, "profile_pic":profile_pic!, "user_accountype":user_accountype!, "user_buildingname":user_buildingname!, "user_cityid":user_cityid!, "user_countryid":user_countryid!, "user_deposit":user_deposit!, "user_email":user_email!, "user_flatnumber":user_flatnumber!, "user_lastname":user_lastname!, "user_name":user_name!, "user_password":user_password!, "user_phonenumber":user_phonenumber!, "user_pobox":user_pobox!, "user_postingtype":user_postingtype!, "user_status":user_status!, "user_streetaddress":user_streetaddress!, "city_name":city_name!, "country_name":country_name!, "sortname":sortname!, "phonecode":phonecode!, "biding_limit" : biding_limit!, "verified" : verified!]
     }
 }
 

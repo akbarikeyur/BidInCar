@@ -361,7 +361,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
         param["userid"] = AppModel.shared.currentUser.userid
         param["pagename"] = "profile"
         param["usertype"] = getUserType()
-        print(param)
+        printData(param)
         APIManager.shared.serviceCallToGetMyAuction(param) { (data, package) in
             var arrAuction = [AuctionModel]()
             for temp in data {

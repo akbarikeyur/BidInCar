@@ -37,20 +37,20 @@ class UploadImageVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         let actionSheet: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel) { _ in
-            print("Cancel")
+            printData("Cancel")
         }
         actionSheet.addAction(cancelButton)
 
         let cameraButton = UIAlertAction(title: "Take Photo", style: .default)
         { _ in
-            print("Camera")
+            printData("Camera")
             self.onCaptureImageThroughCamera()
         }
         actionSheet.addAction(cameraButton)
 
         let galleryButton = UIAlertAction(title: "Choose Existing Photo", style: .default)
         { _ in
-            print("Gallery")
+            printData("Gallery")
             self.onCaptureImageThroughGallery()
         }
         actionSheet.addAction(galleryButton)
@@ -72,27 +72,27 @@ class UploadImageVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         let actionSheet: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
         let cancelButton = UIAlertAction(title: "Cancel", style: .cancel) { _ in
-            print("Cancel")
+            printData("Cancel")
         }
         actionSheet.addAction(cancelButton)
 
         let cameraButton = UIAlertAction(title: "Take Photo", style: .default)
         { _ in
-            print("Camera")
+            printData("Camera")
             self.onCaptureImageThroughCamera()
         }
         actionSheet.addAction(cameraButton)
 
         let galleryButton = UIAlertAction(title: "Choose Existing Photo", style: .default)
         { _ in
-            print("Gallery")
+            printData("Gallery")
             self.onCaptureImageThroughGallery()
         }
         actionSheet.addAction(galleryButton)
         
         let removeButton = UIAlertAction(title: "Remove Photo", style: .default)
         { _ in
-            print("Remove")
+            printData("Remove")
             self.removeImage()
         }
         actionSheet.addAction(removeButton)

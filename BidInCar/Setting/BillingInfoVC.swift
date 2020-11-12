@@ -211,7 +211,7 @@ class BillingInfoVC: UIViewController, UICollectionViewDelegate, UICollectionVie
             var param = [String : Any]()
             param["userid"] = AppModel.shared.currentUser.userid!
             param["cardid"] = arrCardData[index!].user_card_id
-            print(param)
+            printData(param)
             APIManager.shared.serviceCallToSetPrimaryPaymentCard(param) {
                 
             }

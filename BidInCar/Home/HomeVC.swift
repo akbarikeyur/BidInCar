@@ -49,6 +49,7 @@ class HomeVC: UploadImageVC {
         NotificationCenter.default.addObserver(self, selector: #selector(updateAuctionData(_:)), name: NSNotification.Name.init(NOTIFICATION.UPDATE_AUCTION_DATA), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateFeatureAuctionData(_:)), name: NSNotification.Name.init(NOTIFICATION.AUCTION_FEATURED_DATA), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeAuctionData(_:)), name: NSNotification.Name.init(NOTIFICATION.REMOVE_AUCTION_DATA), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshTopData), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_DASHBOARD_TOP_DATA), object: nil)
         
         featureCV.register(UINib.init(nibName: "CustomCarCVC", bundle: nil), forCellWithReuseIdentifier: "CustomCarCVC")
         categoryCV.register(UINib.init(nibName: "CustomAuctionCategoryCVC", bundle: nil), forCellWithReuseIdentifier: "CustomAuctionCategoryCVC")
@@ -56,25 +57,6 @@ class HomeVC: UploadImageVC {
         
         tblView.register(UINib.init(nibName: "CustomCarTVC", bundle: nil), forCellReuseIdentifier: "CustomCarTVC")
         
-        arrInfo = [InfoModel]()
-        if isUserLogin() {
-            if isUserBuyer() {
-                for temp in getJsonFromFile("buyer_info") {
-                    arrInfo.append(InfoModel.init(dict: temp))
-                }
-            }
-            else{
-                for temp in getJsonFromFile("seller_info") {
-                    arrInfo.append(InfoModel.init(dict: temp))
-                }
-            }
-        }
-        infoCV.reloadData()
-        if arrInfo.count == 0 {
-            constraintHeightInfoCV.constant = 0
-        }else{
-            constraintHeightInfoCV.constant = 40
-        }
         
         searchTxt.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         tblView.tableHeaderView = headerView
@@ -90,7 +72,8 @@ class HomeVC: UploadImageVC {
                 if isUserLogin() {
                     AppDelegate().sharedDelegate().serviceCallToGetUserProfile()
                 }
-                serviceCallToGetAuctionCategoryList()                
+                serviceCallToGetAuctionCategoryList()
+                refreshTopData()
             }else{
                 setupAuctionData()
             }
@@ -158,6 +141,18 @@ class HomeVC: UploadImageVC {
     {
         refreshControl.endRefreshing()
         serviceCallToGetAuction("")
+    }
+    
+    @objc func refreshTopData() {
+        if !isUserLogin() {
+            self.constraintHeightInfoCV.constant = 0
+            return
+        }
+        if isUserBuyer() {
+            serviceCallToGetBuyerData()
+        }else{
+            serviceCallToGetSellerData()
+        }
     }
     
     //MARK:- Button click event
@@ -391,9 +386,16 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         }
         else if collectionView == infoCV {
             if isUserBuyer() {
-                let dict = arrInfo[indexPath.row]
-                if dict.name == "Deposit Amount" {
-                    
+                let tempInfo = arrInfo[indexPath.row]
+                if tempInfo.name == "Deposit Amount:" || tempInfo.name == "Total Bidding Limit:" {
+                    NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_MY_PROFILE), object: nil)
+                }
+            }
+            else {
+                let tempInfo = arrInfo[indexPath.row]
+                if tempInfo.name == "Package:" {
+                    let vc : PackageVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PackageVC") as! PackageVC
+                    self.navigationController?.pushViewController(vc, animated: true)
                 }
             }
         }
@@ -428,7 +430,7 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
         cell.minPriceLbl.text = "New minimum price: " + displayPriceWithCurrency(dict.auction_bidprice)
         cell.currentBidLbl.text = "Current Price " + displayPriceWithCurrency(dict.active_auction_price)
         cell.starBtn.isSelected = (dict.bookmark == "yes")
-        if isUserLogin() && (dict.userid == AppModel.shared.currentUser.userid || dict.is_bid == 1 ) {
+        if isUserLogin() {
             cell.bidNowBtn.isHidden = true
         }
         else{
@@ -505,7 +507,7 @@ extension HomeVC {
             param["cattype"] = selectedCategory.id
         }
         param["filters"] = filter
-        print(param)
+        printData(param)
         APIManager.shared.serviceCallToGetAuction(param) { (data) in
             self.arrAuctionData = [AuctionModel]()
             self.arrFeatureAuctionData = [AuctionModel]()
@@ -634,6 +636,74 @@ extension HomeVC {
                     self.arrModel.append(ChildCategoryModel.init(dict: temp))
                 }
             }
+        }
+    }
+    
+    func serviceCallToGetBuyerData() {
+        if isUserLogin() && isUserBuyer() && AppModel.shared.currentUser.userid != "" {
+            APIManager.shared.serviceCallToGetBuyerData(AppModel.shared.currentUser.userid) { (data) in
+                self.arrInfo = [InfoModel]()
+                for temp in getJsonFromFile("buyer_info") {
+                    let tempInfo = InfoModel.init(dict: temp)
+                    if tempInfo.name == "Active Auctions:" {
+                        tempInfo.value = AppModel.shared.getStringValue(data, "active_auction_bids")
+                    }
+                    else if tempInfo.name == "Total Auctions:" {
+                        tempInfo.value = AppModel.shared.getStringValue(data, "total_auctions")
+                    }
+                    else if tempInfo.name == "Deposit Amount:" {
+                        tempInfo.value = AppModel.shared.getStringValue(data, "deposite")
+                    }
+                    else if tempInfo.name == "Total Bidding Limit:" {
+                        tempInfo.value = AppModel.shared.getStringValue(data, "total_biding_limit")
+                    }
+                    else if tempInfo.name == "Remaining Bidding Limit:" {
+                        tempInfo.value = AppModel.shared.getStringValue(data, "remain_biding_limit")
+                    }
+                    self.arrInfo.append(tempInfo)
+                }
+                self.infoCV.reloadData()
+                if self.arrInfo.count == 0 {
+                    self.constraintHeightInfoCV.constant = 0
+                }else{
+                    self.constraintHeightInfoCV.constant = 40
+                }
+            }
+        }
+        else{
+            self.constraintHeightInfoCV.constant = 0
+        }
+    }
+    
+    func serviceCallToGetSellerData() {
+        if isUserLogin() && !isUserBuyer() && AppModel.shared.currentUser.userid != "" {
+            APIManager.shared.serviceCallToGetSellerData(AppModel.shared.currentUser.userid) { (data) in
+                self.arrInfo = [InfoModel]()
+                for temp in getJsonFromFile("seller_info") {
+                    let tempInfo = InfoModel.init(dict: temp)
+                    if tempInfo.name == "Active Auctions:" {
+                        tempInfo.value = AppModel.shared.getStringValue(data, "active_auction")
+                    }
+                    else if tempInfo.name == "Total Auctions:" {
+                        tempInfo.value = AppModel.shared.getStringValue(data, "total_auction")
+                    }
+                    else if tempInfo.name == "Package:" {
+                        tempInfo.value = AppModel.shared.getStringValue(data, "package_name")
+                    }
+                    else if tempInfo.name == "Remaining Auction Limit:" {
+                        tempInfo.value = AppModel.shared.getStringValue(data, "auctionsleft")
+                    }
+                    self.arrInfo.append(tempInfo)
+                }
+                self.infoCV.reloadData()
+                if self.arrInfo.count == 0 {
+                    self.constraintHeightInfoCV.constant = 0
+                }else{
+                    self.constraintHeightInfoCV.constant = 40
+                }
+            }
+        }else{
+            self.constraintHeightInfoCV.constant = 0
         }
     }
 }

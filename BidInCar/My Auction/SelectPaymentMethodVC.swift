@@ -342,13 +342,13 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
         }
         
         self.initialSetupViewController.didReceiveFinishTransactionCallback = {(responseCode, result, transactionID, tokenizedCustomerEmail, tokenizedCustomerPassword, token, transactionState) in
-            print("Response Code: \(responseCode)")
-            print("Response Result: \(result)")
+            printData("Response Code: \(responseCode)")
+            printData("Response Result: \(result)")
             
             // In Case you are using tokenization
-            print("Tokenization Cutomer Email: \(tokenizedCustomerEmail)");
-            print("Tokenization Customer Password: \(tokenizedCustomerPassword)");
-            print("TOkenization Token: \(token)");
+            printData("Tokenization Cutomer Email: \(tokenizedCustomerEmail)");
+            printData("Tokenization Customer Password: \(tokenizedCustomerPassword)");
+            printData("TOkenization Token: \(token)");
             
             if responseCode == 100 {
                 self.paytabPaymentCompleted()
@@ -410,11 +410,10 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             }
             paymentParam["deposite_amount"] = amount
         }
-        print(paymentParam)
+        printData(paymentParam)
         APIManager.shared.serviceCallToDepositeAmount(paymentParam) {
             displayToast("Deposit added successfully")
-            AppModel.shared.currentUser.user_deposit = String(amount)
-            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
+            AppDelegate().sharedDelegate().serviceCallToGetUserProfile()
             self.navigationController?.popViewController(animated: true)
         }
     }

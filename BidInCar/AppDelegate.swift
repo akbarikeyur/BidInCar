@@ -184,6 +184,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             AppModel.shared.currentUser = UserModel.init(dict: dict)
             setLoginUserData()
             NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_DASHBOARD_TOP_DATA), object: nil)
         }
     }
     
@@ -217,7 +218,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 return
             }
             
-            print(token.tokenString)
+            printData(token.tokenString)
             
             let request : GraphRequest = GraphRequest(graphPath: "me", parameters: ["fields" : "picture.width(500).height(500), email, id, name, first_name, last_name, gender"])
             
@@ -228,7 +229,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 {
                     AppModel.shared.currentUser = UserModel.init()
                     let dict = result as! [String : AnyObject]
-                    print(dict)
+                    printData(dict)
                     
                     /*
                     APIManager.shared.serviceCallToFBLogin(accessToken, { (status) in
@@ -273,7 +274,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 }
                 else
                 {
-                    print(error?.localizedDescription ?? "error")
+                    printData(error?.localizedDescription ?? "error")
                 }
             })
             connection.start()
@@ -283,9 +284,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
       if let error = error {
         if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
-          print("The user has not signed in before or they have since signed out.")
+          printData("The user has not signed in before or they have since signed out.")
         } else {
-          print("\(error.localizedDescription)")
+          printData("\(error.localizedDescription)")
         }
         return
       }
@@ -300,7 +301,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
           
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        print(error.localizedDescription)
+        printData(error.localizedDescription)
     }
 
     //MARK:- Twitter
@@ -309,18 +310,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         /*
         TWTRTwitter.sharedInstance().logIn { (session, error) in
             if session != nil {
-                print(session?.userID)
-                print(session?.userName)
+                printData(session?.userID)
+                printData(session?.userName)
                 TWTRAPIClient.withCurrentUser().requestEmail { (email, error) in
                     if error == nil {
-                        print(email)
+                        printData(email)
                     }else{
-                        print(error?.localizedDescription)
+                        printData(error?.localizedDescription)
                     }
                 }
             }
             else{
-                print(error?.localizedDescription)
+                printData(error?.localizedDescription)
             }
         }
         */
@@ -362,12 +363,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print("Notification registered")
+        printData("Notification registered")
         Messaging.messaging().isAutoInitEnabled = true
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("Unable to register for remote notifications: \(error.localizedDescription)")
+        printData("Unable to register for remote notifications: \(error.localizedDescription)")
     }
     
     //Get Push Notification
@@ -377,7 +378,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        print(userInfo)
+        printData(userInfo)
         completionHandler(UIBackgroundFetchResult.newData)
     }
     
@@ -432,16 +433,16 @@ extension UIApplication {
 
 extension AppDelegate : MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        print("Firebase registration token: \(fcmToken)")
+        printData("Firebase registration token: \(fcmToken)")
         if getPushToken() == ""
         {
             setPushToken(fcmToken)
-            print(fcmToken)
+            printData(fcmToken)
         }
     }
     
     func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-        print("Received data message: \(remoteMessage.appData)")
+        printData("Received data message: \(remoteMessage.appData)")
     }
 }
 
@@ -483,6 +484,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     //Redirect to screen
     func notificationHandler(_ dict : [String : Any])
     {
-        print(dict)
+        let vc : NotificationVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "NotificationVC") as! NotificationVC
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
 }

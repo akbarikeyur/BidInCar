@@ -56,7 +56,14 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if getCountryData().count == 0 {
+            APIManager.shared.serviceCallToGetCountryList { (data) in
+                setCountryData(data)
+                self.arrCountryData = getCountryData()
+            }
+        }
         setUIDesigning()
+        
     }
     
     func setUIDesigning()
@@ -293,9 +300,14 @@ class SignupVC: UIViewController, UITextFieldDelegate {
                 }
             }
             
-            print(param)
+            printData(param)
             APIManager.shared.serviceCallToUserSignup(param) {
-                self.navigationController?.popViewController(animated: true)
+                if AppModel.shared.currentUser.userid != "" {
+                    let vc : VerificationVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "VerificationVC") as! VerificationVC
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }else{
+                    self.navigationController?.popViewController(animated: true)
+                }
             }
         }
     }

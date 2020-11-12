@@ -348,7 +348,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             else if (Int(auctionData.active_auction_price)! + Int(auctionData.auction_bidprice)!) > price {
                 displayToast("Your bid amount is lower")
             }
-            else if Int(AppModel.shared.currentUser.user_deposit) == 0 {
+            else if Int(AppModel.shared.currentUser.biding_limit) == 0 {
                 displaySubViewtoParentView(self.view, subview: bidNowView)
             }
             else{
@@ -559,7 +559,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             param["userid"] = AppModel.shared.currentUser.userid
         }
         param["bidamount"] = myBidTxt.text
-        print(param)
+        printData(param)
         APIManager.shared.serviceCallToAddAuctionBid(param) { (dict) in
             if let status = dict["status"] as? String, status == "success" {
                 self.auctionData.your_bid = Int(self.myBidTxt.text!) ?? 0

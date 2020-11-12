@@ -74,7 +74,10 @@ class PostAuctionDetailVC: UIViewController {
 
         // Do any additional setup after loading the view.
         dateView.isHidden = true
-        serviceCallToGetAuctionDetail()
+        setUIDesigning()
+        delay(2.0) {
+            self.serviceCallToGetAuctionDetail()
+        }
     }
     
     func setUIDesigning() {
@@ -242,7 +245,6 @@ class PostAuctionDetailVC: UIViewController {
                 break
             }
         }
-        
     }
     
     @IBAction func clickToTermsConditions(_ sender: Any) {
@@ -276,7 +278,7 @@ class PostAuctionDetailVC: UIViewController {
                     AppModel.shared.AUCTION_DATA[String(self.myAuction.categorytype)] = [AuctionModel]()
                 }
                 AppDelegate().sharedDelegate().serviceCallToDecreseLeftAuction()
-                NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_HOME), object: nil)
+                self.clickToBack(self)
             }
         }
         else{

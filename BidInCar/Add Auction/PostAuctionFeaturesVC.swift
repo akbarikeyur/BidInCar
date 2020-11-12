@@ -422,7 +422,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         }else{
             param["auctionid"] = myAuction.auctionid
         }
-        print(param)
+        printData(param)
         
         if arrImgData.count > 0 {
             uploadAllImages(0)
@@ -447,7 +447,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
     
     func serviceCallToPostAuction()
     {
-        APIManager.shared.serviceCallToPostAuction(param) { (code, auctionid) in
+        APIManager.shared.serviceCallToPostAuction(param) { (code, auctionid, data) in
             if code == 100 {
                 if AppModel.shared.AUCTION_DATA[String(self.selectedAuctionType.id)] != nil {
                     AppModel.shared.AUCTION_DATA[String(self.selectedAuctionType.id)] = [AuctionModel]()
@@ -457,11 +457,11 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
                 NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_HOME), object: nil)
             }
             else{
-                self.myAuction = AuctionModel.init(dict: self.param)
-                self.myAuction.auctionid = String(auctionid)
+//                self.myAuction = AuctionModel.init(dict: self.param)
+//                self.myAuction.auctionid = String(auctionid)
                 showAlert("Success", message: "You have not purchase any package so we save your auction into draft. Please purchase package to activate your auction.") {
                     let vc : PostAuctionDetailVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PostAuctionDetailVC") as! PostAuctionDetailVC
-                    vc.myAuction = self.myAuction
+                    vc.myAuction = AuctionModel.init(dict: data)
                     UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
                 }
             }
@@ -641,7 +641,7 @@ extension PostAuctionFeaturesVC: GMSAutocompleteViewControllerDelegate {
 
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
         // TODO: handle the error.
-        print("Error: ", error.localizedDescription)
+        printData("Error: ", error.localizedDescription)
     }
  
     // User canceled the operation.

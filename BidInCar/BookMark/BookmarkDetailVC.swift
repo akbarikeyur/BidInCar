@@ -230,23 +230,23 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
     func SOGetPermissionCalendarAccess() {
         switch EKEventStore.authorizationStatus(for: .event) {
             case .authorized:
-                print("Authorised")
+                printData("Authorised")
                 addReminder()
                 break
             case .denied:
-                print("Access denied")
+                printData("Access denied")
                 break
             case .notDetermined:
                 eventStore.requestAccess(to: .event, completion:
                     {(granted, error) in
                         if !granted {
-                            print("Access to store not granted")
+                            printData("Access to store not granted")
                             self.addReminder()
                         }
                 })
                 break
             default:
-                print("Case Default")
+                printData("Case Default")
         }
     }
     
@@ -275,7 +275,7 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
                 self.hour48Btn.isSelected = false
                 self.hour72Btn.isSelected = false
             } catch let e as NSError {
-                print(e.description)
+                printData(e.description)
                 return
             }
         }
@@ -302,9 +302,9 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
             do {
                 try eventStore.remove(eventToRemove!, span: .thisEvent, commit: true)
                 try eventStore.remove(eventToRemove!, span: .futureEvents, commit: true)
-                print("Remove")
+                printData("Remove")
             } catch {
-                print(error.localizedDescription)
+                printData(error.localizedDescription)
             }
         }
     }

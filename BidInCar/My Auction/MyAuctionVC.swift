@@ -228,6 +228,7 @@ class MyAuctionVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                     dict.is_bid = 0
                     dict.your_bid = 0
                     NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_AUCTION_DATA), object: dict)
+                    AppDelegate().sharedDelegate().serviceCallToGetUserProfile()
                 }
             }
         }) {
@@ -313,7 +314,7 @@ class MyAuctionVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         param["userid"] = AppModel.shared.currentUser.userid
         param["pagename"] = "profile"
         param["usertype"] = getUserType()
-        print(param)
+        printData(param)
         APIManager.shared.serviceCallToGetMyAuction(param) { (data, package) in
             var arrAuction = [AuctionModel]()
             for temp in data {

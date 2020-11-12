@@ -17,11 +17,16 @@ struct API {
     
     static let LOGIN                        =       BASE_URL + "user/user_auth"
     static let SIGNUP                       =       BASE_URL + "user/register"
+    static let SEND_OTP                     =       BASE_URL + "user/sendotp"
+    static let VERIFY_OTP                   =       BASE_URL + "user/verify_account"
     
     static let GET_USER_PROFILE             =       BASE_URL + "user/getprofile"
     static let UPLOAD_PROFILE_PICTURE       =       BASE_URL + "user/upload_profile_pic"
     static let UPDATE_PROFILE               =       BASE_URL + "user/update_profile"
     static let CHANGE_PASSWORD              =       BASE_URL + "user/update_password"
+    
+    static let GET_BUYER_DATA               =       BASE_URL + "user/topbuyerbar"
+    static let GET_SELLER_DATA              =       BASE_URL + "user/topsellerbar"
     
     static let GET_COUNTRY                  =       BASE_URL + "getcountries"
     static let GET_CITY                     =       BASE_URL + "getcities"
@@ -152,7 +157,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -160,7 +165,6 @@ public class APIManager {
                             if let data : [String : Any] = result["data"] as? [String : Any]
                             {
                                 AppModel.shared.currentUser = UserModel.init(dict: data)
-                                setLoginUserData()
                                 completion()
                                 return
                             }
@@ -181,7 +185,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -201,7 +205,55 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
+                if let result = response.result.value as? [String:Any] {
+                
+                    if let status = result["status"] as? String {
+                        if(status == "success") {
+                            if let data : [String : Any] = result["data"] as? [String : Any]
+                            {
+                                AppModel.shared.currentUser = UserModel.init(dict: data)
+                                completion()
+                                return
+                            }
+                        }
+                        else if status == "error"
+                        {
+                            if let message = result["message"] as? String, message != "" {
+                                displayToast(message)
+                            }
+                            self.handleStatusCode(result)
+                        }
+                    }
+                }
+                if let error = response.result.error
+                {
+                    displayToast(error.localizedDescription)
+                    return
+                }
+                break
+            case .failure(let error):
+                printData(error)
+                break
+            }
+        }
+    }
+    
+    func serviceCallToSendOtp(_ params : [String : Any], completion: @escaping () -> Void) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        showLoader()
+        let headerParams :[String : String] = getJsonHeader()
+        
+        Alamofire.request(API.SEND_OTP, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
+            
+            removeLoader()
+            switch response.result {
+            case .success:
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -225,7 +277,51 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
+                break
+            }
+        }
+    }
+    
+    func serviceCallToVerifyAccount(_ params : [String : Any], completion: @escaping () -> Void) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        showLoader()
+        let headerParams :[String : String] = getJsonHeader()
+        
+        Alamofire.request(API.VERIFY_OTP, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
+            
+            removeLoader()
+            switch response.result {
+            case .success:
+                printData(response.result.value!)
+                if let result = response.result.value as? [String:Any] {
+                
+                    if let status = result["status"] as? String {
+                        if(status == "success") {
+                            completion()
+                            return
+                        }
+                        else if status == "error"
+                        {
+                            if let message = result["message"] as? String, message != "" {
+                                displayToast(message)
+                            }
+                            self.handleStatusCode(result)
+                        }
+                    }
+                }
+                if let error = response.result.error
+                {
+                    displayToast(error.localizedDescription)
+                    return
+                }
+                break
+            case .failure(let error):
+                printData(error)
                 break
             }
         }
@@ -242,7 +338,7 @@ public class APIManager {
         Alamofire.request(API.GET_USER_PROFILE, method: .post, parameters: ["userid" : userId], encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                     
                     if let status = result["status"] as? String {
@@ -265,7 +361,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -298,12 +394,12 @@ public class APIManager {
             case .success(let upload, _, _):
                 
                 upload.uploadProgress(closure: { (Progress) in
-                    print("Upload Progress: \(Progress.fractionCompleted)")
+                    printData("Upload Progress: \(Progress.fractionCompleted)")
                 })
                 upload.responseJSON { response in
                     //removeLoader()
                     if let result = response.result.value as? [String:Any] {
-                        print(result)
+                        printData(result)
                         if let status = result["status"] as? String {
                             if(status == "success") {
                                 if let data : [String : Any] = result["data"] as? [String : Any] {
@@ -324,14 +420,14 @@ public class APIManager {
                     }
                     else if let error = response.error{
                         displayToast(error.localizedDescription)
-                        print(error.localizedDescription)
+                        printData(error.localizedDescription)
                         return
                     }
                     //displayToast("Registeration error")
                 }
             case .failure(let error):
                 removeLoader()
-                print(error.localizedDescription)
+                printData(error.localizedDescription)
                 break
             }
         }
@@ -344,11 +440,11 @@ public class APIManager {
             return
         }
         let headerParams :[String : String] = getJsonHeader()
-        print(params)
+        printData(params)
         Alamofire.request(API.UPDATE_PROFILE, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -371,7 +467,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -384,11 +480,11 @@ public class APIManager {
             return
         }
         let headerParams :[String : String] = getJsonHeader()
-        print(params)
+        printData(params)
         Alamofire.request(API.CHANGE_PASSWORD, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -409,7 +505,61 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
+                break
+            }
+        }
+    }
+    
+    func serviceCallToGetBuyerData(_ userId : String, _ completion: @escaping (_ data : [String : Any]) -> Void) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        let headerParams :[String : String] = getJsonHeader()
+        Alamofire.request(API.GET_BUYER_DATA, method: .post, parameters: ["userid" : userId], encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
+            switch response.result {
+            case .success:
+                printData(response.result.value!)
+                if let result = response.result.value as? [String:Any] {
+                    completion(result)
+                }
+                if let error = response.result.error
+                {
+                    displayToast(error.localizedDescription)
+                    return
+                }
+                break
+            case .failure(let error):
+                printData(error)
+                break
+            }
+        }
+    }
+    
+    func serviceCallToGetSellerData(_ userId : String, _ completion: @escaping (_ data : [String : Any]) -> Void) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        let headerParams :[String : String] = getJsonHeader()
+        Alamofire.request(API.GET_SELLER_DATA, method: .post, parameters: ["userid" : userId], encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
+            switch response.result {
+            case .success:
+                printData(response.result.value!)
+                if let result = response.result.value as? [String:Any] {
+                    completion(result)
+                }
+                if let error = response.result.error
+                {
+                    displayToast(error.localizedDescription)
+                    return
+                }
+                break
+            case .failure(let error):
+                printData(error)
                 break
             }
         }
@@ -423,11 +573,11 @@ public class APIManager {
             return
         }
         let headerParams :[String : String] = getJsonHeader()
-        print(params)
+        printData(params)
         Alamofire.request(API.GET_FEATURED_AUCTION, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -450,7 +600,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -463,11 +613,11 @@ public class APIManager {
             return
         }
         let headerParams :[String : String] = getJsonHeader()
-        print(params)
+        printData(params)
         Alamofire.request(API.GET_PACKAGE_HISTORY, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -494,7 +644,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -507,11 +657,11 @@ public class APIManager {
             return
         }
         let headerParams :[String : String] = getJsonHeader()
-        print(params)
+        printData(params)
         Alamofire.request(API.GET_BID_AUCTION, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -534,7 +684,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -562,12 +712,12 @@ public class APIManager {
             case .success(let upload, _, _):
                 
                 upload.uploadProgress(closure: { (Progress) in
-                    print("Upload Progress: \(Progress.fractionCompleted)")
+                    printData("Upload Progress: \(Progress.fractionCompleted)")
                 })
                 upload.responseJSON { response in
                     removeLoader()
                     if let result = response.result.value as? [String:Any] {
-                        print(result)
+                        printData(result)
                         if let status = result["status"] as? String {
                             if(status == "success") {
                                 if let data : [String : Any] = result["data"] as? [String : Any] {
@@ -585,14 +735,14 @@ public class APIManager {
                     }
                     else if let error = response.error{
                         displayToast(error.localizedDescription)
-                        print(error.localizedDescription)
+                        printData(error.localizedDescription)
                         return
                     }
                     //displayToast("Registeration error")
                 }
             case .failure(let error):
                 removeLoader()
-                print(error.localizedDescription)
+                printData(error.localizedDescription)
                 break
             }
         }
@@ -617,12 +767,12 @@ public class APIManager {
             case .success(let upload, _, _):
                 
                 upload.uploadProgress(closure: { (Progress) in
-                    print("Upload Progress: \(Progress.fractionCompleted)")
+                    printData("Upload Progress: \(Progress.fractionCompleted)")
                 })
                 upload.responseJSON { response in
                     removeLoader()
                     if let result = response.result.value as? [String:Any] {
-                        print(result)
+                        printData(result)
                         if let status = result["status"] as? String {
                             if(status == "success") {
                                 if let data : [String : Any] = result["data"] as? [String : Any] {
@@ -645,14 +795,14 @@ public class APIManager {
                     }
                     else if let error = response.error{
                         displayToast(error.localizedDescription)
-                        print(error.localizedDescription)
+                        printData(error.localizedDescription)
                         return
                     }
                     //displayToast("Registeration error")
                 }
             case .failure(let error):
                 removeLoader()
-                print(error.localizedDescription)
+                printData(error.localizedDescription)
                 break
             }
         }
@@ -665,11 +815,11 @@ public class APIManager {
             return
         }
         let headerParams :[String : String] = getJsonHeader()
-        print(params)
+        printData(params)
         Alamofire.request(API.REMOVE_AUCTION_IMAGE, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -690,13 +840,13 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
     }
     
-    func serviceCallToPostAuction(_ param : [String : Any], _ completion: @escaping (_ code : Int, _ auctionid : Int) -> Void) {
+    func serviceCallToPostAuction(_ param : [String : Any], _ completion: @escaping (_ code : Int, _ auctionid : Int, _ data : [String : Any]) -> Void) {
         if !APIManager.isConnectedToNetwork()
         {
             APIManager().networkErrorMsg()
@@ -705,7 +855,7 @@ public class APIManager {
         showLoader()
         
         let headerParams :[String : String] = getMultipartHeader()
-        print(param)
+        printData(param)
         Alamofire.upload(multipartFormData: { (multipartFormData) in
             for (key, value) in param {
                 multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
@@ -716,36 +866,38 @@ public class APIManager {
             case .success(let upload, _, _):
                 
                 upload.uploadProgress(closure: { (Progress) in
-                    print("Upload Progress: \(Progress.fractionCompleted)")
+                    printData("Upload Progress: \(Progress.fractionCompleted)")
                 })
                 upload.responseJSON { response in
                     removeLoader()
                     if let result = response.result.value as? [String:Any] {
-                        print(result)
+                        printData(result)
                         if let status = result["status"] as? String {
                             if(status == "success") {
-                                if let message = result["message"] as? String, message == "Auction is activated" {
-                                    completion(100, 0)
-                                    return
-                                }
-                                else {
-                                    if let data : [String : Any] = result["data"] as? [String : Any] {
-                                        if let auctionid : Int = data["auctionid"] as? Int {
-                                            completion(101, auctionid)
-                                            return
-                                        }
-                                        else if let auctionid : String = data["auctionid"] as? String {
-                                            completion(101, Int(auctionid)!)
-                                            return
-                                        }
+                                if let posted_auction = result["posted_auction"] as? [String : Any] {
+                                    if let message = result["message"] as? String, message == "Auction is activated" {
+                                        completion(100, 0, posted_auction)
+                                        return
                                     }
                                     else {
-                                        completion(101, -1)
+                                        if let data : [String : Any] = result["data"] as? [String : Any] {
+                                            if let auctionid : Int = data["auctionid"] as? Int {
+                                                completion(101, auctionid, posted_auction)
+                                                return
+                                            }
+                                            else if let auctionid : String = data["auctionid"] as? String {
+                                                completion(101, Int(auctionid)!, posted_auction)
+                                                return
+                                            }
+                                        }
+                                        else {
+                                            completion(101, -1, posted_auction)
+                                        }
                                     }
                                 }
                             }
                             else if(status == "Auction Limit") {
-                                completion(101, 0)
+                                completion(101, 0, [String : Any]())
                             }
                             else
                             {
@@ -755,14 +907,14 @@ public class APIManager {
                     }
                     else if let error = response.error{
                         displayToast(error.localizedDescription)
-                        print(error.localizedDescription)
+                        printData(error.localizedDescription)
                         return
                     }
                     //displayToast("Registeration error")
                 }
             case .failure(let error):
                 removeLoader()
-                print(error.localizedDescription)
+                printData(error.localizedDescription)
                 break
             }
         }
@@ -780,7 +932,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -801,7 +953,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -817,11 +969,12 @@ public class APIManager {
         Alamofire.request(API.DECRESE_LEFT_AUCTION, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
                         if(status == "success") {
+                            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_DASHBOARD_TOP_DATA), object: nil)
                             completion()
                             return
                         }
@@ -838,7 +991,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -856,7 +1009,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -879,7 +1032,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -899,7 +1052,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -922,7 +1075,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -940,7 +1093,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                     completion(result)
                     return
@@ -953,7 +1106,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -971,7 +1124,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                     if let status = result["status"] as? String {
                         if(status == "success") {
@@ -997,7 +1150,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1015,7 +1168,7 @@ public class APIManager {
             //removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -1038,7 +1191,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1056,7 +1209,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                     if let status = result["status"] as? String {
                         if(status == "success") {
@@ -1076,7 +1229,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1094,7 +1247,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                     if let status = result["status"] as? String {
                         if(status == "success") {
@@ -1114,7 +1267,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1133,7 +1286,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                     if let status = result["status"] as? String {
                         if(status == "success") {
@@ -1155,7 +1308,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1173,7 +1326,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -1196,7 +1349,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1214,7 +1367,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -1237,7 +1390,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1256,7 +1409,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -1279,7 +1432,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1297,7 +1450,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -1318,7 +1471,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1336,7 +1489,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                     if let status = result["status"] as? String {
                         if(status == "success") {
@@ -1356,7 +1509,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1374,7 +1527,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -1395,7 +1548,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1413,7 +1566,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -1434,7 +1587,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1452,7 +1605,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -1473,7 +1626,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1492,7 +1645,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -1515,7 +1668,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1533,7 +1686,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -1555,7 +1708,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1573,7 +1726,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -1594,7 +1747,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1613,7 +1766,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                     if let status = result["status"] as? String {
                         if(status == "success") {
@@ -1636,7 +1789,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1655,7 +1808,7 @@ public class APIManager {
             
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                     if let status = result["status"] as? String {
                         if(status == "success") {
@@ -1678,7 +1831,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1705,12 +1858,12 @@ public class APIManager {
             case .success(let upload, _, _):
                 
                 upload.uploadProgress(closure: { (Progress) in
-                    print("Upload Progress: \(Progress.fractionCompleted)")
+                    printData("Upload Progress: \(Progress.fractionCompleted)")
                 })
                 upload.responseJSON { response in
                     removeLoader()
                     if let result = response.result.value as? [String:Any] {
-                        print(result)
+                        printData(result)
                         if let status = result["status"] as? String {
                             if(status == "success") {
                                 if let data : [String : Any] = result["data"] as? [String : Any] {
@@ -1728,14 +1881,14 @@ public class APIManager {
                     }
                     else if let error = response.error{
                         displayToast(error.localizedDescription)
-                        print(error.localizedDescription)
+                        printData(error.localizedDescription)
                         return
                     }
                     //displayToast("Registeration error")
                 }
             case .failure(let error):
                 removeLoader()
-                print(error.localizedDescription)
+                printData(error.localizedDescription)
                 break
             }
         }
@@ -1753,9 +1906,9 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
-                    print(result)
+                    printData(result)
                     completion()
                     return
                 }
@@ -1766,7 +1919,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1787,9 +1940,9 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
-                    print(result)
+                    printData(result)
                     if let data = result["data"] as? [String : Any] {
                         completion(data)
                     }
@@ -1802,7 +1955,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1820,7 +1973,7 @@ public class APIManager {
         Alamofire.request(API.GET_COUNTRY, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             switch response.result {
             case .success:
-//                print(response.result.value!)
+//                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -1843,7 +1996,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1860,7 +2013,7 @@ public class APIManager {
         Alamofire.request(API.GET_CITY, method: .post, parameters: ["countryid":country_id], encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -1883,7 +2036,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1901,7 +2054,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -1924,7 +2077,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1941,7 +2094,7 @@ public class APIManager {
         Alamofire.request(API.GET_CATEGORY, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -1964,7 +2117,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -1977,13 +2130,13 @@ public class APIManager {
             return
         }
         let headerParams :[String : String] = getJsonHeader()
-        print(catid)
+        printData(catid)
         showLoader()
         Alamofire.request(API.GET_CHILD_CATEGORY, method: .post, parameters: ["catid":catid], encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             removeLoader()
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -2006,7 +2159,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }
@@ -2022,7 +2175,7 @@ public class APIManager {
         Alamofire.request(API.GET_FEATURED_PRICE, method: .post, parameters: nil, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             switch response.result {
             case .success:
-                print(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {
@@ -2045,7 +2198,7 @@ public class APIManager {
                 }
                 break
             case .failure(let error):
-                print(error)
+                printData(error)
                 break
             }
         }

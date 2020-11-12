@@ -38,7 +38,7 @@ class SelectAddressVC: UIViewController, CLLocationManagerDelegate, MKMapViewDel
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
         } else {
-            print("Location services are not enabled");
+            printData("Location services are not enabled");
         }
         myMapView.delegate = self
     }
@@ -50,7 +50,7 @@ class SelectAddressVC: UIViewController, CLLocationManagerDelegate, MKMapViewDel
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
+        printData(error.localizedDescription)
     }
     
     func updateLocation()
@@ -95,7 +95,7 @@ class SelectAddressVC: UIViewController, CLLocationManagerDelegate, MKMapViewDel
         let loc: CLLocation = CLLocation(latitude:center.latitude, longitude: center.longitude)
         ceo.reverseGeocodeLocation(loc) { (placemarks, error) in
             if (error != nil) {
-                print("reverse geodcode fail: \(error!.localizedDescription)")
+                printData("reverse geodcode fail: \(error!.localizedDescription)")
             }
             let pm = placemarks! as [CLPlacemark]
             if pm.count > 0 {
@@ -118,7 +118,7 @@ class SelectAddressVC: UIViewController, CLLocationManagerDelegate, MKMapViewDel
                   }
                 self.selectedAddress = addressString
                 self.addressTxt.text = addressString
-                print(addressString)
+                printData(addressString)
                 self.isReadyToCall = true
             }
         }

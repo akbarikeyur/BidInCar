@@ -91,7 +91,7 @@ class BookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         var param = [String : Any]()
         param["userid"] = AppModel.shared.currentUser.userid
         param["usertype"] = getUserType()
-        print(param)
+        printData(param)
         APIManager.shared.serviceCallToGetMyBookmark(param) { (data) in
             self.arrAuctionData = [AuctionModel]()
             for temp in data {
