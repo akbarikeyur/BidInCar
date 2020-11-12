@@ -198,7 +198,7 @@ func openUrlInSafari(strUrl : String)
 func printData(_ items: Any..., separator: String = " ", terminator: String = "\n")
 {
     #if DEBUG
-//        print(items)
+        print(items)
     #endif
 }
 
