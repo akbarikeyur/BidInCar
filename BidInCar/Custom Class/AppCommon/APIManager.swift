@@ -449,9 +449,7 @@ public class APIManager {
                 
                     if let status = result["status"] as? String {
                         if(status == "success") {
-                            if let data : [[String : Any]] = result["data"] as? [[String : Any]], data.count > 0 {
-                                
-                            }
+                            AppDelegate().sharedDelegate().serviceCallToGetUserProfile()
                             return
                         }
                         else
@@ -2083,15 +2081,18 @@ public class APIManager {
         }
     }
     
-    func serviceCallToGetCategoryList(_ param : [String : Any], _ completion: @escaping (_ data : [[String : Any]]) -> Void) {
+    func serviceCallToGetCategoryList(_ param : [String : Any], _ isLoaderDisplay : Bool, _ completion: @escaping (_ data : [[String : Any]]) -> Void) {
         if !APIManager.isConnectedToNetwork()
         {
             APIManager().networkErrorMsg()
             return
         }
+        if isLoaderDisplay {
+            showLoader()
+        }
         let headerParams :[String : String] = getJsonHeader()
-        
         Alamofire.request(API.GET_CATEGORY, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
+            removeLoader()
             switch response.result {
             case .success:
                 printData(response.result.value!)

@@ -555,7 +555,7 @@ extension PostCarAuctionVC {
         if selectedAuctionType.id == 4 {
             cattype = 1
         }
-        APIManager.shared.serviceCallToGetCategoryList(["cattype" : cattype!]) { (data) in
+        APIManager.shared.serviceCallToGetCategoryList(["cattype" : cattype!], false) { (data) in
             self.arrCategoryData = [CategoryModel]()
             for temp in data {
                 self.arrCategoryData.append(CategoryModel.init(dict: temp))

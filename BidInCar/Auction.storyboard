@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wFs-eb-Et6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wFs-eb-Et6">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -573,7 +573,7 @@
                                                                             <constraint firstAttribute="height" constant="45" id="jec-Yk-A5j"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Motor no."/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Engine No."/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kkk-8N-g8u" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -2251,11 +2251,11 @@
                         <viewControllerLayoutGuide type="bottom" id="dtP-6L-4PI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mHB-d1-GEW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="990"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1050"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_bg" translatesAutoresizingMaskIntoConstraints="NO" id="YNR-y8-W03">
-                                <rect key="frame" x="-5" y="-5" width="330" height="1000"/>
+                                <rect key="frame" x="-5" y="-5" width="330" height="1060"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AjY-2H-jgb">
@@ -2298,7 +2298,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKv-AH-28w">
-                                <rect key="frame" x="0.0" y="44" width="320" height="946"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="1006"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiI-1i-PAS">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="946"/>
@@ -2609,6 +2609,7 @@
                                                     <constraint firstItem="25C-ps-hSJ" firstAttribute="leading" secondItem="NeK-ho-Q0r" secondAttribute="leading" id="1us-29-iT1"/>
                                                     <constraint firstAttribute="trailing" secondItem="rqe-sq-rHl" secondAttribute="trailing" id="3SQ-vy-aI4"/>
                                                     <constraint firstItem="JW3-Zj-q0U" firstAttribute="top" secondItem="8jK-as-ZBv" secondAttribute="bottom" constant="15" id="3pV-gK-Cf8"/>
+                                                    <constraint firstItem="rqe-sq-rHl" firstAttribute="top" secondItem="W4v-V6-IeL" secondAttribute="bottom" id="5xh-yc-D3g"/>
                                                     <constraint firstItem="skz-NZ-OfI" firstAttribute="leading" secondItem="NeK-ho-Q0r" secondAttribute="leading" id="6Pl-e2-ViR"/>
                                                     <constraint firstAttribute="bottom" secondItem="rqe-sq-rHl" secondAttribute="bottom" id="6ew-aG-YYA"/>
                                                     <constraint firstItem="9sx-u1-uNs" firstAttribute="top" secondItem="MZM-oL-JB5" secondAttribute="bottom" constant="10" id="6pK-Km-aPa"/>
@@ -2638,7 +2639,6 @@
                                                     <constraint firstItem="FoL-ta-BBX" firstAttribute="top" secondItem="Pul-Jz-5AL" secondAttribute="top" constant="-10" id="ePd-r3-mce"/>
                                                     <constraint firstItem="MZM-oL-JB5" firstAttribute="top" secondItem="NeK-ho-Q0r" secondAttribute="top" constant="20" id="fqA-A2-cGu"/>
                                                     <constraint firstItem="n7z-5P-dPG" firstAttribute="top" secondItem="JW3-Zj-q0U" secondAttribute="bottom" constant="15" id="h2T-Qm-Z0C"/>
-                                                    <constraint firstItem="rqe-sq-rHl" firstAttribute="top" secondItem="W4v-V6-IeL" secondAttribute="bottom" id="hhf-Qy-Uym"/>
                                                     <constraint firstItem="EwZ-YY-XhO" firstAttribute="bottom" secondItem="JW3-Zj-q0U" secondAttribute="bottom" id="hwv-jt-aZs"/>
                                                     <constraint firstItem="lui-Fd-LNJ" firstAttribute="trailing" secondItem="n7z-5P-dPG" secondAttribute="trailing" constant="-20" id="j0e-XM-7vw"/>
                                                     <constraint firstItem="dRg-4B-hPJ" firstAttribute="top" secondItem="25C-ps-hSJ" secondAttribute="bottom" constant="15" id="nmX-SQ-Ehd"/>
@@ -2965,7 +2965,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="638-tb-U9c"/>
-                    <size key="freeformSize" width="320" height="990"/>
+                    <size key="freeformSize" width="320" height="1050"/>
                     <connections>
                         <outlet property="autoCheckImgView" destination="Pul-Jz-5AL" id="Rpp-h2-4El"/>
                         <outlet property="autoCheckTxt" destination="rqe-sq-rHl" id="MXa-v3-Xo4"/>

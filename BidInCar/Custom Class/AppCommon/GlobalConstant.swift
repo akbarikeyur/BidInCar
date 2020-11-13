@@ -36,8 +36,8 @@ let PAYPAL_SECRET = "EJcHmbghyDMOs9zxGqKsu7793Rff6V8RlrdtOQmCic_IdWUd_ROqc7JaBBK
 
 let PAYTAB_KEY = "VxmCXzfYr4rMSsyHanFmqXNbL1A62L4XjrAg0QfsUGeN9MvjaaFA8tLTumZw74uqv4HwVWYPDcDMY858iLJreukIRkfZpJqUO7qJ"
 
-let TERMS_URL = "http://anglotestserver.website/auction_new/terms-and-condition"
-let POLICY_URL = "http://anglotestserver.website/auction_new/privacy-policy"
+let TERMS_URL = "https://bidincars.com/api_termsandcondition"
+let POLICY_URL = "https://bidincars.com/api_privacy_policy"
 
 let MONTH_ARRAY = [NSLocalizedString("month_jan", comment: ""), NSLocalizedString("month_feb", comment: ""), NSLocalizedString("month_mar", comment: ""), NSLocalizedString("month_apr", comment: ""), NSLocalizedString("month_may", comment: ""), NSLocalizedString("month_jun", comment: ""), NSLocalizedString("month_jul", comment: ""), NSLocalizedString("month_aug", comment: ""), NSLocalizedString("month_sept", comment: ""), NSLocalizedString("month_oct", comment: ""), NSLocalizedString("month_nov", comment: ""), NSLocalizedString("month_dec", comment: "")]
 

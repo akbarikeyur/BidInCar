@@ -3,4 +3,102 @@
    uuid = "F6002C7B-226F-4C7B-AA93-3400CDBF6F67"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BBC05CC9-FC71-4958-BA2D-DA874ED98421"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BidInCar/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "serviceCalledForData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BBC05CC9-FC71-4958-BA2D-DA874ED98421 - e6da03aca409b54b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BidInCar.AppDelegate.serviceCalledForData() -&gt; ()"
+                  moduleName = "BidInCar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Keyur/Project/Waqas/BidInCar/BidInCar/BidInCar/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "173"
+                  endingLineNumber = "173"
+                  offsetFromSymbolStart = "101">
+               </Location>
+               <Location
+                  uuid = "BBC05CC9-FC71-4958-BA2D-DA874ED98421 - 367131280f031e0e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; () in BidInCar.AppDelegate.serviceCalledForData() -&gt; ()"
+                  moduleName = "BidInCar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Keyur/Project/Waqas/BidInCar/BidInCar/BidInCar/AppDelegate.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "721AB8E1-47A9-4ACC-8FE3-406AE4A144A3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BidInCar/Login/SignupVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "721AB8E1-47A9-4ACC-8FE3-406AE4A144A3 - b3c2bb2159efce25"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BidInCar.SignupVC.viewDidLoad() -&gt; ()"
+                  moduleName = "BidInCar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Keyur/Project/Waqas/BidInCar/BidInCar/BidInCar/Login/SignupVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "187">
+               </Location>
+               <Location
+                  uuid = "721AB8E1-47A9-4ACC-8FE3-406AE4A144A3 - fd5118283dc97202"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; () in BidInCar.SignupVC.viewDidLoad() -&gt; ()"
+                  moduleName = "BidInCar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Keyur/Project/Waqas/BidInCar/BidInCar/BidInCar/Login/SignupVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "38">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

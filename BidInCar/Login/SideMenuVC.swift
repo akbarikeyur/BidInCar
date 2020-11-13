@@ -258,18 +258,18 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 menuContainerViewController.centerViewController = navController
                 break
             case NSLocalizedString("menu_terms", comment: ""):
-                openUrlInSafari(strUrl: TERMS_URL)
-    //            let navController = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PrivacyPolicyVCNav") as! UINavigationController
-    //            navController.isNavigationBarHidden = true
-    //            screenType = 1
-    //            menuContainerViewController.centerViewController = navController
+//                openUrlInSafari(strUrl: TERMS_URL)
+                let navController = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PrivacyPolicyVCNav") as! UINavigationController
+                navController.isNavigationBarHidden = true
+                screenType = 1
+                menuContainerViewController.centerViewController = navController
                 break
             case NSLocalizedString("menu_privacy", comment: ""):
-                openUrlInSafari(strUrl: POLICY_URL )
-    //            let navController = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PrivacyPolicyVCNav") as! UINavigationController
-    //            navController.isNavigationBarHidden = true
-    //            screenType = 0
-    //            menuContainerViewController.centerViewController = navController
+//                openUrlInSafari(strUrl: POLICY_URL )
+                let navController = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PrivacyPolicyVCNav") as! UINavigationController
+                navController.isNavigationBarHidden = true
+                screenType = 0
+                menuContainerViewController.centerViewController = navController
                 break
             case NSLocalizedString("menu_how_sell", comment: ""):
                 

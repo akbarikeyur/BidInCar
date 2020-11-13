@@ -107,7 +107,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
             bodyTypeView.isHidden = false
             motorColorView.isHidden = false
             scrapView.isHidden = false
-            
+            mechanicalView.isHidden = false
             interiorColorTxt.trailingSpace.constant = 10
             interiorColorTxt.myTxt.textAlignment = .left
             cylinderTxt.leftSpace.constant = 10
@@ -155,13 +155,8 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
             }
         }
         
-        if selectedAuctionType.id <= 4 {
-            milageView.isHidden = false
-            constraintWidthMilageView.constant = 75
-        }else{
-            milageView.isHidden = true
-            constraintWidthMilageView.constant = 0
-        }
+        milageView.isHidden = false
+        constraintWidthMilageView.constant = 75
     }
     
     func setupData()
@@ -352,7 +347,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         else if selectedAuctionType.id == 1 && colorTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_auction_color")
         }
-        else if selectedAuctionType.id == 1 && milageTxt.text?.trimmed == "" {
+        else if milageTxt.text?.trimmed == "" {
             displayToast("enter_auction_milage")
         }
         else if bodyConditionTxt.myTxt.text?.trimmed == "" {
@@ -374,6 +369,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
                 param["doors"] = doorTxt.myTxt.text
                 param["horsepower"] = horsePowerTxt.myTxt.text
                 param["warranty"] = warrantyTxt.myTxt.text
+                param["mechanical"] = mechanicalTxt.myTxt.text
             }
             else {
                 param["mechanical"] = mechanicalTxt.myTxt.text

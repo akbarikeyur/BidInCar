@@ -138,6 +138,7 @@ class PostAuctionDetailVC: UIViewController {
             bodyTypeView.isHidden = false
             motorView.isHidden = false
             colorView.isHidden = false
+            mechanicalView.isHidden = false
         }else{
             mechanicalView.isHidden = false
             if selectedAuctionType.id == 2 {

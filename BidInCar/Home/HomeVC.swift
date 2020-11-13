@@ -161,12 +161,8 @@ class HomeVC: UploadImageVC {
     }
     
     @IBAction func clickToNotification(_ sender: Any) {
-        if PLATFORM.isSimulator {
-            AppDelegate().sharedDelegate().serviceCallToGetUserProfile()
-        }else{
-            let vc : NotificationVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "NotificationVC") as! NotificationVC
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        let vc : NotificationVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "NotificationVC") as! NotificationVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func clickToReload(_ sender: Any) {
@@ -188,8 +184,16 @@ class HomeVC: UploadImageVC {
         dropDown.dataSource = arrData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.categoryLbl.text = item
-            self.selectedFilterCategory = AppModel.shared.AUCTION_TYPE[index]
-            self.serviceCallToSelectMake()
+            if self.selectedFilterCategory != AppModel.shared.AUCTION_TYPE[index] {
+                self.selectedFilterCategory = AppModel.shared.AUCTION_TYPE[index]
+                self.arrMake = [CategoryModel]()
+                self.selectedMake = CategoryModel.init()
+                self.makeLbl.text = ""
+                self.arrModel = [ChildCategoryModel]()
+                self.selectedModel = ChildCategoryModel.init()
+                self.modelLbl.text = ""
+                self.serviceCallToSelectMake()
+            }
         }
         dropDown.show()
     }
@@ -208,16 +212,22 @@ class HomeVC: UploadImageVC {
         dropDown.dataSource = arrData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.makeLbl.text = item
-            self.selectedMake = self.arrMake[index]
-            self.modelLbl.text = ""
-            self.arrModel = [ChildCategoryModel]()
-            self.selectedModel = ChildCategoryModel.init()
-            self.serviceCallToSelectModel()
+            if self.selectedMake != self.arrMake[index] {
+                self.selectedMake = self.arrMake[index]
+                self.modelLbl.text = ""
+                self.arrModel = [ChildCategoryModel]()
+                self.selectedModel = ChildCategoryModel.init()
+                self.serviceCallToSelectModel()
+            }
         }
         dropDown.show()
     }
     
     @IBAction func clickToSelectModel(_ sender: UIButton) {
+        if selectedMake.categoryid == "" {
+            displayToast("Please select make")
+            return
+        }
         let dropDown = DropDown()
         dropDown.anchorView = sender
         var arrData = [String]()
@@ -485,6 +495,8 @@ extension HomeVC {
                 }
                 if AppModel.shared.AUCTION_TYPE.count > 0 {
                     self.selectedCategory = AppModel.shared.AUCTION_TYPE.first!
+                    self.selectedFilterCategory = self.selectedCategory
+                    self.categoryLbl.text = self.selectedFilterCategory.name
                 }
                 self.categoryCV.reloadData()
                 self.serviceCallToGetAuction("")
@@ -619,7 +631,7 @@ extension HomeVC {
     
     func serviceCallToSelectMake() {
         
-        APIManager.shared.serviceCallToGetCategoryList(["cattype" : selectedFilterCategory.id!]) { (data) in
+        APIManager.shared.serviceCallToGetCategoryList(["cattype" : selectedFilterCategory.id!], true) { (data) in
             self.arrMake = [CategoryModel]()
             for temp in data {
                 self.arrMake.append(CategoryModel.init(dict: temp))

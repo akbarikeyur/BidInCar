@@ -48,6 +48,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(setUserDetail), name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
         tblView.register(UINib.init(nibName: "CustomProfileTVC", bundle: nil), forCellReuseIdentifier: "CustomProfileTVC")
         tblView.tableHeaderView = headerView
         tblView.reloadData()
@@ -59,7 +60,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         serviceCallToUpdateProfile()
     }
     
-    func setUserDetail()
+    @objc func setUserDetail()
     {
         setButtonBackgroundImage(profilePicBtn, AppModel.shared.currentUser.profile_pic, IMAGE.USER_PLACEHOLDER)
         
@@ -136,6 +137,11 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         cell.valueLbl.isHidden = true
         cell.valueBtn.isHidden = true
         cell.titleLbl.text = arrUserDetail[indexPath.row]["title"] as? String ?? ""
+        if cell.titleLbl.text == PROFILE.EMAIL {
+            cell.valueTxt.isUserInteractionEnabled = false
+        }else{
+            cell.valueTxt.isUserInteractionEnabled = true
+        }
         if indexPath.row != (arrUserDetail.count - 1) {
             if !isEditProfile {
                 cell.valueLbl.text = arrUserDetail[indexPath.row]["value"] as? String ?? ""

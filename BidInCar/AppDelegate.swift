@@ -145,9 +145,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func logoutFromApp()
     {
+        let arrCountry = getCountryData()
         removeUserDefaultValues()
         AppModel.shared.resetAllModel()
         navigateToLogin()
+        var arrData = [[String : Any]]()
+        for temp in arrCountry {
+            arrData.append(temp.dictionary())
+        }
+        setCountryData(arrData)
         serviceCalledForData()
     }
     
