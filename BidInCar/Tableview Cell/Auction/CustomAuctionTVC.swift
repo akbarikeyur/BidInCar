@@ -20,6 +20,7 @@ class CustomAuctionTVC: UITableViewCell {
     @IBOutlet weak var lotLbl: Label!
     @IBOutlet weak var bidNowBtn: Button!
     @IBOutlet weak var bidLbl: Label!
+    @IBOutlet weak var bidBtn: UIButton!
     
     @IBOutlet weak var winnerLbl: Label!
     @IBOutlet weak var winnerStatusLbl: Label!

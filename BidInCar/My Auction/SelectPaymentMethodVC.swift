@@ -157,11 +157,11 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             if amount == 0 {
                 return
             }
-            if PLATFORM.isSimulator {
-                paytabPaymentCompleted()
-            }else{
+//            if PLATFORM.isSimulator {
+//                paytabPaymentCompleted("")
+//            }else{
                 paytab()
-            }
+//            }
         }
         else if selectedTab == 2 {
             //bank
@@ -351,7 +351,7 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             printData("TOkenization Token: \(token)");
             
             if responseCode == 100 {
-                self.paytabPaymentCompleted()
+                self.paytabPaymentCompleted(String(transactionID))
             }
             else{
                 showAlert("Error", message: result) {
@@ -366,13 +366,13 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
         initialSetupViewController.didMove(toParent: self)
     }
     
-    func paytabPaymentCompleted()
+    func paytabPaymentCompleted(_ transactionID : String)
     {
         if paymentType == PAYMENT.PACKAGE {
             serviceCallToPurchasePackage()
         }
         else if paymentType == PAYMENT.DEPOSITE {
-            serviceCallToDepositeAmount()
+            serviceCallToDepositeAmount(transactionID)
         }
         else if paymentType == PAYMENT.FEATURED {
             serviceCallToMakeFeaturedAuction()
@@ -399,7 +399,7 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func serviceCallToDepositeAmount()
+    func serviceCallToDepositeAmount(_ transactionID : String)
     {
         var amount = 0
         if let deposite_amount : String = paymentParam["deposite_amount"] as? String {
@@ -410,6 +410,7 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             }
             paymentParam["deposite_amount"] = amount
         }
+        paymentParam["payment_reference"] = transactionID
         printData(paymentParam)
         APIManager.shared.serviceCallToDepositeAmount(paymentParam) {
             displayToast("Deposit added successfully")

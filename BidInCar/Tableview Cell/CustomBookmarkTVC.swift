@@ -19,6 +19,7 @@ class CustomBookmarkTVC: UITableViewCell {
     @IBOutlet weak var eyeBtn: Button!
     @IBOutlet weak var bookmarkBtn: Button!
     @IBOutlet weak var bidLbl: Label!
+    @IBOutlet weak var bidBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

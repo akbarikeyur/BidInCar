@@ -85,10 +85,11 @@ class PaymentSellerVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             let cell : CustomFeaturedAuctionTVC = featureTblView.dequeueReusableCell(withIdentifier: "CustomFeaturedAuctionTVC") as! CustomFeaturedAuctionTVC
             let dict = arrFeatureAuction[indexPath.row]
             cell.dateLbl.text = dict.createdon
-            cell.paymentMethodLbl.text = "Paypal"
+            cell.paymentMethodLbl.text = "PayTab"
             cell.amountLbl.text = "AED " + dict.deposite_amount
             cell.auctionnameLbl.text = dict.auction_title
             cell.statusLbl.text = dict.deposite_status.capitalized
+            cell.lotLbl.text = dict.auctionid
             cell.contentView.backgroundColor = WhiteColor
             cell.selectionStyle = .none
             return cell

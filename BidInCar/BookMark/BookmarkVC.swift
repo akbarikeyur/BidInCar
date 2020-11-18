@@ -54,6 +54,8 @@ class BookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.addressLbl.text = dict.auction_address + ", " + dict.country_name
         cell.currentBidLbl.text = "Current Bid " + displayPriceWithCurrency(dict.active_auction_price)
         cell.bidLbl.text = "Bid #\n" + String(dict.auction_bidscount)
+        cell.bidBtn.tag = indexPath.row
+        cell.bidBtn.addTarget(self, action: #selector(clickToSeeBid(_:)), for: .touchUpInside)
         cell.lotLbl.text = "Lot #\n" + dict.auctionid
         cell.bookmarkBtn.tag = indexPath.row
         cell.bookmarkBtn.addTarget(self, action: #selector(clickToBookmark(_:)), for: .touchUpInside)
@@ -64,8 +66,14 @@ class BookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc : CarDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "CarDetailVC") as! CarDetailVC
+        vc.auctionData = arrAuctionData[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc @IBAction func clickToSeeBid(_ sender: UIButton) {
         let vc : BookmarkDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "BookmarkDetailVC") as! BookmarkDetailVC
-        vc.auction = arrAuctionData[indexPath.row]
+        vc.auction = arrAuctionData[sender.tag]
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

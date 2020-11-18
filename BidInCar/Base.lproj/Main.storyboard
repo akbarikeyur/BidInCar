@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZcA-ak-AO1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZcA-ak-AO1">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -469,7 +469,10 @@ Sign in</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9e-jl-SQd" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="30" y="325" width="270" height="20"/>
+                                <rect key="frame" x="30" y="325" width="120" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="uAv-UW-WDS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Keep sign-in" image="checkbox_purple_off">
@@ -487,6 +490,29 @@ Sign in</string>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="clickToKeepLogin:" destination="fL9-Z2-1qs" eventType="touchUpInside" id="iSI-eT-qbS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sl-iZ-6YE" customClass="Button" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="170" y="323" width="130" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="UMe-fp-97i"/>
+                                    <constraint firstAttribute="height" constant="24" id="xJv-o0-fjb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Forgot Password">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="am"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickToForgotPassword:" destination="fL9-Z2-1qs" eventType="touchUpInside" id="GTp-aR-SvK"/>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or log in with" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUF-fA-12D" customClass="Label" customModule="BidInCar" customModuleProvider="target">
@@ -580,6 +606,7 @@ Sign in</string>
                             <constraint firstItem="z9e-jl-SQd" firstAttribute="leading" secondItem="Jxc-0L-uZR" secondAttribute="leading" constant="30" id="2zk-Y5-0HI"/>
                             <constraint firstItem="YU1-oQ-x2U" firstAttribute="top" secondItem="Jxc-0L-uZR" secondAttribute="top" id="3mY-gd-KYJ"/>
                             <constraint firstItem="IUF-fA-12D" firstAttribute="top" secondItem="t9U-Jw-Q3I" secondAttribute="bottom" id="5BV-Aw-vEk"/>
+                            <constraint firstItem="Jxc-0L-uZR" firstAttribute="trailing" secondItem="4sl-iZ-6YE" secondAttribute="trailing" constant="20" id="5xQ-hK-5uv"/>
                             <constraint firstItem="Jxc-0L-uZR" firstAttribute="bottom" secondItem="Kt4-Jf-NGf" secondAttribute="bottom" constant="30" id="8PC-1v-kGu"/>
                             <constraint firstAttribute="bottom" secondItem="kdM-qR-bnf" secondAttribute="bottom" constant="-5" id="GJn-aL-4MS"/>
                             <constraint firstItem="kdM-qR-bnf" firstAttribute="leading" secondItem="OkK-Hm-e0K" secondAttribute="leading" constant="-5" id="LsJ-Gz-uYO"/>
@@ -595,6 +622,7 @@ Sign in</string>
                             <constraint firstItem="vBd-kk-caI" firstAttribute="top" secondItem="IUF-fA-12D" secondAttribute="bottom" constant="5" id="fTO-He-zWz"/>
                             <constraint firstItem="vBd-kk-caI" firstAttribute="trailing" secondItem="Jxc-0L-uZR" secondAttribute="trailing" id="gAb-V0-Qc0"/>
                             <constraint firstItem="Jxc-0L-uZR" firstAttribute="trailing" secondItem="t9U-Jw-Q3I" secondAttribute="trailing" constant="20" id="irz-MM-neh"/>
+                            <constraint firstItem="4sl-iZ-6YE" firstAttribute="top" secondItem="Cqg-Wq-uQN" secondAttribute="bottom" constant="3" id="kRm-oB-qWw"/>
                             <constraint firstItem="YU1-oQ-x2U" firstAttribute="leading" secondItem="Jxc-0L-uZR" secondAttribute="leading" id="l3m-Ws-xWa"/>
                             <constraint firstItem="Kt4-Jf-NGf" firstAttribute="top" secondItem="ZYS-hm-dn1" secondAttribute="top" id="lt0-sk-aqF"/>
                             <constraint firstItem="z9e-jl-SQd" firstAttribute="top" secondItem="Cqg-Wq-uQN" secondAttribute="bottom" constant="5" id="mLa-Ve-S5N"/>
@@ -603,7 +631,6 @@ Sign in</string>
                             <constraint firstItem="Kt4-Jf-NGf" firstAttribute="centerX" secondItem="OkK-Hm-e0K" secondAttribute="centerX" id="xcS-Bm-pXF"/>
                             <constraint firstItem="t9U-Jw-Q3I" firstAttribute="leading" secondItem="Jxc-0L-uZR" secondAttribute="leading" constant="20" id="xf8-iD-fXi"/>
                             <constraint firstItem="t9U-Jw-Q3I" firstAttribute="top" secondItem="z9e-jl-SQd" secondAttribute="bottom" constant="20" id="xo5-aN-mUn"/>
-                            <constraint firstItem="Jxc-0L-uZR" firstAttribute="trailing" secondItem="z9e-jl-SQd" secondAttribute="trailing" constant="20" id="z6g-P7-dAt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jxc-0L-uZR"/>
                     </view>
@@ -769,8 +796,25 @@ for signing up</string>
                                                     <action selector="clickToSelectCountry:" destination="lst-hx-DYw" eventType="touchUpInside" id="CEe-L1-tWL"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfK-wM-hEd" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="642" width="320" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="0QH-27-iE4"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Select City"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDd-EK-d1D">
+                                                <rect key="frame" x="30" y="642" width="255" height="45"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" image="dropdown"/>
+                                                <connections>
+                                                    <action selector="clickToSelectCity:" destination="lst-hx-DYw" eventType="touchUpInside" id="xzq-vv-kKC"/>
+                                                </connections>
+                                            </button>
                                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbf-Pi-w3M" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="642.5" width="320" height="45"/>
+                                                <rect key="frame" x="0.0" y="702" width="320" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="UTe-fb-OLS"/>
                                                 </constraints>
@@ -778,16 +822,8 @@ for signing up</string>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Select Country Code"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QP-DZ-yOF">
-                                                <rect key="frame" x="30" y="642.5" width="255" height="45"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" image="dropdown"/>
-                                                <connections>
-                                                    <action selector="clickToSelectCountryCode:" destination="lst-hx-DYw" eventType="touchUpInside" id="k6n-jG-koV"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyM-ZA-tDl">
-                                                <rect key="frame" x="40" y="652.5" width="40" height="30"/>
+                                                <rect key="frame" x="40" y="712" width="40" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="QLF-b1-4zd"/>
                                                     <constraint firstAttribute="width" constant="40" id="wKH-En-u7M"/>
@@ -797,21 +833,12 @@ for signing up</string>
                                                     <action selector="clickToSelectCountryCode:" destination="lst-hx-DYw" eventType="touchUpInside" id="LMO-VW-Zt6"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfK-wM-hEd" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="702.5" width="320" height="45"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="45" id="0QH-27-iE4"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Select City"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDd-EK-d1D">
-                                                <rect key="frame" x="30" y="702.5" width="255" height="45"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QP-DZ-yOF">
+                                                <rect key="frame" x="30" y="702" width="255" height="45"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" image="dropdown"/>
                                                 <connections>
-                                                    <action selector="clickToSelectCity:" destination="lst-hx-DYw" eventType="touchUpInside" id="xzq-vv-kKC"/>
+                                                    <action selector="clickToSelectCountryCode:" destination="lst-hx-DYw" eventType="touchUpInside" id="k6n-jG-koV"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1B-Rx-Uy3" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -1204,10 +1231,11 @@ for signing up</string>
                                             <constraint firstItem="LyM-ZA-tDl" firstAttribute="bottom" secondItem="4QP-DZ-yOF" secondAttribute="bottom" constant="-5" id="13Q-3x-UNg"/>
                                             <constraint firstAttribute="trailing" secondItem="MON-jx-PES" secondAttribute="trailing" constant="20" id="15D-As-Ojw"/>
                                             <constraint firstItem="Fo6-qG-J7j" firstAttribute="bottom" secondItem="4ar-aB-byV" secondAttribute="bottom" id="1oh-bM-XF3"/>
-                                            <constraint firstItem="H1B-Rx-Uy3" firstAttribute="top" secondItem="cfK-wM-hEd" secondAttribute="bottom" constant="15" id="2c6-4o-tkn"/>
                                             <constraint firstItem="WKS-uY-DEb" firstAttribute="top" secondItem="FAP-tp-bRu" secondAttribute="bottom" constant="20" id="3mt-D8-ANj"/>
                                             <constraint firstItem="lbf-Pi-w3M" firstAttribute="trailing" secondItem="4QP-DZ-yOF" secondAttribute="trailing" constant="35" id="41M-aK-RuJ"/>
                                             <constraint firstItem="Fo6-qG-J7j" firstAttribute="trailing" secondItem="4ar-aB-byV" secondAttribute="trailing" constant="35" id="42d-sI-Fa0"/>
+                                            <constraint firstItem="cfK-wM-hEd" firstAttribute="top" secondItem="Fo6-qG-J7j" secondAttribute="bottom" constant="14.5" id="46h-4I-IBl"/>
+                                            <constraint firstItem="cfK-wM-hEd" firstAttribute="leading" secondItem="TDL-Zw-5u7" secondAttribute="leading" id="4kk-oW-UCs"/>
                                             <constraint firstItem="nqd-Tq-Jme" firstAttribute="leading" secondItem="TDL-Zw-5u7" secondAttribute="leading" id="5Ai-3d-EXL"/>
                                             <constraint firstItem="i9t-CV-aAl" firstAttribute="leading" secondItem="n1M-dQ-w6F" secondAttribute="trailing" constant="5" id="5CU-5c-dJf"/>
                                             <constraint firstAttribute="trailing" secondItem="pM9-cZ-LJO" secondAttribute="trailing" id="6OV-cF-Jsa"/>
@@ -1232,6 +1260,7 @@ for signing up</string>
                                             <constraint firstItem="lbf-Pi-w3M" firstAttribute="bottom" secondItem="4QP-DZ-yOF" secondAttribute="bottom" id="JT2-bp-AxM"/>
                                             <constraint firstItem="MON-jx-PES" firstAttribute="leading" secondItem="TDL-Zw-5u7" secondAttribute="leading" constant="20" id="K2V-ga-hkA"/>
                                             <constraint firstItem="H1B-Rx-Uy3" firstAttribute="leading" secondItem="TDL-Zw-5u7" secondAttribute="leading" id="KA4-YL-Ynj"/>
+                                            <constraint firstItem="H1B-Rx-Uy3" firstAttribute="top" secondItem="lbf-Pi-w3M" secondAttribute="bottom" constant="15.5" id="Kb7-Ou-5NK"/>
                                             <constraint firstItem="X97-3e-7v7" firstAttribute="top" secondItem="H1B-Rx-Uy3" secondAttribute="bottom" constant="15" id="LfM-AU-wI8"/>
                                             <constraint firstItem="pRO-ad-EKt" firstAttribute="top" secondItem="bU4-U6-gB9" secondAttribute="top" id="LnP-E7-GgB"/>
                                             <constraint firstAttribute="trailing" secondItem="H1B-Rx-Uy3" secondAttribute="trailing" id="Q1D-Ur-YDM"/>
@@ -1251,15 +1280,14 @@ for signing up</string>
                                             <constraint firstAttribute="trailing" secondItem="cfK-wM-hEd" secondAttribute="trailing" id="ctX-dX-Mp3"/>
                                             <constraint firstAttribute="trailing" secondItem="FAP-tp-bRu" secondAttribute="trailing" id="dYa-0s-6gP"/>
                                             <constraint firstAttribute="trailing" secondItem="Fo6-qG-J7j" secondAttribute="trailing" id="dbs-KR-rfl"/>
-                                            <constraint firstItem="lbf-Pi-w3M" firstAttribute="top" secondItem="Fo6-qG-J7j" secondAttribute="bottom" constant="15" id="esl-Lb-SV1"/>
                                             <constraint firstAttribute="trailing" secondItem="Tlx-pj-bbX" secondAttribute="trailing" id="f2p-Nc-arn"/>
+                                            <constraint firstItem="lbf-Pi-w3M" firstAttribute="top" secondItem="cfK-wM-hEd" secondAttribute="bottom" constant="15" id="hHf-8O-330"/>
                                             <constraint firstItem="FAP-tp-bRu" firstAttribute="top" secondItem="P9H-4O-Tq6" secondAttribute="bottom" constant="10" id="hql-QB-Ndf"/>
                                             <constraint firstItem="pRO-ad-EKt" firstAttribute="trailing" secondItem="bU4-U6-gB9" secondAttribute="trailing" id="jDP-TO-hOm"/>
                                             <constraint firstItem="lbf-Pi-w3M" firstAttribute="leading" secondItem="TDL-Zw-5u7" secondAttribute="leading" id="k1V-mv-gSa"/>
                                             <constraint firstItem="Tmn-7Y-d9x" firstAttribute="top" secondItem="pM9-cZ-LJO" secondAttribute="bottom" constant="15" id="k8l-r8-oGr"/>
                                             <constraint firstItem="LyM-ZA-tDl" firstAttribute="leading" secondItem="4QP-DZ-yOF" secondAttribute="leading" constant="10" id="mMt-LC-hXT"/>
                                             <constraint firstAttribute="trailing" secondItem="Tmn-7Y-d9x" secondAttribute="trailing" id="nvh-Oy-LJd"/>
-                                            <constraint firstItem="cfK-wM-hEd" firstAttribute="top" secondItem="lbf-Pi-w3M" secondAttribute="bottom" constant="15" id="oJA-Ep-jb2"/>
                                             <constraint firstItem="Qad-8O-JcV" firstAttribute="top" secondItem="X97-3e-7v7" secondAttribute="bottom" constant="15" id="oJF-rS-puy"/>
                                             <constraint firstItem="pRO-ad-EKt" firstAttribute="leading" secondItem="bU4-U6-gB9" secondAttribute="leading" id="oOK-Ki-0Yb"/>
                                             <constraint firstItem="P9H-4O-Tq6" firstAttribute="top" secondItem="n1M-dQ-w6F" secondAttribute="bottom" constant="10" id="oRT-B4-Hwd"/>
@@ -1278,6 +1306,7 @@ for signing up</string>
                                             <constraint firstItem="MON-jx-PES" firstAttribute="top" secondItem="gzh-Qn-zR0" secondAttribute="bottom" constant="10" id="wVC-Eu-CcK"/>
                                             <constraint firstItem="cfK-wM-hEd" firstAttribute="leading" secondItem="WDd-EK-d1D" secondAttribute="leading" constant="-30" id="wnc-LN-PZC"/>
                                             <constraint firstAttribute="trailing" secondItem="i9t-CV-aAl" secondAttribute="trailing" constant="20" id="xZU-QO-dqE"/>
+                                            <constraint firstAttribute="trailing" secondItem="cfK-wM-hEd" secondAttribute="trailing" id="xwO-vf-hpD"/>
                                             <constraint firstItem="Fo6-qG-J7j" firstAttribute="leading" secondItem="TDL-Zw-5u7" secondAttribute="leading" id="zOW-58-siW"/>
                                         </constraints>
                                     </view>
@@ -1768,7 +1797,7 @@ Account</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnq-t8-V3D" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="105" y="49" width="195" height="22.5"/>
+                                        <rect key="frame" x="105" y="46.5" width="195" height="28"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1782,8 +1811,15 @@ Account</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epf-3w-RQX">
+                                        <rect key="frame" x="105" y="46.5" width="195" height="28"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <connections>
+                                            <action selector="clickToLogin:" destination="IXv-jT-MVu" eventType="touchUpInside" id="art-0B-25S"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not a member? Register Now" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rL-f9-LpI" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="105" y="71.5" width="203.5" height="20"/>
+                                        <rect key="frame" x="105" y="74.5" width="203.5" height="28"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1798,7 +1834,7 @@ Account</string>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFo-Dj-kx3">
-                                        <rect key="frame" x="20" y="35" width="288.5" height="70"/>
+                                        <rect key="frame" x="105" y="74.5" width="203.5" height="28"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <connections>
                                             <action selector="clickToRegister:" destination="IXv-jT-MVu" eventType="touchUpInside" id="RMD-ab-slM"/>
@@ -1889,23 +1925,27 @@ Account</string>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="GFo-Dj-kx3" firstAttribute="top" secondItem="feS-VV-gh4" secondAttribute="top" id="31o-F1-tn8"/>
+                                    <constraint firstItem="2rL-f9-LpI" firstAttribute="top" secondItem="GFo-Dj-kx3" secondAttribute="top" id="1Wi-Kj-ECj"/>
+                                    <constraint firstItem="2rL-f9-LpI" firstAttribute="leading" secondItem="GFo-Dj-kx3" secondAttribute="leading" id="2hp-n7-Per"/>
                                     <constraint firstItem="feS-VV-gh4" firstAttribute="leading" secondItem="e1I-dc-sGw" secondAttribute="leading" constant="20" id="4Pa-LD-ZFI"/>
                                     <constraint firstItem="wnq-t8-V3D" firstAttribute="leading" secondItem="feS-VV-gh4" secondAttribute="trailing" constant="15" id="63b-s0-rgn"/>
                                     <constraint firstAttribute="trailing" secondItem="wnq-t8-V3D" secondAttribute="trailing" constant="20" id="8z8-jP-hB5"/>
                                     <constraint firstItem="2rL-f9-LpI" firstAttribute="top" secondItem="wnq-t8-V3D" secondAttribute="bottom" id="985-DK-zrm"/>
                                     <constraint firstItem="qSD-ty-7fc" firstAttribute="leading" secondItem="jPC-Ft-5y4" secondAttribute="trailing" constant="10" id="9Ka-nr-gaK"/>
                                     <constraint firstAttribute="trailing" secondItem="qSD-ty-7fc" secondAttribute="trailing" constant="20" id="AvZ-TQ-DdH"/>
+                                    <constraint firstItem="2rL-f9-LpI" firstAttribute="trailing" secondItem="GFo-Dj-kx3" secondAttribute="trailing" id="Bpp-Or-ZHh"/>
                                     <constraint firstItem="qSD-ty-7fc" firstAttribute="width" secondItem="jPC-Ft-5y4" secondAttribute="width" id="Dcf-5b-v1b"/>
-                                    <constraint firstItem="GFo-Dj-kx3" firstAttribute="bottom" secondItem="feS-VV-gh4" secondAttribute="bottom" id="FBB-k7-7cr"/>
+                                    <constraint firstItem="wnq-t8-V3D" firstAttribute="leading" secondItem="epf-3w-RQX" secondAttribute="leading" id="Edr-xK-Wb7"/>
                                     <constraint firstItem="wnq-t8-V3D" firstAttribute="centerY" secondItem="feS-VV-gh4" secondAttribute="centerY" constant="-9.75" id="LjP-Gf-lVT"/>
-                                    <constraint firstItem="GFo-Dj-kx3" firstAttribute="trailing" secondItem="2rL-f9-LpI" secondAttribute="trailing" id="N0e-0P-2pl"/>
+                                    <constraint firstItem="wnq-t8-V3D" firstAttribute="top" secondItem="epf-3w-RQX" secondAttribute="top" id="PCf-3V-TJ8"/>
+                                    <constraint firstItem="wnq-t8-V3D" firstAttribute="trailing" secondItem="epf-3w-RQX" secondAttribute="trailing" id="PHm-cm-98K"/>
                                     <constraint firstItem="qSD-ty-7fc" firstAttribute="centerY" secondItem="jPC-Ft-5y4" secondAttribute="centerY" id="YAY-3W-H1S"/>
                                     <constraint firstItem="2rL-f9-LpI" firstAttribute="leading" secondItem="feS-VV-gh4" secondAttribute="trailing" constant="15" id="dQq-vR-CVZ"/>
                                     <constraint firstItem="jPC-Ft-5y4" firstAttribute="leading" secondItem="e1I-dc-sGw" secondAttribute="leading" constant="20" id="iAJ-Hs-Sme"/>
+                                    <constraint firstItem="2rL-f9-LpI" firstAttribute="bottom" secondItem="GFo-Dj-kx3" secondAttribute="bottom" id="sNn-KE-5mV"/>
+                                    <constraint firstItem="wnq-t8-V3D" firstAttribute="bottom" secondItem="epf-3w-RQX" secondAttribute="bottom" id="tmu-hz-Q7t"/>
                                     <constraint firstAttribute="height" constant="220" id="tv1-jl-gga"/>
                                     <constraint firstItem="jPC-Ft-5y4" firstAttribute="top" secondItem="feS-VV-gh4" secondAttribute="bottom" constant="30" id="ue0-QN-PXj"/>
-                                    <constraint firstItem="GFo-Dj-kx3" firstAttribute="leading" secondItem="feS-VV-gh4" secondAttribute="leading" id="y6E-J5-B8I"/>
                                     <constraint firstItem="feS-VV-gh4" firstAttribute="top" secondItem="e1I-dc-sGw" secondAttribute="top" constant="35" id="zBw-OO-nhL"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -2038,7 +2078,7 @@ Account</string>
                                             <constraint firstAttribute="width" constant="150" id="uzk-G2-gVR"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Pt-aF-f7r" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Pt-aF-f7r" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                         <rect key="frame" x="20" y="180" width="280" height="62"/>
                                         <string key="text">Turn on
 Notificaitions</string>
@@ -2055,7 +2095,7 @@ Notificaitions</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Enable push notifications to let send you personal news and updates" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPV-cC-SLN" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable push notifications to let send you personal news and updates" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPV-cC-SLN" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                         <rect key="frame" x="20" y="252" width="280" height="34"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2074,7 +2114,7 @@ Notificaitions</string>
                                         <rect key="frame" x="20" y="300" width="280" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn on notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64Q-rl-8fV" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="15.5" width="145" height="19"/>
+                                                <rect key="frame" x="20" y="14" width="163" height="22.5"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                                 <color key="textColor" red="0.30588235289999999" green="0.29803921570000003" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2169,6 +2209,153 @@ Notificaitions</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="piM-wD-x0T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1129" y="138"/>
+        </scene>
+        <!--Forgot PasswordVC-->
+        <scene sceneID="AYO-Zw-KtN">
+            <objects>
+                <viewController storyboardIdentifier="ForgotPasswordVC" id="5mL-5x-8O0" customClass="ForgotPasswordVC" customModule="BidInCar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X9v-AD-4lr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_bg" translatesAutoresizingMaskIntoConstraints="NO" id="zVp-eS-iI3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6e-GM-cna">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEh-8P-gPb">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="6b0-wK-s8a"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="clickToBack:" destination="5mL-5x-8O0" eventType="touchUpInside" id="Wnr-O5-DFt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="TAI-RR-LTx"/>
+                                    <constraint firstItem="XEh-8P-gPb" firstAttribute="leading" secondItem="g6e-GM-cna" secondAttribute="leading" id="e9L-Lh-YiA"/>
+                                    <constraint firstAttribute="bottom" secondItem="XEh-8P-gPb" secondAttribute="bottom" id="pna-F9-Upb"/>
+                                    <constraint firstItem="XEh-8P-gPb" firstAttribute="top" secondItem="g6e-GM-cna" secondAttribute="top" id="vkk-ag-eHi"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgy-S7-YkO" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="20" y="84" width="280" height="62"/>
+                                <string key="text">Forgot
+Password</string>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="am"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A verification code sent to your registered email address. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFn-Vd-GeV" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="20" y="151" width="280" height="34"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdC-DV-IBQ" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="210" width="320" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="IJA-1U-i3M"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AUw-cj-9hT" customClass="View" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="20" y="275" width="280" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQI-5Z-rku" customClass="Button" customModule="BidInCar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
+                                        <state key="normal" title="SEND"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ab"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="clickToSend:" destination="5mL-5x-8O0" eventType="touchUpInside" id="4Ah-Of-JQc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.41176470590000003" green="0.38823529410000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="1QG-r6-qRM"/>
+                                    <constraint firstAttribute="bottom" secondItem="DQI-5Z-rku" secondAttribute="bottom" id="DXV-nh-bRQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="DQI-5Z-rku" secondAttribute="trailing" id="fqp-bD-SG1"/>
+                                    <constraint firstItem="DQI-5Z-rku" firstAttribute="leading" secondItem="AUw-cj-9hT" secondAttribute="leading" id="kUV-sn-Rzt"/>
+                                    <constraint firstItem="DQI-5Z-rku" firstAttribute="top" secondItem="AUw-cj-9hT" secondAttribute="top" id="x7s-gO-7Dl"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="backgroundColorTypeAdapter">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="applyShadow" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GVb-Qi-0Jt" firstAttribute="trailing" secondItem="MFn-Vd-GeV" secondAttribute="trailing" constant="20" id="1i8-tH-QNi"/>
+                            <constraint firstItem="MFn-Vd-GeV" firstAttribute="leading" secondItem="GVb-Qi-0Jt" secondAttribute="leading" constant="20" id="2fJ-5D-wmL"/>
+                            <constraint firstItem="Hgy-S7-YkO" firstAttribute="leading" secondItem="GVb-Qi-0Jt" secondAttribute="leading" constant="20" id="3Qd-Le-ZZh"/>
+                            <constraint firstItem="g6e-GM-cna" firstAttribute="top" secondItem="GVb-Qi-0Jt" secondAttribute="top" constant="20" id="A60-sH-NBM"/>
+                            <constraint firstItem="OdC-DV-IBQ" firstAttribute="top" secondItem="MFn-Vd-GeV" secondAttribute="bottom" constant="25" id="FrJ-E6-Nsb"/>
+                            <constraint firstItem="Hgy-S7-YkO" firstAttribute="top" secondItem="g6e-GM-cna" secondAttribute="bottom" constant="20" id="Gfc-pF-yYn"/>
+                            <constraint firstAttribute="bottom" secondItem="zVp-eS-iI3" secondAttribute="bottom" id="Kzp-ft-9g8"/>
+                            <constraint firstItem="g6e-GM-cna" firstAttribute="leading" secondItem="GVb-Qi-0Jt" secondAttribute="leading" id="MTm-o4-rE0"/>
+                            <constraint firstItem="AUw-cj-9hT" firstAttribute="leading" secondItem="GVb-Qi-0Jt" secondAttribute="leading" constant="20" id="REW-Zl-oCd"/>
+                            <constraint firstItem="zVp-eS-iI3" firstAttribute="top" secondItem="X9v-AD-4lr" secondAttribute="top" id="Vkn-jk-ech"/>
+                            <constraint firstItem="GVb-Qi-0Jt" firstAttribute="trailing" secondItem="Hgy-S7-YkO" secondAttribute="trailing" constant="20" id="W1r-kg-7NN"/>
+                            <constraint firstItem="OdC-DV-IBQ" firstAttribute="leading" secondItem="GVb-Qi-0Jt" secondAttribute="leading" id="YQC-GS-Y4C"/>
+                            <constraint firstItem="zVp-eS-iI3" firstAttribute="leading" secondItem="X9v-AD-4lr" secondAttribute="leading" id="aFH-BY-NTu"/>
+                            <constraint firstItem="OdC-DV-IBQ" firstAttribute="trailing" secondItem="GVb-Qi-0Jt" secondAttribute="trailing" id="ftT-hU-ZAf"/>
+                            <constraint firstAttribute="trailing" secondItem="zVp-eS-iI3" secondAttribute="trailing" id="t62-Hx-8Ic"/>
+                            <constraint firstItem="g6e-GM-cna" firstAttribute="trailing" secondItem="GVb-Qi-0Jt" secondAttribute="trailing" id="vjw-7v-eB6"/>
+                            <constraint firstItem="MFn-Vd-GeV" firstAttribute="top" secondItem="Hgy-S7-YkO" secondAttribute="bottom" constant="5" id="wnK-K0-sr3"/>
+                            <constraint firstItem="GVb-Qi-0Jt" firstAttribute="trailing" secondItem="AUw-cj-9hT" secondAttribute="trailing" constant="20" id="xtv-gc-fIQ"/>
+                            <constraint firstItem="AUw-cj-9hT" firstAttribute="top" secondItem="OdC-DV-IBQ" secondAttribute="bottom" constant="20" id="yYk-tR-FQs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GVb-Qi-0Jt"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTxt" destination="OdC-DV-IBQ" id="euB-J7-dEh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O2z-eZ-CCe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4564" y="137"/>
         </scene>
     </scenes>
     <resources>

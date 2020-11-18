@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -159,7 +159,7 @@
                         </userDefinedRuntimeAttributes>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwT-7S-xD2" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                        <rect key="frame" x="210" y="93" width="100" height="26"/>
+                        <rect key="frame" x="180" y="93" width="100" height="26"/>
                         <color key="backgroundColor" red="0.40784313729999999" green="0.38431372549999998" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="26" id="rj1-iH-Ibd"/>
@@ -201,11 +201,11 @@
                     <constraint firstItem="YKt-sE-zYf" firstAttribute="leading" secondItem="gqg-NK-zkx" secondAttribute="trailing" constant="10" id="Anc-x6-Wa0"/>
                     <constraint firstAttribute="trailing" secondItem="PzN-xG-KZX" secondAttribute="trailing" constant="10" id="Ffh-FI-QVw"/>
                     <constraint firstAttribute="trailing" secondItem="k8L-fE-btC" secondAttribute="trailing" constant="10" id="Ham-Ia-gPB"/>
-                    <constraint firstAttribute="trailing" secondItem="cwT-7S-xD2" secondAttribute="trailing" constant="10" id="J4i-SE-2dx"/>
                     <constraint firstAttribute="bottom" secondItem="gqg-NK-zkx" secondAttribute="bottom" constant="10" id="Oaq-wy-ujr"/>
                     <constraint firstItem="gqg-NK-zkx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="UVY-DE-ZXL"/>
                     <constraint firstAttribute="trailing" secondItem="YKt-sE-zYf" secondAttribute="trailing" constant="10" id="Upz-tU-pYG"/>
                     <constraint firstItem="vXP-cr-onx" firstAttribute="leading" secondItem="gqg-NK-zkx" secondAttribute="trailing" constant="10" id="UyF-Wg-Tw0"/>
+                    <constraint firstItem="cwT-7S-xD2" firstAttribute="leading" secondItem="jqc-Rn-0or" secondAttribute="trailing" constant="10" id="Wll-Jc-vnP"/>
                     <constraint firstItem="v41-16-aKk" firstAttribute="top" secondItem="vXP-cr-onx" secondAttribute="bottom" id="Ze3-3I-WHU"/>
                     <constraint firstItem="gqg-NK-zkx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="aei-6h-CnS"/>
                     <constraint firstItem="YKt-sE-zYf" firstAttribute="top" secondItem="k8L-fE-btC" secondAttribute="bottom" constant="2" id="d0c-Zp-etq"/>

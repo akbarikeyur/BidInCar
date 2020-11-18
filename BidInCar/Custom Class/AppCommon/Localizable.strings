@@ -69,6 +69,8 @@
 "enter_current_pwd" = "Please enter current password";
 "enter_new_pwd" = "Please enter new password";
 "different_pwd" = "Current password and new password must be different";
+"enter_confirm_pwd" = "Please enter confirm password";
+"new_confirm_pwd_same" = "New password and confirm password must be same";
 "change_pwd_success" = "Password update successfully";
 
 //Month Data
@@ -122,6 +124,18 @@
 "enter_auction_motor" = "Please enter motor number";
 "enter_auction_color" = "Please select color";
 "enter_auction_milage" = "Please enter milage";
+"enter_auction_mechanical" = "Please enter mechanical";
+"enter_auction_wheel" = "Please select number of Wheels";
+"enter_auction_drive" = "Please select drive ";
+"enter_auction_engine" = "Please select engine";
+"enter_auction_boat_length" = "Please select boat length";
+"enter_auction_boart_age" = "Please select boat age";
+"enter_auction_boat_warranty" = "Please select boat warranty";
+"enter_auction_interiour_color" = "Please select interior color";
+"enter_auction_cylinder" = "Please select no. of cylinder";
+"enter_auction_door" = "Please select no. of door";
+"enter_auction_horsepower" = "Please select horsepower";
+"enter_auction_warranty" = "Please select warranty";
 "enter_auction_address" = "Please enter address";
 "enter_auction_desc" = "Please enter description";
 "enter_auction_terms" = "Please enter terms and condition";

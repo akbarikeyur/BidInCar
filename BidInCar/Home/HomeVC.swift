@@ -73,10 +73,10 @@ class HomeVC: UploadImageVC {
                     AppDelegate().sharedDelegate().serviceCallToGetUserProfile()
                 }
                 serviceCallToGetAuctionCategoryList()
-                refreshTopData()
             }else{
                 setupAuctionData()
             }
+            refreshTopData()
         }
     }
     
@@ -108,9 +108,18 @@ class HomeVC: UploadImageVC {
                     temp.auctionid == auctionid
                 }
                 if index != nil {
-                    if let auction_featured = dict["auction_featured"] as? String {
-                        arrAuctionData[index!].auction_featured = auction_featured
-                        updateTableviewHeight()
+                    arrAuctionData[index!].auction_featured = "yes"
+                    updateTableviewHeight()
+                    
+                    let index1 = arrFeatureAuctionData.firstIndex { (temp) -> Bool in
+                        temp.auctionid == auctionid
+                    }
+                    if index1 == nil {
+                        let arrTempData = arrFeatureAuctionData
+                        arrFeatureAuctionData = [AuctionModel]()
+                        arrFeatureAuctionData.append(arrAuctionData[index!])
+                        arrFeatureAuctionData.append(contentsOf: arrTempData)
+                        featureCV.reloadData()
                     }
                 }
             }
@@ -284,6 +293,14 @@ class HomeVC: UploadImageVC {
         
     }
     
+    @IBAction func clickToNextCategory(_ sender: UIButton) {
+        if sender.tag == 1 {
+            categoryCV.scrollToItem(at: IndexPath(row: AppModel.shared.AUCTION_TYPE.count-1, section: 0), at: .left, animated: true)
+        } else {
+            featureCV.scrollToItem(at: IndexPath(row: arrFeatureAuctionData.count-1, section: 0), at: .left, animated: true)
+        }
+    }
+    
     @objc func textFieldDidChange(_ textField: UITextField)
     {
         if textField == searchTxt {
@@ -349,6 +366,8 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         if collectionView == featureCV {
             let cell : CustomCarCVC = featureCV.dequeueReusableCell(withReuseIdentifier: "CustomCarCVC", for: indexPath) as! CustomCarCVC
             cell.setupDetails(arrFeatureAuctionData[indexPath.row])
+            cell.starBtn.tag = indexPath.row
+            cell.starBtn.addTarget(self, action: #selector(clickToStarFeatureAuction(_:)), for: .touchUpInside)
             return cell
         }
         else if collectionView == infoCV {
@@ -410,6 +429,17 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             }
         }
     }
+    
+    @IBAction func clickToStarFeatureAuction(_ sender: UIButton) {
+        self.view.endEditing(true)
+        let dict = arrFeatureAuctionData[sender.tag]
+        if sender.isSelected {
+            serviceCallToRemoveBookmark(dict.auctionid, dict.bookmarkid, 2)
+        }else{
+            serviceCallToAddBookmark(dict.auctionid, 2)
+        }
+    }
+    
 }
 
 //MARK:- Tablewview method
@@ -440,11 +470,11 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
         cell.minPriceLbl.text = "New minimum price: " + displayPriceWithCurrency(dict.auction_bidprice)
         cell.currentBidLbl.text = "Current Price " + displayPriceWithCurrency(dict.active_auction_price)
         cell.starBtn.isSelected = (dict.bookmark == "yes")
-        if isUserLogin() {
-            cell.bidNowBtn.isHidden = true
+        if isUserLogin() && isUserBuyer() {
+            cell.bidNowBtn.isHidden = false
         }
         else{
-            cell.bidNowBtn.isHidden = false
+            cell.bidNowBtn.isHidden = true
         }
         cell.bidNowBtn.tag = indexPath.row
         cell.bidNowBtn.addTarget(self, action: #selector(clickToBidNow(_:)), for: .touchUpInside)
@@ -475,6 +505,7 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
             serviceCallToAddBookmark(dict.auctionid, 2)
         }
     }
+    
     
     func updateTableviewHeight() {
         tblView.reloadData()
@@ -599,6 +630,15 @@ extension HomeVC {
                     }
                 }
                 self.updateTableviewHeight()
+                
+                let index1 = self.arrFeatureAuctionData.firstIndex { (temp) -> Bool in
+                    temp.auctionid == auctionid
+                }
+                if index1 != nil {
+                    self.arrFeatureAuctionData[index1!].bookmark = "yes"
+                    self.arrFeatureAuctionData[index1!].bookmarkid = String(bookmarkId)
+                    self.featureCV.reloadData()
+                }
             }
         }
     }
@@ -625,6 +665,15 @@ extension HomeVC {
                     }
                 }
                 self.updateTableviewHeight()
+                
+                let index1 = self.arrFeatureAuctionData.firstIndex { (temp) -> Bool in
+                    temp.auctionid == auctionid
+                }
+                if index1 != nil {
+                    self.arrFeatureAuctionData[index1!].bookmark = "no"
+                    self.arrFeatureAuctionData[index1!].bookmarkid = ""
+                    self.featureCV.reloadData()
+                }
             }
         }
     }

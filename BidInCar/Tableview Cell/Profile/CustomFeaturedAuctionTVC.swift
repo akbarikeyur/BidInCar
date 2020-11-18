@@ -15,7 +15,7 @@ class CustomFeaturedAuctionTVC: UITableViewCell {
     @IBOutlet weak var amountLbl: Label!
     @IBOutlet weak var auctionnameLbl: Label!
     @IBOutlet weak var statusLbl: Label!
-    
+    @IBOutlet weak var lotLbl: Label!
     
     override func awakeFromNib() {
         super.awakeFromNib()

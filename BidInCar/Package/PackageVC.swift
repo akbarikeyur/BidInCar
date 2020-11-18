@@ -47,7 +47,7 @@ class PackageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Button click event
     @IBAction func clickToSideMenu(_ sender: Any) {
-        self.menuContainerViewController.toggleLeftSideMenuCompletion {}
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func clickToSelectTab(_ sender: Button) {

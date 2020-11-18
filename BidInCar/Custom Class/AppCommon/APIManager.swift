@@ -122,7 +122,7 @@ public class APIManager {
     func networkErrorMsg()
     {
         removeLoader()
-        showAlert("HearBK", message: "You are not connected to the internet") {
+        showAlert("BidInCar", message: "You are not connected to the internet") {
             
         }
     }

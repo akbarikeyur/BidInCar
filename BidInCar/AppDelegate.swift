@@ -110,8 +110,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     //MARK:- Navigation
     func navigateToLogin()
     {
-        let navigationVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "GetStartedVCNav") as! UINavigationController
-        UIApplication.shared.keyWindow?.rootViewController = navigationVC
+//        let navigationVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "GetStartedVCNav") as! UINavigationController
+//        UIApplication.shared.keyWindow?.rootViewController = navigationVC
+        let vc : LoginVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func navigateToSignup()
+    {
+        let vc : SignupVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SignupVC") as! SignupVC
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
     
     func navigateToDashBoard()
@@ -126,7 +134,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             navController.isNavigationBarHidden = true
             
             let leftSideMenuVC: UIViewController = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SideMenuVC")
-            container.menuWidth = SCREEN.WIDTH-20
+            container.menuWidth = SCREEN.WIDTH
             container.panMode = MFSideMenuPanModeSideMenu
             container.menuSlideAnimationEnabled = true
             container.leftMenuViewController = leftSideMenuVC
@@ -148,7 +156,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let arrCountry = getCountryData()
         removeUserDefaultValues()
         AppModel.shared.resetAllModel()
-        navigateToLogin()
+        
+        let vc : LoginVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        vc.isFromLogout = true
+        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+        
         var arrData = [[String : Any]]()
         for temp in arrCountry {
             arrData.append(temp.dictionary())

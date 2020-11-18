@@ -35,13 +35,11 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
     @IBOutlet weak var engineTxt: FloatingTextfiledView!
     @IBOutlet weak var bodyConditionView: UIView!
     @IBOutlet weak var bodyConditionTxt: FloatingTextfiledView!
-    @IBOutlet weak var constraintSeparatorTopSpace: NSLayoutConstraint!
     @IBOutlet weak var boatLengthView: UIView!
     @IBOutlet weak var boatLengthTxt: FloatingTextfiledView!
     @IBOutlet weak var boatAgeTxt: FloatingTextfiledView!
     @IBOutlet weak var boatWarrantyTxt: FloatingTextfiledView!
     @IBOutlet weak var milageView: UIView!
-    @IBOutlet weak var constraintWidthMilageView: NSLayoutConstraint!
     
     @IBOutlet weak var scrapView: UIView!
     @IBOutlet weak var interiorColorTxt: FloatingTextfiledView!
@@ -50,6 +48,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
     @IBOutlet weak var horsePowerTxt: FloatingTextfiledView!
     @IBOutlet weak var warrantyTxt: FloatingTextfiledView!
     @IBOutlet weak var createAuctionLbl: Label!
+    @IBOutlet weak var termsConditionLbl: Label!
     
     
     var arrBodyData = ["Sedan", "Coupe", "Crossover", "Hard Top Convertible", "Hatchback", "Pick Up Truck", "Soft Top Convertible", "Sports Car", "SUV", "Utility Truck", "Van", "Wagon", "Other"]
@@ -92,6 +91,8 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         else{
             createAuctionLbl.text = "Create Auction"
         }
+        
+        termsConditionLbl.attributedText = getAttributeStringWithColor(termsConditionLbl.text!, [termsConditionLbl.text!], color: UIColor.blue, font: termsConditionLbl.font, isUnderLine: true)
     }
     
     func hideViewBasedOnAuctionType()
@@ -101,7 +102,6 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         mechanicalView.isHidden = true
         wheelView.isHidden = true
         boatLengthView.isHidden = true
-        constraintSeparatorTopSpace.constant = 20
         scrapView.isHidden = true
         if selectedAuctionType.id == 1 {
             bodyTypeView.isHidden = false
@@ -150,13 +150,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
                 horsePowerTxt.leftSpace.constant = 10
                 horsePowerTxt.myTxt.textAlignment = .left
             }
-            else{
-                constraintSeparatorTopSpace.constant = 60
-            }
         }
-        
-        milageView.isHidden = false
-        constraintWidthMilageView.constant = 75
     }
     
     func setupData()
@@ -212,7 +206,9 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
     
     @IBAction func clickToTermsConditions(_ sender: Any) {
         self.view.endEditing(true)
-        openUrlInSafari(strUrl: TERMS_URL)
+        let vc : PrivacyPolicyVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PrivacyPolicyVC") as! PrivacyPolicyVC
+        vc.isBackDisplay = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func clickToSelectAddress(_ sender: UIButton) {
@@ -230,6 +226,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         dropDown.dataSource = arrMechanicalData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.mechanicalTxt.myTxt.text = item
+            self.mechanicalTxt.setTextFieldValue()
         }
         dropDown.show()
     }
@@ -241,6 +238,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         dropDown.dataSource = arrWheelData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.wheelTxt.myTxt.text = item
+            self.wheelTxt.setTextFieldValue()
         }
         dropDown.show()
     }
@@ -252,6 +250,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         dropDown.dataSource = arrDriveData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.driveTxt.myTxt.text = item
+            self.driveTxt.setTextFieldValue()
         }
         dropDown.show()
     }
@@ -263,6 +262,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         dropDown.dataSource = arrEngineSize
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.engineTxt.myTxt.text = item
+            self.engineTxt.setTextFieldValue()
         }
         dropDown.show()
     }
@@ -274,6 +274,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         dropDown.dataSource = arrBodyCondition
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.bodyConditionTxt.myTxt.text = item
+            self.bodyConditionTxt.setTextFieldValue()
         }
         dropDown.show()
     }
@@ -285,6 +286,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         dropDown.dataSource = CAR_COLOR
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.interiorColorTxt.myTxt.text = item
+            self.interiorColorTxt.setTextFieldValue()
         }
         dropDown.show()
     }
@@ -296,6 +298,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         dropDown.dataSource = ["3", "4", "5", "6", "8", "10", "12"]
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.cylinderTxt.myTxt.text = item
+            self.cylinderTxt.setTextFieldValue()
         }
         dropDown.show()
     }
@@ -307,6 +310,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         dropDown.dataSource = ["2 doors", "3 doors", "4 doors", "4+ doors"]
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.doorTxt.myTxt.text = item
+            self.doorTxt.setTextFieldValue()
         }
         dropDown.show()
     }
@@ -318,6 +322,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         dropDown.dataSource = ["less than 100", "100-200", "200-300", "300-400", "400-500", "500-600", "600+"]
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.horsePowerTxt.myTxt.text = item
+            self.horsePowerTxt.setTextFieldValue()
         }
         dropDown.show()
     }
@@ -329,6 +334,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         dropDown.dataSource = ["Yes", "No"]
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.warrantyTxt.myTxt.text = item
+            self.warrantyTxt.setTextFieldValue()
         }
         dropDown.show()
     }
@@ -350,8 +356,44 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         else if milageTxt.text?.trimmed == "" {
             displayToast("enter_auction_milage")
         }
+        else if mechanicalTxt.myTxt.text?.trimmed == "" {
+            displayToast("enter_auction_mechanical")
+        }
+        else if selectedAuctionType.id == 2 && wheelTxt.myTxt.text?.trimmed == "" {
+            displayToast("enter_auction_wheel")
+        }
+        else if selectedAuctionType.id == 2 && driveTxt.myTxt.text?.trimmed == "" {
+            displayToast("enter_auction_drive")
+        }
+        else if selectedAuctionType.id == 2 && engineTxt.myTxt.text?.trimmed == "" {
+            displayToast("enter_auction_engine")
+        }
         else if bodyConditionTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_body_condition")
+        }
+        else if selectedAuctionType.id == 3 && boatLengthTxt.myTxt.text?.trimmed == "" {
+            displayToast("enter_auction_boat_length")
+        }
+        else if selectedAuctionType.id == 3 && boatAgeTxt.myTxt.text?.trimmed == "" {
+            displayToast("enter_auction_boart_age")
+        }
+        else if selectedAuctionType.id == 3 && boatWarrantyTxt.myTxt.text?.trimmed == "" {
+            displayToast("enter_auction_boat_warranty")
+        }
+        else if selectedAuctionType.id == 4 && interiorColorTxt.myTxt.text?.trimmed == "" {
+            displayToast("enter_auction_interiour_color")
+        }
+        else if selectedAuctionType.id == 4 && cylinderTxt.myTxt.text?.trimmed == "" {
+            displayToast("enter_auction_cylinder")
+        }
+        else if (selectedAuctionType.id == 1 || selectedAuctionType.id == 4) && doorTxt.myTxt.text?.trimmed == "" {
+            displayToast("enter_auction_door")
+        }
+        else if (selectedAuctionType.id == 1 || selectedAuctionType.id == 4) && horsePowerTxt.myTxt.text?.trimmed == "" {
+            displayToast("enter_auction_horsepower")
+        }
+        else if (selectedAuctionType.id == 1 || selectedAuctionType.id == 4) && warrantyTxt.myTxt.text?.trimmed == "" {
+            displayToast("enter_auction_warranty")
         }
         else if descTxtView.text?.trimmed == "" {
             displayToast("enter_auction_desc")
@@ -369,10 +411,9 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
                 param["doors"] = doorTxt.myTxt.text
                 param["horsepower"] = horsePowerTxt.myTxt.text
                 param["warranty"] = warrantyTxt.myTxt.text
-                param["mechanical"] = mechanicalTxt.myTxt.text
             }
             else {
-                param["mechanical"] = mechanicalTxt.myTxt.text
+                
                 if selectedAuctionType.id == 2 {
                     param["wheels"] = wheelTxt.myTxt.text
                     param["drive_system"] = driveTxt.myTxt.text
@@ -393,7 +434,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
                     param["warranty"] = warrantyTxt.myTxt.text
                 }
             }
-            
+            param["mechanical"] = mechanicalTxt.myTxt.text
             param["body_condition"] = bodyConditionTxt.myTxt.text
             param["millage"] = milageTxt.text
             param["country"] = selectedCountry.countryid
@@ -480,6 +521,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         dropDown.dataSource = arrBodyData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.bodyTypeTxt.myTxt.text = item
+            self.bodyTypeTxt.setTextFieldValue()
         }
         dropDown.show()
     }
@@ -495,6 +537,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         dropDown.dataSource = arrData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.countryTxt.myTxt.text = item
+            self.countryTxt.setTextFieldValue()
             self.selectedCountry = self.arrCountryData[index]
         }
         dropDown.show()
@@ -507,6 +550,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         dropDown.dataSource = CAR_COLOR
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.colorTxt.myTxt.text = item
+            self.colorTxt.setTextFieldValue()
         }
         dropDown.show()
     }
@@ -521,6 +565,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
                 self.boatLengthTxt.myTxt.text = ""
             }else{
                 self.boatLengthTxt.myTxt.text = item
+                self.boatLengthTxt.setTextFieldValue()
             }
         }
         dropDown.show()
@@ -536,6 +581,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
                 self.boatAgeTxt.myTxt.text = ""
             }else{
                 self.boatAgeTxt.myTxt.text = item
+                self.boatAgeTxt.setTextFieldValue()
             }
         }
         dropDown.show()
@@ -551,6 +597,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
                 self.boatWarrantyTxt.myTxt.text = ""
             }else{
                 self.boatWarrantyTxt.myTxt.text = item
+                self.boatWarrantyTxt.setTextFieldValue()
             }
         }
         dropDown.show()

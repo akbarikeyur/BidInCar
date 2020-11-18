@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -188,7 +188,7 @@
                                             <constraint firstItem="YZH-vy-HPF" firstAttribute="leading" secondItem="mfP-RM-5qE" secondAttribute="trailing" constant="1" id="jDt-dn-f0V"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bct-ao-jGS" customClass="Button" customModule="BidInCar" customModuleProvider="target">
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bct-ao-jGS" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                         <rect key="frame" x="160" y="0.0" width="35" height="42.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="gV0-4h-7p7"/>
@@ -276,11 +276,16 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxA-7i-Hnx">
+                                        <rect key="frame" x="261" y="0.0" width="39" height="42.5"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="uxA-7i-Hnx" firstAttribute="leading" secondItem="8oP-JI-b7q" secondAttribute="trailing" id="1TY-hL-Iw3"/>
                                     <constraint firstAttribute="bottom" secondItem="8oP-JI-b7q" secondAttribute="bottom" constant="5" id="5xL-uJ-szv"/>
                                     <constraint firstItem="8oP-JI-b7q" firstAttribute="leading" secondItem="hUp-OT-Vdb" secondAttribute="trailing" constant="10" id="8lP-Gx-JVR"/>
+                                    <constraint firstAttribute="bottom" secondItem="uxA-7i-Hnx" secondAttribute="bottom" id="Cf1-Jl-92q"/>
                                     <constraint firstItem="8oP-JI-b7q" firstAttribute="top" secondItem="weC-y5-4oq" secondAttribute="top" constant="5" id="Db5-gl-TH0"/>
                                     <constraint firstItem="jLL-bX-ZoL" firstAttribute="top" secondItem="weC-y5-4oq" secondAttribute="top" id="HQd-0b-4v2"/>
                                     <constraint firstItem="hUp-OT-Vdb" firstAttribute="leading" secondItem="yQ5-gi-dDA" secondAttribute="trailing" constant="10" id="LDn-YO-UPl"/>
@@ -292,10 +297,12 @@
                                     <constraint firstAttribute="bottom" secondItem="yQ5-gi-dDA" secondAttribute="bottom" constant="5" id="YFD-fH-zjb"/>
                                     <constraint firstAttribute="height" constant="42.5" id="ZxB-we-vDV"/>
                                     <constraint firstItem="hUp-OT-Vdb" firstAttribute="centerY" secondItem="weC-y5-4oq" secondAttribute="centerY" id="bCi-OO-HCW"/>
+                                    <constraint firstAttribute="trailing" secondItem="uxA-7i-Hnx" secondAttribute="trailing" id="cXM-ct-nzh"/>
                                     <constraint firstItem="yQ5-gi-dDA" firstAttribute="top" secondItem="weC-y5-4oq" secondAttribute="top" constant="5" id="coD-8D-GQo"/>
                                     <constraint firstItem="16g-sP-jZi" firstAttribute="leading" secondItem="8oP-JI-b7q" secondAttribute="trailing" constant="7" id="cul-rI-yJ7"/>
                                     <constraint firstAttribute="bottom" secondItem="16g-sP-jZi" secondAttribute="bottom" constant="5" id="cv5-Mg-Mqy"/>
                                     <constraint firstAttribute="trailing" secondItem="16g-sP-jZi" secondAttribute="trailing" constant="2" id="g7E-Zi-CRc"/>
+                                    <constraint firstItem="uxA-7i-Hnx" firstAttribute="top" secondItem="weC-y5-4oq" secondAttribute="top" id="h3Q-H1-WUh"/>
                                     <constraint firstItem="jLL-bX-ZoL" firstAttribute="leading" secondItem="weC-y5-4oq" secondAttribute="leading" id="hgY-fu-3Le"/>
                                     <constraint firstItem="Bct-ao-jGS" firstAttribute="leading" secondItem="jLL-bX-ZoL" secondAttribute="trailing" id="wRA-4s-0lg"/>
                                 </constraints>
@@ -628,6 +635,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="addressLbl" destination="SCl-Hh-1yN" id="SsI-fI-jQc"/>
+                <outlet property="bidBtn" destination="uxA-7i-Hnx" id="5nG-AK-IKI"/>
                 <outlet property="bidLbl" destination="16g-sP-jZi" id="EJ9-Yb-qyR"/>
                 <outlet property="bidNowBtn" destination="hXR-dz-sSK" id="MYm-wv-b13"/>
                 <outlet property="bookmarkBtn" destination="hUp-OT-Vdb" id="NZX-ht-OuJ"/>

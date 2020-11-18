@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -393,7 +393,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hqS-hf-86P" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lot No." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hqS-hf-86P" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                         <rect key="frame" x="213.5" y="0.0" width="106.5" height="30"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                         <nil key="textColor"/>
@@ -630,6 +630,7 @@
                 <outlet property="amountLbl" destination="Ey3-QV-muh" id="trv-j4-xcP"/>
                 <outlet property="auctionnameLbl" destination="oUA-do-uR5" id="Lsf-dt-Vfh"/>
                 <outlet property="dateLbl" destination="Sot-NS-WhH" id="LtT-Ve-hkS"/>
+                <outlet property="lotLbl" destination="R6P-as-Z1C" id="MAx-jJ-2W3"/>
                 <outlet property="paymentMethodLbl" destination="7Du-Ab-P1a" id="Tto-Sg-ygP"/>
                 <outlet property="statusLbl" destination="ICy-aX-mBq" id="SQR-QW-M80"/>
             </connections>

@@ -50,6 +50,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     var arrCountryData : [CountryModel] = getCountryData()
     var arrCityData : [CityModel] = [CityModel]()
     var selectedCountry = CountryModel.init()
+    var selectedCountryCode = CountryModel.init()
     var selectedCity = CityModel.init()
     
     override func viewDidLoad() {
@@ -92,9 +93,12 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             }
             if index != nil {
                 selectedCountry = arrCountryData[index!]
+                selectedCountryCode = selectedCountry
                 self.countryTxt.myTxt.text = self.selectedCountry.country_name
-                setButtonImage(countryFlagBtn, selectedCountry.flag)
-                countryCodeTxt.myTxt.text = selectedCountry.sortname
+                self.countryTxt.setTextFieldValue()
+                setButtonImage(countryFlagBtn, selectedCountryCode.flag)
+                countryCodeTxt.myTxt.text = "+" + selectedCountryCode.phonecode
+                self.countryCodeTxt.setTextFieldValue()
                 self.getCityData()
             }
         }
@@ -113,9 +117,14 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         dropDown.dataSource = arrData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.countryTxt.myTxt.text = item
+            self.countryTxt.setTextFieldValue()
             self.selectedCountry = self.arrCountryData[index]
-            setButtonImage(self.countryFlagBtn, self.selectedCountry.flag)
-            self.countryCodeTxt.myTxt.text = self.selectedCountry.sortname
+            if self.selectedCountryCode.countryid == "" {
+                self.selectedCountryCode = self.selectedCountry
+                setButtonImage(self.countryFlagBtn, self.selectedCountryCode.flag)
+                self.countryCodeTxt.myTxt.text = "+" + self.selectedCountryCode.phonecode
+                self.countryCodeTxt.setTextFieldValue()
+            }
             self.getCityData()
         }
         dropDown.show()
@@ -123,6 +132,20 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func clickToSelectCountryCode(_ sender: UIButton) {
         self.view.endEditing(true)
+        let dropDown = DropDown()
+        dropDown.anchorView = sender
+        var arrData = [String]()
+        for temp in arrCountryData {
+            arrData.append(temp.country_name)
+        }
+        dropDown.dataSource = arrData
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.selectedCountryCode = self.arrCountryData[index]
+            setButtonImage(self.countryFlagBtn, self.selectedCountryCode.flag)
+            self.countryCodeTxt.myTxt.text = "+" + self.selectedCountryCode.phonecode
+            self.countryCodeTxt.setTextFieldValue()
+        }
+        dropDown.show()
     }
     
     @IBAction func clickToSelectCompanyCountryCode(_ sender: UIButton) {
@@ -135,7 +158,8 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         dropDown.anchorView = sender
         dropDown.dataSource = arrData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-            self.companyCountryCodeTxt.myTxt.text = item
+            self.companyCountryCodeTxt.myTxt.text = "+" + item
+            self.companyCountryCodeTxt.setTextFieldValue()
         }
         dropDown.show()
     }
@@ -155,6 +179,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         dropDown.dataSource = arrData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.cityTxt.myTxt.text = item
+            self.cityTxt.setTextFieldValue()
             self.selectedCity = self.arrCityData[index]
         }
         dropDown.show()
@@ -271,10 +296,11 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             param["pobox"] = poBoxTxt.myTxt.text
             param["country"] = selectedCountry.countryid
             param["city"] = selectedCity.cityid
+            param["phone_countrycode"] = selectedCountryCode.phonecode
             param["phone_number"] = phoneTxt.myTxt.text
             param["password"] = passwordTxt.myTxt.text
             param["confirm_password"] = confirmPasswordTxt.myTxt.text
-            
+            param["lang"] = "eng"
 //            param["user_accountype"] = ""
 //            param["user_postingtype"] = ""
 //            param["company_name"] = ""
@@ -299,7 +325,6 @@ class SignupVC: UIViewController, UITextFieldDelegate {
                     param["company_phone"] = companyPhoneTxt.myTxt.text
                 }
             }
-            
             printData(param)
             APIManager.shared.serviceCallToUserSignup(param) {
                 if AppModel.shared.currentUser.userid != "" {

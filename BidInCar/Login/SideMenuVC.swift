@@ -133,7 +133,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func clickToRegister(_ sender: UIButton) {
         self.menuContainerViewController.toggleLeftSideMenuCompletion(nil)
-        AppDelegate().sharedDelegate().navigateToLogin()
+        AppDelegate().sharedDelegate().navigateToSignup()
     }
     
     @IBAction func clickToLogout(_ sender: UIButton) {

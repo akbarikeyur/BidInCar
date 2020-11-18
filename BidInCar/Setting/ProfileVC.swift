@@ -42,6 +42,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     var arrCountryData : [CountryModel] = getCountryData()
     var arrCityData : [CityModel] = [CityModel]()
     var selectedCountryId = ""
+    var selectedCountryCode = ""
     var selectedCityId = ""
     
     override func viewDidLoad() {
@@ -66,7 +67,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         
         usernameLbl.text = AppModel.shared.currentUser.user_name + " " + AppModel.shared.currentUser.user_lastname
         addressLbl.text = AppModel.shared.currentUser.city_name + ", " + AppModel.shared.currentUser.country_name
-        
+        arrUserDetail = [[String : Any]]()
         var dict : [String : Any] = [String : Any]()
         dict["title"] = PROFILE.FNAME
         dict["value"] = AppModel.shared.currentUser.user_name
@@ -96,12 +97,12 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         dict["value"] = AppModel.shared.currentUser.user_pobox
         arrUserDetail.append(dict)
         dict = [String : Any]()
-        dict["title"] = PROFILE.CITY
-        dict["value"] = AppModel.shared.currentUser.city_name
-        arrUserDetail.append(dict)
-        dict = [String : Any]()
         dict["title"] = PROFILE.COUNTRY
         dict["value"] = AppModel.shared.currentUser.country_name
+        arrUserDetail.append(dict)
+        dict = [String : Any]()
+        dict["title"] = PROFILE.CITY
+        dict["value"] = AppModel.shared.currentUser.city_name
         arrUserDetail.append(dict)
         dict = [String : Any]()
         dict["title"] = PROFILE.COUNTRY_CODE
@@ -119,7 +120,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         
         selectedCountryId = AppModel.shared.currentUser.user_countryid
         selectedCityId = AppModel.shared.currentUser.user_cityid
-        
+        selectedCountryCode = AppModel.shared.currentUser.phonecode
         getCityData(AppModel.shared.currentUser.user_countryid)
     }
     
@@ -158,6 +159,10 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
                 else if cell.titleLbl.text == PROFILE.COUNTRY {
                     cell.valueBtn.isHidden = false
                     cell.valueBtn.addTarget(self, action: #selector(clickToCountryDropdown(_:)), for: .touchUpInside)
+                }
+                else if cell.titleLbl.text == PROFILE.COUNTRY_CODE {
+                    cell.valueBtn.isHidden = false
+                    cell.valueBtn.addTarget(self, action: #selector(clickToCountryCodeDropdown(_:)), for: .touchUpInside)
                 }
             }
             cell.seperatorImg.isHidden = false
@@ -216,12 +221,6 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
             if index1 != nil {
                 self.arrUserDetail[index1!]["value"] = item
             }
-            let index2 = self.arrUserDetail.firstIndex { (temp) -> Bool in
-                (temp["title"] as! String) == PROFILE.COUNTRY_CODE
-            }
-            if index2 != nil {
-                self.arrUserDetail[index2!]["value"] = "+" + self.arrCountryData[index].phonecode
-            }
             let index3 = self.arrUserDetail.firstIndex { (temp) -> Bool in
                 (temp["title"] as! String) == PROFILE.CITY
             }
@@ -234,7 +233,29 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         }
         dropDown.show()
     }
-        
+    
+    @IBAction func clickToCountryCodeDropdown(_ sender: UIButton) {
+        self.view.endEditing(true)
+        let dropDown = DropDown()
+        dropDown.anchorView = sender
+        var arrData = [String]()
+        for temp in arrCountryData {
+            arrData.append(temp.country_name + " (+" + temp.phonecode + ")")
+        }
+        dropDown.dataSource = arrData
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            let index2 = self.arrUserDetail.firstIndex { (temp) -> Bool in
+                (temp["title"] as! String) == PROFILE.COUNTRY_CODE
+            }
+            if index2 != nil {
+                self.arrUserDetail[index2!]["value"] = "+" + self.arrCountryData[index].phonecode
+            }
+            self.tblView.reloadData()
+            self.selectedCountryCode = self.arrCountryData[index].phonecode
+        }
+        dropDown.show()
+    }
+    
     @IBAction func clickToCityDropdown(_ sender: UIButton) {
         self.view.endEditing(true)
         showLoader()
@@ -313,8 +334,11 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
             case PROFILE.COUNTRY:
                 param["user_countryid"] = selectedCountryId
                 break
+            case PROFILE.COUNTRY_CODE:
+                param["phone_countrycode"] = selectedCountryCode
+                break
             case PROFILE.CITY:
-                param["user_cityid"] = selectedCountryId
+                param["user_cityid"] = selectedCityId
                 break
             case PROFILE.PHONE:
                 param["user_phonenumber"] = temp["value"]
@@ -324,6 +348,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
             }
         }
         param["userid"] = AppModel.shared.currentUser.userid
+        param["lang"] = "eng"
         APIManager.shared.serviceCallToUpdateUserProfile(param)
     }
     

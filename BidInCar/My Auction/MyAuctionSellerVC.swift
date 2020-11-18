@@ -76,10 +76,8 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
                     temp.auctionid == auctionid
                 }
                 if index != nil {
-                    if let auction_featured = dict["auction_featured"] as? String {
-                        arrActiveAuction[index!].auction_featured = auction_featured
-                        tblView.reloadData()
-                    }
+                    arrActiveAuction[index!].auction_featured = "yes"
+                    tblView.reloadData()
                 }
             }
         }
@@ -178,10 +176,17 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
                 
                 if isUserLogin() && (dict.userid == AppModel.shared.currentUser.userid) &&  dict.auction_featured == "no" {
                     cell.makeFeatureBtn.isHidden = false
+                    cell.makeFeatureBtn.isUserInteractionEnabled = true
+                    cell.makeFeatureBtn.setTitle("Make Featured", for: .normal)
                     cell.makeFeatureBtn.tag = indexPath.row
                     cell.makeFeatureBtn.addTarget(self, action: #selector(clickToMakeFeatured(_:)), for: .touchUpInside)
                 }else{
 //                    cell.schedulaerbtn.isHidden = false
+                    if dict.auction_featured == "yes" {
+                        cell.makeFeatureBtn.isHidden = false
+                        cell.makeFeatureBtn.isUserInteractionEnabled = false
+                        cell.makeFeatureBtn.setTitle("Featured", for: .normal)
+                    }
                 }
                 
             }
@@ -207,6 +212,8 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.currentBidLbl.text = "Current Bid " + displayPriceWithCurrency(dict.active_auction_price)
             cell.lotLbl.text = "Lot #\n" + dict.auctionid
             cell.bidLbl.text = "Bid #\n" + dict.auction_bidscount
+            cell.bidBtn.tag = indexPath.row
+            cell.bidBtn.addTarget(self, action: #selector(clickToSeeBid(_:)), for: .touchUpInside)
             cell.bookmarkBtn.isSelected = (dict.bookmark == "yes")
             cell.bookmarkBtn.tag = indexPath.row
             cell.bookmarkBtn.addTarget(self, action: #selector(clickToBookmark(_:)), for: .touchUpInside)
@@ -230,6 +237,16 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
         }
     }
 
+    @objc @IBAction func clickToSeeBid(_ sender: UIButton) {
+        let vc : BookmarkDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "BookmarkDetailVC") as! BookmarkDetailVC
+        if activeBtn.isSelected {
+            vc.auction = arrActiveAuction[sender.tag]
+        }else{
+            vc.auction = arrCloseAuction[sender.tag]
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     //MARK:- Button click event
     @IBAction func clickToOpenCancelAuctionView(_ sender: UIButton) {
         displaySubViewtoParentView(self.view, subview: cancelAuctionPopupView)

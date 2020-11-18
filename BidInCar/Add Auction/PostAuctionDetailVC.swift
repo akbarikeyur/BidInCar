@@ -63,7 +63,7 @@ class PostAuctionDetailVC: UIViewController {
     
     @IBOutlet weak var boatLengthView: UIView!
     @IBOutlet weak var boatLengthLbl: Label!
-    
+    @IBOutlet weak var termsConditionLbl: Label!
     
     
     var myAuction = AuctionModel.init()
@@ -74,6 +74,7 @@ class PostAuctionDetailVC: UIViewController {
 
         // Do any additional setup after loading the view.
         dateView.isHidden = true
+        termsConditionLbl.attributedText = getAttributeStringWithColor(termsConditionLbl.text!, [termsConditionLbl.text!], color: UIColor.blue, font: termsConditionLbl.font, isUnderLine: true)
         setUIDesigning()
         delay(2.0) {
             self.serviceCallToGetAuctionDetail()
@@ -250,7 +251,9 @@ class PostAuctionDetailVC: UIViewController {
     
     @IBAction func clickToTermsConditions(_ sender: Any) {
         self.view.endEditing(true)
-        openUrlInSafari(strUrl: TERMS_URL)
+        let vc : PrivacyPolicyVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PrivacyPolicyVC") as! PrivacyPolicyVC
+        vc.isBackDisplay = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func clickToActionPackageView(_ sender: UIButton) {

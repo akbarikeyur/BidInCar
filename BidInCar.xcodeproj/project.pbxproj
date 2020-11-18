@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1807E6E823DECD460058BA30 /* CustomPackageHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1807E6E623DECD460058BA30 /* CustomPackageHistoryTVC.swift */; };
 		1807E6E923DECD460058BA30 /* CustomPackageHistoryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1807E6E723DECD460058BA30 /* CustomPackageHistoryTVC.xib */; };
+		180A454C2565709400D74F80 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A454B2565709400D74F80 /* ForgotPasswordVC.swift */; };
 		181AD90223586D580006CACF /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AD90123586D580006CACF /* SideMenuVC.swift */; };
 		181AD90523586DB60006CACF /* CustomSideMenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AD90323586DB60006CACF /* CustomSideMenuTVC.swift */; };
 		181AD90623586DB60006CACF /* CustomSideMenuTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181AD90423586DB60006CACF /* CustomSideMenuTVC.xib */; };
@@ -153,6 +154,7 @@
 /* Begin PBXFileReference section */
 		1807E6E623DECD460058BA30 /* CustomPackageHistoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPackageHistoryTVC.swift; sourceTree = "<group>"; };
 		1807E6E723DECD460058BA30 /* CustomPackageHistoryTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPackageHistoryTVC.xib; sourceTree = "<group>"; };
+		180A454B2565709400D74F80 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		181AD90123586D580006CACF /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		181AD90323586DB60006CACF /* CustomSideMenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSideMenuTVC.swift; sourceTree = "<group>"; };
 		181AD90423586DB60006CACF /* CustomSideMenuTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSideMenuTVC.xib; sourceTree = "<group>"; };
@@ -581,6 +583,7 @@
 				18B245082355D02200AEFDC6 /* GetStartedVC.swift */,
 				188CFC4C2355D7C900C18B2A /* LoginVC.swift */,
 				188CFC532355E16400C18B2A /* SignupVC.swift */,
+				180A454B2565709400D74F80 /* ForgotPasswordVC.swift */,
 				181AD90123586D580006CACF /* SideMenuVC.swift */,
 				18CB9149235C67540005C9D0 /* NotificationSettingVC.swift */,
 				794BFA75255D24A0004AAB91 /* VerificationVC.swift */,
@@ -857,6 +860,7 @@
 				18B244F42355C19600AEFDC6 /* DatePickerManager.swift in Sources */,
 				18B244D72355C19600AEFDC6 /* Array+RUI.swift in Sources */,
 				18262FA32383A24F002E063F /* CustomMultiAuctionPackageTVC.swift in Sources */,
+				180A454C2565709400D74F80 /* ForgotPasswordVC.swift in Sources */,
 				18B244E42355C19600AEFDC6 /* View.swift in Sources */,
 				18B244F32355C19600AEFDC6 /* FloatRatingView.swift in Sources */,
 				18B8074723575792001C76BF /* NotificationVC.swift in Sources */,

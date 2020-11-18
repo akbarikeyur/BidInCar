@@ -16,6 +16,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var keepBtn: Button!
     
     @IBOutlet weak var signupLbl: Label!
+    var isFromLogout = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class LoginVC: UIViewController {
             unameTxt.myTxt.text = "buyer@abc.com"
             passwordTxt.myTxt.text = "abc"
         }
+        
     }
     
     func setUIDesigning()
@@ -74,11 +76,20 @@ class LoginVC: UIViewController {
     
     @IBAction func clickToBack(_ sender: Any) {
         self.view.endEditing(true)
-        self.navigationController?.popViewController(animated: true)
+        if isFromLogout {
+            AppDelegate().sharedDelegate().navigateToDashBoard()
+        }else{
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func clickToKeepLogin(_ sender: Any) {
         keepBtn.isSelected = !keepBtn.isSelected
+    }
+    
+    @IBAction func clickToForgotPassword(_ sender: Any) {
+        let vc : ForgotPasswordVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "ForgotPasswordVC") as! ForgotPasswordVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func clickToSocialLogin(_ sender: UIButton) {

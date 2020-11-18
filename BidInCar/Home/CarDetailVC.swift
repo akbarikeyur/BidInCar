@@ -21,6 +21,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var endTimeLbl: Label!
     @IBOutlet weak var auctionStatusBtn: Button!
     @IBOutlet weak var auctionDescLbl: Label!
+    @IBOutlet weak var seeMoreBtn: UIButton!
     @IBOutlet weak var auctionTermsLbl: Label!
     @IBOutlet weak var lotLbl: Label!
     
@@ -28,6 +29,9 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var constraintHeightPictureView: NSLayoutConstraint!//250
     
     @IBOutlet weak var imageCV: UICollectionView!
+    @IBOutlet weak var previousBtn: UIButton!
+    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var imageNumberLbl: Label!
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var constraintHeightTblView : NSLayoutConstraint!
     @IBOutlet weak var reportView: UIView!
@@ -42,6 +46,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var bidNowDescLbl: Label!
     @IBOutlet var depositeView: UIView!
     @IBOutlet weak var depositeTxt: FloatingTextfiledView!
+    @IBOutlet weak var termsConditionLbl: Label!
     
     var auctionData : AuctionModel = AuctionModel.init()
     var auctionDetailData : [[String : Any]] = [[String : Any]]()
@@ -49,6 +54,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     var autoCheckData = PictureModel.init()
     var isFirstTimeIncrese = true
     var isFromPayment = false
+    var currentImageIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,10 +64,12 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         carCV.register(UINib.init(nibName: "CustomCarCVC", bundle: nil), forCellWithReuseIdentifier: "CustomCarCVC")
         tblView.register(UINib.init(nibName: "CustomCarDetailTVC", bundle: nil), forCellReuseIdentifier: "CustomCarDetailTVC")
         
+        termsConditionLbl.attributedText = getAttributeStringWithColor(termsConditionLbl.text!, [termsConditionLbl.text!], color: UIColor.blue, font: termsConditionLbl.font, isUnderLine: true)
+        
         setTextFieldPlaceholderColor(myBidTxt, LightGrayColor)
         depositeTxt.myTxt.keyboardType = .numberPad
         myMapView.showsUserLocation = true
-        
+        seeMoreBtn.isHidden = true
         if !isFromPayment {
             setAuctionData()
         }
@@ -115,16 +123,22 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             pictureView.isHidden = false
             constraintHeightPictureView.constant = 250
         }
-        
+        imageNumberLbl.text = String(currentImageIndex+1) + "/" + String(auctionData.pictures.count)
         imageCV.reloadData()
         auctionDescLbl.text = auctionData.auction_desc
+        if auctionDescLbl.getHeight() > 65 {
+            seeMoreBtn.isHidden = false
+            auctionDescLbl.numberOfLines = 3
+        }else{
+            seeMoreBtn.isHidden = true
+            auctionDescLbl.numberOfLines = 0
+        }
         lotLbl.text = "Lot # " + String(auctionData.auctionid)
         auctionDetailData = [[String : Any]]()
         if auctionData.categorytype == "1" {
             if auctionData.auction_bodytype != "" {
                 auctionDetailData.append(["title" : "Body type", "value" : auctionData.auction_bodytype!])
             }
-            
             if auctionData.country_name != "" {
                 auctionDetailData.append(["title" : "Country of made", "value" : auctionData.country_name!])
             }
@@ -295,9 +309,20 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func clickToSeeMoreLess(_ sender: UIButton) {
+        seeMoreBtn.isSelected = !seeMoreBtn.isSelected
+        if seeMoreBtn.isSelected {
+            auctionDescLbl.numberOfLines = 0
+        }else{
+            auctionDescLbl.numberOfLines = 3
+        }
+    }
+    
     @IBAction func clickToTermsConditions(_ sender: Any) {
         self.view.endEditing(true)
-        openUrlInSafari(strUrl: TERMS_URL)
+        let vc : PrivacyPolicyVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PrivacyPolicyVC") as! PrivacyPolicyVC
+        vc.isBackDisplay = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func clickToBookmark(_ sender: UIButton) {
@@ -491,6 +516,33 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             displayFullScreenImage(arrImg, indexPath.row)
         }
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == imageCV {
+            let visibleRect = CGRect(origin: self.imageCV.contentOffset, size: self.imageCV.bounds.size)
+            let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+            if let visibleIndexPath = self.imageCV.indexPathForItem(at: visiblePoint) {
+                self.currentImageIndex = visibleIndexPath.row
+                self.imageNumberLbl.text = String(self.currentImageIndex+1) + "/" + String(auctionData.pictures.count)
+            }
+        }
+    }
+    
+    @IBAction func clickToChangeImage(_ sender: UIButton) {
+        if sender.tag == 1 {
+            //next
+            if (auctionData.pictures.count-1) > currentImageIndex {
+                imageCV.scrollToItem(at: IndexPath(row: currentImageIndex+1, section: 0), at: .right, animated: true)
+            }
+        }
+        else{
+            //previous
+            if currentImageIndex != 0 {
+                imageCV.scrollToItem(at: IndexPath(row: currentImageIndex-1, section: 0), at: .right, animated: true)
+            }
+        }
+    }
+    
     
     //MARK:- Tablewview method
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

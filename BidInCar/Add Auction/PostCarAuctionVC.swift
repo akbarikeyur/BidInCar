@@ -84,6 +84,7 @@ class PostCarAuctionVC: UploadImageVC {
         transmissionTxt.leftSpace.constant = 10
         
         minBidIncrementTxt.myTxt.text = "100"
+        minBidIncrementTxt.setTextFieldValue()
         minBidIncrementTxt.myTxt.isUserInteractionEnabled = false
         dateView.isHidden = true
         priceTxt.myTxt.keyboardType = .numberPad
@@ -243,6 +244,7 @@ class PostCarAuctionVC: UploadImageVC {
         dropDown.dataSource = arrYearData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.yearTxt.myTxt.text = item
+            self.yearTxt.setTextFieldValue()
         }
         dropDown.show()
     }
@@ -263,8 +265,10 @@ class PostCarAuctionVC: UploadImageVC {
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.selectedCategory = self.arrCategoryData[index]
             self.categoryTxt.myTxt.text = self.selectedCategory.category_name
+            self.categoryTxt.setTextFieldValue()
             self.selectedMake = ChildCategoryModel.init()
             self.selectMakeTxt.myTxt.text = ""
+            self.selectMakeTxt.myLbl.isHidden = true
             self.serviceCallToGetChildCategory()
         }
         dropDown.show()
@@ -290,6 +294,7 @@ class PostCarAuctionVC: UploadImageVC {
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.selectedMake = self.arrSelectMakeData[index]
             self.selectMakeTxt.myTxt.text = self.selectedMake.catchild_name
+            self.selectMakeTxt.setTextFieldValue()
         }
         dropDown.show()
     }
@@ -302,6 +307,7 @@ class PostCarAuctionVC: UploadImageVC {
         dropDown.dataSource = arrConditionData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.conditionTxt.myTxt.text = item
+            self.conditionTxt.setTextFieldValue()
         }
         dropDown.show()
     }
@@ -314,6 +320,7 @@ class PostCarAuctionVC: UploadImageVC {
         DatePickerManager.shared.showPicker(title: "select_start_date", selected: selectedStartDate, min: Date(), max: nil) { (date, isCancel) in
             if !isCancel {
                 self.startDateTxt.myTxt.text = getDateStringFromDate(date: date!, format: "dd-MM-yyyy")
+                self.startDateTxt.setTextFieldValue()
                 self.selectedStartDate = date!
                 self.selectedEndDate = nil
                 self.endDateTxt.myTxt.text = ""
@@ -329,6 +336,7 @@ class PostCarAuctionVC: UploadImageVC {
         DatePickerManager.shared.showPicker(title: "select_end_date", selected: selectedEndDate, min: selectedStartDate, max: nil) { (date, isCancel) in
             if !isCancel {
                 self.endDateTxt.myTxt.text = getDateStringFromDate(date: date!, format: "dd-MM-yyyy")
+                self.endDateTxt.setTextFieldValue()
                 self.selectedEndDate = date!
             }
         }
@@ -342,6 +350,7 @@ class PostCarAuctionVC: UploadImageVC {
         dropDown.dataSource = arrTransmisionData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.transmissionTxt.myTxt.text = item
+            self.transmissionTxt.setTextFieldValue()
         }
         dropDown.show()
     }
@@ -354,6 +363,7 @@ class PostCarAuctionVC: UploadImageVC {
         dropDown.dataSource = arrFuelData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.fuelTypeTxt.myTxt.text = item
+            self.fuelTypeTxt.setTextFieldValue()
         }
         dropDown.show()
     }
@@ -440,11 +450,7 @@ class PostCarAuctionVC: UploadImageVC {
     
     @IBAction func clickToSubmitAuction(_ sender: Any) {
         self.view.endEditing(true)        
-//        let vc : PostAuctionFeaturesVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PostAuctionFeaturesVC") as! PostAuctionFeaturesVC
-//        vc.myAuction = myAuction
-//        vc.selectedAuctionType = selectedAuctionType
-//        self.navigationController?.pushViewController(vc, animated: true)
-//        return
+
         if titleTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_auction_title")
         }

@@ -13,11 +13,18 @@ class PrivacyPolicyVC: UIViewController {
     
     @IBOutlet weak var titleLbl: Label!
     @IBOutlet weak var myWebView: WKWebView!
+    @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var menuBtn: UIButton!
+    
+    var isBackDisplay = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        backBtn.isHidden = !isBackDisplay
+        menuBtn.isHidden = isBackDisplay
         
         if screenType == 0 {
             titleLbl.text = "Privacy Policy"
@@ -27,6 +34,10 @@ class PrivacyPolicyVC: UIViewController {
             titleLbl.text = "Terms and Conditions"
             myWebView.load(URLRequest(url: URL(string: TERMS_URL)!))            
         }
+    }
+    
+    @IBAction func clickToBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func clickToNotification(_ sender: Any) {

@@ -154,11 +154,11 @@ class MyAuctionVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         var dict = AuctionModel.init()
         if activeBtn.isSelected {
-            cell.bidLbl.textColor = BlueColor
-            cell.withdrawView.isHidden = false
             dict = arrActiveAuction[indexPath.row]
-            cell.withdrawBtn.tag = indexPath.row
-            cell.withdrawBtn.addTarget(self, action: #selector(clickToWithdrawAuction(_:)), for: .touchUpInside)
+            cell.bidLbl.textColor = BlueColor
+//            cell.withdrawView.isHidden = false
+//            cell.withdrawBtn.tag = indexPath.row
+//            cell.withdrawBtn.addTarget(self, action: #selector(clickToWithdrawAuction(_:)), for: .touchUpInside)
         }
         else if closedBtn.isSelected {
             cell.bidLbl.textColor = BlueColor
@@ -185,6 +185,9 @@ class MyAuctionVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         cell.currentBidLbl.text = "Current Bid " + displayPriceWithCurrency(dict.active_auction_price)
         cell.lotLbl.text = "Lot #\n" + dict.auctionid
         cell.bidLbl.text = "Bid #\n" + dict.auction_bidscount
+        cell.bidBtn.tag = indexPath.row
+        cell.bidBtn.addTarget(self, action: #selector(clickToSeeBid(_:)), for: .touchUpInside)
+        
         cell.bookmarkBtn.isSelected = (dict.bookmark == "yes")
         cell.bookmarkBtn.tag = indexPath.row
         cell.bookmarkBtn.addTarget(self, action: #selector(clickToBookmark(_:)), for: .touchUpInside)
@@ -205,6 +208,19 @@ class MyAuctionVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         }
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @objc @IBAction func clickToSeeBid(_ sender: UIButton) {
+        let vc : BookmarkDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "BookmarkDetailVC") as! BookmarkDetailVC
+        if activeBtn.isSelected {
+            vc.auction = arrActiveAuction[sender.tag]
+        }else if closedBtn.isSelected {
+            vc.auction = arrCloseAuction[sender.tag]
+        }else if wonBtn.isSelected {
+            vc.auction = arrWonAuction[sender.tag]
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     @IBAction func clickToWithdrawAuction(_ sender: UIButton) {
         self.view.endEditing(true)

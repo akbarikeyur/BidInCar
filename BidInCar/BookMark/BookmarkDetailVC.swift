@@ -17,7 +17,11 @@ class CustomPriceCVC: UICollectionViewCell {
 
 class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-    @IBOutlet weak var coverImgView: UIImageView!
+    @IBOutlet weak var imageCV: UICollectionView!
+    @IBOutlet weak var previousBtn: UIButton!
+    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var imageNumberLbl: Label!
+    
     @IBOutlet weak var profileImgBtn: Button!
     @IBOutlet weak var titleLbl: Label!
     @IBOutlet weak var startPriceLbl: Label!
@@ -46,12 +50,14 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
     var arrBidData = [BidModel]()
     var isForReminder = false
     var eventStore = EKEventStore()
+    var currentImageIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         bidCV.register(UINib.init(nibName: "CustomBidPriceCVC", bundle: nil), forCellWithReuseIdentifier: "CustomBidPriceCVC")
+        imageCV.register(UINib.init(nibName: "CustomImageCVC", bundle: nil), forCellWithReuseIdentifier: "CustomImageCVC")
         
         setUIDesigning()
     }
@@ -66,12 +72,9 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
         if index != nil {
             auction.pictures.remove(at: index!)
         }
+        imageNumberLbl.text = String(currentImageIndex+1) + "/" + String(auction.pictures.count)
+        imageCV.reloadData()
         if auction.pictures.count > 0 {
-            setImageViewImage(coverImgView, auction.pictures[0].path, IMAGE.AUCTION_PLACEHOLDER)
-        }
-        if auction.pictures.count > 1 {
-            setButtonBackgroundImage(profileImgBtn, auction.pictures[1].path, IMAGE.AUCTION_PLACEHOLDER)
-        }else if auction.pictures.count > 0 {
             setButtonBackgroundImage(profileImgBtn, auction.pictures[0].path, IMAGE.AUCTION_PLACEHOLDER)
         }
         
@@ -156,20 +159,69 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
         dropDown.show()
     }
     
+    @IBAction func clickToChangeImage(_ sender: UIButton) {
+        if sender.tag == 1 {
+            //next
+            if (auction.pictures.count-1) > currentImageIndex {
+                imageCV.scrollToItem(at: IndexPath(row: currentImageIndex+1, section: 0), at: .right, animated: true)
+            }
+        }
+        else{
+            //previous
+            if currentImageIndex != 0 {
+                imageCV.scrollToItem(at: IndexPath(row: currentImageIndex-1, section: 0), at: .right, animated: true)
+            }
+        }
+    }
+    
     // MARK: - Collectionview
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == imageCV {
+            return auction.pictures.count
+        }
         return arrBidData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == imageCV {
+            return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
+        }
         return CGSize(width: bidCV.frame.size.width/3, height: 50)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : CustomBidPriceCVC = bidCV.dequeueReusableCell(withReuseIdentifier: "CustomBidPriceCVC", for: indexPath) as! CustomBidPriceCVC
-        cell.numberLbl.text = "#" + String(indexPath.row)
-        cell.priceLbl.text = "AED " + arrBidData[indexPath.row].bidprice
-        return cell
+        if collectionView == imageCV {
+            let cell : CustomImageCVC = imageCV.dequeueReusableCell(withReuseIdentifier: "CustomImageCVC", for: indexPath) as! CustomImageCVC
+            cell.transperentImgView.isHidden = true
+            setImageViewImage(cell.imgView, auction.pictures[indexPath.row].path, "")
+            return cell
+        }else{
+            let cell : CustomBidPriceCVC = bidCV.dequeueReusableCell(withReuseIdentifier: "CustomBidPriceCVC", for: indexPath) as! CustomBidPriceCVC
+            cell.numberLbl.text = "#" + String(indexPath.row)
+            cell.priceLbl.text = "AED " + arrBidData[indexPath.row].bidprice
+            return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == imageCV {
+            var arrImg = [String]()
+            for temp in auction.pictures {
+                arrImg.append(temp.path)
+            }
+            displayFullScreenImage(arrImg, indexPath.row)
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == imageCV {
+            let visibleRect = CGRect(origin: self.imageCV.contentOffset, size: self.imageCV.bounds.size)
+            let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+            if let visibleIndexPath = self.imageCV.indexPathForItem(at: visiblePoint) {
+                self.currentImageIndex = visibleIndexPath.row
+                self.imageNumberLbl.text = String(self.currentImageIndex+1) + "/" + String(auction.pictures.count)
+            }
+        }
     }
     
     //MARK:- Service Call
