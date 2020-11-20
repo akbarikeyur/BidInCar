@@ -22,6 +22,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var addDepositeView: View!
     @IBOutlet weak var postAuctionView: View!
     @IBOutlet weak var subTitleLbl: Label!
+    @IBOutlet weak var notificationSwitch: UISwitch!
     
     var arrMenuData = [[String : Any]]()
     
@@ -76,6 +77,11 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     {
         setButtonBackgroundImage(profilePicBtn, AppModel.shared.currentUser.profile_pic, IMAGE.USER_PLACEHOLDER)
         userNameLbl.text = AppModel.shared.currentUser.user_name
+        if AppModel.shared.currentUser.notification == "on" {
+            notificationSwitch.setOn(true, animated: false)
+        }else{
+            notificationSwitch.setOn(false, animated: false)
+        }
         if isUserBuyer() {
             userTypeLbl.text = "Buyer"
             postAuctionView.isHidden = true
@@ -172,6 +178,20 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //        navController.isNavigationBarHidden = true
 //        menuContainerViewController.centerViewController = navController
     }
+    
+    @IBAction func changeNotification(_ sender: Any) {
+        var param = [String : Any]()
+        param["userid"] = AppModel.shared.currentUser.userid
+        param["usernotification"] = notificationSwitch.isOn ? "on" : "off"
+        APIManager.shared.serviceCallToUpdateNotificationSetting(param)
+        if notificationSwitch.isOn {
+            AppModel.shared.currentUser.notification = "on"
+        }else{
+            AppModel.shared.currentUser.notification = "off"
+        }
+        NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
+    }
+    
     
     // MARK: - Tableview Method
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

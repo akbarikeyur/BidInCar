@@ -11,8 +11,6 @@ import UIKit
 class SettingsVC: UIViewController {
 
     @IBOutlet weak var participateBtn: Button!
-    @IBOutlet weak var bookmarkBtn: Button!
-    @IBOutlet weak var websiteBtn: Button!
     @IBOutlet weak var currentPwdTxt: FloatingTextfiledView!
     @IBOutlet weak var newPwdTxt: FloatingTextfiledView!
     @IBOutlet weak var confirmPwdTxt: FloatingTextfiledView!
@@ -24,10 +22,22 @@ class SettingsVC: UIViewController {
         currentPwdTxt.myTxt.isSecureTextEntry = true
         newPwdTxt.myTxt.isSecureTextEntry = true
         confirmPwdTxt.myTxt.isSecureTextEntry = true
+        
+        participateBtn.isSelected = (AppModel.shared.currentUser.notification == "on")
     }
     
     @IBAction func clickToSelectOption(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
+        participateBtn.isSelected = !participateBtn.isSelected
+        var param = [String : Any]()
+        param["userid"] = AppModel.shared.currentUser.userid
+        param["usernotification"] = participateBtn.isSelected ? "on" : "off"
+        APIManager.shared.serviceCallToUpdateNotificationSetting(param)
+        if participateBtn.isSelected {
+            AppModel.shared.currentUser.notification = "on"
+        }else{
+            AppModel.shared.currentUser.notification = "off"
+        }
+        NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
     }
     
     @IBAction func clickToChangePassword(_ sender: Any) {

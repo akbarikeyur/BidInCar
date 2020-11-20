@@ -19,6 +19,7 @@ struct API {
     static let SIGNUP                       =       BASE_URL + "user/register"
     static let SEND_OTP                     =       BASE_URL + "user/sendotp"
     static let VERIFY_OTP                   =       BASE_URL + "user/verify_account"
+    static let FORGOT_PASSWORD              =       BASE_URL + "user/forget_password"
     
     static let GET_USER_PROFILE             =       BASE_URL + "user/getprofile"
     static let UPLOAD_PROFILE_PICTURE       =       BASE_URL + "user/upload_profile_pic"
@@ -78,6 +79,7 @@ struct API {
     static let FAQ                          =       BASE_URL + "admin/faq/getfaqs"
     
     static let GET_NOTIFICATION             =       BASE_URL + "notification/getnotification"
+    static let UPDATE_NOTIFICATION          =       BASE_URL + "user/updatenotificationsettings"
 }
 
 
@@ -327,6 +329,52 @@ public class APIManager {
         }
     }
     
+    func serviceCallToForgotPassword(_ params : [String : Any], completion: @escaping () -> Void) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        showLoader()
+        let headerParams :[String : String] = getJsonHeader()
+        
+        Alamofire.request(API.FORGOT_PASSWORD, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
+            removeLoader()
+            switch response.result {
+            case .success:
+                printData(response.result.value!)
+                if let result = response.result.value as? [String:Any] {
+                
+                    if let status = result["status"] as? String {
+                        if(status == "success") {
+                            if let message = result["message"] as? String, message != "" {
+                                displayToast(message)
+                            }
+                            completion()
+                            return
+                        }
+                        else if status == "error"
+                        {
+                            if let message = result["message"] as? String, message != "" {
+                                displayToast(message)
+                            }
+                            self.handleStatusCode(result)
+                        }
+                    }
+                }
+                if let error = response.result.error
+                {
+                    displayToast(error.localizedDescription)
+                    return
+                }
+                break
+            case .failure(let error):
+                printData(error)
+                break
+            }
+        }
+    }
+    
     //MARK:- Profile
     func serviceCallToGetUserProfile(_ userId : String, _ completion: @escaping (_ data : [String : Any]) -> Void) {
         if !APIManager.isConnectedToNetwork()
@@ -463,6 +511,26 @@ public class APIManager {
                     displayToast(error.localizedDescription)
                     return
                 }
+                break
+            case .failure(let error):
+                printData(error)
+                break
+            }
+        }
+    }
+    
+    func serviceCallToUpdateNotificationSetting(_ params : [String : Any]) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        let headerParams :[String : String] = getJsonHeader()
+        printData(params)
+        Alamofire.request(API.UPDATE_NOTIFICATION, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
+            switch response.result {
+            case .success:
+                printData(response.result.value!)
                 break
             case .failure(let error):
                 printData(error)

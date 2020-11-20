@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZcA-ak-AO1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZcA-ak-AO1">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1983,6 +1983,9 @@ Account</string>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ot4-dA-Ehn">
                                         <rect key="frame" x="251" y="12" width="51" height="31"/>
                                         <color key="onTintColor" red="0.45006507639999999" green="0.4233119488" blue="0.98042625189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="changeNotification:" destination="IXv-jT-MVu" eventType="valueChanged" id="YwS-l1-VU1"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2021,6 +2024,7 @@ Account</string>
                     <connections>
                         <outlet property="addDepositeView" destination="943-R7-I13" id="Dxn-hF-sIx"/>
                         <outlet property="loginView" destination="e1I-dc-sGw" id="MCe-Ew-gfZ"/>
+                        <outlet property="notificationSwitch" destination="Ot4-dA-Ehn" id="1Pu-Wm-BO0"/>
                         <outlet property="postAuctionView" destination="ld0-7T-anQ" id="2TL-Yd-R9W"/>
                         <outlet property="profilePicBtn" destination="xxC-3W-mBv" id="ukX-Xt-KwS"/>
                         <outlet property="profileView" destination="zG8-4F-VjA" id="YV9-7D-3ON"/>

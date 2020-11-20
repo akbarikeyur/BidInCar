@@ -11,6 +11,7 @@ import UIKit
 class ForgotPasswordVC: UIViewController {
 
     @IBOutlet weak var emailTxt: FloatingTextfiledView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +33,9 @@ class ForgotPasswordVC: UIViewController {
             displayToast("invalid_email")
         }
         else {
-            self.navigationController?.popViewController(animated: true)
+            APIManager.shared.serviceCallToForgotPassword(["email" : emailTxt.myTxt.text!]) {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
     
