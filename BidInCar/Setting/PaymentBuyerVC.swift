@@ -18,6 +18,10 @@ class PaymentBuyerVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var depositeView: UIView!
     @IBOutlet weak var depositeTxt: FloatingTextfiledView!
     
+    @IBOutlet var withdrrawView: UIView!
+    @IBOutlet weak var withdrawTxt: FloatingTextfiledView!
+    
+    
     var arrBidAuction = [BidAuctionModel]()
     
     override func viewDidLoad() {
@@ -103,6 +107,36 @@ class PaymentBuyerVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
         }
         
+    }
+    
+    @IBAction func clickToWithdraw(_ sender: Any) {
+        withdrawTxt.myTxt.text = ""
+        displaySubViewtoParentView(AppDelegate().sharedDelegate().window, subview: withdrrawView)
+    }
+    
+    @IBAction func clickToSubmitWithdraw(_ sender: Any) {
+        self.view.endEditing(true)
+        let limit = AppModel.shared.getDoubleValue(getBuyerTopData(), "remain_biding_limit")
+        if withdrawTxt.myTxt.text?.trimmed == "" {
+            displayToast("Please enter withdraw amount")
+        }
+        else if (limit/5) < Double(withdrawTxt.myTxt.text!)! {
+            displayToast("You can only withdraw deposit as per remaining bidding limit. ")
+        }
+        else {
+            var param = [String : Any]()
+            param["userid"] = AppModel.shared.currentUser.userid
+            param["amount"] = withdrawTxt.myTxt.text
+            
+            APIManager.shared.serviceCallToWithdrawAmount(param) {
+                self.withdrrawView.removeFromSuperview()
+                displayToast("Your withdrawl requested is sent to admin.")
+            }
+        }
+    }
+    
+    @IBAction func clickToCloseWithdraw(_ sender: Any) {
+        withdrrawView.removeFromSuperview()
     }
     
     func serviceCallToGetBidAuction()

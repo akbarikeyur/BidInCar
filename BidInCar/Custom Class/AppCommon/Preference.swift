@@ -259,3 +259,29 @@ func getPackageHistory() -> [PackageModel]
     }
     return arrPackage
 }
+
+func saveBuyerTopData(_ data : [String : Any])
+{
+    setDataToPreference(data: data as AnyObject, forKey: "BUYER_TOP_DATA")
+}
+
+func getBuyerTopData() -> [String : Any]
+{
+    if let data : [String : Any] = getDataFromPreference(key: "BUYER_TOP_DATA") as? [String : Any] {
+        return data
+    }
+    return [String : Any]()
+}
+
+func saveSellerTopData(_ data : [String : Any])
+{
+    setDataToPreference(data: data as AnyObject, forKey: "SELLER_TOP_DATA")
+}
+
+func getSellreTopData() -> [String : Any]
+{
+    if let data : [String : Any] = getDataFromPreference(key: "SELLER_TOP_DATA") as? [String : Any] {
+        return data
+    }
+    return [String : Any]()
+}

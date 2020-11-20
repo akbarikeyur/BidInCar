@@ -67,6 +67,7 @@ struct API {
     static let SAVE_BANK                    =       BASE_URL + "user/save_card"
     
     static let DEPOSITE_AMOUNT              =       BASE_URL + "payment/deposite_amount"
+    static let WITHDRAW_AMOUNT              =       BASE_URL + "payment/withdraw_amount"
     
     static let GET_PACKAGE                  =       BASE_URL + "packages/api_packages"
     static let PURCHASE_PACKAGE             =       BASE_URL + "payment/package_purchase"
@@ -1668,6 +1669,45 @@ public class APIManager {
         showLoader()
         let headerParams :[String : String] = getJsonHeader()
         Alamofire.request(API.DEPOSITE_AMOUNT, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
+            removeLoader()
+            switch response.result {
+            case .success:
+                printData(response.result.value!)
+                if let result = response.result.value as? [String:Any] {
+                
+                    if let status = result["status"] as? String {
+                        if(status == "success") {
+                            completion()
+                            return
+                        }
+                        else
+                        {
+                            self.handleStatusCode(result)
+                        }
+                    }
+                }
+                if let error = response.result.error
+                {
+                    displayToast(error.localizedDescription)
+                    return
+                }
+                break
+            case .failure(let error):
+                printData(error)
+                break
+            }
+        }
+    }
+    
+    func serviceCallToWithdrawAmount(_ param : [String : Any], _ completion: @escaping () -> Void) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        showLoader()
+        let headerParams :[String : String] = getJsonHeader()
+        Alamofire.request(API.WITHDRAW_AMOUNT, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             removeLoader()
             switch response.result {
             case .success:

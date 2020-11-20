@@ -76,6 +76,15 @@ class HomeVC: UploadImageVC {
             }else{
                 setupAuctionData()
             }
+            if isUserLogin() {
+                if isUserBuyer() {
+                    setBuyerData()
+                }else{
+                    setSellerData()
+                }
+            }
+            
+            
             refreshTopData()
         }
     }
@@ -703,32 +712,8 @@ extension HomeVC {
     func serviceCallToGetBuyerData() {
         if isUserLogin() && isUserBuyer() && AppModel.shared.currentUser.userid != "" {
             APIManager.shared.serviceCallToGetBuyerData(AppModel.shared.currentUser.userid) { (data) in
-                self.arrInfo = [InfoModel]()
-                for temp in getJsonFromFile("buyer_info") {
-                    let tempInfo = InfoModel.init(dict: temp)
-                    if tempInfo.name == "Active Auctions:" {
-                        tempInfo.value = AppModel.shared.getStringValue(data, "active_auction_bids")
-                    }
-                    else if tempInfo.name == "Total Auctions:" {
-                        tempInfo.value = AppModel.shared.getStringValue(data, "total_auctions")
-                    }
-                    else if tempInfo.name == "Deposit Amount:" {
-                        tempInfo.value = AppModel.shared.getStringValue(data, "deposite")
-                    }
-                    else if tempInfo.name == "Total Bidding Limit:" {
-                        tempInfo.value = AppModel.shared.getStringValue(data, "total_biding_limit")
-                    }
-                    else if tempInfo.name == "Remaining Bidding Limit:" {
-                        tempInfo.value = AppModel.shared.getStringValue(data, "remain_biding_limit")
-                    }
-                    self.arrInfo.append(tempInfo)
-                }
-                self.infoCV.reloadData()
-                if self.arrInfo.count == 0 {
-                    self.constraintHeightInfoCV.constant = 0
-                }else{
-                    self.constraintHeightInfoCV.constant = 40
-                }
+                saveBuyerTopData(data)
+                self.setBuyerData()
             }
         }
         else{
@@ -736,35 +721,71 @@ extension HomeVC {
         }
     }
     
+    func setBuyerData() {
+        let data = getBuyerTopData()
+        self.arrInfo = [InfoModel]()
+        for temp in getJsonFromFile("buyer_info") {
+            let tempInfo = InfoModel.init(dict: temp)
+            if tempInfo.name == "Active Auctions:" {
+                tempInfo.value = AppModel.shared.getStringValue(data, "active_auction_bids")
+            }
+            else if tempInfo.name == "Total Auctions:" {
+                tempInfo.value = AppModel.shared.getStringValue(data, "total_auctions")
+            }
+            else if tempInfo.name == "Deposit Amount:" {
+                tempInfo.value = AppModel.shared.getStringValue(data, "deposite")
+            }
+            else if tempInfo.name == "Total Bidding Limit:" {
+                tempInfo.value = AppModel.shared.getStringValue(data, "total_biding_limit")
+            }
+            else if tempInfo.name == "Remaining Bidding Limit:" {
+                tempInfo.value = AppModel.shared.getStringValue(data, "remain_biding_limit")
+            }
+            self.arrInfo.append(tempInfo)
+        }
+        self.infoCV.reloadData()
+        if self.arrInfo.count == 0 {
+            self.constraintHeightInfoCV.constant = 0
+        }else{
+            self.constraintHeightInfoCV.constant = 40
+        }
+    }
+    
     func serviceCallToGetSellerData() {
         if isUserLogin() && !isUserBuyer() && AppModel.shared.currentUser.userid != "" {
             APIManager.shared.serviceCallToGetSellerData(AppModel.shared.currentUser.userid) { (data) in
-                self.arrInfo = [InfoModel]()
-                for temp in getJsonFromFile("seller_info") {
-                    let tempInfo = InfoModel.init(dict: temp)
-                    if tempInfo.name == "Active Auctions:" {
-                        tempInfo.value = AppModel.shared.getStringValue(data, "active_auction")
-                    }
-                    else if tempInfo.name == "Total Auctions:" {
-                        tempInfo.value = AppModel.shared.getStringValue(data, "total_auction")
-                    }
-                    else if tempInfo.name == "Package:" {
-                        tempInfo.value = AppModel.shared.getStringValue(data, "package_name")
-                    }
-                    else if tempInfo.name == "Remaining Auction Limit:" {
-                        tempInfo.value = AppModel.shared.getStringValue(data, "auctionsleft")
-                    }
-                    self.arrInfo.append(tempInfo)
-                }
-                self.infoCV.reloadData()
-                if self.arrInfo.count == 0 {
-                    self.constraintHeightInfoCV.constant = 0
-                }else{
-                    self.constraintHeightInfoCV.constant = 40
-                }
+                saveSellerTopData(data)
+                self.setSellerData()
             }
         }else{
             self.constraintHeightInfoCV.constant = 0
+        }
+    }
+    
+    func setSellerData() {
+        let data = getSellreTopData()
+        self.arrInfo = [InfoModel]()
+        for temp in getJsonFromFile("seller_info") {
+            let tempInfo = InfoModel.init(dict: temp)
+            if tempInfo.name == "Active Auctions:" {
+                tempInfo.value = AppModel.shared.getStringValue(data, "active_auction")
+            }
+            else if tempInfo.name == "Total Auctions:" {
+                tempInfo.value = AppModel.shared.getStringValue(data, "total_auction")
+            }
+            else if tempInfo.name == "Package:" {
+                tempInfo.value = AppModel.shared.getStringValue(data, "package_name")
+            }
+            else if tempInfo.name == "Remaining Auction Limit:" {
+                tempInfo.value = AppModel.shared.getStringValue(data, "auctionsleft")
+            }
+            self.arrInfo.append(tempInfo)
+        }
+        self.infoCV.reloadData()
+        if self.arrInfo.count == 0 {
+            self.constraintHeightInfoCV.constant = 0
+        }else{
+            self.constraintHeightInfoCV.constant = 40
         }
     }
 }
