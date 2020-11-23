@@ -1512,6 +1512,25 @@ Account</string>
                                     <action selector="clickToResend:" destination="AkE-hp-57p" eventType="touchUpInside" id="yvu-qV-Ttx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0c-Sn-LMj" customClass="Button" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="77" y="516" width="166" height="32"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                <state key="normal" title="Continue as guest login">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickToGuestLogin:" destination="AkE-hp-57p" eventType="touchUpInside" id="tZp-aT-4vu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -1525,6 +1544,7 @@ Account</string>
                             <constraint firstItem="WPL-gM-vWg" firstAttribute="trailing" secondItem="mfZ-cx-2p1" secondAttribute="trailing" id="9bq-PQ-HQ4"/>
                             <constraint firstItem="nQt-tR-iLJ" firstAttribute="top" secondItem="XRv-Fu-bbg" secondAttribute="bottom" constant="5" id="FJX-y5-h3y"/>
                             <constraint firstItem="mfZ-cx-2p1" firstAttribute="trailing" secondItem="XRv-Fu-bbg" secondAttribute="trailing" constant="20" id="FT9-jh-YID"/>
+                            <constraint firstItem="mfZ-cx-2p1" firstAttribute="bottom" secondItem="d0c-Sn-LMj" secondAttribute="bottom" constant="20" id="Fsn-nG-MET"/>
                             <constraint firstItem="XRv-Fu-bbg" firstAttribute="top" secondItem="R8r-jE-8CN" secondAttribute="bottom" constant="20" id="KEK-UL-dL6"/>
                             <constraint firstItem="mfZ-cx-2p1" firstAttribute="trailing" secondItem="ucw-yj-of9" secondAttribute="trailing" constant="20" id="L7D-GQ-Ce3"/>
                             <constraint firstItem="R8r-jE-8CN" firstAttribute="trailing" secondItem="mfZ-cx-2p1" secondAttribute="trailing" id="LBA-T4-gyH"/>
@@ -1534,6 +1554,7 @@ Account</string>
                             <constraint firstItem="WPL-gM-vWg" firstAttribute="top" secondItem="nQt-tR-iLJ" secondAttribute="bottom" constant="25" id="f86-IP-DP4"/>
                             <constraint firstAttribute="trailing" secondItem="iHY-99-j3O" secondAttribute="trailing" id="l6T-BS-bf5"/>
                             <constraint firstItem="ucw-yj-of9" firstAttribute="leading" secondItem="mfZ-cx-2p1" secondAttribute="leading" constant="20" id="n70-CJ-4ts"/>
+                            <constraint firstItem="d0c-Sn-LMj" firstAttribute="centerX" secondItem="S2f-JK-cEL" secondAttribute="centerX" id="pdZ-c1-FWM"/>
                             <constraint firstItem="iHY-99-j3O" firstAttribute="leading" secondItem="S2f-JK-cEL" secondAttribute="leading" id="q3w-w7-wWN"/>
                             <constraint firstItem="R8r-jE-8CN" firstAttribute="leading" secondItem="mfZ-cx-2p1" secondAttribute="leading" id="yJg-0l-AYg"/>
                         </constraints>

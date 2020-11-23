@@ -112,6 +112,7 @@ class UserModel : AppModel
     var phonecode : String!
     var verified : Bool!
     var notification : String!
+    var user_company : CompanyModel!
     
     override init(){
         userid = ""
@@ -138,6 +139,7 @@ class UserModel : AppModel
         phonecode = ""
         verified = false
         notification = "on"
+        user_company = CompanyModel.init([String : Any]())
     }
     
     init(dict : [String : Any])
@@ -166,6 +168,7 @@ class UserModel : AppModel
         phonecode = ""
         verified = false
         notification = "on"
+        user_company = CompanyModel.init([String : Any]())
         
         userid = AppModel.shared.getStringValue(dict, "userid")
         if let temp = dict["profile_pic"] as? String {
@@ -235,10 +238,32 @@ class UserModel : AppModel
             }
         }
         notification = dict["notification"] as? String ?? "on"
+        user_company = CompanyModel.init(dict["user_company"] as? [String : Any] ?? [String : Any]())
     }
     
     func dictionary() -> [String:Any]  {
-        return ["userid":userid!, "profile_pic":profile_pic!, "user_accountype":user_accountype!, "user_buildingname":user_buildingname!, "user_cityid":user_cityid!, "user_countryid":user_countryid!, "user_deposit":user_deposit!, "user_email":user_email!, "user_flatnumber":user_flatnumber!, "user_lastname":user_lastname!, "user_name":user_name!, "user_password":user_password!, "user_phonenumber":user_phonenumber!, "user_pobox":user_pobox!, "user_postingtype":user_postingtype!, "user_status":user_status!, "user_streetaddress":user_streetaddress!, "city_name":city_name!, "country_name":country_name!, "sortname":sortname!, "phonecode":phonecode!, "biding_limit" : biding_limit!, "verified" : verified!, "notification" : notification!]
+        return ["userid":userid!, "profile_pic":profile_pic!, "user_accountype":user_accountype!, "user_buildingname":user_buildingname!, "user_cityid":user_cityid!, "user_countryid":user_countryid!, "user_deposit":user_deposit!, "user_email":user_email!, "user_flatnumber":user_flatnumber!, "user_lastname":user_lastname!, "user_name":user_name!, "user_password":user_password!, "user_phonenumber":user_phonenumber!, "user_pobox":user_pobox!, "user_postingtype":user_postingtype!, "user_status":user_status!, "user_streetaddress":user_streetaddress!, "city_name":city_name!, "country_name":country_name!, "sortname":sortname!, "phonecode":phonecode!, "biding_limit" : biding_limit!, "verified" : verified!, "notification" : notification!, "user_company" : user_company.dictionary()]
+    }
+}
+
+class CompanyModel : AppModel
+{
+    var companyid : String!
+    var company_name : String!
+    var company_address : String!
+    var company_email : String!
+    var company_phone : String!
+    
+    init(_ dict : [String : Any]) {
+        companyid = AppModel.shared.getStringValue(dict, "companyid")
+        company_name = dict["company_name"] as? String ?? ""
+        company_address = dict["company_address"] as? String ?? ""
+        company_email = dict["company_email"] as? String ?? ""
+        company_phone = dict["company_phone"] as? String ?? ""
+    }
+    
+    func dictionary() -> [String : Any] {
+        return ["companyid" : companyid!, "company_name" : company_name!, "company_address" : company_address!, "company_email" : company_email!, "company_phone" : company_phone!]
     }
 }
 

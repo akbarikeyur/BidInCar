@@ -2119,7 +2119,7 @@ public class APIManager {
         Alamofire.request(API.GET_CITY, method: .post, parameters: ["countryid":country_id], encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             switch response.result {
             case .success:
-                printData(response.result.value!)
+//                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {

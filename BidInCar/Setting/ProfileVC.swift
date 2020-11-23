@@ -24,7 +24,10 @@ struct PROFILE {
     static let PHONE = "Your phone number"
     static let SAVE = "Changes auto save!"
     
-    
+    static let COMPANY_NAME = "Company name"
+    static let COMPANY_EMAIL = "Company email"
+    static let COMPANY_PHONE = "Company phone"
+    static let COMPANY_ADDRESS = "Company address"
 }
 
 class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CustomProfileDelegate {
@@ -112,6 +115,27 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         dict["title"] = PROFILE.PHONE
         dict["value"] = AppModel.shared.currentUser.user_phonenumber
         arrUserDetail.append(dict)
+        
+        
+        if !isUserBuyer() && AppModel.shared.currentUser.user_company.companyid != "" {
+            dict = [String : Any]()
+            dict["title"] = PROFILE.COMPANY_NAME
+            dict["value"] = AppModel.shared.currentUser.user_company.company_name
+            arrUserDetail.append(dict)
+            dict = [String : Any]()
+            dict["title"] = PROFILE.COMPANY_EMAIL
+            dict["value"] = AppModel.shared.currentUser.user_company.company_email
+            arrUserDetail.append(dict)
+            dict = [String : Any]()
+            dict["title"] = PROFILE.COMPANY_PHONE
+            dict["value"] = AppModel.shared.currentUser.user_company.company_phone
+            arrUserDetail.append(dict)
+            dict = [String : Any]()
+            dict["title"] = PROFILE.COMPANY_ADDRESS
+            dict["value"] = AppModel.shared.currentUser.user_company.company_address
+            arrUserDetail.append(dict)
+        }
+        
         dict = [String : Any]()
         dict["title"] = PROFILE.SAVE
         dict["value"] = ""
@@ -347,6 +371,29 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
                 break
             }
         }
+        
+        if !isUserBuyer() && AppModel.shared.currentUser.user_company.companyid != "" {
+            for temp in arrUserDetail {
+                switch (temp["title"] as! String)
+                {
+                    case PROFILE.COMPANY_NAME:
+                        param["company_name"] = temp["value"]
+                        break
+                    case PROFILE.COMPANY_EMAIL:
+                        param["company_email"] = temp["value"]
+                        break
+                    case PROFILE.COMPANY_ADDRESS:
+                        param["company_address"] = temp["value"]
+                        break
+                    case PROFILE.COMPANY_PHONE:
+                        param["company_phone"] = temp["value"]
+                        break
+                    default:
+                        break
+                }
+            }
+        }
+        param["usernotification"] = AppModel.shared.currentUser.notification
         param["userid"] = AppModel.shared.currentUser.userid
         param["lang"] = "eng"
         APIManager.shared.serviceCallToUpdateUserProfile(param)

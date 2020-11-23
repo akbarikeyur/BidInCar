@@ -46,6 +46,12 @@ class VerificationVC: UIViewController {
         serviceCallToSendOtp()
     }
     
+    @IBAction func clickToGuestLogin(_ sender: Any) {
+        AppModel.shared.resetAllModel()
+        AppDelegate().sharedDelegate().navigateToDashBoard()
+    }
+    
+    
     func serviceCallToSendOtp() {
         var param = [String : Any]()
         param["userid"] = AppModel.shared.currentUser.userid
@@ -53,6 +59,8 @@ class VerificationVC: UIViewController {
             
         }
     }
+    
+    
     
     /*
     // MARK: - Navigation
