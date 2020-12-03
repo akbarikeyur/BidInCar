@@ -100,8 +100,8 @@ class PaymentSellerVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             cell.purchaseDatelbl.text = dict.package_boughton
             cell.packageNameLbl.text = dict.package_title
             cell.totalAuctionLbl.text = dict.auction_history.total_auction
-            cell.auctionPostedLbl.text = dict.auction_history.auction_posted
-            cell.remainingAuctionLbl.text = String(dict.remaining_auction)
+            cell.auctionPostedLbl.text = dict.auction_history.postedon
+            cell.remainingAuctionLbl.text = String(dict.auctionsleft)
             cell.expireLbl.text = dict.package_expireon
             cell.priceLbl.text = "AED " + dict.package_price
             cell.contentView.backgroundColor = WhiteColor

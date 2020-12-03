@@ -1277,6 +1277,9 @@ class PackageModel : AppModel
         if let temp = dict["auction_history"] as? [String : Any] {
             auction_history = AuctionHistoryModel.init(dict: temp)
         }
+        else if let temp = dict["history"] as? [String : Any] {
+            auction_history = AuctionHistoryModel.init(dict: temp)
+        }
         if let temp = dict["remaining_auction"] as? String {
             remaining_auction = Int(temp)
         }
@@ -1291,6 +1294,16 @@ class PackageModel : AppModel
         }
         if let temp = dict["featured_price"] as? String {
             featured_price = temp
+        }
+        
+        if let tempDict = dict["packages"] as? [String : Any] {
+            days = AppModel.shared.getStringValue(tempDict, "days")
+            extras = AppModel.shared.getStringValue(tempDict, "extras")
+            package_title = AppModel.shared.getStringValue(tempDict, "package_title")
+            number_of_auction = AppModel.shared.getStringValue(tempDict, "number_of_auction")
+            package_expireon = AppModel.shared.getStringValue(tempDict, "package_expireon")
+            package_boughton = AppModel.shared.getStringValue(tempDict, "package_boughton")
+            package_price = AppModel.shared.getStringValue(tempDict, "package_price")
         }
     }
     

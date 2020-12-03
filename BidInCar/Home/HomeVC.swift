@@ -83,8 +83,6 @@ class HomeVC: UploadImageVC {
                     setSellerData()
                 }
             }
-            
-            
             refreshTopData()
         }
     }
