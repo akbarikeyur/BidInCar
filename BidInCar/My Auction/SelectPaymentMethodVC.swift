@@ -150,18 +150,17 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             }else{
                 //pay
             }
-            
         }
         else if selectedTab == 1 {
             //paypal
             if amount == 0 {
                 return
             }
-//            if PLATFORM.isSimulator {
-//                paytabPaymentCompleted("")
-//            }else{
+            if PLATFORM.isSimulator {
+                paytabPaymentCompleted("")
+            }else{
                 paytab()
-//            }
+            }
         }
         else if selectedTab == 2 {
             //bank
