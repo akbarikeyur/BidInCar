@@ -722,7 +722,7 @@ for signing up</string>
                                                     <constraint firstAttribute="height" constant="45" id="fiO-h8-T7f"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Full name"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Full Name*"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4g-KG-kO9" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -731,7 +731,7 @@ for signing up</string>
                                                     <constraint firstAttribute="height" constant="45" id="Luw-MM-jP2"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Last name"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Last Name*"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmr-oL-j8F" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -740,7 +740,7 @@ for signing up</string>
                                                     <constraint firstAttribute="height" constant="45" id="BI8-XL-4dF"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email ID"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email*"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nqd-Tq-Jme" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -749,7 +749,7 @@ for signing up</string>
                                                     <constraint firstAttribute="height" constant="45" id="Fpl-Pj-kAG"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Street Address"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Street Address*"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pM9-cZ-LJO" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -758,7 +758,7 @@ for signing up</string>
                                                     <constraint firstAttribute="height" constant="45" id="f53-sl-051"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Building name"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Building Name*"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tmn-7Y-d9x" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -767,7 +767,7 @@ for signing up</string>
                                                     <constraint firstAttribute="height" constant="45" id="Gdr-3X-bAD"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Flat number"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Flat Number*"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQP-8X-Pxg" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -776,7 +776,7 @@ for signing up</string>
                                                     <constraint firstAttribute="height" constant="45" id="lOe-A7-f7y"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="PO Box"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="P.O Box*"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fo6-qG-J7j" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -785,7 +785,7 @@ for signing up</string>
                                                     <constraint firstAttribute="height" constant="45" id="Lb0-MY-YHV"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Select Country"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Select Country*"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ar-aB-byV">
@@ -802,7 +802,7 @@ for signing up</string>
                                                     <constraint firstAttribute="height" constant="45" id="0QH-27-iE4"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Select City"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Select City*"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDd-EK-d1D">
@@ -819,7 +819,7 @@ for signing up</string>
                                                     <constraint firstAttribute="height" constant="45" id="UTe-fb-OLS"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Select Country Code"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Country Code*"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyM-ZA-tDl">
@@ -847,7 +847,7 @@ for signing up</string>
                                                     <constraint firstAttribute="height" constant="45" id="rdM-X3-ZUq"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Your phone number"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Phone Number*"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X97-3e-7v7" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -856,7 +856,7 @@ for signing up</string>
                                                     <constraint firstAttribute="height" constant="45" id="qZC-qZ-htd"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Password*"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qad-8O-JcV" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -865,7 +865,7 @@ for signing up</string>
                                                     <constraint firstAttribute="height" constant="45" id="t5m-Yt-ueV"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Confrim Password"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Confirm Password*"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strong" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1M-dQ-w6F" customClass="Label" customModule="BidInCar" customModuleProvider="target">
@@ -1066,7 +1066,7 @@ for signing up</string>
                                                                     <constraint firstAttribute="height" constant="45" id="8ZF-8J-C5J"/>
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Company name"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Company Name"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCv-Wu-sZf" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -1075,7 +1075,7 @@ for signing up</string>
                                                                     <constraint firstAttribute="height" constant="45" id="kyS-oX-FMU"/>
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Country code"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Country Code"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLy-gI-oKy">
@@ -1092,7 +1092,7 @@ for signing up</string>
                                                                     <constraint firstAttribute="height" constant="45" id="Unu-Lh-8Ia"/>
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Company phone number"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Company Phone"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqG-Zl-7yf" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -1110,7 +1110,7 @@ for signing up</string>
                                                                     <constraint firstAttribute="height" constant="45" id="dMy-Rs-kXe"/>
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Building name"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Building Name"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FDR-wc-Lae" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -1128,7 +1128,7 @@ for signing up</string>
                                                                     <constraint firstAttribute="height" constant="45" id="QqY-aa-4zu"/>
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="PO Box"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="P.O Box"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                         </subviews>
