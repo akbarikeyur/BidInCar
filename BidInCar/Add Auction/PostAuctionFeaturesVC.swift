@@ -17,7 +17,6 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
     @IBOutlet weak var countryTxt: FloatingTextfiledView!
     @IBOutlet weak var motorTxt: FloatingTextfiledView!
     @IBOutlet weak var colorTxt: FloatingTextfiledView!
-    @IBOutlet weak var milageTxt: TextField!
     @IBOutlet weak var addressTxt: FloatingTextfiledView!
     @IBOutlet weak var latitudeTxt: FloatingTextfiledView!
     @IBOutlet weak var longitudeTxt: FloatingTextfiledView!
@@ -39,7 +38,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
     @IBOutlet weak var boatLengthTxt: FloatingTextfiledView!
     @IBOutlet weak var boatAgeTxt: FloatingTextfiledView!
     @IBOutlet weak var boatWarrantyTxt: FloatingTextfiledView!
-    @IBOutlet weak var milageView: UIView!
+    @IBOutlet weak var milageTxt: FloatingTextfiledView!
     
     @IBOutlet weak var scrapView: UIView!
     @IBOutlet weak var interiorColorTxt: FloatingTextfiledView!
@@ -78,7 +77,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
     func setUIDesigning()
     {
         motorTxt.myTxt.keyboardType = .numberPad
-        milageTxt.keyboardType = .numberPad
+        milageTxt.myTxt.keyboardType = .numberPad
         latitudeTxt.myTxt.keyboardType = .decimalPad
         longitudeTxt.myTxt.keyboardType = .decimalPad
         latitudeTxt.trailingSpace.constant = 10
@@ -168,7 +167,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         colorTxt.myTxt.text = myAuction.auction_extcolour
         bodyConditionTxt.myTxt.text = myAuction.body_condition
         
-        milageTxt.text = myAuction.auction_millage
+        milageTxt.myTxt.text = myAuction.auction_millage
         mechanicalTxt.myTxt.text = myAuction.mechanical
         wheelTxt.myTxt.text = myAuction.wheels
         driveTxt.myTxt.text = myAuction.drive_system
@@ -353,7 +352,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         else if selectedAuctionType.id == 1 && colorTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_auction_color")
         }
-        else if milageTxt.text?.trimmed == "" {
+        else if milageTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_auction_milage")
         }
         else if mechanicalTxt.myTxt.text?.trimmed == "" {
@@ -436,7 +435,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
             }
             param["mechanical"] = mechanicalTxt.myTxt.text
             param["body_condition"] = bodyConditionTxt.myTxt.text
-            param["millage"] = milageTxt.text
+            param["millage"] = milageTxt.myTxt.text
             param["country"] = selectedCountry.countryid
             param["country_name"] = countryTxt.myTxt.text
             
@@ -601,26 +600,6 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
             }
         }
         dropDown.show()
-    }
-    
-    @IBAction func clickToPlusMinusOdometer(_ sender: UIButton) {
-        self.view.endEditing(true)
-        var value = 0
-        if milageTxt.text?.trimmed != "" {
-            value = Int(milageTxt.text!)!
-        }
-        
-        if sender.tag == 51 {
-            //plus
-            value += 1
-        }
-        else if sender.tag == 52 {
-            //minus
-            if value >= 0 {
-                value -= 1
-            }
-        }
-        milageTxt.text = String(value)
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
