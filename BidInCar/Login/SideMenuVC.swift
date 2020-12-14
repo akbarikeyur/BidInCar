@@ -192,7 +192,6 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
     }
     
-    
     // MARK: - Tableview Method
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrMenuData.count
