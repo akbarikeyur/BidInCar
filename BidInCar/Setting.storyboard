@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1166,13 +1166,97 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eih-Hx-wxN">
+                                                <rect key="frame" x="0.0" y="92" width="320" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mki-wh-KzV" customClass="Button" customModule="BidInCar" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="0.0" width="103.5" height="40"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="Deposit" image="checkbox_off">
+                                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <state key="selected" image="checkbox_on"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                                                <integer key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                <real key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="clickToSelectOption:" destination="zn4-jg-3Mj" eventType="touchUpInside" id="YKS-w3-qy1"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExF-g5-ZEB" customClass="Button" customModule="BidInCar" customModuleProvider="target">
+                                                        <rect key="frame" x="113.5" y="0.0" width="123" height="40"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="Withdrawals" image="checkbox_off">
+                                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <state key="selected" image="checkbox_on"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                                                <integer key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                <real key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="clickToSelectOption:" destination="zn4-jg-3Mj" eventType="touchUpInside" id="x2a-Je-wbg"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vsg-fO-gt1" customClass="Button" customModule="BidInCar" customModuleProvider="target">
+                                                        <rect key="frame" x="236.5" y="0.0" width="73.5" height="40"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="Bids" image="checkbox_off">
+                                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <state key="selected" image="checkbox_on"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                                                <integer key="value" value="3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                <real key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="clickToSelectOption:" destination="zn4-jg-3Mj" eventType="touchUpInside" id="muS-cb-XUL"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="Vsg-fO-gt1" firstAttribute="leading" secondItem="ExF-g5-ZEB" secondAttribute="trailing" id="C9b-Qb-iSJ"/>
+                                                    <constraint firstItem="Mki-wh-KzV" firstAttribute="top" secondItem="eih-Hx-wxN" secondAttribute="top" id="FQn-W8-s43"/>
+                                                    <constraint firstItem="ExF-g5-ZEB" firstAttribute="leading" secondItem="Mki-wh-KzV" secondAttribute="trailing" id="Fi8-kJ-hyR"/>
+                                                    <constraint firstItem="Mki-wh-KzV" firstAttribute="leading" secondItem="eih-Hx-wxN" secondAttribute="leading" constant="10" id="Hsg-OY-5bU"/>
+                                                    <constraint firstItem="ExF-g5-ZEB" firstAttribute="width" secondItem="Mki-wh-KzV" secondAttribute="width" constant="20" id="Tgz-D8-l8b"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ExF-g5-ZEB" secondAttribute="bottom" id="VxQ-N9-HvE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Vsg-fO-gt1" secondAttribute="trailing" constant="10" id="abD-I3-EEG"/>
+                                                    <constraint firstItem="Vsg-fO-gt1" firstAttribute="top" secondItem="eih-Hx-wxN" secondAttribute="top" id="bso-QM-XOK"/>
+                                                    <constraint firstAttribute="height" constant="40" id="dGO-qd-n91"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Vsg-fO-gt1" secondAttribute="bottom" id="hau-Fx-XZe"/>
+                                                    <constraint firstItem="Vsg-fO-gt1" firstAttribute="width" secondItem="Mki-wh-KzV" secondAttribute="width" constant="-30" id="nF7-Kc-Q3K"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Mki-wh-KzV" secondAttribute="bottom" id="rED-Uq-y93"/>
+                                                    <constraint firstItem="ExF-g5-ZEB" firstAttribute="top" secondItem="eih-Hx-wxN" secondAttribute="top" id="yZh-gj-iNS"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TjP-1g-kAL">
-                                                <rect key="frame" x="0.0" y="92" width="320" height="490"/>
+                                                <rect key="frame" x="0.0" y="132" width="320" height="150"/>
                                                 <subviews>
                                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PD3-XT-YMF" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="10" width="117" height="32"/>
+                                                        <rect key="frame" x="10" y="10" width="53" height="32"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                                        <state key="normal" title="Bids On Auctions">
+                                                        <state key="normal" title="Deposit">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -1189,7 +1273,7 @@
                                                         </connections>
                                                     </button>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="huw-Bn-eXk">
-                                                        <rect key="frame" x="10" y="42" width="300" height="448"/>
+                                                        <rect key="frame" x="10" y="42" width="300" height="108"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1204,25 +1288,124 @@
                                                 <constraints>
                                                     <constraint firstItem="huw-Bn-eXk" firstAttribute="leading" secondItem="TjP-1g-kAL" secondAttribute="leading" constant="10" id="3ey-KW-vtn"/>
                                                     <constraint firstItem="huw-Bn-eXk" firstAttribute="top" secondItem="PD3-XT-YMF" secondAttribute="bottom" id="5d2-EX-rAc"/>
-                                                    <constraint firstAttribute="height" constant="490" id="Kas-s3-iNy"/>
+                                                    <constraint firstAttribute="height" constant="150" id="Kas-s3-iNy"/>
                                                     <constraint firstItem="PD3-XT-YMF" firstAttribute="top" secondItem="TjP-1g-kAL" secondAttribute="top" constant="10" id="XQ8-YZ-5LK"/>
                                                     <constraint firstAttribute="trailing" secondItem="huw-Bn-eXk" secondAttribute="trailing" constant="10" id="ZO9-rQ-Q5m"/>
                                                     <constraint firstAttribute="bottom" secondItem="huw-Bn-eXk" secondAttribute="bottom" id="dTt-hY-9vK"/>
                                                     <constraint firstItem="PD3-XT-YMF" firstAttribute="leading" secondItem="TjP-1g-kAL" secondAttribute="leading" constant="10" id="okC-6K-cuF"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ce-3U-oLZ">
+                                                <rect key="frame" x="0.0" y="282" width="320" height="150"/>
+                                                <subviews>
+                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMs-iC-bRB" customClass="Button" customModule="BidInCar" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="10" width="88" height="32"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                                        <state key="normal" title="Withdrawals">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                <real key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                                                <integer key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="clickToSelectTab:" destination="cXy-nX-PKs" eventType="touchUpInside" id="yL0-8b-jbQ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eAo-hn-aSg">
+                                                        <rect key="frame" x="10" y="42" width="300" height="108"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="zn4-jg-3Mj" id="nOV-tH-f9V"/>
+                                                            <outlet property="delegate" destination="zn4-jg-3Mj" id="NIr-WD-UhW"/>
+                                                        </connections>
+                                                    </tableView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="nMs-iC-bRB" firstAttribute="top" secondItem="4ce-3U-oLZ" secondAttribute="top" constant="10" id="4g9-cn-D1O"/>
+                                                    <constraint firstItem="nMs-iC-bRB" firstAttribute="leading" secondItem="4ce-3U-oLZ" secondAttribute="leading" constant="10" id="LA1-Gk-ReU"/>
+                                                    <constraint firstAttribute="bottom" secondItem="eAo-hn-aSg" secondAttribute="bottom" id="UfU-jO-ze5"/>
+                                                    <constraint firstItem="eAo-hn-aSg" firstAttribute="top" secondItem="nMs-iC-bRB" secondAttribute="bottom" id="Xqz-Ag-AX6"/>
+                                                    <constraint firstAttribute="height" constant="150" id="YyE-va-YgX"/>
+                                                    <constraint firstItem="eAo-hn-aSg" firstAttribute="leading" secondItem="4ce-3U-oLZ" secondAttribute="leading" constant="10" id="gaA-Xj-Mvs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eAo-hn-aSg" secondAttribute="trailing" constant="10" id="i7u-6E-4Gv"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="33d-Qr-Ccx">
+                                                <rect key="frame" x="0.0" y="432" width="320" height="150"/>
+                                                <subviews>
+                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Agx-as-1wU" customClass="Button" customModule="BidInCar" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="10" width="117" height="32"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                                        <state key="normal" title="Bids On Auctions">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                                <real key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                                                <integer key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="clickToSelectTab:" destination="cXy-nX-PKs" eventType="touchUpInside" id="PRd-zg-927"/>
+                                                        </connections>
+                                                    </button>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xjp-cR-yH0">
+                                                        <rect key="frame" x="10" y="42" width="300" height="108"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="zn4-jg-3Mj" id="qUm-Nq-DvW"/>
+                                                            <outlet property="delegate" destination="zn4-jg-3Mj" id="BTX-Vp-TyH"/>
+                                                        </connections>
+                                                    </tableView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="Xjp-cR-yH0" firstAttribute="leading" secondItem="33d-Qr-Ccx" secondAttribute="leading" constant="10" id="1vj-kh-MZa"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Xjp-cR-yH0" secondAttribute="trailing" constant="10" id="CC2-WP-LkK"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Xjp-cR-yH0" secondAttribute="bottom" id="IMO-RL-DLk"/>
+                                                    <constraint firstItem="Agx-as-1wU" firstAttribute="top" secondItem="33d-Qr-Ccx" secondAttribute="top" constant="10" id="ONX-9c-Ybu"/>
+                                                    <constraint firstItem="Xjp-cR-yH0" firstAttribute="top" secondItem="Agx-as-1wU" secondAttribute="bottom" id="XDr-KS-BMo"/>
+                                                    <constraint firstAttribute="height" constant="150" id="Xmr-mi-L1p"/>
+                                                    <constraint firstItem="Agx-as-1wU" firstAttribute="leading" secondItem="33d-Qr-Ccx" secondAttribute="leading" constant="10" id="rNa-E4-hlO"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="TjP-1g-kAL" secondAttribute="bottom" constant="6" id="4cT-Qz-9FI"/>
+                                            <constraint firstItem="4ce-3U-oLZ" firstAttribute="top" secondItem="TjP-1g-kAL" secondAttribute="bottom" id="0DN-CV-Sdz"/>
                                             <constraint firstItem="RIp-Gp-XyP" firstAttribute="leading" secondItem="y7k-V2-wEv" secondAttribute="leading" constant="10" id="7kA-IM-JR8"/>
+                                            <constraint firstItem="4ce-3U-oLZ" firstAttribute="leading" secondItem="y7k-V2-wEv" secondAttribute="leading" id="D0b-Y8-Emj"/>
                                             <constraint firstItem="TjP-1g-kAL" firstAttribute="leading" secondItem="y7k-V2-wEv" secondAttribute="leading" id="GE1-EG-zes"/>
+                                            <constraint firstAttribute="bottom" secondItem="33d-Qr-Ccx" secondAttribute="bottom" constant="6" id="KaC-k2-syn"/>
+                                            <constraint firstAttribute="trailing" secondItem="4ce-3U-oLZ" secondAttribute="trailing" id="KaP-d2-b9Q"/>
                                             <constraint firstAttribute="trailing" secondItem="2fX-I5-lkE" secondAttribute="trailing" constant="15" id="Rxx-KU-zgn"/>
+                                            <constraint firstItem="33d-Qr-Ccx" firstAttribute="top" secondItem="4ce-3U-oLZ" secondAttribute="bottom" id="UYM-t4-Ufe"/>
+                                            <constraint firstItem="eih-Hx-wxN" firstAttribute="top" secondItem="2fX-I5-lkE" secondAttribute="bottom" constant="5" id="Znu-BK-Gra"/>
                                             <constraint firstItem="nXx-qk-xxB" firstAttribute="top" secondItem="y7k-V2-wEv" secondAttribute="top" constant="20" id="bwT-pb-cpe"/>
+                                            <constraint firstItem="TjP-1g-kAL" firstAttribute="top" secondItem="eih-Hx-wxN" secondAttribute="bottom" id="lhf-YU-brz"/>
                                             <constraint firstAttribute="trailing" secondItem="nXx-qk-xxB" secondAttribute="trailing" constant="10" id="ozw-FS-uHL"/>
+                                            <constraint firstItem="eih-Hx-wxN" firstAttribute="leading" secondItem="y7k-V2-wEv" secondAttribute="leading" id="qcx-JB-ieY"/>
                                             <constraint firstItem="nXx-qk-xxB" firstAttribute="leading" secondItem="RIp-Gp-XyP" secondAttribute="trailing" constant="5" id="qru-Cn-gWL"/>
+                                            <constraint firstAttribute="trailing" secondItem="33d-Qr-Ccx" secondAttribute="trailing" id="rjm-HG-lGF"/>
+                                            <constraint firstItem="33d-Qr-Ccx" firstAttribute="leading" secondItem="y7k-V2-wEv" secondAttribute="leading" id="t2Q-xz-Wmv"/>
                                             <constraint firstItem="2fX-I5-lkE" firstAttribute="top" secondItem="nXx-qk-xxB" secondAttribute="bottom" constant="5" id="tAa-cF-nlQ"/>
-                                            <constraint firstItem="TjP-1g-kAL" firstAttribute="top" secondItem="2fX-I5-lkE" secondAttribute="bottom" constant="5" id="trJ-Yh-Sa9"/>
+                                            <constraint firstAttribute="trailing" secondItem="eih-Hx-wxN" secondAttribute="trailing" id="wch-ed-Il0"/>
                                             <constraint firstItem="nXx-qk-xxB" firstAttribute="centerY" secondItem="RIp-Gp-XyP" secondAttribute="centerY" id="xGC-uD-Twn"/>
                                             <constraint firstAttribute="trailing" secondItem="TjP-1g-kAL" secondAttribute="trailing" id="xiQ-JZ-gSW"/>
                                         </constraints>
@@ -1248,13 +1431,22 @@
                         <viewLayoutGuide key="safeArea" id="3uQ-Om-ye0"/>
                     </view>
                     <connections>
-                        <outlet property="auctionTblView" destination="huw-Bn-eXk" id="0lM-xg-HMv"/>
-                        <outlet property="auctionView" destination="TjP-1g-kAL" id="xS1-d4-nfI"/>
-                        <outlet property="constraintHeightAuctionTbl" destination="Kas-s3-iNy" id="G9B-EH-ugA"/>
+                        <outlet property="auctionTblView" destination="Xjp-cR-yH0" id="hIl-Za-fhF"/>
+                        <outlet property="auctionView" destination="33d-Qr-Ccx" id="iig-aU-KG1"/>
+                        <outlet property="bidsBtn" destination="Vsg-fO-gt1" id="my6-54-I5g"/>
+                        <outlet property="constraintHeightAuctionTbl" destination="Xmr-mi-L1p" id="71E-tO-wqV"/>
+                        <outlet property="constraintHeightDepositeTbl" destination="Kas-s3-iNy" id="mvQ-Tz-EPG"/>
+                        <outlet property="constraintHeightWithdrawTbl" destination="YyE-va-YgX" id="Pq5-mn-nqS"/>
+                        <outlet property="depositBtn" destination="Mki-wh-KzV" id="X2k-Wd-lwf"/>
+                        <outlet property="depositView" destination="TjP-1g-kAL" id="ZjP-hR-xVY"/>
                         <outlet property="depositeAmountLbl" destination="RIp-Gp-XyP" id="suY-yx-ueZ"/>
+                        <outlet property="depositeTbl" destination="huw-Bn-eXk" id="LE5-xg-5d7"/>
                         <outlet property="depositeTxt" destination="Dk1-TN-M7s" id="kdf-0Z-HVv"/>
                         <outlet property="depositeView" destination="Ycr-8O-xxa" id="SNv-ZR-iRK"/>
+                        <outlet property="withdrawBtn" destination="ExF-g5-ZEB" id="qmJ-Db-9Kr"/>
+                        <outlet property="withdrawTbl" destination="eAo-hn-aSg" id="vUz-wD-sHP"/>
                         <outlet property="withdrawTxt" destination="jiu-60-b2e" id="uee-nv-o9J"/>
+                        <outlet property="withdrawView" destination="4ce-3U-oLZ" id="V4J-SF-CtH"/>
                         <outlet property="withdrrawView" destination="MOw-aD-7v8" id="Hp3-M2-t1i"/>
                     </connections>
                 </viewController>

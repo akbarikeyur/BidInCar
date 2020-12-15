@@ -8,9 +8,19 @@
 
 import UIKit
 
-class PaymentBuyerVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PaymentBuyerVC: UIViewController {
     
+    @IBOutlet weak var depositBtn: Button!
+    @IBOutlet weak var withdrawBtn: Button!
+    @IBOutlet weak var bidsBtn: Button!
+    @IBOutlet weak var depositView: UIView!
+    @IBOutlet weak var withdrawView: UIView!
     @IBOutlet weak var auctionView: UIView!
+    
+    @IBOutlet weak var depositeTbl: UITableView!
+    @IBOutlet weak var constraintHeightDepositeTbl: NSLayoutConstraint!
+    @IBOutlet weak var withdrawTbl: UITableView!
+    @IBOutlet weak var constraintHeightWithdrawTbl: NSLayoutConstraint!
     @IBOutlet weak var auctionTblView: UITableView!
     @IBOutlet weak var constraintHeightAuctionTbl: NSLayoutConstraint!
     
@@ -21,19 +31,32 @@ class PaymentBuyerVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var withdrrawView: UIView!
     @IBOutlet weak var withdrawTxt: FloatingTextfiledView!
     
-    
     var arrBidAuction = [BidAuctionModel]()
+    var arrDeposite = [DepositeModel]()
+    var arrWithdraw = [WithdrawModel]()
+    var depositeCellheight = 30
+    var withdrawCellheight = 30
+    var auctionCellheight = 130
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(updateDepositeAmount), name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
+        depositeTbl.register(UINib.init(nibName: "DepositHistoryTVC", bundle: nil), forCellReuseIdentifier: "DepositHistoryTVC")
+        withdrawTbl.register(UINib.init(nibName: "WithdrawHistoryTVC", bundle: nil), forCellReuseIdentifier: "WithdrawHistoryTVC")
         auctionTblView.register(UINib.init(nibName: "CustomBidAuctionTVC", bundle: nil), forCellReuseIdentifier: "CustomBidAuctionTVC")
+        
+        resetAllData()
+        clickToSelectOption(depositBtn)
+        clickToSelectOption(withdrawBtn)
+        clickToSelectOption(bidsBtn)
         
         depositeTxt.myTxt.keyboardType = .numberPad
         updateDepositeAmount()
         serviceCallToGetBidAuction()
+        serviceCallToGetDepositeHistory()
+        serviceCallToGetWithdrawHistory()
     }
     
     @objc func updateDepositeAmount()
@@ -42,30 +65,76 @@ class PaymentBuyerVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         depositeAmountLbl.attributedText = attributedStringWithColor(depositeAmountLbl.text!, ["Deposit Amount :"], color: LightGrayColor)
     }
     
-    //MARK:- Tableview Method
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrBidAuction.count
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : CustomBidAuctionTVC = tableView.dequeueReusableCell(withIdentifier: "CustomBidAuctionTVC") as! CustomBidAuctionTVC
-        let dict = arrBidAuction[indexPath.row]
-        cell.dateLbl.text = dict.bidon
-        cell.auctionNameLbl.text = dict.auction_title
-        cell.currentBidLbl.text = dict.auction_price
-        cell.yourBidLbl.text = dict.bidprice
-        cell.statusLbl.text = dict.auction_status
-        cell.viewBtn.tag = indexPath.row
-        cell.viewBtn.addTarget(self, action: #selector(clickToViewAction(_:)), for: .touchUpInside)
-        cell.selectionStyle = .none
-        return cell
-    }
-    
     //MARK:- Button click event
+    @IBAction func clickToSelectOption(_ sender: UIButton) {
+        //resetAllData()
+        sender.isSelected = !sender.isSelected
+        if sender == depositBtn {
+            setDepositViewheight()
+        }
+        else if sender == withdrawBtn {
+            setWithdrawViewheight()
+        }
+        else if sender == bidsBtn {
+            setAuctionViewheight()
+        }
+    }
+    
+    func setDepositViewheight()
+    {
+        if depositBtn.isSelected {
+            depositView.isHidden = false
+            depositeTbl.reloadData()
+            constraintHeightDepositeTbl.constant = CGFloat((Int(depositeCellheight) * arrDeposite.count) + 42)
+            if arrDeposite.count > 0 {
+                constraintHeightDepositeTbl.constant += 40
+            }
+        }else{
+            depositView.isHidden = true
+            constraintHeightDepositeTbl.constant = 0
+        }
+    }
+    
+    func setWithdrawViewheight()
+    {
+        if withdrawBtn.isSelected {
+            withdrawView.isHidden = false
+            withdrawTbl.reloadData()
+            constraintHeightWithdrawTbl.constant = CGFloat((Int(withdrawCellheight) * arrWithdraw.count) + 42)
+            if arrWithdraw.count > 0 {
+                constraintHeightWithdrawTbl.constant += 40
+            }
+        }else{
+            withdrawView.isHidden = true
+            constraintHeightWithdrawTbl.constant = 0
+        }
+    }
+    
+    func setAuctionViewheight()
+    {
+        if bidsBtn.isSelected {
+            auctionView.isHidden = false
+            auctionTblView.reloadData()
+            constraintHeightAuctionTbl.constant = CGFloat((Int(auctionCellheight) * arrWithdraw.count) + 42)
+        }else{
+            auctionView.isHidden = true
+            constraintHeightAuctionTbl.constant = 0
+        }
+    }
+    
+    func resetAllData()
+    {
+        depositBtn.isSelected = false
+        withdrawBtn.isSelected = false
+        bidsBtn.isSelected = false
+        depositView.isHidden = true
+        withdrawView.isHidden = true
+        auctionView.isHidden = true
+        constraintHeightDepositeTbl.constant = 0
+        constraintHeightAuctionTbl.constant = 0
+        constraintHeightWithdrawTbl.constant = 0
+    }
+    
     @objc @IBAction func clickToViewAction(_ sender: UIButton) {
         let dict = arrBidAuction[sender.tag]
         let tempAuction = AuctionModel.init()
@@ -154,7 +223,26 @@ class PaymentBuyerVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func serviceCallToGetDepositeHistory() {
+        APIManager.shared.serviceCallToGetDepositeHistory(["userid":AppModel.shared.currentUser.userid!]) { (data) in
+            self.arrDeposite = [DepositeModel]()
+            for temp in data {
+                self.arrDeposite.append(DepositeModel.init(dict: temp))
+            }
+            self.setDepositViewheight()
+        }
+    }
 
+    func serviceCallToGetWithdrawHistory() {
+        APIManager.shared.serviceCallToGetWithdrawHistory(["userid":AppModel.shared.currentUser.userid!]) { (data) in
+            self.arrWithdraw = [WithdrawModel]()
+            for temp in data {
+                self.arrWithdraw.append(WithdrawModel.init(dict: temp))
+            }
+            self.setWithdrawViewheight()
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -165,4 +253,61 @@ class PaymentBuyerVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     */
 
+}
+
+//MARK:- Tableview Method
+extension PaymentBuyerVC : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == depositeTbl {
+            return arrDeposite.count
+        }
+        else if tableView == withdrawTbl {
+            return arrWithdraw.count
+        }
+        else {
+            return arrBidAuction.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if tableView == auctionTblView {
+            return 130
+        }
+        else {
+            if indexPath.row == 0 {
+                return 70
+            }
+            return 30
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == depositeTbl {
+            let cell : DepositHistoryTVC = depositeTbl.dequeueReusableCell(withIdentifier: "DepositHistoryTVC") as! DepositHistoryTVC
+            cell.topView.isHidden = (indexPath.row > 0)
+            cell.setupDetails(arrDeposite[indexPath.row])
+            cell.selectionStyle = .none
+            return cell
+        }
+        else if tableView == withdrawTbl {
+            let cell : WithdrawHistoryTVC = withdrawTbl.dequeueReusableCell(withIdentifier: "WithdrawHistoryTVC") as! WithdrawHistoryTVC
+            cell.topView.isHidden = (indexPath.row > 0)
+            cell.setupDetails(arrWithdraw[indexPath.row])
+            cell.selectionStyle = .none
+            return cell
+        }
+        else{
+            let cell : CustomBidAuctionTVC = tableView.dequeueReusableCell(withIdentifier: "CustomBidAuctionTVC") as! CustomBidAuctionTVC
+            let dict = arrBidAuction[indexPath.row]
+            cell.dateLbl.text = dict.bidon
+            cell.auctionNameLbl.text = dict.auction_title
+            cell.currentBidLbl.text = dict.auction_price
+            cell.yourBidLbl.text = dict.bidprice
+            cell.statusLbl.text = dict.auction_status
+            cell.viewBtn.tag = indexPath.row
+            cell.viewBtn.addTarget(self, action: #selector(clickToViewAction(_:)), for: .touchUpInside)
+            cell.selectionStyle = .none
+            return cell
+        }
+    }
 }

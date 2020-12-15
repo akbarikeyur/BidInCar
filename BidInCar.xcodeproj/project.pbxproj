@@ -148,6 +148,10 @@
 		7996430B25504A6B00B772B1 /* seller_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 7996430A25504A6B00B772B1 /* seller_info.json */; };
 		79AC70A0252DCB4B00068CB6 /* Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 79AC709F252DCB4B00068CB6 /* Resources.bundle */; };
 		79AC70A2252DCB5F00068CB6 /* paytabs-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79AC70A1252DCB5F00068CB6 /* paytabs-iOS.framework */; };
+		79EA850B258895A4005A0543 /* DepositHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA8509258895A4005A0543 /* DepositHistoryTVC.swift */; };
+		79EA850C258895A4005A0543 /* DepositHistoryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79EA850A258895A4005A0543 /* DepositHistoryTVC.xib */; };
+		79EA850F25889AC0005A0543 /* WithdrawHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA850D25889AC0005A0543 /* WithdrawHistoryTVC.swift */; };
+		79EA851025889AC0005A0543 /* WithdrawHistoryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79EA850E25889AC0005A0543 /* WithdrawHistoryTVC.xib */; };
 		DE97AE46EC9810F92CD99B1D /* Pods_BidInCar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679A98F506DE538FDAF3F264 /* Pods_BidInCar.framework */; };
 /* End PBXBuildFile section */
 
@@ -302,6 +306,10 @@
 		79AC7099252DC7DE00068CB6 /* paytabs-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "paytabs-iOS.framework"; path = "../../../../../Downloads/paytabs-ios-library-sample-master/samples/sample.swift/sample.swift/paytabs-iOS.framework"; sourceTree = "<group>"; };
 		79AC709F252DCB4B00068CB6 /* Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resources.bundle; sourceTree = "<group>"; };
 		79AC70A1252DCB5F00068CB6 /* paytabs-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "paytabs-iOS.framework"; sourceTree = "<group>"; };
+		79EA8509258895A4005A0543 /* DepositHistoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositHistoryTVC.swift; sourceTree = "<group>"; };
+		79EA850A258895A4005A0543 /* DepositHistoryTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepositHistoryTVC.xib; sourceTree = "<group>"; };
+		79EA850D25889AC0005A0543 /* WithdrawHistoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawHistoryTVC.swift; sourceTree = "<group>"; };
+		79EA850E25889AC0005A0543 /* WithdrawHistoryTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawHistoryTVC.xib; sourceTree = "<group>"; };
 		C6F347BE9FFF42B2A927ACF1 /* Pods-BidInCar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BidInCar.debug.xcconfig"; path = "Target Support Files/Pods-BidInCar/Pods-BidInCar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -436,6 +444,10 @@
 				1807E6E723DECD460058BA30 /* CustomPackageHistoryTVC.xib */,
 				189CDB4323DEE40300E1138C /* CustomBidAuctionTVC.swift */,
 				189CDB4423DEE40300E1138C /* CustomBidAuctionTVC.xib */,
+				79EA8509258895A4005A0543 /* DepositHistoryTVC.swift */,
+				79EA850A258895A4005A0543 /* DepositHistoryTVC.xib */,
+				79EA850D25889AC0005A0543 /* WithdrawHistoryTVC.swift */,
+				79EA850E25889AC0005A0543 /* WithdrawHistoryTVC.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -759,6 +771,8 @@
 				18F9E1F22355BE5200B5E071 /* LaunchScreen.storyboard in Resources */,
 				184B2C8623573A8C00A374E9 /* CustomCarDetailTVC.xib in Resources */,
 				18F9E1EF2355BE5200B5E071 /* Assets.xcassets in Resources */,
+				79EA850C258895A4005A0543 /* DepositHistoryTVC.xib in Resources */,
+				79EA851025889AC0005A0543 /* WithdrawHistoryTVC.xib in Resources */,
 				18B245022355C19600AEFDC6 /* Poppins-Medium.ttf in Resources */,
 				18AEE1B223F6A5B90099286D /* CustomDraftAuctionTVC.xib in Resources */,
 				799643092550497F00B772B1 /* buyer_info.json in Resources */,
@@ -861,6 +875,7 @@
 				18B244D72355C19600AEFDC6 /* Array+RUI.swift in Sources */,
 				18262FA32383A24F002E063F /* CustomMultiAuctionPackageTVC.swift in Sources */,
 				180A454C2565709400D74F80 /* ForgotPasswordVC.swift in Sources */,
+				79EA850F25889AC0005A0543 /* WithdrawHistoryTVC.swift in Sources */,
 				18B244E42355C19600AEFDC6 /* View.swift in Sources */,
 				18B244F32355C19600AEFDC6 /* FloatRatingView.swift in Sources */,
 				18B8074723575792001C76BF /* NotificationVC.swift in Sources */,
@@ -907,6 +922,7 @@
 				189BD0B9235B497400887112 /* PaymentSellerVC.swift in Sources */,
 				18B244FC2355C19600AEFDC6 /* UIImage+ProportionalFill.m in Sources */,
 				18B244D62355C19600AEFDC6 /* UIDevice+Type.swift in Sources */,
+				79EA850B258895A4005A0543 /* DepositHistoryTVC.swift in Sources */,
 				18A6E2DD235D83C100268205 /* CustomPrivacyPolicyTVC.swift in Sources */,
 				181AD90F235895450006CACF /* BookmarkDetailVC.swift in Sources */,
 				189BD0B1235B1AAE00887112 /* ProfileVC.swift in Sources */,

@@ -1578,3 +1578,31 @@ class InfoModel : AppModel
         return ["image" : image!, "name" : name!, "value" : value!, "link" : link!]
     }
 }
+
+class DepositeModel : AppModel
+{
+    var depositeid, deposite_amount, createdon, deposite_status, payment_reference : String!
+    
+    init(dict : [String : Any])
+    {
+        depositeid = AppModel.shared.getStringValue(dict, "depositeid")
+        deposite_amount = AppModel.shared.getStringValue(dict, "deposite_amount")
+        createdon = dict["createdon"] as? String ?? ""
+        deposite_status = dict["deposite_status"] as? String ?? ""
+        payment_reference = AppModel.shared.getStringValue(dict, "payment_reference")
+    }
+}
+
+class WithdrawModel : AppModel
+{
+    var id, userid, withdrawl_amount, status, created_at : String!
+    
+    init(dict : [String : Any])
+    {
+        id = AppModel.shared.getStringValue(dict, "id")
+        userid = AppModel.shared.getStringValue(dict, "userid")
+        withdrawl_amount = AppModel.shared.getStringValue(dict, "withdrawl_amount")
+        status = dict["status"] as? String ?? ""
+        created_at = dict["created_at"] as? String ?? ""
+    }
+}
