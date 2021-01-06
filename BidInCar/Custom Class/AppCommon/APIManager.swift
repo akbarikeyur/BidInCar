@@ -83,9 +83,6 @@ struct API {
     
     static let GET_NOTIFICATION             =       BASE_URL + "notification/getnotification"
     static let UPDATE_NOTIFICATION          =       BASE_URL + "user/updatenotificationsettings"
-    
-    
-    
 }
 
 
