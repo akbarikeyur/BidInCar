@@ -476,7 +476,7 @@ func displayPriceWithCurrency(_ price : String) -> String
     return "AED " + price
 }
 
-func setFlotingRating(_ rate : Double) -> String
+func setFlotingPrice(_ rate : Double) -> String
 {
     var strPrice : String = String(format: "%0.1f", rate)
     if strPrice.contains(".0")

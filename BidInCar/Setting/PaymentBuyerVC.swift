@@ -172,10 +172,9 @@ class PaymentBuyerVC: UIViewController {
             let vc : SelectPaymentMethodVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "SelectPaymentMethodVC") as! SelectPaymentMethodVC
             vc.paymentType = PAYMENT.DEPOSITE
             vc.paymentParam = param
-            vc.amount = Int(depositeTxt.myTxt.text!)!
+            vc.amount = Double(depositeTxt.myTxt.text!)!
             UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
         }
-        
     }
     
     @IBAction func clickToWithdraw(_ sender: Any) {

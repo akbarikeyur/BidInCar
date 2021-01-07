@@ -22,7 +22,6 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     @IBOutlet weak var closeDateLbl: Label!
     @IBOutlet weak var auctionDescLbl: Label!
     
-    
     @IBOutlet weak var currentPriceLbl: Label!
     @IBOutlet weak var totalPriceLbl: Label!
     @IBOutlet weak var addressTblView: UITableView!
@@ -48,6 +47,7 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     var arrSellerData = [[String : String]]()
     var shippingPrice = ""
     var selectedFaqIndex = 0
+    var finalPrice = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,12 +69,13 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         getSellerDetail()
         setupAuctionData()
         serviceCallToGetFaqList()
+        serviceCallToGetAuctionPayment()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         addressTblView.reloadData()
         billingTblView.reloadData()
-        faqTblView.reloadData()
+        updateFaqTableviewHeight()
     }
     
     func setupAuctionData()
@@ -99,7 +100,6 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
         auctionDescLbl.text = auctionData.auction_desc
         setupBuyerDetail()
-        setupBillingInfo()
     }
     
     func updateRemainingTime()
@@ -194,41 +194,48 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         constraintHeightSellerTbl.constant = CGFloat((arrSellerData.count * 40))
     }
     
-    func setupBillingInfo()
+    func setupBillingInfo(_ auctionDict : [String : Any])
     {
         arrBillingData = [[String : String]]()
+        finalPrice = 0.0
         var dict = [String:String]()
         dict["title"] = "Auction price"
-        dict["value"] = "AED " + auctionData.auction_winner.winneing_price
+        if let auction = auctionDict["auction"] as? [String : Any] {
+            let active_auction_price = AppModel.shared.getStringValue(auction, "active_auction_price")
+            dict["value"] = "AED " + active_auction_price
+            finalPrice = Double(active_auction_price)!
+        }
         arrBillingData.append(dict)
     
         dict = [String:String]()
         dict["title"] = "Deposit amount"
-        dict["value"] = "AED " + AppModel.shared.currentUser.user_deposit
-        arrBillingData.append(dict)
-        
-        let fees = Double(Int(auctionData.auction_price)!)*3/100
-        dict = [String:String]()
-        dict["title"] = "Service Fees"
-        dict["value"] = "AED " + String(Int(fees))
+        let deposite = AppModel.shared.getStringValue(auctionDict, "deposite")
+        dict["value"] = "AED " + deposite
+        finalPrice -= Double(deposite)!
         arrBillingData.append(dict)
         
         dict = [String:String]()
-        dict["title"] = "Additional charges"
-        dict["value"] = "AED 136"
+        dict["title"] = "Service Fee"
+        dict["value"] = "AED 450"
+        finalPrice += 450
         arrBillingData.append(dict)
         
-        let deposite = Int(AppModel.shared.currentUser.user_deposit)! - Int(fees) + additional_charge
         dict = [String:String]()
-        dict["title"] = "Amount to be refund"
-        dict["value"] = "AED " + String(deposite)
+        dict["title"] = "Platform Charges"
+        let servicefee = AppModel.shared.getStringValue(auctionDict, "servicefee")
+        dict["value"] = "AED " + servicefee
+        finalPrice += Double(servicefee)!
         arrBillingData.append(dict)
+        
+//        let deposite = Int(AppModel.shared.currentUser.user_deposit)! - Int(fees) + additional_charge
+//        dict = [String:String]()
+//        dict["title"] = "Amount to be refund"
+//        dict["value"] = "AED " + String(deposite)
+//        arrBillingData.append(dict)
         
         billingTblView.reloadData()
         constraintHeightBillingTblView.constant = CGFloat((arrBillingData.count * 40))
-        
-        let finalPrice : Int = Int(auctionData.auction_winner.winneing_price)! + Int(fees) + additional_charge
-        totalPriceLbl.text = "Total AED " + String(finalPrice)
+        totalPriceLbl.text = "Total AED " + setFlotingPrice(finalPrice)
         totalPriceLbl.attributedText = attributedStringWithColor(totalPriceLbl.text!, ["Total AED"], color: DarkGrayColor, font: UIFont.init(name: APP_MEDIUM, size: 14))
     }
     
@@ -238,8 +245,13 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     @IBAction func clickToConfirm(_ sender: Any) {
-        displaySubViewtoParentView(self.view, subview: sellerView)
-        setupSellerDetail()
+//        displaySubViewtoParentView(self.view, subview: sellerView)
+//        setupSellerDetail()
+        let vc : SelectPaymentMethodVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "SelectPaymentMethodVC") as! SelectPaymentMethodVC
+        vc.paymentType = PAYMENT.AUCTION
+        vc.paymentParam = ["auctionid":auctionData.auctionid!]
+        vc.amount = finalPrice
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func clickToCloseSellerView(_ sender: Any) {
@@ -316,7 +328,6 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             cell.answerLbl.text = dict.faq_desc
             cell.answerView.isHidden = true
             cell.answerLbl.text = ""
-            constraintHeightFAQTblview.constant = faqTblView.contentSize.height
             cell.selectionStyle = .none
             return cell
         }
@@ -368,7 +379,24 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             for temp in data {
                 self.arrFaqData.append(FaqModel.init(dict: temp))
             }
-            self.faqTblView.reloadData()
+            self.updateFaqTableviewHeight()
+        }
+    }
+    
+    func updateFaqTableviewHeight() {
+        constraintHeightFAQTblview.constant = CGFloat.greatestFiniteMagnitude
+        faqTblView.reloadData()
+        faqTblView.layoutIfNeeded()
+        constraintHeightFAQTblview.constant = faqTblView.contentSize.height
+    }
+    
+    func serviceCallToGetAuctionPayment() {
+        var param = [String : Any]()
+        param["userid"] = AppModel.shared.currentUser.userid
+        param["auctionid"] = auctionData.auctionid
+        printData(param)
+        APIManager.shared.serviceCallToGetAuctionPayment(param) { (dict) in
+            self.setupBillingInfo(dict)
         }
     }
     

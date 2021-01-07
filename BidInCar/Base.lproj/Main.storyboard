@@ -469,9 +469,9 @@ Sign in</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9e-jl-SQd" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="30" y="325" width="120" height="20"/>
+                                <rect key="frame" x="30" y="325" width="130" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="uAv-UW-WDS"/>
+                                    <constraint firstAttribute="width" constant="130" id="uAv-UW-WDS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -483,7 +483,7 @@ Sign in</string>
                                     <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
                                         <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="am"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
                                         <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>

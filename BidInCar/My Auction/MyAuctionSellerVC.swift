@@ -300,7 +300,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
         let vc : SelectPaymentMethodVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "SelectPaymentMethodVC") as! SelectPaymentMethodVC
         vc.paymentType = PAYMENT.FEATURED
         vc.paymentParam = ["auctionid":selectedAuction.auctionid!]
-        vc.amount = Int(packagePrice) ?? 0
+        vc.amount = Double(packagePrice) ?? 0.0
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

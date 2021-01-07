@@ -114,7 +114,7 @@ class PackageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let vc : SelectPaymentMethodVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "SelectPaymentMethodVC") as! SelectPaymentMethodVC
             vc.paymentType = PAYMENT.PACKAGE
             vc.paymentParam = param
-            vc.amount = amount
+            vc.amount = Double(amount)
             vc.isFromAuction = isFromAuction
             self.navigationController?.pushViewController(vc, animated: true)
         }

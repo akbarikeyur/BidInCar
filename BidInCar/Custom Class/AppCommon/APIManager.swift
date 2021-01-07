@@ -47,6 +47,7 @@ struct API {
     static let GET_AUCTION_BID              =       BASE_URL + "auctions/getbidsonly"
     static let WITHDRAW_AUCTION_BID         =       BASE_URL + "auctions/delete_withdraw_auction"
     static let MAKE_FEATURED_AUCTION        =       BASE_URL + "auctions/make_auction_featured"
+    static let AUCTION_PAYMENT              =       BASE_URL + "payment/api_auction_payment"
     
     static let GET_FEATURED_AUCTION         =       BASE_URL + "payment/get_featured_auction"
     static let GET_PACKAGE_HISTORY          =       BASE_URL + "payment/package_history"
@@ -1322,6 +1323,47 @@ public class APIManager {
                         if(status == "success") {
                             completion()
                             return
+                        }
+                        else
+                        {
+                            self.handleStatusCode(result)
+                        }
+                    }
+                }
+                if let error = response.result.error
+                {
+                    displayToast(error.localizedDescription)
+                    return
+                }
+                break
+            case .failure(let error):
+                printData(error)
+                break
+            }
+        }
+    }
+    
+    //MARK:- Get auction payment detail
+    func serviceCallToGetAuctionPayment(_ param : [String : Any], _ completion: @escaping (_ dict : [String : Any]) -> Void) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        showLoader()
+        let headerParams :[String : String] = getJsonHeader()
+        Alamofire.request(API.AUCTION_PAYMENT, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
+            removeLoader()
+            switch response.result {
+            case .success:
+                printData(response.result.value!)
+                if let result = response.result.value as? [String:Any] {
+                    if let status = result["status"] as? String {
+                        if(status == "success") {
+                            if let dict = result["data"] as? [String:Any] {
+                                completion(dict)
+                                return
+                            }
                         }
                         else
                         {

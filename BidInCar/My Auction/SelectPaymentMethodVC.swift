@@ -48,7 +48,7 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
     var isAddCardBank = false
     var paymentType = ""
     var paymentParam = [String : Any]()
-    var amount = 0
+    var amount = 0.0
     var isFromAuction : Bool = false
     var isFromProfile : Bool = false
     var initialSetupViewController: PTFWInitialSetupViewController!
@@ -156,11 +156,11 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             if amount == 0 {
                 return
             }
-            if PLATFORM.isSimulator {
-                paytabPaymentCompleted("")
-            }else{
+//            if PLATFORM.isSimulator {
+//                paytabPaymentCompleted("tran1234679")
+//            }else{
                 paytab()
-            }
+//            }
         }
         else if selectedTab == 2 {
             //bank

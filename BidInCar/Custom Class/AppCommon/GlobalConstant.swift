@@ -146,4 +146,5 @@ struct PAYMENT {
     static let PACKAGE = "Package_payment"
     static let DEPOSITE = "deposite_payment"
     static let FEATURED = "featured_payment"
+    static let AUCTION = "auction_payment"
 }
