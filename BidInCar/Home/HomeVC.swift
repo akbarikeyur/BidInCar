@@ -353,7 +353,12 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             let newLable : UILabel = UILabel.init()
             newLable.font = UIFont.init(name: APP_REGULAR, size: 14.0)
             let dict = arrInfo[indexPath.row]
-            newLable.text = dict.name + " " + dict.value
+            
+            if dict.value != "" && Float(dict.value!)! > 35 {
+                newLable.text = dict.name + " UNLIMITED"
+            }else{
+                newLable.text = dict.name + " " + dict.value
+            }
             if dict.link != "" {
                 newLable.text = newLable.text! + " " + dict.link
             }

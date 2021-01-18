@@ -20,7 +20,12 @@ class CustomInfoCVC: UICollectionViewCell {
     
     func setupDetails(_ dict : InfoModel) {
         imgView.image = UIImage(named: dict.image)
-        titleLbl.text = dict.name + " " + dict.value
+        if dict.value != "" && Float(dict.value!)! > 35 {
+            titleLbl.text = dict.name + " Unlimited"
+        }else{
+            titleLbl.text = dict.name + " " + dict.value
+        }
+        
         if dict.link != "" {
             titleLbl.text = titleLbl.text! + " " + dict.link
             titleLbl.attributedText = getAttributeStringWithColor(titleLbl.text!, [dict.link], color: BlueColor, font: titleLbl.font, isUnderLine: true)

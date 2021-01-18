@@ -267,13 +267,11 @@ class PostAuctionDetailVC: UIViewController {
     
     
     @IBAction func clickToConfirm(_ sender: Any) {
-        let arrPackage = getPackageHistory()
+        let data = getSellreTopData()
+        let auctionsleft = AppModel.shared.getIntValue(data, "auctionsleft")
         var isPackageAvailable = false
-        for temp in arrPackage {
-            if temp.auctionsleft > 0 {
-                isPackageAvailable = true
-                break
-            }
+        if auctionsleft > 0 {
+            isPackageAvailable = true
         }
         
         if isPackageAvailable {

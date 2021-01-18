@@ -309,6 +309,7 @@ class AuctionModel : AppModel
     var country_name : String!
     var phonecode : String!
     var pictures : [PictureModel]!
+    var autocheckupload : PictureModel!
     var active_auction_price : String!
     var auction_bidscount : String!
     var usertype : String!
@@ -405,6 +406,7 @@ class AuctionModel : AppModel
         auction_horse_power = ""
         warranty = ""
         auction_age = ""
+        autocheckupload = PictureModel.init()
     }
     
     init(dict : [String : Any])
@@ -476,6 +478,7 @@ class AuctionModel : AppModel
         auction_horse_power = ""
         warranty = ""
         auction_age = ""
+        autocheckupload = PictureModel.init()
         
         auctionid = AppModel.shared.getStringValue(dict, "auctionid")
         if let temp = dict["auction_title"] as? String {
@@ -683,6 +686,9 @@ class AuctionModel : AppModel
         }
         if let temp = dict["auction_age"] as? String {
             auction_age = temp
+        }
+        if let temp = dict["autocheckupload"] as? [String : Any] {
+            autocheckupload = PictureModel.init(dict: temp)
         }
     }
 }
@@ -1355,6 +1361,34 @@ class PackageFeatureModel : AppModel
     
     func dictionary() -> [String:Any]  {
         return ["featured_price_id":featured_price_id!, "featured_price":featured_price!, "featured_price_createdon":featured_price_createdon!, "featured_price_status":featured_price_status!, "type":type!]
+    }
+}
+
+struct PackageHistoryModel {
+    var amount : Float!
+    var featured_auction_no, packageid, userid, package_purchase_id : Int!
+    var get_packages : PackageModel!
+    var get_user : UserModel!
+    var package_boughton, package_expireon, package_status : String!
+    var package_featured, package_promotion : Bool!
+    
+    init(_ dict : [String : Any]) {
+        amount = AppModel.shared.getFloatValue(dict, "amount")
+        featured_auction_no = AppModel.shared.getIntValue(dict, "featured_auction_no")
+        packageid = AppModel.shared.getIntValue(dict, "packageid")
+        userid = AppModel.shared.getIntValue(dict, "userid")
+        package_purchase_id = AppModel.shared.getIntValue(dict, "package_purchase_id")
+        get_packages = PackageModel.init(dict: dict["get_packages"] as? [String : Any] ?? [String : Any]())
+        get_user = UserModel.init(dict: dict["get_user"] as? [String : Any] ?? [String : Any]())
+        package_boughton = dict["package_boughton"] as? String ?? ""
+        package_expireon = dict["package_expireon"] as? String ?? ""
+        package_status = dict["package_status"] as? String ?? ""
+        package_featured = dict["package_featured"] as? Bool ?? false
+        package_promotion = dict["package_promotion"] as? Bool ?? false
+    }
+    
+    func dictionary() -> [String : Any] {
+        return ["amount" : amount!, "featured_auction_no" : featured_auction_no!, "packageid" : packageid!,"userid" : userid!,"package_purchase_id" : package_purchase_id!,"get_packages" : get_packages.dictionary(),"get_user" : get_user.dictionary(),"package_boughton" : package_boughton!,"package_expireon" : package_expireon!,"package_status" : package_status!,"package_featured" : package_featured!, "package_promotion" : package_promotion!]
     }
 }
 

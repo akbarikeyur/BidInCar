@@ -405,7 +405,10 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             self.arrCityData = [CityModel]()
             self.selectedCity = CityModel.init()
             for temp in data {
-                self.arrCityData.append(CityModel.init(dict: temp))
+                let tempCity = CityModel.init(dict: temp)
+                if tempCity.country_id == self.selectedCountry.countryid {
+                    self.arrCityData.append(tempCity)
+                }
             }
             if self.arrCityData.count > 0 {
                 self.arrCityData = self.arrCityData.sorted { (temp1 : CityModel, temp2 : CityModel) -> Bool in
@@ -416,8 +419,6 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             self.selectedCity = CityModel.init()
         }
     }
-    
-    
     
     /*
     // MARK: - Navigation

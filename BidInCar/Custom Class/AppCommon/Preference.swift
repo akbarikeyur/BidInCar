@@ -249,12 +249,12 @@ func savePackageHistory(_ data : [[String : Any]])
     setDataToPreference(data: data as AnyObject, forKey: "PACKAGE_HISTORY")
 }
 
-func getPackageHistory() -> [PackageModel]
+func getPackageHistory() -> [PackageHistoryModel]
 {
-    var arrPackage = [PackageModel]()
+    var arrPackage = [PackageHistoryModel]()
     if let data : [[String : Any]] = getDataFromPreference(key: "PACKAGE_HISTORY") as? [[String : Any]] {
         for temp in data {
-            arrPackage.append(PackageModel.init(dict: temp))
+            arrPackage.append(PackageHistoryModel.init(temp))
         }
     }
     return arrPackage

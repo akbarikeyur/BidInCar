@@ -105,12 +105,8 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         updateRemainingTime()
         endTimeLbl.text = getDateStringFromDate(date: getDateFromDateString(strDate: auctionData.auction_end, format: "YYYY-MM-dd")!, format: "dd MMM, YYYY")
         auctionStatusBtn.setTitle(auctionData.auction_status.capitalized, for: .normal)
-        let index = auctionData.pictures.firstIndex { (temp) -> Bool in
-            temp.type == "auto_check"
-        }
-        if index != nil {
-            autoCheckData = auctionData.pictures[index!]
-            auctionData.pictures.remove(at: index!)
+        if auctionData.autocheckupload.path != "" {
+            autoCheckData = auctionData.autocheckupload
             reportView.isHidden = false
         }else{
             reportView.isHidden = true
@@ -580,6 +576,16 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                 }
                 self.auctionData.pictures = arrPicture
                 self.imageCV.reloadData()
+            }
+            
+            if let temp = data["autocheckupload"] as? [String : Any] {
+                self.auctionData.autocheckupload = PictureModel.init(dict: temp)
+                if self.auctionData.autocheckupload.path != "" {
+                    self.autoCheckData = self.auctionData.autocheckupload
+                    self.reportView.isHidden = false
+                }else{
+                    self.reportView.isHidden = true
+                }
             }
             
             var arrBid = [Int]()

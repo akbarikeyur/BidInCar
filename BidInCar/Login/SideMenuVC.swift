@@ -94,13 +94,6 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             postAuctionView.isHidden = false
             addDepositeView.isHidden = true
             
-            var remaining = 0
-            let arrPackageData = getPackageHistory()
-            for i in 0..<arrPackageData.count {
-                let package = arrPackageData[i]
-                remaining += package.auctionsleft
-            }
-            
 //            subTitleLbl.text = "Your current package auctions Left: " + String(remaining)
 //            let myLeft = "Left: " + String(remaining)
 //            subTitleLbl.attributedText = attributedStringWithColor(subTitleLbl.text!, [myLeft], color: RedColor, font: UIFont.init(name: APP_BOLD, size: 14))
