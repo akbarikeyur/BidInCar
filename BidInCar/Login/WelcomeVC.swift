@@ -37,7 +37,5 @@ class WelcomeVC: UIViewController {
                 }
             }
         }
-        
     }
-    
 }
