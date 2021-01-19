@@ -361,13 +361,13 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             let price : Int = Int(myBidTxt!.text!) ?? 0
             
             if Int(auctionData.active_auction_price)! > price {
-                displayToast("Your bid is lower than current bid")
+                displayToast("lower_bid_current_bid")
 //                showAlert("", message: "Your bid is lower than current bid") {
 //
 //                }
             }
             else if (Int(auctionData.active_auction_price)! + Int(auctionData.auction_bidprice)!) > price {
-                displayToast("Your bid amount is lower")
+                displayToast("lower_bid")
             }
             else if Int(AppModel.shared.currentUser.biding_limit) == 0 {
                 displaySubViewtoParentView(self.view, subview: bidNowView)

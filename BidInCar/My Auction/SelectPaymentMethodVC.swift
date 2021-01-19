@@ -290,7 +290,7 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
         param["type"] = "bank"
         
         APIManager.shared.serviceCallToSaveBankAccount(param) {
-            displayToast("Bank account added successfully")
+            displayToast("bank_account_added")
             NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_CARD_DETAIL), object: nil)
             self.navigationController?.popViewController(animated: true)
         }
@@ -381,7 +381,7 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
     func serviceCallToPurchasePackage()
     {
         APIManager.shared.serviceCallToPurchasePackage(paymentParam) {
-            displayToast("Package bought successfully")
+            displayToast("package_bought_success")
             if self.isFromAuction {
                 AppDelegate().sharedDelegate().getPackageHistory()
                 for controller in self.navigationController!.viewControllers as Array {
@@ -412,7 +412,7 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
         paymentParam["payment_reference"] = transactionID
         printData(paymentParam)
         APIManager.shared.serviceCallToDepositeAmount(paymentParam) {
-            displayToast("Deposit added successfully")
+            displayToast("deposit_added_success")
             AppDelegate().sharedDelegate().serviceCallToGetUserProfile()
             self.navigationController?.popViewController(animated: true)
         }

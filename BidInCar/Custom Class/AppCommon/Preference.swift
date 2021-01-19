@@ -246,7 +246,11 @@ func getPushToken() -> String
 
 func savePackageHistory(_ data : [[String : Any]])
 {
-    setDataToPreference(data: data as AnyObject, forKey: "PACKAGE_HISTORY")
+    var arrData = [[String : Any]]()
+    for temp in data {
+        arrData.append(PackageHistoryModel.init(temp).dictionary())
+    }
+    setDataToPreference(data: arrData as AnyObject, forKey: "PACKAGE_HISTORY")
 }
 
 func getPackageHistory() -> [PackageHistoryModel]

@@ -36,19 +36,19 @@ class UploadImageVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     {
         let actionSheet: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
-        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+        let cancelButton = UIAlertAction(title: getTranslate("cancel_button"), style: .cancel) { _ in
             printData("Cancel")
         }
         actionSheet.addAction(cancelButton)
 
-        let cameraButton = UIAlertAction(title: "Take Photo", style: .default)
+        let cameraButton = UIAlertAction(title: getTranslate("take_photo"), style: .default)
         { _ in
             printData("Camera")
             self.onCaptureImageThroughCamera()
         }
         actionSheet.addAction(cameraButton)
 
-        let galleryButton = UIAlertAction(title: "Choose Existing Photo", style: .default)
+        let galleryButton = UIAlertAction(title: getTranslate("existing_photo"), style: .default)
         { _ in
             printData("Gallery")
             self.onCaptureImageThroughGallery()
@@ -71,26 +71,26 @@ class UploadImageVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     {
         let actionSheet: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
-        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+        let cancelButton = UIAlertAction(title: getTranslate("cancel_button"), style: .cancel) { _ in
             printData("Cancel")
         }
         actionSheet.addAction(cancelButton)
 
-        let cameraButton = UIAlertAction(title: "Take Photo", style: .default)
+        let cameraButton = UIAlertAction(title: getTranslate("take_photo"), style: .default)
         { _ in
             printData("Camera")
             self.onCaptureImageThroughCamera()
         }
         actionSheet.addAction(cameraButton)
 
-        let galleryButton = UIAlertAction(title: "Choose Existing Photo", style: .default)
+        let galleryButton = UIAlertAction(title: getTranslate("existing_photo"), style: .default)
         { _ in
             printData("Gallery")
             self.onCaptureImageThroughGallery()
         }
         actionSheet.addAction(galleryButton)
         
-        let removeButton = UIAlertAction(title: "Remove Photo", style: .default)
+        let removeButton = UIAlertAction(title: getTranslate("remove_photo"), style: .default)
         { _ in
             printData("Remove")
             self.removeImage()
@@ -112,7 +112,7 @@ class UploadImageVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     @objc open func onCaptureImageThroughCamera()
     {
         if !UIImagePickerController.isSourceTypeAvailable(.camera) {
-            displayToast("Your device has no camera")
+            displayToast("device_no_camera")
         }
         else {
             let imgPicker = UIImagePickerController()

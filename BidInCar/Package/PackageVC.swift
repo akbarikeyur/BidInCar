@@ -83,7 +83,7 @@ class PackageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func clickToCheckout(_ sender: Any) {
         self.view.endEditing(true)
         if selectedSingle.packageid == "" && selectedPackage.packageid == "" {
-            displayToast("Please select package first.")
+            displayToast("select_package")
         }
         else{
             var amount = 0

@@ -132,7 +132,7 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
     
     @IBAction func clickToSetReminder(_ sender: Any) {
         if !hour24Btn.isSelected && !hour48Btn.isSelected && !hour72Btn.isSelected {
-            displayToast("Please select reminder time")
+            displayToast("select_reminder_time")
         }
         else{
             reminderContainerView.removeFromSuperview()

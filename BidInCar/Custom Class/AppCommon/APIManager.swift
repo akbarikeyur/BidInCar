@@ -2463,10 +2463,10 @@ public class APIManager {
         if let code = result["code"] as? Int {
             switch code {
             case 102:
-                displayToast("Backend Connection Error with other hosts")
+                displayToast("backend_connection_error")
                 break
             case 103:
-                displayToast("User not found")
+                displayToast("user_not_found")
                 break
             case 401:
                 displayToast(result["message"] as! String)

@@ -216,7 +216,7 @@ class HomeVC: UploadImageVC {
     
     @IBAction func clickToSelectMake(_ sender: UIButton) {
         if selectedFilterCategory.id == -1 {
-            displayToast("Please select category")
+            displayToast("enter_auction_category")
             return
         }
         let dropDown = DropDown()
@@ -241,7 +241,7 @@ class HomeVC: UploadImageVC {
     
     @IBAction func clickToSelectModel(_ sender: UIButton) {
         if selectedMake.categoryid == "" {
-            displayToast("Please select make")
+            displayToast("enter_auction_make")
             return
         }
         let dropDown = DropDown()
@@ -267,7 +267,7 @@ class HomeVC: UploadImageVC {
         self.view.endEditing(true)
         
         if minPriceTxt.text?.trimmed != "" && maxPriceTxt.text?.trimmed != "" && (Int(minPriceTxt.text!)! > Int(maxPriceTxt.text!)!) {
-            displayToast("Invalid price")
+            displayToast("invalid_price")
         }
         else{
             //{"auction_title":"","carmake":"0","carmodel":null,"min_price":"","max_price":"","cattype":"1"}

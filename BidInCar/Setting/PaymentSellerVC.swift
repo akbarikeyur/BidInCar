@@ -24,8 +24,8 @@ class PaymentSellerVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var constraintHeightFeatureTbl: NSLayoutConstraint!
     
     var arrFeatureAuction = [FeatureAuctionModel]()
-    var arrPackage = [PackageModel]()
-    var packageCellheight : CGFloat = 190
+    var arrPackage = [PackageHistoryModel]()
+    var packageCellheight : CGFloat = 130
     var featureCellheight : CGFloat = 130
     
     override func viewDidLoad() {
@@ -98,16 +98,16 @@ class PaymentSellerVC: UIViewController, UITableViewDelegate, UITableViewDataSou
             let cell : CustomPackageHistoryTVC = packageTblView.dequeueReusableCell(withIdentifier: "CustomPackageHistoryTVC") as! CustomPackageHistoryTVC
             let dict = arrPackage[indexPath.row]
             cell.purchaseDatelbl.text = dict.package_boughton
-            cell.packageNameLbl.text = dict.package_title
-            cell.totalAuctionLbl.text = dict.auction_history.total_auction
-            cell.auctionPostedLbl.text = dict.auction_history.postedon
-            if dict.auctionsleft > 35 {
-                cell.remainingAuctionLbl.text = "UNLIMITED"
-            }else{
-                cell.remainingAuctionLbl.text = String(dict.auctionsleft)
-            }
+            cell.packageNameLbl.text = dict.get_packages.package_title
+//            cell.totalAuctionLbl.text = dict.auction_history.total_auction
+//            cell.auctionPostedLbl.text = dict.auction_history.postedon
+//            if dict.auctionsleft > 35 {
+//                cell.remainingAuctionLbl.text = "UNLIMITED"
+//            }else{
+//                cell.remainingAuctionLbl.text = String(dict.auctionsleft)
+//            }
             cell.expireLbl.text = dict.package_expireon
-            cell.priceLbl.text = "AED " + dict.package_price
+            cell.priceLbl.text = "AED " + dict.get_packages.package_price
             cell.contentView.backgroundColor = WhiteColor
             cell.selectionStyle = .none
             return cell
@@ -200,9 +200,9 @@ class PaymentSellerVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         APIManager.shared.serviceCallToGetPackageHistory(["userid":AppModel.shared.currentUser.userid!]) { (data) in
             savePackageHistory(data)
             NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
-            self.arrPackage = [PackageModel]()
+            self.arrPackage = [PackageHistoryModel]()
             for temp in data {
-                self.arrPackage.append(PackageModel.init(dict: temp))
+                self.arrPackage.append(PackageHistoryModel.init(temp))
             }
             if self.arrPackage.count > 0 {
                 self.packageView.isHidden = false

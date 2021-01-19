@@ -107,12 +107,12 @@ func removeLoader()
 {
     AppDelegate().sharedDelegate().removeLoader()
 }
-func showAlertWithOption(_ title:String, message:String, btns:[String] = ["No","Yes"],completionConfirm: @escaping () -> Void,completionCancel: @escaping () -> Void){
-    let myAlert = UIAlertController(title:NSLocalizedString(title, comment: ""), message:NSLocalizedString(message, comment: ""), preferredStyle: UIAlertController.Style.alert)
-    let leftBtn = UIAlertAction(title: btns[0], style: UIAlertAction.Style.cancel, handler: { (action) in
+func showAlertWithOption(_ title:String, message:String, btns:[String] = ["no_button","yes_button"],completionConfirm: @escaping () -> Void,completionCancel: @escaping () -> Void){
+    let myAlert = UIAlertController(title:getTranslate(title), message:getTranslate(message), preferredStyle: UIAlertController.Style.alert)
+    let leftBtn = UIAlertAction(title: getTranslate(btns[0]), style: UIAlertAction.Style.cancel, handler: { (action) in
         completionCancel()
     })
-    let rightBtn = UIAlertAction(title: btns[1], style: UIAlertAction.Style.default, handler: { (action) in
+    let rightBtn = UIAlertAction(title: getTranslate(btns[1]), style: UIAlertAction.Style.default, handler: { (action) in
         completionConfirm()
     })
     myAlert.addAction(leftBtn)
@@ -122,7 +122,7 @@ func showAlertWithOption(_ title:String, message:String, btns:[String] = ["No","
 
 func showAlert(_ title:String, message:String, completion: @escaping () -> Void) {
     let myAlert = UIAlertController(title:NSLocalizedString(title, comment: ""), message:NSLocalizedString(message, comment: ""), preferredStyle: UIAlertController.Style.alert)
-    let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:{ (action) in
+    let okAction = UIAlertAction(title: "ok_button", style: UIAlertAction.Style.cancel, handler:{ (action) in
         completion()
     })
     myAlert.addAction(okAction)
@@ -719,4 +719,8 @@ func getJsonFromFile(_ file : String) -> [[String : Any]]
         }
     }
     return [[String : Any]]()
+}
+
+func getTranslate(_ message : String) -> String {
+    return NSLocalizedString(message, comment: "")
 }

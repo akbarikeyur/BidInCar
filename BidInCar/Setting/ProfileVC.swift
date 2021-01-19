@@ -309,7 +309,10 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         APIManager.shared.serviceCallToGetCityList(countryid) { (data) in
             self.arrCityData = [CityModel]()
             for temp in data {
-                self.arrCityData.append(CityModel.init(dict: temp))
+                let tempCity = CityModel.init(dict: temp)
+                if tempCity.country_id == countryid {
+                    self.arrCityData.append(tempCity)
+                }
             }
             if self.arrCityData.count > 0 {
                 self.arrCityData = self.arrCityData.sorted { (temp1 : CityModel, temp2 : CityModel) -> Bool in

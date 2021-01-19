@@ -167,7 +167,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     @IBAction func clickToSelectCity(_ sender: UIButton) {
         self.view.endEditing(true)
         if selectedCountry.countryid == "" {
-            displayToast("Please select country first.")
+            displayToast("select_country")
             return
         }
         let dropDown = DropDown()
@@ -329,6 +329,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             APIManager.shared.serviceCallToUserSignup(param) {
                 if AppModel.shared.currentUser.userid != "" {
                     let vc : VerificationVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "VerificationVC") as! VerificationVC
+                    vc.isFromSignup = true
                     self.navigationController?.pushViewController(vc, animated: true)
                 }else{
                     self.navigationController?.popViewController(animated: true)

@@ -158,10 +158,10 @@ class PaymentBuyerVC: UIViewController {
     @IBAction func clickToDepositeNow(_ sender: Any) {
         self.view.endEditing(true)
         if depositeTxt.myTxt.text?.trimmed == "" {
-            displayToast("Please enter deposit amount")
+            displayToast("enter_deposite")
         }
         else if Int(depositeTxt.myTxt.text!) == nil || Int(depositeTxt.myTxt.text!) == 0 {
-            displayToast("Please enter deposit amount")
+            displayToast("enter_deposite")
         }
         else{
             depositeView.removeFromSuperview()
@@ -186,10 +186,10 @@ class PaymentBuyerVC: UIViewController {
         self.view.endEditing(true)
         let limit = AppModel.shared.getDoubleValue(getBuyerTopData(), "remain_biding_limit")
         if withdrawTxt.myTxt.text?.trimmed == "" {
-            displayToast("Please enter withdraw amount")
+            displayToast("withdraw_amount")
         }
         else if (limit/5) < Double(withdrawTxt.myTxt.text!)! {
-            displayToast("You can only withdraw deposit as per remaining bidding limit. ")
+            displayToast("withdraw_remaining_bidding_limit")
         }
         else {
             var param = [String : Any]()
@@ -198,7 +198,7 @@ class PaymentBuyerVC: UIViewController {
             
             APIManager.shared.serviceCallToWithdrawAmount(param) {
                 self.withdrrawView.removeFromSuperview()
-                displayToast("Your withdrawl requested is sent to admin.")
+                displayToast("withdrawl_request_sent")
             }
         }
     }

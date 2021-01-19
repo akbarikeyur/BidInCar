@@ -12,13 +12,16 @@ class VerificationVC: UIViewController {
 
     @IBOutlet weak var codeTxt: FloatingTextfiledView!
     
+    var isFromSignup = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         codeTxt.myTxt.keyboardType = .numberPad
-        serviceCallToSendOtp()
-        
+        if !isFromSignup {
+            serviceCallToSendOtp()
+        }
     }
     
     //MARK:- Button click event
@@ -29,7 +32,7 @@ class VerificationVC: UIViewController {
     @IBAction func clickToVerify(_ sender: Any) {
         self.view.endEditing(true)
         if codeTxt.myTxt.text?.trimmed == "" {
-            displayToast("Please enter code")
+            displayToast("enter_verification_code")
         }
         else{
             var param = [String : Any]()

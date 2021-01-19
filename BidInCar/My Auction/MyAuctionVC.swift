@@ -224,7 +224,7 @@ class MyAuctionVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     @IBAction func clickToWithdrawAuction(_ sender: UIButton) {
         self.view.endEditing(true)
-        showAlertWithOption("Auction Withdraw", message: "Are you sure want to withdraw auction?", btns: ["No", "Yes"], completionConfirm: {
+        showAlertWithOption("auction_withdraw_title", message: "auction_withdraw_message", btns: ["no_button", "yes_button"], completionConfirm: {
             if self.activeBtn.isSelected {
                 let dict = self.arrActiveAuction[sender.tag]
                 var param = [String : Any]()
@@ -232,7 +232,7 @@ class MyAuctionVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 param["userid"] = AppModel.shared.currentUser.userid
                 param["usertype"] = getUserType()
                 APIManager.shared.serviceCallToWithdrawAuctionBid(param) {
-                    displayToast("User successfully withdraw form auction list")
+                    displayToast("withdraw_successfull")
                     let index = self.arrActiveAuction.firstIndex { (temp) -> Bool in
                         temp.auctionid == dict.auctionid
                     }

@@ -265,7 +265,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
             param["userid"] = AppModel.shared.currentUser.userid
             param["usertype"] = getUserType()
             APIManager.shared.serviceCallToWithdrawAuctionBid(param) {
-                displayToast("Auction cancel successfully")
+                displayToast("auction_cancel_successfully")
                 let index = self.arrActiveAuction.firstIndex { (temp) -> Bool in
                     temp.auctionid == dict.auctionid
                 }

@@ -1,3 +1,12 @@
+"cancel_button" = "Cancel";
+"yes_button" = "Yes";
+"no_button" = "No";
+"ok_button" = "OK";
+"take_photo" = "Take Photo";
+"existing_photo" = "Choose Existing Photo";
+"remove_photo" = "Remove Photo";
+"device_no_camera" = "Your device has no camera";
+
 //Side menu
 "menu_home" = "Home";
 "menu_auction" = "My Auction";
@@ -12,6 +21,9 @@
 "menu_logout" = "Logout";
 "menu_how_sell" = "How to sell?";
 "menu_how_buy" = "How to buy?";
+
+"logout_title" = "Logout";
+"logout_msg" = "Are you sure want to logout?";
 
 //Login-signup
 "enter_email" = "Please enter email";
@@ -38,6 +50,7 @@
 "enter_company_building" = "Please enter building name";
 "enter_company_suit" = "Please enter Suit number";
 "enter_po_box" = "Please enter PO Box";
+"enter_verification_code" = "Please enter code";
 
 //Guest User Message
 "bookmark_login_msg" = "Please login/signup to add wish list.";
@@ -48,10 +61,15 @@
 "add_deposite_login_msg" = "Please login/signup to add deposit.";
 "my_profile_login_msg" = "Please login/signup to see your profile.";
 
+//Home
+"invalid_price" = "Invalid price";
+
 //Auction detail
 "enter_bid_price" = "Please enter your bid price";
 "add_bookmark" = "Auction added to your wish list";
 "remove_bookmark" = "Auction removed from wish list";
+"lower_bid_current_bid" = "Your bid is lower than current bid";
+"lower_bid" = "Your bid amount is lower";
 
 //Payment detail
 "enter_card_name" = "Please enter card name";
@@ -91,6 +109,7 @@
 "select_country" = "Select Country";
 
 //Post Auction
+"select_auction_type" = "Please select auction type";
 "condition_new" = "New";
 "condition_used" = "Used";
 "select_start_date" = "Select start date";
@@ -126,7 +145,7 @@
 "enter_auction_milage" = "Please enter milage";
 "enter_auction_mechanical" = "Please enter mechanical";
 "enter_auction_wheel" = "Please select number of Wheels";
-"enter_auction_drive" = "Please select drive ";
+"enter_auction_drive" = "Please select drive";
 "enter_auction_engine" = "Please select engine";
 "enter_auction_boat_length" = "Please select boat length";
 "enter_auction_boart_age" = "Please select boat age";
@@ -144,3 +163,21 @@
 
 //Profile
 "enter_deposite" = "Please enter your deposit amount";
+
+//Bookmark
+"select_reminder_time" = "Please select reminder time";
+
+//My Auction
+"withdraw_successfull" = "User successfully withdraw form auction list";
+"auction_cancel_successfully" = "Auction cancel successfully";
+"bank_account_added" = "Bank account added successfully";
+"package_bought_success" = "Package bought successfully";
+"deposit_added_success" = "Deposit added successfully";
+"select_package" = "Please select package first.";
+"withdraw_amount" = "Please enter withdraw amount";
+"withdraw_remaining_bidding_limit" = "You can only withdraw deposit as per remaining bidding limit.";
+"withdrawl_request_sent" = "Your withdrawl requested is sent to admin.";
+"backend_connection_error" = "Backend Connection Error with other hosts";
+"user_not_found" = "User not found";
+"auction_withdraw_title" = "Auction Withdraw";
+"auction_withdraw_message" = "Are you sure want to withdraw auction?";

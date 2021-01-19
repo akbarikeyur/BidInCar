@@ -137,7 +137,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func clickToLogout(_ sender: UIButton) {
         self.menuContainerViewController.toggleLeftSideMenuCompletion(nil)
-        showAlertWithOption("Logout", message: "Are you sure want to logout?", completionConfirm: {
+        showAlertWithOption("logout_title", message: "logout_msg", completionConfirm: {
             AppDelegate().sharedDelegate().logoutFromApp()
         }) {
             
@@ -290,7 +290,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 
                 break
             case NSLocalizedString("menu_logout", comment: ""):
-                showAlertWithOption("Logout", message: "Are you sure want to logout?", completionConfirm: {
+                showAlertWithOption("logout_title", message: "logout_msg", completionConfirm: {
                     AppDelegate().sharedDelegate().logoutFromApp()
                 }) {
                     
