@@ -46,6 +46,7 @@ class HomeVC: UploadImageVC {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        featureView.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(updateAuctionData(_:)), name: NSNotification.Name.init(NOTIFICATION.UPDATE_AUCTION_DATA), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateFeatureAuctionData(_:)), name: NSNotification.Name.init(NOTIFICATION.AUCTION_FEATURED_DATA), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeAuctionData(_:)), name: NSNotification.Name.init(NOTIFICATION.REMOVE_AUCTION_DATA), object: nil)
@@ -578,6 +579,19 @@ extension HomeVC {
                     self.arrFeatureAuctionData.append(auction)
                 }
             }
+            
+            let arrTemp = self.arrAuctionData
+            self.arrAuctionData = [AuctionModel]()
+            var arrNormal = [AuctionModel]()
+            for temp in arrTemp {
+               if temp.auction_featured == "yes" {
+                    self.arrAuctionData.append(temp)
+               }else{
+                    arrNormal.append(temp)
+                }
+            }
+            self.arrAuctionData.append(contentsOf: arrNormal)
+            
             AppModel.shared.AUCTION_DATA[String(self.selectedCategory.id)] = self.arrAuctionData
             self.updateTableviewHeight()
             self.noDataLbl.isHidden = (self.arrAuctionData.count > 0)
@@ -605,6 +619,7 @@ extension HomeVC {
     }
     
     func setupFeatureAuction() {
+        /*
         arrFeatureAuctionData = [AuctionModel]()
         for temp in arrAuctionData {
             if temp.auction_featured == "yes" {
@@ -612,7 +627,8 @@ extension HomeVC {
             }
         }
         self.featureCV.reloadData()
-        featureView.isHidden = (self.arrFeatureAuctionData.count == 0)
+        featureView.isHidden = true
+        */
     }
     
     func serviceCallToAddBookmark(_ auctionid : String, _ type : Int)

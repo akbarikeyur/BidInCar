@@ -18,38 +18,6 @@
             endingLineNumber = "415"
             landmarkName = "serviceCallToDepositeAmount(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9963C274-A425-4429-AA51-B3702B22B1A7 - 179039d022458c26"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BidInCar.SelectPaymentMethodVC.serviceCallToDepositeAmount(Swift.String) -&gt; ()"
-                  moduleName = "BidInCar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Keyur/Project/Waqas/BidInCar/BidInCar/BidInCar/My%20Auction/SelectPaymentMethodVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "415"
-                  endingLineNumber = "415"
-                  offsetFromSymbolStart = "3074">
-               </Location>
-               <Location
-                  uuid = "9963C274-A425-4429-AA51-B3702B22B1A7 - 4366767ae13ff7a2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in BidInCar.SelectPaymentMethodVC.serviceCallToDepositeAmount(Swift.String) -&gt; ()"
-                  moduleName = "BidInCar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Keyur/Project/Waqas/BidInCar/BidInCar/BidInCar/My%20Auction/SelectPaymentMethodVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "416"
-                  endingLineNumber = "416"
-                  offsetFromSymbolStart = "41">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
