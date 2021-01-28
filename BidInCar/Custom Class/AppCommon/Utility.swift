@@ -122,7 +122,7 @@ func showAlertWithOption(_ title:String, message:String, btns:[String] = ["no_bu
 
 func showAlert(_ title:String, message:String, completion: @escaping () -> Void) {
     let myAlert = UIAlertController(title:NSLocalizedString(title, comment: ""), message:NSLocalizedString(message, comment: ""), preferredStyle: UIAlertController.Style.alert)
-    let okAction = UIAlertAction(title: "ok_button", style: UIAlertAction.Style.cancel, handler:{ (action) in
+    let okAction = UIAlertAction(title: NSLocalizedString("ok_button", comment: ""), style: UIAlertAction.Style.cancel, handler:{ (action) in
         completion()
     })
     myAlert.addAction(okAction)

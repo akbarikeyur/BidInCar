@@ -355,7 +355,7 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             newLable.font = UIFont.init(name: APP_REGULAR, size: 14.0)
             let dict = arrInfo[indexPath.row]
             
-            if dict.value != "" && Float(dict.value!)! > 35 {
+            if let temp : Float = Float(dict.value), temp > 35 {
                 newLable.text = dict.name + " UNLIMITED"
             }else{
                 newLable.text = dict.name + " " + dict.value

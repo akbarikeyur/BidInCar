@@ -181,3 +181,4 @@
 "user_not_found" = "User not found";
 "auction_withdraw_title" = "Auction Withdraw";
 "auction_withdraw_message" = "Are you sure want to withdraw auction?";
+"no_inspection_report" = "No inspection report found";

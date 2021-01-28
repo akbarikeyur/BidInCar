@@ -20,7 +20,7 @@ class CustomInfoCVC: UICollectionViewCell {
     
     func setupDetails(_ dict : InfoModel) {
         imgView.image = UIImage(named: dict.image)
-        if dict.value != "" && Float(dict.value!)! > 35 {
+        if let temp : Float = Float(dict.value), temp > 35 {
             titleLbl.text = dict.name + " Unlimited"
         }else{
             titleLbl.text = dict.name + " " + dict.value

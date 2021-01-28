@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -202,7 +202,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIw-Eb-B63" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                                <rect key="frame" x="10" y="10" width="300" height="14"/>
+                                                                <rect key="frame" x="10" y="10" width="300" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -217,7 +217,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P8K-jW-mbe">
-                                                                <rect key="frame" x="10" y="24" width="310" height="126"/>
+                                                                <rect key="frame" x="10" y="27" width="310" height="123"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="8KQ-F4-ZfM">
                                                                     <size key="itemSize" width="50" height="50"/>
@@ -232,7 +232,7 @@
                                                                 </connections>
                                                             </collectionView>
                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpK-RJ-JJd">
-                                                                <rect key="frame" x="300" y="24" width="20" height="126"/>
+                                                                <rect key="frame" x="300" y="27" width="20" height="123"/>
                                                                 <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="20" id="RIV-UX-mlk"/>
@@ -273,7 +273,7 @@
                                                 </connections>
                                             </tableView>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No auction found yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1u-OP-ipB" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="250" width="300" height="16.5"/>
+                                                <rect key="frame" x="10" y="250" width="300" height="20"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2656,8 +2656,8 @@ dG8gYmlkLiDigJxEZXBvc2l0Ig
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="188,266 K.M." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hv2-lX-mvK" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                                <rect key="frame" x="5" y="14" width="75" height="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="188,266 K.M." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hv2-lX-mvK" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="14" width="85" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -2675,12 +2675,13 @@ dG8gYmlkLiDigJxEZXBvc2l0Ig
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="hv2-lX-mvK" firstAttribute="top" secondItem="ifT-GY-KuQ" secondAttribute="bottom" id="2Dr-pS-6bj"/>
-                                                            <constraint firstAttribute="trailing" secondItem="hv2-lX-mvK" secondAttribute="trailing" constant="5" id="T9a-zT-hmB"/>
+                                                            <constraint firstAttribute="width" constant="85" id="BzH-V3-lpx"/>
+                                                            <constraint firstAttribute="trailing" secondItem="hv2-lX-mvK" secondAttribute="trailing" id="T9a-zT-hmB"/>
                                                             <constraint firstItem="ifT-GY-KuQ" firstAttribute="leading" secondItem="bNk-s0-lmC" secondAttribute="leading" id="Ucv-rh-NmJ"/>
                                                             <constraint firstAttribute="bottom" secondItem="hv2-lX-mvK" secondAttribute="bottom" constant="4" id="fRa-PA-328"/>
                                                             <constraint firstItem="ifT-GY-KuQ" firstAttribute="top" secondItem="bNk-s0-lmC" secondAttribute="top" id="j6C-Lu-37k"/>
                                                             <constraint firstAttribute="trailing" secondItem="ifT-GY-KuQ" secondAttribute="trailing" id="qPB-lF-srg"/>
-                                                            <constraint firstItem="hv2-lX-mvK" firstAttribute="leading" secondItem="bNk-s0-lmC" secondAttribute="leading" constant="5" id="taO-Vf-wzW"/>
+                                                            <constraint firstItem="hv2-lX-mvK" firstAttribute="leading" secondItem="bNk-s0-lmC" secondAttribute="leading" id="taO-Vf-wzW"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -2692,7 +2693,6 @@ dG8gYmlkLiDigJxEZXBvc2l0Ig
                                                     <constraint firstAttribute="bottom" secondItem="5ra-Qa-4jc" secondAttribute="bottom" id="9cu-na-L0s"/>
                                                     <constraint firstAttribute="bottom" secondItem="hOo-zQ-ZD9" secondAttribute="bottom" id="H8Q-p3-B8q"/>
                                                     <constraint firstItem="hOo-zQ-ZD9" firstAttribute="top" secondItem="6vS-zm-1Gw" secondAttribute="top" id="Kfm-Mv-edY"/>
-                                                    <constraint firstItem="bNk-s0-lmC" firstAttribute="width" secondItem="5ra-Qa-4jc" secondAttribute="width" id="OoY-GE-gqv"/>
                                                     <constraint firstItem="5ra-Qa-4jc" firstAttribute="leading" secondItem="6vS-zm-1Gw" secondAttribute="leading" id="Pq0-8J-27i"/>
                                                     <constraint firstAttribute="bottom" secondItem="bNk-s0-lmC" secondAttribute="bottom" id="QbE-UJ-uE8"/>
                                                     <constraint firstItem="fyV-t0-pdt" firstAttribute="width" secondItem="5ra-Qa-4jc" secondAttribute="width" id="RjZ-jf-g0f"/>
@@ -2701,6 +2701,7 @@ dG8gYmlkLiDigJxEZXBvc2l0Ig
                                                     <constraint firstItem="fyV-t0-pdt" firstAttribute="leading" secondItem="hOo-zQ-ZD9" secondAttribute="trailing" id="d5O-eJ-bcb"/>
                                                     <constraint firstItem="fyV-t0-pdt" firstAttribute="top" secondItem="6vS-zm-1Gw" secondAttribute="top" id="hVy-g1-Org"/>
                                                     <constraint firstAttribute="bottom" secondItem="fyV-t0-pdt" secondAttribute="bottom" id="vbf-hv-2JT"/>
+                                                    <constraint firstAttribute="height" constant="35" id="wGr-wt-USy"/>
                                                     <constraint firstItem="hOo-zQ-ZD9" firstAttribute="width" secondItem="5ra-Qa-4jc" secondAttribute="width" constant="-20" id="xpj-mM-d8a"/>
                                                 </constraints>
                                             </view>
@@ -2967,6 +2968,7 @@ dG8gYmlkLiDigJxEZXBvc2l0Ig
                         <outlet property="bidView" destination="I7y-dS-YQ4" id="Rf9-nc-9dw"/>
                         <outlet property="bookmarkBtn" destination="9QY-fG-YRj" id="RGY-gf-crw"/>
                         <outlet property="constraintHeightBidCV" destination="L02-Zi-GKn" id="q5h-Tr-j5d"/>
+                        <outlet property="constraintWidthOdometer" destination="BzH-V3-lpx" id="dhw-Xw-ChH"/>
                         <outlet property="currentPriceLbl" destination="4Cb-bi-25s" id="PQh-jt-Ssk"/>
                         <outlet property="descLbl" destination="SGN-jz-god" id="iTS-AC-wbL"/>
                         <outlet property="endTimeLbl" destination="0mU-H9-uWf" id="xgU-Ha-gzd"/>
@@ -2979,6 +2981,7 @@ dG8gYmlkLiDigJxEZXBvc2l0Ig
                         <outlet property="minIncrementLbl" destination="V8o-KP-3Xq" id="2Ta-iH-s6E"/>
                         <outlet property="nextBtn" destination="O8g-jh-P8i" id="ohv-Q8-xGg"/>
                         <outlet property="odometerLbl" destination="hv2-lX-mvK" id="osV-4v-xNx"/>
+                        <outlet property="odometerView" destination="bNk-s0-lmC" id="W1T-ca-zUB"/>
                         <outlet property="previousBtn" destination="GqO-hr-cGH" id="h4B-ds-Snq"/>
                         <outlet property="profileImgBtn" destination="xKp-MI-e4C" id="8Uy-0M-hsm"/>
                         <outlet property="remainingTimeLbl" destination="91k-UV-w1v" id="bKk-68-gEA"/>

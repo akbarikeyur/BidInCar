@@ -30,7 +30,9 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
     @IBOutlet weak var currentPriceLbl: Label!
     @IBOutlet weak var bidLbl: Label!
     @IBOutlet weak var minIncrementLbl: Label!
+    @IBOutlet weak var odometerView: UIView!
     @IBOutlet weak var odometerLbl: Label!
+    @IBOutlet weak var constraintWidthOdometer : NSLayoutConstraint!
     @IBOutlet weak var remainingTimeLbl: Label!
     @IBOutlet weak var endTimeLbl: Label!
     @IBOutlet weak var descLbl: Label!
@@ -84,7 +86,15 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
         bidLbl.text = String(auction.auction_bidscount)
         minIncrementLbl.text = displayPriceWithCurrency(auction.auction_bidprice)
         lotLbl.text = "Lot# " + auction.auctionid
-        odometerLbl.text = auction.auction_millage + " K.M."
+        if auction.auction_millage == "" {
+            odometerView.isHidden = true
+            constraintWidthOdometer.constant = 0
+            odometerLbl.text = ""
+        }else{
+            odometerView.isHidden = false
+            constraintWidthOdometer.constant = 85
+            odometerLbl.text = auction.auction_millage + " K.M."
+        }
         if auction.auction_end != "" {
             remainingTimeLbl.text = "Time remaining " + getRemainingTime(auction.auction_end)
             endTimeLbl.text = "End Time " + getDateStringFromDate(date: getDateFromDateString(strDate: auction.auction_end, format: "YYYY-MM-dd")!, format: "dd MMM, YYYY")

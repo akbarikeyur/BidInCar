@@ -105,11 +105,9 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         updateRemainingTime()
         endTimeLbl.text = getDateStringFromDate(date: getDateFromDateString(strDate: auctionData.auction_end, format: "YYYY-MM-dd")!, format: "dd MMM, YYYY")
         auctionStatusBtn.setTitle(auctionData.auction_status.capitalized, for: .normal)
+        reportView.isHidden = false
         if auctionData.autocheckupload.path != "" {
             autoCheckData = auctionData.autocheckupload
-            reportView.isHidden = false
-        }else{
-            reportView.isHidden = true
         }
 
         if auctionData.pictures.count == 0 {
@@ -191,9 +189,6 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             if auctionData.engine_size != "" {
                 auctionDetailData.append(["title" : "Engine Size", "value" : auctionData.engine_size!])
             }
-            if auctionData.body_condition != "" {
-                auctionDetailData.append(["title" : "Body Condition", "value" : auctionData.body_condition!])
-            }
         }
         else if auctionData.categorytype == "3" {
             if auctionData.country_name != "" {
@@ -207,9 +202,6 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             }
             if auctionData.boat_length != "" {
                 auctionDetailData.append(["title" : "Boat length", "value" : auctionData.boat_length!])
-            }
-            if auctionData.body_condition != "" {
-                auctionDetailData.append(["title" : "Body Condition", "value" : auctionData.body_condition!])
             }
             if auctionData.auction_age != "" {
                 auctionDetailData.append(["title" : "Boat Age", "value" : auctionData.auction_age!])
@@ -261,9 +253,16 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             if auctionData.mechanical != ""{
                 auctionDetailData.append(["title" : "Mechanical", "value" : auctionData.mechanical!])
             }
-            if auctionData.body_condition != ""{
-                auctionDetailData.append(["title" : "Body Condition", "value" : auctionData.body_condition!])
-            }
+        }
+        
+        if auctionData.body_condition != "" {
+            auctionDetailData.append(["title" : "Body Condition", "value" : auctionData.body_condition!])
+        }
+        if auctionData.auction_body_condition != "" {
+            auctionDetailData.append(["title" : "Condition", "value" : auctionData.auction_body_condition!])
+        }
+        if auctionData.year != "" {
+            auctionDetailData.append(["title" : "Year", "value" : auctionData.year!])
         }
         tblView.reloadData()
         
@@ -426,6 +425,10 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBAction func clickToDownloadReport(_ sender: Any) {
         if autoCheckData.apid != "" {
             openUrlInSafari(strUrl: autoCheckData.path)
+        }else{
+            showAlert("", message: "no_inspection_report") {
+                
+            }
         }
     }
     
@@ -580,11 +583,9 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             
             if let temp = data["autocheckupload"] as? [String : Any] {
                 self.auctionData.autocheckupload = PictureModel.init(dict: temp)
+                self.reportView.isHidden = false
                 if self.auctionData.autocheckupload.path != "" {
                     self.autoCheckData = self.auctionData.autocheckupload
-                    self.reportView.isHidden = false
-                }else{
-                    self.reportView.isHidden = true
                 }
             }
             
