@@ -99,17 +99,15 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }else{
             auctionPriceLbl.text = displayPriceWithCurrency(auctionData.active_auction_price)
         }
-        
         minAuctionPriceLbl.text = "(MIN INCREASE " + displayPriceWithCurrency(auctionData.auction_bidprice) + ")"
         bookmarkBtn.isSelected = (auctionData.bookmark == "yes")
         updateRemainingTime()
-        endTimeLbl.text = getDateStringFromDate(date: getDateFromDateString(strDate: auctionData.auction_end, format: "YYYY-MM-dd")!, format: "dd MMM, YYYY")
+        endTimeLbl.text = getDateStringFromDateWithLocalTimezone(date: getDateFromDateString(strDate: auctionData.auction_end, format: "yyyy-MM-dd")!, format: "dd MMM, yyyy")
         auctionStatusBtn.setTitle(auctionData.auction_status.capitalized, for: .normal)
         reportView.isHidden = false
         if auctionData.autocheckupload.path != "" {
             autoCheckData = auctionData.autocheckupload
         }
-
         if auctionData.pictures.count == 0 {
             pictureView.isHidden = true
             constraintHeightPictureView.constant = 0
@@ -119,7 +117,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }
         imageNumberLbl.text = String(currentImageIndex+1) + "/" + String(auctionData.pictures.count)
         imageCV.reloadData()
-        auctionDescLbl.text = auctionData.auction_desc
+        auctionDescLbl.text = auctionData.auction_desc.html2String
         if auctionDescLbl.getHeight() > 65 {
             seeMoreBtn.isHidden = false
             auctionDescLbl.numberOfLines = 3

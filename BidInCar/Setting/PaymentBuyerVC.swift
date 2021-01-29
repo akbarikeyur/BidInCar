@@ -199,6 +199,7 @@ class PaymentBuyerVC: UIViewController {
             APIManager.shared.serviceCallToWithdrawAmount(param) {
                 self.withdrrawView.removeFromSuperview()
                 displayToast("withdrawl_request_sent")
+                self.serviceCallToGetWithdrawHistory()
             }
         }
     }

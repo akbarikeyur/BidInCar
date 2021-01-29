@@ -51,7 +51,7 @@ class BookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
         cell.titleLbl.text = dict.auction_title
-        cell.addressLbl.text = dict.auction_address + ", " + dict.country_name
+        cell.addressLbl.text = dict.auction_address
         cell.currentBidLbl.text = "Current Bid " + displayPriceWithCurrency(dict.active_auction_price)
         cell.bidLbl.text = "Bid #\n" + String(dict.auction_bidscount)
         cell.bidBtn.tag = indexPath.row

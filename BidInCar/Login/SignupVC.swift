@@ -40,9 +40,8 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var countryFlagBtn: UIButton!
     @IBOutlet weak var companyPhoneTxt: FloatingTextfiledView!
     @IBOutlet weak var companyAddressTxt: FloatingTextfiledView!
-    @IBOutlet weak var companyBuildingTxt: FloatingTextfiledView!
-    @IBOutlet weak var companySuitNoTxt: FloatingTextfiledView!
-    @IBOutlet weak var companyPoBoxTxt: FloatingTextfiledView!
+    @IBOutlet weak var companyEmailTxt: FloatingTextfiledView!
+    
     
     @IBOutlet weak var signinLbl: Label!
     
@@ -74,7 +73,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         phoneTxt.myTxt.keyboardType = .phonePad
         companyCountryCodeTxt.myTxt.keyboardType = .numbersAndPunctuation
         companyPhoneTxt.myTxt.keyboardType = .phonePad
-        companySuitNoTxt.myTxt.keyboardType = .numbersAndPunctuation
+        companyEmailTxt.myTxt.keyboardType = .emailAddress
         
         passwordTxt.myTxt.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         passwordTxt.myTxt.isSecureTextEntry = true
@@ -320,7 +319,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
                 else if companyBtn.isSelected {
                     param["user_postingtype"] = "company"
                     param["company_name"] = companyNameTxt.myTxt.text
-                    param["company_email"] = emailTxt.myTxt.text
+                    param["company_email"] = companyEmailTxt.myTxt.text
                     param["company_address"] = companyAddressTxt.myTxt.text
                     param["company_phone"] = companyPhoneTxt.myTxt.text
                 }
@@ -356,16 +355,12 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             displayToast("enter_company_address")
             return false
         }
-        else if companyBuildingTxt.myTxt.text?.trimmed == "" {
-            displayToast("enter_company_building")
+        else if companyEmailTxt.myTxt.text?.trimmed == "" {
+            displayToast("enter_company_email")
             return false
         }
-        else if companySuitNoTxt.myTxt.text?.trimmed == "" {
-            displayToast("enter_company_suit")
-            return false
-        }
-        else if companyPoBoxTxt.myTxt.text?.trimmed == "" {
-            displayToast("enter_po_box")
+        else if !companyEmailTxt.myTxt.text!.isValidEmail {
+            displayToast("invalid_email")
             return false
         }
         return true

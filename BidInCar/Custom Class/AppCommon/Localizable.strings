@@ -51,6 +51,7 @@
 "enter_company_suit" = "Please enter Suit number";
 "enter_po_box" = "Please enter PO Box";
 "enter_verification_code" = "Please enter code";
+"enter_company_email" = "Please enter company email";
 
 //Guest User Message
 "bookmark_login_msg" = "Please login/signup to add wish list.";

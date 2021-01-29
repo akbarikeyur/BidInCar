@@ -91,6 +91,14 @@ func getDateFromDateString(strDate : String, format : String) -> Date?
     return dateFormatter.date(from: strDate)
 }
 
+func getDateStringFromDateWithLocalTimezone(date : Date, format : String) -> String
+{
+    let dateFormatter = DateFormatter()
+    dateFormatter.locale = NSLocale.current
+    dateFormatter.dateFormat = format
+    return dateFormatter.string(from: date)
+}
+
 func getDateFromDateString(strDate : String) -> Date
 {
     let dateFormatter = DateFormatter()

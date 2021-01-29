@@ -97,7 +97,7 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
         }
         if auction.auction_end != "" {
             remainingTimeLbl.text = "Time remaining " + getRemainingTime(auction.auction_end)
-            endTimeLbl.text = "End Time " + getDateStringFromDate(date: getDateFromDateString(strDate: auction.auction_end, format: "YYYY-MM-dd")!, format: "dd MMM, YYYY")
+            endTimeLbl.text = "End Time " + getDateStringFromDateWithLocalTimezone(date: getDateFromDateString(strDate: auction.auction_end, format: "YYYY-MM-dd")!, format: "dd MMM, YYYY")
         }
         else{
             remainingTimeLbl.text = ""

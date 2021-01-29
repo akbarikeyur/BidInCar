@@ -45,7 +45,7 @@ let CAR_COLOR = ["White","Yellow","Blue","Red","Green","Black","Brown","Azure","
 
 let BOAT_LENGTH = ["Select Boat Length", "Less than 10 feet", "10-15 feet", "15-20 feet", "20-25 feet", "25-30 feet", "30+ feet", "50+ feet", "100+ feet"]
 let BOAT_AGE = ["Select Boat Age", "New", "Less than 1 year", "1-2 years", "2-4 years", "4-8 years", "8+ years"]
-let BOAT_WARRANTY = ["Select Boat Warranty", "0-6 Months", "6 month - 1 year", "1 year +"]
+let BOAT_WARRANTY = ["Select Boat Warranty", "0-1 Year", "1 Year+", "No warranty"]
 
 struct SCREEN
 {
@@ -132,6 +132,7 @@ struct NOTIFICATION {
     static var REDIRECT_TO_DRAFT            =   "REDIRECT_TO_DRAFT"
     static var REDIRECT_TO_MY_PROFILE            =   "REDIRECT_TO_MY_PROFILE"
     static var REDIRECT_DASHBOARD_TOP_DATA            =   "REDIRECT_DASHBOARD_TOP_DATA"
+    static var REDIRECT_NOTIFICATION_SCREEN            =   "REDIRECT_NOTIFICATION_SCREEN"
 }
 
 

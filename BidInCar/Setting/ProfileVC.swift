@@ -116,7 +116,6 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         dict["value"] = AppModel.shared.currentUser.user_phonenumber
         arrUserDetail.append(dict)
         
-        
         if !isUserBuyer() && AppModel.shared.currentUser.user_company.companyid != "" {
             dict = [String : Any]()
             dict["title"] = PROFILE.COMPANY_NAME
@@ -238,7 +237,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
             arrData.append(temp.country_name)
         }
         dropDown.dataSource = arrData
-        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+        dropDown.selectionAction = { [unowned self] (dropIndex: Int, item: String) in
             let index1 = self.arrUserDetail.firstIndex { (temp) -> Bool in
                 (temp["title"] as! String) == PROFILE.COUNTRY
             }
@@ -252,8 +251,8 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
                 self.arrUserDetail[index3!]["value"] = ""
             }
             self.tblView.reloadData()
-            self.selectedCountryId = self.arrCountryData[index].countryid
-            self.getCityData(self.arrCountryData[index].countryid)
+            self.selectedCountryId = self.arrCountryData[dropIndex].countryid
+            self.getCityData(self.arrCountryData[dropIndex].countryid)
         }
         dropDown.show()
     }
@@ -267,15 +266,15 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
             arrData.append(temp.country_name + " (+" + temp.phonecode + ")")
         }
         dropDown.dataSource = arrData
-        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+        dropDown.selectionAction = { [unowned self] (dropIndex: Int, item: String) in
             let index2 = self.arrUserDetail.firstIndex { (temp) -> Bool in
                 (temp["title"] as! String) == PROFILE.COUNTRY_CODE
             }
             if index2 != nil {
-                self.arrUserDetail[index2!]["value"] = "+" + self.arrCountryData[index].phonecode
+                self.arrUserDetail[index2!]["value"] = "+" + self.arrCountryData[dropIndex].phonecode
             }
             self.tblView.reloadData()
-            self.selectedCountryCode = self.arrCountryData[index].phonecode
+            self.selectedCountryCode = self.arrCountryData[dropIndex].phonecode
         }
         dropDown.show()
     }
@@ -290,13 +289,13 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
             arrData.append(temp.city_name)
         }
         dropDown.dataSource = arrData
-        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+        dropDown.selectionAction = { [unowned self] (dropIndex: Int, item: String) in
             let index = self.arrUserDetail.firstIndex { (temp) -> Bool in
                 (temp["title"] as! String) == PROFILE.CITY
             }
             if index != nil {
                 self.arrUserDetail[index!]["value"] = item
-                self.selectedCityId = self.arrCityData[index!].cityid
+                self.selectedCityId = self.arrCityData[dropIndex].cityid
             }
             self.tblView.reloadData()
         }

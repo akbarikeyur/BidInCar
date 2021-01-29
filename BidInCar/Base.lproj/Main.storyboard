@@ -650,11 +650,11 @@ Sign in</string>
             <objects>
                 <viewController storyboardIdentifier="SignupVC" id="lst-hx-DYw" customClass="SignupVC" customModule="BidInCar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pv0-sG-c90">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1665"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1560"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_bg" translatesAutoresizingMaskIntoConstraints="NO" id="1NO-qX-kCd">
-                                <rect key="frame" x="-5" y="-5" width="330" height="1675"/>
+                                <rect key="frame" x="-5" y="-5" width="330" height="1570"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9X-YE-mPu">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -679,10 +679,10 @@ Sign in</string>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILg-Jg-7tk">
-                                <rect key="frame" x="0.0" y="44" width="320" height="1621"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="1516"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDL-Zw-5u7">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1601"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1496"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzh-Qn-zR0" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="10" width="152.5" height="62"/>
@@ -1055,10 +1055,10 @@ for signing up</string>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FAP-tp-bRu">
-                                                <rect key="frame" x="0.0" y="1044.5" width="320" height="415"/>
+                                                <rect key="frame" x="0.0" y="1044.5" width="320" height="310"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="815-rR-HHo">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="415"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="310"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TW9-on-8Kn" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="10" width="320" height="45"/>
@@ -1110,54 +1110,30 @@ for signing up</string>
                                                                     <constraint firstAttribute="height" constant="45" id="dMy-Rs-kXe"/>
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Building Name"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FDR-wc-Lae" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="310" width="320" height="45"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="45" id="h8x-Zg-fP8"/>
-                                                                </constraints>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Suit number"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LM1-ZN-ojQ" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="370" width="320" height="45"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="45" id="QqY-aa-4zu"/>
-                                                                </constraints>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="P.O Box"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Company Email"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="FDR-wc-Lae" firstAttribute="leading" secondItem="815-rR-HHo" secondAttribute="leading" id="0VU-S9-jav"/>
                                                             <constraint firstItem="4rT-Qn-aMz" firstAttribute="top" secondItem="uqG-Zl-7yf" secondAttribute="bottom" constant="15" id="2l0-G6-80f"/>
                                                             <constraint firstAttribute="trailing" secondItem="uqG-Zl-7yf" secondAttribute="trailing" id="642-z8-bkU"/>
                                                             <constraint firstItem="jLy-gI-oKy" firstAttribute="top" secondItem="fCv-Wu-sZf" secondAttribute="top" id="82X-vj-eZ7"/>
                                                             <constraint firstItem="4rT-Qn-aMz" firstAttribute="leading" secondItem="815-rR-HHo" secondAttribute="leading" id="9ak-9Y-7pR"/>
                                                             <constraint firstItem="fCv-Wu-sZf" firstAttribute="leading" secondItem="815-rR-HHo" secondAttribute="leading" id="9i8-8q-nv7"/>
-                                                            <constraint firstAttribute="trailing" secondItem="LM1-ZN-ojQ" secondAttribute="trailing" id="PFV-7e-skz"/>
                                                             <constraint firstItem="uqG-Zl-7yf" firstAttribute="leading" secondItem="815-rR-HHo" secondAttribute="leading" id="Pbc-05-b6x"/>
                                                             <constraint firstAttribute="trailing" secondItem="8ay-Sr-Hmd" secondAttribute="trailing" id="Uld-FQ-aNi"/>
-                                                            <constraint firstItem="LM1-ZN-ojQ" firstAttribute="top" secondItem="FDR-wc-Lae" secondAttribute="bottom" constant="15" id="Uzd-PG-ehe"/>
                                                             <constraint firstItem="8ay-Sr-Hmd" firstAttribute="top" secondItem="fCv-Wu-sZf" secondAttribute="bottom" constant="15" id="YTM-Sj-S3e"/>
                                                             <constraint firstAttribute="trailing" secondItem="4rT-Qn-aMz" secondAttribute="trailing" id="cBg-Tj-6VS"/>
                                                             <constraint firstItem="TW9-on-8Kn" firstAttribute="leading" secondItem="815-rR-HHo" secondAttribute="leading" id="cyy-GU-WU5"/>
-                                                            <constraint firstAttribute="trailing" secondItem="FDR-wc-Lae" secondAttribute="trailing" id="dM9-4M-e6d"/>
                                                             <constraint firstItem="jLy-gI-oKy" firstAttribute="bottom" secondItem="fCv-Wu-sZf" secondAttribute="bottom" id="eMz-jq-c6L"/>
                                                             <constraint firstAttribute="trailing" secondItem="TW9-on-8Kn" secondAttribute="trailing" id="eyZ-YE-yzH"/>
                                                             <constraint firstItem="fCv-Wu-sZf" firstAttribute="top" secondItem="TW9-on-8Kn" secondAttribute="bottom" constant="15" id="fhh-tY-mXr"/>
                                                             <constraint firstItem="jLy-gI-oKy" firstAttribute="trailing" secondItem="fCv-Wu-sZf" secondAttribute="trailing" constant="-35" id="gfI-Sj-JvM"/>
                                                             <constraint firstItem="uqG-Zl-7yf" firstAttribute="top" secondItem="8ay-Sr-Hmd" secondAttribute="bottom" constant="15" id="ghM-bs-PS9"/>
-                                                            <constraint firstItem="FDR-wc-Lae" firstAttribute="top" secondItem="4rT-Qn-aMz" secondAttribute="bottom" constant="15" id="iM1-hl-6V5"/>
-                                                            <constraint firstAttribute="bottom" secondItem="LM1-ZN-ojQ" secondAttribute="bottom" id="ihT-j7-FGl"/>
+                                                            <constraint firstAttribute="bottom" secondItem="4rT-Qn-aMz" secondAttribute="bottom" constant="15" id="iq6-34-pgZ"/>
                                                             <constraint firstItem="TW9-on-8Kn" firstAttribute="top" secondItem="815-rR-HHo" secondAttribute="top" constant="10" id="ka1-QN-U7e"/>
                                                             <constraint firstAttribute="trailing" secondItem="fCv-Wu-sZf" secondAttribute="trailing" id="pGc-k7-Nmi"/>
-                                                            <constraint firstItem="LM1-ZN-ojQ" firstAttribute="leading" secondItem="815-rR-HHo" secondAttribute="leading" id="rJ1-dE-qm7"/>
                                                             <constraint firstItem="8ay-Sr-Hmd" firstAttribute="leading" secondItem="815-rR-HHo" secondAttribute="leading" id="xUf-wx-L3V"/>
                                                             <constraint firstItem="jLy-gI-oKy" firstAttribute="leading" secondItem="fCv-Wu-sZf" secondAttribute="leading" constant="30" id="zyi-gr-Tcn"/>
                                                         </constraints>
@@ -1165,7 +1141,7 @@ for signing up</string>
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WKS-uY-DEb" customClass="View" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="1479.5" width="280" height="45"/>
+                                                <rect key="frame" x="20" y="1374.5" width="280" height="45"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IQ-JO-LsZ" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
@@ -1204,7 +1180,7 @@ for signing up</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already Member?  Sign in" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRO-ad-EKt" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="71.5" y="1549.5" width="177" height="30"/>
+                                                <rect key="frame" x="71.5" y="1444.5" width="177" height="30"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                 <color key="textColor" red="0.61176470589999998" green="0.61176470589999998" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1219,7 +1195,7 @@ for signing up</string>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bU4-U6-gB9">
-                                                <rect key="frame" x="71.5" y="1549.5" width="177" height="30"/>
+                                                <rect key="frame" x="71.5" y="1444.5" width="177" height="30"/>
                                                 <connections>
                                                     <action selector="clickToLogin:" destination="lst-hx-DYw" eventType="touchUpInside" id="3BE-pw-K4G"/>
                                                 </connections>
@@ -1337,7 +1313,7 @@ for signing up</string>
                         <viewLayoutGuide key="safeArea" id="ZG6-as-eys"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="1665"/>
+                    <size key="freeformSize" width="320" height="1560"/>
                     <connections>
                         <outlet property="addressTxt" destination="nqd-Tq-Jme" id="vt6-kh-Eda"/>
                         <outlet property="buildingNameTxt" destination="pM9-cZ-LJO" id="AIw-vY-TsB"/>
@@ -1345,13 +1321,11 @@ for signing up</string>
                         <outlet property="cityTxt" destination="cfK-wM-hEd" id="L60-Md-I07"/>
                         <outlet property="companyAddressTxt" destination="uqG-Zl-7yf" id="rHO-7n-uNX"/>
                         <outlet property="companyBtn" destination="VEB-IS-nKo" id="T86-VH-hDc"/>
-                        <outlet property="companyBuildingTxt" destination="4rT-Qn-aMz" id="UdG-kG-9vN"/>
                         <outlet property="companyCountryCodeTxt" destination="fCv-Wu-sZf" id="vnk-mM-YvU"/>
                         <outlet property="companyDetailView" destination="815-rR-HHo" id="Ozf-i5-K5C"/>
+                        <outlet property="companyEmailTxt" destination="4rT-Qn-aMz" id="tWa-1l-bKD"/>
                         <outlet property="companyNameTxt" destination="TW9-on-8Kn" id="8PC-js-S4u"/>
                         <outlet property="companyPhoneTxt" destination="8ay-Sr-Hmd" id="ySh-bH-fw8"/>
-                        <outlet property="companyPoBoxTxt" destination="LM1-ZN-ojQ" id="vPF-Dl-yy7"/>
-                        <outlet property="companySuitNoTxt" destination="FDR-wc-Lae" id="LcF-Md-kMP"/>
                         <outlet property="confirmPasswordTxt" destination="Qad-8O-JcV" id="rIJ-XS-bvT"/>
                         <outlet property="countryCodeTxt" destination="lbf-Pi-w3M" id="ugJ-xh-HjE"/>
                         <outlet property="countryFlagBtn" destination="LyM-ZA-tDl" id="zPA-RQ-GNN"/>
@@ -1374,7 +1348,7 @@ for signing up</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ek1-EH-Q43" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3201" y="714"/>
+            <point key="canvasLocation" x="3201" y="660"/>
         </scene>
         <!--VerificationVC-->
         <scene sceneID="fYF-TM-tWc">
@@ -2103,7 +2077,7 @@ Account</string>
                                             <constraint firstAttribute="width" constant="150" id="uzk-G2-gVR"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Pt-aF-f7r" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Pt-aF-f7r" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                         <rect key="frame" x="20" y="180" width="280" height="62"/>
                                         <string key="text">Turn on
 Notificaitions</string>
@@ -2120,7 +2094,7 @@ Notificaitions</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable push notifications to let send you personal news and updates" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPV-cC-SLN" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Enable push notifications to let send you personal news and updates" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPV-cC-SLN" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                         <rect key="frame" x="20" y="252" width="280" height="34"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2139,7 +2113,7 @@ Notificaitions</string>
                                         <rect key="frame" x="20" y="300" width="280" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn on notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64Q-rl-8fV" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="14" width="163" height="22.5"/>
+                                                <rect key="frame" x="20" y="15.5" width="145" height="19"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                                 <color key="textColor" red="0.30588235289999999" green="0.29803921570000003" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>

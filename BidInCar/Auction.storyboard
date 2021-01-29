@@ -40,9 +40,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v08-g2-lSP">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="3M2-VZ-ISw"/>
+                                            <constraint firstAttribute="width" constant="45" id="3M2-VZ-ISw"/>
                                         </constraints>
                                         <state key="normal" image="more"/>
                                         <connections>
@@ -1008,6 +1008,12 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="(eg: abc street)"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vrj-UP-hRB">
+                                                        <rect key="frame" x="0.0" y="50" width="320" height="45"/>
+                                                        <connections>
+                                                            <action selector="clickToSelectAddress:" destination="vsu-Hi-Iyy" eventType="touchUpInside" id="OtY-0L-evf"/>
+                                                        </connections>
+                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSw-iR-ZhA">
                                                         <rect key="frame" x="265" y="60" width="25" height="25"/>
                                                         <constraints>
@@ -1044,10 +1050,14 @@
                                                     <constraint firstItem="Hth-DM-R1M" firstAttribute="leading" secondItem="Npq-bQ-Adz" secondAttribute="leading" id="C0t-cx-8AI"/>
                                                     <constraint firstAttribute="trailing" secondItem="GjY-tn-UEt" secondAttribute="trailing" id="Ftw-zJ-5sB"/>
                                                     <constraint firstItem="GjY-tn-UEt" firstAttribute="leading" secondItem="Jc0-Co-s4E" secondAttribute="trailing" id="GNy-aE-SzF"/>
+                                                    <constraint firstItem="Vrj-UP-hRB" firstAttribute="trailing" secondItem="Hth-DM-R1M" secondAttribute="trailing" id="Igd-LE-h3o"/>
+                                                    <constraint firstItem="Vrj-UP-hRB" firstAttribute="leading" secondItem="Hth-DM-R1M" secondAttribute="leading" id="MdE-cI-8XX"/>
                                                     <constraint firstItem="PSw-iR-ZhA" firstAttribute="top" secondItem="Hth-DM-R1M" secondAttribute="top" constant="10" id="Ron-kh-Uxm"/>
                                                     <constraint firstItem="mbK-6D-JUT" firstAttribute="leading" secondItem="Npq-bQ-Adz" secondAttribute="leading" constant="20" id="TVc-BF-dD0"/>
                                                     <constraint firstAttribute="trailing" secondItem="Hth-DM-R1M" secondAttribute="trailing" id="ThO-ZV-04u"/>
                                                     <constraint firstItem="mbK-6D-JUT" firstAttribute="top" secondItem="Npq-bQ-Adz" secondAttribute="top" constant="20" id="bsC-gH-dpq"/>
+                                                    <constraint firstItem="Vrj-UP-hRB" firstAttribute="top" secondItem="Hth-DM-R1M" secondAttribute="top" id="fwq-ms-64P"/>
+                                                    <constraint firstItem="Vrj-UP-hRB" firstAttribute="bottom" secondItem="Hth-DM-R1M" secondAttribute="bottom" id="iIf-Wo-o1i"/>
                                                     <constraint firstItem="GjY-tn-UEt" firstAttribute="top" secondItem="Hth-DM-R1M" secondAttribute="bottom" constant="15" id="kTn-1X-dLQ"/>
                                                     <constraint firstItem="Jc0-Co-s4E" firstAttribute="leading" secondItem="Npq-bQ-Adz" secondAttribute="leading" id="qsk-Jp-eDk"/>
                                                     <constraint firstItem="GjY-tn-UEt" firstAttribute="width" secondItem="Jc0-Co-s4E" secondAttribute="width" id="tV0-BO-aAs"/>
@@ -1539,9 +1549,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScC-gy-Y8p">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="YBq-IA-ZLh"/>
+                                            <constraint firstAttribute="width" constant="45" id="YBq-IA-ZLh"/>
                                         </constraints>
                                         <state key="normal" image="more"/>
                                         <connections>
@@ -1665,12 +1675,12 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="po5-RM-wOq" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="192.5" y="0.0" width="65" height="50"/>
+                                        <rect key="frame" x="192.5" y="0.0" width="80" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="65" id="LLO-l9-Fjl"/>
+                                            <constraint firstAttribute="width" constant="80" id="LLO-l9-Fjl"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
-                                        <state key="normal" title="Draft">
+                                        <state key="normal" title="Pending">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <state key="selected">
@@ -1690,7 +1700,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fmI-id-tyG" customClass="ImageView" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="192.5" y="48" width="65" height="2"/>
+                                        <rect key="frame" x="192.5" y="48" width="80" height="2"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="DqO-sJ-3TC"/>
@@ -2921,9 +2931,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iux-XK-qY2">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="wOY-pl-ok4"/>
+                                            <constraint firstAttribute="width" constant="45" id="wOY-pl-ok4"/>
                                         </constraints>
                                         <state key="normal" image="more"/>
                                         <connections>
@@ -8514,9 +8524,9 @@ dXRpb246A
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jr2-Y9-KZh">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="kQY-kX-6Ii"/>
+                                            <constraint firstAttribute="width" constant="45" id="kQY-kX-6Ii"/>
                                         </constraints>
                                         <state key="normal" image="more"/>
                                         <connections>
@@ -8702,9 +8712,9 @@ trucks more in our online auctions every week</string>
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZ5-Re-Lyq">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="p0k-2a-89g"/>
+                                            <constraint firstAttribute="width" constant="45" id="p0k-2a-89g"/>
                                         </constraints>
                                         <state key="normal" image="more"/>
                                         <connections>

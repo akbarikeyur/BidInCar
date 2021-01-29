@@ -51,6 +51,7 @@ class HomeVC: UploadImageVC {
         NotificationCenter.default.addObserver(self, selector: #selector(updateFeatureAuctionData(_:)), name: NSNotification.Name.init(NOTIFICATION.AUCTION_FEATURED_DATA), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeAuctionData(_:)), name: NSNotification.Name.init(NOTIFICATION.REMOVE_AUCTION_DATA), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshTopData), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_DASHBOARD_TOP_DATA), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshTopData), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_NOTIFICATION_SCREEN), object: nil)
         
         featureCV.register(UINib.init(nibName: "CustomCarCVC", bundle: nil), forCellWithReuseIdentifier: "CustomCarCVC")
         categoryCV.register(UINib.init(nibName: "CustomAuctionCategoryCVC", bundle: nil), forCellWithReuseIdentifier: "CustomAuctionCategoryCVC")
@@ -183,8 +184,8 @@ class HomeVC: UploadImageVC {
     }
     
     @IBAction func clickToReload(_ sender: Any) {
-        //serviceCallToGetAuction()
-        AppDelegate().sharedDelegate().getPackageHistory()
+        serviceCallToGetAuction("")
+        refreshTopData()
     }
     
     @IBAction func clickToFilter(_ sender: Any) {
@@ -354,12 +355,7 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             let newLable : UILabel = UILabel.init()
             newLable.font = UIFont.init(name: APP_REGULAR, size: 14.0)
             let dict = arrInfo[indexPath.row]
-            
-            if let temp : Float = Float(dict.value), temp > 35 {
-                newLable.text = dict.name + " UNLIMITED"
-            }else{
-                newLable.text = dict.name + " " + dict.value
-            }
+            newLable.text = dict.name + " " + dict.value
             if dict.link != "" {
                 newLable.text = newLable.text! + " " + dict.link
             }
@@ -407,6 +403,7 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.view.endEditing(true)
         if collectionView == featureCV {
             let vc : CarDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "CarDetailVC") as! CarDetailVC
             vc.auctionData = arrFeatureAuctionData[indexPath.row]
@@ -418,11 +415,19 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             categoryCV.reloadData()
             if let data = AppModel.shared.AUCTION_DATA[String(self.selectedCategory.id)], data.count > 0 {
                 arrAuctionData = data
+                if searchTxt.text?.trimmed != "" {
+                    arrSearchAuctionData = [AuctionModel]()
+                    arrSearchAuctionData = arrAuctionData.filter({ (result) -> Bool in
+                        let nameTxt: NSString = result.auction_title! as NSString
+                        return (nameTxt.range(of: searchTxt.text!, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
+                    })
+                }
                 updateTableviewHeight()
                 noDataLbl.isHidden = (arrAuctionData.count > 0)
                 setupFeatureAuction()
             }
             else{
+                searchTxt.text = ""
                 serviceCallToGetAuction("")
             }
         }
@@ -479,8 +484,8 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
         }
         cell.featureView.isHidden = (dict.auction_featured != "yes")
         cell.titleLbl.text = dict.auction_title
-        cell.timeLbl.text = getRemainingTime(dict.auction_end) + " left  " + getDateStringFromDate(date: getDateFromDateString(strDate: dict.auction_end, format: "YYYY-MM-dd")!, format: "dd MMM, YYYY")
-        cell.minPriceLbl.text = "New minimum price: " + displayPriceWithCurrency(dict.auction_bidprice)
+        cell.timeLbl.text = getRemainingTime(dict.auction_end) + " left  " + getDateStringFromDateWithLocalTimezone(date: getDateFromDateString(strDate: dict.auction_end, format: "YYYY-MM-dd")!, format: "dd MMM, YYYY")
+        cell.minPriceLbl.text = "Total Bids: " + dict.auction_bidscount
         cell.currentBidLbl.text = "Current Price " + displayPriceWithCurrency(dict.active_auction_price)
         cell.starBtn.isSelected = (dict.bookmark == "yes")
         if isUserLogin() && isUserBuyer() {
@@ -522,7 +527,11 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
     
     func updateTableviewHeight() {
         tblView.reloadData()
-        constraintHeightTblView.constant = CGFloat((130 * arrAuctionData.count) + 200)
+        if searchTxt.text?.trimmed == "" {
+            constraintHeightTblView.constant = CGFloat((130 * arrAuctionData.count) + 200)
+        }else{
+            constraintHeightTblView.constant = CGFloat((130 * arrSearchAuctionData.count) + 200)
+        }
     }
 }
 
@@ -794,6 +803,14 @@ extension HomeVC {
             }
             else if tempInfo.name == "Package:" {
                 tempInfo.value = AppModel.shared.getStringValue(data, "package_name")
+                if AppModel.shared.getStringValue(data, "package_name") != "" {
+                    let value : Int = AppModel.shared.getIntValue(data, "package_name")
+                    if value <= 35 {
+                        tempInfo.value = String(value)
+                    }else{
+                        tempInfo.value = "UNLIMITED"
+                    }
+                }
             }
             else if tempInfo.name == "Remaining Auction Limit:" {
                 tempInfo.value = AppModel.shared.getStringValue(data, "auctionsleft")

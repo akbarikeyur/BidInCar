@@ -11,15 +11,11 @@ import UIKit
 class PaymentSellerVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var packageBtn: Button!
-    @IBOutlet weak var auctionBtn: Button!
     @IBOutlet weak var featuredBtn: Button!
     @IBOutlet weak var packageView: UIView!
-    @IBOutlet weak var auctionView: UIView!
     @IBOutlet weak var featuredView: UIView!
     @IBOutlet weak var packageTblView: UITableView!
     @IBOutlet weak var constraintHeightPackageTbl: NSLayoutConstraint!
-    @IBOutlet weak var auctionTblView: UITableView!
-    @IBOutlet weak var constraintHeightAuctionTbl: NSLayoutConstraint!
     @IBOutlet weak var featureTblView: UITableView!
     @IBOutlet weak var constraintHeightFeatureTbl: NSLayoutConstraint!
     
@@ -34,16 +30,13 @@ class PaymentSellerVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         // Do any additional setup after loading the view.
         
         packageTblView.register(UINib.init(nibName: "CustomPackageHistoryTVC", bundle: nil), forCellReuseIdentifier: "CustomPackageHistoryTVC")
-        auctionTblView.register(UINib.init(nibName: "CustomPackageTVC", bundle: nil), forCellReuseIdentifier: "CustomPackageTVC")
         featureTblView.register(UINib.init(nibName: "CustomFeaturedAuctionTVC", bundle: nil), forCellReuseIdentifier: "CustomFeaturedAuctionTVC")
         
         packageTblView.backgroundColor = WhiteColor
-        auctionTblView.backgroundColor = WhiteColor
         featureTblView.backgroundColor = WhiteColor
         
         resetAllData()
         clickToSelectOption(packageBtn)
-        clickToSelectOption(auctionBtn)
         clickToSelectOption(featuredBtn)
         
         serviceCallToGetFeaturedAuction()
@@ -134,10 +127,6 @@ class PaymentSellerVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 constraintHeightPackageTbl.constant = 0
             }
         }
-        else if sender == auctionBtn {
-            auctionView.isHidden = true
-            constraintHeightAuctionTbl.constant = 0
-        }
         else if sender == featuredBtn {
             if featuredBtn.isSelected {
                 featuredView.isHidden = false
@@ -163,13 +152,10 @@ class PaymentSellerVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     func resetAllData()
     {
         packageBtn.isSelected = false
-        auctionBtn.isSelected = false
         featuredBtn.isSelected = false
         packageView.isHidden = true
-        auctionView.isHidden = true
         featuredView.isHidden = true
         constraintHeightPackageTbl.constant = 0
-        constraintHeightAuctionTbl.constant = 0
         constraintHeightFeatureTbl.constant = 0
     }
     
@@ -188,7 +174,6 @@ class PaymentSellerVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 self.featureTblView.reloadData()
                 self.constraintHeightFeatureTbl.constant = CGFloat((120*self.arrFeatureAuction.count) + 72)
             }
-            
         }
     }
     
