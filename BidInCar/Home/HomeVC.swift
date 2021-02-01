@@ -27,6 +27,7 @@ class HomeVC: UploadImageVC {
     @IBOutlet weak var maxPriceTxt: TextField!
     @IBOutlet weak var infoCV: UICollectionView!
     @IBOutlet weak var constraintHeightInfoCV: NSLayoutConstraint!
+    @IBOutlet weak var myScroll: UIScrollView!
     
     var arrFeatureAuctionData : [AuctionModel] = [AuctionModel]()
     var arrAuctionData : [AuctionModel] = [AuctionModel]()
@@ -41,7 +42,7 @@ class HomeVC: UploadImageVC {
     var arrModel = [ChildCategoryModel]()
     var selectedModel = ChildCategoryModel.init()
     var selectedFilterCategory = AuctionTypeModel.init(dict: [String : Any]())
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,7 +52,7 @@ class HomeVC: UploadImageVC {
         NotificationCenter.default.addObserver(self, selector: #selector(updateFeatureAuctionData(_:)), name: NSNotification.Name.init(NOTIFICATION.AUCTION_FEATURED_DATA), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(removeAuctionData(_:)), name: NSNotification.Name.init(NOTIFICATION.REMOVE_AUCTION_DATA), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshTopData), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_DASHBOARD_TOP_DATA), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshTopData), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_NOTIFICATION_SCREEN), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(clickToNotification(_:)), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_NOTIFICATION_SCREEN), object: nil)
         
         featureCV.register(UINib.init(nibName: "CustomCarCVC", bundle: nil), forCellWithReuseIdentifier: "CustomCarCVC")
         categoryCV.register(UINib.init(nibName: "CustomAuctionCategoryCVC", bundle: nil), forCellWithReuseIdentifier: "CustomAuctionCategoryCVC")
@@ -67,7 +68,7 @@ class HomeVC: UploadImageVC {
         
         refreshControl.tintColor = BlueColor
         refreshControl.addTarget(self, action: #selector(refreshAuctionList), for: .valueChanged)
-        tblView.addSubview(refreshControl)
+        myScroll.refreshControl = refreshControl
         
         if arrAuctionData.count == 0 {
             if AppModel.shared.AUCTION_DATA.count == 0 {
@@ -359,7 +360,7 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             if dict.link != "" {
                 newLable.text = newLable.text! + " " + dict.link
             }
-            let width = newLable.intrinsicContentSize.width + 45
+            let width = newLable.intrinsicContentSize.width + 50
             return CGSize(width: width, height: collectionView.frame.size.height)
         }
         else {
@@ -488,11 +489,12 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
         cell.minPriceLbl.text = "Total Bids: " + dict.auction_bidscount
         cell.currentBidLbl.text = "Current Price " + displayPriceWithCurrency(dict.active_auction_price)
         cell.starBtn.isSelected = (dict.bookmark == "yes")
-        if isUserLogin() && isUserBuyer() {
-            cell.bidNowBtn.isHidden = false
+        
+        if isUserLogin() && !isUserBuyer() {
+            cell.bidNowBtn.isHidden = true
         }
         else{
-            cell.bidNowBtn.isHidden = true
+            cell.bidNowBtn.isHidden = false
         }
         cell.bidNowBtn.tag = indexPath.row
         cell.bidNowBtn.addTarget(self, action: #selector(clickToBidNow(_:)), for: .touchUpInside)
@@ -509,6 +511,10 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
     }
 
     @IBAction func clickToBidNow(_ sender: UIButton) {
+        if !isUserLogin() {
+            AppDelegate().sharedDelegate().showLoginPopup("bid_login_msg")
+            return
+        }
         let vc : CarDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "CarDetailVC") as! CarDetailVC
         vc.auctionData = (searchTxt.text?.trimmed != "") ? arrSearchAuctionData[sender.tag] : arrAuctionData[sender.tag]
         self.navigationController?.pushViewController(vc, animated: true)

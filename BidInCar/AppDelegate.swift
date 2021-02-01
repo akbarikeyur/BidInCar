@@ -502,7 +502,6 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     //Redirect to screen
     func notificationHandler(_ dict : [String : Any])
     {
-        let vc : NotificationVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "NotificationVC") as! NotificationVC
-        UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+        NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_NOTIFICATION_SCREEN), object: nil)
     }
 }

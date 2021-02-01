@@ -85,7 +85,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         arrUserDetail.append(dict)
         dict = [String : Any]()
         dict["title"] = PROFILE.ADDRESS
-        dict["value"] = AppModel.shared.currentUser.user_streetaddress + ", " + AppModel.shared.currentUser.city_name + ", " + AppModel.shared.currentUser.country_name
+        dict["value"] = AppModel.shared.currentUser.user_streetaddress
         arrUserDetail.append(dict)
         dict = [String : Any]()
         dict["title"] = PROFILE.BUILDING

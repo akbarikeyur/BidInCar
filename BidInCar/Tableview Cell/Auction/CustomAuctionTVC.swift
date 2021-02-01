@@ -12,6 +12,7 @@ class CustomAuctionTVC: UITableViewCell {
 
     @IBOutlet weak var profilePicBtn: Button!
     @IBOutlet weak var nameLbl: Label!
+    @IBOutlet weak var categoryLbl: Label!
     @IBOutlet weak var addressLbl: Label!
     @IBOutlet weak var makeFeatureBtn: Button!
     @IBOutlet weak var eyeBtn: Button!
@@ -29,6 +30,7 @@ class CustomAuctionTVC: UITableViewCell {
     @IBOutlet weak var withdrawView: View!
     @IBOutlet weak var withdrawBtn: UIButton!
     @IBOutlet weak var winningPriceView: UIView!
+    @IBOutlet weak var topBidAmountLbl: Label!
     @IBOutlet weak var payNowVew: UIView!
     @IBOutlet weak var payNowBtn: UIButton!
     @IBOutlet weak var winnerView: UIView!

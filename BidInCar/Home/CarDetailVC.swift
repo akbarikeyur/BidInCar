@@ -54,6 +54,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     var autoCheckData = PictureModel.init()
     var isFirstTimeIncrese = true
     var isFromPayment = false
+    var isFromNotification = false
     var currentImageIndex = 0
     
     override func viewDidLoad() {
@@ -70,7 +71,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         depositeTxt.myTxt.keyboardType = .numberPad
         myMapView.showsUserLocation = true
         seeMoreBtn.isHidden = true
-        if !isFromPayment {
+        if !isFromPayment && !isFromNotification {
             setAuctionData()
         }
         
@@ -127,141 +128,109 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }
         lotLbl.text = "Lot # " + String(auctionData.auctionid)
         auctionDetailData = [[String : Any]]()
-        if auctionData.categorytype == "1" {
-            if auctionData.auction_bodytype != "" {
-                auctionDetailData.append(["title" : "Body type", "value" : auctionData.auction_bodytype!])
-            }
-            if auctionData.country_name != "" {
-                auctionDetailData.append(["title" : "Country of made", "value" : auctionData.country_name!])
-            }
-            if auctionData.auction_vin != "" {
-                auctionDetailData.append(["title" : "VIN", "value" : auctionData.auction_vin!])
-            }
-            if auctionData.auction_motorno != "" {
-                auctionDetailData.append(["title" : "Motor No.", "value" : auctionData.auction_motorno!])
-            }
-            if auctionData.auction_extcolour != "" {
-                auctionDetailData.append(["title" : "Exterior colour", "value" : auctionData.auction_extcolour!])
-            }
-            if auctionData.interior_color != "" {
-                auctionDetailData.append(["title" : "Interior colour", "value" : auctionData.interior_color!])
-            }
-            if auctionData.auction_millage != "" {
-                auctionDetailData.append(["title" : "Mileage", "value" : (auctionData.auction_millage! + " K.M.")])
-            }
-            if auctionData.auction_transmission != "" {
-                auctionDetailData.append(["title" : "Transmission", "value" : auctionData.auction_transmission!])
-            }
-            if auctionData.auction_fueltype != "" {
-                auctionDetailData.append(["title" : "Fuel", "value" : auctionData.auction_fueltype!])
-            }
-            if auctionData.no_of_cylinder != "" {
-                auctionDetailData.append(["title" : "No. Of Cylinder", "value" : auctionData.no_of_cylinder!])
-            }
-            if auctionData.doors != "" {
-                auctionDetailData.append(["title" : "Doors", "value" : auctionData.doors!])
-            }
-            if auctionData.auction_horse_power != "" {
-                auctionDetailData.append(["title" : "Horsepower", "value" : auctionData.auction_horse_power!])
-            }
-            if auctionData.warranty != "" {
-                auctionDetailData.append(["title" : "Does the car has a warranty?", "value" : auctionData.warranty!])
-            }
+        
+        if auctionData.country_name != "" {
+            auctionDetailData.append(["title" : "Country of made", "value" : auctionData.country_name!])
         }
-        else if auctionData.categorytype == "2" {
-            if auctionData.country_name != "" {
-                auctionDetailData.append(["title" : "Country of made", "value" : auctionData.country_name!])
-            }
-            if auctionData.auction_millage != "" {
-                auctionDetailData.append(["title" : "Mileage", "value" : (auctionData.auction_millage! + " K.M.")])
-            }
-            if auctionData.mechanical != "" {
-                auctionDetailData.append(["title" : "Mechanical", "value" : auctionData.mechanical!])
-            }
+        if auctionData.category_name != "" {
+            auctionDetailData.append(["title" : "Brand", "value" : auctionData.category_name!])
+        }
+        if auctionData.catchild_name != "" {
+            auctionDetailData.append(["title" : "Model", "value" : auctionData.catchild_name!])
+        }
+        if auctionData.year != "" {
+            auctionDetailData.append(["title" : "Age", "value" : auctionData.year!])
+        }
+        if auctionData.auction_body_condition != "" {
+            auctionDetailData.append(["title" : "Condition", "value" : auctionData.auction_body_condition!])
+        }
+        if auctionData.body_condition != "" {
+            auctionDetailData.append(["title" : "Body Condition", "value" : auctionData.body_condition!])
+        }
+        if auctionData.mechanical != "" {
+            auctionDetailData.append(["title" : "Mechanical Condition", "value" : auctionData.mechanical!])
+        }
+        if auctionData.auction_millage != "" {
+            auctionDetailData.append(["title" : "Mileage", "value" : (auctionData.auction_millage! + " K.M.")])
+        }
+        if auctionData.auction_bodytype != "" {
+            auctionDetailData.append(["title" : "Body type", "value" : auctionData.auction_bodytype!])
+        }
+        if auctionData.auction_vin != "" {
+            auctionDetailData.append(["title" : "VIN", "value" : auctionData.auction_vin!])
+        }
+        if auctionData.auction_motorno != "" {
+            auctionDetailData.append(["title" : "Motor No.", "value" : auctionData.auction_motorno!])
+        }
+        if auctionData.auction_extcolour != "" {
+            auctionDetailData.append(["title" : "Exterior colour", "value" : auctionData.auction_extcolour!])
+        }
+        if auctionData.auction_transmission != "" {
+            auctionDetailData.append(["title" : "Transmission", "value" : auctionData.auction_transmission!])
+        }
+        if auctionData.auction_fueltype != "" {
+            auctionDetailData.append(["title" : "Fuel", "value" : auctionData.auction_fueltype!])
+        }
+        if auctionData.interior_color != "" {
+            auctionDetailData.append(["title" : "Interior colour", "value" : auctionData.interior_color!])
+        }
+        if auctionData.no_of_cylinder != "" {
+            auctionDetailData.append(["title" : "No. Of Cylinder", "value" : auctionData.no_of_cylinder!])
+        }
+        if auctionData.doors != "" {
+            auctionDetailData.append(["title" : "Doors", "value" : auctionData.doors!])
+        }
+        if auctionData.auction_horse_power != "" {
+            auctionDetailData.append(["title" : "Horsepower", "value" : auctionData.auction_horse_power!])
+        }
+        if auctionData.categorytype == "2" {
             if auctionData.wheels != "" {
                 auctionDetailData.append(["title" : "Wheels", "value" : auctionData.wheels!])
             }
             if auctionData.drive_system != "" {
                 auctionDetailData.append(["title" : "Drive System", "value" : auctionData.drive_system!])
             }
-            if auctionData.engine_size != "" {
-                auctionDetailData.append(["title" : "Engine Size", "value" : auctionData.engine_size!])
-            }
         }
-        else if auctionData.categorytype == "3" {
-            if auctionData.country_name != "" {
-                auctionDetailData.append(["title" : "Country of made", "value" : auctionData.country_name!])
+        
+        if auctionData.engine_size != "" {
+            auctionDetailData.append(["title" : "Engine Size", "value" : auctionData.engine_size!])
+        }
+        
+        if auctionData.boat_length != "" {
+            auctionDetailData.append(["title" : "Boat length", "value" : auctionData.boat_length!])
+        }
+        if auctionData.auction_age != "" {
+            auctionDetailData.append(["title" : "Boat Age", "value" : auctionData.auction_age!])
+        }
+        
+        if auctionData.warranty != "" {
+            if auctionData.categorytype == "1" || auctionData.categorytype == "4" {
+                auctionDetailData.append(["title" : "Does the car has a warranty?", "value" : auctionData.warranty!])
             }
-            if auctionData.auction_millage != "" {
-                auctionDetailData.append(["title" : "Mileage", "value" : (auctionData.auction_millage! + " K.M.")])
-            }
-            if auctionData.mechanical != "" {
-                auctionDetailData.append(["title" : "Mechanical", "value" : auctionData.mechanical!])
-            }
-            if auctionData.boat_length != "" {
-                auctionDetailData.append(["title" : "Boat length", "value" : auctionData.boat_length!])
-            }
-            if auctionData.auction_age != "" {
-                auctionDetailData.append(["title" : "Boat Age", "value" : auctionData.auction_age!])
-            }
-            if auctionData.warranty != "" {
+            else if auctionData.categorytype == "3" {
                 auctionDetailData.append(["title" : "Boat warranty", "value" : auctionData.warranty!])
             }
         }
-        else if auctionData.categorytype == "4" {
-            auctionDetailData.append(["title" : "Country of made", "value" : auctionData.country_name!])
-            if auctionData.auction_vin != ""{
-                auctionDetailData.append(["title" : "VIN", "value" : auctionData.auction_vin!])
-            }
-            if auctionData.auction_motorno != ""{
-                auctionDetailData.append(["title" : "Motor No.", "value" : auctionData.auction_motorno!])
-            }
-            if auctionData.auction_extcolour != ""{
-                auctionDetailData.append(["title" : "Exterior colour", "value" : auctionData.auction_extcolour!])
-            }
-            if auctionData.interior_color != ""{
-                auctionDetailData.append(["title" : "Interior colour", "value" : auctionData.interior_color!])
-            }
-            if auctionData.auction_millage != ""{
-                auctionDetailData.append(["title" : "Mileage", "value" : (auctionData.auction_millage! + " K.M.")])
-            }
-            if auctionData.auction_transmission != ""{
-                auctionDetailData.append(["title" : "Transmission", "value" : auctionData.auction_transmission!])
-            }
-            if auctionData.auction_fueltype != ""{
-                auctionDetailData.append(["title" : "Fuel", "value" : auctionData.auction_fueltype!])
-            }
-            if auctionData.no_of_cylinder != ""{
-                auctionDetailData.append(["title" : "No. Of Cylinder", "value" : auctionData.no_of_cylinder!])
-            }
-            if auctionData.doors != ""{
-                auctionDetailData.append(["title" : "Doors", "value" : auctionData.doors!])
-            }
-            if auctionData.auction_horse_power != ""{
-                auctionDetailData.append(["title" : "Horsepower", "value" : auctionData.auction_horse_power!])
-            }
-            if auctionData.warranty != ""{
-                auctionDetailData.append(["title" : "Does the car has a warranty?", "value" : auctionData.warranty!])
-            }
+        
+        
+        if auctionData.categorytype == "1" {
+            
         }
-        else {
-            if auctionData.country_name != ""{
-                auctionDetailData.append(["title" : "Country of made", "value" : auctionData.country_name!])
-            }
-            if auctionData.mechanical != ""{
-                auctionDetailData.append(["title" : "Mechanical", "value" : auctionData.mechanical!])
-            }
+        else if auctionData.categorytype == "2" {
+           
+        }
+        else if auctionData.categorytype == "3" {
+            
+        }
+        else if auctionData.categorytype == "4" {
+            
+        }
+        else if auctionData.categorytype == "5" {
+            
         }
         
-        if auctionData.body_condition != "" {
-            auctionDetailData.append(["title" : "Body Condition", "value" : auctionData.body_condition!])
-        }
-        if auctionData.auction_body_condition != "" {
-            auctionDetailData.append(["title" : "Condition", "value" : auctionData.auction_body_condition!])
-        }
-        if auctionData.year != "" {
-            auctionDetailData.append(["title" : "Year", "value" : auctionData.year!])
-        }
+        
+        
         tblView.reloadData()
         
         auctionTermsLbl.text = ""// auctionData.auction_terms.html2String
@@ -282,7 +251,9 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     func updateRemainingTime()
     {
         if let endDate : Date = getDateFromDateString(strDate: auctionData.auction_end, format: "yyyy-MM-dd") {
-            if let time : String = getRemaingTimeInDayHourMinuteSecond(endDate), time != ""{
+            let newDate = endDate.addDays(daysToAdd: 1)
+            let time : String = getRemaingTimeInDayHourMinuteSecond(newDate)
+            if time != ""{
                 remainingTimeLbl.text = time
                 delay(1.0) {
                     self.updateRemainingTime()
@@ -559,7 +530,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     //MARK:- Service called
     func serviceCallToGetAuctionDetail()
     {
-        APIManager.shared.serviceCallToGetAuctionDetail(auctionData.auctionid, isFromPayment) { (data) in
+        APIManager.shared.serviceCallToGetAuctionDetail(auctionData.auctionid, (isFromPayment || isFromNotification)) { (data) in
             if let tempData : [String : Any] = data["auction"] as? [String : Any] {
                 self.auctionData = AuctionModel.init(dict: tempData)
             }
@@ -601,7 +572,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                 self.auctionPriceLbl.text = displayPriceWithCurrency(self.auctionData.active_auction_price)
             }
             
-            if self.isFromPayment {
+            if self.isFromPayment || self.isFromNotification {
                 self.setAuctionData()
             }
             NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_AUCTION_DATA), object: self.auctionData)

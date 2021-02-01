@@ -70,10 +70,10 @@ func getTableBackgroundViewForNoData(_ str:String, size:CGSize) -> UIView {
 }
 func showCreditFormattedStr(_ credit:Int?) -> String{
     if(credit == nil){
-        return "$0"
+        return CONSTANT.CURRENCY + "0"
     }
     else{
-        return "$" + String(credit!)
+        return CONSTANT.CURRENCY + String(credit!)
     }
 }
 

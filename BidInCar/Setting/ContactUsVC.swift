@@ -77,7 +77,14 @@ class ContactUsVC: UploadImageVC {
         self.view.endEditing(true)
         if selectedImage != nil {
             uploadContactFile()
-        }else{
+        }
+        else if interestedTxtView.myTxt.text?.trimmed == "" {
+            displayToast("select_interest")
+        }
+        else if commentTxtView.myTxt.text?.trimmed == "" {
+            displayToast("add_comment")
+        }
+        else{
             serviceCallToContactUs("")
         }
     }

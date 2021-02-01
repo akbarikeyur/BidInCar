@@ -11,6 +11,7 @@ import UIKit
 class NotificationVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tblView: UITableView!
+    @IBOutlet weak var noDataLbl: Label!
     
     var arrData = [NotificationModel]()
     
@@ -19,6 +20,7 @@ class NotificationVC: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         // Do any additional setup after loading the view.
         tblView.register(UINib.init(nibName: "CustomNotificationTVC", bundle: nil), forCellReuseIdentifier: "CustomNotificationTVC")
+        noDataLbl.isHidden = true
         serviceCallToGetNotification()
     }
     
@@ -39,14 +41,21 @@ class NotificationVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.messageLbl.text = dict.message
         cell.timeLbl.text = dict.createdon
         if let date = getDateFromDateString(strDate: dict.createdon, format: "YYYY-MM-dd") {
-            if let strDate : String = getDateStringFromDate(date: date, format: "d MMM, yyyy") {
-                cell.timeLbl.text = strDate
-            }
+            cell.timeLbl.text = getDateStringFromDate(date: date, format: "d MMM, yyyy")
         }
         cell.newBtn.isHidden = (dict.status == "read")
         cell.contentView.backgroundColor = WhiteColor
         cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tempAuction = AuctionModel.init(dict: [String : Any]())
+        tempAuction.auctionid = arrData[indexPath.row].auctionid
+        let vc : CarDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "CarDetailVC") as! CarDetailVC
+        vc.isFromNotification = true
+        vc.auctionData = tempAuction
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     /*
@@ -71,6 +80,7 @@ extension NotificationVC {
                 }
             }
             self.tblView.reloadData()
+            self.noDataLbl.isHidden = (self.arrData.count > 0)
         }
     }
 }

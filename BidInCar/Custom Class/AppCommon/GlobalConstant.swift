@@ -95,7 +95,7 @@ struct CONSTANT{
     
     static let IMAGE_QUALITY   =  1
     
-    static let CURRENCY   =  "$"
+    static let CURRENCY   =  "AED"
     static let DIST_MEASURE   =  "km"
     static let TIME_ZONE = "Australia/Sydney"
     

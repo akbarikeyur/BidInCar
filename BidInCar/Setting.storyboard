@@ -1966,24 +1966,43 @@
                                     <outlet property="delegate" destination="fcw-tF-fxw" id="x3w-ad-6gT"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no any notification yet." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0t-ez-ZpP" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="20" y="274" width="280" height="20"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="nda-Ig-CY4" secondAttribute="bottom" constant="-5" id="Ajj-nw-Tva"/>
+                            <constraint firstItem="B0t-ez-ZpP" firstAttribute="leading" secondItem="zUZ-EB-reI" secondAttribute="leading" constant="20" id="Ceh-is-IgW"/>
                             <constraint firstItem="RTZ-fF-0YY" firstAttribute="trailing" secondItem="zUZ-EB-reI" secondAttribute="trailing" id="E1U-Es-62F"/>
                             <constraint firstItem="nda-Ig-CY4" firstAttribute="leading" secondItem="Cnx-Qi-Tqh" secondAttribute="leading" constant="-5" id="EJH-gf-ifK"/>
                             <constraint firstItem="zUZ-EB-reI" firstAttribute="trailing" secondItem="RjN-7O-Kzo" secondAttribute="trailing" id="MqE-eA-5yw"/>
                             <constraint firstItem="RTZ-fF-0YY" firstAttribute="leading" secondItem="zUZ-EB-reI" secondAttribute="leading" id="RED-Mz-QdS"/>
                             <constraint firstItem="RTZ-fF-0YY" firstAttribute="top" secondItem="zUZ-EB-reI" secondAttribute="top" id="TO5-x2-eXo"/>
                             <constraint firstItem="zUZ-EB-reI" firstAttribute="bottom" secondItem="RjN-7O-Kzo" secondAttribute="bottom" id="VTq-7C-WLG"/>
+                            <constraint firstItem="zUZ-EB-reI" firstAttribute="trailing" secondItem="B0t-ez-ZpP" secondAttribute="trailing" constant="20" id="cEL-6R-uQU"/>
                             <constraint firstAttribute="trailing" secondItem="nda-Ig-CY4" secondAttribute="trailing" constant="-5" id="e4q-Bp-1B6"/>
                             <constraint firstItem="RjN-7O-Kzo" firstAttribute="top" secondItem="RTZ-fF-0YY" secondAttribute="bottom" id="gYV-2f-LT6"/>
                             <constraint firstItem="nda-Ig-CY4" firstAttribute="top" secondItem="Cnx-Qi-Tqh" secondAttribute="top" constant="-5" id="kGT-ju-4rf"/>
                             <constraint firstItem="RjN-7O-Kzo" firstAttribute="leading" secondItem="zUZ-EB-reI" secondAttribute="leading" id="pye-yi-w3p"/>
+                            <constraint firstItem="B0t-ez-ZpP" firstAttribute="centerY" secondItem="Cnx-Qi-Tqh" secondAttribute="centerY" id="zrl-p7-gIX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zUZ-EB-reI"/>
                     </view>
                     <connections>
+                        <outlet property="noDataLbl" destination="B0t-ez-ZpP" id="X6p-3S-YED"/>
                         <outlet property="tblView" destination="RjN-7O-Kzo" id="LpZ-Y0-52t"/>
                     </connections>
                 </viewController>

@@ -365,6 +365,7 @@
                         <outlet property="maxPriceTxt" destination="oum-hc-FjV" id="DbQ-zM-uEF"/>
                         <outlet property="minPriceTxt" destination="7Fh-iD-NXh" id="oJt-oI-cjp"/>
                         <outlet property="modelLbl" destination="3TJ-1l-RPA" id="x39-16-xMr"/>
+                        <outlet property="myScroll" destination="HFU-or-Wqi" id="Tok-jH-C87"/>
                         <outlet property="noDataLbl" destination="k1u-OP-ipB" id="yoB-vx-kdZ"/>
                         <outlet property="searchTxt" destination="6r5-pb-o11" id="btM-WE-tjA"/>
                         <outlet property="tblView" destination="aKD-Rf-nXs" id="TUD-qo-OV3"/>
@@ -962,16 +963,28 @@
                                                             <action selector="clickToBookmark:" destination="2JR-zh-nhY" eventType="touchUpInside" id="Swe-Df-FjC"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haZ-pg-yUH">
+                                                        <rect key="frame" x="270" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="0CM-3j-VdI"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <action selector="clickToBookmark:" destination="2JR-zh-nhY" eventType="touchUpInside" id="1UJ-b9-fTI"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.95686274509803915" green="0.76078431372549016" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="ftA-yu-c0d" firstAttribute="centerX" secondItem="lDu-NL-ven" secondAttribute="centerX" id="0Sq-6p-ZxQ"/>
                                                     <constraint firstItem="eKk-mK-yyH" firstAttribute="top" secondItem="lDu-NL-ven" secondAttribute="top" constant="3" id="2dH-FY-uW4"/>
+                                                    <constraint firstAttribute="trailing" secondItem="haZ-pg-yUH" secondAttribute="trailing" id="6g8-Kr-hnl"/>
                                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ftA-yu-c0d" secondAttribute="bottom" constant="1.5" id="G2S-Wv-28M"/>
                                                     <constraint firstAttribute="height" constant="50" id="H5z-Du-2Mi"/>
                                                     <constraint firstItem="azb-Zy-P2Q" firstAttribute="centerY" secondItem="lDu-NL-ven" secondAttribute="centerY" id="OUH-Lb-kQw"/>
+                                                    <constraint firstAttribute="bottom" secondItem="haZ-pg-yUH" secondAttribute="bottom" id="bph-8C-XGF"/>
                                                     <constraint firstAttribute="trailing" secondItem="azb-Zy-P2Q" secondAttribute="trailing" constant="10" id="hKY-Oe-24p"/>
                                                     <constraint firstItem="ftA-yu-c0d" firstAttribute="top" secondItem="eKk-mK-yyH" secondAttribute="bottom" id="s3Q-JS-Sxo"/>
+                                                    <constraint firstItem="haZ-pg-yUH" firstAttribute="top" secondItem="lDu-NL-ven" secondAttribute="top" id="uJ7-lN-dEE"/>
                                                     <constraint firstItem="eKk-mK-yyH" firstAttribute="centerX" secondItem="lDu-NL-ven" secondAttribute="centerX" id="wv2-Ik-mzz"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -2479,7 +2492,7 @@ dG8gYmlkLiDigJxEZXBvc2l0Ig
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting Price : $ 3000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEM-0F-6kA" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting Price : AED 3000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEM-0F-6kA" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                                 <rect key="frame" x="90" y="230" width="220" height="17"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" red="0.40784313729999999" green="0.38431372549999998" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>

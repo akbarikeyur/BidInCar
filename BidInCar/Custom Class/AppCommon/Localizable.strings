@@ -183,3 +183,7 @@
 "auction_withdraw_title" = "Auction Withdraw";
 "auction_withdraw_message" = "Are you sure want to withdraw auction?";
 "no_inspection_report" = "No inspection report found";
+
+//Contact Us
+"select_interest" = "Please select your interest.";
+"add_comment" = "Please enter your comment.";

@@ -81,7 +81,7 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
         }
         
         titleLbl.text = auction.auction_title
-        startPriceLbl.text = "Starting Price : $ " + auction.auction_price
+        startPriceLbl.text = "Starting Price : " + displayPriceWithCurrency(auction.auction_price)
         currentPriceLbl.text = displayPriceWithCurrency(auction.active_auction_price)
         bidLbl.text = String(auction.auction_bidscount)
         minIncrementLbl.text = displayPriceWithCurrency(auction.auction_bidprice)
@@ -159,9 +159,9 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
             self.sortLbl.text = item
             self.arrBidData = self.arrBidData.sorted(by: { (temp1 : BidModel, temp2 : BidModel) -> Bool in
                 if index == 0 {
-                    return temp1.bidprice > temp2.bidprice
-                }else{
                     return temp1.bidprice < temp2.bidprice
+                }else{
+                    return temp1.bidprice > temp2.bidprice
                 }
             })
             self.bidCV.reloadData()
@@ -207,7 +207,7 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
             return cell
         }else{
             let cell : CustomBidPriceCVC = bidCV.dequeueReusableCell(withReuseIdentifier: "CustomBidPriceCVC", for: indexPath) as! CustomBidPriceCVC
-            cell.numberLbl.text = "#" + String(indexPath.row)
+            cell.numberLbl.text = "#" + String(indexPath.row + 1)
             cell.priceLbl.text = "AED " + arrBidData[indexPath.row].bidprice
             return cell
         }
@@ -268,7 +268,7 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
             self.auction.bidlist = self.arrBidData
             if self.arrBidData.count > 0 {
                 self.arrBidData = self.arrBidData.sorted { (temp1, temp2) -> Bool in
-                    return temp1.bidprice > temp2.bidprice
+                    return temp1.bidprice < temp2.bidprice
                 }
             }
             if self.auction.bidlist.count == 0 {

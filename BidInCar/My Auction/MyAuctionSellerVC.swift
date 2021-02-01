@@ -208,6 +208,14 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
                }
             }
             cell.nameLbl.text = dict.auction_title
+            let index = AppModel.shared.AUCTION_TYPE.firstIndex { (temp) -> Bool in
+                temp.id == Int(dict.categorytype)
+            }
+            if index != nil {
+                cell.categoryLbl.text = AppModel.shared.AUCTION_TYPE[index!].name
+            }else{
+                cell.categoryLbl.text = ""
+            }
             cell.addressLbl.text = dict.auction_address
             cell.currentBidLbl.text = "Current Bid " + displayPriceWithCurrency(dict.active_auction_price)
             cell.lotLbl.text = "Lot #\n" + dict.auctionid
