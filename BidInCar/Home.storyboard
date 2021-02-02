@@ -930,8 +930,8 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(MIN INCREASE AED 100)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftA-yu-c0d" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="92" y="28.5" width="136" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Minimum bid increment AED 100)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftA-yu-c0d" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                                        <rect key="frame" x="60.5" y="28.5" width="199.5" height="17"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1393,7 +1393,7 @@
                                                                 <rect key="frame" x="92.5" y="55" width="207.5" height="50.5"/>
                                                                 <string key="text" base64-UTF8="YES">
 WW91ciBhY2NvdW50IHNob3VsZCBoYXZlIDIwJSBiYWxhbmNlIG9mIHRoZSBhbW91bnQDeW91IHdpc2gg
-dG8gYmlkLiDigJxEZXBvc2l0Ig
+dG8gYmlkLiBEZXBvc2l0A
 </string>
                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1408,16 +1408,27 @@ dG8gYmlkLiDigJxEZXBvc2l0Ig
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNT-KS-GXd">
+                                                                <rect key="frame" x="92.5" y="55" width="207.5" height="50.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                <connections>
+                                                                    <action selector="clickToOpenDepositeView:" destination="2JR-zh-nhY" eventType="touchUpInside" id="cx9-KA-YR3"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
+                                                            <constraint firstItem="iNT-KS-GXd" firstAttribute="leading" secondItem="rY3-ZS-I5o" secondAttribute="leading" id="3mC-1O-083"/>
                                                             <constraint firstItem="3QQ-Cn-ULR" firstAttribute="leading" secondItem="uwB-GC-Rpw" secondAttribute="leading" constant="20" id="85z-dz-zZ9"/>
                                                             <constraint firstAttribute="trailing" secondItem="P1g-Ky-etw" secondAttribute="trailing" constant="20" id="EKp-f4-K25"/>
+                                                            <constraint firstItem="iNT-KS-GXd" firstAttribute="top" secondItem="rY3-ZS-I5o" secondAttribute="top" id="F2D-vi-Smm"/>
                                                             <constraint firstItem="YQj-uS-lMx" firstAttribute="centerY" secondItem="DI7-ax-BOJ" secondAttribute="centerY" id="Gxf-U7-zSA"/>
                                                             <constraint firstItem="rY3-ZS-I5o" firstAttribute="leading" secondItem="3QQ-Cn-ULR" secondAttribute="trailing" constant="5" id="IZE-Ea-TS7"/>
                                                             <constraint firstAttribute="bottom" secondItem="rY3-ZS-I5o" secondAttribute="bottom" constant="20" id="J11-yU-x55"/>
                                                             <constraint firstItem="P1g-Ky-etw" firstAttribute="top" secondItem="uwB-GC-Rpw" secondAttribute="top" constant="15" id="MpS-Od-6i8"/>
                                                             <constraint firstItem="P1g-Ky-etw" firstAttribute="leading" secondItem="71U-vP-SoU" secondAttribute="trailing" constant="15" id="ZFR-1e-xrq"/>
+                                                            <constraint firstItem="iNT-KS-GXd" firstAttribute="trailing" secondItem="rY3-ZS-I5o" secondAttribute="trailing" id="aSg-PV-bYL"/>
+                                                            <constraint firstItem="iNT-KS-GXd" firstAttribute="bottom" secondItem="rY3-ZS-I5o" secondAttribute="bottom" id="baW-S3-hun"/>
                                                             <constraint firstItem="YQj-uS-lMx" firstAttribute="leading" secondItem="DI7-ax-BOJ" secondAttribute="trailing" constant="10" id="hFD-Vq-VGw"/>
                                                             <constraint firstItem="71U-vP-SoU" firstAttribute="leading" secondItem="YQj-uS-lMx" secondAttribute="trailing" constant="10" id="hTH-e3-uj0"/>
                                                             <constraint firstItem="rY3-ZS-I5o" firstAttribute="top" secondItem="YQj-uS-lMx" secondAttribute="bottom" constant="10" id="mBy-Fv-9KP"/>
@@ -1897,6 +1908,7 @@ dG8gYmlkLiDigJxEZXBvc2l0Ig
                         <outlet property="constraintHeightCarCV" destination="BgX-sN-Uah" id="M1o-bX-F8b"/>
                         <outlet property="constraintHeightPictureView" destination="XbT-2j-2Wz" id="1UX-yr-Ci2"/>
                         <outlet property="constraintHeightTblView" destination="kaL-Pa-fVy" id="cIy-Ta-Y3H"/>
+                        <outlet property="depositLbl" destination="rY3-ZS-I5o" id="lQz-P1-gqT"/>
                         <outlet property="depositeTxt" destination="RfC-qu-yZz" id="GNc-7F-iwp"/>
                         <outlet property="depositeView" destination="jPO-vw-1XK" id="B8E-G1-1Cs"/>
                         <outlet property="editBtn" destination="zvy-gP-G58" id="tgj-p4-8Ch"/>

@@ -89,7 +89,8 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         nameLbl.text = auctionData.auction_title
         winnerLbl.text = "Winner: " + auctionData.auction_winner.winner_name
         lotLbl.text = "Lot #\n" + auctionData.auctionid
-        currentPriceLbl.text = "Current Price AED " + auctionData.auction_winner.winneing_price
+        currentPriceLbl.text = "Current Price " + displayPriceWithCurrency(auctionData.auction_winner.winneing_price)
+        currentPriceLbl.attributedText = attributedStringWithColor(currentPriceLbl.text!, ["Current Price"], color: BlueColor)
         updateRemainingTime()
         bidCountLbl.text = "Bids #" + auctionData.auction_bidscount
         odometerLbl.text = "Odometer " + auctionData.auction_millage + "K.M"

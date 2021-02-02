@@ -24,6 +24,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var seeMoreBtn: UIButton!
     @IBOutlet weak var auctionTermsLbl: Label!
     @IBOutlet weak var lotLbl: Label!
+    @IBOutlet weak var depositLbl: Label!
     
     @IBOutlet weak var pictureView: UIView!
     @IBOutlet weak var constraintHeightPictureView: NSLayoutConstraint!//250
@@ -66,6 +67,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         tblView.register(UINib.init(nibName: "CustomCarDetailTVC", bundle: nil), forCellReuseIdentifier: "CustomCarDetailTVC")
         
         termsConditionLbl.attributedText = getAttributeStringWithColor(termsConditionLbl.text!, [termsConditionLbl.text!], color: UIColor.blue, font: termsConditionLbl.font, isUnderLine: true)
+        depositLbl.attributedText = getAttributeStringWithColor(depositLbl.text!, ["Deposit"], color: BlueColor, font: depositLbl.font, isUnderLine: true)
         
         setTextFieldPlaceholderColor(myBidTxt, LightGrayColor)
         depositeTxt.myTxt.keyboardType = .numberPad
@@ -100,7 +102,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }else{
             auctionPriceLbl.text = displayPriceWithCurrency(auctionData.active_auction_price)
         }
-        minAuctionPriceLbl.text = "(MIN INCREASE " + displayPriceWithCurrency(auctionData.auction_bidprice) + ")"
+        minAuctionPriceLbl.text = "(Minimum bid increment " + displayPriceWithCurrency(auctionData.auction_bidprice) + ")"
         bookmarkBtn.isSelected = (auctionData.bookmark == "yes")
         updateRemainingTime()
         endTimeLbl.text = getDateStringFromDateWithLocalTimezone(date: getDateFromDateString(strDate: auctionData.auction_end, format: "yyyy-MM-dd")!, format: "dd MMM, yyyy")

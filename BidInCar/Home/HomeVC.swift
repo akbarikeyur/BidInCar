@@ -486,7 +486,7 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
         cell.featureView.isHidden = (dict.auction_featured != "yes")
         cell.titleLbl.text = dict.auction_title
         cell.timeLbl.text = getRemainingTime(dict.auction_end) + " left  " + getDateStringFromDateWithLocalTimezone(date: getDateFromDateString(strDate: dict.auction_end, format: "YYYY-MM-dd")!, format: "dd MMM, YYYY")
-        cell.minPriceLbl.text = "Total Bids: " + dict.auction_bidscount
+        cell.minPriceLbl.text = "Bid Count: " + dict.auction_bidscount
         cell.currentBidLbl.text = "Current Price " + displayPriceWithCurrency(dict.active_auction_price)
         cell.starBtn.isSelected = (dict.bookmark == "yes")
         

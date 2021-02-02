@@ -31,7 +31,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
     var selectedAuction = AuctionModel.init()
     var refreshControl = UIRefreshControl.init()
     
-    var packagePrice = ""
+    var packagePrice = "97"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -407,7 +407,9 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
             }
             self.noDataFoundLbl.isHidden = (arrAuction.count > 0)
             self.tblView.reloadData()
-            self.packagePrice = package.featured_price
+            if package.featured_price != "" && package.featured_price != "0" {
+                self.packagePrice = package.featured_price
+            }
             self.setupPrice()
         }
     }
