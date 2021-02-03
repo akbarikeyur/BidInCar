@@ -1,0 +1,135 @@
+
+/* Class = "UIButton"; normalTitle = "SIGN UP"; ObjectID = "0IQ-JO-LsZ"; */
+"0IQ-JO-LsZ.normalTitle" = "سجل";
+
+/* Class = "UILabel"; text = "Turn on\nNotificaitions"; ObjectID = "1Pt-aF-f7r"; */
+"1Pt-aF-f7r.text" = "إشعارات\nشغله";
+
+/* Class = "UILabel"; text = "Not a member? Register Now"; ObjectID = "2rL-f9-LpI"; */
+"2rL-f9-LpI.text" = "ليس عضوا؟ سجل الان";
+
+/* Class = "UIButton"; normalTitle = "Forgot Password?"; ObjectID = "4sl-iZ-6YE"; */
+"4sl-iZ-6YE.normalTitle" = "هل نسيت كلمة المرور?";
+
+/* Class = "UIButton"; normalTitle = "VERIFY"; ObjectID = "4u8-Sd-zTR"; */
+"4u8-Sd-zTR.normalTitle" = "تحقق";
+
+/* Class = "UILabel"; text = "Turn on notifications"; ObjectID = "64Q-rl-8fV"; */
+"64Q-rl-8fV.text" = "تشغيل الإخطارات";
+
+/* Class = "UIButton"; normalTitle = "Resend"; ObjectID = "9uh-uY-Hjw"; */
+"9uh-uY-Hjw.normalTitle" = "إعادة إرسال";
+
+/* Class = "UILabel"; text = "Welcome Back!\nSign in"; ObjectID = "Bjd-HS-NWE"; */
+"Bjd-HS-NWE.text" = "تسجيل الدخول\nمرحبا بعودتك!";
+
+/* Class = "UILabel"; text = "User Name"; ObjectID = "DMB-OE-Fdf"; */
+"DMB-OE-Fdf.text" = "اسم المستخدم";
+
+/* Class = "UIButton"; normalTitle = "SEND"; ObjectID = "DQI-5Z-rku"; */
+"DQI-5Z-rku.normalTitle" = "إرسال";
+
+/* Class = "UIButton"; normalTitle = "Seller"; ObjectID = "EjZ-ai-Oyk"; */
+"EjZ-ai-Oyk.normalTitle" = "تاجر";
+
+/* Class = "UILabel"; text = "Forgot\nPassword"; ObjectID = "Hgy-S7-YkO"; */
+"Hgy-S7-YkO.text" = "هل نسيت كلمة المرور";
+
+/* Class = "UIButton"; normalTitle = "LOGIN"; ObjectID = "Hnx-gm-zss"; */
+"Hnx-gm-zss.normalTitle" = "تسجيل الدخول";
+
+/* Class = "UIButton"; normalTitle = "LOGIN"; ObjectID = "HxS-tP-fVv"; */
+"HxS-tP-fVv.normalTitle" = "تسجيل الدخول";
+
+/* Class = "UILabel"; text = "Account Type"; ObjectID = "I5y-1v-NQ6"; */
+"I5y-1v-NQ6.text" = "نوع الحساب";
+
+/* Class = "UILabel"; text = "Or log in with"; ObjectID = "IUF-fA-12D"; */
+"IUF-fA-12D.text" = "أو سجل الدخول باستخدام";
+
+/* Class = "UILabel"; text = "Not a member? Sign up"; ObjectID = "Kt4-Jf-NGf"; */
+"Kt4-Jf-NGf.text" = "ليس عضوا؟ سجل";
+
+/* Class = "UIButton"; normalTitle = "Post Auction"; ObjectID = "LzD-Tr-7uU"; */
+"LzD-Tr-7uU.normalTitle" = "بعد المزاد";
+
+/* Class = "UILabel"; text = "A verification code sent to your registered email address. "; ObjectID = "MFn-Vd-GeV"; */
+"MFn-Vd-GeV.text" = ".تم إرسال رمز التحقق إلى عنوان بريدك الإلكتروني المسجل";
+
+/* Class = "UILabel"; text = "We are setting up your account in the background Meanwhile, let us know what kind of account you would like to create."; ObjectID = "MON-jx-PES"; */
+"MON-jx-PES.text" = ".نقوم بإعداد حسابك في الخلفية وفي الوقت نفسه ، أخبرنا بنوع الحساب الذي ترغب في إنشائه";
+
+/* Class = "UILabel"; text = "Enable push notifications to let send you personal news and updates"; ObjectID = "PPV-cC-SLN"; */
+"PPV-cC-SLN.text" = "تمكين دفع الإخطارات للسماح لك بإرسال الأخبار والتحديثات الشخصية";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "Pnm-TK-hmm"; */
+"Pnm-TK-hmm.normalTitle" = "تخطى";
+
+/* Class = "UILabel"; text = "Turn on notifications"; ObjectID = "RZO-qL-yj2"; */
+"RZO-qL-yj2.text" = "تشغيل الإخطارات";
+
+/* Class = "UIButton"; normalTitle = "SIGN UP"; ObjectID = "Tuv-We-LCf"; */
+"Tuv-We-LCf.normalTitle" = "سجل";
+
+/* Class = "UIButton"; normalTitle = "Bids on Auctions"; ObjectID = "VCO-6n-rOG"; */
+"VCO-6n-rOG.normalTitle" = "المزايدة على المزاد";
+
+/* Class = "UIButton"; normalTitle = "Company"; ObjectID = "VEB-IS-nKo"; */
+"VEB-IS-nKo.normalTitle" = "شركة";
+
+/* Class = "UILabel"; text = "Verify Your\nAccount"; ObjectID = "XRv-Fu-bbg"; */
+"XRv-Fu-bbg.text" = "Verify Your\nAccount";
+
+/* Class = "UILabel"; text = "Your current bidding Limit: 5000"; ObjectID = "Z1W-Kn-KAu"; */
+"Z1W-Kn-KAu.text" = "Your current bidding Limit: 5000";
+
+/* Class = "UILabel"; text = "Now buy any car on auction from anywhere around the world. Start your auction now"; ObjectID = "aPB-dS-TgO"; */
+"aPB-dS-TgO.text" = "Now buy any car on auction from anywhere around the world. Start your auction now";
+
+/* Class = "UIButton"; normalTitle = "Continue as guest login"; ObjectID = "d0c-Sn-LMj"; */
+"d0c-Sn-LMj.normalTitle" = "Continue as guest login";
+
+/* Class = "UILabel"; text = "To keep connected with us please login with your personal info."; ObjectID = "em8-ba-RCq"; */
+"em8-ba-RCq.text" = "To keep connected with us please login with your personal info.";
+
+/* Class = "UIButton"; normalTitle = "Bids on Auctions"; ObjectID = "gNH-WO-r4K"; */
+"gNH-WO-r4K.normalTitle" = "Bids on Auctions";
+
+/* Class = "UILabel"; text = "Thank you!\nfor signing up"; ObjectID = "gzh-Qn-zR0"; */
+"gzh-Qn-zR0.text" = "Thank you!\nfor signing up";
+
+/* Class = "UILabel"; text = "We Auction clean & salvage title cars trucksmore in our online auctions every week"; ObjectID = "hgI-jy-2Pd"; */
+"hgI-jy-2Pd.text" = "We Auction clean & salvage title cars trucksmore in our online auctions every week";
+
+/* Class = "UILabel"; text = "Buyer"; ObjectID = "k3C-Dv-BwC"; */
+"k3C-Dv-BwC.text" = "Buyer";
+
+/* Class = "UILabel"; text = "Strong"; ObjectID = "n1M-dQ-w6F"; */
+"n1M-dQ-w6F.text" = "Strong";
+
+/* Class = "UILabel"; text = "A verification code sent to your phone number. "; ObjectID = "nQt-tR-iLJ"; */
+"nQt-tR-iLJ.text" = "A verification code sent to your phone number. ";
+
+/* Class = "UILabel"; text = "Already Member?  Sign in"; ObjectID = "pRO-ad-EKt"; */
+"pRO-ad-EKt.text" = "Already Member?  Sign in";
+
+/* Class = "UIButton"; normalTitle = "Post Auction"; ObjectID = "sbI-0C-oMw"; */
+"sbI-0C-oMw.normalTitle" = "Post Auction";
+
+/* Class = "UIButton"; normalTitle = "Individual"; ObjectID = "sn4-7g-6jy"; */
+"sn4-7g-6jy.normalTitle" = "Individual";
+
+/* Class = "UILabel"; text = "World's largest car\nauction app"; ObjectID = "ujq-01-HyS"; */
+"ujq-01-HyS.text" = "World's largest car\nauction app";
+
+/* Class = "UIButton"; normalTitle = "Buyer"; ObjectID = "wN2-r4-Ign"; */
+"wN2-r4-Ign.normalTitle" = "Buyer";
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "wnq-t8-V3D"; */
+"wnq-t8-V3D.text" = "Login";
+
+/* Class = "UILabel"; text = "Or log in with"; ObjectID = "xyf-wZ-Eah"; */
+"xyf-wZ-Eah.text" = "Or log in with";
+
+/* Class = "UIButton"; normalTitle = "Keep signed in"; ObjectID = "z9e-jl-SQd"; */
+"z9e-jl-SQd.normalTitle" = "Keep signed in";

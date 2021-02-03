@@ -40,8 +40,8 @@ class NotificationVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.titleLbl.text = dict.auction_title
         cell.messageLbl.text = dict.message
         cell.timeLbl.text = dict.createdon
-        if let date = getDateFromDateString(strDate: dict.createdon, format: "YYYY-MM-dd") {
-            cell.timeLbl.text = getDateStringFromDate(date: date, format: "d MMM, yyyy")
+        if let date = getDateFromDateString(strDate: dict.createdon, format: "YYYY-MM-dd HH:mm:ss") {
+            cell.timeLbl.text = getDateStringFromDate(date: date, format: "d MMM, yyyy hh:mm a")
         }
         cell.newBtn.isHidden = (dict.status == "read")
         cell.contentView.backgroundColor = WhiteColor

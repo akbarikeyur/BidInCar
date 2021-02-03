@@ -1,0 +1,187 @@
+"cancel_button" = "إلغاء";
+"yes_button" = "نعم";
+"no_button" = "لا";
+"ok_button" = "موافق";
+"take_photo" = "تصوير";
+"existing_photo" = "اختر صورة موجودة";
+"remove_photo" = "إزالة الصورة";
+"device_no_camera" = "جهازك ليس به كاميرا";
+
+//Side menu
+"menu_home" = "الصفحة الرئيسية";
+"menu_auction" = "مزاداتي";
+"menu_bookmark" = "قائمة الرغبات";
+"menu_post" = "بعد المزاد";
+"menu_package" = "رزمة:";
+"menu_calc" = "حاسبة الشحن";
+"menu_profile" = "ملفي";
+"menu_contact" = "اتصل بنا";
+"menu_terms" = "الأحكام والشروط";
+"menu_privacy" = "سياسة الخصوصية";
+"menu_logout" = "تسجيل خروج";
+"menu_how_sell" = "كيف تبيع؟";
+"menu_how_buy" = "كيف اشترى؟";
+
+"logout_title" = "تسجيل خروج";
+"logout_msg" = "هل أنت متأكد أنك تريد تسجيل الخروج؟";
+
+//Login-signup
+"enter_email" = "الرجاء إدخال البريد الإلكتروني";
+"enter_password" = "الرجاء إدخال كلمة المرور";
+
+"enter_fname" = "الرجاء إدخال الاسم الكامل";
+"enter_lname" = "الرجاء إدخال الاسم الأخير";
+"invalid_email" = "بريد إلكتروني خاطئ";
+"enter_address" = "الرجاء إدخال عنوان الشارع";
+"enter_building" = "الرجاء إدخال اسم المبنى";
+"enter_flat_number" = "الرجاء إدخال رقم الشقة";
+"enter_po_box" = "الرجاء إدخال صندوق البريد";
+"select_city" = "الرجاء تحديد المدينة";
+"select_country" = "الرجاء تحديد الدولة";
+"enter_phone" = "الرجاء إدخال رقم الهاتف";
+"enter_confirm_password" = "الرجاء إدخال تأكيد كلمة المرور";
+"invalid_match_password" = "يجب أن تكون كلمة المرور وتأكيد كلمة المرور متطابقتين";
+"select_account_type" = "الرجاء تحديد نوع الحساب";
+"enter_company_name" = "الرجاء إدخال اسم الشركة";
+"enter_company_code" = "الرجاء إدخال رمز الدولة";
+"enter_company_phone" = "الرجاء إدخال رقم هاتف الشركة";
+"enter_company_address" = "الرجاء إدخال عنوان الشركة";
+"enter_company_building" = "الرجاء إدخال اسم المبنى";
+"enter_company_suit" = "الرجاء إدخال رقم البدلة";
+"enter_verification_code" = "الرجاء إدخال الرمز";
+"enter_company_email" = "الرجاء إدخال البريد الإلكتروني للشركة";
+
+//Guest User Message
+"bookmark_login_msg" = ".الرجاء تسجيل الدخول / التسجيل لإضافة قائمة الرغبات";
+"bookmark_list_login_msg" = ".الرجاء تسجيل الدخول / التسجيل لرؤية قائمة الرغبات الخاصة بك";
+"my_auction_list_login_msg" = ".الرجاء تسجيل الدخول / التسجيل لرؤية المزادات الخاصة بك";
+"post_auction_login_msg" = ".الرجاء تسجيل الدخول / التسجيل لنشر مزاد";
+"bid_login_msg" = ".الرجاء تسجيل الدخول / الاشتراك للمزايدة المزاد";
+"add_deposite_login_msg" = ".الرجاء تسجيل الدخول / التسجيل لإضافة الإيداع";
+"my_profile_login_msg" = ".الرجاء تسجيل الدخول / التسجيل لرؤية ملف التعريف الخاص بك";
+
+//Home
+"invalid_price" = "سعر غير صالح";
+
+//Auction detail
+"enter_bid_price" = "الرجاء إدخال سعر العطاء الخاص بك";
+"add_bookmark" = "أضيف المزاد إلى قائمة الرغبات الخاصة بك";
+"remove_bookmark" = "تمت إزالة المزاد من قائمة الرغبات";
+"lower_bid_current_bid" = "عرض التسعير الخاص بك أقل من العطاء الحالي";
+"lower_bid" = "مبلغ العطاء الخاص بك أقل";
+
+//Payment detail
+"enter_card_name" = "الرجاء إدخال اسم البطاقة";
+"enter_card_number" = "الرجاء إدخال رقم البطاقة";
+"enter_csv_number" = "الرجاء إدخال رقم CSV";
+"enter_expire_date" = "الرجاء تحديد تاريخ انتهاء الصلاحية";
+"enter_expire_year" = "الرجاء تحديد السنة";
+"card_add_success" = "تم إدخال البطاقة بنجاح";
+"card_agreement" = ".يرجى قبول شروط الاستخدام وقواعد الطيران وسياسة الخصوصية";
+
+"delete_title" = "حذف";
+"delete_card" = "هل أنت متأكد أنك تريد حذف هذه البطاقة؟";
+
+//Change Password
+"enter_current_pwd" = "الرجاء إدخال كلمة المرور الحالية";
+"enter_new_pwd" = "الرجاء إدخال كلمة المرور الجديدة";
+"different_pwd" = "يجب أن تكون كلمة المرور الحالية وكلمة المرور الجديدة مختلفتين";
+"enter_confirm_pwd" = "الرجاء إدخال تأكيد كلمة المرور";
+"new_confirm_pwd_same" = "يجب أن تكون كلمة المرور الجديدة وتأكيد كلمة المرور متطابقتين";
+"change_pwd_success" = "تم تحديث كلمة السر بنجاح";
+
+//Month Data
+"month_jan" = "كانون الثاني";
+"month_feb" = "شباط";
+"month_mar" = "آذار";
+"month_apr" = "نيسان";
+"month_may" = "أيار";
+"month_jun" = "حزيران";
+"month_jul" = "تموز";
+"month_aug" = "آب";
+"month_sept" = "أيلول";
+"month_oct" = "تشرين الأول";
+"month_nov" = "تشرين الثاني";
+"month_dec" = "كانون الأول";
+
+//Shipping Calculator
+"select_country" = "حدد الدولة";
+
+//Post Auction
+"select_auction_type" = "الرجاء تحديد نوع المزاد";
+"condition_new" = "جديد";
+"condition_used" = "مستخدم";
+"select_start_date" = "حدد تاريخ البدء";
+"select_end_date" = "حدد تاريخ الانتهاء";
+"transmission_automatic" = "تلقائي";
+"transmission_manual" = "كتيب";
+
+"fuel_gas" = "الغازولين";
+"fuel_diesel" = "ديزل";
+"fuel_hybrid" = "هجين";
+"fuel_electric" = "كهربائي";
+
+"enter_auction_title" = "الرجاء إدخال عنوان المزاد";
+"enter_auction_price" = "الرجاء إدخال سعر المزاد";
+"enter_auction_increment" = "الرجاء إدخال الحد الأدنى لزيادة عرض التسعير";
+"auction_bid_limit" = ".يجب أن يكون الحد الأدنى لزيادة العطاء 100.";
+"enter_auction_year" = "الرجاء إدخال سنة المزاد";
+"enter_auction_category" = "الرجاء تحديد الفئة";
+"enter_auction_make" = "الرجاء تحديد الماركة";
+"auction_make_not_found" = "النموذج غير متوفر";
+"enter_auction_condition" = "الرجاء تحديد الحالة";
+"enter_auction_start" = "الرجاء تحديد تاريخ البدء";
+"enter_auction_end" = "الرجاء تحديد تاريخ الانتهاء";
+"enter_auction_vin" = "الرجاء إدخال VIN";
+"enter_auction_transmission" = "الرجاء تحديد الإرسال";
+"enter_auction_fuel" = "الرجاء تحديد نوع الوقود";
+"enter_auction_auto_check" = "الرجاء تحديد وثيقة التحقق التلقائي";
+"enter_auction_image" = "الرجاء تحديد الصورة";
+"enter_auction_body" = "الرجاء تحديد نوع الجسم";
+"enter_auction_country" = "الرجاء تحديد الدولة";
+"enter_auction_motor" = "الرجاء إدخال رقم المحرك";
+"enter_auction_color" = "الرجاء اختيار اللون";
+"enter_auction_milage" = "الرجاء إدخال الأميال";
+"enter_auction_mechanical" = "الرجاء إدخال ميكانيكي";
+"enter_auction_wheel" = "الرجاء تحديد عدد العجلات";
+"enter_auction_drive" = "الرجاء تحديد محرك";
+"enter_auction_engine" = "الرجاء تحديد المحرك";
+"enter_auction_boat_length" = "الرجاء تحديد طول القارب";
+"enter_auction_boart_age" = "الرجاء تحديد عمر القارب";
+"enter_auction_boat_warranty" = "الرجاء تحديد ضمان القارب";
+"enter_auction_interiour_color" = "الرجاء اختيار اللون الداخلي";
+"enter_auction_cylinder" = "الرجاء تحديد لا. من الاسطوانة";
+"enter_auction_door" = "الرجاء تحديد لا. من الباب";
+"enter_auction_horsepower" = "الرجاء تحديد حصانا";
+"enter_auction_warranty" = "الرجاء تحديد الضمان";
+"enter_auction_address" = "الرجاء إدخال العنوان";
+"enter_auction_desc" = "الرجاء إدخال الوصف";
+"enter_auction_terms" = "الرجاء إدخال الشروط والأحكام";
+"agree_auction_terms" = "الرجاء الموافقة على الشروط والأحكام";
+"enter_body_condition" = "الرجاء تحديد حالة الجسم";
+
+//Profile
+"enter_deposite" = "الرجاء إدخال مبلغ الإيداع الخاص بك";
+
+//Bookmark
+"select_reminder_time" = "الرجاء تحديد وقت التذكير";
+
+//My Auction
+"withdraw_successfull" = "انسحب المستخدم بنجاح من قائمة المزاد";
+"auction_cancel_successfully" = "إلغاء المزاد بنجاح";
+"bank_account_added" = "تمت إضافة الحساب المصرفي بنجاح";
+"package_bought_success" = "تم شراء الطرد بنجاح";
+"deposit_added_success" = "تمت إضافة الإيداع بنجاح";
+"select_package" = "الرجاء تحديد الحزمة أولاً";
+"withdraw_amount" = "الرجاء إدخال مبلغ السحب";
+"withdraw_remaining_bidding_limit" = "يمكنك فقط سحب الإيداع حسب حد المزايدة المتبقي";
+"withdrawl_request_sent" = "يتم إرسال طلب السحب الخاص بك إلى المسؤول";
+"backend_connection_error" = "خطأ اتصال الخلفية مع المضيفين الآخرين";
+"user_not_found" = "المستخدم ليس موجود";
+"auction_withdraw_title" = "سحب المزاد";
+"auction_withdraw_message" = "هل أنت متأكد من أنك تريد سحب المزاد؟";
+"no_inspection_report" = "لم يتم العثور على تقرير التفتيش";
+
+//Contact Us
+"select_interest" = "الرجاء تحديد اهتمامك";
+"add_comment" = "الرجاء إدخال تعليقك";
