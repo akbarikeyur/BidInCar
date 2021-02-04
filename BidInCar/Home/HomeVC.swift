@@ -606,7 +606,6 @@ extension HomeVC {
                 }
             }
             self.arrAuctionData.append(contentsOf: arrNormal)
-            
             AppModel.shared.AUCTION_DATA[String(self.selectedCategory.id)] = self.arrAuctionData
             self.updateTableviewHeight()
             self.noDataLbl.isHidden = (self.arrAuctionData.count > 0)

@@ -785,17 +785,17 @@
                     <viewLayoutGuide key="safeArea" id="bSK-8c-3bC"/>
                 </view>
                 <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o3n-hG-0XY">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_banner" translatesAutoresizingMaskIntoConstraints="NO" id="lzS-X8-nil">
-                            <rect key="frame" x="10" y="0.0" width="300" height="155"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_banner" translatesAutoresizingMaskIntoConstraints="NO" id="lzS-X8-nil">
+                            <rect key="frame" x="10" y="0.0" width="300" height="135"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="155" id="9JY-g6-qpf"/>
+                                <constraint firstAttribute="height" constant="135" id="9JY-g6-qpf"/>
                             </constraints>
                         </imageView>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ra1-Mk-P0W">
-                            <rect key="frame" x="10" y="160" width="310" height="40"/>
+                            <rect key="frame" x="10" y="140" width="310" height="40"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="XHX-O1-7Ph"/>
