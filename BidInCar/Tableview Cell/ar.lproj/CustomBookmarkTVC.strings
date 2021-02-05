@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; normalTitle = "Reminder"; ObjectID = "3Yt-ch-PQ1"; */
+"3Yt-ch-PQ1.normalTitle" = "Reminder";
+
+/* Class = "UILabel"; text = "48 Boulevard Jourdan,"; ObjectID = "INJ-eO-dF5"; */
+"INJ-eO-dF5.text" = "48 Boulevard Jourdan,";
+
+/* Class = "UILabel"; text = "Lot#\n1025"; ObjectID = "aiu-jM-Qqb"; */
+"aiu-jM-Qqb.text" = "Lot#\n1025";
+
+/* Class = "UILabel"; text = "Bid #\n68"; ObjectID = "rR7-1J-S9Z"; */
+"rR7-1J-S9Z.text" = "Bid #\n68";
+
+/* Class = "UILabel"; text = "Curent Bid AED 30,000"; ObjectID = "uQN-Tt-nQZ"; */
+"uQN-Tt-nQZ.text" = "Curent Bid AED 30,000";
+
+/* Class = "UILabel"; text = "Mitsubishi Attrage"; ObjectID = "uzA-V6-vlx"; */
+"uzA-V6-vlx.text" = "Mitsubishi Attrage";

@@ -1,0 +1,192 @@
+
+/* Class = "UIButton"; normalTitle = "Request For Withdrraw"; ObjectID = "0dE-dS-A2E"; */
+"0dE-dS-A2E.normalTitle" = "Request For Withdrraw";
+
+/* Class = "UILabel"; text = "BidinCars Auctions Organizing.\n15th Floor City Tower 2, Sheikh Zayed Road, Dubai, UAE"; ObjectID = "1LP-8X-6AC"; */
+"1LP-8X-6AC.text" = "BidinCars Auctions Organizing.\n15th Floor City Tower 2, Sheikh Zayed Road, Dubai, UAE";
+
+/* Class = "UILabel"; text = "My Profile"; ObjectID = "23l-bT-fmv"; */
+"23l-bT-fmv.text" = "My Profile";
+
+/* Class = "UILabel"; text = "Johndummy@gmail.com"; ObjectID = "2AO-qU-lm2"; */
+"2AO-qU-lm2.text" = "Johndummy@gmail.com";
+
+/* Class = "UIButton"; normalTitle = "Add Deposit"; ObjectID = "325-oQ-e6Y"; */
+"325-oQ-e6Y.normalTitle" = "Add Deposit";
+
+/* Class = "UILabel"; text = "Request Submitted "; ObjectID = "3QR-og-Ev0"; */
+"3QR-og-Ev0.text" = "Request Submitted ";
+
+/* Class = "UILabel"; text = "For Billing"; ObjectID = "3p8-4q-T8M"; */
+"3p8-4q-T8M.text" = "For Billing";
+
+/* Class = "UIButton"; normalTitle = "Featured"; ObjectID = "4PW-4g-AgF"; */
+"4PW-4g-AgF.normalTitle" = "Featured";
+
+/* Class = "UIButton"; normalTitle = "HOME PAGE"; ObjectID = "75b-7y-4KM"; */
+"75b-7y-4KM.normalTitle" = "HOME PAGE";
+
+/* Class = "UILabel"; text = "But why? We are saving your cards here!"; ObjectID = "7BS-Pc-vI8"; */
+"7BS-Pc-vI8.text" = "But why? We are saving your cards here!";
+
+/* Class = "UIButton"; normalTitle = "Payment"; ObjectID = "7ZS-be-THU"; */
+"7ZS-be-THU.normalTitle" = "Payment";
+
+/* Class = "UILabel"; text = "Location Map"; ObjectID = "96M-km-XkJ"; */
+"96M-km-XkJ.text" = "Location Map";
+
+/* Class = "UIButton"; normalTitle = "Withdraw"; ObjectID = "9q5-nD-R3K"; */
+"9q5-nD-R3K.normalTitle" = "Withdraw";
+
+/* Class = "UILabel"; text = "info@bidincars.com"; ObjectID = "AQb-TP-IDK"; */
+"AQb-TP-IDK.text" = "info@bidincars.com";
+
+/* Class = "UILabel"; text = "billing@bidincars.com"; ObjectID = "Ago-5X-Oa9"; */
+"Ago-5X-Oa9.text" = "billing@bidincars.com";
+
+/* Class = "UIButton"; normalTitle = "Bids On Auctions"; ObjectID = "Agx-as-1wU"; */
+"Agx-as-1wU.normalTitle" = "Bids On Auctions";
+
+/* Class = "UILabel"; text = "Your Request has been submitted and our team will contact you within 24-48 working hours"; ObjectID = "Ar4-5l-fw8"; */
+"Ar4-5l-fw8.text" = "Your Request has been submitted and our team will contact you within 24-48 working hours";
+
+/* Class = "UILabel"; text = "You have no any notification yet."; ObjectID = "B0t-ez-ZpP"; */
+"B0t-ez-ZpP.text" = "You have no any notification yet.";
+
+/* Class = "UILabel"; text = "You can only withdraw deposit as per remaining bidding limit."; ObjectID = "Bw4-df-wl7"; */
+"Bw4-df-wl7.text" = "You can only withdraw deposit as per remaining bidding limit.";
+
+/* Class = "UILabel"; text = "Notification"; ObjectID = "Chc-h2-ZdC"; */
+"Chc-h2-ZdC.text" = "Notification";
+
+/* Class = "UILabel"; text = "Mile Edward"; ObjectID = "DEc-84-s7P"; */
+"DEc-84-s7P.text" = "Mile Edward";
+
+/* Class = "UIButton"; normalTitle = "Withdrawals"; ObjectID = "ExF-g5-ZEB"; */
+"ExF-g5-ZEB.normalTitle" = "Withdrawals";
+
+/* Class = "UILabel"; text = "042156880"; ObjectID = "Hgs-mo-U8z"; */
+"Hgs-mo-U8z.text" = "042156880";
+
+/* Class = "UILabel"; text = "Thank you!\nfor Contacting us"; ObjectID = "I3n-wv-dFe"; */
+"I3n-wv-dFe.text" = "Thank you!\nfor Contacting us";
+
+/* Class = "UIButton"; normalTitle = "MY AUCTIONS"; ObjectID = "IcC-VY-0vi"; */
+"IcC-VY-0vi.normalTitle" = "MY AUCTIONS";
+
+/* Class = "UILabel"; text = "Contact us"; ObjectID = "KyZ-O2-R9E"; */
+"KyZ-O2-R9E.text" = "Contact us";
+
+/* Class = "UIButton"; normalTitle = "ADD NEW +"; ObjectID = "M7q-kF-mm3"; */
+"M7q-kF-mm3.normalTitle" = "ADD NEW +";
+
+/* Class = "UIButton"; normalTitle = "Packages"; ObjectID = "MkX-ur-h9b"; */
+"MkX-ur-h9b.normalTitle" = "Packages";
+
+/* Class = "UIButton"; normalTitle = "Deposit"; ObjectID = "Mki-wh-KzV"; */
+"Mki-wh-KzV.normalTitle" = "Deposit";
+
+/* Class = "UIButton"; normalTitle = "Change Password"; ObjectID = "Mos-Xg-roj"; */
+"Mos-Xg-roj.normalTitle" = "Change Password";
+
+/* Class = "UIButton"; normalTitle = "Deposit Now"; ObjectID = "NuH-cB-504"; */
+"NuH-cB-504.normalTitle" = "Deposit Now";
+
+/* Class = "UIButton"; normalTitle = "Deposit"; ObjectID = "PD3-XT-YMF"; */
+"PD3-XT-YMF.normalTitle" = "Deposit";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "PwR-Mh-h7G"; */
+"PwR-Mh-h7G.text" = "Address";
+
+/* Class = "UIButton"; normalTitle = "ADD NEW +"; ObjectID = "Qa6-8n-dbq"; */
+"Qa6-8n-dbq.normalTitle" = "ADD NEW +";
+
+/* Class = "UILabel"; text = "Deposit Amount : AED 200"; ObjectID = "RIp-Gp-XyP"; */
+"RIp-Gp-XyP.text" = "Deposit Amount : AED 200";
+
+/* Class = "UILabel"; text = "*** 2641"; ObjectID = "Rpc-HC-We1"; */
+"Rpc-HC-We1.text" = "*** 2641";
+
+/* Class = "UIButton"; normalTitle = "Attach a file"; ObjectID = "SBe-Gx-hlJ"; */
+"SBe-Gx-hlJ.normalTitle" = "Attach a file";
+
+/* Class = "UILabel"; text = "For Auctions"; ObjectID = "SWM-im-yT4"; */
+"SWM-im-yT4.text" = "For Auctions";
+
+/* Class = "UILabel"; text = "john Herry Dummy"; ObjectID = "UUR-UM-XL4"; */
+"UUR-UM-XL4.text" = "john Herry Dummy";
+
+/* Class = "UIButton"; normalTitle = "Bids"; ObjectID = "Vsg-fO-gt1"; */
+"Vsg-fO-gt1.normalTitle" = "Bids";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "WIw-Me-ray"; */
+"WIw-Me-ray.normalTitle" = "Submit";
+
+/* Class = "UIButton"; normalTitle = "Packages"; ObjectID = "XXJ-1x-qOC"; */
+"XXJ-1x-qOC.normalTitle" = "Packages";
+
+/* Class = "UIButton"; normalTitle = "SAVE"; ObjectID = "XkO-c2-lgm"; */
+"XkO-c2-lgm.normalTitle" = "SAVE";
+
+/* Class = "UIButton"; normalTitle = "SUBMIT"; ObjectID = "bG0-dg-xjD"; */
+"bG0-dg-xjD.normalTitle" = "SUBMIT";
+
+/* Class = "UIButton"; normalTitle = "Featured"; ObjectID = "cDn-JG-yvp"; */
+"cDn-JG-yvp.normalTitle" = "Featured";
+
+/* Class = "UIButton"; normalTitle = "Personal"; ObjectID = "cp3-IH-Q7b"; */
+"cp3-IH-Q7b.normalTitle" = "Personal";
+
+/* Class = "UIButton"; normalTitle = "Settings"; ObjectID = "edr-yc-SDQ"; */
+"edr-yc-SDQ.normalTitle" = "Settings";
+
+/* Class = "UILabel"; text = "Losbon, united state"; ObjectID = "fM5-yL-MBe"; */
+"fM5-yL-MBe.text" = "Losbon, united state";
+
+/* Class = "UILabel"; text = "For general Queries"; ObjectID = "g9r-lT-psP"; */
+"g9r-lT-psP.text" = "For general Queries";
+
+/* Class = "UIButton"; normalTitle = "Bank Accounts"; ObjectID = "hUB-PK-fwR"; */
+"hUB-PK-fwR.normalTitle" = "Bank Accounts";
+
+/* Class = "UILabel"; text = "You can only withdraw deposit as per remaining bidding limit. "; ObjectID = "ilI-O8-sVK"; */
+"ilI-O8-sVK.text" = "You can only withdraw deposit as per remaining bidding limit. ";
+
+/* Class = "UILabel"; text = "Please leave your message along with your contact details below. We will be happy to answer your questions andinquiries the soonest."; ObjectID = "jdO-sB-ChA"; */
+"jdO-sB-ChA.text" = "Please leave your message along with your contact details below. We will be happy to answer your questions andinquiries the soonest.";
+
+/* Class = "UILabel"; text = "help@bidincars.com"; ObjectID = "kiU-2Y-Yag"; */
+"kiU-2Y-Yag.text" = "help@bidincars.com";
+
+/* Class = "UILabel"; text = "33"; ObjectID = "kuF-K3-Ha7"; */
+"kuF-K3-Ha7.text" = "33";
+
+/* Class = "UILabel"; text = "Notify me of activity of Auctions I am participating in."; ObjectID = "lKR-iW-vAI"; */
+"lKR-iW-vAI.text" = "Notify me of activity of Auctions I am participating in.";
+
+/* Class = "UIButton"; normalTitle = "Withdrawals"; ObjectID = "nMs-iC-bRB"; */
+"nMs-iC-bRB.normalTitle" = "Withdrawals";
+
+/* Class = "UIButton"; normalTitle = "+ Add Deposit"; ObjectID = "nXx-qk-xxB"; */
+"nXx-qk-xxB.normalTitle" = "+ Add Deposit";
+
+/* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "nsf-ds-w9p"; */
+"nsf-ds-w9p.text" = "Privacy Policy";
+
+/* Class = "UIButton"; normalTitle = "ADD NEW +"; ObjectID = "qMO-d7-Nfy"; */
+"qMO-d7-Nfy.normalTitle" = "ADD NEW +";
+
+/* Class = "UIButton"; normalTitle = "Settings"; ObjectID = "qgL-ac-m67"; */
+"qgL-ac-m67.normalTitle" = "Settings";
+
+/* Class = "UILabel"; text = "Bank Transfer"; ObjectID = "u9M-tN-4cU"; */
+"u9M-tN-4cU.text" = "Bank Transfer";
+
+/* Class = "UIButton"; normalTitle = "Credit card"; ObjectID = "wM5-eH-ydg"; */
+"wM5-eH-ydg.normalTitle" = "Credit card";
+
+/* Class = "UILabel"; text = "Phone number"; ObjectID = "y4b-Tc-e5n"; */
+"y4b-Tc-e5n.text" = "Phone number";
+
+/* Class = "UIButton"; normalTitle = "Paypal"; ObjectID = "zwa-Vm-FXJ"; */
+"zwa-Vm-FXJ.normalTitle" = "Paypal";

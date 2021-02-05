@@ -1,0 +1,519 @@
+
+/* Class = "UILabel"; text = "Features"; ObjectID = "09B-fh-z7c"; */
+"09B-fh-z7c.text" = "الميزات";
+
+/* Class = "UILabel"; text = "Motor No."; ObjectID = "0dI-Dz-E5u"; */
+"0dI-Dz-E5u.text" = "رقم المحرك";
+
+/* Class = "UILabel"; text = "My Auctions"; ObjectID = "179-XK-pN9"; */
+"179-XK-pN9.text" = "مزاداتي";
+
+/* Class = "UILabel"; text = "Auction Price"; ObjectID = "1EY-Ge-o5y"; */
+"1EY-Ge-o5y.text" = "سعر المزاد";
+
+/* Class = "UILabel"; text = "Helander"; ObjectID = "1nA-VE-KjT"; */
+"1nA-VE-KjT.text" = "هيلاندر";
+
+/* Class = "UILabel"; text = "Closing Date  27 Aug 2019"; ObjectID = "1rs-nB-Xy4"; */
+"1rs-nB-Xy4.text" = "Closing Date  27 Aug 2019";
+
+/* Class = "UILabel"; text = "NEXT"; ObjectID = "1xX-NH-7jp"; */
+"1xX-NH-7jp.text" = "التالى";
+
+/* Class = "UILabel"; text = "Auction Start"; ObjectID = "1zC-Tc-h6G"; */
+"1zC-Tc-h6G.text" = "بدء المزاد";
+
+/* Class = "UIButton"; normalTitle = "Agree to terms and conditions"; ObjectID = "2A1-x3-AOX"; */
+"2A1-x3-AOX.normalTitle" = "وافق على الشروط والأحكام";
+
+/* Class = "UILabel"; text = "Lorem Ipsum is simply dummy text "; ObjectID = "2CW-ae-cOS"; */
+"2CW-ae-cOS.text" = "Lorem Ipsum is simply dummy text ";
+
+/* Class = "UIButton"; normalTitle = "PROCEED"; ObjectID = "2Qn-9t-fCl"; */
+"2Qn-9t-fCl.normalTitle" = "تقدم";
+
+/* Class = "UILabel"; text = "You have to purchase package to continue post auction"; ObjectID = "2Xk-rH-yLk"; */
+"2Xk-rH-yLk.text" = "يجب عليك شراء الحزمة لمواصلة نشر المزاد";
+
+/* Class = "UILabel"; text = "-94° 31' 21.5148"; ObjectID = "2zg-y6-q5C"; */
+"2zg-y6-q5C.text" = "-94° 31' 21.5148";
+
+/* Class = "UILabel"; text = "Run and Drive"; ObjectID = "3CY-Mf-z0d"; */
+"3CY-Mf-z0d.text" = "تشغيل وقيادة";
+
+/* Class = "UIButton"; normalTitle = "Active"; ObjectID = "4aK-Bd-MMB"; */
+"4aK-Bd-MMB.normalTitle" = "النشطة";
+
+/* Class = "UILabel"; text = "To Location"; ObjectID = "4eC-lU-nLM"; */
+"4eC-lU-nLM.text" = "إلى الموقع";
+
+/* Class = "UILabel"; text = "Auction price"; ObjectID = "4pv-ph-2xg"; */
+"4pv-ph-2xg.text" = "سعر المزاد";
+
+/* Class = "UILabel"; text = "Did you find your answer?"; ObjectID = "5Dz-vd-37R"; */
+"5Dz-vd-37R.text" = "هل وجدت اجابتك؟";
+
+/* Class = "UIButton"; normalTitle = "Packages"; ObjectID = "66N-at-HDB"; */
+"66N-at-HDB.normalTitle" = "الحزم";
+
+/* Class = "UIButton"; normalTitle = "Won"; ObjectID = "6DL-EC-RM4"; */
+"6DL-EC-RM4.normalTitle" = "وون";
+
+/* Class = "UIButton"; normalTitle = "Active"; ObjectID = "6Th-Zf-azZ"; */
+"6Th-Zf-azZ.normalTitle" = "نشيط";
+
+/* Class = "UILabel"; text = "Silver"; ObjectID = "6Xs-To-MZJ"; */
+"6Xs-To-MZJ.text" = "فضة";
+
+/* Class = "UILabel"; text = "AED 500"; ObjectID = "73C-mJ-lTh"; */
+"73C-mJ-lTh.text" = "AED 500";
+
+/* Class = "UILabel"; text = "Seller Detail"; ObjectID = "7n7-lh-1X5"; */
+"7n7-lh-1X5.text" = "تفاصيل البائع";
+
+/* Class = "UILabel"; text = "Select Payment Method"; ObjectID = "831-gW-ek1"; */
+"831-gW-ek1.text" = "اختار طريقة الدفع";
+
+/* Class = "UILabel"; text = "*Terms & Conditions"; ObjectID = "8J4-as-LTd"; */
+"8J4-as-LTd.text" = "الأحكام والشروط*";
+
+/* Class = "UILabel"; text = "Run and Drive"; ObjectID = "93S-Fh-E8l"; */
+"93S-Fh-E8l.text" = "تشغيل وقيادة";
+
+/* Class = "UILabel"; text = "Country if made"; ObjectID = "96G-hN-gnI"; */
+"96G-hN-gnI.text" = "بلد الصنع";
+
+/* Class = "UILabel"; text = "Boat Length"; ObjectID = "9I9-BH-ftg"; */
+"9I9-BH-ftg.text" = "طول القارب";
+
+/* Class = "UILabel"; text = "Ubidoca 4 Rue Du Bulloz 74940 Annecy France"; ObjectID = "9iy-Qi-CgJ"; */
+"9iy-Qi-CgJ.text" = "Ubidoca 4 Rue Du Bulloz 74940 Annecy France";
+
+/* Class = "UILabel"; text = "AED 3,000"; ObjectID = "9nr-O5-qZ4"; */
+"9nr-O5-qZ4.text" = "AED 3,000";
+
+/* Class = "UILabel"; text = "50/500"; ObjectID = "Acx-Ux-VIe"; */
+"Acx-Ux-VIe.text" = "50/500";
+
+/* Class = "UILabel"; text = "Silver"; ObjectID = "Amc-DC-2CI"; */
+"Amc-DC-2CI.text" = "فضة";
+
+/* Class = "UILabel"; text = "PAY NOW"; ObjectID = "BN4-e6-xlW"; */
+"BN4-e6-xlW.text" = "ادفع الآن";
+
+/* Class = "UILabel"; text = "Run and Drive"; ObjectID = "Bsh-8n-0kV"; */
+"Bsh-8n-0kV.text" = "تشغيل وقيادة";
+
+/* Class = "UIButton"; normalTitle = "PROCEED"; ObjectID = "Cpq-cb-ti0"; */
+"Cpq-cb-ti0.normalTitle" = "تقدم";
+
+/* Class = "UIButton"; normalTitle = "Closed"; ObjectID = "D6e-vH-rPK"; */
+"D6e-vH-rPK.normalTitle" = "مغلق";
+
+/* Class = "UILabel"; text = "Lot#\n146171"; ObjectID = "DP8-13-bxm"; */
+"DP8-13-bxm.text" = "Lot#\n146171";
+
+/* Class = "UILabel"; text = "This will concet the on-going auction,"; ObjectID = "DnB-Lw-wJA"; */
+"DnB-Lw-wJA.text" = ",سيؤدي هذا إلى ربط المزاد الجاري";
+
+/* Class = "UILabel"; text = "Billing Information"; ObjectID = "ECu-K9-1G4"; */
+"ECu-K9-1G4.text" = "معلومات الفواتير";
+
+/* Class = "UILabel"; text = "Documents Transfer Fee"; ObjectID = "EzZ-6t-qfa"; */
+"EzZ-6t-qfa.text" = "رسوم تحويل المستندات";
+
+/* Class = "UILabel"; text = "Auction Gallery"; ObjectID = "F5S-vd-9lz"; */
+"F5S-vd-9lz.text" = "معرض المزاد";
+
+/* Class = "UILabel"; text = "Mechanical"; ObjectID = "Fzn-8q-Df5"; */
+"Fzn-8q-Df5.text" = "ميكانيكي";
+
+/* Class = "UILabel"; text = "Exterior colour"; ObjectID = "Gca-d9-6ro"; */
+"Gca-d9-6ro.text" = "اللون الخارجي";
+
+/* Class = "UILabel"; text = "AED 10,000"; ObjectID = "Gh0-t2-wlB"; */
+"Gh0-t2-wlB.text" = "AED 10,000";
+
+/* Class = "UILabel"; text = "Save this card for future transactions"; ObjectID = "Gwz-YA-lgr"; */
+"Gwz-YA-lgr.text" = "احفظ هذه البطاقة للمعاملات المستقبلية";
+
+/* Class = "UILabel"; text = "Credit & Debit cards"; ObjectID = "HJr-aN-06B"; */
+"HJr-aN-06B.text" = "بطاقات الائتمان والخصم";
+
+/* Class = "UILabel"; text = "From Location"; ObjectID = "HUv-Af-8uS"; */
+"HUv-Af-8uS.text" = "من الموقع";
+
+/* Class = "UILabel"; text = "Post an Auction"; ObjectID = "I2y-fj-0cM"; */
+"I2y-fj-0cM.text" = "قم بنشر مزاد";
+
+/* Class = "UILabel"; text = "Silver"; ObjectID = "I9b-9N-A5v"; */
+"I9b-9N-A5v.text" = "فضة";
+
+/* Class = "UILabel"; text = "Time Remaining 1 Min. 3 S"; ObjectID = "IDS-Xk-nke"; */
+"IDS-Xk-nke.text" = "Time Remaining 1 Min. 3 S";
+
+/* Class = "UILabel"; text = "N/A"; ObjectID = "IHG-BZ-uZT"; */
+"IHG-BZ-uZT.text" = "N/A";
+
+/* Class = "UILabel"; text = "DONE"; ObjectID = "Iif-Rj-SBN"; */
+"Iif-Rj-SBN.text" = "فعله";
+
+/* Class = "UILabel"; text = "Wheels"; ObjectID = "JNp-zf-FmD"; */
+"JNp-zf-FmD.text" = "عجلات";
+
+/* Class = "UILabel"; text = "Make Featured"; ObjectID = "JYO-RT-eN6"; */
+"JYO-RT-eN6.text" = "اجعلها مميزة";
+
+/* Class = "UILabel"; text = "How to set up an online payment form usingan outsourced solution:"; ObjectID = "KdL-GZ-wKr"; */
+"KdL-GZ-wKr.text" = ":كيفية إعداد نموذج دفع عبر الإنترنت باستخدام حل خارجي";
+
+/* Class = "UILabel"; text = "Basic Information"; ObjectID = "LPu-eZ-oHN"; */
+"LPu-eZ-oHN.text" = "معلومات اساسية";
+
+/* Class = "UILabel"; text = "My Auctions"; ObjectID = "Lf6-6d-exa"; */
+"Lf6-6d-exa.text" = "مزاداتي";
+
+/* Class = "UILabel"; text = "Post an Auction"; ObjectID = "LiJ-Xn-0Oq"; */
+"LiJ-Xn-0Oq.text" = "قم بنشر مزاد";
+
+/* Class = "UILabel"; text = "Silver"; ObjectID = "M4M-c5-Lnq"; */
+"M4M-c5-Lnq.text" = "فضة";
+
+/* Class = "UIButton"; normalTitle = "CLOSE"; ObjectID = "M9e-dR-FVo"; */
+"M9e-dR-FVo.normalTitle" = "أغلق";
+
+/* Class = "UIButton"; normalTitle = "BANK"; ObjectID = "MOM-HZ-fd4"; */
+"MOM-HZ-fd4.normalTitle" = "بنك";
+
+/* Class = "UILabel"; text = "Auto Check Upload Report"; ObjectID = "MRr-1f-X2F"; */
+"MRr-1f-X2F.text" = "تقرير تحميل الفحص التلقائي";
+
+/* Class = "UILabel"; text = "Basic Information"; ObjectID = "MZM-oL-JB5"; */
+"MZM-oL-JB5.text" = "معلومات اساسية";
+
+/* Class = "UILabel"; text = "Silver"; ObjectID = "Ms8-sE-nvj"; */
+"Ms8-sE-nvj.text" = "فضة";
+
+/* Class = "UILabel"; text = "Features"; ObjectID = "NCz-BB-uki"; */
+"NCz-BB-uki.text" = "الميزات";
+
+/* Class = "UILabel"; text = "Single Auction \nRegistration Package!"; ObjectID = "Nd2-Th-9CG"; */
+"Nd2-Th-9CG.text" = "مزاد واحد \nحزمة التسجيل!";
+
+/* Class = "UILabel"; text = "Or"; ObjectID = "PF0-bl-Ebc"; */
+"PF0-bl-Ebc.text" = "أو";
+
+/* Class = "UILabel"; text = "Shipping Calculator"; ObjectID = "PFd-eX-KQw"; */
+"PFd-eX-KQw.text" = "حاسبة الشحن";
+
+/* Class = "UILabel"; text = "Click on files, you can upload Auction Gallery"; ObjectID = "PcH-de-M83"; */
+"PcH-de-M83.text" = "انقر فوق الملفات ، يمكنك تحميل معرض المزاد";
+
+/* Class = "UILabel"; text = "Category"; ObjectID = "QVh-CF-0pf"; */
+"QVh-CF-0pf.text" = "الفئة";
+
+/* Class = "UILabel"; text = "Select to Post your Auctions"; ObjectID = "Qkg-1X-oVu"; */
+"Qkg-1X-oVu.text" = "حدد لنشر المزادات الخاصة بك";
+
+/* Class = "UILabel"; text = "Run and Drive"; ObjectID = "S0i-ks-fxz"; */
+"S0i-ks-fxz.text" = "تشغيل وقيادة";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "SFM-wW-HN2"; */
+"SFM-wW-HN2.text" = "وصف";
+
+/* Class = "UILabel"; text = "We Auction Clean & salvage title cars\ntrucks more in our online auctions every week"; ObjectID = "SdN-5f-wel"; */
+"SdN-5f-wel.text" = "نقوم بالمزاد العلني للسيارات النظيفة والمستردة\n شاحنات أكثر في مزادنا على الإنترنت كل أسبوع";
+
+/* Class = "UILabel"; text = "Saloon"; ObjectID = "SjZ-8P-zg8"; */
+"SjZ-8P-zg8.text" = "صالون";
+
+/* Class = "UILabel"; text = "Secure Paymentsystems"; ObjectID = "T6f-eh-kMT"; */
+"T6f-eh-kMT.text" = "أنظمة الدفع الآمنة";
+
+/* Class = "UILabel"; text = "Body Type"; ObjectID = "TWC-mZ-vOC"; */
+"TWC-mZ-vOC.text" = "نوع الجسم";
+
+/* Class = "UILabel"; text = "You have no any Auction yet"; ObjectID = "U84-5n-Q3g"; */
+"U84-5n-Q3g.text" = "ليس لديك أي مزاد حتى الآن";
+
+/* Class = "UILabel"; text = "Mileage"; ObjectID = "UEs-l1-wXO"; */
+"UEs-l1-wXO.text" = "عدد الكيلومترات\ الأميال";
+
+/* Class = "UILabel"; text = "Longitude"; ObjectID = "UOK-bC-mow"; */
+"UOK-bC-mow.text" = "خط الطول";
+
+/* Class = "UILabel"; text = "info@bidincars.com"; ObjectID = "Uak-5w-fvV"; */
+"Uak-5w-fvV.text" = "info@bidincars.com";
+
+/* Class = "UIButton"; normalTitle = "Single Auction"; ObjectID = "VQQ-qq-Vyh"; */
+"VQQ-qq-Vyh.normalTitle" = "مزاد واحد";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "VZX-lB-UgY"; */
+"VZX-lB-UgY.text" = "وصف";
+
+/* Class = "UILabel"; text = "Simple and Trusted Payments"; ObjectID = "VqK-rI-PPc"; */
+"VqK-rI-PPc.text" = "مدفوعات بسيطة وموثوقة";
+
+/* Class = "UILabel"; text = "Payment Summary"; ObjectID = "WQF-a8-n4Y"; */
+"WQF-a8-n4Y.text" = "ملخص الدفع";
+
+/* Class = "UIButton"; normalTitle = "CLOSE"; ObjectID = "XDr-AY-sr1"; */
+"XDr-AY-sr1.normalTitle" = "مغلق";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "XKM-4S-S0y"; */
+"XKM-4S-S0y.text" = "0";
+
+/* Class = "UILabel"; text = "Frequently Asked Questions"; ObjectID = "XXu-aE-6v7"; */
+"XXu-aE-6v7.text" = "أسئلة متكررة";
+
+/* Class = "UILabel"; text = "Do you wish to continue?"; ObjectID = "XdJ-JJ-8xl"; */
+"XdJ-JJ-8xl.text" = "هل ترغب في الاستمرار؟";
+
+/* Class = "UILabel"; text = "Run and Drive"; ObjectID = "Y4G-Cu-gNe"; */
+"Y4G-Cu-gNe.text" = "تشغيل وقيادة";
+
+/* Class = "UILabel"; text = "Auction End"; ObjectID = "YXA-F6-Xsw"; */
+"YXA-F6-Xsw.text" = "نهاية المزاد";
+
+/* Class = "UIButton"; normalTitle = "Closed"; ObjectID = "Yr2-Ym-1xU"; */
+"Yr2-Ym-1xU.normalTitle" = "مغلق";
+
+/* Class = "UILabel"; text = "Bids #  68"; ObjectID = "YvD-oa-XbB"; */
+"YvD-oa-XbB.text" = "Bids #  68";
+
+/* Class = "UILabel"; text = "View Shipping Charges details"; ObjectID = "Z7n-3R-rKV"; */
+"Z7n-3R-rKV.text" = "عرض تفاصيل رسوم الشحن";
+
+/* Class = "UILabel"; text = "AED 5,000"; ObjectID = "ZU0-mM-rgz"; */
+"ZU0-mM-rgz.text" = "AED 5,000";
+
+/* Class = "UILabel"; text = "Winner: John Herry"; ObjectID = "Zh2-Xw-xxT"; */
+"Zh2-Xw-xxT.text" = "Winner: John Herry";
+
+/* Class = "UILabel"; text = "Current Price  AED 3000"; ObjectID = "Zmv-wV-chb"; */
+"Zmv-wV-chb.text" = "Current Price  AED 3000";
+
+/* Class = "UILabel"; text = "SUBMIT"; ObjectID = "Ztg-jA-SSY"; */
+"Ztg-jA-SSY.text" = "إرسال";
+
+/* Class = "UILabel"; text = "Do you wish to continue?"; ObjectID = "a1R-1M-hsy"; */
+"a1R-1M-hsy.text" = "هل ترغب في الاستمرار؟";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "a5Y-b6-8Ag"; */
+"a5Y-b6-8Ag.text" = "وصف";
+
+/* Class = "UILabel"; text = "Select Make"; ObjectID = "aQk-mv-1ZE"; */
+"aQk-mv-1ZE.text" = "حدد الطراز";
+
+/* Class = "UILabel"; text = "Silver"; ObjectID = "aVE-YS-930"; */
+"aVE-YS-930.text" = "فضة";
+
+/* Class = "UILabel"; text = "Body Condition"; ObjectID = "bG1-yk-5dN"; */
+"bG1-yk-5dN.text" = "حالة الهيكل";
+
+/* Class = "UILabel"; text = "Auction Title"; ObjectID = "bxZ-kQ-ST0"; */
+"bxZ-kQ-ST0.text" = "عنوان المزاد";
+
+/* Class = "UIButton"; normalTitle = "CHECKOUT"; ObjectID = "cLW-UZ-sDH"; */
+"cLW-UZ-sDH.normalTitle" = "الدفع";
+
+/* Class = "UILabel"; text = "*Terms & Conditions"; ObjectID = "dCl-qL-e3S"; */
+"dCl-qL-e3S.text" = "الأحكام والشروط*";
+
+/* Class = "UIButton"; normalTitle = "ADD NEW +"; ObjectID = "dFY-78-iw8"; */
+"dFY-78-iw8.normalTitle" = "+ اضف جديد";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "dMt-aL-f6z"; */
+"dMt-aL-f6z.text" = "العنوان:";
+
+/* Class = "UILabel"; text = "+ TAX"; ObjectID = "dnQ-TG-xda"; */
+"dnQ-TG-xda.text" = "+ ضريبة";
+
+/* Class = "UILabel"; text = "View Report"; ObjectID = "e8w-SG-CSj"; */
+"e8w-SG-CSj.text" = "عرض التقرير";
+
+/* Class = "UILabel"; text = "PAY NOW"; ObjectID = "eZs-3A-o62"; */
+"eZs-3A-o62.text" = "ادفع الآن";
+
+/* Class = "UILabel"; text = "Lorem Ipsum is simply dummy text "; ObjectID = "eyZ-6t-6ib"; */
+"eyZ-6t-6ib.text" = "Lorem Ipsum is simply dummy text ";
+
+/* Class = "UILabel"; text = "But why? We need the information to personalise the onboarding process."; ObjectID = "f0k-XF-GIm"; */
+"f0k-XF-GIm.text" = "لكن لماذا؟ نحتاج إلى المعلومات لتخصيص عملية الإعداد.";
+
+/* Class = "UILabel"; text = "Mitsubishi Attrage"; ObjectID = "fDi-AC-DdB"; */
+"fDi-AC-DdB.text" = "ميتسوبيشي أتراج";
+
+/* Class = "UILabel"; text = "Total Payment"; ObjectID = "fMs-tg-akA"; */
+"fMs-tg-akA.text" = "المبلغ الإجمالي";
+
+/* Class = "UILabel"; text = "Run and Drive"; ObjectID = "ff6-KS-0Lw"; */
+"ff6-KS-0Lw.text" = "تشغيل وقيادة";
+
+/* Class = "UILabel"; text = "Yes"; ObjectID = "g5Q-wm-eKY"; */
+"g5Q-wm-eKY.text" = "نعم";
+
+/* Class = "UIButton"; normalTitle = "Save Cards"; ObjectID = "gtQ-a5-yzg"; */
+"gtQ-a5-yzg.normalTitle" = "حفظ البطاقات";
+
+/* Class = "UILabel"; text = "Street Address"; ObjectID = "gzU-ua-pOI"; */
+"gzU-ua-pOI.text" = "عنوان الشارع";
+
+/* Class = "UILabel"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eius"; ObjectID = "hLd-GG-YZ5"; */
+"hLd-GG-YZ5.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eius";
+
+/* Class = "UILabel"; text = "CONFIRM"; ObjectID = "hbN-23-mjw"; */
+"hbN-23-mjw.text" = "تأكيد";
+
+/* Class = "UILabel"; text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry  Lorem Ipsum has been."; ObjectID = "hiw-qI-QBl"; */
+"hiw-qI-QBl.text" = "Lorem Ipsum is simply dummy text of the printing and typesetting industry  Lorem Ipsum has been.";
+
+/* Class = "UILabel"; text = "Transmission"; ObjectID = "ifv-nm-DvZ"; */
+"ifv-nm-DvZ.text" = "الناقل المتحرك";
+
+/* Class = "UILabel"; text = "Vip Registration Has Over 01 Vehicles Mostly Rental Fleet Vehicles & Clean Titles"; ObjectID = "jdo-LP-CjA"; */
+"jdo-LP-CjA.text" = "يحتوي تسجيل كبار الشخصيات على أكثر من 01 مركبة معظمها مؤجر لأسطول المركبات وألقاب نظيفة";
+
+/* Class = "UILabel"; text = "Shipment Charges"; ObjectID = "kN8-Wf-A3H"; */
+"kN8-Wf-A3H.text" = "رسوم الشحن";
+
+/* Class = "UILabel"; text = "No"; ObjectID = "lEe-ip-nYN"; */
+"lEe-ip-nYN.text" = "لا";
+
+/* Class = "UILabel"; text = "Payment AED 40"; ObjectID = "lzA-DT-N04"; */
+"lzA-DT-N04.text" = "Payment AED 40";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "mbK-6D-JUT"; */
+"mbK-6D-JUT.text" = "العنوان:";
+
+/* Class = "UILabel"; text = "Cancel Auction"; ObjectID = "mrr-Vj-k9K"; */
+"mrr-Vj-k9K.text" = "إلغاء المزاد";
+
+/* Class = "UILabel"; text = "Auction Gallery"; ObjectID = "nBx-Pu-fFm"; */
+"nBx-Pu-fFm.text" = "معرض المزاد";
+
+/* Class = "UILabel"; text = "Silver"; ObjectID = "nXM-BY-dg1"; */
+"nXM-BY-dg1.text" = "Silver";
+
+/* Class = "UILabel"; text = "AED"; ObjectID = "nhg-6t-yO8"; */
+"nhg-6t-yO8.text" = "AED";
+
+/* Class = "UILabel"; text = "Odometer  188.264.K.M"; ObjectID = "nqa-gD-k8d"; */
+"nqa-gD-k8d.text" = "Odometer  188.264.K.M";
+
+/* Class = "UILabel"; text = "Run and Drive"; ObjectID = "nz9-Ho-3wh"; */
+"nz9-Ho-3wh.text" = "Run and Drive";
+
+/* Class = "UILabel"; text = "Select Address"; ObjectID = "oPl-oO-Wpi"; */
+"oPl-oO-Wpi.text" = "Select Address";
+
+/* Class = "UILabel"; text = "PAY NOW"; ObjectID = "odO-dc-R4m"; */
+"odO-dc-R4m.text" = "PAY NOW";
+
+/* Class = "UILabel"; text = "Run and Drive"; ObjectID = "owR-0S-Gd7"; */
+"owR-0S-Gd7.text" = "Run and Drive";
+
+/* Class = "UILabel"; text = "Swedan"; ObjectID = "p1X-oa-WeE"; */
+"p1X-oa-WeE.text" = "Swedan";
+
+/* Class = "UILabel"; text = "Package"; ObjectID = "pa6-jM-oUN"; */
+"pa6-jM-oUN.text" = "Package";
+
+/* Class = "UILabel"; text = "FAQs"; ObjectID = "pbp-fq-Ogd"; */
+"pbp-fq-Ogd.text" = "FAQs";
+
+/* Class = "UILabel"; text = "Engine Size"; ObjectID = "pkf-wn-zjT"; */
+"pkf-wn-zjT.text" = "Engine Size";
+
+/* Class = "UIButton"; normalTitle = "Pending"; ObjectID = "po5-RM-wOq"; */
+"po5-RM-wOq.normalTitle" = "Pending";
+
+/* Class = "UILabel"; text = "Total AED 10,000"; ObjectID = "q16-EF-g78"; */
+"q16-EF-g78.text" = "Total AED 10,000";
+
+/* Class = "UILabel"; text = "CREATE AUCTION"; ObjectID = "r1D-3q-aVC"; */
+"r1D-3q-aVC.text" = "CREATE AUCTION";
+
+/* Class = "UILabel"; text = "4T1B11HK8KU******"; ObjectID = "rQF-yq-IIt"; */
+"rQF-yq-IIt.text" = "4T1B11HK8KU******";
+
+/* Class = "UILabel"; text = "Run and Drive"; ObjectID = "rd4-Dj-9Q3"; */
+"rd4-Dj-9Q3.text" = "Run and Drive";
+
+/* Class = "UILabel"; text = "Min Bid Increment"; ObjectID = "rgi-fN-gps"; */
+"rgi-fN-gps.text" = "Min Bid Increment";
+
+/* Class = "UILabel"; text = "AED (-2000)"; ObjectID = "rwr-Qq-fH9"; */
+"rwr-Qq-fH9.text" = "AED (-2000)";
+
+/* Class = "UILabel"; text = "I have read and accept the terms of use rules of flight and privacy policy."; ObjectID = "rxn-nu-ugs"; */
+"rxn-nu-ugs.text" = "I have read and accept the terms of use rules of flight and privacy policy.";
+
+/* Class = "UIButton"; normalTitle = "PAY"; ObjectID = "sLd-q4-ep4"; */
+"sLd-q4-ep4.normalTitle" = "PAY";
+
+/* Class = "UILabel"; text = "Drive System"; ObjectID = "sSD-u2-8Ye"; */
+"sSD-u2-8Ye.text" = "Drive System";
+
+/* Class = "UILabel"; text = "Germany"; ObjectID = "tA1-li-iVO"; */
+"tA1-li-iVO.text" = "Germany";
+
+/* Class = "UILabel"; text = "Payment Amount"; ObjectID = "tuV-yf-OVf"; */
+"tuV-yf-OVf.text" = "Payment Amount";
+
+/* Class = "UILabel"; text = "Run and Drive"; ObjectID = "u2E-i5-oot"; */
+"u2E-i5-oot.text" = "Run and Drive";
+
+/* Class = "UILabel"; text = "Payment"; ObjectID = "uIG-cU-lC5"; */
+"uIG-cU-lC5.text" = "Payment";
+
+/* Class = "UILabel"; text = "Please transfer AED 40 to following details and once done, email your deposit/transfer receipt to "; ObjectID = "uIv-02-Sfj"; */
+"uIv-02-Sfj.text" = "Please transfer AED 40 to following details and once done, email your deposit/transfer receipt to ";
+
+/* Class = "UILabel"; text = "5,6551 MI"; ObjectID = "uZP-Bk-bH3"; */
+"uZP-Bk-bH3.text" = "5,6551 MI";
+
+/* Class = "UILabel"; text = "Condition"; ObjectID = "uzW-JM-A9Y"; */
+"uzW-JM-A9Y.text" = "Condition";
+
+/* Class = "UILabel"; text = "Billing"; ObjectID = "vXC-Jz-89Z"; */
+"vXC-Jz-89Z.text" = "Billing";
+
+/* Class = "UILabel"; text = "VIN"; ObjectID = "vYf-ak-c5v"; */
+"vYf-ak-c5v.text" = "VIN";
+
+/* Class = "UILabel"; text = "Packages"; ObjectID = "wDd-5Q-0wo"; */
+"wDd-5Q-0wo.text" = "Packages";
+
+/* Class = "UILabel"; text = "Bank Transfer secure payment"; ObjectID = "y6J-4i-pbD"; */
+"y6J-4i-pbD.text" = "Bank Transfer secure payment";
+
+/* Class = "UILabel"; text = "This will brind your listing on top and will get you more viwes and bids Do you wish to continue?"; ObjectID = "y6a-HS-Cm7"; */
+"y6a-HS-Cm7.text" = "This will brind your listing on top and will get you more viwes and bids Do you wish to continue?";
+
+/* Class = "UILabel"; text = "View Post an Auction"; ObjectID = "yFT-PE-KQE"; */
+"yFT-PE-KQE.text" = "View Post an Auction";
+
+/* Class = "UILabel"; text = "Latitude"; ObjectID = "yVU-TJ-N1e"; */
+"yVU-TJ-N1e.text" = "Latitude";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "yg8-E3-7tG"; */
+"yg8-E3-7tG.text" = "Title";
+
+/* Class = "UILabel"; text = "Fuel Type"; ObjectID = "z0i-eX-vxs"; */
+"z0i-eX-vxs.text" = "Fuel Type";
+
+/* Class = "UILabel"; text = "How to set up an online payment form usingan outsourced solution:"; ObjectID = "z6G-FI-ApO"; */
+"z6G-FI-ApO.text" = "How to set up an online payment form usingan outsourced solution:";
+
+/* Class = "UILabel"; text = "Year"; ObjectID = "z6V-nS-2Dv"; */
+"z6V-nS-2Dv.text" = "Year";
+
+/* Class = "UILabel"; text = "You have no any Auction yet"; ObjectID = "zEO-Gd-vf3"; */
+"zEO-Gd-vf3.text" = "You have no any Auction yet";
+
+/* Class = "UILabel"; text = "Deposit Adjusted"; ObjectID = "zMw-z2-j3Z"; */
+"zMw-z2-j3Z.text" = "Deposit Adjusted";
+
+/* Class = "UILabel"; text = "N 50° 6.8796"; ObjectID = "zl9-Uq-ZeV"; */
+"zl9-Uq-ZeV.text" = "N 50° 6.8796";

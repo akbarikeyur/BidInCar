@@ -1,0 +1,33 @@
+
+/* Class = "UILabel"; text = "Amount"; ObjectID = "50e-Y2-e3t"; */
+"50e-Y2-e3t.text" = "Amount";
+
+/* Class = "UILabel"; text = "Total : AED 500"; ObjectID = "6Dn-Px-sxV"; */
+"6Dn-Px-sxV.text" = "Total : AED 500";
+
+/* Class = "UILabel"; text = "Single Package"; ObjectID = "EJs-Jh-QVI"; */
+"EJs-Jh-QVI.text" = "Single Package";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "RFG-dG-Imc"; */
+"RFG-dG-Imc.text" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "cAF-Cz-XR1"; */
+"cAF-Cz-XR1.text" = "0";
+
+/* Class = "UILabel"; text = "Validity"; ObjectID = "d27-pG-IrC"; */
+"d27-pG-IrC.text" = "Validity";
+
+/* Class = "UILabel"; text = "Validity"; ObjectID = "n3A-IY-QMK"; */
+"n3A-IY-QMK.text" = "Validity";
+
+/* Class = "UILabel"; text = "Single Auction"; ObjectID = "oKf-Bo-ClQ"; */
+"oKf-Bo-ClQ.text" = "Single Auction";
+
+/* Class = "UILabel"; text = "Saving"; ObjectID = "oUY-a7-yGx"; */
+"oUY-a7-yGx.text" = "Saving";
+
+/* Class = "UILabel"; text = "No of Auctions"; ObjectID = "qnz-JV-jpK"; */
+"qnz-JV-jpK.text" = "No of Auctions";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "wNe-gO-dGk"; */
+"wNe-gO-dGk.text" = "Description";

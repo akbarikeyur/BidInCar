@@ -78,58 +78,58 @@
 "VEB-IS-nKo.normalTitle" = "شركة";
 
 /* Class = "UILabel"; text = "Verify Your\nAccount"; ObjectID = "XRv-Fu-bbg"; */
-"XRv-Fu-bbg.text" = "Verify Your\nAccount";
+"XRv-Fu-bbg.text" = "تحقق الخاص بك\nالحساب";
 
 /* Class = "UILabel"; text = "Your current bidding Limit: 5000"; ObjectID = "Z1W-Kn-KAu"; */
 "Z1W-Kn-KAu.text" = "Your current bidding Limit: 5000";
 
 /* Class = "UILabel"; text = "Now buy any car on auction from anywhere around the world. Start your auction now"; ObjectID = "aPB-dS-TgO"; */
-"aPB-dS-TgO.text" = "Now buy any car on auction from anywhere around the world. Start your auction now";
+"aPB-dS-TgO.text" = "الآن قم بشراء أي سيارة في مزاد من أي مكان حول العالم. ابدأ المزاد الآن";
 
 /* Class = "UIButton"; normalTitle = "Continue as guest login"; ObjectID = "d0c-Sn-LMj"; */
-"d0c-Sn-LMj.normalTitle" = "Continue as guest login";
+"d0c-Sn-LMj.normalTitle" = "تواصل تسجيل دخول الضيف";
 
 /* Class = "UILabel"; text = "To keep connected with us please login with your personal info."; ObjectID = "em8-ba-RCq"; */
-"em8-ba-RCq.text" = "To keep connected with us please login with your personal info.";
+"em8-ba-RCq.text" = ".للبقاء على اتصال معنا ، يرجى تسجيل الدخول باستخدام معلوماتك الشخصية";
 
 /* Class = "UIButton"; normalTitle = "Bids on Auctions"; ObjectID = "gNH-WO-r4K"; */
-"gNH-WO-r4K.normalTitle" = "Bids on Auctions";
+"gNH-WO-r4K.normalTitle" = "المزايدة على المزاد";
 
 /* Class = "UILabel"; text = "Thank you!\nfor signing up"; ObjectID = "gzh-Qn-zR0"; */
-"gzh-Qn-zR0.text" = "Thank you!\nfor signing up";
+"gzh-Qn-zR0.text" = "شكرا جزيلا!\nللتسجيل";
 
 /* Class = "UILabel"; text = "We Auction clean & salvage title cars trucksmore in our online auctions every week"; ObjectID = "hgI-jy-2Pd"; */
-"hgI-jy-2Pd.text" = "We Auction clean & salvage title cars trucksmore in our online auctions every week";
+"hgI-jy-2Pd.text" = "نقوم بالمزاد العلني لشاحنات السيارات النظيفة والمستردة في مزادنا على الإنترنت كل أسبوع";
 
 /* Class = "UILabel"; text = "Buyer"; ObjectID = "k3C-Dv-BwC"; */
-"k3C-Dv-BwC.text" = "Buyer";
+"k3C-Dv-BwC.text" = "مشتر";
 
 /* Class = "UILabel"; text = "Strong"; ObjectID = "n1M-dQ-w6F"; */
-"n1M-dQ-w6F.text" = "Strong";
+"n1M-dQ-w6F.text" = "قوي";
 
 /* Class = "UILabel"; text = "A verification code sent to your phone number. "; ObjectID = "nQt-tR-iLJ"; */
-"nQt-tR-iLJ.text" = "A verification code sent to your phone number. ";
+"nQt-tR-iLJ.text" = ".تم إرسال رمز التحقق إلى رقم هاتفك";
 
 /* Class = "UILabel"; text = "Already Member?  Sign in"; ObjectID = "pRO-ad-EKt"; */
-"pRO-ad-EKt.text" = "Already Member?  Sign in";
+"pRO-ad-EKt.text" = "عضو بالفعل؟ تسجيل الدخول";
 
 /* Class = "UIButton"; normalTitle = "Post Auction"; ObjectID = "sbI-0C-oMw"; */
-"sbI-0C-oMw.normalTitle" = "Post Auction";
+"sbI-0C-oMw.normalTitle" = "بعد المزاد";
 
 /* Class = "UIButton"; normalTitle = "Individual"; ObjectID = "sn4-7g-6jy"; */
-"sn4-7g-6jy.normalTitle" = "Individual";
+"sn4-7g-6jy.normalTitle" = "فرد";
 
 /* Class = "UILabel"; text = "World's largest car\nauction app"; ObjectID = "ujq-01-HyS"; */
-"ujq-01-HyS.text" = "World's largest car\nauction app";
+"ujq-01-HyS.text" = "أكبر سيارة في العالم\nتطبيق المزاد";
 
 /* Class = "UIButton"; normalTitle = "Buyer"; ObjectID = "wN2-r4-Ign"; */
-"wN2-r4-Ign.normalTitle" = "Buyer";
+"wN2-r4-Ign.normalTitle" = "مشتر";
 
 /* Class = "UILabel"; text = "Login"; ObjectID = "wnq-t8-V3D"; */
-"wnq-t8-V3D.text" = "Login";
+"wnq-t8-V3D.text" = "تسجيل الدخول";
 
 /* Class = "UILabel"; text = "Or log in with"; ObjectID = "xyf-wZ-Eah"; */
-"xyf-wZ-Eah.text" = "Or log in with";
+"xyf-wZ-Eah.text" = "أو سجل الدخول باستخدام";
 
 /* Class = "UIButton"; normalTitle = "Keep signed in"; ObjectID = "z9e-jl-SQd"; */
-"z9e-jl-SQd.normalTitle" = "Keep signed in";
+"z9e-jl-SQd.normalTitle" = "احتفظ بتسجيل الدخول";

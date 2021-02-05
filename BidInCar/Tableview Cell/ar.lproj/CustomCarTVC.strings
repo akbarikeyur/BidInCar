@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "New minimum price: 5050 AED"; ObjectID = "YKt-sE-zYf"; */
+"YKt-sE-zYf.text" = "New minimum price: 5050 AED";
+
+/* Class = "UIButton"; normalTitle = "Bid Now"; ObjectID = "cwT-7S-xD2"; */
+"cwT-7S-xD2.normalTitle" = "Bid Now";
+
+/* Class = "UILabel"; text = "Curent Bid AED 30,000"; ObjectID = "k8L-fE-btC"; */
+"k8L-fE-btC.text" = "Curent Bid AED 30,000";
+
+/* Class = "UILabel"; text = "FEATURED"; ObjectID = "qWa-Y9-RrQ"; */
+"qWa-Y9-RrQ.text" = "FEATURED";
+
+/* Class = "UILabel"; text = "1 Min. 3 S left 06:45pm 27 Aug 2019"; ObjectID = "v41-16-aKk"; */
+"v41-16-aKk.text" = "1 Min. 3 S left 06:45pm 27 Aug 2019";
+
+/* Class = "UILabel"; text = "Mitsubishi Attrage"; ObjectID = "vXP-cr-onx"; */
+"vXP-cr-onx.text" = "Mitsubishi Attrage";
