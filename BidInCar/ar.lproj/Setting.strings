@@ -21,7 +21,7 @@
 "3p8-4q-T8M.text" = "For Billing";
 
 /* Class = "UIButton"; normalTitle = "Featured"; ObjectID = "4PW-4g-AgF"; */
-"4PW-4g-AgF.normalTitle" = "Featured";
+"4PW-4g-AgF.normalTitle" = "معروضة";
 
 /* Class = "UIButton"; normalTitle = "HOME PAGE"; ObjectID = "75b-7y-4KM"; */
 "75b-7y-4KM.normalTitle" = "HOME PAGE";
@@ -81,22 +81,22 @@
 "M7q-kF-mm3.normalTitle" = "ADD NEW +";
 
 /* Class = "UIButton"; normalTitle = "Packages"; ObjectID = "MkX-ur-h9b"; */
-"MkX-ur-h9b.normalTitle" = "Packages";
+"MkX-ur-h9b.normalTitle" = "الحزم";
 
 /* Class = "UIButton"; normalTitle = "Deposit"; ObjectID = "Mki-wh-KzV"; */
-"Mki-wh-KzV.normalTitle" = "Deposit";
+"Mki-wh-KzV.normalTitle" = "الوديعة";
 
 /* Class = "UIButton"; normalTitle = "Change Password"; ObjectID = "Mos-Xg-roj"; */
-"Mos-Xg-roj.normalTitle" = "Change Password";
+"Mos-Xg-roj.normalTitle" = "غير كلمة السر";
 
 /* Class = "UIButton"; normalTitle = "Deposit Now"; ObjectID = "NuH-cB-504"; */
 "NuH-cB-504.normalTitle" = "Deposit Now";
 
 /* Class = "UIButton"; normalTitle = "Deposit"; ObjectID = "PD3-XT-YMF"; */
-"PD3-XT-YMF.normalTitle" = "Deposit";
+"PD3-XT-YMF.normalTitle" = "الوديعة";
 
 /* Class = "UILabel"; text = "Address"; ObjectID = "PwR-Mh-h7G"; */
-"PwR-Mh-h7G.text" = "Address";
+"PwR-Mh-h7G.text" = "العنوان:";
 
 /* Class = "UIButton"; normalTitle = "ADD NEW +"; ObjectID = "Qa6-8n-dbq"; */
 "Qa6-8n-dbq.normalTitle" = "ADD NEW +";
@@ -123,7 +123,7 @@
 "WIw-Me-ray.normalTitle" = "Submit";
 
 /* Class = "UIButton"; normalTitle = "Packages"; ObjectID = "XXJ-1x-qOC"; */
-"XXJ-1x-qOC.normalTitle" = "Packages";
+"XXJ-1x-qOC.normalTitle" = "الحزم";
 
 /* Class = "UIButton"; normalTitle = "SAVE"; ObjectID = "XkO-c2-lgm"; */
 "XkO-c2-lgm.normalTitle" = "SAVE";
@@ -132,7 +132,7 @@
 "bG0-dg-xjD.normalTitle" = "SUBMIT";
 
 /* Class = "UIButton"; normalTitle = "Featured"; ObjectID = "cDn-JG-yvp"; */
-"cDn-JG-yvp.normalTitle" = "Featured";
+"cDn-JG-yvp.normalTitle" = "معروضة";
 
 /* Class = "UIButton"; normalTitle = "Personal"; ObjectID = "cp3-IH-Q7b"; */
 "cp3-IH-Q7b.normalTitle" = "Personal";
@@ -171,7 +171,7 @@
 "nXx-qk-xxB.normalTitle" = "+ Add Deposit";
 
 /* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "nsf-ds-w9p"; */
-"nsf-ds-w9p.text" = "Privacy Policy";
+"nsf-ds-w9p.text" = "سياسة الخصوصية";
 
 /* Class = "UIButton"; normalTitle = "ADD NEW +"; ObjectID = "qMO-d7-Nfy"; */
 "qMO-d7-Nfy.normalTitle" = "ADD NEW +";

@@ -162,7 +162,7 @@
 "JNp-zf-FmD.text" = "عجلات";
 
 /* Class = "UILabel"; text = "Make Featured"; ObjectID = "JYO-RT-eN6"; */
-"JYO-RT-eN6.text" = "اجعلها مميزة";
+"JYO-RT-eN6.text" = "معروضة";
 
 /* Class = "UILabel"; text = "How to set up an online payment form usingan outsourced solution:"; ObjectID = "KdL-GZ-wKr"; */
 "KdL-GZ-wKr.text" = ":كيفية إعداد نموذج دفع عبر الإنترنت باستخدام حل خارجي";
@@ -264,7 +264,7 @@
 "XKM-4S-S0y.text" = "0";
 
 /* Class = "UILabel"; text = "Frequently Asked Questions"; ObjectID = "XXu-aE-6v7"; */
-"XXu-aE-6v7.text" = "أسئلة متكررة";
+"XXu-aE-6v7.text" = "أسئلة مكررة";
 
 /* Class = "UILabel"; text = "Do you wish to continue?"; ObjectID = "XdJ-JJ-8xl"; */
 "XdJ-JJ-8xl.text" = "هل ترغب في الاستمرار؟";
@@ -423,7 +423,7 @@
 "pbp-fq-Ogd.text" = "FAQs";
 
 /* Class = "UILabel"; text = "Engine Size"; ObjectID = "pkf-wn-zjT"; */
-"pkf-wn-zjT.text" = "Engine Size";
+"pkf-wn-zjT.text" = "حجم المحرك";
 
 /* Class = "UIButton"; normalTitle = "Pending"; ObjectID = "po5-RM-wOq"; */
 "po5-RM-wOq.normalTitle" = "Pending";
@@ -441,7 +441,7 @@
 "rd4-Dj-9Q3.text" = "Run and Drive";
 
 /* Class = "UILabel"; text = "Min Bid Increment"; ObjectID = "rgi-fN-gps"; */
-"rgi-fN-gps.text" = "Min Bid Increment";
+"rgi-fN-gps.text" = "الحد الأدنى للمزايدة";
 
 /* Class = "UILabel"; text = "AED (-2000)"; ObjectID = "rwr-Qq-fH9"; */
 "rwr-Qq-fH9.text" = "AED (-2000)";
@@ -453,7 +453,7 @@
 "sLd-q4-ep4.normalTitle" = "PAY";
 
 /* Class = "UILabel"; text = "Drive System"; ObjectID = "sSD-u2-8Ye"; */
-"sSD-u2-8Ye.text" = "Drive System";
+"sSD-u2-8Ye.text" = "نظام القيادة";
 
 /* Class = "UILabel"; text = "Germany"; ObjectID = "tA1-li-iVO"; */
 "tA1-li-iVO.text" = "Germany";
@@ -474,16 +474,16 @@
 "uZP-Bk-bH3.text" = "5,6551 MI";
 
 /* Class = "UILabel"; text = "Condition"; ObjectID = "uzW-JM-A9Y"; */
-"uzW-JM-A9Y.text" = "Condition";
+"uzW-JM-A9Y.text" = "الحالة";
 
 /* Class = "UILabel"; text = "Billing"; ObjectID = "vXC-Jz-89Z"; */
-"vXC-Jz-89Z.text" = "Billing";
+"vXC-Jz-89Z.text" = "الفواتير";
 
 /* Class = "UILabel"; text = "VIN"; ObjectID = "vYf-ak-c5v"; */
-"vYf-ak-c5v.text" = "VIN";
+"vYf-ak-c5v.text" = "رقم الشاصي VIN";
 
 /* Class = "UILabel"; text = "Packages"; ObjectID = "wDd-5Q-0wo"; */
-"wDd-5Q-0wo.text" = "Packages";
+"wDd-5Q-0wo.text" = "الحزم";
 
 /* Class = "UILabel"; text = "Bank Transfer secure payment"; ObjectID = "y6J-4i-pbD"; */
 "y6J-4i-pbD.text" = "Bank Transfer secure payment";
@@ -501,7 +501,7 @@
 "yg8-E3-7tG.text" = "Title";
 
 /* Class = "UILabel"; text = "Fuel Type"; ObjectID = "z0i-eX-vxs"; */
-"z0i-eX-vxs.text" = "Fuel Type";
+"z0i-eX-vxs.text" = "نوع الوقود";
 
 /* Class = "UILabel"; text = "How to set up an online payment form usingan outsourced solution:"; ObjectID = "z6G-FI-ApO"; */
 "z6G-FI-ApO.text" = "How to set up an online payment form usingan outsourced solution:";

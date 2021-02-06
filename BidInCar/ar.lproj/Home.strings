@@ -153,7 +153,7 @@
 "eKk-mK-yyH.text" = "AED 21,000";
 
 /* Class = "UILabel"; text = "Highest Price"; ObjectID = "f7Q-qZ-qS7"; */
-"f7Q-qZ-qS7.text" = "اغلى سعر";
+"f7Q-qZ-qS7.text" = "أعلى سعر";
 
 /* Class = "UILabel"; text = "Bids #"; ObjectID = "fOP-gJ-fq0"; */
 "fOP-gJ-fq0.text" = "Bids #";
@@ -207,7 +207,7 @@
 "ySR-ed-Rls.text" = "حدد الطراز";
 
 /* Class = "UILabel"; text = "Sort By:"; ObjectID = "yW5-1V-oX7"; */
-"yW5-1V-oX7.text" = ":ترتيب حسب";
+"yW5-1V-oX7.text" = "ترتيب حسب:";
 
 /* Class = "UILabel"; text = "Your account balance is low, please add 20% of the bid amount as a balance which will be adjusted in your wining auction price or you can withdraw your balance later."; ObjectID = "zUT-Rd-7RT"; */
 "zUT-Rd-7RT.text" = ".رصيد حسابك منخفض ، يرجى إضافة 20٪ من مبلغ العطاء كرصيد يتم تعديله في سعر المزاد الفائز أو يمكنك سحب رصيدك لاحقًا";

@@ -3,7 +3,7 @@
 "YKt-sE-zYf.text" = "New minimum price: 5050 AED";
 
 /* Class = "UIButton"; normalTitle = "Bid Now"; ObjectID = "cwT-7S-xD2"; */
-"cwT-7S-xD2.normalTitle" = "Bid Now";
+"cwT-7S-xD2.normalTitle" = "المزايدة الآن";
 
 /* Class = "UILabel"; text = "Curent Bid AED 30,000"; ObjectID = "k8L-fE-btC"; */
 "k8L-fE-btC.text" = "Curent Bid AED 30,000";

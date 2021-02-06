@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "Amount"; ObjectID = "50e-Y2-e3t"; */
-"50e-Y2-e3t.text" = "Amount";
+"50e-Y2-e3t.text" = "المبلغ";
 
 /* Class = "UILabel"; text = "Total : AED 500"; ObjectID = "6Dn-Px-sxV"; */
 "6Dn-Px-sxV.text" = "Total : AED 500";
@@ -30,4 +30,4 @@
 "qnz-JV-jpK.text" = "No of Auctions";
 
 /* Class = "UILabel"; text = "Description"; ObjectID = "wNe-gO-dGk"; */
-"wNe-gO-dGk.text" = "Description";
+"wNe-gO-dGk.text" = "وصف";
