@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Payment Method"; ObjectID = "2fs-od-RbB"; */
+"2fs-od-RbB.text" = "Payment Method";
+
+/* Class = "UILabel"; text = "Amount"; ObjectID = "J72-UY-MW0"; */
+"J72-UY-MW0.text" = "Amount";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "KkC-lt-1lH"; */
+"KkC-lt-1lH.text" = "تاريخ";
+
+/* Class = "UILabel"; text = "Action"; ObjectID = "Vya-uX-0WX"; */
+"Vya-uX-0WX.text" = "Action";
+
+/* Class = "UILabel"; text = "Service Fee"; ObjectID = "dFW-40-1oP"; */
+"dFW-40-1oP.text" = "رسوم الخدمة";
+
+/* Class = "UILabel"; text = "11"; ObjectID = "j6d-X5-sMf"; */
+"j6d-X5-sMf.text" = "11";
+
+/* Class = "UILabel"; text = "Withdrawl Amount"; ObjectID = "njh-Y4-Ef8"; */
+"njh-Y4-Ef8.text" = "كمية السحب";
+
+/* Class = "UILabel"; text = "Status"; ObjectID = "xmb-7X-7im"; */
+"xmb-7X-7im.text" = "الحالة";

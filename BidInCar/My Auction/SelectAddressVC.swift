@@ -38,7 +38,7 @@ class SelectAddressVC: UIViewController, CLLocationManagerDelegate, MKMapViewDel
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
         } else {
-            printData("Location services are not enabled");
+            printData("location_services_not_enabled");
         }
         myMapView.delegate = self
     }

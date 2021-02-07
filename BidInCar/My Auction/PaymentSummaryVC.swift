@@ -89,15 +89,15 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         nameLbl.text = auctionData.auction_title
         winnerLbl.text = "Winner: " + auctionData.auction_winner.winner_name
         lotLbl.text = "Lot #\n" + auctionData.auctionid
-        currentPriceLbl.text = "Current Price " + displayPriceWithCurrency(auctionData.auction_winner.winneing_price)
-        currentPriceLbl.attributedText = attributedStringWithColor(currentPriceLbl.text!, ["Current Price"], color: BlueColor)
+        currentPriceLbl.text = displayPriceWithCurrency("current_price_space") + displayPriceWithCurrency(auctionData.auction_winner.winneing_price)
+        currentPriceLbl.attributedText = attributedStringWithColor(currentPriceLbl.text!, [displayPriceWithCurrency("current_price_space")], color: BlueColor)
         updateRemainingTime()
-        bidCountLbl.text = "Bids #" + auctionData.auction_bidscount
-        odometerLbl.text = "Odometer " + auctionData.auction_millage + "K.M"
+        bidCountLbl.text = displayPriceWithCurrency("bid_hash") + auctionData.auction_bidscount
+        odometerLbl.text = displayPriceWithCurrency("odometer_space") + auctionData.auction_millage + "K.M"
         if let endDate : Date = getDateFromDateString(strDate: auctionData.auction_end, format: "yyyy-MM-dd") {
-            closeDateLbl.text = "Closing Date " + getDateStringFromDate(date: endDate, format: "dd MMM yyyy")
+            closeDateLbl.text = getTranslate("closing_date_space") + getDateStringFromDate(date: endDate, format: "dd MMM yyyy")
         }else{
-            closeDateLbl.text = "Closing Date " + auctionData.auction_end
+            closeDateLbl.text = getTranslate("closing_date_space") + auctionData.auction_end
         }
         auctionDescLbl.text = auctionData.auction_desc
         setupBuyerDetail()
@@ -107,17 +107,17 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     {
         if let endDate : Date = getDateFromDateString(strDate: auctionData.auction_end, format: "yyyy-MM-dd") {
             if let time : String = getRemaingTimeInDayHourMinuteSecond(endDate) as? String, time != ""{
-                remainingTimeLbl.text = "Time Remaining\n" + time
+                remainingTimeLbl.text = getTranslate("time_remaining") + "\n" + time
                 delay(1.0) {
                     self.updateRemainingTime()
                 }
             }
             else{
-                remainingTimeLbl.text = "Expired"
+                remainingTimeLbl.text = getTranslate("expired_time")
             }
         }
         else{
-            remainingTimeLbl.text = "Time Remaining\n" + getRemainingTime(auctionData.auction_end)
+            remainingTimeLbl.text = getTranslate("time_remaining") + "\n" + getRemainingTime(auctionData.auction_end)
         }
     }
     
@@ -125,27 +125,27 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     {
         arrAddressData = [[String : String]]()
         var dict = [String:String]()
-        dict["title"] = "Street"
+        dict["title"] = getTranslate("street_title")
         dict["value"] = AppModel.shared.currentUser.user_streetaddress
         arrAddressData.append(dict)
         
         dict = [String:String]()
-        dict["title"] = "Country"
+        dict["title"] = getTranslate("country_title")
         dict["value"] = AppModel.shared.currentUser.country_name
         arrAddressData.append(dict)
         
         dict = [String:String]()
-        dict["title"] = "City"
+        dict["title"] = getTranslate("city_title")
         dict["value"] = AppModel.shared.currentUser.city_name
         arrAddressData.append(dict)
         
         dict = [String:String]()
-        dict["title"] = "Phone"
+        dict["title"] = getTranslate("phone_title")
         dict["value"] = AppModel.shared.currentUser.user_phonenumber
         arrAddressData.append(dict)
         
         dict = [String:String]()
-        dict["title"] = "Email"
+        dict["title"] = getTranslate("email_title")
         dict["value"] = AppModel.shared.currentUser.user_email
         arrAddressData.append(dict)
         
@@ -157,38 +157,38 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     {
         arrSellerData = [[String : String]]()
         var dict = [String:String]()
-        dict["title"] = "Name"
+        dict["title"] = getTranslate("name_title")
         dict["value"] = sellerData.user_name
         arrSellerData.append(dict)
         
         dict = [String:String]()
-        dict["title"] = "Email"
+        dict["title"] = getTranslate("email_title")
         dict["value"] = sellerData.user_email
         arrSellerData.append(dict)
         
         dict = [String:String]()
-        dict["title"] = "Phone"
+        dict["title"] = getTranslate("phone_title")
         dict["value"] = sellerData.user_phonenumber
         arrSellerData.append(dict)
         
         dict = [String:String]()
-        dict["title"] = "Street"
+        dict["title"] = getTranslate("street_title")
         dict["value"] = sellerData.user_streetaddress
         arrSellerData.append(dict)
         
         dict = [String:String]()
-        dict["title"] = "Country"
+        dict["title"] = getTranslate("country_title")
         dict["value"] = sellerData.country_name
         arrSellerData.append(dict)
         
         dict = [String:String]()
-        dict["title"] = "City"
+        dict["title"] = getTranslate("city_title")
         dict["value"] = sellerData.city_name
         arrSellerData.append(dict)
         
         dict = [String:String]()
-        dict["title"] = "Total payment"
-        dict["value"] = totalPriceLbl.text?.replacingOccurrences(of: "Total ", with: "")
+        dict["title"] = getTranslate("total_payment_title")
+        dict["value"] = totalPriceLbl.text?.replacingOccurrences(of: getTranslate("total_space"), with: "")
         arrSellerData.append(dict)
         
         sellerTblView.reloadData()
@@ -200,31 +200,31 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         arrBillingData = [[String : String]]()
         finalPrice = 0.0
         var dict = [String:String]()
-        dict["title"] = "Auction price"
+        dict["title"] = getTranslate("auction_price")
         if let auction = auctionDict["auction"] as? [String : Any] {
             let active_auction_price = AppModel.shared.getStringValue(auction, "active_auction_price")
-            dict["value"] = "AED " + active_auction_price
+            dict["value"] = displayPriceWithCurrency(active_auction_price)
             finalPrice = Double(active_auction_price)!
         }
         arrBillingData.append(dict)
     
         dict = [String:String]()
-        dict["title"] = "Deposit amount"
+        dict["title"] = getTranslate("deposit_amount")
         let deposite = AppModel.shared.getStringValue(auctionDict, "deposite")
-        dict["value"] = "AED " + deposite
+        dict["value"] = displayPriceWithCurrency(deposite)
         finalPrice -= Double(deposite)!
         arrBillingData.append(dict)
         
         dict = [String:String]()
-        dict["title"] = "Service Fee"
-        dict["value"] = "AED 450"
+        dict["title"] = getTranslate("service_fee")
+        dict["value"] = displayPriceWithCurrency("450")
         finalPrice += 450
         arrBillingData.append(dict)
         
         dict = [String:String]()
-        dict["title"] = "Platform Charges"
+        dict["title"] = getTranslate("platform_charges")
         let servicefee = AppModel.shared.getStringValue(auctionDict, "servicefee")
-        dict["value"] = "AED " + servicefee
+        dict["value"] = displayPriceWithCurrency(servicefee)
         finalPrice += Double(servicefee)!
         arrBillingData.append(dict)
         
@@ -236,8 +236,8 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         billingTblView.reloadData()
         constraintHeightBillingTblView.constant = CGFloat((arrBillingData.count * 40))
-        totalPriceLbl.text = "Total AED " + setFlotingPrice(finalPrice)
-        totalPriceLbl.attributedText = attributedStringWithColor(totalPriceLbl.text!, ["Total AED"], color: DarkGrayColor, font: UIFont.init(name: APP_MEDIUM, size: 14))
+        totalPriceLbl.text = getTranslate("total_space") + displayPriceWithCurrency(setFlotingPrice(finalPrice))
+        totalPriceLbl.attributedText = attributedStringWithColor(totalPriceLbl.text!, [getTranslate("total_space")], color: DarkGrayColor, font: UIFont.init(name: APP_MEDIUM, size: 14))
     }
     
     //MARK:- Button click event

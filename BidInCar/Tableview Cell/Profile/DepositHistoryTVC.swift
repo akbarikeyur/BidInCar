@@ -23,7 +23,7 @@ class DepositHistoryTVC: UITableViewCell {
 
     func setupDetails(_ dict : DepositeModel) {
         dateLbl.text = dict.createdon
-        paymentLbl.text = "Paytabs"
+        paymentLbl.text = getTranslate("paytab")
         amountLbl.text = displayPriceWithCurrency(dict.deposite_amount)
         statusLbl.text = dict.deposite_status.capitalized
     }

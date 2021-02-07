@@ -14,8 +14,8 @@ class LoginVC: UIViewController {
     @IBOutlet weak var unameTxt: FloatingTextfiledView!
     @IBOutlet weak var passwordTxt: FloatingTextfiledView!
     @IBOutlet weak var keepBtn: Button!
-    
     @IBOutlet weak var signupLbl: Label!
+    
     var isFromLogout = false
     
     override func viewDidLoad() {
@@ -37,7 +37,9 @@ class LoginVC: UIViewController {
     {
         unameTxt.myTxt.keyboardType = .emailAddress
         passwordTxt.myTxt.isSecureTextEntry = true
-        signupLbl.attributedText = attributedStringWithColor(signupLbl.text!, ["Sign up"], color: PurpleColor, font: nil)
+        
+        signupLbl.text = getTranslate("not_member_signup")
+        signupLbl.attributedText = attributedStringWithColor(signupLbl.text!, [getTranslate("signup_title")], color: PurpleColor, font: nil)
     }
     
     //MARK:- Button click event

@@ -6,13 +6,13 @@
 "8lc-jT-yM1.text" = "المبلغ";
 
 /* Class = "UILabel"; text = "Single Auction"; ObjectID = "B0N-7U-JU7"; */
-"B0N-7U-JU7.text" = "Single Auction";
+"B0N-7U-JU7.text" = "مزاد واحد";
 
 /* Class = "UILabel"; text = "Featured AED 50"; ObjectID = "Dcp-DI-nz2"; */
 "Dcp-DI-nz2.text" = "Featured AED 50";
 
 /* Class = "UILabel"; text = "Validity"; ObjectID = "Jht-cC-3Pc"; */
-"Jht-cC-3Pc.text" = "Validity";
+"Jht-cC-3Pc.text" = "صلاحية";
 
 /* Class = "UILabel"; text = "Featured + Social Promotion AED 32"; ObjectID = "NJZ-xQ-twq"; */
 "NJZ-xQ-twq.text" = "Featured + Social Promotion AED 32";
@@ -21,7 +21,7 @@
 "SdG-fQ-rb2.text" = "Bidders";
 
 /* Class = "UILabel"; text = "Bidders"; ObjectID = "Sfk-db-aGy"; */
-"Sfk-db-aGy.text" = "Bidders";
+"Sfk-db-aGy.text" = "المزايدون";
 
 /* Class = "UILabel"; text = "Get 4 times more views and bids by featuring your auction"; ObjectID = "UYF-Qg-sgp"; */
 "UYF-Qg-sgp.text" = "Get 4 times more views and bids by featuring your auction";
@@ -30,7 +30,7 @@
 "VJO-c9-g6u.text" = "No of Auctions";
 
 /* Class = "UILabel"; text = "No of Auctions"; ObjectID = "eQD-DM-NvW"; */
-"eQD-DM-NvW.text" = "No of Auctions";
+"eQD-DM-NvW.text" = "عدد المزادات";
 
 /* Class = "UILabel"; text = "Total : AED 500"; ObjectID = "hT8-hJ-NVb"; */
 "hT8-hJ-NVb.text" = "Total : AED 500";

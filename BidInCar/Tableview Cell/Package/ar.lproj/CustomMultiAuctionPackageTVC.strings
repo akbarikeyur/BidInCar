@@ -18,16 +18,16 @@
 "d27-pG-IrC.text" = "Validity";
 
 /* Class = "UILabel"; text = "Validity"; ObjectID = "n3A-IY-QMK"; */
-"n3A-IY-QMK.text" = "Validity";
+"n3A-IY-QMK.text" = "صلاحية";
 
 /* Class = "UILabel"; text = "Single Auction"; ObjectID = "oKf-Bo-ClQ"; */
 "oKf-Bo-ClQ.text" = "Single Auction";
 
 /* Class = "UILabel"; text = "Saving"; ObjectID = "oUY-a7-yGx"; */
-"oUY-a7-yGx.text" = "Saving";
+"oUY-a7-yGx.text" = "إنقاذ";
 
 /* Class = "UILabel"; text = "No of Auctions"; ObjectID = "qnz-JV-jpK"; */
-"qnz-JV-jpK.text" = "No of Auctions";
+"qnz-JV-jpK.text" = "عدد المزادات";
 
 /* Class = "UILabel"; text = "Description"; ObjectID = "wNe-gO-dGk"; */
 "wNe-gO-dGk.text" = "وصف";

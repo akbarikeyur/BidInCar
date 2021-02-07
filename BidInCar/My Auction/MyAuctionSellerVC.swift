@@ -102,7 +102,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
         draftImg.isHidden = true
         sender.isSelected = true
         self.noDataFoundLbl.isHidden = true
-        noDataFoundLbl.text = "You have no any Auction yet"
+        noDataFoundLbl.text = getTranslate("no_any_auction")
         if sender == activeBtn {
             activeImg.isHidden = false
             if arrActiveAuction.count == 0 {
@@ -120,7 +120,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
             }
         }
         else if sender == draftBtn {
-            noDataFoundLbl.text = "No Auction in Draft"
+            noDataFoundLbl.text = getTranslate("no_auction_draft")
             draftImg.isHidden = false
             if arrDraftAuction.count == 0 {
                 serviceCallToGetAuction(3)
@@ -154,8 +154,8 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
             }
             cell.nameLbl.text = dict.auction_title
             cell.addressLbl.text = dict.auction_address
-            cell.priceLbl.text = "Price " + displayPriceWithCurrency(dict.active_auction_price)
-            cell.lotLbl.text = "Lot #\n" + dict.auctionid
+            cell.priceLbl.text = getTranslate("price_space") + displayPriceWithCurrency(dict.active_auction_price)
+            cell.lotLbl.text = getTranslate("lot_id_new_line") + dict.auctionid
             cell.contentView.backgroundColor = WhiteColor
             cell.selectionStyle = .none
             return cell
@@ -177,7 +177,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
                 if isUserLogin() && (dict.userid == AppModel.shared.currentUser.userid) &&  dict.auction_featured == "no" {
                     cell.makeFeatureBtn.isHidden = false
                     cell.makeFeatureBtn.isUserInteractionEnabled = true
-                    cell.makeFeatureBtn.setTitle("Make Featured", for: .normal)
+                    cell.makeFeatureBtn.setTitle(getTranslate("make_featured_button"), for: .normal)
                     cell.makeFeatureBtn.tag = indexPath.row
                     cell.makeFeatureBtn.addTarget(self, action: #selector(clickToMakeFeatured(_:)), for: .touchUpInside)
                 }else{
@@ -185,7 +185,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
                     if dict.auction_featured == "yes" {
                         cell.makeFeatureBtn.isHidden = false
                         cell.makeFeatureBtn.isUserInteractionEnabled = false
-                        cell.makeFeatureBtn.setTitle("Featured", for: .normal)
+                        cell.makeFeatureBtn.setTitle(getTranslate("featured_button"), for: .normal)
                     }
                 }
                 
@@ -197,9 +197,9 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
                 cell.winnerBtn.tag = indexPath.row
                 cell.winnerBtn.addTarget(self, action: #selector(clickToOpenFeaturedView(_:)), for: .touchUpInside)
                 cell.leftActionView.isHidden = true
-                cell.winnerLbl.text = "Winner: " + dict.auction_winner.winner_name
-                cell.winnerStatusLbl.text = "Winner: " + dict.auction_winner.status
-                cell.winnerPriceLbl.text = "AED " + dict.auction_winner.winneing_price
+                cell.winnerLbl.text = getTranslate("winner_colon") + dict.auction_winner.winner_name
+                cell.winnerStatusLbl.text = getTranslate("winner_colon") + dict.auction_winner.status
+                cell.winnerPriceLbl.text = displayPriceWithCurrency(dict.auction_winner.winneing_price)
             }
             for temp in dict.pictures {
                if temp.type == "auction" {
@@ -217,15 +217,14 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
                 cell.categoryLbl.text = ""
             }
             cell.addressLbl.text = dict.auction_address
-            cell.currentBidLbl.text = "Current Bid " + displayPriceWithCurrency(dict.active_auction_price)
-            cell.lotLbl.text = "Lot #\n" + dict.auctionid
-            cell.bidLbl.text = "Bid #\n" + dict.auction_bidscount
+            cell.currentBidLbl.text = getTranslate("current_bid_space") + displayPriceWithCurrency(dict.active_auction_price)
+            cell.lotLbl.text = getTranslate("lot_id_new_line") + dict.auctionid
+            cell.bidLbl.text = getTranslate("bid_id") + dict.auction_bidscount
             cell.bidBtn.tag = indexPath.row
             cell.bidBtn.addTarget(self, action: #selector(clickToSeeBid(_:)), for: .touchUpInside)
             cell.bookmarkBtn.isSelected = (dict.bookmark == "yes")
             cell.bookmarkBtn.tag = indexPath.row
             cell.bookmarkBtn.addTarget(self, action: #selector(clickToBookmark(_:)), for: .touchUpInside)
-            
             cell.contentView.backgroundColor = WhiteColor
             cell.selectionStyle = .none
             return cell
@@ -415,9 +414,9 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func setupPrice() {
-        featuredTitleLbl.attributedText = attributedStringWithColor(featuredTitleLbl.text!, ["Do you wish to continue?"], color: YellowColor, font: UIFont.init(name: APP_REGULAR, size: 16))
-        featuredPriceLbl.text = "Payment AED " + packagePrice
-        featuredPriceLbl.attributedText = attributedStringWithColor(featuredPriceLbl.text!, [("AED " + packagePrice)], color: YellowColor, font: UIFont.init(name: APP_BOLD, size: 30))
+        featuredTitleLbl.attributedText = attributedStringWithColor(featuredTitleLbl.text!, [getTranslate("wish_to_continue")], color: YellowColor, font: UIFont.init(name: APP_REGULAR, size: 16))
+        featuredPriceLbl.text = getTranslate("payment_space") + displayPriceWithCurrency(packagePrice)
+        featuredPriceLbl.attributedText = attributedStringWithColor(featuredPriceLbl.text!, [displayPriceWithCurrency(packagePrice)], color: YellowColor, font: UIFont.init(name: APP_BOLD, size: 30))
     }
     
     

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1807E6E823DECD460058BA30 /* CustomPackageHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1807E6E623DECD460058BA30 /* CustomPackageHistoryTVC.swift */; };
-		1807E6E923DECD460058BA30 /* CustomPackageHistoryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1807E6E723DECD460058BA30 /* CustomPackageHistoryTVC.xib */; };
 		180A454C2565709400D74F80 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180A454B2565709400D74F80 /* ForgotPasswordVC.swift */; };
 		181AD90223586D580006CACF /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AD90123586D580006CACF /* SideMenuVC.swift */; };
 		181AD90523586DB60006CACF /* CustomSideMenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AD90323586DB60006CACF /* CustomSideMenuTVC.swift */; };
@@ -51,15 +50,12 @@
 		189BD0BC235B49D000887112 /* CustomPackageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189BD0BA235B49D000887112 /* CustomPackageTVC.swift */; };
 		189BD0BD235B49D000887112 /* CustomPackageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189BD0BB235B49D000887112 /* CustomPackageTVC.xib */; };
 		189CDB4523DEE40300E1138C /* CustomBidAuctionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189CDB4323DEE40300E1138C /* CustomBidAuctionTVC.swift */; };
-		189CDB4623DEE40300E1138C /* CustomBidAuctionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189CDB4423DEE40300E1138C /* CustomBidAuctionTVC.xib */; };
 		18A33EAC23F2C6CE00BE0065 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18A33EAB23F2C6CE00BE0065 /* GoogleService-Info.plist */; };
 		18A6E2DD235D83C100268205 /* CustomPrivacyPolicyTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6E2DB235D83C100268205 /* CustomPrivacyPolicyTVC.swift */; };
 		18A6E2E0235D851A00268205 /* PrivacyPolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6E2DF235D851A00268205 /* PrivacyPolicyVC.swift */; };
 		18A6E2E2235D9A4D00268205 /* PostCarAuctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6E2E1235D9A4D00268205 /* PostCarAuctionVC.swift */; };
 		18AEE1B123F6A5B90099286D /* CustomDraftAuctionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AEE1AF23F6A5B90099286D /* CustomDraftAuctionTVC.swift */; };
-		18AEE1B223F6A5B90099286D /* CustomDraftAuctionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18AEE1B023F6A5B90099286D /* CustomDraftAuctionTVC.xib */; };
 		18AF65202359C065007B0B9C /* CustomAuctionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF651E2359C065007B0B9C /* CustomAuctionTVC.swift */; };
-		18AF65212359C065007B0B9C /* CustomAuctionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18AF651F2359C065007B0B9C /* CustomAuctionTVC.xib */; };
 		18AF65242359CBC4007B0B9C /* MyAuctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF65232359CBC4007B0B9C /* MyAuctionVC.swift */; };
 		18AF65262359E3F6007B0B9C /* MyAuctionSellerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF65252359E3F6007B0B9C /* MyAuctionSellerVC.swift */; };
 		18AF65292359FD87007B0B9C /* ShippingCalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF65282359FD87007B0B9C /* ShippingCalculatorVC.swift */; };
@@ -123,7 +119,6 @@
 		18D231A3243AECBF002F6C3E /* SelectAuctionCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D231A2243AECBF002F6C3E /* SelectAuctionCategoryVC.swift */; };
 		18D8D7AB237E5F1100B9A578 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8D7AA237E5F1100B9A578 /* MapVC.swift */; };
 		18D8DEB023DDED10001EC3BE /* CustomFeaturedAuctionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8DEAE23DDED10001EC3BE /* CustomFeaturedAuctionTVC.swift */; };
-		18D8DEB123DDED10001EC3BE /* CustomFeaturedAuctionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D8DEAF23DDED10001EC3BE /* CustomFeaturedAuctionTVC.xib */; };
 		18F9E1E82355BE5000B5E071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F9E1E72355BE5000B5E071 /* AppDelegate.swift */; };
 		18F9E1EA2355BE5000B5E071 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F9E1E92355BE5000B5E071 /* WelcomeVC.swift */; };
 		18F9E1ED2355BE5000B5E071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F9E1EB2355BE5000B5E071 /* Main.storyboard */; };
@@ -133,6 +128,14 @@
 		796E306225CA76E300447990 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 796E306425CA76E300447990 /* Localizable.strings */; };
 		7979923C25503F67008DBA48 /* CustomInfoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7979923A25503F67008DBA48 /* CustomInfoCVC.swift */; };
 		7979923D25503F67008DBA48 /* CustomInfoCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7979923B25503F67008DBA48 /* CustomInfoCVC.xib */; };
+		7989900725CFC7DA00B3CBB5 /* CustomFeaturedAuctionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7989900925CFC7DA00B3CBB5 /* CustomFeaturedAuctionTVC.xib */; };
+		7989900C25CFC90700B3CBB5 /* CustomPackageHistoryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7989900E25CFC90700B3CBB5 /* CustomPackageHistoryTVC.xib */; };
+		7989901125CFC99700B3CBB5 /* CustomBidAuctionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7989901325CFC99700B3CBB5 /* CustomBidAuctionTVC.xib */; };
+		7989901625CFCA4100B3CBB5 /* DepositHistoryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7989901825CFCA4100B3CBB5 /* DepositHistoryTVC.xib */; };
+		7989901B25CFCACA00B3CBB5 /* WithdrawHistoryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7989901D25CFCACA00B3CBB5 /* WithdrawHistoryTVC.xib */; };
+		7989902025CFCB1E00B3CBB5 /* CustomAuctionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7989902225CFCB1E00B3CBB5 /* CustomAuctionTVC.xib */; };
+		7989902525CFCC2A00B3CBB5 /* CustomDraftAuctionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7989902725CFCC2A00B3CBB5 /* CustomDraftAuctionTVC.xib */; };
+		7989902B25D018E700B3CBB5 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7989902A25D018E700B3CBB5 /* BundleExtension.swift */; };
 		799643092550497F00B772B1 /* buyer_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 799643082550497F00B772B1 /* buyer_info.json */; };
 		7996430B25504A6B00B772B1 /* seller_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 7996430A25504A6B00B772B1 /* seller_info.json */; };
 		79AC70A0252DCB4B00068CB6 /* Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 79AC709F252DCB4B00068CB6 /* Resources.bundle */; };
@@ -149,15 +152,12 @@
 		79C6259425CD6C54001712BC /* CustomSingleAuctionPackageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C6259625CD6C54001712BC /* CustomSingleAuctionPackageTVC.xib */; };
 		79C6259925CD6C5C001712BC /* CustomMultiAuctionPackageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C6259B25CD6C5C001712BC /* CustomMultiAuctionPackageTVC.xib */; };
 		79EA850B258895A4005A0543 /* DepositHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA8509258895A4005A0543 /* DepositHistoryTVC.swift */; };
-		79EA850C258895A4005A0543 /* DepositHistoryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79EA850A258895A4005A0543 /* DepositHistoryTVC.xib */; };
 		79EA850F25889AC0005A0543 /* WithdrawHistoryTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA850D25889AC0005A0543 /* WithdrawHistoryTVC.swift */; };
-		79EA851025889AC0005A0543 /* WithdrawHistoryTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79EA850E25889AC0005A0543 /* WithdrawHistoryTVC.xib */; };
 		DE97AE46EC9810F92CD99B1D /* Pods_BidInCar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679A98F506DE538FDAF3F264 /* Pods_BidInCar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1807E6E623DECD460058BA30 /* CustomPackageHistoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPackageHistoryTVC.swift; sourceTree = "<group>"; };
-		1807E6E723DECD460058BA30 /* CustomPackageHistoryTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPackageHistoryTVC.xib; sourceTree = "<group>"; };
 		180A454B2565709400D74F80 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		181AD90123586D580006CACF /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		181AD90323586DB60006CACF /* CustomSideMenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSideMenuTVC.swift; sourceTree = "<group>"; };
@@ -201,15 +201,12 @@
 		189BD0BA235B49D000887112 /* CustomPackageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPackageTVC.swift; sourceTree = "<group>"; };
 		189BD0BB235B49D000887112 /* CustomPackageTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPackageTVC.xib; sourceTree = "<group>"; };
 		189CDB4323DEE40300E1138C /* CustomBidAuctionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBidAuctionTVC.swift; sourceTree = "<group>"; };
-		189CDB4423DEE40300E1138C /* CustomBidAuctionTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomBidAuctionTVC.xib; sourceTree = "<group>"; };
 		18A33EAB23F2C6CE00BE0065 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18A6E2DB235D83C100268205 /* CustomPrivacyPolicyTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPrivacyPolicyTVC.swift; sourceTree = "<group>"; };
 		18A6E2DF235D851A00268205 /* PrivacyPolicyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyVC.swift; sourceTree = "<group>"; };
 		18A6E2E1235D9A4D00268205 /* PostCarAuctionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCarAuctionVC.swift; sourceTree = "<group>"; };
 		18AEE1AF23F6A5B90099286D /* CustomDraftAuctionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDraftAuctionTVC.swift; sourceTree = "<group>"; };
-		18AEE1B023F6A5B90099286D /* CustomDraftAuctionTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDraftAuctionTVC.xib; sourceTree = "<group>"; };
 		18AF651E2359C065007B0B9C /* CustomAuctionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuctionTVC.swift; sourceTree = "<group>"; };
-		18AF651F2359C065007B0B9C /* CustomAuctionTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAuctionTVC.xib; sourceTree = "<group>"; };
 		18AF65232359CBC4007B0B9C /* MyAuctionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAuctionVC.swift; sourceTree = "<group>"; };
 		18AF65252359E3F6007B0B9C /* MyAuctionSellerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAuctionSellerVC.swift; sourceTree = "<group>"; };
 		18AF65282359FD87007B0B9C /* ShippingCalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingCalculatorVC.swift; sourceTree = "<group>"; };
@@ -275,7 +272,6 @@
 		18D231A2243AECBF002F6C3E /* SelectAuctionCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAuctionCategoryVC.swift; sourceTree = "<group>"; };
 		18D8D7AA237E5F1100B9A578 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		18D8DEAE23DDED10001EC3BE /* CustomFeaturedAuctionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFeaturedAuctionTVC.swift; sourceTree = "<group>"; };
-		18D8DEAF23DDED10001EC3BE /* CustomFeaturedAuctionTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomFeaturedAuctionTVC.xib; sourceTree = "<group>"; };
 		18F9E1E42355BE5000B5E071 /* BidInCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BidInCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F9E1E72355BE5000B5E071 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18F9E1E92355BE5000B5E071 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
@@ -290,6 +286,21 @@
 		796E306525CA76E900447990 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7979923A25503F67008DBA48 /* CustomInfoCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInfoCVC.swift; sourceTree = "<group>"; };
 		7979923B25503F67008DBA48 /* CustomInfoCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomInfoCVC.xib; sourceTree = "<group>"; };
+		7989900825CFC7DA00B3CBB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CustomFeaturedAuctionTVC.xib; sourceTree = "<group>"; };
+		7989900B25CFC7E500B3CBB5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CustomFeaturedAuctionTVC.strings; sourceTree = "<group>"; };
+		7989900D25CFC90700B3CBB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CustomPackageHistoryTVC.xib; sourceTree = "<group>"; };
+		7989901025CFC91100B3CBB5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CustomPackageHistoryTVC.strings; sourceTree = "<group>"; };
+		7989901225CFC99700B3CBB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CustomBidAuctionTVC.xib; sourceTree = "<group>"; };
+		7989901525CFC9A100B3CBB5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CustomBidAuctionTVC.strings; sourceTree = "<group>"; };
+		7989901725CFCA4100B3CBB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DepositHistoryTVC.xib; sourceTree = "<group>"; };
+		7989901A25CFCA4800B3CBB5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/DepositHistoryTVC.strings; sourceTree = "<group>"; };
+		7989901C25CFCACA00B3CBB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WithdrawHistoryTVC.xib; sourceTree = "<group>"; };
+		7989901F25CFCACF00B3CBB5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/WithdrawHistoryTVC.strings; sourceTree = "<group>"; };
+		7989902125CFCB1E00B3CBB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CustomAuctionTVC.xib; sourceTree = "<group>"; };
+		7989902425CFCB2300B3CBB5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CustomAuctionTVC.strings; sourceTree = "<group>"; };
+		7989902625CFCC2A00B3CBB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CustomDraftAuctionTVC.xib; sourceTree = "<group>"; };
+		7989902925CFCC3600B3CBB5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CustomDraftAuctionTVC.strings; sourceTree = "<group>"; };
+		7989902A25D018E700B3CBB5 /* BundleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		799643082550497F00B772B1 /* buyer_info.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = buyer_info.json; sourceTree = "<group>"; };
 		7996430A25504A6B00B772B1 /* seller_info.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = seller_info.json; sourceTree = "<group>"; };
 		79AC7098252DC7DD00068CB6 /* Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Resources.bundle; path = "../../../../../Downloads/paytabs-ios-library-sample-master/samples/sample.swift/sample.swift/Resources.bundle"; sourceTree = "<group>"; };
@@ -321,9 +332,7 @@
 		79DC1A8725CA6EA600F54340 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		79DC1A8825CA6EB100F54340 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		79EA8509258895A4005A0543 /* DepositHistoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositHistoryTVC.swift; sourceTree = "<group>"; };
-		79EA850A258895A4005A0543 /* DepositHistoryTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepositHistoryTVC.xib; sourceTree = "<group>"; };
 		79EA850D25889AC0005A0543 /* WithdrawHistoryTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawHistoryTVC.swift; sourceTree = "<group>"; };
-		79EA850E25889AC0005A0543 /* WithdrawHistoryTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WithdrawHistoryTVC.xib; sourceTree = "<group>"; };
 		C6F347BE9FFF42B2A927ACF1 /* Pods-BidInCar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BidInCar.debug.xcconfig"; path = "Target Support Files/Pods-BidInCar/Pods-BidInCar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -453,15 +462,15 @@
 				189BD0BA235B49D000887112 /* CustomPackageTVC.swift */,
 				189BD0BB235B49D000887112 /* CustomPackageTVC.xib */,
 				18D8DEAE23DDED10001EC3BE /* CustomFeaturedAuctionTVC.swift */,
-				18D8DEAF23DDED10001EC3BE /* CustomFeaturedAuctionTVC.xib */,
+				7989900925CFC7DA00B3CBB5 /* CustomFeaturedAuctionTVC.xib */,
 				1807E6E623DECD460058BA30 /* CustomPackageHistoryTVC.swift */,
-				1807E6E723DECD460058BA30 /* CustomPackageHistoryTVC.xib */,
+				7989900E25CFC90700B3CBB5 /* CustomPackageHistoryTVC.xib */,
 				189CDB4323DEE40300E1138C /* CustomBidAuctionTVC.swift */,
-				189CDB4423DEE40300E1138C /* CustomBidAuctionTVC.xib */,
+				7989901325CFC99700B3CBB5 /* CustomBidAuctionTVC.xib */,
 				79EA8509258895A4005A0543 /* DepositHistoryTVC.swift */,
-				79EA850A258895A4005A0543 /* DepositHistoryTVC.xib */,
+				7989901825CFCA4100B3CBB5 /* DepositHistoryTVC.xib */,
 				79EA850D25889AC0005A0543 /* WithdrawHistoryTVC.swift */,
-				79EA850E25889AC0005A0543 /* WithdrawHistoryTVC.xib */,
+				7989901D25CFCACA00B3CBB5 /* WithdrawHistoryTVC.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -470,11 +479,11 @@
 			isa = PBXGroup;
 			children = (
 				18AF651E2359C065007B0B9C /* CustomAuctionTVC.swift */,
-				18AF651F2359C065007B0B9C /* CustomAuctionTVC.xib */,
+				7989902225CFCB1E00B3CBB5 /* CustomAuctionTVC.xib */,
 				18B85ACE23602A1100F6B2C6 /* CustomFaqTVC.swift */,
 				18B85ACF23602A1100F6B2C6 /* CustomFaqTVC.xib */,
 				18AEE1AF23F6A5B90099286D /* CustomDraftAuctionTVC.swift */,
-				18AEE1B023F6A5B90099286D /* CustomDraftAuctionTVC.xib */,
+				7989902725CFCC2A00B3CBB5 /* CustomDraftAuctionTVC.xib */,
 			);
 			path = Auction;
 			sourceTree = "<group>";
@@ -572,6 +581,7 @@
 			children = (
 				18BF7478236D5C2D006DF226 /* APIManager.swift */,
 				18BF7477236D5C2D006DF226 /* AppModel.swift */,
+				7989902A25D018E700B3CBB5 /* BundleExtension.swift */,
 				18B244BB2355C19600AEFDC6 /* GlobalConstant.swift */,
 				18B244BC2355C19600AEFDC6 /* DateTimeUtility.swift */,
 				18B244BD2355C19600AEFDC6 /* DottedLineView.swift */,
@@ -763,19 +773,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18AF65212359C065007B0B9C /* CustomAuctionTVC.xib in Resources */,
+				7989902025CFCB1E00B3CBB5 /* CustomAuctionTVC.xib in Resources */,
 				18B85AD123602A1100F6B2C6 /* CustomFaqTVC.xib in Resources */,
 				79C6257125CD6BE3001712BC /* Setting.storyboard in Resources */,
 				18B245062355C74F00AEFDC6 /* ADAM.CG PRO.otf in Resources */,
 				79C6258525CD6C31001712BC /* CustomSideMenuTVC.xib in Resources */,
 				79C6259425CD6C54001712BC /* CustomSingleAuctionPackageTVC.xib in Resources */,
 				1863D645241666E800EA6B1B /* CustomAuctionCategoryCVC.xib in Resources */,
-				1807E6E923DECD460058BA30 /* CustomPackageHistoryTVC.xib in Resources */,
+				7989900C25CFC90700B3CBB5 /* CustomPackageHistoryTVC.xib in Resources */,
 				1820C354240A895F008DFF5F /* CustomCategoryCVC.xib in Resources */,
 				183EBF092358A79300F34909 /* FloatingTextview.xib in Resources */,
 				18C6556623B9FE8C007E5920 /* CustomBidPriceCVC.xib in Resources */,
 				18B245012355C19600AEFDC6 /* Poppins-Light.ttf in Resources */,
-				189CDB4623DEE40300E1138C /* CustomBidAuctionTVC.xib in Resources */,
+				7989901125CFC99700B3CBB5 /* CustomBidAuctionTVC.xib in Resources */,
 				189BD0B5235B2DA600887112 /* CustomCardCVC.xib in Resources */,
 				79C6258A25CD6C39001712BC /* CustomBookmarkTVC.xib in Resources */,
 				796E306225CA76E300447990 /* Localizable.strings in Resources */,
@@ -786,17 +796,17 @@
 				18F9E1F22355BE5200B5E071 /* LaunchScreen.storyboard in Resources */,
 				79C6257925CD6C1D001712BC /* CustomCarDetailTVC.xib in Resources */,
 				18F9E1EF2355BE5200B5E071 /* Assets.xcassets in Resources */,
-				79EA850C258895A4005A0543 /* DepositHistoryTVC.xib in Resources */,
-				79EA851025889AC0005A0543 /* WithdrawHistoryTVC.xib in Resources */,
+				7989901625CFCA4100B3CBB5 /* DepositHistoryTVC.xib in Resources */,
+				7989901B25CFCACA00B3CBB5 /* WithdrawHistoryTVC.xib in Resources */,
 				18B245022355C19600AEFDC6 /* Poppins-Medium.ttf in Resources */,
-				18AEE1B223F6A5B90099286D /* CustomDraftAuctionTVC.xib in Resources */,
+				7989902525CFCC2A00B3CBB5 /* CustomDraftAuctionTVC.xib in Resources */,
 				799643092550497F00B772B1 /* buyer_info.json in Resources */,
 				7979923D25503F67008DBA48 /* CustomInfoCVC.xib in Resources */,
 				79C6256C25CD5ABA001712BC /* Auction.storyboard in Resources */,
 				79C6257625CD6C18001712BC /* CustomCarTVC.xib in Resources */,
 				79AC70A0252DCB4B00068CB6 /* Resources.bundle in Resources */,
 				79C6258F25CD6C42001712BC /* CustomPrivacyPolicyTVC.xib in Resources */,
-				18D8DEB123DDED10001EC3BE /* CustomFeaturedAuctionTVC.xib in Resources */,
+				7989900725CFC7DA00B3CBB5 /* CustomFeaturedAuctionTVC.xib in Resources */,
 				188CFC632356037700C18B2A /* CustomCarCVC.xib in Resources */,
 				7996430B25504A6B00B772B1 /* seller_info.json in Resources */,
 				79C6259925CD6C5C001712BC /* CustomMultiAuctionPackageTVC.xib in Resources */,
@@ -910,6 +920,7 @@
 				18AF65262359E3F6007B0B9C /* MyAuctionSellerVC.swift in Sources */,
 				181AD909235873E40006CACF /* BookmarkVC.swift in Sources */,
 				18B85ACD236022D300F6B2C6 /* PaymentSummaryVC.swift in Sources */,
+				7989902B25D018E700B3CBB5 /* BundleExtension.swift in Sources */,
 				18B85AD023602A1100F6B2C6 /* CustomFaqTVC.swift in Sources */,
 				7979923C25503F67008DBA48 /* CustomInfoCVC.swift in Sources */,
 				18C7BD3D23608A7F008C4783 /* SelectPaymentMethodVC.swift in Sources */,
@@ -1007,6 +1018,69 @@
 				796E306525CA76E900447990 /* ar */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		7989900925CFC7DA00B3CBB5 /* CustomFeaturedAuctionTVC.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7989900825CFC7DA00B3CBB5 /* Base */,
+				7989900B25CFC7E500B3CBB5 /* ar */,
+			);
+			name = CustomFeaturedAuctionTVC.xib;
+			sourceTree = "<group>";
+		};
+		7989900E25CFC90700B3CBB5 /* CustomPackageHistoryTVC.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7989900D25CFC90700B3CBB5 /* Base */,
+				7989901025CFC91100B3CBB5 /* ar */,
+			);
+			name = CustomPackageHistoryTVC.xib;
+			sourceTree = "<group>";
+		};
+		7989901325CFC99700B3CBB5 /* CustomBidAuctionTVC.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7989901225CFC99700B3CBB5 /* Base */,
+				7989901525CFC9A100B3CBB5 /* ar */,
+			);
+			name = CustomBidAuctionTVC.xib;
+			sourceTree = "<group>";
+		};
+		7989901825CFCA4100B3CBB5 /* DepositHistoryTVC.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7989901725CFCA4100B3CBB5 /* Base */,
+				7989901A25CFCA4800B3CBB5 /* ar */,
+			);
+			name = DepositHistoryTVC.xib;
+			sourceTree = "<group>";
+		};
+		7989901D25CFCACA00B3CBB5 /* WithdrawHistoryTVC.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7989901C25CFCACA00B3CBB5 /* Base */,
+				7989901F25CFCACF00B3CBB5 /* ar */,
+			);
+			name = WithdrawHistoryTVC.xib;
+			sourceTree = "<group>";
+		};
+		7989902225CFCB1E00B3CBB5 /* CustomAuctionTVC.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7989902125CFCB1E00B3CBB5 /* Base */,
+				7989902425CFCB2300B3CBB5 /* ar */,
+			);
+			name = CustomAuctionTVC.xib;
+			sourceTree = "<group>";
+		};
+		7989902725CFCC2A00B3CBB5 /* CustomDraftAuctionTVC.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7989902625CFCC2A00B3CBB5 /* Base */,
+				7989902925CFCC3600B3CBB5 /* ar */,
+			);
+			name = CustomDraftAuctionTVC.xib;
 			sourceTree = "<group>";
 		};
 		79C6256925CD582E001712BC /* Home.storyboard */ = {

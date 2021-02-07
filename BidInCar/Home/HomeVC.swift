@@ -435,13 +435,13 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         else if collectionView == infoCV {
             if isUserBuyer() {
                 let tempInfo = arrInfo[indexPath.row]
-                if tempInfo.name == "Deposit Amount:" || tempInfo.name == "Total Bidding Limit:" {
+                if tempInfo.name == getTranslate("info_deposit_amount") || tempInfo.name == getTranslate("info_total_bidding_limit") {
                     NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_MY_PROFILE), object: nil)
                 }
             }
             else {
                 let tempInfo = arrInfo[indexPath.row]
-                if tempInfo.name == "Package:" {
+                if tempInfo.name == getTranslate("info_package") {
                     let vc : PackageVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PackageVC") as! PackageVC
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
@@ -485,9 +485,9 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
         }
         cell.featureView.isHidden = (dict.auction_featured != "yes")
         cell.titleLbl.text = dict.auction_title
-        cell.timeLbl.text = getRemainingTime(dict.auction_end) + " left  " + getDateStringFromDateWithLocalTimezone(date: getDateFromDateString(strDate: dict.auction_end, format: "YYYY-MM-dd")!, format: "dd MMM, YYYY")
-        cell.minPriceLbl.text = "Bid Count: " + dict.auction_bidscount
-        cell.currentBidLbl.text = "Current Price " + displayPriceWithCurrency(dict.active_auction_price)
+        cell.timeLbl.text = getRemainingTime(dict.auction_end) + getTranslate("left_time_space") + getDateStringFromDateWithLocalTimezone(date: getDateFromDateString(strDate: dict.auction_end, format: "YYYY-MM-dd")!, format: "dd MMM, YYYY")
+        cell.minPriceLbl.text = getTranslate("bid_count_colon") + dict.auction_bidscount
+        cell.currentBidLbl.text = getTranslate("current_price_space") + displayPriceWithCurrency(dict.active_auction_price)
         cell.starBtn.isSelected = (dict.bookmark == "yes")
         
         if isUserLogin() && !isUserBuyer() {
@@ -759,19 +759,19 @@ extension HomeVC {
         self.arrInfo = [InfoModel]()
         for temp in getJsonFromFile("buyer_info") {
             let tempInfo = InfoModel.init(dict: temp)
-            if tempInfo.name == "Active Auctions:" {
+            if tempInfo.name == getTranslate("info_active_auctions") {
                 tempInfo.value = AppModel.shared.getStringValue(data, "active_auction_bids")
             }
-            else if tempInfo.name == "Total Auctions:" {
+            else if tempInfo.name == getTranslate("info_total_auctions") {
                 tempInfo.value = AppModel.shared.getStringValue(data, "total_auctions")
             }
-            else if tempInfo.name == "Deposit Amount:" {
+            else if tempInfo.name == getTranslate("info_deposit_amount") {
                 tempInfo.value = AppModel.shared.getStringValue(data, "deposite")
             }
-            else if tempInfo.name == "Total Bidding Limit:" {
+            else if tempInfo.name == getTranslate("info_total_bidding_limit") {
                 tempInfo.value = AppModel.shared.getStringValue(data, "total_biding_limit")
             }
-            else if tempInfo.name == "Remaining Bidding Limit:" {
+            else if tempInfo.name == getTranslate("info_remaining_bidding_limit") {
                 tempInfo.value = AppModel.shared.getStringValue(data, "remain_biding_limit")
             }
             self.arrInfo.append(tempInfo)
@@ -800,24 +800,24 @@ extension HomeVC {
         self.arrInfo = [InfoModel]()
         for temp in getJsonFromFile("seller_info") {
             let tempInfo = InfoModel.init(dict: temp)
-            if tempInfo.name == "Active Auctions:" {
+            if tempInfo.name == getTranslate("info_active_auctions") {
                 tempInfo.value = AppModel.shared.getStringValue(data, "active_auction")
             }
-            else if tempInfo.name == "Total Auctions:" {
+            else if tempInfo.name == getTranslate("info_total_auctions") {
                 tempInfo.value = AppModel.shared.getStringValue(data, "total_auction")
             }
-            else if tempInfo.name == "Package:" {
+            else if tempInfo.name == getTranslate("info_package") {
                 tempInfo.value = AppModel.shared.getStringValue(data, "package_name")
                 if AppModel.shared.getStringValue(data, "package_name") != "" {
                     let value : Int = AppModel.shared.getIntValue(data, "package_name")
                     if value <= 35 {
                         tempInfo.value = String(value)
                     }else{
-                        tempInfo.value = "UNLIMITED"
+                        tempInfo.value = getTranslate("unlimited_value")
                     }
                 }
             }
-            else if tempInfo.name == "Remaining Auction Limit:" {
+            else if tempInfo.name == getTranslate("info_remaining_auctions") {
                 tempInfo.value = AppModel.shared.getStringValue(data, "auctionsleft")
             }
             self.arrInfo.append(tempInfo)
@@ -830,13 +830,3 @@ extension HomeVC {
         }
     }
 }
-
-/*
-    https://bidincars.com/auctions/searchauctions
-    auctionstatus: active
-    userid: 0
-    usertype:0
-    pagename: searchbar
-    orderby: latest / featured / highest / lowest
-    filters: {"auction_title":"","carmake":"0","carmodel":null,"min_price":"","max_price":"","cattype":"1"}
- */

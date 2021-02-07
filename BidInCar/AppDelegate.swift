@@ -77,6 +77,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         return true
     }
 
+    func storyboard() -> UIStoryboard
+    {
+        return UIStoryboard(name: "Main", bundle: nil)
+    }
+    
     //MARK:- Share Appdelegate
     func sharedDelegate() -> AppDelegate
     {
@@ -357,9 +362,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-      return GIDSignIn.sharedInstance().handle(url)
+        return GIDSignIn.sharedInstance().handle(url)
     }
 
+    //MARK:- Change language
+    func changeLanguage()
+    {
+        if L102Language.currentAppleLanguage() == "en" || L102Language.currentAppleLanguage().contains("en") {
+            UserDefaults.standard.set(["ar"], forKey: "AppleLanguages")
+            UserDefaults.standard.synchronize()
+            // Update the language by swaping bundle
+            Bundle.setLanguage("ar")
+            UIView.appearance().semanticContentAttribute = .forceRightToLeft
+        }
+        else{
+            UserDefaults.standard.set(["en"], forKey: "AppleLanguages")
+            UserDefaults.standard.synchronize()
+            // Update the language by swaping bundle
+            Bundle.setLanguage("en")
+            UIView.appearance().semanticContentAttribute = .forceLeftToRight
+        }
+        AppDelegate().sharedDelegate().window?.rootViewController = AppDelegate().sharedDelegate().storyboard().instantiateInitialViewController()
+        container = MFSideMenuContainerViewController()
+        navigateToDashBoard()
+//        delay(1.0) {
+//            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.RELOAD_AFTER_CHANGE_LANGUAGE), object: nil)
+//        }
+    }
+    
     //MARK:- Notification
     func registerPushNotification(_ application: UIApplication)
     {

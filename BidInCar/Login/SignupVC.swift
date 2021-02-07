@@ -80,7 +80,8 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         confirmPasswordTxt.myTxt.isSecureTextEntry = true
         updateStrongPasswordValue()
         
-        signinLbl.attributedText = attributedStringWithColor(signinLbl.text!, ["Sign in"], color: PurpleColor, font: nil)
+        signinLbl.text = getTranslate("already_member_signin")
+        signinLbl.attributedText = attributedStringWithColor(signinLbl.text!, [getTranslate("signin_title")], color: PurpleColor, font: nil)
         companyDetailView.isHidden = true
         resetButton()
         individualBtn.isHidden = true

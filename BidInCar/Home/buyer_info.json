@@ -1,31 +1,31 @@
 [
     {
         "image" : "active_auction",
-        "name" : "Active Auctions:",
+        "name" : "info_active_auctions",
         "value" : "0",
         "link" : ""
     },
     {
         "image" : "total_auction",
-        "name" : "Total Auctions:",
+        "name" : "info_total_auctions",
         "value" : "0",
         "link" : ""
     },
     {
         "image" : "deposit_amount",
-        "name" : "Deposit Amount:",
+        "name" : "info_deposit_amount",
         "value" : "0",
-        "link" : "Add More"
+        "link" : "add_more_link"
     },
     {
         "image" : "total_bidding_limit",
-        "name" : "Total Bidding Limit:",
+        "name" : "info_total_bidding_limit",
         "value" : "0",
-        "link" : "Increase More"
+        "link" : "increase_more_link"
     },
     {
         "image" : "remaining_limit",
-        "name" : "Remaining Bidding Limit:",
+        "name" : "info_remaining_bidding_limit",
         "value" : "0",
         "link" : ""
     }

@@ -52,11 +52,11 @@ class BookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         cell.titleLbl.text = dict.auction_title
         cell.addressLbl.text = dict.auction_address
-        cell.currentBidLbl.text = "Current Bid " + displayPriceWithCurrency(dict.active_auction_price)
-        cell.bidLbl.text = "Bid #\n" + String(dict.auction_bidscount)
+        cell.currentBidLbl.text = getTranslate("current_bid_space") + displayPriceWithCurrency(dict.active_auction_price)
+        cell.bidLbl.text = getTranslate("bid_id") + String(dict.auction_bidscount)
         cell.bidBtn.tag = indexPath.row
         cell.bidBtn.addTarget(self, action: #selector(clickToSeeBid(_:)), for: .touchUpInside)
-        cell.lotLbl.text = "Lot #\n" + dict.auctionid
+        cell.lotLbl.text = getTranslate("lot_id_new_line") + dict.auctionid
         cell.bookmarkBtn.tag = indexPath.row
         cell.bookmarkBtn.addTarget(self, action: #selector(clickToBookmark(_:)), for: .touchUpInside)
         cell.reminderBtn.tag = indexPath.row

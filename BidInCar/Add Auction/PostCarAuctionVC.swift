@@ -97,20 +97,6 @@ class PostCarAuctionVC: UploadImageVC {
         {
             serviceCallToGetCategoryList()
         }
-        //fillData()
-    }
-    
-    func fillData()
-    {
-        if PLATFORM.isSimulator {
-            titleTxt.myTxt.text = "Old Boat 1"
-            priceTxt.myTxt.text = "600000"
-            minBidIncrementTxt.myTxt.text = "100"
-            yearTxt.myTxt.text = "2018"
-            vinTxt.myTxt.text = "5646"
-            transmissionTxt.myTxt.text = NSLocalizedString("transmission_automatic", comment: "")
-            fuelTypeTxt.myTxt.text = NSLocalizedString("fuel_diesel", comment: "")
-        }
     }
     
     func hideViewBasedOnAuctionType()
@@ -344,7 +330,7 @@ class PostCarAuctionVC: UploadImageVC {
     
     @IBAction func clickToSelectTransmission(_ sender: UIButton) {
         self.view.endEditing(true)
-        let arrTransmisionData = [NSLocalizedString("transmission_automatic", comment: ""), NSLocalizedString("transmission_manual", comment: "")]
+        let arrTransmisionData = [getTranslate("transmission_automatic"), getTranslate("transmission_manual")]
         let dropDown = DropDown()
         dropDown.anchorView = sender
         dropDown.dataSource = arrTransmisionData
@@ -357,7 +343,7 @@ class PostCarAuctionVC: UploadImageVC {
     
     @IBAction func clickToSelectFuelType(_ sender: UIButton) {
         self.view.endEditing(true)
-        let arrFuelData = [NSLocalizedString("fuel_gas", comment: ""), NSLocalizedString("fuel_diesel", comment: ""), NSLocalizedString("fuel_hybrid", comment: ""), NSLocalizedString("fuel_electric", comment: "")]
+        let arrFuelData = [getTranslate("fuel_gas"), getTranslate("fuel_diesel"), getTranslate("fuel_hybrid"), getTranslate("fuel_electric")]
         let dropDown = DropDown()
         dropDown.anchorView = sender
         dropDown.dataSource = arrFuelData

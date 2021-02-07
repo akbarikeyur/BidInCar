@@ -1,0 +1,42 @@
+
+/* Class = "UILabel"; text = "Package Expire On"; ObjectID = "0HP-do-PBG"; */
+"0HP-do-PBG.text" = "الحزمة تنتهي في";
+
+/* Class = "UILabel"; text = "20/2"; ObjectID = "5Mr-IU-CEt"; */
+"5Mr-IU-CEt.text" = "20/2";
+
+/* Class = "UILabel"; text = "20/2"; ObjectID = "FBU-AH-RJa"; */
+"FBU-AH-RJa.text" = "20/2";
+
+/* Class = "UILabel"; text = "Package Name"; ObjectID = "HtJ-TO-tHa"; */
+"HtJ-TO-tHa.text" = "اسم الحزمة";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "JMd-M3-XVV"; */
+"JMd-M3-XVV.text" = "تاريخ";
+
+/* Class = "UILabel"; text = "Package Price"; ObjectID = "aNT-wS-P4k"; */
+"aNT-wS-P4k.text" = "سعر الطرد";
+
+/* Class = "UILabel"; text = "#Gold"; ObjectID = "aPI-Co-SWX"; */
+"aPI-Co-SWX.text" = "#Gold";
+
+/* Class = "UILabel"; text = "#Gold"; ObjectID = "dhP-CV-IVx"; */
+"dhP-CV-IVx.text" = "#Gold";
+
+/* Class = "UILabel"; text = "20/2"; ObjectID = "f7h-9A-gpT"; */
+"f7h-9A-gpT.text" = "20/2";
+
+/* Class = "UILabel"; text = "20/2"; ObjectID = "fjb-EQ-gLl"; */
+"fjb-EQ-gLl.text" = "20/2";
+
+/* Class = "UILabel"; text = "Remaining Auctions"; ObjectID = "oeu-ks-flm"; */
+"oeu-ks-flm.text" = "Remaining Auctions";
+
+/* Class = "UILabel"; text = "Auction Posted"; ObjectID = "qyO-Xx-9jg"; */
+"qyO-Xx-9jg.text" = "Auction Posted";
+
+/* Class = "UILabel"; text = "Package Expire On"; ObjectID = "uib-Ev-CQs"; */
+"uib-Ev-CQs.text" = "Package Expire On";
+
+/* Class = "UILabel"; text = "#Gold"; ObjectID = "zac-nf-0BN"; */
+"zac-nf-0BN.text" = "#Gold";

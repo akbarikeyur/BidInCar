@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "20/2"; ObjectID = "4r5-mD-hfS"; */
+"4r5-mD-hfS.text" = "20/2";
+
+/* Class = "UILabel"; text = "#Gold"; ObjectID = "9X1-aI-hZ5"; */
+"9X1-aI-hZ5.text" = "#Gold";
+
+/* Class = "UILabel"; text = "Action"; ObjectID = "9tV-m6-kYZ"; */
+"9tV-m6-kYZ.text" = "عمل";
+
+/* Class = "UILabel"; text = "Your Bid"; ObjectID = "Lb1-EB-yd5"; */
+"Lb1-EB-yd5.text" = "رهانك";
+
+/* Class = "UILabel"; text = "Status"; ObjectID = "N3Z-22-bnA"; */
+"N3Z-22-bnA.text" = "الحالة";
+
+/* Class = "UILabel"; text = "Current Bid"; ObjectID = "UnM-Dz-RrE"; */
+"UnM-Dz-RrE.text" = "مناقصه قائمة";
+
+/* Class = "UIButton"; normalTitle = "View"; ObjectID = "VHU-ej-eXB"; */
+"VHU-ej-eXB.normalTitle" = "رأي";
+
+/* Class = "UILabel"; text = "Auction Name"; ObjectID = "fG1-sK-eMP"; */
+"fG1-sK-eMP.text" = "اسم المزاد";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "g0l-QY-e1E"; */
+"g0l-QY-e1E.text" = "تاريخ";
+
+/* Class = "UILabel"; text = "20/2"; ObjectID = "m8O-Md-WoQ"; */
+"m8O-Md-WoQ.text" = "20/2";
+
+/* Class = "UILabel"; text = "#Gold"; ObjectID = "qoA-ZA-Qi4"; */
+"qoA-ZA-Qi4.text" = "#Gold";
+
+/* Class = "UILabel"; text = "20/2"; ObjectID = "uIX-j2-zma"; */
+"uIX-j2-zma.text" = "20/2";

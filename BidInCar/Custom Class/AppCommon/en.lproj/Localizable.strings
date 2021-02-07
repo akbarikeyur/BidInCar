@@ -21,6 +21,7 @@
 "menu_logout" = "Logout";
 "menu_how_sell" = "How to sell?";
 "menu_how_buy" = "How to buy?";
+"menu_lang" = "Change to Arabic";
 
 "logout_title" = "Logout";
 "logout_msg" = "Are you sure want to logout?";
@@ -52,6 +53,11 @@
 "enter_po_box" = "Please enter PO Box";
 "enter_verification_code" = "Please enter code";
 "enter_company_email" = "Please enter company email";
+
+"not_member_signup" = "Not a member? Sign up";
+"signup_title" = "Sign up";
+"already_member_signin" = "Already Member?  Sign in";
+"signin_title" = "Sign in";
 
 //Guest User Message
 "bookmark_login_msg" = "Please login/signup to add wish list.";
@@ -187,3 +193,186 @@
 //Contact Us
 "select_interest" = "Please select your interest.";
 "add_comment" = "Please enter your comment.";
+
+
+//Buyer Info
+"info_active_auctions" = "Active Auctions:";
+"info_total_auctions" = "Total Auctions:";
+"info_deposit_amount" = "Deposit Amount:";
+"info_remaining_auctions" = "Remaining Auction Limit:";
+"info_total_bidding_limit" = "Total Bidding Limit:";
+"info_remaining_bidding_limit" = "Remaining Bidding Limit:";
+"info_package" = "Package:";
+"add_more_link" = "Add More";
+"increase_more_link" = "Increase More";
+
+"left_time_space" = " left  ";
+"bid_count_colon" = "Bid Count: ";
+"current_price_space" = "Current Price ";
+"unlimited_value" = "UNLIMITED";
+
+
+//Auction Detail
+"deposit_title" = "Deposit";
+"min_bid_increment" = "Minimum bid increment ";
+"lot_title" = "Lot # ";
+"auction_country_of_made" = "Country of made";
+"auction_brand" = "Brand";
+"auction_model" = "Model";
+"auction_age" = "Age";
+"auction_condition" = "Condition";
+"auction_body_condition" = "Body Condition";
+"auction_mechanical_condition" = "Mechanical Condition";
+"auction_mileage" = "Mileage";
+"auction_body_type" = "Body type";
+"auction_vin" = "VIN";
+"auction_motor_no" = "Motor No.";
+"auction_exterior_colour" = "Exterior colour";
+"auction_transmission" = "Transmission";
+"auction_fuel" = "Fuel";
+"auction_interior_colour" = "Interior colour";
+"auction_no_of_cylinder" = "No. Of Cylinder";
+"auction_doors" = "Doors";
+"auction_horsepower" = "Horsepower";
+"auction_wheels" = "Wheels";
+"auction_drive_system" = "Drive System";
+"auction_engine_size" = "Engine Size";
+"auction_boat_length" = "Boat length";
+"auction_boat_age" = "Boat Age";
+"auction_car_warranty" = "Does the car has a warranty?";
+"auction_boat_warranty" = "Boat warranty";
+
+"expired_time" = "Expired";
+"current_bid_space" = "Current Bid ";
+"bid_id" = "Bid #\n";
+"bid_hash" = "Bid #";
+"lot_id_new_line" = "Lot #\n";
+"lot_id" = "Lot #";
+"highest_price" = "Highest Price";
+"lowest_price" = "Lowest Price";
+"starting_price_colon" = "Starting Price : ";
+"time_remaining" = "Time remaining ";
+"end_time_space" = "End Time ";
+
+"body_sedan" = "Sedan";
+"body_coupe" = "Coupe";
+"body_crossover" = "Crossover";
+"body_hard_top_convertible" = "Hard Top Convertible";
+"body_hatchback" = "Hatchback";
+"body_pick_up_truck" = "Pick Up Truck";
+"body_soft_top_convertible" = "Soft Top Convertible";
+"body_sports_car" = "Sports Car";
+"body_SUV" = "SUV";
+"body_utility_truck" = "Utility Truck";
+"body_van" = "Van";
+"body_wagon" = "Wagon";
+"body_other" = "Other";
+
+"mechanic_excellent" = "Excellent";
+"mechanic_very_good" = "Very good";
+"mechanic_moderate" = "Moderate";
+"mechanic_poor" = "Poor";
+
+"drive_belt" = "Belt";
+"drive_chain" = "Chain";
+"drive_shaft" = "Shaft";
+
+"body_excellent" = "Excellent";
+"body_very_good" = "Very good";
+"body_moderate" = "Moderate";
+"body_poor" = "Poor";
+
+"create_auction" = "Create Auction";
+"update_auction" = "Update Auction";
+"engine_number" = "Engine Number No.";
+"exterior_colour" = "Exterior colour";
+
+"2_doors" = "2 doors";
+"3_doors" = "3 doors";
+"4_doors" = "4 doors";
+"4_plus_doors" = "4+ doors";
+
+"less_than_100" = "less than 100";
+"100_200" = "100-200";
+"200_300" = "200-300";
+"300_400" = "300-400";
+"400_500" = "400-500";
+"500_600" = "500-600";
+"600_plus" = "600+";
+
+"yes" = "Yes";
+"no" = "No";
+"success_title" = "Success";
+"save_auction_draft_message" = "You have not purchase any package so we save your auction into draft. Please purchase package to activate your auction.";
+"no_any_auction" = "You have no any Auction yet";
+"no_auction_draft" = "No Auction in Draft";
+"price_space" = "Price ";
+"make_featured_button" = "Make Featured";
+"featured_button" = "Featured";
+"winner_colon" = "Winner: ";
+"wish_to_continue" = "Do you wish to continue?";
+"payment_space" = "Payment ";
+"odometer_space" = "Odometer ";
+"closing_date_space" = "Closing Date ";
+
+"street_title" = "Street";
+"country_title" = "Country";
+"city_title" = "City";
+"phone_title" = "Phone";
+"email_title" = "Email";
+"name_title" = "Name";
+"total_payment_title" = "Total payment";
+"total_space" = "Total ";
+
+"auction_price" = "Auction price";
+"deposit_amount" = "Deposit amount";
+"service_fee" = "Service Fee";
+"platform_charges" = "Platform Charges";
+
+"add_card" = "ADD CARD";
+"pay_now" = "PAY NOW";
+"add_bank" = "ADD BANK";
+
+"location_services_not_enabled" = "Location services are not enabled";
+
+"single_package_title" = "Single Auction\nRegistration Package!";
+"single_package_desc" = "Vip Registration Has Over 01 Vehicles Mostly Rental Fleet Vehicles & Clean Titles";
+"upgrad_premier_title" = "Upgrad to Premier\nRegistration Package!";
+"upgrad_premier_desc" = "Vip Registration Has Over 45,000 Vehicles Mostly Rental Fleet Vehicles & Clean Titles";
+"single_auction" = "Single Auction";
+"space_day" = " days";
+"featured_space" = "Featured ";
+"featured_social" = "Featured + Social Promotion ";
+
+"interest_deposit" = "Deposit";
+"interest_account" = "Account";
+"interest_payment" = "Payment";
+"interest_billing" = "Billing";
+"interest_featured" = "Featured";
+"interest_document_featured" = "Document Featured";
+"interest_shipment" = "Shipment";
+"interest_others" = "Others";
+
+"profile_first_name" = "First name";
+"profile_last_name" = "Last name";
+"profile_email_id" = "Email ID";
+"profile_street_address" = "Street Address";
+"profile_building_name" = "Building name";
+"profile_flat_number" = "Flat number";
+"profile_po_box" = "PO Box";
+"profile_city" = "City";
+"profile_country" = "Country";
+"profile_country_code" = "Country code";
+"profile_phone_number" = "Your phone number";
+"profile_auto_save" = "Changes auto save!";
+"profile_company_name" = "Company name";
+"profile_company_email" = "Company email";
+"profile_company_phone" = "Company phone";
+"profile_company_address" = "Company address";
+
+"primary_billing" = "Primary";
+"primary_make_billing" = "Make Primary";
+"paytab" = "PayTab";
+
+"privacy_policy_title" = "Privacy Policy";
+"terms_conditions_title" = "Terms and Conditions";

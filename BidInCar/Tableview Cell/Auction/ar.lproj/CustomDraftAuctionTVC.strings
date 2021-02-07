@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "48 Boulevard Jourdan, 7501 Paris, France"; ObjectID = "09q-8N-jIX"; */
+"09q-8N-jIX.text" = "48 Boulevard Jourdan, 7501 Paris, France";
+
+/* Class = "UILabel"; text = "Mitsubishi Attrage"; ObjectID = "CRa-cd-fvL"; */
+"CRa-cd-fvL.text" = "Mitsubishi Attrage";
+
+/* Class = "UILabel"; text = "AED 30,000"; ObjectID = "Khn-xD-6SV"; */
+"Khn-xD-6SV.text" = "AED 30,000";
+
+/* Class = "UILabel"; text = "Lot#\n1025"; ObjectID = "YZA-FM-LUL"; */
+"YZA-FM-LUL.text" = "Lot#\n1025";
+
+/* Class = "UIButton"; normalTitle = "Active Now"; ObjectID = "xax-Ya-Wgj"; */
+"xax-Ya-Wgj.normalTitle" = "نشط الان";

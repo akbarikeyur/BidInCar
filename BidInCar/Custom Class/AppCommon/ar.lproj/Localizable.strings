@@ -21,7 +21,7 @@
 "menu_logout" = "تسجيل خروج";
 "menu_how_sell" = "كيف تبيع؟";
 "menu_how_buy" = "كيف اشترى؟";
-
+"menu_lang" = "تغيير إلى اللغة الإنجليزية";
 "logout_title" = "تسجيل خروج";
 "logout_msg" = "هل أنت متأكد أنك تريد تسجيل الخروج؟";
 
@@ -185,3 +185,185 @@
 //Contact Us
 "select_interest" = "الرجاء تحديد اهتمامك";
 "add_comment" = "الرجاء إدخال تعليقك";
+
+//Buyer Info
+"info_active_auctions" = ":المزادات النشطة";
+"info_total_auctions" = ":إجمالي المزادات";
+"info_deposit_amount" = ":قيمة الايداع";
+"info_remaining_auctions" = ":حد المزاد المتبقي";
+"info_total_bidding_limit" = ":إجمالي حد المزايدة";
+"info_remaining_bidding_limit" = ":حد العطاء المتبقي";
+"info_package" = ":صفقة";
+"add_more_link" = "أضف المزيد";
+"increase_more_link" = "زيادة المزيد";
+
+"left_time_space" = "  اليسار ";
+"bid_count_colon" = " :عدد العطاءات";
+"current_price_space" = " السعر الحالي";
+"unlimited_value" = "غير محدود";
+
+
+//Auction Detail
+"deposit_title" = "الوديعة";
+"min_bid_increment" = " زيادة الحد الأدنى للعطاء";
+"lot_title" = " كثيرا #";
+"auction_country_of_made" = "بلد الصنع";
+"auction_brand" = "الماركة";
+"auction_model" = "نموذج";
+"auction_age" = "عمر";
+"auction_condition" = "شرط";
+"auction_body_condition" = "حالة الجسم";
+"auction_mechanical_condition" = "الحالة الميكانيكية";
+"auction_mileage" = "عدد الأميال";
+"auction_body_type" = "نوع الجسم";
+"auction_vin" = "نبيذ";
+"auction_motor_no" = "رقم المحرك";
+"auction_exterior_colour" = "اللون الخارجي";
+"auction_transmission" = "الانتقال";
+"auction_fuel" = "وقود";
+"auction_interior_colour" = "اللون الداخلي";
+"auction_no_of_cylinder" = "رقم الاسطوانة";
+"auction_doors" = "أبواب";
+"auction_horsepower" = "قوة حصان";
+"auction_wheels" = "عجلات";
+"auction_drive_system" = "نظام القيادة";
+"auction_engine_size" = "حجم المحرك";
+"auction_boat_length" = "طول القارب";
+"auction_boat_age" = "عمر القارب";
+"auction_car_warranty" = "هل السيارة لديها ضمان؟";
+"auction_boat_warranty" = "ضمان القارب";
+
+"expired_time" = "منتهية الصلاحية";
+"current_bid_space" = " مناقصه قائمة";
+"bid_id" = "\nالمناقصة #";
+"bid_hash" = "المناقصة #";
+"lot_id_new_line" = "\nLot #";
+"lot_id" = "كثيرا #";
+"highest_price" = "اغلى سعر";
+"lowest_price" = "أقل سعر";
+"starting_price_colon" = " : السعر المبدئي";
+"time_remaining" = " الوقت المتبقي";
+"end_time_space" = " وقت النهاية";
+
+"body_sedan" = "ثم";
+"body_coupe" = "كوبيه";
+"body_crossover" = "عبور";
+"body_hard_top_convertible" = "هارد توب للتحويل";
+"body_hatchback" = "هاتشباك";
+"body_pick_up_truck" = "شاحنة صغيرة";
+"body_soft_top_convertible" = "سوفت توب للتحويل";
+"body_sports_car" = "سيارة رياضية";
+"body_SUV" = "سيارات الدفع الرباعي";
+"body_utility_truck" = "شاحنة المرافق";
+"body_van" = "من عند";
+"body_wagon" = "عربة";
+"body_other" = "آخر";
+
+"mechanic_excellent" = "ممتاز";
+"mechanic_very_good" = "جيد جدا";
+"mechanic_moderate" = "معتدل";
+"mechanic_poor" = "فقير";
+
+"drive_belt" = "حزام";
+"drive_chain" = "سلسلة";
+"drive_shaft" = "الفتحة";
+
+"body_excellent" = "ممتاز";
+"body_very_good" = "جيد جدا";
+"body_moderate" = "معتدل";
+"body_poor" = "فقير";
+
+"create_auction" = "إنشاء مزاد";
+"update_auction" = "تحديث المزاد";
+"engine_number" = "رقم المحرك";
+"exterior_colour" = "اللون الخارجي";
+
+"2_doors" = "2 باب";
+"3_doors" = "3 باب";
+"4_doors" = "4 باب";
+"4_plus_doors" = "4+ باب";
+
+"less_than_100" = "أقل من 100";
+"100_200" = "100-200";
+"200_300" = "200-300";
+"300_400" = "300-400";
+"400_500" = "400-500";
+"500_600" = "500-600";
+"600_plus" = "600+";
+
+"yes" = "نعم";
+"no" = "لا";
+"success_title" = "نجاح";
+"save_auction_draft_message" = ".لم تقم بشراء أي طرد ، لذلك نقوم بحفظ المزاد في المسودة. الرجاء شراء الحزمة لتفعيل المزاد الخاص بك";
+"no_any_auction" = "ليس لديك أي مزاد حتى الآن";
+"no_auction_draft" = "لا مزاد في المسودة";
+"price_space" = " السعر";
+"make_featured_button" = "اجعلها مميزة";
+"featured_button" = "متميز";
+"winner_colon" = " :الفائز";
+"wish_to_continue" = "هل ترغب في الاستمرار؟";
+"payment_space" = " دفع";
+"odometer_space" = " عداد المسافات";
+"closing_date_space" = " الموعد النهائي";
+
+"street_title" = "شارع";
+"country_title" = "بلد";
+"city_title" = "مدينة";
+"phone_title" = "هاتف";
+"email_title" = "البريد الإلكتروني";
+"name_title" = "اسم";
+"total_payment_title" = "المبلغ الإجمالي";
+"total_space" = " مجموع";
+
+"auction_price" = "سعر المزاد";
+"deposit_amount" = "قيمة الايداع";
+"service_fee" = "رسوم الخدمة";
+"platform_charges" = "رسوم المنصة";
+
+"add_card" = "إضافة بطاقة";
+"pay_now" = "ادفع الآن";
+"add_bank" = "إضافة بنك";
+
+"location_services_not_enabled" = "خدمات الموقع غير ممكّنة";
+
+"single_package_title" = "مزاد واحد\nحزمة التسجيل!";
+"single_package_desc" = "يحتوي تسجيل كبار الشخصيات على أكثر من 01 مركبة معظمها مؤجر لأسطول المركبات وألقاب نظيفة";
+"upgrad_premier_title" = "الترقية إلى المميزة\nحزمة التسجيل!";
+"upgrad_premier_desc" = "لدى تسجيل كبار الشخصيات أكثر من 45000 مركبة معظمها مستأجر من مركبات الأسطول وألقاب نظيفة";
+"single_auction" = "مزاد واحد";
+"space_day" = "أيام ";
+"featured_space" = " متميز";
+"featured_social" = " مميز + الترويج الاجتماعي";
+
+"interest_deposit" = "الوديعة";
+"interest_account" = "الحساب";
+"interest_payment" = "دفع";
+"interest_billing" = "الفواتير";
+"interest_featured" = "متميز";
+"interest_document_featured" = "وثيقة مميزة";
+"interest_shipment" = "شحنة";
+"interest_others" = "الآخرين";
+
+"profile_first_name" = "الاسم الاول";
+"profile_last_name" = "الكنية";
+"profile_email_id" = "عنوان الايميل";
+"profile_street_address" = "عنوان الشارع";
+"profile_building_name" = "اسم المبنى";
+"profile_flat_number" = "عدد مسطح";
+"profile_po_box" = "صندوق بريد";
+"profile_city" = "مدينة";
+"profile_country" = "بلد";
+"profile_country_code" = "الرقم الدولي";
+"profile_phone_number" = "رقم تليفونك";
+"profile_auto_save" = "التغييرات الحفظ التلقائي!";
+"profile_company_name" = "اسم الشركة";
+"profile_company_email" = "البريد الإلكتروني للشركة";
+"profile_company_phone" = "هاتف الشركة";
+"profile_company_address" = "عنوان الشركة";
+
+"primary_billing" = "ابتدائي";
+"primary_make_billing" = "اتخذ الاولويه";
+"paytab" = "PayTab";
+
+"privacy_policy_title" = "سياسة خاصة";
+"terms_conditions_title" = "الأحكام والشروط";

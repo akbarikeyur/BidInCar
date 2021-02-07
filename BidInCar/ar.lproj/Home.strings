@@ -60,7 +60,7 @@
 "EWd-Er-E6m.text" = "تفاصيل الشروط والأحكام";
 
 /* Class = "UILabel"; text = "Example: To Bid AED 1,000 you need to have 200 AED deposited in your account."; ObjectID = "GlA-Gg-58k"; */
-"GlA-Gg-58k.text" = "Example: To Bid AED 1,000 you need to have 200 AED deposited in your account.";
+"GlA-Gg-58k.text" = ".مثال: للمزايدة بمبلغ 1000 درهم ، يجب أن يتم إيداع 200 درهم في حسابك";
 
 /* Class = "UILabel"; text = "Category"; ObjectID = "HtC-pj-hTS"; */
 "HtC-pj-hTS.text" = "الفئة";
@@ -126,7 +126,7 @@
 "YPe-AJ-zoa.text" = "سعر دقيقة";
 
 /* Class = "UITextField"; placeholder = " (eg: 5000)"; ObjectID = "YQj-uS-lMx"; */
-"YQj-uS-lMx.placeholder" = " (eg: 5000)";
+"YQj-uS-lMx.placeholder" = "(على سبيل المثال: 5000) ";
 
 /* Class = "UILabel"; text = "You have no items in the wish list"; ObjectID = "aWY-Rb-MaE"; */
 "aWY-Rb-MaE.text" = "لا يوجد لديك عناصر في قائمة الرغبات";

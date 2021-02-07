@@ -27,11 +27,11 @@ class PrivacyPolicyVC: UIViewController {
         menuBtn.isHidden = isBackDisplay
         
         if screenType == 0 {
-            titleLbl.text = "Privacy Policy"
+            titleLbl.text = getTranslate("privacy_policy_title")
             myWebView.load(URLRequest(url: URL(string: POLICY_URL)!))
         }
         else if screenType == 1 {
-            titleLbl.text = "Terms and Conditions"
+            titleLbl.text = getTranslate("terms_conditions_title")
             myWebView.load(URLRequest(url: URL(string: TERMS_URL)!))            
         }
     }

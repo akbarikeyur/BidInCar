@@ -430,13 +430,13 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
     func setPayButtonTitle()
     {
         if selectedTab == 0 {
-            payTitleLbl.text = isAddCardBank ? "ADD CARD" : "PAY NOW"
+            payTitleLbl.text = isAddCardBank ? getTranslate("add_card") : getTranslate("pay_now")
         }
         else if selectedTab == 1 {
-            payTitleLbl.text = "PAY NOW"
+            payTitleLbl.text = getTranslate("pay_now")
         }
         else if selectedTab == 2 {
-            payTitleLbl.text = isAddCardBank ? "ADD BANK" : "PAY NOW"
+            payTitleLbl.text = isAddCardBank ? getTranslate("add_bank") : getTranslate("pay_now")
         }
     }
     

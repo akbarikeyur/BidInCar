@@ -841,13 +841,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Czp-gh-MvU">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULV-6n-0Gc">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULV-6n-0Gc" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="nre-VC-pmS"/>
                                             <constraint firstAttribute="width" constant="40" id="yEZ-68-K7g"/>
                                         </constraints>
                                         <state key="normal" image="back"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonImage" value="back"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="clickToBack:" destination="2JR-zh-nhY" eventType="touchUpInside" id="GeQ-go-RrT"/>
                                         </connections>
@@ -2465,13 +2468,16 @@ dG8gYmlkLiBEZXBvc2l0A
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_shadow_up" translatesAutoresizingMaskIntoConstraints="NO" id="K2Z-rM-AfH">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjh-aK-W38">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjh-aK-W38" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="20" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Wcd-P7-6vB"/>
                                                     <constraint firstAttribute="width" constant="40" id="uMN-Al-JG9"/>
                                                 </constraints>
                                                 <state key="normal" image="back"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonImage" value="back"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="clickToBack:" destination="sWZ-0N-RbM" eventType="touchUpInside" id="q4G-Fp-X4J"/>
                                                 </connections>
@@ -3393,12 +3399,15 @@ dG8gYmlkLiBEZXBvc2l0A
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Jn-hI-L4r">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1B9-2s-4Ma">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1B9-2s-4Ma" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="od7-bl-bi0"/>
                                         </constraints>
                                         <state key="normal" image="back"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonImage" value="back"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="clickToBack:" destination="zir-6c-ZLN" eventType="touchUpInside" id="W10-1i-v4O"/>
                                         </connections>

@@ -1,0 +1,33 @@
+
+/* Class = "UILabel"; text = "Amount"; ObjectID = "2tt-Rv-9Wc"; */
+"2tt-Rv-9Wc.text" = "كمية";
+
+/* Class = "UILabel"; text = "20/2"; ObjectID = "7Du-Ab-P1a"; */
+"7Du-Ab-P1a.text" = "20/2";
+
+/* Class = "UILabel"; text = "20/2"; ObjectID = "Ey3-QV-muh"; */
+"Ey3-QV-muh.text" = "20/2";
+
+/* Class = "UILabel"; text = "20/2"; ObjectID = "ICy-aX-mBq"; */
+"ICy-aX-mBq.text" = "20/2";
+
+/* Class = "UILabel"; text = "#Gold"; ObjectID = "Sot-NS-WhH"; */
+"Sot-NS-WhH.text" = "#Gold";
+
+/* Class = "UILabel"; text = "Payment Method"; ObjectID = "go8-J7-qIJ"; */
+"go8-J7-qIJ.text" = "طريقة الدفع او السداد";
+
+/* Class = "UILabel"; text = "Lot No."; ObjectID = "hqS-hf-86P"; */
+"hqS-hf-86P.text" = ".الكثير لا";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "mVc-tc-g53"; */
+"mVc-tc-g53.text" = "تاريخ";
+
+/* Class = "UILabel"; text = "#Gold"; ObjectID = "oUA-do-uR5"; */
+"oUA-do-uR5.text" = "#Gold";
+
+/* Class = "UILabel"; text = "Status"; ObjectID = "pdQ-QV-ghp"; */
+"pdQ-QV-ghp.text" = "الحالة";
+
+/* Class = "UILabel"; text = "Auction name"; ObjectID = "ynw-dQ-o8s"; */
+"ynw-dQ-o8s.text" = "اسم المزاد";

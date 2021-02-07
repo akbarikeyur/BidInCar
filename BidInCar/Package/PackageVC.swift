@@ -56,8 +56,8 @@ class PackageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             packageBtn.isSelected = false
             singleAuctionImg.isHidden = false
             packageImg.isHidden = true
-            titleLbl.text = "Single Auction\nRegistration Package!"
-            descLbl.text = "Vip Registration Has Over 01 Vehicles Mostly Rental Fleet Vehicles & Clean Titles"
+            titleLbl.text = getTranslate("single_package")
+            descLbl.text = getTranslate("single_package_desc")
             if singlePackage.packages.count == 0 {
                 serviceCallToGetPackage()
             }else{
@@ -69,8 +69,8 @@ class PackageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             packageBtn.isSelected = true
             singleAuctionImg.isHidden = true
             packageImg.isHidden = false
-            titleLbl.text = "Upgrad to Premier\nRegistration Package!"
-            descLbl.text = "Vip Registration Has Over 45,000 Vehicles Mostly Rental Fleet Vehicles & Clean Titles"
+            titleLbl.text = getTranslate("upgrad_premier_title")
+            descLbl.text = getTranslate("upgrad_premier_desc")
             if multiPackage.packages.count == 0 {
                 serviceCallToGetPackage()
             }else{
@@ -149,14 +149,14 @@ class PackageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             cell.contentView.backgroundColor = WhiteColor
             let dict = singlePackage.packages[indexPath.row]
             cell.selectBtn.isSelected = (selectedSingle.packageid == dict.packageid)
-            cell.typeLbl.text = "Single Auction"
+            cell.typeLbl.text = getTranslate("single_auction")
             cell.titleLbl.text = dict.package_title
             cell.totalAuctionLbl.text = dict.number_of_auction
-            cell.validityLbl.text = dict.days + " days"
+            cell.validityLbl.text = dict.days + getTranslate("space_day")
             cell.bidderLbl.text = ""
-            cell.amountLbl.text = "AED " + dict.package_price
-            cell.featuredTitleLbl.text = "Featured AED " + singlePackage.featured_price.featured_price
-            cell.socialTitleLbl.text = "Featured + Social Promotion AED " + singlePackage.social_media_promotion.featured_price
+            cell.amountLbl.text = displayPriceWithCurrency(dict.package_price)
+            cell.featuredTitleLbl.text = getTranslate("featured_space") + displayPriceWithCurrency(singlePackage.featured_price.featured_price)
+            cell.socialTitleLbl.text = getTranslate("featured_social") + displayPriceWithCurrency(singlePackage.social_media_promotion.featured_price)
             cell.featuredValueLbl.text = ""
             cell.socialValueLbl.text = ""
             if let tempDict : [String : Any] = convertToDictionary(text: dict.extras) {
@@ -174,7 +174,7 @@ class PackageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if dict.isSocial {
                 totalPrice += Int(singlePackage.social_media_promotion.featured_price)!
             }
-            cell.totalLbl.text = "Total : AED " + String(totalPrice)
+            cell.totalLbl.text = getTranslate("total_space") + displayPriceWithCurrency(String(totalPrice))
             cell.socialBtn.isSelected = dict.isSocial
             cell.socialBtn.tag = indexPath.row
             cell.socialBtn.addTarget(self, action: #selector(clickToSocialBtn(_:)), for: .touchUpInside)
@@ -198,11 +198,11 @@ class PackageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             cell.selectBtn.isSelected = (selectedPackage.packageid == dict.packageid)
             cell.typeLbl.text = dict.package_title
             cell.totalAuctionLbl.text = dict.number_of_auction
-            cell.validityLbl.text = dict.days + " days"
-            cell.amountLbl.text = "AED " + dict.package_price
-            cell.savingLbl.text = "AED " + dict.package_savings + "+"
+            cell.validityLbl.text = dict.days + getTranslate("space_day")
+            cell.amountLbl.text = displayPriceWithCurrency(dict.package_price)
+            cell.savingLbl.text = displayPriceWithCurrency(dict.package_savings) + "+"
             cell.descLbl.text = dict.package_decription
-            cell.totalLbl.text = "Total : AED " + dict.package_price
+            cell.totalLbl.text = getTranslate("total_space") + displayPriceWithCurrency(dict.package_price)
             if let tempExtra : [String] = convertToArray(text: dict.extras) as? [String] {
                 for temp in tempExtra {
                     cell.descLbl.text = cell.descLbl.text! + "\n - " + temp

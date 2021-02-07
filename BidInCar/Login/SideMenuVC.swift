@@ -46,8 +46,8 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         else{
             profileView.isHidden = true
             loginView.isHidden = false
-            signupLbl.text = "Not a member? Register Now"
-            signupLbl.attributedText = attributedStringWithColor(signupLbl.text!, ["Register Now"], color: BlueColor)
+            signupLbl.text = getTranslate("not_member_signup")
+            signupLbl.attributedText = attributedStringWithColor(signupLbl.text!, [getTranslate("signup_title")], color: BlueColor)
         }
         setupMenu()
     }
@@ -106,18 +106,20 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         var arrMenuTitle = [String]()
         
         if isUserLogin() {
-            arrMenuTitle = [NSLocalizedString("menu_home", comment: ""), NSLocalizedString("menu_auction", comment: ""), NSLocalizedString("menu_bookmark", comment: ""), NSLocalizedString("menu_profile", comment: ""), NSLocalizedString("menu_contact", comment: ""), NSLocalizedString("menu_terms", comment: ""), NSLocalizedString("menu_privacy", comment: ""), NSLocalizedString("menu_calc", comment: ""), NSLocalizedString("menu_logout", comment: "")]
+            arrMenuTitle = [getTranslate("menu_home"), getTranslate("menu_auction"), getTranslate("menu_bookmark"), getTranslate("menu_profile"), getTranslate("menu_contact"), getTranslate("menu_terms"), getTranslate("menu_privacy"), getTranslate("menu_calc"), getTranslate("menu_logout")]
         }
         else{
-            arrMenuTitle = [NSLocalizedString("menu_home", comment: ""), NSLocalizedString("menu_auction", comment: ""), NSLocalizedString("menu_bookmark", comment: ""), NSLocalizedString("menu_contact", comment: ""), NSLocalizedString("menu_terms", comment: ""), NSLocalizedString("menu_privacy", comment: ""), NSLocalizedString("menu_calc", comment: "")]
+            arrMenuTitle = [getTranslate("menu_home"), getTranslate("menu_auction"), getTranslate("menu_bookmark"), getTranslate("menu_contact"), getTranslate("menu_terms"), getTranslate("menu_privacy"), getTranslate("menu_calc")]
         }
-        
+        arrMenuTitle.append(getTranslate("menu_lang"))
+        //menu_lang
         var arrMenuImage = [String]()
         if isUserLogin() {
             arrMenuImage = ["menu_home", "menu_auction", "menu_bookmark", "menu_profile", "menu_contact", "menu_terms","menu_privacy", "menu_calculator", "logout"]
         }else{
             arrMenuImage = ["menu_home", "menu_auction", "menu_bookmark", "menu_contact", "menu_terms","menu_privacy", "menu_calculator"]
         }
+        arrMenuImage.append("menu_lang")
         for i in 0..<arrMenuTitle.count {
             arrMenuData.append(["title" : arrMenuTitle[i], "image" : arrMenuImage[i]])
         }
@@ -199,6 +201,11 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let dict = arrMenuData[indexPath.row]
         cell.titleLbl.text = dict["title"] as? String ?? ""
         cell.imgBtn.setImage(UIImage.init(named: dict["image"] as? String ?? "menu_home"), for: .normal)
+        if cell.titleLbl.text == getTranslate("menu_lang") {
+            cell.langSwitch.isHidden = false
+        }else{
+            cell.langSwitch.isHidden = true
+        }
         cell.contentView.backgroundColor = ClearColor
         cell.selectionStyle = .none
         return cell
@@ -208,12 +215,12 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.menuContainerViewController.toggleLeftSideMenuCompletion(nil)
         let dict = arrMenuData[indexPath.row]
         switch (dict["title"] as? String ?? "") {
-            case NSLocalizedString("menu_home", comment: ""):
+            case getTranslate("menu_home"):
                 let navController = STORYBOARD.HOME.instantiateViewController(withIdentifier: "HomeVCNav") as! UINavigationController
                 navController.isNavigationBarHidden = true
                 menuContainerViewController.centerViewController = navController
                 break
-            case NSLocalizedString("menu_auction", comment: ""):
+            case getTranslate("menu_auction"):
                 if !isUserLogin() {
                     AppDelegate().sharedDelegate().showLoginPopup("my_auction_list_login_msg")
                     return
@@ -227,7 +234,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 navController.isNavigationBarHidden = true
                 menuContainerViewController.centerViewController = navController
                 break
-            case NSLocalizedString("menu_bookmark", comment: ""):
+            case getTranslate("menu_bookmark"):
                 if !isUserLogin() {
                     AppDelegate().sharedDelegate().showLoginPopup("bookmark_list_login_msg")
                     return
@@ -236,7 +243,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 navController.isNavigationBarHidden = true
                 menuContainerViewController.centerViewController = navController
                 break
-            case NSLocalizedString("menu_post", comment: ""):
+            case getTranslate("menu_post"):
                 if !isUserLogin() {
                     AppDelegate().sharedDelegate().showLoginPopup("post_auction_login_msg")
                     return
@@ -245,17 +252,17 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 navController.isNavigationBarHidden = true
                 menuContainerViewController.centerViewController = navController
                 break
-            case NSLocalizedString("menu_package", comment: ""):
+            case getTranslate("menu_package"):
                 let navController = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PackageVCNav") as! UINavigationController
                 navController.isNavigationBarHidden = true
                 menuContainerViewController.centerViewController = navController
                 break
-            case NSLocalizedString("menu_calc", comment: ""):
+            case getTranslate("menu_calc"):
                 let navController = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "ShippingCalculatorVCNav") as! UINavigationController
                 navController.isNavigationBarHidden = true
                 menuContainerViewController.centerViewController = navController
                 break
-            case NSLocalizedString("menu_profile", comment: ""):
+            case getTranslate("menu_profile"):
                 if !isUserLogin() {
                     AppDelegate().sharedDelegate().showLoginPopup("my_profile_login_msg")
                     return
@@ -264,32 +271,32 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 navController.isNavigationBarHidden = true
                 menuContainerViewController.centerViewController = navController
                 break
-            case NSLocalizedString("menu_contact", comment: ""):
+            case getTranslate("menu_contact"):
                 let navController = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "ContactUsVCNav") as! UINavigationController
                 navController.isNavigationBarHidden = true
                 menuContainerViewController.centerViewController = navController
                 break
-            case NSLocalizedString("menu_terms", comment: ""):
+            case getTranslate("menu_terms"):
 //                openUrlInSafari(strUrl: TERMS_URL)
                 let navController = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PrivacyPolicyVCNav") as! UINavigationController
                 navController.isNavigationBarHidden = true
                 screenType = 1
                 menuContainerViewController.centerViewController = navController
                 break
-            case NSLocalizedString("menu_privacy", comment: ""):
+            case getTranslate("menu_privacy"):
 //                openUrlInSafari(strUrl: POLICY_URL )
                 let navController = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PrivacyPolicyVCNav") as! UINavigationController
                 navController.isNavigationBarHidden = true
                 screenType = 0
                 menuContainerViewController.centerViewController = navController
                 break
-            case NSLocalizedString("menu_how_sell", comment: ""):
+            case getTranslate("menu_how_sell"):
                 
                 break
-            case NSLocalizedString("menu_how_buy", comment: ""):
+            case getTranslate("menu_how_buy"):
                 
                 break
-            case NSLocalizedString("menu_logout", comment: ""):
+            case getTranslate("menu_logout"):
                 showAlertWithOption("logout_title", message: "logout_msg", completionConfirm: {
                     AppDelegate().sharedDelegate().logoutFromApp()
                 }) {

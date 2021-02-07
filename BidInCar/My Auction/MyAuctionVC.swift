@@ -192,9 +192,9 @@ class MyAuctionVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             cell.categoryLbl.text = ""
         }
         cell.addressLbl.text = dict.auction_address
-        cell.currentBidLbl.text = "Current Bid " + displayPriceWithCurrency(dict.active_auction_price)
-        cell.lotLbl.text = "Lot #\n" + dict.auctionid
-        cell.bidLbl.text = "Bid #\n" + dict.auction_bidscount
+        cell.currentBidLbl.text = getTranslate("current_bid_space") + displayPriceWithCurrency(dict.active_auction_price)
+        cell.lotLbl.text = getTranslate("lot_id_new_line") + dict.auctionid
+        cell.bidLbl.text = getTranslate("bid_id") + dict.auction_bidscount
         cell.bidBtn.tag = indexPath.row
         cell.bidBtn.addTarget(self, action: #selector(clickToSeeBid(_:)), for: .touchUpInside)
         

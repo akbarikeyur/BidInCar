@@ -13,6 +13,7 @@ import UIKit
 let APP_VERSION = 1.0
 let BUILD_VERSION = 1
 let DEVICE_ID = UIDevice.current.identifierForVendor?.uuidString
+let APPLE_LANGUAGE_KEY = "AppleLanguages"
 
 /*
 Social Account

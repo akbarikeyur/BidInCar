@@ -10,24 +10,24 @@ import UIKit
 import DropDown
 
 struct PROFILE {
-    static let FNAME = "First name"
-    static let LNAME = "Last name"
-    static let EMAIL = "Email ID"
-    static let ADDRESS = "Street Address"
-    static let BUILDING = "Building name"
+    static let FNAME = getTranslate("profile_first_name")
+    static let LNAME = getTranslate("profile_last_name")
+    static let EMAIL = getTranslate("profile_email_id")
+    static let ADDRESS = getTranslate("profile_street_address")
+    static let BUILDING = getTranslate("profile_building_name")
     
-    static let FLAT = "Flat number"
-    static let PO = "PO Box"
-    static let CITY = "City"
-    static let COUNTRY = "Country"
-    static let COUNTRY_CODE = "Country code"
-    static let PHONE = "Your phone number"
-    static let SAVE = "Changes auto save!"
+    static let FLAT = getTranslate("profile_flat_number")
+    static let PO = getTranslate("profile_po_box")
+    static let CITY = getTranslate("profile_city")
+    static let COUNTRY = getTranslate("profile_country")
+    static let COUNTRY_CODE = getTranslate("profile_country_code")
+    static let PHONE = getTranslate("profile_phone_number")
+    static let SAVE = getTranslate("profile_auto_save")
     
-    static let COMPANY_NAME = "Company name"
-    static let COMPANY_EMAIL = "Company email"
-    static let COMPANY_PHONE = "Company phone"
-    static let COMPANY_ADDRESS = "Company address"
+    static let COMPANY_NAME = getTranslate("profile_company_name")
+    static let COMPANY_EMAIL = getTranslate("profile_company_email")
+    static let COMPANY_PHONE = getTranslate("profile_company_phone")
+    static let COMPANY_ADDRESS = getTranslate("profile_company_address")
 }
 
 class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CustomProfileDelegate {

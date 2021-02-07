@@ -106,4 +106,13 @@ class Button: UIButton {
         
     }
     
+    @IBInspectable var buttonImage : String = "" {
+           didSet {
+               if buttonImage == "back" && isArabic() {
+                   buttonImage = "back_arabic"
+               }               
+               self.setImage(UIImage(named: buttonImage), for: .normal)
+           }
+       }
+    
 }

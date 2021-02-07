@@ -678,7 +678,7 @@
                 <outlet property="withdrawBtn" destination="dAg-JP-TYd" id="WuU-eP-XFr"/>
                 <outlet property="withdrawView" destination="zT3-od-1mG" id="6BJ-Nd-eJj"/>
             </connections>
-            <point key="canvasLocation" x="133" y="154"/>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </tableViewCell>
     </objects>
     <resources>

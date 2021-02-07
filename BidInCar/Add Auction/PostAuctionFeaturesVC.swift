@@ -50,12 +50,12 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
     @IBOutlet weak var termsConditionLbl: Label!
     
     
-    var arrBodyData = ["Sedan", "Coupe", "Crossover", "Hard Top Convertible", "Hatchback", "Pick Up Truck", "Soft Top Convertible", "Sports Car", "SUV", "Utility Truck", "Van", "Wagon", "Other"]
-    var arrMechanicalData = ["Excellent", "Very good", "Moderate", "Poor"]
+    var arrBodyData = [getTranslate("body_sedan"), getTranslate("body_coupe"), getTranslate("body_crossover"), getTranslate("body_hard_top_convertible"), getTranslate("body_hatchback"), getTranslate("body_pick_up_truck"), getTranslate("body_soft_top_convertible"), getTranslate("body_sports_car"), getTranslate("body_SUV"), getTranslate("body_utility_truck"), getTranslate("body_van"), getTranslate("body_wagon"), getTranslate("body_other")]
+    var arrMechanicalData = [getTranslate("mechanic_excellent"), getTranslate("mechanic_very_good"), getTranslate("mechanic_moderate"), getTranslate("mechanic_poor")]
     var arrWheelData = ["2", "3", "4"]
-    var arrDriveData = ["Belt", "Chain", "Shaft"]
+    var arrDriveData = [getTranslate("drive_belt"), getTranslate("drive_chain"), getTranslate("drive_shaft")]
     var arrEngineSize = [String]()
-    var arrBodyCondition = ["Excellent", "Very good", "Moderate", "Poor"]
+    var arrBodyCondition = [getTranslate("body_excellent"), getTranslate("body_very_good"), getTranslate("body_moderate"), getTranslate("body_poor")]
     
     var arrCountryData = getCountryData()
     var selectedCountry = CountryModel.init()
@@ -88,7 +88,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
             setupData()
         }
         else{
-            createAuctionLbl.text = "Create Auction"
+            createAuctionLbl.text = getTranslate("create_auction")
         }
         
         termsConditionLbl.attributedText = getAttributeStringWithColor(termsConditionLbl.text!, [termsConditionLbl.text!], color: UIColor.blue, font: termsConditionLbl.font, isUnderLine: true)
@@ -136,8 +136,8 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
             else if selectedAuctionType.id == 4 {
                 bodyTypeView.isHidden = false
                 motorColorView.isHidden = false
-                motorTxt.myTxt.placeholder = "Engine Number No."
-                colorTxt.myTxt.placeholder = "Exterior colour"
+                motorTxt.myTxt.placeholder = getTranslate("engine_number")
+                colorTxt.myTxt.placeholder = getTranslate("exterior_colour")
                 scrapView.isHidden = false
                 
                 interiorColorTxt.trailingSpace.constant = 10
@@ -154,7 +154,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
     
     func setupData()
     {
-        createAuctionLbl.text = "Update Auction"
+        createAuctionLbl.text = getTranslate("update_auction")
         bodyTypeTxt.myTxt.text = myAuction.auction_bodytype
         for temp in arrCountryData {
             if temp.countryid == myAuction.countryid {
@@ -306,7 +306,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         self.view.endEditing(true)
         let dropDown = DropDown()
         dropDown.anchorView = sender
-        dropDown.dataSource = ["2 doors", "3 doors", "4 doors", "4+ doors"]
+        dropDown.dataSource = [getTranslate("2_doors"), getTranslate("3_doors"), getTranslate("4_doors"), getTranslate("4_plus_doors")]
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.doorTxt.myTxt.text = item
             self.doorTxt.setTextFieldValue()
@@ -318,7 +318,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         self.view.endEditing(true)
         let dropDown = DropDown()
         dropDown.anchorView = sender
-        dropDown.dataSource = ["less than 100", "100-200", "200-300", "300-400", "400-500", "500-600", "600+"]
+        dropDown.dataSource = [getTranslate("less_than_100"), getTranslate("100_200"), getTranslate("200_300"), getTranslate("300_400"), getTranslate("400_500"), getTranslate("500_600"), getTranslate("600_plus")]
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.horsePowerTxt.myTxt.text = item
             self.horsePowerTxt.setTextFieldValue()
@@ -330,7 +330,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         self.view.endEditing(true)
         let dropDown = DropDown()
         dropDown.anchorView = sender
-        dropDown.dataSource = ["Yes", "No"]
+        dropDown.dataSource = [getTranslate("yes"), getTranslate("no")]
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.warrantyTxt.myTxt.text = item
             self.warrantyTxt.setTextFieldValue()
@@ -495,7 +495,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
             else{
 //                self.myAuction = AuctionModel.init(dict: self.param)
 //                self.myAuction.auctionid = String(auctionid)
-                showAlert("Success", message: "You have not purchase any package so we save your auction into draft. Please purchase package to activate your auction.") {
+                showAlert("Success", message: getTranslate("save_auction_draft_message")) {
                     let vc : PostAuctionDetailVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PostAuctionDetailVC") as! PostAuctionDetailVC
                     vc.myAuction = AuctionModel.init(dict: data)
                     UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)

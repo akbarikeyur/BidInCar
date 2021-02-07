@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Amount"; ObjectID = "3Jo-4W-hMN"; */
+"3Jo-4W-hMN.text" = "كمية";
+
+/* Class = "UILabel"; text = "0 AED"; ObjectID = "F3v-q9-z0k"; */
+"F3v-q9-z0k.text" = "0 AED";
+
+/* Class = "UILabel"; text = "Cash"; ObjectID = "ckP-85-06C"; */
+"ckP-85-06C.text" = "Cash";
+
+/* Class = "UILabel"; text = "Payment Method"; ObjectID = "csr-kj-FTf"; */
+"csr-kj-FTf.text" = "طريقة الدفع او السداد";
+
+/* Class = "UILabel"; text = "Status"; ObjectID = "frd-ff-jr5"; */
+"frd-ff-jr5.text" = "الحالة";
+
+/* Class = "UILabel"; text = "View"; ObjectID = "gb8-gR-srx"; */
+"gb8-gR-srx.text" = "رأي";
+
+/* Class = "UILabel"; text = "11/02"; ObjectID = "yFn-ia-Vak"; */
+"yFn-ia-Vak.text" = "11/02";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "yxf-Ic-U6m"; */
+"yxf-Ic-U6m.text" = "تاريخ";

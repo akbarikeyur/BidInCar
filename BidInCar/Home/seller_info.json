@@ -1,25 +1,25 @@
 [
     {
         "image" : "active_auction",
-        "name" : "Active Auctions:",
+        "name" : "info_active_auctions",
         "value" : "0",
         "link" : ""
     },
     {
         "image" : "total_auction",
-        "name" : "Total Auctions:",
+        "name" : "info_total_auctions",
         "value" : "0",
         "link" : ""
     },
     {
         "image" : "package_info",
-        "name" : "Package:",
+        "name" : "info_package",
         "value" : "",
         "link" : ""
     },
     {
         "image" : "remaining_limit",
-        "name" : "Remaining Auction Limit:",
+        "name" : "info_remaining_auctions",
         "value" : "0",
         "link" : ""
     }

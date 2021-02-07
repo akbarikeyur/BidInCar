@@ -405,10 +405,10 @@
 "nz9-Ho-3wh.text" = "Run and Drive";
 
 /* Class = "UILabel"; text = "Select Address"; ObjectID = "oPl-oO-Wpi"; */
-"oPl-oO-Wpi.text" = "Select Address";
+"oPl-oO-Wpi.text" = "حدد العنوان";
 
 /* Class = "UILabel"; text = "PAY NOW"; ObjectID = "odO-dc-R4m"; */
-"odO-dc-R4m.text" = "PAY NOW";
+"odO-dc-R4m.text" = "ادفع الآن";
 
 /* Class = "UILabel"; text = "Run and Drive"; ObjectID = "owR-0S-Gd7"; */
 "owR-0S-Gd7.text" = "Run and Drive";
@@ -417,10 +417,10 @@
 "p1X-oa-WeE.text" = "Swedan";
 
 /* Class = "UILabel"; text = "Package"; ObjectID = "pa6-jM-oUN"; */
-"pa6-jM-oUN.text" = "Package";
+"pa6-jM-oUN.text" = "صفقة";
 
 /* Class = "UILabel"; text = "FAQs"; ObjectID = "pbp-fq-Ogd"; */
-"pbp-fq-Ogd.text" = "FAQs";
+"pbp-fq-Ogd.text" = "أسئلة وأجوبة";
 
 /* Class = "UILabel"; text = "Engine Size"; ObjectID = "pkf-wn-zjT"; */
 "pkf-wn-zjT.text" = "حجم المحرك";
@@ -432,7 +432,7 @@
 "q16-EF-g78.text" = "Total AED 10,000";
 
 /* Class = "UILabel"; text = "CREATE AUCTION"; ObjectID = "r1D-3q-aVC"; */
-"r1D-3q-aVC.text" = "CREATE AUCTION";
+"r1D-3q-aVC.text" = "إنشاء المزاد";
 
 /* Class = "UILabel"; text = "4T1B11HK8KU******"; ObjectID = "rQF-yq-IIt"; */
 "rQF-yq-IIt.text" = "4T1B11HK8KU******";
@@ -447,10 +447,10 @@
 "rwr-Qq-fH9.text" = "AED (-2000)";
 
 /* Class = "UILabel"; text = "I have read and accept the terms of use rules of flight and privacy policy."; ObjectID = "rxn-nu-ugs"; */
-"rxn-nu-ugs.text" = "I have read and accept the terms of use rules of flight and privacy policy.";
+"rxn-nu-ugs.text" = ".لقد قرأت وقبلت شروط استخدام قواعد الطيران وسياسة الخصوصية";
 
 /* Class = "UIButton"; normalTitle = "PAY"; ObjectID = "sLd-q4-ep4"; */
-"sLd-q4-ep4.normalTitle" = "PAY";
+"sLd-q4-ep4.normalTitle" = "دفع";
 
 /* Class = "UILabel"; text = "Drive System"; ObjectID = "sSD-u2-8Ye"; */
 "sSD-u2-8Ye.text" = "نظام القيادة";
@@ -459,13 +459,13 @@
 "tA1-li-iVO.text" = "Germany";
 
 /* Class = "UILabel"; text = "Payment Amount"; ObjectID = "tuV-yf-OVf"; */
-"tuV-yf-OVf.text" = "Payment Amount";
+"tuV-yf-OVf.text" = "مبلغ الدفع";
 
 /* Class = "UILabel"; text = "Run and Drive"; ObjectID = "u2E-i5-oot"; */
 "u2E-i5-oot.text" = "Run and Drive";
 
 /* Class = "UILabel"; text = "Payment"; ObjectID = "uIG-cU-lC5"; */
-"uIG-cU-lC5.text" = "Payment";
+"uIG-cU-lC5.text" = "دفع";
 
 /* Class = "UILabel"; text = "Please transfer AED 40 to following details and once done, email your deposit/transfer receipt to "; ObjectID = "uIv-02-Sfj"; */
 "uIv-02-Sfj.text" = "Please transfer AED 40 to following details and once done, email your deposit/transfer receipt to ";
@@ -486,34 +486,34 @@
 "wDd-5Q-0wo.text" = "الحزم";
 
 /* Class = "UILabel"; text = "Bank Transfer secure payment"; ObjectID = "y6J-4i-pbD"; */
-"y6J-4i-pbD.text" = "Bank Transfer secure payment";
+"y6J-4i-pbD.text" = "دفع آمن عن طريق التحويل المصرفي";
 
 /* Class = "UILabel"; text = "This will brind your listing on top and will get you more viwes and bids Do you wish to continue?"; ObjectID = "y6a-HS-Cm7"; */
-"y6a-HS-Cm7.text" = "This will brind your listing on top and will get you more viwes and bids Do you wish to continue?";
+"y6a-HS-Cm7.text" = "سيؤدي هذا إلى وضع قائمتك في المقدمة وسيوفر لك المزيد من المشاهدات والعروض. هل ترغب في المتابعة؟";
 
 /* Class = "UILabel"; text = "View Post an Auction"; ObjectID = "yFT-PE-KQE"; */
-"yFT-PE-KQE.text" = "View Post an Auction";
+"yFT-PE-KQE.text" = "شاهد انشر مزاد";
 
 /* Class = "UILabel"; text = "Latitude"; ObjectID = "yVU-TJ-N1e"; */
-"yVU-TJ-N1e.text" = "Latitude";
+"yVU-TJ-N1e.text" = "خط العرض";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "yg8-E3-7tG"; */
-"yg8-E3-7tG.text" = "Title";
+"yg8-E3-7tG.text" = "عنوان";
 
 /* Class = "UILabel"; text = "Fuel Type"; ObjectID = "z0i-eX-vxs"; */
 "z0i-eX-vxs.text" = "نوع الوقود";
 
 /* Class = "UILabel"; text = "How to set up an online payment form usingan outsourced solution:"; ObjectID = "z6G-FI-ApO"; */
-"z6G-FI-ApO.text" = "How to set up an online payment form usingan outsourced solution:";
+"z6G-FI-ApO.text" = ":كيفية إعداد نموذج دفع عبر الإنترنت باستخدام حل خارجي";
 
 /* Class = "UILabel"; text = "Year"; ObjectID = "z6V-nS-2Dv"; */
-"z6V-nS-2Dv.text" = "Year";
+"z6V-nS-2Dv.text" = "عام";
 
 /* Class = "UILabel"; text = "You have no any Auction yet"; ObjectID = "zEO-Gd-vf3"; */
-"zEO-Gd-vf3.text" = "You have no any Auction yet";
+"zEO-Gd-vf3.text" = "ليس لديك أي مزاد حتى الآن";
 
 /* Class = "UILabel"; text = "Deposit Adjusted"; ObjectID = "zMw-z2-j3Z"; */
-"zMw-z2-j3Z.text" = "Deposit Adjusted";
+"zMw-z2-j3Z.text" = "الإيداع المعدل";
 
 /* Class = "UILabel"; text = "N 50° 6.8796"; ObjectID = "zl9-Uq-ZeV"; */
 "zl9-Uq-ZeV.text" = "N 50° 6.8796";

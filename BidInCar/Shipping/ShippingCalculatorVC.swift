@@ -28,8 +28,8 @@ class ShippingCalculatorVC: UIViewController {
         priceLbl.text = "0"
         flag1Img.image = nil
         flag2Img.image = nil
-        country1Lbl.text = NSLocalizedString("select_country", comment: "")
-        country2Lbl.text = NSLocalizedString("select_country", comment: "")
+        country1Lbl.text = getTranslate("select_country")
+        country2Lbl.text = getTranslate("select_country")
     }
     
     @IBAction func clickToSelectFirstCountry(_ sender: UIButton) {

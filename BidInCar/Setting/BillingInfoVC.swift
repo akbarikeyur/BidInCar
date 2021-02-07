@@ -52,9 +52,9 @@ class BillingInfoVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         let dict = arrCardData[indexPath.row]
         cell.logoImg.image = UIImage.init(named: getCardImage(strType: dict.type))
         if dict.card_primary == "yes" {
-            cell.primaryLbl.text = "Primary"
+            cell.primaryLbl.text = getTranslate("primary_billing")
         }else{
-            cell.primaryLbl.text = "Make Primary"
+            cell.primaryLbl.text = getTranslate("primary_make_billing")
         }
         cell.numberLbl.text = "****" + String(dict.cardnumber.suffix(4))
         cell.nameLbl.text = dict.name_on_card

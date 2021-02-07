@@ -48,7 +48,7 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
     @IBOutlet weak var auctionEndReminderBtn: UIButton!
     
     var auction = AuctionModel.init()
-    var arrSortPriceData = ["Highest Price", "Lowest Price"]
+    var arrSortPriceData = [getTranslate("highest_price"), getTranslate("lowest_price")]
     var arrBidData = [BidModel]()
     var isForReminder = false
     var eventStore = EKEventStore()
@@ -81,11 +81,11 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
         }
         
         titleLbl.text = auction.auction_title
-        startPriceLbl.text = "Starting Price : " + displayPriceWithCurrency(auction.auction_price)
+        startPriceLbl.text = getTranslate("starting_price_colon") + displayPriceWithCurrency(auction.auction_price)
         currentPriceLbl.text = displayPriceWithCurrency(auction.active_auction_price)
         bidLbl.text = String(auction.auction_bidscount)
         minIncrementLbl.text = displayPriceWithCurrency(auction.auction_bidprice)
-        lotLbl.text = "Lot# " + auction.auctionid
+        lotLbl.text = getTranslate("lot_id") + auction.auctionid
         if auction.auction_millage == "" {
             odometerView.isHidden = true
             constraintWidthOdometer.constant = 0
@@ -96,8 +96,8 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
             odometerLbl.text = auction.auction_millage + " K.M."
         }
         if auction.auction_end != "" {
-            remainingTimeLbl.text = "Time remaining " + getRemainingTime(auction.auction_end)
-            endTimeLbl.text = "End Time " + getDateStringFromDateWithLocalTimezone(date: getDateFromDateString(strDate: auction.auction_end, format: "YYYY-MM-dd")!, format: "dd MMM, YYYY")
+            remainingTimeLbl.text = getTranslate("time_remaining") + getRemainingTime(auction.auction_end)
+            endTimeLbl.text = getTranslate("end_time_space") + getDateStringFromDateWithLocalTimezone(date: getDateFromDateString(strDate: auction.auction_end, format: "YYYY-MM-dd")!, format: "dd MMM, YYYY")
         }
         else{
             remainingTimeLbl.text = ""
@@ -208,7 +208,7 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
         }else{
             let cell : CustomBidPriceCVC = bidCV.dequeueReusableCell(withReuseIdentifier: "CustomBidPriceCVC", for: indexPath) as! CustomBidPriceCVC
             cell.numberLbl.text = "#" + String(indexPath.row + 1)
-            cell.priceLbl.text = "AED " + arrBidData[indexPath.row].bidprice
+            cell.priceLbl.text = displayPriceWithCurrency(arrBidData[indexPath.row].bidprice)
             return cell
         }
     }

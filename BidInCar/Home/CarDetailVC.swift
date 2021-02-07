@@ -67,7 +67,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         tblView.register(UINib.init(nibName: "CustomCarDetailTVC", bundle: nil), forCellReuseIdentifier: "CustomCarDetailTVC")
         
         termsConditionLbl.attributedText = getAttributeStringWithColor(termsConditionLbl.text!, [termsConditionLbl.text!], color: UIColor.blue, font: termsConditionLbl.font, isUnderLine: true)
-        depositLbl.attributedText = getAttributeStringWithColor(depositLbl.text!, ["Deposit"], color: BlueColor, font: depositLbl.font, isUnderLine: true)
+        depositLbl.attributedText = getAttributeStringWithColor(depositLbl.text!, [getTranslate("deposit_title")], color: BlueColor, font: depositLbl.font, isUnderLine: true)
         
         setTextFieldPlaceholderColor(myBidTxt, LightGrayColor)
         depositeTxt.myTxt.keyboardType = .numberPad
@@ -102,7 +102,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }else{
             auctionPriceLbl.text = displayPriceWithCurrency(auctionData.active_auction_price)
         }
-        minAuctionPriceLbl.text = "(Minimum bid increment " + displayPriceWithCurrency(auctionData.auction_bidprice) + ")"
+        minAuctionPriceLbl.text = "(" + getTranslate("min_bid_increment") + displayPriceWithCurrency(auctionData.auction_bidprice) + ")"
         bookmarkBtn.isSelected = (auctionData.bookmark == "yes")
         updateRemainingTime()
         endTimeLbl.text = getDateStringFromDateWithLocalTimezone(date: getDateFromDateString(strDate: auctionData.auction_end, format: "yyyy-MM-dd")!, format: "dd MMM, yyyy")
@@ -128,110 +128,91 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             seeMoreBtn.isHidden = true
             auctionDescLbl.numberOfLines = 0
         }
-        lotLbl.text = "Lot # " + String(auctionData.auctionid)
+        lotLbl.text = getTranslate("lot_title") + String(auctionData.auctionid)
         auctionDetailData = [[String : Any]]()
         
         if auctionData.country_name != "" {
-            auctionDetailData.append(["title" : "Country of made", "value" : auctionData.country_name!])
+            auctionDetailData.append(["title" : getTranslate("auction_country_of_made"), "value" : auctionData.country_name!])
         }
         if auctionData.category_name != "" {
-            auctionDetailData.append(["title" : "Brand", "value" : auctionData.category_name!])
+            auctionDetailData.append(["title" : getTranslate("auction_brand"), "value" : auctionData.category_name!])
         }
         if auctionData.catchild_name != "" {
-            auctionDetailData.append(["title" : "Model", "value" : auctionData.catchild_name!])
+            auctionDetailData.append(["title" : getTranslate("auction_model"), "value" : auctionData.catchild_name!])
         }
         if auctionData.year != "" {
-            auctionDetailData.append(["title" : "Age", "value" : auctionData.year!])
+            auctionDetailData.append(["title" : getTranslate("auction_age"), "value" : auctionData.year!])
         }
         if auctionData.auction_body_condition != "" {
-            auctionDetailData.append(["title" : "Condition", "value" : auctionData.auction_body_condition!])
+            auctionDetailData.append(["title" : getTranslate("auction_condition"), "value" : auctionData.auction_body_condition!])
         }
         if auctionData.body_condition != "" {
-            auctionDetailData.append(["title" : "Body Condition", "value" : auctionData.body_condition!])
+            auctionDetailData.append(["title" : getTranslate("auction_body_condition"), "value" : auctionData.body_condition!])
         }
         if auctionData.mechanical != "" {
-            auctionDetailData.append(["title" : "Mechanical Condition", "value" : auctionData.mechanical!])
+            auctionDetailData.append(["title" : getTranslate("auction_mechanical_condition"), "value" : auctionData.mechanical!])
         }
         if auctionData.auction_millage != "" {
-            auctionDetailData.append(["title" : "Mileage", "value" : (auctionData.auction_millage! + " K.M.")])
+            auctionDetailData.append(["title" : getTranslate("auction_mileage"), "value" : (auctionData.auction_millage! + " K.M.")])
         }
         if auctionData.auction_bodytype != "" {
-            auctionDetailData.append(["title" : "Body type", "value" : auctionData.auction_bodytype!])
+            auctionDetailData.append(["title" : getTranslate("auction_body_type"), "value" : auctionData.auction_bodytype!])
         }
         if auctionData.auction_vin != "" {
-            auctionDetailData.append(["title" : "VIN", "value" : auctionData.auction_vin!])
+            auctionDetailData.append(["title" : getTranslate("auction_vin"), "value" : auctionData.auction_vin!])
         }
         if auctionData.auction_motorno != "" {
-            auctionDetailData.append(["title" : "Motor No.", "value" : auctionData.auction_motorno!])
+            auctionDetailData.append(["title" : getTranslate("auction_motor_no"), "value" : auctionData.auction_motorno!])
         }
         if auctionData.auction_extcolour != "" {
-            auctionDetailData.append(["title" : "Exterior colour", "value" : auctionData.auction_extcolour!])
+            auctionDetailData.append(["title" : getTranslate("auction_exterior_colour"), "value" : auctionData.auction_extcolour!])
         }
         if auctionData.auction_transmission != "" {
-            auctionDetailData.append(["title" : "Transmission", "value" : auctionData.auction_transmission!])
+            auctionDetailData.append(["title" : getTranslate("auction_transmission"), "value" : auctionData.auction_transmission!])
         }
         if auctionData.auction_fueltype != "" {
-            auctionDetailData.append(["title" : "Fuel", "value" : auctionData.auction_fueltype!])
+            auctionDetailData.append(["title" : getTranslate("auction_fuel"), "value" : auctionData.auction_fueltype!])
         }
         if auctionData.interior_color != "" {
-            auctionDetailData.append(["title" : "Interior colour", "value" : auctionData.interior_color!])
+            auctionDetailData.append(["title" : getTranslate("auction_interior_colour"), "value" : auctionData.interior_color!])
         }
         if auctionData.no_of_cylinder != "" {
-            auctionDetailData.append(["title" : "No. Of Cylinder", "value" : auctionData.no_of_cylinder!])
+            auctionDetailData.append(["title" : getTranslate("auction_no_of_cylinder"), "value" : auctionData.no_of_cylinder!])
         }
         if auctionData.doors != "" {
-            auctionDetailData.append(["title" : "Doors", "value" : auctionData.doors!])
+            auctionDetailData.append(["title" : getTranslate("auction_doors"), "value" : auctionData.doors!])
         }
         if auctionData.auction_horse_power != "" {
-            auctionDetailData.append(["title" : "Horsepower", "value" : auctionData.auction_horse_power!])
+            auctionDetailData.append(["title" : getTranslate("auction_horsepower"), "value" : auctionData.auction_horse_power!])
         }
         if auctionData.categorytype == "2" {
             if auctionData.wheels != "" {
-                auctionDetailData.append(["title" : "Wheels", "value" : auctionData.wheels!])
+                auctionDetailData.append(["title" : getTranslate("auction_wheels"), "value" : auctionData.wheels!])
             }
             if auctionData.drive_system != "" {
-                auctionDetailData.append(["title" : "Drive System", "value" : auctionData.drive_system!])
+                auctionDetailData.append(["title" : getTranslate("auction_drive_system"), "value" : auctionData.drive_system!])
             }
         }
         
         if auctionData.engine_size != "" {
-            auctionDetailData.append(["title" : "Engine Size", "value" : auctionData.engine_size!])
+            auctionDetailData.append(["title" : getTranslate("auction_engine_size"), "value" : auctionData.engine_size!])
         }
         
         if auctionData.boat_length != "" {
-            auctionDetailData.append(["title" : "Boat length", "value" : auctionData.boat_length!])
+            auctionDetailData.append(["title" : getTranslate("auction_boat_length"), "value" : auctionData.boat_length!])
         }
         if auctionData.auction_age != "" {
-            auctionDetailData.append(["title" : "Boat Age", "value" : auctionData.auction_age!])
+            auctionDetailData.append(["title" : getTranslate("auction_boat_age"), "value" : auctionData.auction_age!])
         }
         
         if auctionData.warranty != "" {
             if auctionData.categorytype == "1" || auctionData.categorytype == "4" {
-                auctionDetailData.append(["title" : "Does the car has a warranty?", "value" : auctionData.warranty!])
+                auctionDetailData.append(["title" : getTranslate("auction_car_warranty"), "value" : auctionData.warranty!])
             }
             else if auctionData.categorytype == "3" {
-                auctionDetailData.append(["title" : "Boat warranty", "value" : auctionData.warranty!])
+                auctionDetailData.append(["title" : getTranslate("auction_boat_warranty"), "value" : auctionData.warranty!])
             }
         }
-        
-        
-        if auctionData.categorytype == "1" {
-            
-        }
-        else if auctionData.categorytype == "2" {
-           
-        }
-        else if auctionData.categorytype == "3" {
-            
-        }
-        else if auctionData.categorytype == "4" {
-            
-        }
-        else if auctionData.categorytype == "5" {
-            
-        }
-        
-        
         
         tblView.reloadData()
         
@@ -262,7 +243,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                 }
             }
             else{
-                remainingTimeLbl.text = "Expired"
+                remainingTimeLbl.text = getTranslate("expired_time")
             }
         }
         else{

@@ -1,0 +1,48 @@
+
+/* Class = "UILabel"; text = "Bid #\n68"; ObjectID = "16g-sP-jZi"; */
+"16g-sP-jZi.text" = "Bid #\n68";
+
+/* Class = "UILabel"; text = "10,500 AED"; ObjectID = "Cmw-3e-Fgk"; */
+"Cmw-3e-Fgk.text" = "10,500 AED";
+
+/* Class = "UILabel"; text = "Curent Bid AED 30,000"; ObjectID = "F0t-aj-Xwi"; */
+"F0t-aj-Xwi.text" = "Curent Bid AED 30,000";
+
+/* Class = "UILabel"; text = "Mitsubishi Attrage"; ObjectID = "L4a-Rr-ytE"; */
+"L4a-Rr-ytE.text" = "Mitsubishi Attrage";
+
+/* Class = "UILabel"; text = "48 Boulevard Jourdan, 7501 Paris, France"; ObjectID = "SCl-Hh-1yN"; */
+"SCl-Hh-1yN.text" = "48 Boulevard Jourdan, 7501 Paris, France";
+
+/* Class = "UILabel"; text = "Top bid amount"; ObjectID = "SYV-d1-uut"; */
+"SYV-d1-uut.text" = "أعلى مبلغ العطاء";
+
+/* Class = "UILabel"; text = "Category"; ObjectID = "WDO-R8-Nvl"; */
+"WDO-R8-Nvl.text" = "Category";
+
+/* Class = "UILabel"; text = "Withdraw All Bid"; ObjectID = "dZO-wv-Ydg"; */
+"dZO-wv-Ydg.text" = "سحب كل العطاءات";
+
+/* Class = "UILabel"; text = "Winning Price"; ObjectID = "eS3-l8-nYu"; */
+"eS3-l8-nYu.text" = "السعر الفائز";
+
+/* Class = "UIButton"; normalTitle = "Bid Now"; ObjectID = "hXR-dz-sSK"; */
+"hXR-dz-sSK.normalTitle" = "المزايدة الآن";
+
+/* Class = "UIButton"; normalTitle = "Make Featured"; ObjectID = "mfP-RM-5qE"; */
+"mfP-RM-5qE.normalTitle" = "اجعلها مميزة";
+
+/* Class = "UILabel"; text = "Lot#\n1025"; ObjectID = "nPs-xR-PX8"; */
+"nPs-xR-PX8.text" = "Lot#\n1025";
+
+/* Class = "UILabel"; text = "Status: In Process"; ObjectID = "rvc-31-sRO"; */
+"rvc-31-sRO.text" = "Status: In Process";
+
+/* Class = "UILabel"; text = "Pay Now"; ObjectID = "sGZ-ry-Bnh"; */
+"sGZ-ry-Bnh.text" = "ادفع الآن";
+
+/* Class = "UILabel"; text = "Winner: John Herry"; ObjectID = "yma-64-mHN"; */
+"yma-64-mHN.text" = "Winner: John Herry";
+
+/* Class = "UILabel"; text = "10,500 AED"; ObjectID = "z3A-Yo-bZc"; */
+"z3A-Yo-bZc.text" = "10,500 AED";
