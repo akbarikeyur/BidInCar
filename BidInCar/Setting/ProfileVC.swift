@@ -364,7 +364,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
                 param["phone_countrycode"] = selectedCountryCode
                 break
             case PROFILE.CITY:
-                param["user_cityid"] = temp["value"]
+                param["city"] = temp["value"]
                 break
             case PROFILE.PHONE:
                 param["user_phonenumber"] = temp["value"]

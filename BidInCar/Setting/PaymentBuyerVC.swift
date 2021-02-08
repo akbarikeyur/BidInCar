@@ -31,6 +31,9 @@ class PaymentBuyerVC: UIViewController {
     @IBOutlet var withdrrawView: UIView!
     @IBOutlet weak var withdrawTxt: FloatingTextfiledView!
     
+    @IBOutlet weak var totalDepositLbl: Label!
+    @IBOutlet weak var totalWithdrawLbl: Label!
+    
     var arrBidAuction = [BidAuctionModel]()
     var arrDeposite = [DepositeModel]()
     var arrWithdraw = [WithdrawModel]()
@@ -54,9 +57,11 @@ class PaymentBuyerVC: UIViewController {
         
         depositeTxt.myTxt.keyboardType = .numberPad
         updateDepositeAmount()
-        serviceCallToGetBidAuction()
-        serviceCallToGetDepositeHistory()
-        serviceCallToGetWithdrawHistory()
+        if isUserBuyer() {
+            serviceCallToGetBidAuction()
+            serviceCallToGetDepositeHistory()
+            serviceCallToGetWithdrawHistory()
+        }
     }
     
     @objc func updateDepositeAmount()
@@ -87,7 +92,7 @@ class PaymentBuyerVC: UIViewController {
             depositeTbl.reloadData()
             constraintHeightDepositeTbl.constant = CGFloat((Int(depositeCellheight) * arrDeposite.count) + 42)
             if arrDeposite.count > 0 {
-                constraintHeightDepositeTbl.constant += 40
+                constraintHeightDepositeTbl.constant += 80
             }
         }else{
             depositView.isHidden = true
@@ -102,7 +107,7 @@ class PaymentBuyerVC: UIViewController {
             withdrawTbl.reloadData()
             constraintHeightWithdrawTbl.constant = CGFloat((Int(withdrawCellheight) * arrWithdraw.count) + 42)
             if arrWithdraw.count > 0 {
-                constraintHeightWithdrawTbl.constant += 40
+                constraintHeightWithdrawTbl.constant += 80
             }
         }else{
             withdrawView.isHidden = true
@@ -115,7 +120,7 @@ class PaymentBuyerVC: UIViewController {
         if bidsBtn.isSelected {
             auctionView.isHidden = false
             auctionTblView.reloadData()
-            constraintHeightAuctionTbl.constant = CGFloat((Int(auctionCellheight) * arrWithdraw.count) + 42)
+            constraintHeightAuctionTbl.constant = CGFloat((Int(auctionCellheight) * arrBidAuction.count) + 55)
         }else{
             auctionView.isHidden = true
             constraintHeightAuctionTbl.constant = 0
@@ -215,11 +220,7 @@ class PaymentBuyerVC: UIViewController {
             for temp in data {
                 self.arrBidAuction.append(BidAuctionModel.init(dict: temp))
             }
-            if self.arrBidAuction.count > 0 {
-                self.auctionView.isHidden = false
-                self.auctionTblView.reloadData()
-                self.constraintHeightAuctionTbl.constant = CGFloat((130*self.arrBidAuction.count) + 42)
-            }
+            self.setAuctionViewheight()
         }
     }
     
@@ -229,6 +230,17 @@ class PaymentBuyerVC: UIViewController {
             for temp in data {
                 self.arrDeposite.append(DepositeModel.init(dict: temp))
             }
+            if self.arrDeposite.count > 0 {
+                self.totalDepositLbl.isHidden = false
+                var price : Float = 0
+                for temp in self.arrDeposite {
+                    price += Float(temp.deposite_amount) ?? 0
+                }
+                self.totalDepositLbl.text = getTranslate("total_deposit") + displayPriceWithCurrency(setFlotingPrice(Double(price)))
+            }else{
+                self.totalDepositLbl.isHidden = true
+            }
+            
             self.setDepositViewheight()
         }
     }
@@ -239,6 +251,17 @@ class PaymentBuyerVC: UIViewController {
             for temp in data {
                 self.arrWithdraw.append(WithdrawModel.init(dict: temp))
             }
+            if self.arrWithdraw.count > 0 {
+                self.totalWithdrawLbl.isHidden = false
+                var price : Float = 0
+                for temp in self.arrWithdraw {
+                    price += Float(temp.withdrawl_amount) ?? 0
+                }
+                self.totalWithdrawLbl.text = getTranslate("total_withdrawal") + displayPriceWithCurrency(setFlotingPrice(Double(price)))
+            }else{
+                self.totalWithdrawLbl.isHidden = true
+            }
+            
             self.setWithdrawViewheight()
         }
     }

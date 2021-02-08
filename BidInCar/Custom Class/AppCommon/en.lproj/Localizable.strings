@@ -444,3 +444,6 @@
 "placeholder_phone_number" = "Phone Number";
 "placeholder_interested_in" = "Interested In";
 "placeholder_comment" = "Comment";
+
+"total_deposit" = "Total Deposit Amount: ";
+"total_withdrawal" = "Total Withdrawal Amount: ";

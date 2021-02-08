@@ -818,17 +818,14 @@ extension HomeVC {
             }
             else if tempInfo.name == getTranslate("info_package") {
                 tempInfo.value = AppModel.shared.getStringValue(data, "package_name")
-                if AppModel.shared.getStringValue(data, "package_name") != "" && AppModel.shared.getStringValue(data, "package_name") != "none" {
-                    let value : Int = AppModel.shared.getIntValue(data, "package_name")
-                    if value <= 35 {
-                        tempInfo.value = String(value)
-                    }else{
-                        tempInfo.value = getTranslate("unlimited_value")
-                    }
-                }
             }
             else if tempInfo.name == getTranslate("info_remaining_auctions") {
-                tempInfo.value = AppModel.shared.getStringValue(data, "auctionsleft")
+                let value : Int = AppModel.shared.getIntValue(data, "auctionsleft")
+                if value <= 35 {
+                    tempInfo.value = String(value)
+                }else{
+                    tempInfo.value = getTranslate("unlimited_value")
+                }
             }
             self.arrInfo.append(tempInfo)
         }

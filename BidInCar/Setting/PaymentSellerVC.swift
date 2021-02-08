@@ -38,9 +38,10 @@ class PaymentSellerVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         resetAllData()
         clickToSelectOption(packageBtn)
         clickToSelectOption(featuredBtn)
-        
-        serviceCallToGetFeaturedAuction()
-        serviceCallToGetPackageHistory()
+        if !isUserBuyer() {
+            serviceCallToGetFeaturedAuction()
+            serviceCallToGetPackageHistory()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -174,6 +175,7 @@ class PaymentSellerVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 self.featureTblView.reloadData()
                 self.constraintHeightFeatureTbl.constant = CGFloat((120*self.arrFeatureAuction.count) + 72)
             }
+            self.setFeatureViewheight()
         }
     }
     
@@ -194,6 +196,7 @@ class PaymentSellerVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 self.packageTblView.reloadData()
                 self.setpackageViewheight()
             }
+            self.setpackageViewheight()
         }
     }
     

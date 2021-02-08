@@ -65,7 +65,19 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             }
         }
         setUIDesigning()
-        
+        if PLATFORM.isSimulator {
+            fnameTxt.myTxt.text = "Test"
+            lnameTxt.myTxt.text = "Buyer"
+            emailTxt.myTxt.text = "Testbuyer@abc.com"
+            addressTxt.myTxt.text = "Test add"
+            buildingNameTxt.myTxt.text = "build"
+            flatNoTxt.myTxt.text = "34"
+            poBoxTxt.myTxt.text = "3434"
+            cityTxt.myTxt.text = "Surat"
+            phoneTxt.myTxt.text = "9876543214"
+            passwordTxt.myTxt.text = "qqqqqq"
+            confirmPasswordTxt.myTxt.text = "qqqqqq"
+        }
     }
     
     func setUIDesigning()
