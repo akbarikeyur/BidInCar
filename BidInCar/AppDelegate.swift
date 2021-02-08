@@ -176,11 +176,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func showLoginPopup(_ msg : String)
     {
-        showAlertWithOption("BidInCar", message: msg, completionConfirm: {
-            self.navigateToLogin()
-        }) {
-            
-        }
+        self.navigateToLogin()
+//        showAlertWithOption("BidInCar", message: msg, completionConfirm: {
+//            self.navigateToLogin()
+//        }) {
+//
+//        }
     }
     
     //MARK:- service Call
@@ -384,6 +385,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
         AppDelegate().sharedDelegate().window?.rootViewController = AppDelegate().sharedDelegate().storyboard().instantiateInitialViewController()
         container = MFSideMenuContainerViewController()
+        AppModel.shared.AUCTION_TYPE = [AuctionTypeModel]()
         navigateToDashBoard()
 //        delay(1.0) {
 //            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.RELOAD_AFTER_CHANGE_LANGUAGE), object: nil)

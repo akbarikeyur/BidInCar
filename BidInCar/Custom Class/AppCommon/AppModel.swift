@@ -1603,7 +1603,7 @@ class InfoModel : AppModel
     init(dict : [String : Any])
     {
         image = dict["image"] as? String ?? ""
-        name = dict["name"] as? String ?? ""
+        name = getTranslate(dict["name"] as? String ?? "")
         value = dict["value"] as? String ?? ""
         link = dict["link"] as? String ?? ""
     }

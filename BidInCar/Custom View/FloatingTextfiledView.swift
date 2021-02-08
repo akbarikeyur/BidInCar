@@ -55,8 +55,8 @@ import UIKit
     @IBInspectable open var placeholder: String = "" {
         didSet {
             if myTxt != nil {
-                myTxt.placeholder = placeholder.decoded
-                myLbl.text = placeholder.decoded
+                myTxt.placeholder = getTranslate(placeholder.decoded)
+                myLbl.text = getTranslate(placeholder.decoded)
             }
         }
     }
@@ -76,7 +76,7 @@ import UIKit
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         myLbl.isHidden = (textField.text == "")
-        myTxt.placeholder = (textField.text == "") ? placeholder : ""
+        myTxt.placeholder = (textField.text == "") ? getTranslate(placeholder) : ""
         myTxt.layer.borderColor = (textField.text == "") ? LightGrayColor.cgColor : PurpleColor.cgColor
     }
     

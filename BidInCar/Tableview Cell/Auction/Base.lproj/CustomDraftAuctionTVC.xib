@@ -103,7 +103,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AED 30,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khn-xD-6SV" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="80" y="49" width="121.5" height="17"/>
+                                <rect key="frame" x="80" y="49" width="66" height="17"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                 <color key="textColor" red="0.40784313729999999" green="0.38431372549999998" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -147,13 +147,13 @@
                             <constraint firstItem="Khn-xD-6SV" firstAttribute="leading" secondItem="Qec-4n-ik7" secondAttribute="trailing" constant="10" id="5fA-fg-seL"/>
                             <constraint firstItem="Khn-xD-6SV" firstAttribute="top" secondItem="09q-8N-jIX" secondAttribute="bottom" constant="2" id="6ce-uC-Wle"/>
                             <constraint firstItem="CRa-cd-fvL" firstAttribute="leading" secondItem="Qec-4n-ik7" secondAttribute="trailing" constant="10" id="8Zf-Bo-b7d"/>
-                            <constraint firstItem="xax-Ya-Wgj" firstAttribute="leading" secondItem="Khn-xD-6SV" secondAttribute="trailing" constant="13.5" id="Azp-eR-4PN"/>
+                            <constraint firstItem="xax-Ya-Wgj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Khn-xD-6SV" secondAttribute="trailing" constant="10" id="Azp-eR-4PN"/>
                             <constraint firstItem="09q-8N-jIX" firstAttribute="top" secondItem="CRa-cd-fvL" secondAttribute="bottom" constant="2" id="Cl3-Ud-7N3"/>
                             <constraint firstItem="09q-8N-jIX" firstAttribute="leading" secondItem="Qec-4n-ik7" secondAttribute="trailing" constant="10" id="Gqw-jf-v6v"/>
                             <constraint firstAttribute="trailing" secondItem="jWp-6f-fcO" secondAttribute="trailing" id="ILe-LT-1tP"/>
                             <constraint firstAttribute="bottom" secondItem="Qec-4n-ik7" secondAttribute="bottom" constant="10" id="IWb-Cn-LV5"/>
                             <constraint firstItem="Qec-4n-ik7" firstAttribute="leading" secondItem="kaU-Nm-YVB" secondAttribute="leading" constant="10" id="Igb-YB-wcg"/>
-                            <constraint firstAttribute="trailing" secondItem="09q-8N-jIX" secondAttribute="trailing" constant="10" id="bvM-z3-fqh"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="09q-8N-jIX" secondAttribute="trailing" constant="10" id="bvM-z3-fqh"/>
                             <constraint firstItem="Qec-4n-ik7" firstAttribute="top" secondItem="kaU-Nm-YVB" secondAttribute="top" constant="10" id="cNh-gP-q2y"/>
                             <constraint firstAttribute="trailing" secondItem="xax-Ya-Wgj" secondAttribute="trailing" constant="5" id="dQr-AV-w3m"/>
                             <constraint firstItem="jWp-6f-fcO" firstAttribute="top" secondItem="kaU-Nm-YVB" secondAttribute="top" id="eFF-Lj-4kX"/>

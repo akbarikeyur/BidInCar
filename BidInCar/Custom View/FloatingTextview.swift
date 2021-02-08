@@ -53,7 +53,7 @@ class FloatingTextview: UIView, UITextViewDelegate {
         didSet {
             if myTxt != nil {
 //                myTxt.placeholder = placeholder.decoded
-                myLbl.text = placeholder.decoded
+                myLbl.text = getTranslate(placeholder.decoded)
             }
         }
     }

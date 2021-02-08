@@ -473,7 +473,7 @@ func getThumbnailFrom(path: String, btn : UIButton) {
 
 func displayPriceWithCurrency(_ price : String) -> String
 {
-    return "AED " + price
+    return getTranslate("currency_aed") + " " + price
 }
 
 func setFlotingPrice(_ rate : Double) -> String

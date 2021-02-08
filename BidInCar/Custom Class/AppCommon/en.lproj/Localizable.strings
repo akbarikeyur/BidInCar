@@ -7,6 +7,8 @@
 "remove_photo" = "Remove Photo";
 "device_no_camera" = "Your device has no camera";
 
+"currency_aed" = "AED";
+
 //Side menu
 "menu_home" = "Home";
 "menu_auction" = "My Auction";
@@ -29,7 +31,7 @@
 //Login-signup
 "enter_email" = "Please enter email";
 "enter_password" = "Please enter password";
-
+"enter_name" = "Please enter name";
 "enter_fname" = "Please enter full name";
 "enter_lname" = "Please enter last name";
 "invalid_email" = "Invalid email";
@@ -182,7 +184,7 @@
 "deposit_added_success" = "Deposit added successfully";
 "select_package" = "Please select package first.";
 "withdraw_amount" = "Please enter withdrawal amount";
-"withdraw_remaining_bidding_limit" = "You can only withdraw deposit as per remaining bidding limit.";
+"withdraw_remaining_bidding_limit" = "You requested amount is more than your withdrawal bidding limit.";
 "withdrawl_request_sent" = "Your withdrawal request is sent to admin.";
 "backend_connection_error" = "Backend Connection Error with other hosts";
 "user_not_found" = "User not found";
@@ -304,6 +306,7 @@
 "no" = "No";
 "success_title" = "Success";
 "save_auction_draft_message" = "You have not purchase any package so we save your auction into draft. Please purchase package to activate your auction.";
+"success_auction_message" = "Auction posted successfully";
 "no_any_auction" = "You have no any Auction yet";
 "no_auction_draft" = "No Auction in Draft";
 "price_space" = "Price ";
@@ -376,3 +379,68 @@
 
 "privacy_policy_title" = "Privacy Policy";
 "terms_conditions_title" = "Terms and Conditions";
+
+//Placeholder
+"placeholder_deposit_amount" = "Deposit Amount";
+"placeholder_user_name" = "User Name";
+"placeholder_password" = "Password";
+"placeholder_full_name" = "Full Name*";
+"placeholder_last_name" = "Last Name*";
+"placeholder_email" = "Email*";
+"placeholder_street_address" = "Street Address*";
+"placeholder_building_name" = "Building Name*";
+"placeholder_flat_number" = "Flat Number*";
+"placeholder_po_box" = "P.O Box*";
+"placeholder_select_country" = "Select Country*";
+"placeholder_select_city" = "Select City*";
+"placeholder_country_code" = "Country Code*";
+"placeholder_phone_number" = "Phone Number*";
+"placeholder_password_star" = "Password*";
+"placeholder_confirm_password" = "Confirm Password*";
+"placeholder_company_name" = "Company Name*";
+"placeholder_company_phone" = "Company Phone*";
+"placeholder_company_address" = "Company Address*";
+"placeholder_company_email" = "Company Email*";
+"placeholder_verification_code" = "Verification Code";
+"placeholder_body_type" = "Body Type*";
+"placeholder_country_made" = "Country Made*";
+"placeholder_engine_no" = "Engine No.*";
+"placeholder_exterior_colour" = "Exterior colour*";
+"placeholder_mechanical" = "Mechanical*";
+"placeholder_wheels" = "Wheels*";
+"placeholder_drive_system" = "Drive System*";
+"placeholder_engine_size" = "Engine Size*";
+"placeholder_body_condition" = "Body Condition*";
+"placeholder_boat_length" = "Boat Length*";
+"placeholder_boat_age" = "Boat Age*";
+"placeholder_boat_warranty" = "Boat Warranty*";
+"placeholder_mileage" = "Mileage*";
+"placeholder_interior_color" = "Interior Color*";
+"placeholder_no_of_cylinder" = "No. Of Cylinder*";
+"placeholder_select_doors" = "Select Doors*";
+"placeholder_select_horsepower" = "Select Horsepower*";
+"placeholder_car_warranty" = "Does the car has a warranty?*";
+"placeholder_street_address" = "(eg: abc street)";
+"placeholder_latitude" = "Latitude";
+"placeholder_longitude" = "Longitude";
+"placeholder_auction_title" = "Auction Title*";
+"placeholder_auction_price" = "Auction Price*";
+"placeholder_min_bid_increament" = "Min Bid Increament*";
+"placeholder_age" = "Age*";
+"placeholder_select_brand" = "Select Brand*";
+"placeholder_select_model" = "Select Model*";
+"placeholder_condition" = "Condition*";
+"placeholder_auction_start" = "Auction Start";
+"placeholder_auction_end" = "Auction End";
+"placeholder_vin" = "VIN - CHASIS*";
+"placeholder_transmission" = "Transmission*";
+"placeholder_fuel_type" = "Fuel Type*";
+"placeholder_report" = "Upload Inspection Report";
+"placeholder_amount_withdraw" = "Enter Amount to withdraw";
+"placeholder_current_password" = "Current Password";
+"placeholder_new_password" = "New Password";
+"placeholder_confirm_password" = "Confirm Password";
+"placeholder_name" = "Name";
+"placeholder_phone_number" = "Phone Number";
+"placeholder_interested_in" = "Interested In";
+"placeholder_comment" = "Comment";

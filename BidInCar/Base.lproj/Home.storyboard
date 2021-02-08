@@ -176,7 +176,7 @@
                                     <outlet property="delegate" destination="rjL-fd-RTT" id="YsF-5a-gdZ"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiP-ZI-Su5">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiP-ZI-Su5" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                 <rect key="frame" x="300" y="104" width="20" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -184,6 +184,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
                                 <state key="normal" image="next_black"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonImage" value="next_black"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="clickToNextCategory:" destination="rjL-fd-RTT" eventType="touchUpInside" id="eG8-YS-cpZ"/>
                                 </connections>
@@ -241,7 +244,7 @@
                                                                     <outlet property="delegate" destination="rjL-fd-RTT" id="o3v-pI-ZFW"/>
                                                                 </connections>
                                                             </collectionView>
-                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpK-RJ-JJd">
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpK-RJ-JJd" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                                                 <rect key="frame" x="300" y="27" width="20" height="123"/>
                                                                 <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -249,6 +252,9 @@
                                                                 </constraints>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
                                                                 <state key="normal" image="next_black"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonImage" value="next_black"/>
+                                                                </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="clickToNextCategory:" destination="rjL-fd-RTT" eventType="touchUpInside" id="PIF-OR-A49"/>
                                                                 </connections>
@@ -1230,7 +1236,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oR3-Qg-ePC">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oR3-Qg-ePC" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="170"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -1238,11 +1244,14 @@
                                                         </constraints>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
                                                         <state key="normal" image="previous_image"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonImage" value="previous_image"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="clickToChangeImage:" destination="2JR-zh-nhY" eventType="touchUpInside" id="0Le-zT-3yU"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d60-oh-Ym0">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d60-oh-Ym0" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                                         <rect key="frame" x="300" y="0.0" width="20" height="170"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -1250,6 +1259,9 @@
                                                         </constraints>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
                                                         <state key="normal" image="next_image"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonImage" value="next_image"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="clickToChangeImage:" destination="2JR-zh-nhY" eventType="touchUpInside" id="zIQ-0Y-EZt"/>
                                                         </connections>
@@ -2162,7 +2174,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                         <constraint firstAttribute="height" constant="45" id="n0w-M7-VAL"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Deposit Amount"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_deposit_amount"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ieF-jM-Fzz" customClass="View" customModule="BidInCar" customModuleProvider="target">
@@ -2422,7 +2434,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqO-hr-cGH">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqO-hr-cGH" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="200"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -2430,11 +2442,14 @@ dG8gYmlkLiBEZXBvc2l0A
                                                         </constraints>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
                                                         <state key="normal" image="previous_image"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonImage" value="previous_image"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="clickToChangeImage:" destination="sWZ-0N-RbM" eventType="touchUpInside" id="pbj-fq-lg3"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8g-jh-P8i">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8g-jh-P8i" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                                         <rect key="frame" x="300" y="0.0" width="20" height="200"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -2442,6 +2457,9 @@ dG8gYmlkLiBEZXBvc2l0A
                                                         </constraints>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
                                                         <state key="normal" image="next_image"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="buttonImage" value="next_image"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="clickToChangeImage:" destination="sWZ-0N-RbM" eventType="touchUpInside" id="gxt-EB-24Z"/>
                                                         </connections>

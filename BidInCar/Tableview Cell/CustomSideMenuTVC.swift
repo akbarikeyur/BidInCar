@@ -17,7 +17,7 @@ class CustomSideMenuTVC: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        langSwitch.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
+        //langSwitch.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
         if L102Language.currentAppleLanguage() == "ar" || L102Language.currentAppleLanguage().contains("ar") {
             self.langSwitch.setOn(true, animated: false)
         }

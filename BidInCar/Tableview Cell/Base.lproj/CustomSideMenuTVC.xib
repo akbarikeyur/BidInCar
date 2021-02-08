@@ -45,7 +45,8 @@
                         </userDefinedRuntimeAttributes>
                     </label>
                     <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Raz-58-QjA">
-                        <rect key="frame" x="261" y="6.5" width="51" height="31"/>
+                        <rect key="frame" x="251" y="6.5" width="51" height="31"/>
+                        <color key="onTintColor" red="0.45098039220000002" green="0.42352941179999998" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <connections>
                             <action selector="clickToChangeLang:" destination="KGk-i7-Jjw" eventType="valueChanged" id="Ur3-Dg-kVc"/>
                         </connections>
@@ -61,7 +62,7 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="m5J-QR-SLs" secondAttribute="trailing" constant="10" id="3Dv-3g-zLU"/>
-                    <constraint firstAttribute="trailing" secondItem="Raz-58-QjA" secondAttribute="trailing" constant="10" id="Myf-mp-Evp"/>
+                    <constraint firstAttribute="trailing" secondItem="Raz-58-QjA" secondAttribute="trailing" constant="20" id="Myf-mp-Evp"/>
                     <constraint firstAttribute="bottom" secondItem="aGi-tj-gHf" secondAttribute="bottom" id="NjW-oi-hQj"/>
                     <constraint firstItem="Raz-58-QjA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="OBs-77-aeC"/>
                     <constraint firstAttribute="trailing" secondItem="aGi-tj-gHf" secondAttribute="trailing" id="Oej-ck-c84"/>

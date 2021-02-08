@@ -490,12 +490,14 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
                 }
                 
                 AppDelegate().sharedDelegate().serviceCallToDecreseLeftAuction()
-                NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_HOME), object: nil)
+                showAlert("success_title", message: getTranslate("success_auction_message")) {
+                    NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_HOME), object: nil)
+                }
             }
             else{
 //                self.myAuction = AuctionModel.init(dict: self.param)
 //                self.myAuction.auctionid = String(auctionid)
-                showAlert("Success", message: getTranslate("save_auction_draft_message")) {
+                showAlert("success_title", message: getTranslate("save_auction_draft_message")) {
                     let vc : PostAuctionDetailVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PostAuctionDetailVC") as! PostAuctionDetailVC
                     vc.myAuction = AuctionModel.init(dict: data)
                     UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)

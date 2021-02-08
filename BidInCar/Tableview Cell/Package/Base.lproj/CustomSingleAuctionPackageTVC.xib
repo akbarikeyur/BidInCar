@@ -275,7 +275,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured AED 50" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dcp-DI-nz2" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="37" y="145.5" width="213" height="17"/>
+                                <rect key="frame" x="37" y="145.5" width="99" height="17"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -299,7 +299,7 @@
                                 <state key="selected" image="checkbox_on"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get 4 times more views and bids by featuring your auction" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYF-Qg-sgp" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="10" y="164.5" width="240" height="34"/>
+                                <rect key="frame" x="10" y="164.5" width="216" height="34"/>
                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="12"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -323,7 +323,7 @@
                                 <state key="selected" image="checkbox_on"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured + Social Promotion AED 32" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJZ-xQ-twq" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="37" y="203.5" width="213" height="34"/>
+                                <rect key="frame" x="37" y="203.5" width="174.5" height="34"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -338,7 +338,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get your auction featured and promoted on our Social Platform, 10 times more views and bids" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTi-BB-3EB" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="10" y="239.5" width="240" height="50.5"/>
+                                <rect key="frame" x="10" y="239.5" width="213.5" height="50.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="12"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -353,7 +353,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total : AED 500" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hT8-hJ-NVb" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="10" y="291" width="240" height="17"/>
+                                <rect key="frame" x="161" y="291" width="89" height="17"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -379,6 +379,7 @@
                             <constraint firstItem="B0N-7U-JU7" firstAttribute="top" secondItem="xP1-1M-36S" secondAttribute="bottom" constant="15" id="Cm9-VB-MH6"/>
                             <constraint firstItem="hT8-hJ-NVb" firstAttribute="top" secondItem="xTi-BB-3EB" secondAttribute="bottom" constant="1" id="D8o-m6-7xJ"/>
                             <constraint firstAttribute="trailing" secondItem="DZN-RU-gNq" secondAttribute="trailing" constant="10" id="EXe-Sc-oyg"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xTi-BB-3EB" secondAttribute="trailing" constant="10" id="FCl-jF-mhk"/>
                             <constraint firstItem="B0N-7U-JU7" firstAttribute="leading" secondItem="0SC-ym-5kp" secondAttribute="leading" constant="10" id="FVn-gB-3FT"/>
                             <constraint firstItem="VJO-c9-g6u" firstAttribute="top" secondItem="eQD-DM-NvW" secondAttribute="top" id="FWb-nG-l3S"/>
                             <constraint firstItem="DZN-RU-gNq" firstAttribute="top" secondItem="0SC-ym-5kp" secondAttribute="top" constant="10" id="HQh-rl-MtP"/>
@@ -390,10 +391,10 @@
                             <constraint firstItem="xP1-1M-36S" firstAttribute="top" secondItem="0SC-ym-5kp" secondAttribute="top" constant="10" id="PbT-Z3-fas"/>
                             <constraint firstItem="UYF-Qg-sgp" firstAttribute="leading" secondItem="0SC-ym-5kp" secondAttribute="leading" constant="10" id="Pzn-Zb-Q6F"/>
                             <constraint firstAttribute="trailing" secondItem="hT8-hJ-NVb" secondAttribute="trailing" constant="10" id="TXe-sL-88L"/>
-                            <constraint firstAttribute="trailing" secondItem="NJZ-xQ-twq" secondAttribute="trailing" constant="10" id="U4l-KD-qd1"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NJZ-xQ-twq" secondAttribute="trailing" constant="10" id="U4l-KD-qd1"/>
                             <constraint firstItem="eQD-DM-NvW" firstAttribute="top" secondItem="B0N-7U-JU7" secondAttribute="bottom" constant="2" id="UE5-eP-2RU"/>
                             <constraint firstItem="wGK-vV-vDi" firstAttribute="leading" secondItem="0SC-ym-5kp" secondAttribute="leading" constant="10" id="Xqp-1F-Ekv"/>
-                            <constraint firstAttribute="trailing" secondItem="Dcp-DI-nz2" secondAttribute="trailing" constant="10" id="Y3A-LQ-2eV"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Dcp-DI-nz2" secondAttribute="trailing" constant="10" id="Y3A-LQ-2eV"/>
                             <constraint firstItem="Jht-cC-3Pc" firstAttribute="top" secondItem="eQD-DM-NvW" secondAttribute="bottom" constant="2" id="Zee-5b-h0T"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SdG-fQ-rb2" secondAttribute="trailing" constant="5" id="Zll-pI-h7h"/>
                             <constraint firstItem="UYF-Qg-sgp" firstAttribute="top" secondItem="Dcp-DI-nz2" secondAttribute="bottom" constant="2" id="aAB-cj-4iK"/>
@@ -401,9 +402,9 @@
                             <constraint firstItem="NJZ-xQ-twq" firstAttribute="top" secondItem="CSt-pe-BHI" secondAttribute="top" id="bPg-Nt-n2Y"/>
                             <constraint firstItem="xTi-BB-3EB" firstAttribute="top" secondItem="NJZ-xQ-twq" secondAttribute="bottom" constant="2" id="bgi-ls-SRf"/>
                             <constraint firstItem="NJZ-xQ-twq" firstAttribute="leading" secondItem="CSt-pe-BHI" secondAttribute="trailing" constant="5" id="ctT-DK-3vA"/>
-                            <constraint firstItem="hT8-hJ-NVb" firstAttribute="leading" secondItem="0SC-ym-5kp" secondAttribute="leading" constant="10" id="e2X-xz-MoJ"/>
+                            <constraint firstItem="hT8-hJ-NVb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0SC-ym-5kp" secondAttribute="leading" constant="10" id="e2X-xz-MoJ"/>
                             <constraint firstItem="SdG-fQ-rb2" firstAttribute="leading" secondItem="Sfk-db-aGy" secondAttribute="trailing" constant="19" id="enb-XP-is1"/>
-                            <constraint firstAttribute="trailing" secondItem="UYF-Qg-sgp" secondAttribute="trailing" constant="10" id="fwJ-C8-eYv"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UYF-Qg-sgp" secondAttribute="trailing" constant="10" id="fwJ-C8-eYv"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6SQ-aj-2ec" secondAttribute="trailing" constant="5" id="gMr-wi-Fim"/>
                             <constraint firstItem="tC2-sW-McH" firstAttribute="leading" secondItem="8lc-jT-yM1" secondAttribute="trailing" constant="19" id="gg4-Y9-8ZY"/>
                             <constraint firstItem="Sfk-db-aGy" firstAttribute="leading" secondItem="0SC-ym-5kp" secondAttribute="leading" constant="10" id="gtE-Fm-TE9"/>
@@ -418,7 +419,6 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VJO-c9-g6u" secondAttribute="trailing" constant="5" id="vp9-rz-oAm"/>
                             <constraint firstItem="xTi-BB-3EB" firstAttribute="leading" secondItem="0SC-ym-5kp" secondAttribute="leading" constant="10" id="wgD-b7-4pm"/>
                             <constraint firstAttribute="bottom" secondItem="hT8-hJ-NVb" secondAttribute="bottom" constant="2" id="z4l-wL-c2d"/>
-                            <constraint firstItem="xTi-BB-3EB" firstAttribute="trailing" secondItem="NJZ-xQ-twq" secondAttribute="trailing" id="zKD-Oa-D73"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tC2-sW-McH" secondAttribute="trailing" constant="5" id="zWb-3E-0wx"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>

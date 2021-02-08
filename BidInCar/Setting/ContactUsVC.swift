@@ -20,6 +20,7 @@ class ContactUsVC: UploadImageVC {
     @IBOutlet weak var attachBtn: Button!
     @IBOutlet var sucessView: UIView!
     @IBOutlet weak var addressMapView: MKMapView!
+    @IBOutlet weak var fileAttachLbl: Label!
     
     var selectedImage : UIImage?
     
@@ -29,7 +30,7 @@ class ContactUsVC: UploadImageVC {
         // Do any additional setup after loading the view.
         emailTxtView.myTxt.keyboardType = .emailAddress
         phoneTxtView.myTxt.keyboardType = .phonePad
-        
+        fileAttachLbl.isHidden = true
         if isUserLogin() {
             nameTxtView.myTxt.text = AppModel.shared.currentUser.user_name
             emailTxtView.myTxt.text = AppModel.shared.currentUser.user_email
@@ -71,12 +72,22 @@ class ContactUsVC: UploadImageVC {
     
     override func selectedImage(choosenImage: UIImage) {
         selectedImage = choosenImage
+        fileAttachLbl.isHidden = false
     }
     
     @IBAction func clickToSubmit(_ sender: Any) {
         self.view.endEditing(true)
-        if selectedImage != nil {
-            uploadContactFile()
+        if nameTxtView.myTxt.text?.trimmed == "" {
+            displayToast("enter_name")
+        }
+        else if emailTxtView.myTxt.text?.trimmed == "" {
+            displayToast("enter_email")
+        }
+        else if !emailTxtView.myTxt.text!.isValidEmail {
+            displayToast("invalid_email")
+        }
+        else if phoneTxtView.myTxt.text?.trimmed == "" {
+            displayToast("enter_phone")
         }
         else if interestedTxtView.myTxt.text?.trimmed == "" {
             displayToast("select_interest")
@@ -85,7 +96,11 @@ class ContactUsVC: UploadImageVC {
             displayToast("add_comment")
         }
         else{
-            serviceCallToContactUs("")
+            if selectedImage != nil {
+                uploadContactFile()
+            }else{
+                serviceCallToContactUs("")
+            }
         }
     }
     

@@ -401,7 +401,7 @@
                                                                             <constraint firstAttribute="height" constant="45" id="wpJ-cR-TkR"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Body Type*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_body_type"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8Q-rG-ZV0">
@@ -435,7 +435,7 @@
                                                             <constraint firstAttribute="height" constant="45" id="F4K-MO-9PK"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Country Made*"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_country_made"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP1-5W-Cnh">
@@ -459,7 +459,7 @@
                                                                             <constraint firstAttribute="height" constant="45" id="jec-Yk-A5j"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Engine No.*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_engine_no"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kkk-8N-g8u" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -469,7 +469,7 @@
                                                                             <constraint firstAttribute="height" constant="45" id="hVB-AN-OZ2"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Exterior colour*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_exterior_colour"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFI-xS-2a1">
@@ -513,7 +513,7 @@
                                                                             <constraint firstAttribute="height" constant="45" id="qr2-on-EBU"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Mechanical*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_mechanical"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7H6-uL-cl4">
@@ -552,7 +552,7 @@
                                                                             <constraint firstAttribute="height" constant="45" id="DuV-XN-WHG"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Wheels*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_wheels"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZF-ZH-nW4">
@@ -570,7 +570,7 @@
                                                                             <constraint firstAttribute="height" constant="45" id="Qhi-PX-a49"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Drive System*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_drive_system"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhS-ga-11W">
@@ -588,7 +588,7 @@
                                                                             <constraint firstAttribute="height" constant="45" id="dUz-yS-RAi"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Engine Size*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_engine_size"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6z4-M2-VHp">
@@ -642,7 +642,7 @@
                                                                             <constraint firstAttribute="height" constant="45" id="cor-Qf-fPN"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Body Condition*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_body_condition"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ez5-RF-7YD">
@@ -682,7 +682,7 @@
                                                                             <constraint firstAttribute="height" constant="45" id="3gL-d1-hvY"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Boat Length*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_boat_length"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Myp-LL-D5E">
@@ -700,7 +700,7 @@
                                                                             <constraint firstAttribute="height" constant="45" id="1Ct-Tc-9Rt"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Boat Age*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_boat_age"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kri-P8-5gv">
@@ -718,7 +718,7 @@
                                                                             <constraint firstAttribute="height" constant="45" id="fPR-WH-cyJ"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Boat Warranty*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_boat_warranty"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOb-3m-7wf">
@@ -766,7 +766,7 @@
                                                             <constraint firstAttribute="height" constant="45" id="mau-CH-r45"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Mileage*"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_mileage"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="auction_seperator" translatesAutoresizingMaskIntoConstraints="NO" id="wuv-9B-sIu">
@@ -826,7 +826,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVn-GH-Zmn" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="160" height="45"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Interior Color*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_interior_color"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKm-WC-aaa">
@@ -840,7 +840,7 @@
                                                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljn-ST-FfP" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
                                                                         <rect key="frame" x="160" y="0.0" width="160" height="45"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="No. Of Cylinder*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_no_of_cylinder"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWz-qH-dTO">
@@ -879,7 +879,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8QF-I4-G1f" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="160" height="45"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Select Doors*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_select_doors"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNi-zd-CM5">
@@ -893,7 +893,7 @@
                                                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8v-67-mMc" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
                                                                         <rect key="frame" x="160" y="0.0" width="160" height="45"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Select Horsepower*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_select_horsepower"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYs-JL-L6g">
@@ -932,7 +932,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3n-S6-FvM" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Does the car has a warranty?*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_car_warranty"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ai4-ha-HnC">
@@ -1008,7 +1008,7 @@
                                                             <constraint firstAttribute="height" constant="45" id="Dww-y2-Xsv"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="(eg: abc street)"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_street_address"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vrj-UP-hRB">
@@ -1033,7 +1033,7 @@
                                                             <constraint firstAttribute="height" constant="45" id="pnO-9O-kUb"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Latitude"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_latitude"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GjY-tn-UEt" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -1042,7 +1042,7 @@
                                                             <constraint firstAttribute="height" constant="45" id="c0v-Rf-nnK"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Longitude"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_longitude"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
@@ -2239,7 +2239,7 @@
                                                             <constraint firstAttribute="height" constant="45" id="vR0-F5-8H4"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Auction Title*"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_auction_title"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skz-NZ-OfI" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -2249,7 +2249,7 @@
                                                             <constraint firstAttribute="height" constant="45" id="nUq-7j-mjQ"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Auction Price*"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_auction_price"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jK-as-ZBv" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -2259,7 +2259,7 @@
                                                             <constraint firstAttribute="height" constant="45" id="AuF-nE-e6V"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Min Bid Increament*"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_min_bid_increament"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JW3-Zj-q0U" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -2269,7 +2269,7 @@
                                                             <constraint firstAttribute="height" constant="45" id="0y6-GD-aON"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Age*"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_age"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EwZ-YY-XhO">
@@ -2287,7 +2287,7 @@
                                                             <constraint firstAttribute="height" constant="45" id="53n-mg-QeW"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Select Brand*"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_select_brand"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lui-Fd-LNJ">
@@ -2304,7 +2304,7 @@
                                                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4a-M8-HFU" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="160" height="45"/>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Select Model*"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_select_model"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLJ-HM-1ZD">
@@ -2318,7 +2318,7 @@
                                                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ByE-po-aCB" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
                                                                 <rect key="frame" x="160" y="0.0" width="160" height="45"/>
                                                                 <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Condition*"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_condition"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9S-Ya-gSx">
@@ -2360,7 +2360,7 @@
                                                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgM-bJ-RsC" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="160" height="45"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Auction Start"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_auction_start"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lz-tu-ctC">
@@ -2373,7 +2373,7 @@
                                                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VoO-TH-ioZ" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
                                                                         <rect key="frame" x="160" y="0.0" width="160" height="45"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Auction End"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_auction_end"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ku8-4a-lhu">
@@ -2416,13 +2416,13 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NtE-q4-SJC" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="160" height="45"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="VIN - CHASIS*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_vin"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncY-2u-MjA" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
                                                                         <rect key="frame" x="160" y="0.0" width="160" height="45"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Transmission*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_transmission"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="puq-SE-CHt">
@@ -2463,7 +2463,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Fuel Type*"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_fuel_type"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUk-yi-pOy">
@@ -2497,7 +2497,7 @@
                                                             <constraint firstAttribute="height" constant="45" id="iU4-fP-frl"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Upload Inspection Report"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_report"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pul-Jz-5AL">
@@ -3103,7 +3103,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swedan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p1X-oa-WeE" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="55" y="15" width="215" height="20"/>
+                                        <rect key="frame" x="55" y="15" width="56.5" height="20"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -3117,10 +3117,12 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="aR2-4i-sxe">
+                                        <rect key="frame" x="253" y="21.5" width="12" height="7"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFU-Ed-2U8">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
-                                        <state key="normal" image="dropdown"/>
                                         <connections>
                                             <action selector="clickToSelectFirstCountry:" destination="VVq-dH-PpE" eventType="touchUpInside" id="jCo-I5-Qfu"/>
                                         </connections>
@@ -3128,16 +3130,18 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.91764705882352937" green="0.93333333333333335" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="p1X-oa-WeE" secondAttribute="trailing" constant="10" id="01X-eH-1dd"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="p1X-oa-WeE" secondAttribute="trailing" constant="10" id="01X-eH-1dd"/>
                                     <constraint firstAttribute="bottom" secondItem="kdh-Pc-kqg" secondAttribute="bottom" constant="10" id="06n-7d-erP"/>
                                     <constraint firstItem="kdh-Pc-kqg" firstAttribute="leading" secondItem="Be4-Wm-jBG" secondAttribute="leading" constant="15" id="3W8-eA-XIx"/>
                                     <constraint firstItem="p1X-oa-WeE" firstAttribute="centerY" secondItem="Be4-Wm-jBG" secondAttribute="centerY" id="7Mk-Pr-kJj"/>
+                                    <constraint firstAttribute="trailing" secondItem="aR2-4i-sxe" secondAttribute="trailing" constant="15" id="8tD-oc-VWo"/>
                                     <constraint firstItem="YFU-Ed-2U8" firstAttribute="leading" secondItem="Be4-Wm-jBG" secondAttribute="leading" id="LSW-CF-ZS3"/>
                                     <constraint firstItem="YFU-Ed-2U8" firstAttribute="top" secondItem="Be4-Wm-jBG" secondAttribute="top" id="N0k-Bi-dWD"/>
                                     <constraint firstItem="p1X-oa-WeE" firstAttribute="leading" secondItem="kdh-Pc-kqg" secondAttribute="trailing" constant="10" id="NVA-CX-3HK"/>
                                     <constraint firstItem="kdh-Pc-kqg" firstAttribute="top" secondItem="Be4-Wm-jBG" secondAttribute="top" constant="10" id="OXy-om-xk7"/>
                                     <constraint firstAttribute="trailing" secondItem="YFU-Ed-2U8" secondAttribute="trailing" id="Wc7-GQ-MMF"/>
                                     <constraint firstAttribute="height" constant="50" id="g02-uQ-Nam"/>
+                                    <constraint firstItem="aR2-4i-sxe" firstAttribute="centerY" secondItem="Be4-Wm-jBG" secondAttribute="centerY" id="kvx-Y9-8Om"/>
                                     <constraint firstAttribute="bottom" secondItem="YFU-Ed-2U8" secondAttribute="bottom" id="lAq-Pg-WoT"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -3210,7 +3214,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helander" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1nA-VE-KjT" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="55" y="15" width="215" height="20"/>
+                                        <rect key="frame" x="55" y="15" width="64" height="20"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -3224,10 +3228,12 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="Wcl-Dr-2cA">
+                                        <rect key="frame" x="253" y="21.5" width="12" height="7"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odE-Df-7sV">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
-                                        <state key="normal" image="dropdown"/>
                                         <connections>
                                             <action selector="clickToSelectSecondCountry:" destination="VVq-dH-PpE" eventType="touchUpInside" id="x6r-HW-ejO"/>
                                         </connections>
@@ -3235,12 +3241,14 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.91764705879999997" green="0.93333333330000001" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Wcl-Dr-2cA" secondAttribute="trailing" constant="15" id="13Z-Bs-TVh"/>
                                     <constraint firstItem="odE-Df-7sV" firstAttribute="top" secondItem="YOl-qP-Z3K" secondAttribute="top" id="1eK-dP-wtm"/>
                                     <constraint firstItem="Ai8-pu-1tX" firstAttribute="leading" secondItem="YOl-qP-Z3K" secondAttribute="leading" constant="15" id="9zX-di-o0p"/>
                                     <constraint firstItem="odE-Df-7sV" firstAttribute="leading" secondItem="YOl-qP-Z3K" secondAttribute="leading" id="DtP-EQ-w8a"/>
                                     <constraint firstAttribute="bottom" secondItem="Ai8-pu-1tX" secondAttribute="bottom" constant="10" id="G2f-wz-oNW"/>
-                                    <constraint firstAttribute="trailing" secondItem="1nA-VE-KjT" secondAttribute="trailing" constant="10" id="IX4-1N-WJz"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1nA-VE-KjT" secondAttribute="trailing" constant="10" id="IX4-1N-WJz"/>
                                     <constraint firstAttribute="trailing" secondItem="odE-Df-7sV" secondAttribute="trailing" id="MKF-0C-gLJ"/>
+                                    <constraint firstItem="Wcl-Dr-2cA" firstAttribute="centerY" secondItem="YOl-qP-Z3K" secondAttribute="centerY" id="PfG-mo-lU1"/>
                                     <constraint firstItem="1nA-VE-KjT" firstAttribute="centerY" secondItem="YOl-qP-Z3K" secondAttribute="centerY" id="Szx-Ty-fr6"/>
                                     <constraint firstItem="Ai8-pu-1tX" firstAttribute="top" secondItem="YOl-qP-Z3K" secondAttribute="top" constant="10" id="Yq2-2r-Vy2"/>
                                     <constraint firstAttribute="bottom" secondItem="odE-Df-7sV" secondAttribute="bottom" id="pKR-tA-3nR"/>
@@ -3253,13 +3261,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_info" translatesAutoresizingMaskIntoConstraints="NO" id="dTd-wj-n9c">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_info" translatesAutoresizingMaskIntoConstraints="NO" id="dTd-wj-n9c">
                                 <rect key="frame" x="20" y="486.5" width="30" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="hi5-oE-zgC"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry  Lorem Ipsum has been." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiw-qI-QBl" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry  Lorem Ipsum has been." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiw-qI-QBl" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                 <rect key="frame" x="60" y="486.5" width="240" height="50.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

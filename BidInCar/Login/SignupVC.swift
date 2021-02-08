@@ -31,7 +31,9 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var buyerBtn: Button!
     @IBOutlet weak var sellerBtn: Button!
+    @IBOutlet weak var individualView: UIView!
     @IBOutlet weak var individualBtn: Button!
+    @IBOutlet weak var companyView: UIView!
     @IBOutlet weak var companyBtn: Button!
     @IBOutlet weak var companyDetailView: UIView!
     
@@ -84,8 +86,8 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         signinLbl.attributedText = attributedStringWithColor(signinLbl.text!, [getTranslate("signin_title")], color: PurpleColor, font: nil)
         companyDetailView.isHidden = true
         resetButton()
-        individualBtn.isHidden = true
-        companyBtn.isHidden = true
+        individualView.isHidden = true
+        companyView.isHidden = true
         
         if let countryCode = (Locale.current as NSLocale).object(forKey: .countryCode) as? String {
             let index = arrCountryData.firstIndex { (temp) -> Bool in
@@ -97,7 +99,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
                 self.countryTxt.myTxt.text = self.selectedCountry.country_name
                 self.countryTxt.setTextFieldValue()
                 setButtonImage(countryFlagBtn, selectedCountryCode.flag)
-                countryCodeTxt.myTxt.text = "+" + selectedCountryCode.phonecode
+                countryCodeTxt.myTxt.text = self.selectedCountryCode.country_name + " - " + self.selectedCountryCode.phonecode
                 self.countryCodeTxt.setTextFieldValue()
                 self.getCityData()
             }
@@ -136,13 +138,13 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         dropDown.anchorView = sender
         var arrData = [String]()
         for temp in arrCountryData {
-            arrData.append(temp.country_name)
+            arrData.append(temp.country_name + " - " + temp.phonecode)
         }
         dropDown.dataSource = arrData
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.selectedCountryCode = self.arrCountryData[index]
             setButtonImage(self.countryFlagBtn, self.selectedCountryCode.flag)
-            self.countryCodeTxt.myTxt.text = "+" + self.selectedCountryCode.phonecode
+            self.countryCodeTxt.myTxt.text = self.selectedCountryCode.country_name + " - " + self.selectedCountryCode.phonecode
             self.countryCodeTxt.setTextFieldValue()
         }
         dropDown.show()
@@ -192,22 +194,22 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func clickToSelectAccountType(_ sender: UIButton) {
         resetButton()
-        if sender == buyerBtn {
+        if sender.tag == 1 {
             buyerBtn.isSelected = true
             companyDetailView.isHidden = true
-            individualBtn.isHidden = true
-            companyBtn.isHidden = true
-        }else if sender == sellerBtn {
+            individualView.isHidden = true
+            companyView.isHidden = true
+        }else if sender.tag == 2 {
             sellerBtn.isSelected = true
             companyDetailView.isHidden = true
-            individualBtn.isHidden = false
-            companyBtn.isHidden = false
+            individualView.isHidden = false
+            companyView.isHidden = false
         }
-        else if sender == individualBtn {
+        else if sender.tag == 3 {
             sellerBtn.isSelected = true
             individualBtn.isSelected = true
             companyDetailView.isHidden = true
-        }else if sender == companyBtn {
+        }else if sender.tag == 4 {
             sellerBtn.isSelected = true
             companyBtn.isSelected = true
             companyDetailView.isHidden = false
@@ -230,6 +232,12 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             let vc : LoginVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
             self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    @IBAction func clickToTermsCondition(_ sender: Any) {
+        let vc : PrivacyPolicyVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PrivacyPolicyVC") as! PrivacyPolicyVC
+        vc.isBackDisplay = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func clickToSignup(_ sender: Any) {
@@ -295,7 +303,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             param["flat_number"] = flatNoTxt.myTxt.text
             param["pobox"] = poBoxTxt.myTxt.text
             param["country"] = selectedCountry.countryid
-            param["city"] = selectedCity.cityid
+            param["city"] = cityTxt.myTxt.text
             param["phone_countrycode"] = selectedCountryCode.phonecode
             param["phone_number"] = phoneTxt.myTxt.text
             param["password"] = passwordTxt.myTxt.text
@@ -325,7 +333,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
                     param["company_phone"] = companyPhoneTxt.myTxt.text
                 }
             }
-            printData(param)
+            
             APIManager.shared.serviceCallToUserSignup(param) {
                 if AppModel.shared.currentUser.userid != "" {
                     let vc : VerificationVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "VerificationVC") as! VerificationVC

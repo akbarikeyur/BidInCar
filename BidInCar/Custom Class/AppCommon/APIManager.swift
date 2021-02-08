@@ -204,8 +204,8 @@ public class APIManager {
             return
         }
         showLoader()
-        let headerParams :[String : String] = getJsonHeader()
-        
+        let headerParams : [String : String] = ["Content-Type":"application/x-www-form-urlencoded", "Accept" : "application/json"]
+        printData(params)
         Alamofire.request(API.SIGNUP, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             
             removeLoader()

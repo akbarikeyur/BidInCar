@@ -31,10 +31,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_bg" translatesAutoresizingMaskIntoConstraints="NO" id="hov-VE-Zqd">
-                                <rect key="frame" x="-5" y="-5" width="600" height="600"/>
+                                <rect key="frame" x="-5" y="-5" width="320" height="568"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gci-qD-qF8">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cau-sQ-LHu">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="44"/>
@@ -47,14 +47,14 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8N-kT-MqT">
-                                        <rect key="frame" x="560" y="0.0" width="35" height="44"/>
+                                        <rect key="frame" x="280" y="0.0" width="35" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35" id="pCW-y7-tBd"/>
                                         </constraints>
                                         <state key="normal" image="notification"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23l-bT-fmv" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="257.5" y="9.5" width="85.5" height="25.5"/>
+                                        <rect key="frame" x="117.5" y="9.5" width="85.5" height="25.5"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -83,10 +83,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0S-se-Z0Q">
-                                <rect key="frame" x="0.0" y="44" width="600" height="40"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cp3-IH-Q7b" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="106.5" height="40"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                         <state key="normal" title="Personal">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -105,14 +105,14 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YE3-hk-q5Y">
-                                        <rect key="frame" x="0.0" y="39" width="200" height="1"/>
+                                        <rect key="frame" x="0.0" y="39" width="106.5" height="1"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="B38-tV-1Co"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZS-be-THU" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="200" y="0.0" width="200" height="40"/>
+                                        <rect key="frame" x="106.5" y="0.0" width="107" height="40"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                         <state key="normal" title="Payment">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -131,14 +131,14 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ldp-Mh-GUg">
-                                        <rect key="frame" x="200" y="39" width="200" height="1"/>
+                                        <rect key="frame" x="106.5" y="39" width="107" height="1"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="sLd-AU-Pcs"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgL-ac-m67" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="400" y="0.0" width="200" height="40"/>
+                                        <rect key="frame" x="213.5" y="0.0" width="106.5" height="40"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                         <state key="normal" title="Settings">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -157,7 +157,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7xO-Rb-4X5">
-                                        <rect key="frame" x="400" y="39" width="200" height="1"/>
+                                        <rect key="frame" x="213.5" y="39" width="106.5" height="1"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="G5x-Md-uhf"/>
@@ -192,7 +192,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xaH-s0-c1I">
-                                <rect key="frame" x="0.0" y="84" width="600" height="516"/>
+                                <rect key="frame" x="0.0" y="84" width="320" height="484"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -239,7 +239,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZDJ-qK-OjK">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="N6e-qo-Qtp" id="pQq-F6-WXR"/>
@@ -803,16 +803,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYo-uB-2IE">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEV-Zr-Kt5">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="568"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RUv-uM-1gS">
-                                                <rect key="frame" x="0.0" y="20" width="600" height="40"/>
+                                                <rect key="frame" x="0.0" y="20" width="320" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXJ-1x-qOC" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="0.0" width="290" height="40"/>
+                                                        <rect key="frame" x="10" y="0.0" width="150" height="40"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="Packages" image="checkbox_off">
@@ -833,7 +833,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PW-4g-AgF" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="300" y="0.0" width="290" height="40"/>
+                                                        <rect key="frame" x="160" y="0.0" width="150" height="40"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="Featured" image="checkbox_off">
@@ -868,7 +868,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uym-yD-KFU">
-                                                <rect key="frame" x="0.0" y="70" width="600" height="140"/>
+                                                <rect key="frame" x="0.0" y="70" width="320" height="140"/>
                                                 <subviews>
                                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MkX-ur-h9b" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="0.0" width="69" height="32"/>
@@ -890,7 +890,7 @@
                                                         </connections>
                                                     </button>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RKX-Vz-ZUZ">
-                                                        <rect key="frame" x="10" y="32" width="580" height="98"/>
+                                                        <rect key="frame" x="10" y="32" width="300" height="98"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -914,7 +914,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lky-OV-DsM">
-                                                <rect key="frame" x="0.0" y="220" width="600" height="320"/>
+                                                <rect key="frame" x="0.0" y="220" width="320" height="320"/>
                                                 <subviews>
                                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDn-JG-yvp" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                                         <rect key="frame" x="10" y="10" width="63" height="32"/>
@@ -936,7 +936,7 @@
                                                         </connections>
                                                     </button>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="thY-jI-UzM">
-                                                        <rect key="frame" x="10" y="42" width="580" height="268"/>
+                                                        <rect key="frame" x="10" y="42" width="300" height="268"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1018,13 +1018,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zw4-kt-xN3">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y7k-V2-wEv">
-                                        <rect key="frame" x="0.0" y="-14" width="600" height="585"/>
+                                        <rect key="frame" x="0.0" y="-14" width="320" height="588"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deposit Amount : AED 200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RIp-Gp-XyP" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="26.5" width="468" height="16.5"/>
+                                                <rect key="frame" x="10" y="26" width="188" height="20"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1039,7 +1039,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXx-qk-xxB" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="483" y="20" width="107" height="29"/>
+                                                <rect key="frame" x="203" y="20" width="107" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="107" id="5s5-HP-56M"/>
                                                 </constraints>
@@ -1061,7 +1061,7 @@
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2fX-I5-lkE">
-                                                <rect key="frame" x="478" y="54" width="107" height="30"/>
+                                                <rect key="frame" x="198" y="57" width="107" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9q5-nD-R3K" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="107" height="30"/>
@@ -1089,10 +1089,10 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eih-Hx-wxN">
-                                                <rect key="frame" x="0.0" y="89" width="600" height="40"/>
+                                                <rect key="frame" x="0.0" y="92" width="320" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mki-wh-KzV" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="0.0" width="196.5" height="40"/>
+                                                        <rect key="frame" x="10" y="0.0" width="103.5" height="40"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="Deposit" image="checkbox_off">
@@ -1113,7 +1113,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExF-g5-ZEB" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="206.5" y="0.0" width="217" height="40"/>
+                                                        <rect key="frame" x="113.5" y="0.0" width="123" height="40"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="Withdrawals" image="checkbox_off">
@@ -1134,7 +1134,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vsg-fO-gt1" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="423.5" y="0.0" width="166.5" height="40"/>
+                                                        <rect key="frame" x="236.5" y="0.0" width="73.5" height="40"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="Bids" image="checkbox_off">
@@ -1173,10 +1173,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TjP-1g-kAL">
-                                                <rect key="frame" x="0.0" y="129" width="600" height="150"/>
+                                                <rect key="frame" x="0.0" y="132" width="320" height="150"/>
                                                 <subviews>
                                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PD3-XT-YMF" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="10" width="49" height="29"/>
+                                                        <rect key="frame" x="10" y="10" width="53" height="32"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                         <state key="normal" title="Deposit">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1195,7 +1195,7 @@
                                                         </connections>
                                                     </button>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="huw-Bn-eXk">
-                                                        <rect key="frame" x="10" y="39" width="580" height="111"/>
+                                                        <rect key="frame" x="10" y="42" width="300" height="108"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1218,10 +1218,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ce-3U-oLZ">
-                                                <rect key="frame" x="0.0" y="279" width="600" height="150"/>
+                                                <rect key="frame" x="0.0" y="282" width="320" height="150"/>
                                                 <subviews>
                                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMs-iC-bRB" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="10" width="77" height="29"/>
+                                                        <rect key="frame" x="10" y="10" width="88" height="32"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                         <state key="normal" title="Withdrawals">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1240,7 +1240,7 @@
                                                         </connections>
                                                     </button>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eAo-hn-aSg">
-                                                        <rect key="frame" x="10" y="39" width="580" height="111"/>
+                                                        <rect key="frame" x="10" y="42" width="300" height="108"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1263,10 +1263,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="33d-Qr-Ccx">
-                                                <rect key="frame" x="0.0" y="429" width="600" height="150"/>
+                                                <rect key="frame" x="0.0" y="432" width="320" height="150"/>
                                                 <subviews>
                                                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Agx-as-1wU" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="10" width="109" height="29"/>
+                                                        <rect key="frame" x="10" y="10" width="117" height="32"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                         <state key="normal" title="Bids On Auctions">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1285,7 +1285,7 @@
                                                         </connections>
                                                     </button>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xjp-cR-yH0">
-                                                        <rect key="frame" x="10" y="39" width="580" height="111"/>
+                                                        <rect key="frame" x="10" y="42" width="300" height="108"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1382,7 +1382,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </imageView>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hB8-QT-cye" customClass="View" customModule="BidInCar" customModuleProvider="target">
-                            <rect key="frame" x="10" y="165" width="300" height="238"/>
+                            <rect key="frame" x="10" y="162" width="300" height="244"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1X-qa-F2j" customClass="View" customModule="BidInCar" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
@@ -1436,11 +1436,11 @@
                                         <constraint firstAttribute="height" constant="45" id="wmw-lv-Uze"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Deposit Amount"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_deposit_amount"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can only withdraw deposit as per remaining bidding limit." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bw4-df-wl7" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                    <rect key="frame" x="20" y="125" width="260" height="28"/>
+                                    <rect key="frame" x="20" y="125" width="260" height="34"/>
                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -1455,7 +1455,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZw-wu-esI" customClass="View" customModule="BidInCar" customModuleProvider="target">
-                                    <rect key="frame" x="20" y="173" width="260" height="45"/>
+                                    <rect key="frame" x="20" y="179" width="260" height="45"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NuH-cB-504" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="260" height="45"/>
@@ -1592,7 +1592,7 @@
                                         <constraint firstAttribute="height" constant="45" id="36u-Rv-NA8"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter Amount to withdraw"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_amount_withdraw"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can only withdraw deposit as per remaining bidding limit. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilI-O8-sVK" customClass="Label" customModule="BidInCar" customModuleProvider="target">
@@ -1716,7 +1716,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notify me of activity of Auctions I am participating in." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKR-iW-vAI" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="35" y="52" width="555" height="25"/>
+                                <rect key="frame" x="35" y="52" width="275" height="34"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1731,7 +1731,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qPT-xG-IDo" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="10" y="52" width="580" height="25"/>
+                                <rect key="frame" x="10" y="52" width="300" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="LbI-l9-spO"/>
                                 </constraints>
@@ -1756,7 +1756,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mos-Xg-roj" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="10" y="97" width="128" height="32"/>
+                                <rect key="frame" x="10" y="106" width="128" height="32"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                 <state key="normal" title="Change Password">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1775,37 +1775,37 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOj-o2-wuD" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="149" width="600" height="45"/>
+                                <rect key="frame" x="0.0" y="158" width="320" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="YHH-XN-c6T"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Current Password"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_current_password"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iA-b5-YIL" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="209" width="600" height="45"/>
+                                <rect key="frame" x="0.0" y="218" width="320" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="NW9-J2-ZjQ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="New Password"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_new_password"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82e-yX-AKx" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="269" width="600" height="45"/>
+                                <rect key="frame" x="0.0" y="278" width="320" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="KCr-u2-Fql"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Confirm Password"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_confirm_password"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctI-am-WXN" customClass="View" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="20" y="334" width="560" height="45"/>
+                                <rect key="frame" x="20" y="343" width="280" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XkO-c2-lgm" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
                                         <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
                                         <state key="normal" title="SAVE"/>
                                         <userDefinedRuntimeAttributes>
@@ -2152,11 +2152,11 @@
             <objects>
                 <viewController storyboardIdentifier="ContactUsVC" id="W3f-R1-XyJ" customClass="ContactUsVC" customModule="BidInCar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rzF-Te-jPU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_bg" translatesAutoresizingMaskIntoConstraints="NO" id="KPg-W1-boS">
-                                <rect key="frame" x="-5" y="-5" width="330" height="1110"/>
+                                <rect key="frame" x="-5" y="-5" width="330" height="1160"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZh-ep-7dU">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -2208,10 +2208,10 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPx-sc-rIQ">
-                                <rect key="frame" x="0.0" y="44" width="320" height="1056"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="1106"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2S-P8-GOU">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1075"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1102"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3n-wv-dFe" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="20" width="280" height="62"/>
@@ -2435,7 +2435,7 @@ IHRoZSBzb29uZXN0Lg
                                                     <constraint firstAttribute="height" constant="45" id="E8g-Qw-xY6"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Name"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_name"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BmS-Iv-DtS" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -2444,7 +2444,7 @@ IHRoZSBzb29uZXN0Lg
                                                     <constraint firstAttribute="height" constant="45" id="46l-Lk-Yrc"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Email ID"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="profile_email_id"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w4m-7o-dwP" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -2453,7 +2453,7 @@ IHRoZSBzb29uZXN0Lg
                                                     <constraint firstAttribute="height" constant="45" id="AG0-7N-UAU"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Phone Number"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_phone_number"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSB-Ls-Pzb" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
@@ -2462,7 +2462,7 @@ IHRoZSBzb29uZXN0Lg
                                                     <constraint firstAttribute="height" constant="45" id="fbK-83-Ie5"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Interested In"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_interested_in"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrn-xr-ri8">
@@ -2479,7 +2479,7 @@ IHRoZSBzb29uZXN0Lg
                                                     <constraint firstAttribute="height" constant="80" id="hWi-eG-IER"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Comment"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_comment"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FP2-Q9-0jr" customClass="View" customModule="BidInCar" customModuleProvider="target">
@@ -2520,8 +2520,23 @@ IHRoZSBzb29uZXN0Lg
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File attached" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgF-jG-FBI" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="995.5" width="280" height="17"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="am"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                        <real key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nnw-u3-Ha7" customClass="View" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="1010.5" width="280" height="45"/>
+                                                <rect key="frame" x="20" y="1037.5" width="280" height="45"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bG0-dg-xjD" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
@@ -2582,6 +2597,7 @@ IHRoZSBzb29uZXN0Lg
                                             <constraint firstItem="1LP-8X-6AC" firstAttribute="top" secondItem="PwR-Mh-h7G" secondAttribute="bottom" id="HDj-Qd-sdX"/>
                                             <constraint firstItem="BmS-Iv-DtS" firstAttribute="top" secondItem="CkB-uf-vYj" secondAttribute="bottom" constant="15" id="Hxb-4Q-Ouj"/>
                                             <constraint firstAttribute="trailing" secondItem="AQb-TP-IDK" secondAttribute="trailing" constant="20" id="IGI-5T-kEj"/>
+                                            <constraint firstItem="HgF-jG-FBI" firstAttribute="leading" secondItem="t2S-P8-GOU" secondAttribute="leading" constant="20" id="IHG-54-uXF"/>
                                             <constraint firstAttribute="trailing" secondItem="rgf-h4-kN1" secondAttribute="trailing" id="JRJ-Qz-ZkK"/>
                                             <constraint firstItem="Hgs-mo-U8z" firstAttribute="leading" secondItem="t2S-P8-GOU" secondAttribute="leading" constant="20" id="KlL-RJ-vJT"/>
                                             <constraint firstItem="g9r-lT-psP" firstAttribute="leading" secondItem="t2S-P8-GOU" secondAttribute="leading" constant="20" id="Liu-t8-xfg"/>
@@ -2604,6 +2620,8 @@ IHRoZSBzb29uZXN0Lg
                                             <constraint firstItem="SSB-Ls-Pzb" firstAttribute="bottom" secondItem="Rrn-xr-ri8" secondAttribute="bottom" id="d9t-z5-QT8"/>
                                             <constraint firstAttribute="trailing" secondItem="nnw-u3-Ha7" secondAttribute="trailing" constant="20" id="dKc-XZ-O8x"/>
                                             <constraint firstItem="0ak-RT-hyF" firstAttribute="leading" secondItem="t2S-P8-GOU" secondAttribute="leading" constant="20" id="g1W-Mk-EXf"/>
+                                            <constraint firstAttribute="trailing" secondItem="HgF-jG-FBI" secondAttribute="trailing" constant="20" id="ggJ-6G-zpi"/>
+                                            <constraint firstItem="nnw-u3-Ha7" firstAttribute="top" secondItem="HgF-jG-FBI" secondAttribute="bottom" constant="25" id="hSB-SQ-NnT"/>
                                             <constraint firstItem="tH7-Lk-U0o" firstAttribute="top" secondItem="96M-km-XkJ" secondAttribute="bottom" id="iPY-M2-HlE"/>
                                             <constraint firstItem="Ago-5X-Oa9" firstAttribute="top" secondItem="3p8-4q-T8M" secondAttribute="bottom" id="jac-bO-lrC"/>
                                             <constraint firstItem="I3n-wv-dFe" firstAttribute="leading" secondItem="t2S-P8-GOU" secondAttribute="leading" constant="20" id="kG0-XB-32t"/>
@@ -2620,6 +2638,7 @@ IHRoZSBzb29uZXN0Lg
                                             <constraint firstItem="SSB-Ls-Pzb" firstAttribute="leading" secondItem="t2S-P8-GOU" secondAttribute="leading" id="sAb-FS-NsQ"/>
                                             <constraint firstAttribute="trailing" secondItem="SSB-Ls-Pzb" secondAttribute="trailing" id="sLE-QQ-lpZ"/>
                                             <constraint firstItem="w4m-7o-dwP" firstAttribute="top" secondItem="BmS-Iv-DtS" secondAttribute="bottom" constant="15" id="sau-YO-vf5"/>
+                                            <constraint firstItem="HgF-jG-FBI" firstAttribute="top" secondItem="FP2-Q9-0jr" secondAttribute="bottom" constant="5" id="skr-iM-Gkd"/>
                                             <constraint firstAttribute="trailing" secondItem="I3n-wv-dFe" secondAttribute="trailing" constant="20" id="t0D-MB-XPK"/>
                                             <constraint firstItem="rgf-h4-kN1" firstAttribute="top" secondItem="SSB-Ls-Pzb" secondAttribute="bottom" constant="15" id="t25-LP-2qR"/>
                                             <constraint firstItem="AQb-TP-IDK" firstAttribute="top" secondItem="g9r-lT-psP" secondAttribute="bottom" id="tGG-Mv-hgi"/>
@@ -2627,7 +2646,6 @@ IHRoZSBzb29uZXN0Lg
                                             <constraint firstItem="rgf-h4-kN1" firstAttribute="leading" secondItem="t2S-P8-GOU" secondAttribute="leading" id="uCC-Sk-3Rq"/>
                                             <constraint firstAttribute="trailing" secondItem="kiU-2Y-Yag" secondAttribute="trailing" constant="20" id="wxW-Pt-SlD"/>
                                             <constraint firstAttribute="trailing" secondItem="PwR-Mh-h7G" secondAttribute="trailing" constant="20" id="xaa-8D-DaX"/>
-                                            <constraint firstItem="nnw-u3-Ha7" firstAttribute="top" secondItem="FP2-Q9-0jr" secondAttribute="bottom" constant="20" id="ySM-dJ-vXC"/>
                                             <constraint firstAttribute="trailing" secondItem="1LP-8X-6AC" secondAttribute="trailing" constant="20" id="zFG-jI-OkC"/>
                                             <constraint firstItem="nnw-u3-Ha7" firstAttribute="leading" secondItem="t2S-P8-GOU" secondAttribute="leading" constant="20" id="zt3-Ql-n83"/>
                                         </constraints>
@@ -2660,12 +2678,13 @@ IHRoZSBzb29uZXN0Lg
                         <viewLayoutGuide key="safeArea" id="fPR-0P-dbF"/>
                     </view>
                     <navigationItem key="navigationItem" id="qIY-ny-ONa"/>
-                    <size key="freeformSize" width="320" height="1100"/>
+                    <size key="freeformSize" width="320" height="1150"/>
                     <connections>
                         <outlet property="addressMapView" destination="tH7-Lk-U0o" id="bnR-XR-dv9"/>
                         <outlet property="attachBtn" destination="SBe-Gx-hlJ" id="Heh-Dj-Tu8"/>
                         <outlet property="commentTxtView" destination="rgf-h4-kN1" id="KK0-1d-cm2"/>
                         <outlet property="emailTxtView" destination="BmS-Iv-DtS" id="oQZ-gZ-aOw"/>
+                        <outlet property="fileAttachLbl" destination="HgF-jG-FBI" id="Ddl-h6-ivB"/>
                         <outlet property="interestedTxtView" destination="SSB-Ls-Pzb" id="L0r-xr-XUj"/>
                         <outlet property="nameTxtView" destination="CkB-uf-vYj" id="mYm-Nt-dfp"/>
                         <outlet property="phoneTxtView" destination="w4m-7o-dwP" id="oma-rG-hhL"/>
@@ -2688,7 +2707,7 @@ IHRoZSBzb29uZXN0Lg
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Request Submitted " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QR-og-Ev0" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                            <rect key="frame" x="20" y="324" width="280" height="21"/>
+                            <rect key="frame" x="20" y="324" width="280" height="25.5"/>
                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="18"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
@@ -2703,7 +2722,7 @@ IHRoZSBzb29uZXN0Lg
                             </userDefinedRuntimeAttributes>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Request has been submitted and our team will contact you within 24-48 working hours" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ar4-5l-fw8" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                            <rect key="frame" x="20" y="350" width="280" height="28"/>
+                            <rect key="frame" x="20" y="354.5" width="280" height="50.5"/>
                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>

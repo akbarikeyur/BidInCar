@@ -190,6 +190,12 @@ class HomeVC: UploadImageVC {
     }
     
     @IBAction func clickToFilter(_ sender: Any) {
+        if arrMake.count == 0 {
+            if selectedFilterCategory.id == -1 {
+                selectedFilterCategory = AppModel.shared.AUCTION_TYPE.first!
+            }
+            serviceCallToSelectMake()
+        }
         displaySubViewtoParentView(self.view, subview: filterView)
     }
     
@@ -549,6 +555,11 @@ extension HomeVC {
             APIManager.shared.serviceCallToGetAuctionCategoryList { (data) in
                 setCategoryData(data)
                 AppModel.shared.AUCTION_TYPE = [AuctionTypeModel]()
+                printData(data)
+                if isArabic() {
+                    let tempdata = data.reversed()
+                    printData(tempdata)
+                }
                 for temp in data {
                     AppModel.shared.AUCTION_TYPE.append(AuctionTypeModel.init(dict: temp))
                 }
@@ -556,6 +567,7 @@ extension HomeVC {
                     self.selectedCategory = AppModel.shared.AUCTION_TYPE.first!
                     self.selectedFilterCategory = self.selectedCategory
                     self.categoryLbl.text = self.selectedFilterCategory.name
+                    self.serviceCallToSelectMake()
                 }
                 self.categoryCV.reloadData()
                 self.serviceCallToGetAuction("")
@@ -633,7 +645,6 @@ extension HomeVC {
     }
     
     func setupFeatureAuction() {
-        /*
         arrFeatureAuctionData = [AuctionModel]()
         for temp in arrAuctionData {
             if temp.auction_featured == "yes" {
@@ -641,8 +652,7 @@ extension HomeVC {
             }
         }
         self.featureCV.reloadData()
-        featureView.isHidden = true
-        */
+        featureView.isHidden = (arrFeatureAuctionData.count == 0)
     }
     
     func serviceCallToAddBookmark(_ auctionid : String, _ type : Int)
@@ -808,7 +818,7 @@ extension HomeVC {
             }
             else if tempInfo.name == getTranslate("info_package") {
                 tempInfo.value = AppModel.shared.getStringValue(data, "package_name")
-                if AppModel.shared.getStringValue(data, "package_name") != "" {
+                if AppModel.shared.getStringValue(data, "package_name") != "" && AppModel.shared.getStringValue(data, "package_name") != "none" {
                     let value : Int = AppModel.shared.getIntValue(data, "package_name")
                     if value <= 35 {
                         tempInfo.value = String(value)

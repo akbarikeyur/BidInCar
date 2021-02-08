@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +31,7 @@
                         <state key="normal" image="cat_bike"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oaP-Om-4U5" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                        <rect key="frame" x="40" y="16.5" width="55" height="17"/>
+                        <rect key="frame" x="40" y="16.5" width="22" height="17"/>
                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                 <constraint firstAttribute="bottom" secondItem="nqm-Df-Ntj" secondAttribute="bottom" id="EQc-9N-LHj"/>
                 <constraint firstItem="oaP-Om-4U5" firstAttribute="leading" secondItem="bNy-xx-4MB" secondAttribute="trailing" constant="10" id="Hjc-6v-uSq"/>
                 <constraint firstItem="bNy-xx-4MB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="UIR-hL-eWy"/>
-                <constraint firstAttribute="trailing" secondItem="oaP-Om-4U5" secondAttribute="trailing" constant="5" id="a6A-JV-9z2"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oaP-Om-4U5" secondAttribute="trailing" constant="5" id="a6A-JV-9z2"/>
                 <constraint firstItem="oaP-Om-4U5" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="afb-pw-4oJ"/>
                 <constraint firstAttribute="trailing" secondItem="nqm-Df-Ntj" secondAttribute="trailing" id="eIV-jc-OVe"/>
                 <constraint firstItem="bNy-xx-4MB" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="kvo-ap-EBp"/>

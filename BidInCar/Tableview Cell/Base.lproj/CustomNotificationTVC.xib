@@ -41,7 +41,7 @@
                         </userDefinedRuntimeAttributes>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New bid of 6000 submitted for Mercedes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4o-FB-hdw" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                        <rect key="frame" x="10" y="35" width="300" height="20"/>
+                        <rect key="frame" x="10" y="35" width="283" height="20"/>
                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -109,15 +109,17 @@
                     <constraint firstItem="R4o-FB-hdw" firstAttribute="top" secondItem="4qa-Gz-7yC" secondAttribute="bottom" id="BAT-5E-fzW"/>
                     <constraint firstAttribute="bottom" secondItem="91K-6R-ya5" secondAttribute="bottom" id="E8W-no-djE"/>
                     <constraint firstItem="91K-6R-ya5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Fho-ND-2vX"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4qa-Gz-7yC" secondAttribute="trailing" constant="10" id="HzN-6g-UJm"/>
                     <constraint firstAttribute="trailing" secondItem="91K-6R-ya5" secondAttribute="trailing" constant="10" id="I0g-ex-qfx"/>
                     <constraint firstAttribute="trailing" secondItem="va6-PH-1bA" secondAttribute="trailing" constant="10" id="KhC-vF-6N6"/>
                     <constraint firstItem="4qa-Gz-7yC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="U3f-2Y-Zag"/>
                     <constraint firstItem="va6-PH-1bA" firstAttribute="centerY" secondItem="nh4-Zp-JDy" secondAttribute="centerY" id="aIJ-0w-OWF"/>
                     <constraint firstItem="R4o-FB-hdw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="aiM-sQ-Izk"/>
+                    <constraint firstItem="va6-PH-1bA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nh4-Zp-JDy" secondAttribute="trailing" constant="10" id="avp-if-Hqc"/>
                     <constraint firstItem="4qa-Gz-7yC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="kS3-jX-zNe"/>
                     <constraint firstItem="nh4-Zp-JDy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="mc7-hj-qAu"/>
                     <constraint firstItem="91K-6R-ya5" firstAttribute="top" secondItem="nh4-Zp-JDy" secondAttribute="bottom" constant="14.5" id="pO2-xp-8uj"/>
-                    <constraint firstAttribute="trailing" secondItem="R4o-FB-hdw" secondAttribute="trailing" constant="10" id="uVG-1G-2uC"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="R4o-FB-hdw" secondAttribute="trailing" constant="10" id="uVG-1G-2uC"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -7,6 +7,8 @@
 "remove_photo" = "إزالة الصورة";
 "device_no_camera" = "جهازك ليس به كاميرا";
 
+"currency_aed" = "درهم";
+
 //Side menu
 "menu_home" = "الصفحة الرئيسية";
 "menu_auction" = "مزاداتي";
@@ -28,7 +30,7 @@
 //Login-signup
 "enter_email" = "الرجاء إدخال البريد الإلكتروني";
 "enter_password" = "الرجاء إدخال كلمة المرور";
-
+"enter_name" = "الرجاء إدخال الاسم";
 "enter_fname" = "الرجاء إدخال الاسم الكامل";
 "enter_lname" = "الرجاء إدخال الاسم الأخير";
 "invalid_email" = "بريد إلكتروني خاطئ";
@@ -50,6 +52,11 @@
 "enter_company_suit" = "الرجاء إدخال رقم البدلة";
 "enter_verification_code" = "الرجاء إدخال الرمز";
 "enter_company_email" = "الرجاء إدخال البريد الإلكتروني للشركة";
+
+"not_member_signup" = "ليس عضوا؟ سجل";
+"signup_title" = "سجل";
+"already_member_signin" = "عضو بالفعل؟ تسجيل الدخول";
+"signin_title" = "تسجيل الدخول";
 
 //Guest User Message
 "bookmark_login_msg" = ".الرجاء تسجيل الدخول / التسجيل لإضافة قائمة الرغبات";
@@ -174,7 +181,7 @@
 "deposit_added_success" = "تمت إضافة الإيداع بنجاح";
 "select_package" = "الرجاء تحديد الحزمة أولاً";
 "withdraw_amount" = "الرجاء إدخال مبلغ السحب";
-"withdraw_remaining_bidding_limit" = "يمكنك فقط سحب الإيداع حسب حد المزايدة المتبقي";
+"withdraw_remaining_bidding_limit" = "لقد طلبت المبلغ أكثر من حد مزايدة السحب الخاص بك";
 "withdrawl_request_sent" = "يتم إرسال طلب السحب الخاص بك إلى المسؤول";
 "backend_connection_error" = "خطأ اتصال الخلفية مع المضيفين الآخرين";
 "user_not_found" = "المستخدم ليس موجود";
@@ -295,6 +302,7 @@
 "no" = "لا";
 "success_title" = "نجاح";
 "save_auction_draft_message" = ".لم تقم بشراء أي طرد ، لذلك نقوم بحفظ المزاد في المسودة. الرجاء شراء الحزمة لتفعيل المزاد الخاص بك";
+"success_auction_message" = "تم نشر المزاد بنجاح";
 "no_any_auction" = "ليس لديك أي مزاد حتى الآن";
 "no_auction_draft" = "لا مزاد في المسودة";
 "price_space" = " السعر";
@@ -367,3 +375,68 @@
 
 "privacy_policy_title" = "سياسة خاصة";
 "terms_conditions_title" = "الأحكام والشروط";
+
+//Placeholder
+"placeholder_deposit_amount" = "قيمة الايداع";
+"placeholder_user_name" = "اسم المستخدم";
+"placeholder_password" = "كلمه السر";
+"placeholder_full_name" = "*الاسم الكامل";
+"placeholder_last_name" = "*الكنية";
+"placeholder_email" = "*البريد الإلكتروني";
+"placeholder_street_address" = "*عنوان الشارع";
+"placeholder_building_name" = "*اسم المبنى";
+"placeholder_flat_number" = "*عدد مسطح";
+"placeholder_po_box" = "*صندوق بريد";
+"placeholder_select_country" = "*حدد الدولة";
+"placeholder_select_city" = "*اختر مدينة";
+"placeholder_country_code" = "*الرقم الدولي";
+"placeholder_phone_number" = "*رقم الهاتف";
+"placeholder_password_star" = "*كلمه السر";
+"placeholder_confirm_password" = "*تأكيد كلمة المرور";
+"placeholder_company_name" = "*اسم الشركة";
+"placeholder_company_phone" = "*هاتف الشركة";
+"placeholder_company_address" = "*عنوان الشركة";
+"placeholder_company_email" = "*البريد الإلكتروني للشركة";
+"placeholder_verification_code" = "رمز التحقق";
+"placeholder_body_type" = "*نوع الجسم";
+"placeholder_country_made" = "*بلد صنع";
+"placeholder_engine_no" = "*رقم المحرك";
+"placeholder_exterior_colour" = "*اللون الخارجي";
+"placeholder_mechanical" = "*ميكانيكي";
+"placeholder_wheels" = "*عجلات";
+"placeholder_drive_system" = "*نظام القيادة";
+"placeholder_engine_size" = "*حجم المحرك";
+"placeholder_body_condition" = "*حالة الجسم";
+"placeholder_boat_length" = "*طول القارب";
+"placeholder_boat_age" = "*عمر القارب";
+"placeholder_boat_warranty" = "*ضمان القارب";
+"placeholder_mileage" = "*عدد الأميال";
+"placeholder_interior_color" = "*اللون الداخلي";
+"placeholder_no_of_cylinder" = "*رقم الاسطوانة";
+"placeholder_select_doors" = "*حدد الأبواب";
+"placeholder_select_horsepower" = "*حدد حصان";
+"placeholder_car_warranty" = "*هل السيارة لديها ضمان؟";
+"placeholder_street_address" = "(على سبيل المثال: شارع abc)";
+"placeholder_latitude" = "خط العرض";
+"placeholder_longitude" = "خط الطول";
+"placeholder_auction_title" = "*عنوان المزاد";
+"placeholder_auction_price" = "*سعر المزاد";
+"placeholder_min_bid_increament" = "*الحد الأدنى لزيادة المزايدة";
+"placeholder_age" = "*عمر";
+"placeholder_select_brand" = "*اختر الماركة";
+"placeholder_select_model" = "*حدد الموديل";
+"placeholder_condition" = "*شرط";
+"placeholder_auction_start" = "بدء المزاد";
+"placeholder_auction_end" = "نهاية المزاد";
+"placeholder_vin" = "*النبيذ - الشاسيه";
+"placeholder_transmission" = "*الانتقال";
+"placeholder_fuel_type" = "*نوع الوقود";
+"placeholder_report" = "تحميل تقرير التفتيش";
+"placeholder_amount_withdraw" = "أدخل المبلغ المراد سحبه";
+"placeholder_current_password" = "كلمة المرور الحالية";
+"placeholder_new_password" = "كلمة المرور الجديدة";
+"placeholder_confirm_password" = "تأكيد كلمة المرور";
+"placeholder_name" = "اسم";
+"placeholder_phone_number" = "رقم الهاتف";
+"placeholder_interested_in" = "مهتم ب";
+"placeholder_comment" = "تعليق";

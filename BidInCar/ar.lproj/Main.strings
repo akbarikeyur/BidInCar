@@ -29,9 +29,6 @@
 /* Class = "UIButton"; normalTitle = "SEND"; ObjectID = "DQI-5Z-rku"; */
 "DQI-5Z-rku.normalTitle" = "إرسال";
 
-/* Class = "UIButton"; normalTitle = "Seller"; ObjectID = "EjZ-ai-Oyk"; */
-"EjZ-ai-Oyk.normalTitle" = "تاجر";
-
 /* Class = "UILabel"; text = "Forgot\nPassword"; ObjectID = "Hgy-S7-YkO"; */
 "Hgy-S7-YkO.text" = "هل نسيت كلمة المرور";
 
@@ -74,9 +71,6 @@
 /* Class = "UIButton"; normalTitle = "Bids on Auctions"; ObjectID = "VCO-6n-rOG"; */
 "VCO-6n-rOG.normalTitle" = "المزايدة على المزاد";
 
-/* Class = "UIButton"; normalTitle = "Company"; ObjectID = "VEB-IS-nKo"; */
-"VEB-IS-nKo.normalTitle" = "شركة";
-
 /* Class = "UILabel"; text = "Verify Your\nAccount"; ObjectID = "XRv-Fu-bbg"; */
 "XRv-Fu-bbg.text" = "تحقق الخاص بك\nالحساب";
 
@@ -116,14 +110,8 @@
 /* Class = "UIButton"; normalTitle = "Post Auction"; ObjectID = "sbI-0C-oMw"; */
 "sbI-0C-oMw.normalTitle" = "بعد المزاد";
 
-/* Class = "UIButton"; normalTitle = "Individual"; ObjectID = "sn4-7g-6jy"; */
-"sn4-7g-6jy.normalTitle" = "فرد";
-
 /* Class = "UILabel"; text = "World's largest car\nauction app"; ObjectID = "ujq-01-HyS"; */
 "ujq-01-HyS.text" = "أكبر سيارة في العالم\nتطبيق المزاد";
-
-/* Class = "UIButton"; normalTitle = "Buyer"; ObjectID = "wN2-r4-Ign"; */
-"wN2-r4-Ign.normalTitle" = "مشتر";
 
 /* Class = "UILabel"; text = "Login"; ObjectID = "wnq-t8-V3D"; */
 "wnq-t8-V3D.text" = "تسجيل الدخول";
@@ -133,3 +121,15 @@
 
 /* Class = "UIButton"; normalTitle = "Keep signed in"; ObjectID = "z9e-jl-SQd"; */
 "z9e-jl-SQd.normalTitle" = "احتفظ بتسجيل الدخول";
+
+/* Class = "UILabel"; text = "Buyer"; ObjectID = "StU-YN-jib"; */
+"StU-YN-jib.text" = "مشتر";
+
+/* Class = "UILabel"; text = "Seller"; ObjectID = "JPg-0a-xru"; */
+"JPg-0a-xru.text" = "تاجر";
+
+/* Class = "UILabel"; text = "Individual"; ObjectID = "dc9-1e-Aid"; */
+"dc9-1e-Aid.text" = "فرد";
+
+/* Class = "UILabel"; text = "Company"; ObjectID = "anG-R7-h75"; */
+"anG-R7-h75.text" = "شركة";

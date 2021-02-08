@@ -176,8 +176,8 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
                 cell.valueTxt.text = arrUserDetail[indexPath.row]["value"] as? String ?? ""
                 
                 if cell.titleLbl.text == PROFILE.CITY {
-                    cell.valueBtn.isHidden = false
-                    cell.valueBtn.addTarget(self, action: #selector(clickToCityDropdown(_:)), for: .touchUpInside)
+//                    cell.valueBtn.isHidden = false
+//                    cell.valueBtn.addTarget(self, action: #selector(clickToCityDropdown(_:)), for: .touchUpInside)
                 }
                 else if cell.titleLbl.text == PROFILE.COUNTRY {
                     cell.valueBtn.isHidden = false
@@ -364,7 +364,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
                 param["phone_countrycode"] = selectedCountryCode
                 break
             case PROFILE.CITY:
-                param["user_cityid"] = selectedCityId
+                param["user_cityid"] = temp["value"]
                 break
             case PROFILE.PHONE:
                 param["user_phonenumber"] = temp["value"]

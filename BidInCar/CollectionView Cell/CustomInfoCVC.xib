@@ -33,7 +33,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active auction : 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lw-nX-R3i" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="40" y="11.5" width="140" height="17"/>
+                                <rect key="frame" x="40" y="11.5" width="106.5" height="17"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -51,7 +51,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Eur-Vp-cxd" firstAttribute="centerY" secondItem="e48-Kw-SAj" secondAttribute="centerY" id="EhE-pF-s4L"/>
-                            <constraint firstAttribute="trailing" secondItem="3lw-nX-R3i" secondAttribute="trailing" constant="10" id="M1c-5B-aac"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3lw-nX-R3i" secondAttribute="trailing" constant="10" id="M1c-5B-aac"/>
                             <constraint firstItem="3lw-nX-R3i" firstAttribute="centerY" secondItem="e48-Kw-SAj" secondAttribute="centerY" id="PK6-lg-fe3"/>
                             <constraint firstItem="3lw-nX-R3i" firstAttribute="leading" secondItem="Eur-Vp-cxd" secondAttribute="trailing" constant="10" id="Z8Y-3c-5Ld"/>
                             <constraint firstItem="Eur-Vp-cxd" firstAttribute="leading" secondItem="e48-Kw-SAj" secondAttribute="leading" id="qPi-bn-n7S"/>

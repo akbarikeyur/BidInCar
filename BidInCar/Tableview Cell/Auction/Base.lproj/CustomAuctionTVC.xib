@@ -91,7 +91,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDO-R8-Nvl" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="80" y="28" width="210" height="17"/>
+                                <rect key="frame" x="80" y="28" width="56" height="17"/>
                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -614,9 +614,9 @@
                             <constraint firstItem="WDO-R8-Nvl" firstAttribute="leading" secondItem="cdP-V5-8yf" secondAttribute="trailing" constant="10" id="5zP-nA-JRf"/>
                             <constraint firstItem="weC-y5-4oq" firstAttribute="leading" secondItem="Vdp-9u-8pl" secondAttribute="leading" id="9kE-U8-sHb"/>
                             <constraint firstItem="kj2-eb-vYc" firstAttribute="top" secondItem="weC-y5-4oq" secondAttribute="bottom" id="AXA-2D-R4L"/>
-                            <constraint firstAttribute="trailing" secondItem="SCl-Hh-1yN" secondAttribute="trailing" constant="10" id="AiR-jh-dRx"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SCl-Hh-1yN" secondAttribute="trailing" constant="10" id="AiR-jh-dRx"/>
                             <constraint firstItem="L4a-Rr-ytE" firstAttribute="top" secondItem="Vdp-9u-8pl" secondAttribute="top" constant="8" id="CjX-Ye-sjX"/>
-                            <constraint firstAttribute="trailing" secondItem="WDO-R8-Nvl" secondAttribute="trailing" constant="10" id="DC3-t9-nUa"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WDO-R8-Nvl" secondAttribute="trailing" constant="10" id="DC3-t9-nUa"/>
                             <constraint firstAttribute="bottom" secondItem="kj2-eb-vYc" secondAttribute="bottom" id="FGV-mV-dMm"/>
                             <constraint firstItem="kj2-eb-vYc" firstAttribute="leading" secondItem="Vdp-9u-8pl" secondAttribute="leading" id="Je0-vZ-03n"/>
                             <constraint firstItem="F0t-aj-Xwi" firstAttribute="leading" secondItem="cdP-V5-8yf" secondAttribute="trailing" constant="10" id="QAg-RA-VJ4"/>
@@ -626,13 +626,13 @@
                             <constraint firstItem="weC-y5-4oq" firstAttribute="top" secondItem="cdP-V5-8yf" secondAttribute="bottom" constant="17" id="Vzi-Jz-ppR"/>
                             <constraint firstItem="SCl-Hh-1yN" firstAttribute="top" secondItem="WDO-R8-Nvl" secondAttribute="bottom" id="cdS-bf-iat"/>
                             <constraint firstItem="WDO-R8-Nvl" firstAttribute="top" secondItem="L4a-Rr-ytE" secondAttribute="bottom" id="fP2-jL-wdc"/>
+                            <constraint firstItem="hXR-dz-sSK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="F0t-aj-Xwi" secondAttribute="trailing" constant="10" id="gkY-NY-V4q"/>
                             <constraint firstItem="hXR-dz-sSK" firstAttribute="top" secondItem="SCl-Hh-1yN" secondAttribute="bottom" constant="2" id="iPk-TX-pU9"/>
                             <constraint firstItem="vAc-UR-gtV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="L4a-Rr-ytE" secondAttribute="trailing" constant="10" id="wLG-kq-DzL"/>
                             <constraint firstAttribute="trailing" secondItem="vAc-UR-gtV" secondAttribute="trailing" id="wyo-2K-qKz"/>
                             <constraint firstItem="SCl-Hh-1yN" firstAttribute="leading" secondItem="cdP-V5-8yf" secondAttribute="trailing" constant="10" id="xTs-Fw-uAj"/>
                             <constraint firstItem="cdP-V5-8yf" firstAttribute="leading" secondItem="Vdp-9u-8pl" secondAttribute="leading" constant="10" id="yLa-Z2-CSe"/>
                             <constraint firstAttribute="trailing" secondItem="kj2-eb-vYc" secondAttribute="trailing" id="yXD-Jp-QJG"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="F0t-aj-Xwi" secondAttribute="trailing" constant="10" id="zFN-GK-ZQ6"/>
                             <constraint firstAttribute="trailing" secondItem="hXR-dz-sSK" secondAttribute="trailing" constant="5" id="zfG-te-YXm"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>

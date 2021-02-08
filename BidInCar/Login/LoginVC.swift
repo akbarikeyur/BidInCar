@@ -30,7 +30,6 @@ class LoginVC: UIViewController {
             unameTxt.myTxt.text = "buyer@abc.com"
             passwordTxt.myTxt.text = "abc"
         }
-        
     }
     
     func setUIDesigning()
@@ -71,7 +70,6 @@ class LoginVC: UIViewController {
                     let vc : VerificationVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "VerificationVC") as! VerificationVC
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
-                
             }
         }
     }

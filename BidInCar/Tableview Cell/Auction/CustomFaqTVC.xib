@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,7 +29,7 @@
                         <rect key="frame" x="5" y="5" width="310" height="90"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The standard Lorem Ipsum passage, used since 1500s?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXh-CO-Chr" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="10" y="10" width="280" height="39.5"/>
+                                <rect key="frame" x="10" y="10" width="259.5" height="39.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                 <color key="textColor" red="0.30588235289999999" green="0.29803921570000003" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -55,7 +55,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="310" height="30.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum is simply dummy text " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxQ-GC-GuC" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="0.0" width="290" height="20.5"/>
+                                                <rect key="frame" x="10" y="0.0" width="244" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="14"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -74,7 +74,7 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="hxQ-GC-GuC" secondAttribute="bottom" constant="10" id="1L5-R9-ETI"/>
                                             <constraint firstItem="hxQ-GC-GuC" firstAttribute="leading" secondItem="gQu-79-WHG" secondAttribute="leading" constant="10" id="Ms5-Te-IVb"/>
-                                            <constraint firstAttribute="trailing" secondItem="hxQ-GC-GuC" secondAttribute="trailing" constant="10" id="dO3-CE-Cwr"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hxQ-GC-GuC" secondAttribute="trailing" constant="10" id="dO3-CE-Cwr"/>
                                             <constraint firstItem="hxQ-GC-GuC" firstAttribute="top" secondItem="gQu-79-WHG" secondAttribute="top" id="mri-fb-RZq"/>
                                         </constraints>
                                     </view>
@@ -91,7 +91,7 @@
                             <constraint firstItem="HWC-8O-aAt" firstAttribute="leading" secondItem="bHy-be-0NV" secondAttribute="leading" id="OfZ-Co-XeO"/>
                             <constraint firstItem="OM5-yo-Gj0" firstAttribute="leading" secondItem="bHy-be-0NV" secondAttribute="leading" id="XG1-IX-WSA"/>
                             <constraint firstItem="HWC-8O-aAt" firstAttribute="top" secondItem="LXh-CO-Chr" secondAttribute="bottom" constant="10" id="Yj5-cZ-Be5"/>
-                            <constraint firstAttribute="trailing" secondItem="LXh-CO-Chr" secondAttribute="trailing" constant="20" id="n97-qm-qt4"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LXh-CO-Chr" secondAttribute="trailing" constant="20" id="n97-qm-qt4"/>
                             <constraint firstItem="HWC-8O-aAt" firstAttribute="top" secondItem="OM5-yo-Gj0" secondAttribute="bottom" id="sNe-kk-bvA"/>
                             <constraint firstItem="LXh-CO-Chr" firstAttribute="leading" secondItem="bHy-be-0NV" secondAttribute="leading" constant="10" id="yOT-HQ-IOW"/>
                         </constraints>
