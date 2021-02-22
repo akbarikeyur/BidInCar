@@ -16,7 +16,7 @@ struct API {
     static let BASE_URL = "https://bidincars.com/"
     
     static let LOGIN                        =       BASE_URL + "user/user_auth"
-    static let SIGNUP                       =       BASE_URL + "user/register"
+    static let SIGNUP                       =       BASE_URL + "user/registers"
     static let SEND_OTP                     =       BASE_URL + "user/sendotp"
     static let VERIFY_OTP                   =       BASE_URL + "user/verify_account"
     static let FORGOT_PASSWORD              =       BASE_URL + "user/forget_password"
@@ -1079,7 +1079,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-                printData(response.result.value!)
+//                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {

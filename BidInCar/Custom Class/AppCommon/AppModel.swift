@@ -109,10 +109,10 @@ class UserModel : AppModel
     var city_name : String!
     var country_name : String!
     var sortname : String!
-    var phonecode : String!
     var verified : Bool!
     var notification : String!
     var user_company : CompanyModel!
+    var lang, phone_countrycode, phone_countrycodeid : String!
     
     override init(){
         userid = ""
@@ -136,10 +136,12 @@ class UserModel : AppModel
         city_name = ""
         country_name = ""
         sortname = ""
-        phonecode = ""
         verified = false
         notification = "on"
         user_company = CompanyModel.init([String : Any]())
+        lang = ""
+        phone_countrycode = ""
+        phone_countrycodeid = ""
     }
     
     init(dict : [String : Any])
@@ -165,10 +167,12 @@ class UserModel : AppModel
         city_name = ""
         country_name = ""
         sortname = ""
-        phonecode = ""
         verified = false
         notification = "on"
         user_company = CompanyModel.init([String : Any]())
+        lang = ""
+        phone_countrycode = ""
+        phone_countrycodeid = ""
         
         userid = AppModel.shared.getStringValue(dict, "userid")
         if let temp = dict["profile_pic"] as? String {
@@ -217,14 +221,14 @@ class UserModel : AppModel
         if let temp = dict["city_name"] as? String {
             city_name = temp
         }
+        else if let temp = dict["user_city_name"] as? String {
+            city_name = temp
+        }
         if let temp = dict["country_name"] as? String {
             country_name = temp
         }
         if let temp = dict["sortname"] as? String {
             sortname = temp
-        }
-        if let temp = dict["phonecode"] as? String {
-            phonecode = temp
         }
         if let temp = dict["verified"] as? Bool {
             verified = temp
@@ -239,10 +243,14 @@ class UserModel : AppModel
         }
         notification = dict["notification"] as? String ?? "on"
         user_company = CompanyModel.init(dict["user_company"] as? [String : Any] ?? [String : Any]())
+        
+        lang = dict["lang"] as? String ?? "eng"
+        phone_countrycode = AppModel.shared.getStringValue(dict, "phone_countrycode")
+        phone_countrycodeid = AppModel.shared.getStringValue(dict, "phone_countrycodeid")
     }
     
     func dictionary() -> [String:Any]  {
-        return ["userid":userid!, "profile_pic":profile_pic!, "user_accountype":user_accountype!, "user_buildingname":user_buildingname!, "user_cityid":user_cityid!, "user_countryid":user_countryid!, "user_deposit":user_deposit!, "user_email":user_email!, "user_flatnumber":user_flatnumber!, "user_lastname":user_lastname!, "user_name":user_name!, "user_password":user_password!, "user_phonenumber":user_phonenumber!, "user_pobox":user_pobox!, "user_postingtype":user_postingtype!, "user_status":user_status!, "user_streetaddress":user_streetaddress!, "city_name":city_name!, "country_name":country_name!, "sortname":sortname!, "phonecode":phonecode!, "biding_limit" : biding_limit!, "verified" : verified!, "notification" : notification!, "user_company" : user_company.dictionary()]
+        return ["userid":userid!, "profile_pic":profile_pic!, "user_accountype":user_accountype!, "user_buildingname":user_buildingname!, "user_cityid":user_cityid!, "user_countryid":user_countryid!, "user_deposit":user_deposit!, "user_email":user_email!, "user_flatnumber":user_flatnumber!, "user_lastname":user_lastname!, "user_name":user_name!, "user_password":user_password!, "user_phonenumber":user_phonenumber!, "user_pobox":user_pobox!, "user_postingtype":user_postingtype!, "user_status":user_status!, "user_streetaddress":user_streetaddress!, "city_name":city_name!, "country_name":country_name!, "sortname":sortname!, "biding_limit" : biding_limit!, "verified" : verified!, "notification" : notification!, "user_company" : user_company.dictionary(), "lang" : lang!, "phone_countrycode" : phone_countrycode!, "phone_countrycodeid" : phone_countrycodeid!]
     }
 }
 

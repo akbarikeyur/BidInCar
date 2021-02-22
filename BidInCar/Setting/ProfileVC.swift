@@ -46,6 +46,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     var arrCityData : [CityModel] = [CityModel]()
     var selectedCountryId = ""
     var selectedCountryCode = ""
+    var selectedCountryCodeId = ""
     var selectedCityId = ""
     
     override func viewDidLoad() {
@@ -109,7 +110,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         arrUserDetail.append(dict)
         dict = [String : Any]()
         dict["title"] = PROFILE.COUNTRY_CODE
-        dict["value"] = "+" + AppModel.shared.currentUser.phonecode
+        dict["value"] = "+" + AppModel.shared.currentUser.phone_countrycode
         arrUserDetail.append(dict)
         dict = [String : Any]()
         dict["title"] = PROFILE.PHONE
@@ -143,7 +144,8 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         
         selectedCountryId = AppModel.shared.currentUser.user_countryid
         selectedCityId = AppModel.shared.currentUser.user_cityid
-        selectedCountryCode = AppModel.shared.currentUser.phonecode
+        selectedCountryCode = AppModel.shared.currentUser.phone_countrycode
+        selectedCountryCodeId = AppModel.shared.currentUser.phone_countrycodeid
         getCityData(AppModel.shared.currentUser.user_countryid)
     }
     
@@ -275,6 +277,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
             }
             self.tblView.reloadData()
             self.selectedCountryCode = self.arrCountryData[dropIndex].phonecode
+            self.selectedCountryCodeId = self.arrCountryData[dropIndex].countryid
         }
         dropDown.show()
     }
@@ -362,6 +365,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
                 break
             case PROFILE.COUNTRY_CODE:
                 param["phone_countrycode"] = selectedCountryCode
+                param["phone_countrycodeid"] = selectedCountryCodeId
                 break
             case PROFILE.CITY:
                 param["city"] = temp["value"]

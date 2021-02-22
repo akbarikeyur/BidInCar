@@ -317,6 +317,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             param["country"] = selectedCountry.countryid
             param["city"] = cityTxt.myTxt.text
             param["phone_countrycode"] = selectedCountryCode.phonecode
+            param["phone_countrycodeid"] = selectedCountryCode.countryid
             param["phone_number"] = phoneTxt.myTxt.text
             param["password"] = passwordTxt.myTxt.text
             param["confirm_password"] = confirmPasswordTxt.myTxt.text
