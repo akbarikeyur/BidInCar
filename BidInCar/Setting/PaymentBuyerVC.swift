@@ -105,7 +105,7 @@ class PaymentBuyerVC: UIViewController {
         if withdrawBtn.isSelected {
             withdrawView.isHidden = false
             withdrawTbl.reloadData()
-            constraintHeightWithdrawTbl.constant = CGFloat((Int(withdrawCellheight) * arrWithdraw.count) + 42)
+            constraintHeightWithdrawTbl.constant = CGFloat((Int(withdrawCellheight) * arrWithdraw.count) + 62)
             if arrWithdraw.count > 0 {
                 constraintHeightWithdrawTbl.constant += 80
             }
@@ -213,6 +213,31 @@ class PaymentBuyerVC: UIViewController {
         withdrrawView.removeFromSuperview()
     }
     
+    func setupAmountData() {
+        var totalDeposit : Float = 0
+        var totalWithdraw : Float = 0
+        if self.arrDeposite.count > 0 {
+            self.totalDepositLbl.isHidden = false
+            for temp in self.arrDeposite {
+                totalDeposit += Float(temp.deposite_amount) ?? 0
+            }
+            self.totalDepositLbl.text = getTranslate("total_deposit") + displayPriceWithCurrency(setFlotingPrice(Double(totalDeposit)))
+        }else{
+            self.totalDepositLbl.isHidden = true
+        }
+        
+        if self.arrWithdraw.count > 0 {
+            self.totalWithdrawLbl.isHidden = false
+            for temp in self.arrWithdraw {
+                totalWithdraw += Float(temp.withdrawl_amount) ?? 0
+            }
+            self.totalWithdrawLbl.text = getTranslate("total_withdrawal") + displayPriceWithCurrency(setFlotingPrice(Double(totalWithdraw))) + "\n" + getTranslate("total_remaining_deposit") + displayPriceWithCurrency(setFlotingPrice(Double(totalDeposit-totalWithdraw)))
+        }else{
+            self.totalWithdrawLbl.isHidden = true
+        }
+        
+    }
+    
     func serviceCallToGetBidAuction()
     {
         APIManager.shared.serviceCallToGetBidAuction(["userid":AppModel.shared.currentUser.userid!]) { (data) in
@@ -230,16 +255,7 @@ class PaymentBuyerVC: UIViewController {
             for temp in data {
                 self.arrDeposite.append(DepositeModel.init(dict: temp))
             }
-            if self.arrDeposite.count > 0 {
-                self.totalDepositLbl.isHidden = false
-                var price : Float = 0
-                for temp in self.arrDeposite {
-                    price += Float(temp.deposite_amount) ?? 0
-                }
-                self.totalDepositLbl.text = getTranslate("total_deposit") + displayPriceWithCurrency(setFlotingPrice(Double(price)))
-            }else{
-                self.totalDepositLbl.isHidden = true
-            }
+            self.setupAmountData()
             
             self.setDepositViewheight()
         }
@@ -251,17 +267,7 @@ class PaymentBuyerVC: UIViewController {
             for temp in data {
                 self.arrWithdraw.append(WithdrawModel.init(dict: temp))
             }
-            if self.arrWithdraw.count > 0 {
-                self.totalWithdrawLbl.isHidden = false
-                var price : Float = 0
-                for temp in self.arrWithdraw {
-                    price += Float(temp.withdrawl_amount) ?? 0
-                }
-                self.totalWithdrawLbl.text = getTranslate("total_withdrawal") + displayPriceWithCurrency(setFlotingPrice(Double(price)))
-            }else{
-                self.totalWithdrawLbl.isHidden = true
-            }
-            
+            self.setupAmountData()
             self.setWithdrawViewheight()
         }
     }

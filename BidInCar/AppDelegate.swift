@@ -184,6 +184,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 //        }
     }
     
+    func updateAuctionGlobally(_ dict : AuctionModel) {
+        if AppModel.shared.AUCTION_DATA[String(dict.cattype)] == nil {
+            return
+        }
+        var arrTemp = AppModel.shared.AUCTION_DATA[String(dict.cattype)]!
+        let index = arrTemp.firstIndex { (temp) -> Bool in
+            temp.auctionid == dict.auctionid
+        }
+        if index != nil {
+            arrTemp[index!] = dict
+            AppModel.shared.AUCTION_DATA[String(dict.cattype)]! = arrTemp
+        }
+    }
     //MARK:- service Call
     func serviceCalledForData()
     {

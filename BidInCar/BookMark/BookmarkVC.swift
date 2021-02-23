@@ -87,6 +87,9 @@ class BookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func clickToBookmark(_ sender: UIButton) {
         let dict = arrAuctionData[sender.tag]
         serviceCallToRemoveBookmark(dict.auctionid, dict.bookmarkid)
+        arrAuctionData[sender.tag].bookmark = "no"
+        
+        AppDelegate().sharedDelegate().updateAuctionGlobally(arrAuctionData[sender.tag])
     }
     
     //MARK:- Service called

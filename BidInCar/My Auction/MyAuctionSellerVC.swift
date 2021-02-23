@@ -350,11 +350,13 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
                 if self.activeBtn.isSelected {
                     self.arrActiveAuction[sender.tag].bookmark = "no"
                     self.arrActiveAuction[sender.tag].bookmarkid = ""
+                    AppDelegate().sharedDelegate().updateAuctionGlobally(self.arrActiveAuction[sender.tag])
                     NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_AUCTION_DATA), object: self.arrActiveAuction[sender.tag])
                 }
                 else{
                     self.arrCloseAuction[sender.tag].bookmark = "no"
                     self.arrCloseAuction[sender.tag].bookmarkid = ""
+                    AppDelegate().sharedDelegate().updateAuctionGlobally(self.arrCloseAuction[sender.tag])
                     NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_AUCTION_DATA), object: self.arrCloseAuction[sender.tag])
                 }
             }

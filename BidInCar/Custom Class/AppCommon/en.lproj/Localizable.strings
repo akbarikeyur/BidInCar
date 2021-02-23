@@ -56,6 +56,8 @@
 "enter_verification_code" = "Please enter code";
 "enter_company_email" = "Please enter company email";
 
+"agree_terms" = "Please agree terms and conditions";
+
 "not_member_signup" = "Not a member? Sign up";
 "signup_title" = "Sign up";
 "already_member_signin" = "Already Member?  Sign in";
@@ -384,7 +386,7 @@
 "placeholder_deposit_amount" = "Deposit Amount";
 "placeholder_user_name" = "User Name";
 "placeholder_password" = "Password";
-"placeholder_full_name" = "Full Name*";
+"placeholder_full_name" = "First Name*";
 "placeholder_last_name" = "Last Name*";
 "placeholder_email" = "Email*";
 "placeholder_street_address" = "Street Address*";
@@ -447,3 +449,4 @@
 
 "total_deposit" = "Total Deposit Amount: ";
 "total_withdrawal" = "Total Withdrawal Amount: ";
+"total_remaining_deposit" = "Remaining Deposit: ";

@@ -13,7 +13,7 @@ class WithdrawHistoryTVC: UITableViewCell {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var dateLbl: Label!
     @IBOutlet weak var amountLbl: Label!
-    @IBOutlet weak var feeLbl: Label!
+//    @IBOutlet weak var feeLbl: Label!
     @IBOutlet weak var statusLbl: Label!
     
     override func awakeFromNib() {
@@ -24,7 +24,7 @@ class WithdrawHistoryTVC: UITableViewCell {
     func setupDetails(_ dict : WithdrawModel) {
         dateLbl.text = dict.created_at
         amountLbl.text = displayPriceWithCurrency(dict.withdrawl_amount)
-        feeLbl.text = "5%"
+//        feeLbl.text = "5%"
         statusLbl.text = dict.status.capitalized
     }
     

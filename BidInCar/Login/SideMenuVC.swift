@@ -106,18 +106,18 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         var arrMenuTitle = [String]()
         
         if isUserLogin() {
-            arrMenuTitle = [getTranslate("menu_home"), getTranslate("menu_auction"), getTranslate("menu_bookmark"), getTranslate("menu_profile"), getTranslate("menu_contact"), getTranslate("menu_terms"), getTranslate("menu_privacy"), getTranslate("menu_calc"), getTranslate("menu_logout")]
+            arrMenuTitle = [getTranslate("menu_home"), getTranslate("menu_auction"), getTranslate("menu_bookmark"), getTranslate("menu_profile"), getTranslate("menu_contact"), getTranslate("menu_terms"), getTranslate("menu_privacy"), /*getTranslate("menu_calc"),*/ getTranslate("menu_logout")]
         }
         else{
-            arrMenuTitle = [getTranslate("menu_home"), getTranslate("menu_auction"), getTranslate("menu_bookmark"), getTranslate("menu_contact"), getTranslate("menu_terms"), getTranslate("menu_privacy"), getTranslate("menu_calc")]
+            arrMenuTitle = [getTranslate("menu_home"), getTranslate("menu_auction"), getTranslate("menu_bookmark"), getTranslate("menu_contact"), getTranslate("menu_terms"), getTranslate("menu_privacy")/*, getTranslate("menu_calc")*/]
         }
         arrMenuTitle.append(getTranslate("menu_lang"))
         //menu_lang
         var arrMenuImage = [String]()
         if isUserLogin() {
-            arrMenuImage = ["menu_home", "menu_auction", "menu_bookmark", "menu_profile", "menu_contact", "menu_terms","menu_privacy", "menu_calculator", "logout"]
+            arrMenuImage = ["menu_home", "menu_auction", "menu_bookmark", "menu_profile", "menu_contact", "menu_terms","menu_privacy", /*"menu_calculator",*/ "logout"]
         }else{
-            arrMenuImage = ["menu_home", "menu_auction", "menu_bookmark", "menu_contact", "menu_terms","menu_privacy", "menu_calculator"]
+            arrMenuImage = ["menu_home", "menu_auction", "menu_bookmark", "menu_contact", "menu_terms","menu_privacy"/*, "menu_calculator"*/]
         }
         arrMenuImage.append("menu_lang")
         for i in 0..<arrMenuTitle.count {
@@ -290,8 +290,8 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 screenType = 0
                 menuContainerViewController.centerViewController = navController
                 break
-            case getTranslate("menu_how_sell"):
-                
+            case getTranslate("menu_lang"):
+                AppDelegate().sharedDelegate().changeLanguage()
                 break
             case getTranslate("menu_how_buy"):
                 

@@ -1258,7 +1258,7 @@
                                                         </connections>
                                                     </button>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eAo-hn-aSg">
-                                                        <rect key="frame" x="10" y="52" width="300" height="68"/>
+                                                        <rect key="frame" x="10" y="52" width="300" height="48.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1268,8 +1268,10 @@
                                                             <outlet property="delegate" destination="zn4-jg-3Mj" id="NIr-WD-UhW"/>
                                                         </connections>
                                                     </tableView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total  Withdrawal Amount : AED 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GJE-rQ-uA3" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="10" y="130" width="300" height="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GJE-rQ-uA3" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="110.5" width="300" height="39.5"/>
+                                                        <string key="text">Total  Withdrawal Amount : AED 0
+Remaining Deposit : AED 0</string>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>

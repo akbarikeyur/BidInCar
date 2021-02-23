@@ -44,6 +44,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var companyAddressTxt: FloatingTextfiledView!
     @IBOutlet weak var companyEmailTxt: FloatingTextfiledView!
     
+    @IBOutlet weak var termsBtn: Button!
     
     @IBOutlet weak var signinLbl: Label!
     
@@ -97,7 +98,6 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         signinLbl.text = getTranslate("already_member_signin")
         signinLbl.attributedText = attributedStringWithColor(signinLbl.text!, [getTranslate("signin_title")], color: PurpleColor, font: nil)
         companyDetailView.isHidden = true
-        resetButton()
         individualView.isHidden = true
         companyView.isHidden = true
         
@@ -205,35 +205,28 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func clickToSelectAccountType(_ sender: UIButton) {
-        resetButton()
+        individualBtn.isSelected = false
+        companyBtn.isSelected = false
         if sender.tag == 1 {
             buyerBtn.isSelected = true
+            sellerBtn.isSelected = false
             companyDetailView.isHidden = true
-            individualView.isHidden = true
-            companyView.isHidden = true
+            individualView.isHidden = false
+            companyView.isHidden = false
         }else if sender.tag == 2 {
             sellerBtn.isSelected = true
+            buyerBtn.isSelected = false
             companyDetailView.isHidden = true
             individualView.isHidden = false
             companyView.isHidden = false
         }
         else if sender.tag == 3 {
-            sellerBtn.isSelected = true
             individualBtn.isSelected = true
             companyDetailView.isHidden = true
         }else if sender.tag == 4 {
-            sellerBtn.isSelected = true
             companyBtn.isSelected = true
             companyDetailView.isHidden = false
         }
-    }
-    
-    func resetButton()
-    {
-        buyerBtn.isSelected = false
-        sellerBtn.isSelected = false
-        individualBtn.isSelected = false
-        companyBtn.isSelected = false
     }
     
     @IBAction func clickToLogin(_ sender: UIButton) {
@@ -246,9 +239,14 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func clickToAgree(_ sender: Any) {
+        termsBtn.isSelected = !termsBtn.isSelected
+    }
+    
     @IBAction func clickToTermsCondition(_ sender: Any) {
         let vc : PrivacyPolicyVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PrivacyPolicyVC") as! PrivacyPolicyVC
         vc.isBackDisplay = true
+        screenType = 1
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -299,11 +297,14 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         else if !buyerBtn.isSelected && !sellerBtn.isSelected {
             displayToast("select_account_type")
         }
-        else if sellerBtn.isSelected && !individualBtn.isSelected && !companyBtn.isSelected {
+        else if !individualBtn.isSelected && !companyBtn.isSelected {
             displayToast("select_account_type")
         }
         else if companyBtn.isSelected && !checkCompanyValidation() {
             //check validation
+        }
+        else if !termsBtn.isSelected {
+            displayToast("agree_terms")
         }
         else{
             var param : [String : Any] = [String : Any]()

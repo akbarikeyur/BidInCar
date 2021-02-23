@@ -52,7 +52,7 @@
 "enter_company_suit" = "الرجاء إدخال رقم البدلة";
 "enter_verification_code" = "الرجاء إدخال الرمز";
 "enter_company_email" = "الرجاء إدخال البريد الإلكتروني للشركة";
-
+"agree_terms" = "الرجاء الموافقة على الشروط والأحكام";
 "not_member_signup" = "ليس عضوا؟ سجل";
 "signup_title" = "سجل";
 "already_member_signin" = "عضو بالفعل؟ تسجيل الدخول";
@@ -380,7 +380,7 @@
 "placeholder_deposit_amount" = "قيمة الايداع";
 "placeholder_user_name" = "اسم المستخدم";
 "placeholder_password" = "كلمه السر";
-"placeholder_full_name" = "*الاسم الكامل";
+"placeholder_full_name" = "*الاسم الاول";
 "placeholder_last_name" = "*الكنية";
 "placeholder_email" = "*البريد الإلكتروني";
 "placeholder_street_address" = "*عنوان الشارع";
@@ -443,3 +443,4 @@
 
 "total_deposit" = " :إجمالي مبلغ الإيداع";
 "total_withdrawal" = " :إجمالي مبلغ السحب";
+"total_remaining_deposit" = " :الإيداع المتبقي";

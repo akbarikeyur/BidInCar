@@ -196,6 +196,7 @@ class HomeVC: UploadImageVC {
             }
             serviceCallToSelectMake()
         }
+        categoryLbl.text = selectedFilterCategory.name
         displaySubViewtoParentView(self.view, subview: filterView)
     }
     

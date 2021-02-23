@@ -163,7 +163,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         cell.valueLbl.isHidden = true
         cell.valueBtn.isHidden = true
         cell.titleLbl.text = arrUserDetail[indexPath.row]["title"] as? String ?? ""
-        if cell.titleLbl.text == PROFILE.EMAIL {
+        if cell.titleLbl.text == PROFILE.EMAIL || cell.titleLbl.text == PROFILE.PHONE || cell.titleLbl.text == PROFILE.COMPANY_PHONE {
             cell.valueTxt.isUserInteractionEnabled = false
         }else{
             cell.valueTxt.isUserInteractionEnabled = true
@@ -261,6 +261,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     
     @IBAction func clickToCountryCodeDropdown(_ sender: UIButton) {
         self.view.endEditing(true)
+        /*
         let dropDown = DropDown()
         dropDown.anchorView = sender
         var arrData = [String]()
@@ -280,6 +281,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
             self.selectedCountryCodeId = self.arrCountryData[dropIndex].countryid
         }
         dropDown.show()
+         */
     }
     
     @IBAction func clickToCityDropdown(_ sender: UIButton) {

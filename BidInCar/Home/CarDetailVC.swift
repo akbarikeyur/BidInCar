@@ -267,6 +267,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     @IBAction func clickToTermsConditions(_ sender: Any) {
         self.view.endEditing(true)
+        screenType = 1
         let vc : PrivacyPolicyVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PrivacyPolicyVC") as! PrivacyPolicyVC
         vc.isBackDisplay = true
         self.navigationController?.pushViewController(vc, animated: true)

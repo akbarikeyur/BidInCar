@@ -133,3 +133,6 @@
 
 /* Class = "UILabel"; text = "Company"; ObjectID = "anG-R7-h75"; */
 "anG-R7-h75.text" = "شركة";
+
+/* Class = "UILabel"; text = "Company"; ObjectID = "Kcs-9l-hB4"; */
+"Kcs-9l-hB4.text" = "أوافق على الشروط والأحكام";
