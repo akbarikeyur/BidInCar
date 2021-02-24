@@ -197,6 +197,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             AppModel.shared.AUCTION_DATA[String(dict.cattype)]! = arrTemp
         }
     }
+    
     //MARK:- service Call
     func serviceCalledForData()
     {

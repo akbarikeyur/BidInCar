@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZcA-ak-AO1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZcA-ak-AO1">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1935,7 +1935,7 @@ Account</string>
                                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="14"/>
                                                 <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="5" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
-                                                <state key="normal" title="Bids Now" image="deposite_white"/>
+                                                <state key="normal" title="Bid Now"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
                                                         <integer key="value" value="1"/>
@@ -2178,7 +2178,7 @@ Account</string>
                                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="12"/>
                                                 <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="5" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
-                                                <state key="normal" title="Bid Now" image="deposite_white"/>
+                                                <state key="normal" title="Bid Now"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
                                                         <integer key="value" value="1"/>
@@ -2663,7 +2663,6 @@ Password</string>
         <image name="checkbox_off" width="19.5" height="20"/>
         <image name="checkbox_on" width="22" height="20"/>
         <image name="checkbox_purple_off" width="20" height="20"/>
-        <image name="deposite_white" width="13.5" height="19"/>
         <image name="dropdown" width="12" height="7"/>
         <image name="facebook" width="12" height="23.5"/>
         <image name="google_plus" width="23.5" height="17"/>
