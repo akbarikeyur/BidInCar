@@ -1628,7 +1628,7 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Th-Zf-azZ" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="62.5" y="0.0" width="65" height="50"/>
+                                        <rect key="frame" x="94.5" y="0.0" width="65" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="MxE-uf-8qz"/>
                                         </constraints>
@@ -1653,7 +1653,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LUH-hn-nWH" customClass="ImageView" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="62.5" y="48" width="65" height="2"/>
+                                        <rect key="frame" x="94.5" y="48" width="65" height="2"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="SfJ-ud-IlT"/>
@@ -1665,7 +1665,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6e-vH-rPK" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="127.5" y="0.0" width="65" height="50"/>
+                                        <rect key="frame" x="159.5" y="0.0" width="65" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="Jz9-Zx-HrS"/>
                                         </constraints>
@@ -1690,7 +1690,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3lV-54-CMn" customClass="ImageView" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="127.5" y="48" width="65" height="2"/>
+                                        <rect key="frame" x="159.5" y="48" width="65" height="2"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="K54-QN-cQm"/>
@@ -1701,8 +1701,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="po5-RM-wOq" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="192.5" y="0.0" width="80" height="50"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="po5-RM-wOq" customClass="Button" customModule="BidInCar" customModuleProvider="target">
+                                        <rect key="frame" x="224.5" y="0.0" width="80" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="LLO-l9-Fjl"/>
                                         </constraints>
@@ -1726,8 +1726,8 @@
                                             <action selector="clickToSelectTab:" destination="frK-vq-ozb" eventType="touchUpInside" id="UCC-Ev-P61"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fmI-id-tyG" customClass="ImageView" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="192.5" y="48" width="80" height="2"/>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fmI-id-tyG" customClass="ImageView" customModule="BidInCar" customModuleProvider="target">
+                                        <rect key="frame" x="224.5" y="48" width="80" height="2"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="DqO-sJ-3TC"/>
@@ -1761,7 +1761,7 @@
                                     <constraint firstItem="D6e-vH-rPK" firstAttribute="leading" secondItem="3lV-54-CMn" secondAttribute="leading" id="VsT-6M-ZZY"/>
                                     <constraint firstItem="6Th-Zf-azZ" firstAttribute="leading" secondItem="LUH-hn-nWH" secondAttribute="leading" id="XDj-ey-s3d"/>
                                     <constraint firstItem="po5-RM-wOq" firstAttribute="top" secondItem="yYM-qJ-LfY" secondAttribute="top" id="XOw-8K-K4n"/>
-                                    <constraint firstItem="D6e-vH-rPK" firstAttribute="centerX" secondItem="yYM-qJ-LfY" secondAttribute="centerX" id="fFp-yG-Dnx"/>
+                                    <constraint firstItem="D6e-vH-rPK" firstAttribute="centerX" secondItem="yYM-qJ-LfY" secondAttribute="centerX" constant="32" id="fFp-yG-Dnx"/>
                                     <constraint firstItem="po5-RM-wOq" firstAttribute="trailing" secondItem="fmI-id-tyG" secondAttribute="trailing" id="gGD-BJ-HfL"/>
                                     <constraint firstItem="6Th-Zf-azZ" firstAttribute="top" secondItem="yYM-qJ-LfY" secondAttribute="top" id="iE3-TZ-S2d"/>
                                     <constraint firstItem="po5-RM-wOq" firstAttribute="leading" secondItem="D6e-vH-rPK" secondAttribute="trailing" id="j4L-bt-TAl"/>
@@ -8766,7 +8766,7 @@ trucks more in our online auctions every week</string>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="p0k-2a-89g"/>
                                         </constraints>
-                                        <state key="normal" image="more"/>
+                                        <state key="normal" image="back"/>
                                         <connections>
                                             <action selector="clickToSideMenu:" destination="MD2-hB-Hhh" eventType="touchUpInside" id="tCu-5Q-M7v"/>
                                         </connections>

@@ -283,7 +283,7 @@ class PostAuctionDetailVC: UIViewController {
                 if AppModel.shared.AUCTION_DATA[String(self.myAuction.categorytype)] != nil {
                     AppModel.shared.AUCTION_DATA[String(self.myAuction.categorytype)] = [AuctionModel]()
                 }
-                AppDelegate().sharedDelegate().serviceCallToDecreseLeftAuction()
+//                AppDelegate().sharedDelegate().serviceCallToDecreseLeftAuction()
                 self.clickToBack(self)
             }
         }

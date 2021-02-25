@@ -47,7 +47,11 @@ class PackageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Button click event
     @IBAction func clickToSideMenu(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        if isFromAuction {
+            AppDelegate().sharedDelegate().navigateToDashBoard()
+        }else {
+            self.navigationController?.popViewController(animated: true)
+        }        
     }
     
     @IBAction func clickToSelectTab(_ sender: Button) {
@@ -102,14 +106,15 @@ class PackageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             var param = [String : Any]()
             if singleAuctionBtn.isSelected {
                 param["packageid"] = selectedSingle.packageid
-                param["promotion"] = selectedSingle.isSocial ? "true" : "false"
+                param["featured_plus_social"] = selectedSingle.isSocial ? "true" : "false"
                 param["featured"] = selectedSingle.isFeatured ? "true" : "false"
             }else{
                 param["packageid"] = selectedPackage.packageid
-                param["promotion"] = selectedPackage.isSocial ? "true" : "false"
+                param["featured_plus_social"] = selectedPackage.isSocial ? "true" : "false"
                 param["featured"] = selectedPackage.isFeatured ? "true" : "false"
             }
             param["userid"] = AppModel.shared.currentUser.userid
+            param["total_amount"] = amount
             printData(param)
             let vc : SelectPaymentMethodVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "SelectPaymentMethodVC") as! SelectPaymentMethodVC
             vc.paymentType = PAYMENT.PACKAGE

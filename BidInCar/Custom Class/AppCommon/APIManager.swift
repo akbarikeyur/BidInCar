@@ -74,7 +74,7 @@ struct API {
     static let GET_WITHDRAW_HISTORY         =       BASE_URL + "payment/getwithdrawstatus"
     
     static let GET_PACKAGE                  =       BASE_URL + "packages/api_packages"
-    static let PURCHASE_PACKAGE             =       BASE_URL + "payment/package_purchase"
+    static let PURCHASE_PACKAGE             =       BASE_URL + "packages/api_package_bought_succes"
     static let GET_MY_PACKAGE               =       BASE_URL + "payment/getpackages"
     
     static let CONTACT_US                   =       BASE_URL + "contactmail"
@@ -1929,7 +1929,7 @@ public class APIManager {
                 
                     if let status = result["status"] as? String {
                         if(status == "success") {
-                            self.serviceCallToGetMyPackage(["userid":AppModel.shared.currentUser.userid!])
+//                            self.serviceCallToGetMyPackage(["userid":AppModel.shared.currentUser.userid!])
                             completion()
                             return
                         }

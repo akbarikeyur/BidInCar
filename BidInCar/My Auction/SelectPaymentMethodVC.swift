@@ -382,21 +382,9 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
     {
         APIManager.shared.serviceCallToPurchasePackage(paymentParam) {
             displayToast("package_bought_success")
-            if self.isFromAuction {
-                AppDelegate().sharedDelegate().serviceCallToGetSellerData()
-//                AppDelegate().sharedDelegate().getPackageHistory()
-                
-                for controller in self.navigationController!.viewControllers as Array {
-                    if controller.isKind(of: PostAuctionDetailVC.self) {
-                        self.navigationController!.popToViewController(controller, animated: true)
-                        break
-                    }
-                }
-            }
-            else{
-                self.navigationController?.popViewController(animated: true)
-            }
-            
+            AppDelegate().sharedDelegate().serviceCallToGetSellerData()
+            AppModel.shared.AUCTION_DATA = [String : [AuctionModel]]()
+            AppDelegate().sharedDelegate().navigateToDashBoard()
         }
     }
     

@@ -68,7 +68,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
             serviceCallToGetAuction(2)
         }
         else if draftBtn.isSelected {
-            serviceCallToGetAuction(3)
+//            serviceCallToGetAuction(3)
         }
     }
     
