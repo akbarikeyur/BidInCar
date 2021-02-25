@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wFs-eb-Et6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wFs-eb-Et6">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -452,50 +452,70 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ef5-te-zpa">
                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzN-q2-8PQ" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="15" width="320" height="45"/>
-                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="45" id="jec-Yk-A5j"/>
-                                                                        </constraints>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_engine_no"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kkk-8N-g8u" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="75" width="320" height="45"/>
-                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="45" id="hVB-AN-OZ2"/>
-                                                                        </constraints>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_exterior_colour"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </view>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFI-xS-2a1">
-                                                                        <rect key="frame" x="30" y="75" width="255" height="45"/>
-                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
-                                                                        <state key="normal" image="dropdown"/>
-                                                                        <connections>
-                                                                            <action selector="clickToSelectColor:" destination="vsu-Hi-Iyy" eventType="touchUpInside" id="uh8-12-6gU"/>
-                                                                        </connections>
-                                                                    </button>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YGe-Pg-5cO">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGL-j0-g9x">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                                                                <subviews>
+                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzN-q2-8PQ" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
+                                                                                        <rect key="frame" x="0.0" y="15" width="320" height="45"/>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_engine_no"/>
+                                                                                        </userDefinedRuntimeAttributes>
+                                                                                    </view>
+                                                                                </subviews>
+                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="bottom" secondItem="pzN-q2-8PQ" secondAttribute="bottom" id="P2B-WM-Wwf"/>
+                                                                                    <constraint firstItem="pzN-q2-8PQ" firstAttribute="top" secondItem="yGL-j0-g9x" secondAttribute="top" constant="15" id="VVT-b6-myV"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="pzN-q2-8PQ" secondAttribute="trailing" id="sjF-gE-kRv"/>
+                                                                                    <constraint firstItem="pzN-q2-8PQ" firstAttribute="leading" secondItem="yGL-j0-g9x" secondAttribute="leading" id="ucq-uR-8b1"/>
+                                                                                    <constraint firstAttribute="height" constant="60" id="wWg-vT-I6Q"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAS-bD-PfE">
+                                                                                <rect key="frame" x="0.0" y="60" width="320" height="60"/>
+                                                                                <subviews>
+                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kkk-8N-g8u" customClass="FloatingTextfiledView" customModule="BidInCar" customModuleProvider="target">
+                                                                                        <rect key="frame" x="0.0" y="15" width="320" height="45"/>
+                                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_exterior_colour"/>
+                                                                                        </userDefinedRuntimeAttributes>
+                                                                                    </view>
+                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFI-xS-2a1">
+                                                                                        <rect key="frame" x="30" y="15" width="260" height="45"/>
+                                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
+                                                                                        <state key="normal" image="dropdown"/>
+                                                                                        <connections>
+                                                                                            <action selector="clickToSelectColor:" destination="vsu-Hi-Iyy" eventType="touchUpInside" id="uh8-12-6gU"/>
+                                                                                        </connections>
+                                                                                    </button>
+                                                                                </subviews>
+                                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="bottom" secondItem="kkk-8N-g8u" secondAttribute="bottom" id="1Y9-3U-bf6"/>
+                                                                                    <constraint firstItem="bFI-xS-2a1" firstAttribute="top" secondItem="eAS-bD-PfE" secondAttribute="top" constant="15" id="9FQ-iX-cLe"/>
+                                                                                    <constraint firstAttribute="height" constant="60" id="J7K-eD-MA2"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="bFI-xS-2a1" secondAttribute="trailing" constant="30" id="Sxt-SL-Iri"/>
+                                                                                    <constraint firstItem="bFI-xS-2a1" firstAttribute="leading" secondItem="eAS-bD-PfE" secondAttribute="leading" constant="30" id="UoC-Ut-ko0"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="bFI-xS-2a1" secondAttribute="bottom" id="Y9y-bl-gJC"/>
+                                                                                    <constraint firstItem="kkk-8N-g8u" firstAttribute="leading" secondItem="eAS-bD-PfE" secondAttribute="leading" id="bjn-7K-DtY"/>
+                                                                                    <constraint firstItem="kkk-8N-g8u" firstAttribute="top" secondItem="eAS-bD-PfE" secondAttribute="top" constant="15" id="fHt-zn-rsG"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="kkk-8N-g8u" secondAttribute="trailing" id="xZu-Bd-ufQ"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                    </stackView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="pzN-q2-8PQ" firstAttribute="top" secondItem="ef5-te-zpa" secondAttribute="top" constant="15" id="4g1-IY-hrY"/>
-                                                                    <constraint firstItem="pzN-q2-8PQ" firstAttribute="leading" secondItem="ef5-te-zpa" secondAttribute="leading" id="4u4-hc-WsT"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="pzN-q2-8PQ" secondAttribute="trailing" id="66M-Tl-hra"/>
-                                                                    <constraint firstItem="kkk-8N-g8u" firstAttribute="leading" secondItem="ef5-te-zpa" secondAttribute="leading" id="88a-Ec-D7w"/>
-                                                                    <constraint firstItem="bFI-xS-2a1" firstAttribute="leading" secondItem="kkk-8N-g8u" secondAttribute="leading" constant="30" id="9uw-i4-6U0"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="kkk-8N-g8u" secondAttribute="bottom" id="HAG-Kj-bWY"/>
-                                                                    <constraint firstItem="pzN-q2-8PQ" firstAttribute="leading" secondItem="ef5-te-zpa" secondAttribute="leading" id="RRg-xc-T7l"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="kkk-8N-g8u" secondAttribute="trailing" id="Vhf-ce-K0g"/>
-                                                                    <constraint firstItem="kkk-8N-g8u" firstAttribute="top" secondItem="pzN-q2-8PQ" secondAttribute="bottom" constant="15" id="eU4-Bs-IXF"/>
-                                                                    <constraint firstAttribute="height" constant="120" id="fdH-Xi-JZN"/>
-                                                                    <constraint firstItem="bFI-xS-2a1" firstAttribute="bottom" secondItem="kkk-8N-g8u" secondAttribute="bottom" id="mAP-hk-vhM"/>
-                                                                    <constraint firstItem="bFI-xS-2a1" firstAttribute="top" secondItem="kkk-8N-g8u" secondAttribute="top" id="rvR-9b-y31"/>
-                                                                    <constraint firstItem="bFI-xS-2a1" firstAttribute="trailing" secondItem="kkk-8N-g8u" secondAttribute="trailing" constant="-35" id="yig-WK-xeJ"/>
+                                                                    <constraint firstItem="YGe-Pg-5cO" firstAttribute="leading" secondItem="ef5-te-zpa" secondAttribute="leading" id="0bO-IG-qOw"/>
+                                                                    <constraint firstItem="YGe-Pg-5cO" firstAttribute="top" secondItem="ef5-te-zpa" secondAttribute="top" id="5aM-PM-G0a"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="YGe-Pg-5cO" secondAttribute="trailing" id="AQr-ax-rP8"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="YGe-Pg-5cO" secondAttribute="bottom" id="bDw-f1-cxl"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -1008,7 +1028,7 @@
                                                             <constraint firstAttribute="height" constant="45" id="Dww-y2-Xsv"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_street_address"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_auction_street_address"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vrj-UP-hRB">
@@ -1352,6 +1372,7 @@
                         <outlet property="milageTxt" destination="EaP-Ip-Ykf" id="HZm-hA-w37"/>
                         <outlet property="motorColorView" destination="ef5-te-zpa" id="6l9-R6-mQL"/>
                         <outlet property="motorTxt" destination="pzN-q2-8PQ" id="vwj-Dt-5EM"/>
+                        <outlet property="motorView" destination="yGL-j0-g9x" id="XTe-Qd-Kup"/>
                         <outlet property="scrapView" destination="3EQ-Cs-LIZ" id="8pk-E0-iQC"/>
                         <outlet property="termsCheckBoxBtn" destination="cTc-7c-mxn" id="LSb-0j-whR"/>
                         <outlet property="termsConditionLbl" destination="8J4-as-LTd" id="QPA-M5-2hf"/>

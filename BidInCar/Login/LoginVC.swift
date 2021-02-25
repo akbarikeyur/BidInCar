@@ -27,8 +27,11 @@ class LoginVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if PLATFORM.isSimulator {
-            unameTxt.myTxt.text = "buyer@abc.com"
-            passwordTxt.myTxt.text = "abc"
+            unameTxt.myTxt.text = "testbuyer@abc.com"
+            passwordTxt.myTxt.text = "qqqqqq"
+            
+//            unameTxt.myTxt.text = "keyur@seller.com"
+//            passwordTxt.myTxt.text = "qqqqqq"
         }
     }
     
@@ -65,6 +68,7 @@ class LoginVC: UIViewController {
             APIManager.shared.serviceCallToUserLogin(param) {
                 if AppModel.shared.currentUser.verified {
                     setLoginUserData()
+                    AppDelegate().sharedDelegate().serviceCallToGetUserProfile()
                     AppDelegate().sharedDelegate().navigateToDashBoard()
                 }else{
                     let vc : VerificationVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "VerificationVC") as! VerificationVC

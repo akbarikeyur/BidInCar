@@ -258,6 +258,7 @@
                     </view>
                     <connections>
                         <outlet property="addressLbl" destination="fM5-yL-MBe" id="q0W-o6-LUm"/>
+                        <outlet property="constraintHeightAddress" destination="uAv-fh-6Ns" id="btx-QP-0zc"/>
                         <outlet property="editBtn" destination="UN5-VK-0Bm" id="Kwj-Wo-1rG"/>
                         <outlet property="headerView" destination="xXD-hc-tBo" id="mbo-jH-f6h"/>
                         <outlet property="profilePicBtn" destination="Lje-g4-ja0" id="guU-bt-cC8"/>
@@ -267,7 +268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Lk-cY-TDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="xXD-hc-tBo">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="217"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lje-g4-ja0" customClass="Button" customModule="BidInCar" customModuleProvider="target">
@@ -305,8 +306,11 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Losbon, united state" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM5-yL-MBe" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                            <rect key="frame" x="10" y="145.5" width="300" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Losbon, united state" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM5-yL-MBe" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                            <rect key="frame" x="10" y="145.5" width="300" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="uAv-fh-6Ns"/>
+                            </constraints>
                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -321,7 +325,7 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UN5-VK-0Bm">
-                            <rect key="frame" x="285" y="170" width="25" height="25"/>
+                            <rect key="frame" x="285" y="187" width="25" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="8Bu-Pd-9cP"/>
                                 <constraint firstAttribute="width" constant="25" id="eNE-YY-0FN"/>

@@ -66,7 +66,8 @@ class PaymentBuyerVC: UIViewController {
     
     @objc func updateDepositeAmount()
     {
-        depositeAmountLbl.text = getTranslate("info_deposit_amount") + displayPriceWithCurrency(AppModel.shared.currentUser.user_deposit)
+        let user_deposit = AppModel.shared.getStringValue(getBuyerTopData(), "deposite")
+        depositeAmountLbl.text = getTranslate("info_deposit_amount") + displayPriceWithCurrency(user_deposit)
         depositeAmountLbl.attributedText = attributedStringWithColor(depositeAmountLbl.text!, [getTranslate("info_deposit_amount")], color: LightGrayColor)
     }
     

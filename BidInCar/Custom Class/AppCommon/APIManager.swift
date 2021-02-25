@@ -31,7 +31,7 @@ struct API {
     
     static let GET_COUNTRY                  =       BASE_URL + "getcountries"
     static let GET_CITY                     =       BASE_URL + "getcities"
-    static let GET_FEATURED_PRICE           =       BASE_URL + "admin/setting/get_featured_price"
+//    static let GET_FEATURED_PRICE           =       BASE_URL + "admin/setting/get_featured_price"
     static let GET_AUCTION_CATEGORY         =       BASE_URL + "auctions/apicategories"
     
     static let SAVE_AUCTION                 =       BASE_URL + "auctions/save_auction"
@@ -46,6 +46,7 @@ struct API {
     static let ADD_AUCTION_BID              =       BASE_URL + "auctions/insertbid"
     static let GET_AUCTION_BID              =       BASE_URL + "auctions/getbidsonly"
     static let WITHDRAW_AUCTION_BID         =       BASE_URL + "auctions/delete_withdraw_auction"
+    static let GET_FEATURED_PRICE           =       BASE_URL + "auctions/getAuctionFeaturedPrice"
     static let MAKE_FEATURED_AUCTION        =       BASE_URL + "auctions/make_auction_featured"
     static let AUCTION_PAYMENT              =       BASE_URL + "payment/api_auction_payment"
     
@@ -2420,7 +2421,7 @@ public class APIManager {
                 
                     if let status = result["status"] as? String {
                         if(status == "success") {
-                            if let data : [[String : Any]] = result["data"] as? [[String : Any]] {
+                            if let data : [String : Any] = result["data"] as? [String : Any] {
                                 setFeaturedPriceData(data)
                             }
                             return

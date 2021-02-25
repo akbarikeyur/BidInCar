@@ -56,7 +56,7 @@ class PackageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             packageBtn.isSelected = false
             singleAuctionImg.isHidden = false
             packageImg.isHidden = true
-            titleLbl.text = getTranslate("single_package")
+            titleLbl.text = getTranslate("single_package_title")
             descLbl.text = getTranslate("single_package_desc")
             if singlePackage.packages.count == 0 {
                 serviceCallToGetPackage()

@@ -151,7 +151,7 @@
 "enter_auction_image" = "Please select image";
 "enter_auction_body" = "Please select body type";
 "enter_auction_country" = "Please select country";
-"enter_auction_motor" = "Please enter motor number";
+"enter_auction_motor" = "Please enter engine number";
 "enter_auction_color" = "Please select color";
 "enter_auction_milage" = "Please enter mileage";
 "enter_auction_mechanical" = "Please enter mechanical";
@@ -186,7 +186,7 @@
 "deposit_added_success" = "Deposit added successfully";
 "select_package" = "Please select package first.";
 "withdraw_amount" = "Please enter withdrawal amount";
-"withdraw_remaining_bidding_limit" = "You requested amount is more than your withdrawal bidding limit.";
+"withdraw_remaining_bidding_limit" = "You can only withdraw deposit as per remaining deposit amount.";
 "withdrawl_request_sent" = "Your withdrawal request is sent to admin.";
 "backend_connection_error" = "Backend Connection Error with other hosts";
 "user_not_found" = "User not found";
@@ -354,7 +354,7 @@
 "interest_payment" = "Payment";
 "interest_billing" = "Billing";
 "interest_featured" = "Featured";
-"interest_document_featured" = "Document Featured";
+"interest_document_featured" = "Document";
 "interest_shipment" = "Shipment";
 "interest_others" = "Others";
 
@@ -394,7 +394,7 @@
 "placeholder_flat_number" = "Flat Number*";
 "placeholder_po_box" = "P.O Box*";
 "placeholder_select_country" = "Select Country*";
-"placeholder_select_city" = "Select City*";
+"placeholder_select_city" = "Enter City*";
 "placeholder_country_code" = "Country Code*";
 "placeholder_phone_number" = "Phone Number*";
 "placeholder_password_star" = "Password*";
@@ -422,7 +422,7 @@
 "placeholder_select_doors" = "Select Doors*";
 "placeholder_select_horsepower" = "Select Horsepower*";
 "placeholder_car_warranty" = "Does the car has a warranty?*";
-"placeholder_street_address" = "(eg: abc street)";
+"placeholder_auction_street_address" = "(eg: abc street)";
 "placeholder_latitude" = "Latitude";
 "placeholder_longitude" = "Longitude";
 "placeholder_auction_title" = "Auction Title*";
@@ -450,3 +450,10 @@
 "total_deposit" = "Total Deposit Amount: ";
 "total_withdrawal" = "Total Withdrawal Amount: ";
 "total_remaining_deposit" = "Remaining Deposit: ";
+
+"type_colon" = "Type: ";
+"type_buyer" = "Buyer";
+"type_seller" = "Seller";
+"address_colon" = "Address: ";
+"error_title" = "Error";
+"not_buyer_account" = "Your account is not buyer type. Create a buyer account to Bid";

@@ -21,7 +21,6 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var userTypeLbl: Label!
     @IBOutlet weak var addDepositeView: View!
     @IBOutlet weak var postAuctionView: View!
-    @IBOutlet weak var subTitleLbl: Label!
     @IBOutlet weak var notificationSwitch: UISwitch!
     
     var arrMenuData = [[String : Any]]()
@@ -37,7 +36,6 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.addObserver(self, selector: #selector(redirectToMyProfile), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_MY_PROFILE), object: nil)
         
         tblView.register(UINib.init(nibName: "CustomSideMenuTVC", bundle: nil), forCellReuseIdentifier: "CustomSideMenuTVC")
-        subTitleLbl.isHidden = true
         if isUserLogin() {
             profileView.isHidden = false
             loginView.isHidden = true
@@ -106,20 +104,18 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         var arrMenuTitle = [String]()
         
         if isUserLogin() {
-            arrMenuTitle = [getTranslate("menu_home"), getTranslate("menu_auction"), getTranslate("menu_bookmark"), getTranslate("menu_profile"), getTranslate("menu_contact"), getTranslate("menu_terms"), getTranslate("menu_privacy"), /*getTranslate("menu_calc"),*/ getTranslate("menu_logout")]
+            arrMenuTitle = [getTranslate("menu_home"), getTranslate("menu_auction"), getTranslate("menu_bookmark"), getTranslate("menu_profile"), getTranslate("menu_contact"), getTranslate("menu_terms"), getTranslate("menu_privacy"), getTranslate("menu_lang"), /*getTranslate("menu_calc"),*/ getTranslate("menu_logout")]
         }
         else{
-            arrMenuTitle = [getTranslate("menu_home"), getTranslate("menu_auction"), getTranslate("menu_bookmark"), getTranslate("menu_contact"), getTranslate("menu_terms"), getTranslate("menu_privacy")/*, getTranslate("menu_calc")*/]
+            arrMenuTitle = [getTranslate("menu_home"), getTranslate("menu_auction"), getTranslate("menu_bookmark"), getTranslate("menu_contact"), getTranslate("menu_terms"), getTranslate("menu_privacy"), getTranslate("menu_lang")/*, getTranslate("menu_calc")*/]
         }
-        arrMenuTitle.append(getTranslate("menu_lang"))
         //menu_lang
         var arrMenuImage = [String]()
         if isUserLogin() {
-            arrMenuImage = ["menu_home", "menu_auction", "menu_bookmark", "menu_profile", "menu_contact", "menu_terms","menu_privacy", /*"menu_calculator",*/ "logout"]
+            arrMenuImage = ["menu_home", "menu_auction", "menu_bookmark", "menu_profile", "menu_contact", "menu_terms","menu_privacy", "menu_lang", /*"menu_calculator",*/ "logout"]
         }else{
-            arrMenuImage = ["menu_home", "menu_auction", "menu_bookmark", "menu_contact", "menu_terms","menu_privacy"/*, "menu_calculator"*/]
+            arrMenuImage = ["menu_home", "menu_auction", "menu_bookmark", "menu_contact", "menu_terms","menu_privacy", "menu_lang"/*, "menu_calculator"*/]
         }
-        arrMenuImage.append("menu_lang")
         for i in 0..<arrMenuTitle.count {
             arrMenuData.append(["title" : arrMenuTitle[i], "image" : arrMenuImage[i]])
         }

@@ -82,10 +82,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     func setAuctionData()
     {
-        if !isUserLogin() {
-            bidView.isHidden = false
-        }
-        else if (!isUserLogin() || !isUserBuyer() || (auctionData.userid == AppModel.shared.currentUser.userid) || auctionData.auction_status != "active") {
+        if auctionData.auction_status != "active" {
             bidView.isHidden = true
         }else{
             bidView.isHidden = false
@@ -233,8 +230,8 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     
     func updateRemainingTime()
     {
-        if let endDate : Date = getDateFromDateString(strDate: auctionData.auction_end, format: "yyyy-MM-dd") {
-            let newDate = endDate.addDays(daysToAdd: 1)
+        let strEndDate = auctionData.auction_end + " " + auctionData.auction_end_time
+        if let newDate = getDateFromDateStringWithLocalTimezone(strDate: strEndDate, format: "yyyy-MM-dd HH:mm:ss") {
             let time : String = getRemaingTimeInDayHourMinuteSecond(newDate)
             if time != ""{
                 remainingTimeLbl.text = time
@@ -247,7 +244,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             }
         }
         else{
-            remainingTimeLbl.text = getRemainingTime(auctionData.auction_end)
+            remainingTimeLbl.text = getRemainingTime(strEndDate)
         }
     }
     
@@ -279,7 +276,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             AppDelegate().sharedDelegate().showLoginPopup("bookmark_login_msg")
             return
         }
-        sender.isSelected = !sender.isSelected
+        bookmarkBtn.isSelected = !bookmarkBtn.isSelected
         if sender.isSelected {
             var param = [String : Any]()
             param["auctionid"] = auctionData.auctionid
@@ -304,6 +301,12 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         self.view.endEditing(true)
         if !isUserLogin() {
             AppDelegate().sharedDelegate().showLoginPopup("bid_login_msg")
+            return
+        }
+        if !isUserBuyer() {
+            showAlert("error_title", message: "not_buyer_account") {
+                
+            }
             return
         }
         if myBidTxt.text?.trimmed == "" {

@@ -53,6 +53,8 @@ class HomeVC: UploadImageVC {
         NotificationCenter.default.addObserver(self, selector: #selector(removeAuctionData(_:)), name: NSNotification.Name.init(NOTIFICATION.REMOVE_AUCTION_DATA), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshTopData), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_DASHBOARD_TOP_DATA), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(clickToNotification(_:)), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_NOTIFICATION_SCREEN), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUserDetails), name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
+        
         
         featureCV.register(UINib.init(nibName: "CustomCarCVC", bundle: nil), forCellWithReuseIdentifier: "CustomCarCVC")
         categoryCV.register(UINib.init(nibName: "CustomAuctionCategoryCVC", bundle: nil), forCellWithReuseIdentifier: "CustomAuctionCategoryCVC")
@@ -174,12 +176,26 @@ class HomeVC: UploadImageVC {
         }
     }
     
+    @objc func updateUserDetails() {
+        if isUserLogin() {
+            if isUserBuyer() {
+                setBuyerData()
+            }else{
+                setSellerData()
+            }
+        }
+    }
+    
     //MARK:- Button click event
     @IBAction func clickToSideMenu(_ sender: Any) {
         self.menuContainerViewController.toggleLeftSideMenuCompletion {}
     }
     
     @IBAction func clickToNotification(_ sender: Any) {
+        if !isUserLogin() {
+            AppDelegate().sharedDelegate().navigateToLogin()
+            return
+        }
         let vc : NotificationVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "NotificationVC") as! NotificationVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -361,13 +377,13 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         }
         else if collectionView == infoCV {
             let newLable : UILabel = UILabel.init()
-            newLable.font = UIFont.init(name: APP_REGULAR, size: 14.0)
+            newLable.font = UIFont.init(name: APP_REGULAR, size: 12.0)
             let dict = arrInfo[indexPath.row]
             newLable.text = dict.name + " " + dict.value
             if dict.link != "" {
-                newLable.text = newLable.text! + " " + dict.link
+                newLable.text = newLable.text! + " " + getTranslate(dict.link)
             }
-            let width = newLable.intrinsicContentSize.width + 50
+            let width = newLable.intrinsicContentSize.width + 60
             return CGSize(width: width, height: collectionView.frame.size.height)
         }
         else {
@@ -492,17 +508,12 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
         }
         cell.featureView.isHidden = (dict.auction_featured != "yes")
         cell.titleLbl.text = dict.auction_title
-        cell.timeLbl.text = getRemainingTime(dict.auction_end) + getTranslate("left_time_space") + getDateStringFromDateWithLocalTimezone(date: getDateFromDateString(strDate: dict.auction_end, format: "YYYY-MM-dd")!, format: "dd MMM, YYYY")
+        cell.timeLbl.text = getRemainingTime(dict.auction_end + " " + dict.auction_end_time) + getTranslate("left_time_space") + getDateStringFromDateWithLocalTimezone(date: getDateFromDateString(strDate: dict.auction_end, format: "YYYY-MM-dd")!, format: "dd MMM, YYYY")
         cell.minPriceLbl.text = getTranslate("bid_count_colon") + dict.auction_bidscount
         cell.currentBidLbl.text = getTranslate("current_price_space") + displayPriceWithCurrency(dict.active_auction_price)
         cell.starBtn.isSelected = (dict.bookmark == "yes")
         
-        if isUserLogin() && !isUserBuyer() {
-            cell.bidNowBtn.isHidden = true
-        }
-        else{
-            cell.bidNowBtn.isHidden = false
-        }
+        cell.bidNowBtn.isHidden = false
         cell.bidNowBtn.tag = indexPath.row
         cell.bidNowBtn.addTarget(self, action: #selector(clickToBidNow(_:)), for: .touchUpInside)
         cell.starBtn.tag = indexPath.row
@@ -522,6 +533,13 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
             AppDelegate().sharedDelegate().showLoginPopup("bid_login_msg")
             return
         }
+        if !isUserBuyer() {
+            showAlert("error_title", message: "not_buyer_account") {
+                
+            }
+            return
+        }
+        
         let vc : CarDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "CarDetailVC") as! CarDetailVC
         vc.auctionData = (searchTxt.text?.trimmed != "") ? arrSearchAuctionData[sender.tag] : arrAuctionData[sender.tag]
         self.navigationController?.pushViewController(vc, animated: true)

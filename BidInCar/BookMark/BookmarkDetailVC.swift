@@ -95,8 +95,8 @@ class BookmarkDetailVC: UIViewController, UICollectionViewDataSource, UICollecti
             constraintWidthOdometer.constant = 85
             odometerLbl.text = auction.auction_millage + " K.M."
         }
-        if auction.auction_end != "" {
-            remainingTimeLbl.text = getTranslate("time_remaining") + getRemainingTime(auction.auction_end)
+        if auction.auction_end != "" && auction.auction_end_time != "" {
+            remainingTimeLbl.text = getTranslate("time_remaining") + getRemainingTime(auction.auction_end + " " + auction.auction_end_time)
             endTimeLbl.text = getTranslate("end_time_space") + getDateStringFromDateWithLocalTimezone(date: getDateFromDateString(strDate: auction.auction_end, format: "YYYY-MM-dd")!, format: "dd MMM, YYYY")
         }
         else{

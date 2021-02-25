@@ -10,11 +10,12 @@ import UIKit
 import DropDown
 import GooglePlaces
 
-class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddressDelegate {
+class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var bodyTypeView: UIView!
     @IBOutlet weak var bodyTypeTxt: FloatingTextfiledView!
     @IBOutlet weak var countryTxt: FloatingTextfiledView!
+    @IBOutlet weak var motorView: UIView!
     @IBOutlet weak var motorTxt: FloatingTextfiledView!
     @IBOutlet weak var colorTxt: FloatingTextfiledView!
     @IBOutlet weak var addressTxt: FloatingTextfiledView!
@@ -98,6 +99,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
     {
         bodyTypeView.isHidden = true
         motorColorView.isHidden = true
+        motorView.isHidden = true
         mechanicalView.isHidden = true
         wheelView.isHidden = true
         boatLengthView.isHidden = true
@@ -136,6 +138,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
             else if selectedAuctionType.id == 4 {
                 bodyTypeView.isHidden = false
                 motorColorView.isHidden = false
+                motorView.isHidden = false
                 motorTxt.myTxt.placeholder = getTranslate("engine_number")
                 colorTxt.myTxt.placeholder = getTranslate("exterior_colour")
                 scrapView.isHidden = false
@@ -214,9 +217,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
     @IBAction func clickToSelectAddress(_ sender: UIButton) {
         self.view.endEditing(true)
         autocompleteClicked()
-//        let vc : SelectAddressVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "SelectAddressVC") as! SelectAddressVC
-//        vc.delegate = self
-//        self.navigationController?.pushViewController(vc, animated: true)
+
     }
     
     @IBAction func clickToSelectMechanical(_ sender: UIButton) {
@@ -347,7 +348,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         else if selectedAuctionType.id == 1 && countryTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_auction_country")
         }
-        else if selectedAuctionType.id == 1 && motorTxt.myTxt.text?.trimmed == "" {
+        else if selectedAuctionType.id == 4 && motorTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_auction_motor")
         }
         else if selectedAuctionType.id == 1 && colorTxt.myTxt.text?.trimmed == "" {
@@ -404,7 +405,7 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
         else{
             if selectedAuctionType.id == 1 {
                 param["bodytype"] = bodyTypeTxt.myTxt.text
-                param["motorno"] = motorTxt.myTxt.text
+//                param["motorno"] = motorTxt.myTxt.text
                 param["extcolor"] = colorTxt.myTxt.text
                 param["interior_color"] = interiorColorTxt.myTxt.text
                 param["no_of_cylinder"] = cylinderTxt.myTxt.text
@@ -614,12 +615,6 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate, SelectAddress
             return false
         }
         return true
-    }
-    
-    func updateLocationAddress(_ lat: Double, _ lng: Double, _ address: String) {
-        latitudeTxt.myTxt.text = String(lat)
-        longitudeTxt.myTxt.text = String(lng)
-        addressTxt.myTxt.text = address
     }
     
     func setupAuctionData(_ auctionid : String)

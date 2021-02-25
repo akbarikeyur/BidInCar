@@ -286,7 +286,7 @@ class AuctionModel : AppModel
     var auctioncategoryid : String!
     var auctioncategorychildid : String!
     var auction_start : String!
-    var auction_end : String!
+    var auction_end, auction_end_time : String!
     var auction_bodytype : String!
     var auction_countrymade : String!
     var auction_vin : String!
@@ -357,6 +357,7 @@ class AuctionModel : AppModel
         auctioncategorychildid = ""
         auction_start = ""
         auction_end = ""
+        auction_end_time = ""
         auction_bodytype = ""
         auction_countrymade = ""
         auction_vin = ""
@@ -429,6 +430,7 @@ class AuctionModel : AppModel
         auctioncategorychildid = ""
         auction_start = ""
         auction_end = ""
+        auction_end_time = ""
         auction_bodytype = ""
         auction_countrymade = ""
         auction_vin = ""
@@ -512,6 +514,9 @@ class AuctionModel : AppModel
         }
         if let temp = dict["auction_end"] as? String {
             auction_end = temp
+        }
+        if let temp = dict["auction_end_time"] as? String {
+            auction_end_time = temp
         }
         if let temp = dict["auction_bodytype"] as? String {
             auction_bodytype = temp
@@ -1353,9 +1358,7 @@ class PackageFeatureModel : AppModel
         if let temp = dict["featured_price_id"] as? String {
             featured_price_id = temp
         }
-        if let temp = dict["featured_price"] as? String {
-            featured_price = temp
-        }
+        featured_price = AppModel.shared.getStringValue(dict, "featured_price")
         if let temp = dict["featured_price_createdon"] as? String {
             featured_price_createdon = temp
         }

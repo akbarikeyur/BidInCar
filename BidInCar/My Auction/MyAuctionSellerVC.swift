@@ -42,6 +42,10 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
         refreshControl.tintColor = BlueColor
         refreshControl.addTarget(self, action: #selector(refreshAuctionList), for: .valueChanged)
         tblView.addSubview(refreshControl)
+        
+        if getFeaturedPriceData().featured_price != "" {
+            packagePrice = getFeaturedPriceData().featured_price
+        }
         setUIDesigning()
     }
     
@@ -193,13 +197,17 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
             else if closedBtn.isSelected {
                 dict = arrCloseAuction[indexPath.row]
                 cell.bidLbl.textColor = BlueColor
-                cell.winnerView.isHidden = false
-                cell.winnerBtn.tag = indexPath.row
-                cell.winnerBtn.addTarget(self, action: #selector(clickToOpenFeaturedView(_:)), for: .touchUpInside)
+                
                 cell.leftActionView.isHidden = true
-                cell.winnerLbl.text = getTranslate("winner_colon") + dict.auction_winner.winner_name
-                cell.winnerStatusLbl.text = getTranslate("winner_colon") + dict.auction_winner.status
-                cell.winnerPriceLbl.text = displayPriceWithCurrency(dict.auction_winner.winneing_price)
+                if dict.auction_winner.winner_name != "Nil" && dict.auction_winner.winner_name != "Nil" {
+                    cell.winnerView.isHidden = false
+                    cell.winnerBtn.tag = indexPath.row
+                    cell.winnerBtn.addTarget(self, action: #selector(clickToOpenFeaturedView(_:)), for: .touchUpInside)
+                    cell.winnerLbl.text = getTranslate("winner_colon") + dict.auction_winner.winner_name
+                    cell.winnerStatusLbl.text = getTranslate("winner_colon") + dict.auction_winner.status
+                    cell.winnerPriceLbl.text = displayPriceWithCurrency(dict.auction_winner.winneing_price)
+                }
+                
             }
             for temp in dict.pictures {
                if temp.type == "auction" {
@@ -408,9 +416,6 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
             }
             self.noDataFoundLbl.isHidden = (arrAuction.count > 0)
             self.tblView.reloadData()
-            if package.featured_price != "" && package.featured_price != "0" {
-                self.packagePrice = package.featured_price
-            }
             self.setupPrice()
         }
     }

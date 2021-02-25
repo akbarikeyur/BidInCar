@@ -40,6 +40,7 @@ class VerificationVC: UIViewController {
             
             APIManager.shared.serviceCallToVerifyAccount(param) {
                 setLoginUserData()
+                AppDelegate().sharedDelegate().serviceCallToGetUserProfile()
                 AppDelegate().sharedDelegate().navigateToDashBoard()
             }
         }

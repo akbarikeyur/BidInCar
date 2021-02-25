@@ -180,29 +180,18 @@ func getPurchasePackageData() -> [PackageModel]
     return arrPackage
 }
 
-func setFeaturedPriceData(_ data: [[String : Any]])
+func setFeaturedPriceData(_ data: [String : Any])
 {
-    var arrFeature = [PackageFeatureModel]()
-    for temp in data {
-        arrFeature.append(PackageFeatureModel.init(dict: temp))
-    }
-    var arrData = [[String : Any]]()
-    for temp in arrFeature {
-        arrData.append(temp.dictionary())
-    }
-    setDataToPreference(data: arrData as AnyObject, forKey: "featured_price_data")
+    setDataToPreference(data: data as AnyObject, forKey: "featured_price_data")
 }
 
-func getFeaturedPriceData() -> [PackageFeatureModel]
+func getFeaturedPriceData() -> PackageFeatureModel
 {
-    var arrFeature = [PackageFeatureModel]()
-    if let data : [[String : Any]] = getDataFromPreference(key: "featured_price_data") as? [[String : Any]]
+    if let data : [String : Any] = getDataFromPreference(key: "featured_price_data") as? [String : Any]
     {
-        for temp in data {
-            arrFeature.append(PackageFeatureModel.init(dict: temp))
-        }
+        return PackageFeatureModel.init(dict: data)
     }
-    return arrFeature
+    return PackageFeatureModel.init(dict: [String : Any]())
 }
 
 func setReminderData(_ data : [String : Any])

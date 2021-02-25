@@ -181,7 +181,7 @@
 "deposit_added_success" = "تمت إضافة الإيداع بنجاح";
 "select_package" = "الرجاء تحديد الحزمة أولاً";
 "withdraw_amount" = "الرجاء إدخال مبلغ السحب";
-"withdraw_remaining_bidding_limit" = "لقد طلبت المبلغ أكثر من حد مزايدة السحب الخاص بك";
+"withdraw_remaining_bidding_limit" = "يمكنك فقط سحب الإيداع حسب مبلغ الإيداع المتبقي";
 "withdrawl_request_sent" = "يتم إرسال طلب السحب الخاص بك إلى المسؤول";
 "backend_connection_error" = "خطأ اتصال الخلفية مع المضيفين الآخرين";
 "user_not_found" = "المستخدم ليس موجود";
@@ -348,7 +348,7 @@
 "interest_payment" = "دفع";
 "interest_billing" = "الفواتير";
 "interest_featured" = "متميز";
-"interest_document_featured" = "وثيقة مميزة";
+"interest_document_featured" = "وثيقة";
 "interest_shipment" = "شحنة";
 "interest_others" = "الآخرين";
 
@@ -388,7 +388,7 @@
 "placeholder_flat_number" = "*عدد مسطح";
 "placeholder_po_box" = "*صندوق بريد";
 "placeholder_select_country" = "*حدد الدولة";
-"placeholder_select_city" = "*اختر مدينة";
+"placeholder_select_city" = "*أدخل المدينة";
 "placeholder_country_code" = "*الرقم الدولي";
 "placeholder_phone_number" = "*رقم الهاتف";
 "placeholder_password_star" = "*كلمه السر";
@@ -416,7 +416,7 @@
 "placeholder_select_doors" = "*حدد الأبواب";
 "placeholder_select_horsepower" = "*حدد حصان";
 "placeholder_car_warranty" = "*هل السيارة لديها ضمان؟";
-"placeholder_street_address" = "(على سبيل المثال: شارع abc)";
+"placeholder_auction_street_address" = "(على سبيل المثال: شارع abc)";
 "placeholder_latitude" = "خط العرض";
 "placeholder_longitude" = "خط الطول";
 "placeholder_auction_title" = "*عنوان المزاد";
@@ -444,3 +444,10 @@
 "total_deposit" = " :إجمالي مبلغ الإيداع";
 "total_withdrawal" = " :إجمالي مبلغ السحب";
 "total_remaining_deposit" = " :الإيداع المتبقي";
+
+"type_colon" = " :اكتب";
+"type_buyer" = "مشتر";
+"type_seller" = "تاجر";
+"address_colon" = " :تبوك";
+"error_title" = "خطأ";
+"not_buyer_account" = "حسابك ليس من نوع المشتري. إنشاء حساب المشتري للمزايدة";

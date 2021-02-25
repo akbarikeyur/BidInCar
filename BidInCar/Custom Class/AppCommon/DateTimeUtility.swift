@@ -91,12 +91,29 @@ func getDateFromDateString(strDate : String, format : String) -> Date?
     return dateFormatter.date(from: strDate)
 }
 
+func getUTCDateFromDateString(strDate : String, format : String) -> Date?
+{
+    let dateFormatter = DateFormatter()
+    dateFormatter.timeZone = TimeZone(abbreviation: "UTC") //Set timezone that you want
+    dateFormatter.dateFormat = format
+    return dateFormatter.date(from: strDate)
+}
+
+
 func getDateStringFromDateWithLocalTimezone(date : Date, format : String) -> String
 {
     let dateFormatter = DateFormatter()
     dateFormatter.locale = NSLocale.current
     dateFormatter.dateFormat = format
     return dateFormatter.string(from: date)
+}
+
+func getDateFromDateStringWithLocalTimezone(strDate : String, format : String) -> Date?
+{
+    let dateFormatter = DateFormatter()
+    dateFormatter.locale = NSLocale.current
+    dateFormatter.dateFormat = format
+    return dateFormatter.date(from: strDate)
 }
 
 func getDateFromDateString(strDate : String) -> Date
@@ -204,7 +221,7 @@ func getRemaingTimeInDayHourMinuteSecond(_ endDate : Date) -> String
 
 func getRemainingTime(_ date : String) -> String {
     
-    let endDate : Date = getDateFromDateString(strDate: date)
+    let endDate : Date = getDateFromDateStringWithLocalTimezone(strDate: date, format: "yyyy-MM-dd HH:mm:ss")!
     let currentDate : Date = getCurrentDate()
     let interval = endDate.timeIntervalSince(currentDate)
     

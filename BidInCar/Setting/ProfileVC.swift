@@ -36,6 +36,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     @IBOutlet var headerView: UIView!
     @IBOutlet weak var usernameLbl: Label!
     @IBOutlet weak var addressLbl: Label!
+    @IBOutlet weak var constraintHeightAddress: NSLayoutConstraint!
     @IBOutlet weak var profilePicBtn: Button!
     @IBOutlet weak var editBtn: UIButton!
     
@@ -55,8 +56,6 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(setUserDetail), name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
         tblView.register(UINib.init(nibName: "CustomProfileTVC", bundle: nil), forCellReuseIdentifier: "CustomProfileTVC")
-        tblView.tableHeaderView = headerView
-        tblView.reloadData()
         
         setUserDetail()
     }
@@ -70,7 +69,39 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         setButtonBackgroundImage(profilePicBtn, AppModel.shared.currentUser.profile_pic, IMAGE.USER_PLACEHOLDER)
         
         usernameLbl.text = AppModel.shared.currentUser.user_name + " " + AppModel.shared.currentUser.user_lastname
-        addressLbl.text = AppModel.shared.currentUser.city_name + ", " + AppModel.shared.currentUser.country_name
+        var headerFrame = headerView.frame
+        addressLbl.text = ""
+        addressLbl.numberOfLines = 0
+        if AppModel.shared.currentUser.user_flatnumber != "" {
+            addressLbl.text = AppModel.shared.currentUser.user_flatnumber
+        }
+        if AppModel.shared.currentUser.user_buildingname != "" {
+            if addressLbl.text != "" {
+                addressLbl.text = addressLbl.text! + " "
+            }
+            addressLbl.text = addressLbl.text! + AppModel.shared.currentUser.user_buildingname
+        }
+        if AppModel.shared.currentUser.user_streetaddress != "" {
+            if addressLbl.text != "" {
+                addressLbl.text = addressLbl.text! + " "
+            }
+            addressLbl.text = addressLbl.text! + AppModel.shared.currentUser.user_streetaddress
+        }
+        if AppModel.shared.currentUser.user_pobox != "" {
+            if addressLbl.text != "" {
+                addressLbl.text = addressLbl.text! + " "
+            }
+            addressLbl.text = addressLbl.text! + AppModel.shared.currentUser.user_pobox
+        }
+        if addressLbl.text != "" {
+            addressLbl.text = getTranslate("address_colon") + addressLbl.text!
+        }
+        addressLbl.text = addressLbl.text! + "\n" + getTranslate("type_colon") + (isUserBuyer() ? getTranslate("type_buyer") : getTranslate("type_seller"))
+        constraintHeightAddress.constant = addressLbl.getHeight()
+        headerFrame.size.width = SCREEN.WIDTH
+        headerFrame.size.height = headerFrame.size.height - 34 + constraintHeightAddress.constant
+        headerView.frame = headerFrame
+        
         arrUserDetail = [[String : Any]]()
         var dict : [String : Any] = [String : Any]()
         dict["title"] = PROFILE.FNAME
@@ -117,7 +148,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         dict["value"] = AppModel.shared.currentUser.user_phonenumber
         arrUserDetail.append(dict)
         
-        if !isUserBuyer() && AppModel.shared.currentUser.user_company.companyid != "" {
+        if AppModel.shared.currentUser.user_postingtype == "company" {
             dict = [String : Any]()
             dict["title"] = PROFILE.COMPANY_NAME
             dict["value"] = AppModel.shared.currentUser.user_company.company_name
@@ -140,6 +171,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         dict["title"] = PROFILE.SAVE
         dict["value"] = ""
         arrUserDetail.append(dict)
+        tblView.tableHeaderView = headerView
         tblView.reloadData()
         
         selectedCountryId = AppModel.shared.currentUser.user_countryid
@@ -162,13 +194,14 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         cell.valueLbl.text = ""
         cell.valueLbl.isHidden = true
         cell.valueBtn.isHidden = true
+        cell.titleLbl.textColor = LightGrayColor
         cell.titleLbl.text = arrUserDetail[indexPath.row]["title"] as? String ?? ""
-        if cell.titleLbl.text == PROFILE.EMAIL || cell.titleLbl.text == PROFILE.PHONE || cell.titleLbl.text == PROFILE.COMPANY_PHONE {
+        if cell.titleLbl.text == PROFILE.EMAIL || cell.titleLbl.text == PROFILE.COUNTRY_CODE || cell.titleLbl.text == PROFILE.PHONE || cell.titleLbl.text == PROFILE.COMPANY_PHONE   {
             cell.valueTxt.isUserInteractionEnabled = false
         }else{
             cell.valueTxt.isUserInteractionEnabled = true
         }
-        if indexPath.row != (arrUserDetail.count - 1) {
+        if cell.titleLbl.text != PROFILE.SAVE {
             if !isEditProfile {
                 cell.valueLbl.text = arrUserDetail[indexPath.row]["value"] as? String ?? ""
                 cell.valueLbl.textColor = LightGrayColor
@@ -200,6 +233,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         return cell
     }
     
+    //MARK:- Button clickc event
     @IBAction func clickToEditProfile(_ sender: Any) {
         editBtn.isHidden = true
         isEditProfile = !isEditProfile
@@ -380,7 +414,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
             }
         }
         
-        if !isUserBuyer() && AppModel.shared.currentUser.user_company.companyid != "" {
+        if AppModel.shared.currentUser.user_postingtype == "company" {
             for temp in arrUserDetail {
                 switch (temp["title"] as! String)
                 {
@@ -401,9 +435,11 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
                 }
             }
         }
+        param["user_postingtype"] = AppModel.shared.currentUser.user_postingtype
         param["usernotification"] = AppModel.shared.currentUser.notification
         param["userid"] = AppModel.shared.currentUser.userid
         param["lang"] = "eng"
+        printData(param)
         APIManager.shared.serviceCallToUpdateUserProfile(param)
     }
     

@@ -105,8 +105,10 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func updateRemainingTime()
     {
-        if let endDate : Date = getDateFromDateString(strDate: auctionData.auction_end, format: "yyyy-MM-dd") {
-            if let time : String = getRemaingTimeInDayHourMinuteSecond(endDate) as? String, time != ""{
+        let strEndDate = auctionData.auction_end + " " + auctionData.auction_end_time
+        if let newDate = getDateFromDateStringWithLocalTimezone(strDate: strEndDate, format: "yyyy-MM-dd HH:mm:ss") {
+            let time : String = getRemaingTimeInDayHourMinuteSecond(newDate)
+            if time != ""{
                 remainingTimeLbl.text = getTranslate("time_remaining") + "\n" + time
                 delay(1.0) {
                     self.updateRemainingTime()
@@ -117,7 +119,7 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             }
         }
         else{
-            remainingTimeLbl.text = getTranslate("time_remaining") + "\n" + getRemainingTime(auctionData.auction_end)
+            remainingTimeLbl.text = getTranslate("time_remaining") + "\n" + getRemainingTime(strEndDate)
         }
     }
     
@@ -227,12 +229,7 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         dict["value"] = displayPriceWithCurrency(servicefee)
         finalPrice += Double(servicefee)!
         arrBillingData.append(dict)
-        
-//        let deposite = Int(AppModel.shared.currentUser.user_deposit)! - Int(fees) + additional_charge
-//        dict = [String:String]()
-//        dict["title"] = "Amount to be refund"
-//        dict["value"] = "AED " + String(deposite)
-//        arrBillingData.append(dict)
+    
         
         billingTblView.reloadData()
         constraintHeightBillingTblView.constant = CGFloat((arrBillingData.count * 40))

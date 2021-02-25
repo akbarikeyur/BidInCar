@@ -383,7 +383,9 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
         APIManager.shared.serviceCallToPurchasePackage(paymentParam) {
             displayToast("package_bought_success")
             if self.isFromAuction {
-                AppDelegate().sharedDelegate().getPackageHistory()
+                AppDelegate().sharedDelegate().serviceCallToGetSellerData()
+//                AppDelegate().sharedDelegate().getPackageHistory()
+                
                 for controller in self.navigationController!.viewControllers as Array {
                     if controller.isKind(of: PostAuctionDetailVC.self) {
                         self.navigationController!.popToViewController(controller, animated: true)
@@ -402,11 +404,8 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
     {
         var amount = 0
         if let deposite_amount : String = paymentParam["deposite_amount"] as? String {
-            if AppModel.shared.currentUser.user_deposit != "" {
-                amount = Int(AppModel.shared.currentUser.user_deposit!)! + Int(deposite_amount)!
-            }else{
-                amount = Int(deposite_amount)!
-            }
+            amount = AppModel.shared.getIntValue(getBuyerTopData(), "deposite")
+            amount += Int(deposite_amount)!
             paymentParam["deposite_amount"] = amount
         }
         paymentParam["payment_reference"] = transactionID

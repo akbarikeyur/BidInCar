@@ -66,6 +66,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             }
         }
         setUIDesigning()
+        /*
         if PLATFORM.isSimulator {
             fnameTxt.myTxt.text = "Test"
             lnameTxt.myTxt.text = "Buyer"
@@ -79,6 +80,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             passwordTxt.myTxt.text = "qqqqqq"
             confirmPasswordTxt.myTxt.text = "qqqqqq"
         }
+        */
     }
     
     func setUIDesigning()
@@ -133,13 +135,13 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             self.countryTxt.myTxt.text = item
             self.countryTxt.setTextFieldValue()
             self.selectedCountry = self.arrCountryData[index]
-            if self.selectedCountryCode.countryid == "" {
+//            if self.selectedCountryCode.countryid == "" {
                 self.selectedCountryCode = self.selectedCountry
                 setButtonImage(self.countryFlagBtn, self.selectedCountryCode.flag)
-                self.countryCodeTxt.myTxt.text = "+" + self.selectedCountryCode.phonecode
+                self.countryCodeTxt.myTxt.text = self.selectedCountryCode.country_name + " - " + self.selectedCountryCode.phonecode
                 self.countryCodeTxt.setTextFieldValue()
-            }
-            self.getCityData()
+//            }
+//            self.getCityData()
         }
         dropDown.show()
     }
@@ -323,31 +325,25 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             param["password"] = passwordTxt.myTxt.text
             param["confirm_password"] = confirmPasswordTxt.myTxt.text
             param["lang"] = "eng"
-//            param["user_accountype"] = ""
-//            param["user_postingtype"] = ""
-//            param["company_name"] = ""
-//            param["company_email"] = ""
-//            param["company_address"] = ""
-//            param["company_phone"] = ""
             
             if buyerBtn.isSelected {
                 param["user_accountype"] = "buyer"
-                param["user_postingtype"] = "individual"
             }
             else if sellerBtn.isSelected {
                 param["user_accountype"] = "seller"
-                if individualBtn.isSelected {
-                    param["user_postingtype"] = "individual"
-                }
-                else if companyBtn.isSelected {
-                    param["user_postingtype"] = "company"
-                    param["company_name"] = companyNameTxt.myTxt.text
-                    param["company_email"] = companyEmailTxt.myTxt.text
-                    param["company_address"] = companyAddressTxt.myTxt.text
-                    param["company_phone"] = companyPhoneTxt.myTxt.text
-                }
             }
             
+            if individualBtn.isSelected {
+                param["user_postingtype"] = "individual"
+            }
+            else if companyBtn.isSelected {
+                param["user_postingtype"] = "company"
+                param["company_name"] = companyNameTxt.myTxt.text
+                param["company_email"] = companyEmailTxt.myTxt.text
+                param["company_address"] = companyAddressTxt.myTxt.text
+                param["company_phone"] = companyPhoneTxt.myTxt.text
+            }
+            printData(param)
             APIManager.shared.serviceCallToUserSignup(param) {
                 if AppModel.shared.currentUser.userid != "" {
                     let vc : VerificationVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "VerificationVC") as! VerificationVC
@@ -366,10 +362,10 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             displayToast("enter_company_name")
             return false
         }
-        else if companyCountryCodeTxt.myTxt.text?.trimmed == "" {
-            displayToast("enter_company_code")
-            return false
-        }
+//        else if companyCountryCodeTxt.myTxt.text?.trimmed == "" {
+//            displayToast("enter_company_code")
+//            return false
+//        }
         else if companyPhoneTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_company_phone")
             return false

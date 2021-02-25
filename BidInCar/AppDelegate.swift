@@ -229,6 +229,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func serviceCallToDecreseLeftAuction() {
         APIManager.shared.serviceCallToDecreseLeftAuction(["userid":AppModel.shared.currentUser.userid!]) {
             self.getPackageHistory()
+            self.serviceCallToGetSellerData()
+        }
+    }
+    
+    func serviceCallToGetSellerData() {
+        if isUserLogin() && !isUserBuyer() && AppModel.shared.currentUser.userid != "" {
+            APIManager.shared.serviceCallToGetSellerData(AppModel.shared.currentUser.userid) { (data) in
+                saveSellerTopData(data)
+                NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
+            }
         }
     }
     
@@ -548,6 +558,11 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     //Redirect to screen
     func notificationHandler(_ dict : [String : Any])
     {
-        NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_NOTIFICATION_SCREEN), object: nil)
+        if isUserLogin() {
+            let vc : NotificationVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "NotificationVC") as! NotificationVC
+            UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+//        NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_NOTIFICATION_SCREEN), object: nil)
     }
 }

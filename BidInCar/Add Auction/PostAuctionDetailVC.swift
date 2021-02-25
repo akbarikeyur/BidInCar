@@ -137,7 +137,7 @@ class PostAuctionDetailVC: UIViewController {
             transmissionView.isHidden = false
             vinView.isHidden = false
             bodyTypeView.isHidden = false
-            motorView.isHidden = false
+//            motorView.isHidden = false
             colorView.isHidden = false
             mechanicalView.isHidden = false
         }else{
@@ -148,6 +148,9 @@ class PostAuctionDetailVC: UIViewController {
                 engineSizeView.isHidden = false
             }else if selectedAuctionType.id == 3 {
                 boatLengthView.isHidden = false
+            }
+            else if selectedAuctionType.id == 4 {
+                motorView.isHidden = false
             }
         }
     }
