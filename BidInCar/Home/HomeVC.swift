@@ -460,6 +460,9 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
                 let tempInfo = arrInfo[indexPath.row]
                 if tempInfo.name == getTranslate("info_deposit_amount") || tempInfo.name == getTranslate("info_total_bidding_limit") {
                     NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_MY_PROFILE), object: nil)
+                    delay(0.1) {
+                        NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_BUYER_PAYMENT), object: nil)
+                    }
                 }
             }
             else {

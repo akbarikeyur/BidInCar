@@ -156,11 +156,11 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             if amount == 0 {
                 return
             }
-            if PLATFORM.isSimulator {
-                paytabPaymentCompleted("tran1234679")
-            }else{
+//            if PLATFORM.isSimulator {
+//                paytabPaymentCompleted("tran1234679")
+//            }else{
                 paytab()
-            }
+//            }
         }
         else if selectedTab == 2 {
             //bank
@@ -298,31 +298,49 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
     
     func paytab() {
         let bundle = Bundle(url: Bundle.main.url(forResource: "Resources", withExtension: "bundle")!)
+        
+        var address = ""
+        if AppModel.shared.currentUser.user_flatnumber != "" {
+            address = AppModel.shared.currentUser.user_flatnumber
+        }
+        if AppModel.shared.currentUser.user_buildingname != "" {
+            if address != "" {
+                address = address + " "
+            }
+            address = address + AppModel.shared.currentUser.user_buildingname
+        }
+        if AppModel.shared.currentUser.user_streetaddress != "" {
+            if address != "" {
+                address = address + " "
+            }
+            address = address + AppModel.shared.currentUser.user_streetaddress
+        }
+        
         self.initialSetupViewController = PTFWInitialSetupViewController.init(
             bundle: bundle,
             andWithViewFrame: UIApplication.topViewController()!.view.frame,
             andWithAmount: Float(amount),
-            andWithCustomerTitle: "PayTabs Sample App",
+            andWithCustomerTitle: AppModel.shared.currentUser.user_name,
             andWithCurrencyCode: "AED",
             andWithTaxAmount: 0.0,
             andWithSDKLanguage: "en",
-            andWithShippingAddress: "Manama",
-            andWithShippingCity: "Manama",
-            andWithShippingCountry: "BHR",
-            andWithShippingState: "Manama",
-            andWithShippingZIPCode: "123456",
-            andWithBillingAddress: "Manama",
-            andWithBillingCity: "Manama",
-            andWithBillingCountry: "BHR",
-            andWithBillingState: "Manama",
-            andWithBillingZIPCode: "12345",
-            andWithOrderID: "12345",
-            andWithPhoneNumber: "0097333109781",
-            andWithCustomerEmail: "rhegazy@paytabs.com",
+            andWithShippingAddress: address,
+            andWithShippingCity: AppModel.shared.currentUser.city_name,
+            andWithShippingCountry: AppModel.shared.currentUser.country_name,
+            andWithShippingState: AppModel.shared.currentUser.city_name,
+            andWithShippingZIPCode: AppModel.shared.currentUser.user_pobox,
+            andWithBillingAddress: address,
+            andWithBillingCity: AppModel.shared.currentUser.city_name,
+            andWithBillingCountry: AppModel.shared.currentUser.country_name,
+            andWithBillingState: AppModel.shared.currentUser.city_name,
+            andWithBillingZIPCode: AppModel.shared.currentUser.user_pobox,
+            andWithOrderID: getCurrentTimeStampValue(),
+            andWithPhoneNumber: AppModel.shared.currentUser.user_phonenumber,
+            andWithCustomerEmail: AppModel.shared.currentUser.user_email,
             andIsTokenization:false,
             andIsPreAuth: false,
             andWithMerchantEmail: "info@bidincars.com",
-            andWithMerchantSecretKey: "VxmCXzfYr4rMSsyHanFmqXNbL1A62L4XjrAg0QfsUGeN9MvjaaFA8tLTumZw74uqv4HwVWYPDcDMY858iLJreukIRkfZpJqUO7qJ",
+            andWithMerchantSecretKey: PAYTAB_KEY,
             andWithAssigneeCode: "SDK",
             andWithThemeColor:UIColor.blue,
             andIsThemeColorLight: false)

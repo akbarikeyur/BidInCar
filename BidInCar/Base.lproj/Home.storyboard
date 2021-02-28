@@ -795,7 +795,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_banner" translatesAutoresizingMaskIntoConstraints="NO" id="lzS-X8-nil">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_banner" translatesAutoresizingMaskIntoConstraints="NO" id="lzS-X8-nil">
                             <rect key="frame" x="10" y="0.0" width="300" height="135"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="135" id="9JY-g6-qpf"/>
@@ -3481,6 +3481,7 @@ dG8gYmlkLiBEZXBvc2l0A
         </scene>
     </scenes>
     <resources>
+        <image name="app_banner" width="368" height="166"/>
         <image name="app_bg" width="954" height="966"/>
         <image name="back" width="18" height="16"/>
         <image name="bookmark" width="22" height="22"/>
@@ -3507,7 +3508,6 @@ dG8gYmlkLiBEZXBvc2l0A
         <image name="search" width="20.5" height="20.5"/>
         <image name="star_off" width="15.5" height="14.5"/>
         <image name="star_on" width="15.5" height="14.5"/>
-        <image name="temp_banner" width="368" height="166"/>
         <image name="white_shadow_up" width="421" height="351"/>
     </resources>
 </document>

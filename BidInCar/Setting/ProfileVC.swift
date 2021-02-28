@@ -55,6 +55,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
 
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(setUserDetail), name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
+        
         tblView.register(UINib.init(nibName: "CustomProfileTVC", bundle: nil), forCellReuseIdentifier: "CustomProfileTVC")
         
         setUserDetail()

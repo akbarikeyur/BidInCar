@@ -33,7 +33,13 @@ class MyProfileVC: UploadImageVC {
 
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(uploadImageNotification), name: NSNotification.Name.init("NOTIFICATION_UPLOAD_IMAGE"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(redirectToBuyerPaymentScreen), name: NSNotification.Name.init(NOTIFICATION.REDIRECT_BUYER_PAYMENT), object: nil)
+        
         clickToSelectTab(personalBtn)
+    }
+    
+    @objc func redirectToBuyerPaymentScreen() {
+        clickToSelectTab(paymentBtn)
     }
     
     //MARK:- Button click event
