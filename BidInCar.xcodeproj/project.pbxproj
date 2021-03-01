@@ -25,6 +25,7 @@
 		183EBF092358A79300F34909 /* FloatingTextview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183EBF082358A79300F34909 /* FloatingTextview.xib */; };
 		183EBF0B2358A7B800F34909 /* FloatingTextview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EBF0A2358A7B800F34909 /* FloatingTextview.swift */; };
 		183EBF0D2358AC2F00F34909 /* ContactUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EBF0C2358AC2F00F34909 /* ContactUsVC.swift */; };
+		18404C1925ECEE7E0092BA73 /* country.json in Resources */ = {isa = PBXBuildFile; fileRef = 18404C1825ECEE7E0092BA73 /* country.json */; };
 		184B2C7F23572A1F00A374E9 /* CustomImageCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B2C7D23572A1F00A374E9 /* CustomImageCVC.swift */; };
 		184B2C8023572A1F00A374E9 /* CustomImageCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184B2C7E23572A1F00A374E9 /* CustomImageCVC.xib */; };
 		184B2C82235738B600A374E9 /* CarDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B2C81235738B600A374E9 /* CarDetailVC.swift */; };
@@ -138,8 +139,6 @@
 		7989902B25D018E700B3CBB5 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7989902A25D018E700B3CBB5 /* BundleExtension.swift */; };
 		799643092550497F00B772B1 /* buyer_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 799643082550497F00B772B1 /* buyer_info.json */; };
 		7996430B25504A6B00B772B1 /* seller_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 7996430A25504A6B00B772B1 /* seller_info.json */; };
-		79AC70A0252DCB4B00068CB6 /* Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 79AC709F252DCB4B00068CB6 /* Resources.bundle */; };
-		79AC70A2252DCB5F00068CB6 /* paytabs-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79AC70A1252DCB5F00068CB6 /* paytabs-iOS.framework */; };
 		79C6256725CD582E001712BC /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79C6256925CD582E001712BC /* Home.storyboard */; };
 		79C6256C25CD5ABA001712BC /* Auction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79C6256E25CD5ABA001712BC /* Auction.storyboard */; };
 		79C6257125CD6BE3001712BC /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79C6257325CD6BE3001712BC /* Setting.storyboard */; };
@@ -175,6 +174,7 @@
 		183EBF082358A79300F34909 /* FloatingTextview.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FloatingTextview.xib; sourceTree = "<group>"; };
 		183EBF0A2358A7B800F34909 /* FloatingTextview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextview.swift; sourceTree = "<group>"; };
 		183EBF0C2358AC2F00F34909 /* ContactUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsVC.swift; sourceTree = "<group>"; };
+		18404C1825ECEE7E0092BA73 /* country.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = country.json; sourceTree = "<group>"; };
 		184B2C7D23572A1F00A374E9 /* CustomImageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageCVC.swift; sourceTree = "<group>"; };
 		184B2C7E23572A1F00A374E9 /* CustomImageCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomImageCVC.xib; sourceTree = "<group>"; };
 		184B2C81235738B600A374E9 /* CarDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailVC.swift; sourceTree = "<group>"; };
@@ -305,8 +305,6 @@
 		7996430A25504A6B00B772B1 /* seller_info.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = seller_info.json; sourceTree = "<group>"; };
 		79AC7098252DC7DD00068CB6 /* Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Resources.bundle; path = "../../../../../Downloads/paytabs-ios-library-sample-master/samples/sample.swift/sample.swift/Resources.bundle"; sourceTree = "<group>"; };
 		79AC7099252DC7DE00068CB6 /* paytabs-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "paytabs-iOS.framework"; path = "../../../../../Downloads/paytabs-ios-library-sample-master/samples/sample.swift/sample.swift/paytabs-iOS.framework"; sourceTree = "<group>"; };
-		79AC709F252DCB4B00068CB6 /* Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resources.bundle; sourceTree = "<group>"; };
-		79AC70A1252DCB5F00068CB6 /* paytabs-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "paytabs-iOS.framework"; sourceTree = "<group>"; };
 		79C6256825CD582E001712BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		79C6256B25CD583B001712BC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Home.strings; sourceTree = "<group>"; };
 		79C6256D25CD5ABA001712BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auction.storyboard; sourceTree = "<group>"; };
@@ -342,7 +340,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE97AE46EC9810F92CD99B1D /* Pods_BidInCar.framework in Frameworks */,
-				79AC70A2252DCB5F00068CB6 /* paytabs-iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +593,7 @@
 				18B8074823575BBB001C76BF /* BidInCar-Bridging-Header.h */,
 				18B244C22355C19600AEFDC6 /* UIImage+ProportionalFill.h */,
 				18B244CB2355C19600AEFDC6 /* UIImage+ProportionalFill.m */,
+				18404C1825ECEE7E0092BA73 /* country.json */,
 			);
 			path = AppCommon;
 			sourceTree = "<group>";
@@ -665,8 +663,6 @@
 			isa = PBXGroup;
 			children = (
 				185C75F12383C8D400342A55 /* BidInCar.entitlements */,
-				79AC70A1252DCB5F00068CB6 /* paytabs-iOS.framework */,
-				79AC709F252DCB4B00068CB6 /* Resources.bundle */,
 				18F9E1E72355BE5000B5E071 /* AppDelegate.swift */,
 				18F9E1EB2355BE5000B5E071 /* Main.storyboard */,
 				79C6256925CD582E001712BC /* Home.storyboard */,
@@ -785,6 +781,7 @@
 				183EBF092358A79300F34909 /* FloatingTextview.xib in Resources */,
 				18C6556623B9FE8C007E5920 /* CustomBidPriceCVC.xib in Resources */,
 				18B245012355C19600AEFDC6 /* Poppins-Light.ttf in Resources */,
+				18404C1925ECEE7E0092BA73 /* country.json in Resources */,
 				7989901125CFC99700B3CBB5 /* CustomBidAuctionTVC.xib in Resources */,
 				189BD0B5235B2DA600887112 /* CustomCardCVC.xib in Resources */,
 				79C6258A25CD6C39001712BC /* CustomBookmarkTVC.xib in Resources */,
@@ -804,7 +801,6 @@
 				7979923D25503F67008DBA48 /* CustomInfoCVC.xib in Resources */,
 				79C6256C25CD5ABA001712BC /* Auction.storyboard in Resources */,
 				79C6257625CD6C18001712BC /* CustomCarTVC.xib in Resources */,
-				79AC70A0252DCB4B00068CB6 /* Resources.bundle in Resources */,
 				79C6258F25CD6C42001712BC /* CustomPrivacyPolicyTVC.xib in Resources */,
 				7989900725CFC7DA00B3CBB5 /* CustomFeaturedAuctionTVC.xib in Resources */,
 				188CFC632356037700C18B2A /* CustomCarCVC.xib in Resources */,

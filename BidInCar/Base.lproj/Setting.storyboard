@@ -1484,7 +1484,7 @@ Remaining Deposit : AED 0</string>
                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_deposit_amount"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can only withdraw deposit as per remaining bidding limit." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bw4-df-wl7" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can only withdraw deposit as per remaining deposit limit." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bw4-df-wl7" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                     <rect key="frame" x="20" y="125" width="260" height="34"/>
                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                     <nil key="textColor"/>

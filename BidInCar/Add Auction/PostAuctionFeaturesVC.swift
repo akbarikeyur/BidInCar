@@ -487,28 +487,16 @@ class PostAuctionFeaturesVC: UIViewController, UITextViewDelegate {
     {
         APIManager.shared.serviceCallToPostAuction(param) { (code, auctionid, data) in
             if code == 100 {
-                if AppModel.shared.AUCTION_DATA[String(self.selectedAuctionType.id)] != nil {
-                    AppModel.shared.AUCTION_DATA[String(self.selectedAuctionType.id)] = [AuctionModel]()
-                }
-                
-//                AppDelegate().sharedDelegate().serviceCallToDecreseLeftAuction()
+                AppModel.shared.AUCTION_DATA = [String : [AuctionModel]]()
                 showAlert("success_title", message: getTranslate("success_auction_message")) {
                     NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_HOME), object: nil)
                     NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_DASHBOARD_TOP_DATA), object: nil)
                 }
             }
             else{
-//                self.myAuction = AuctionModel.init(dict: self.param)
-//                self.myAuction.auctionid = String(auctionid)
-                showAlert("success_title", message: getTranslate("save_auction_draft_message")) {
-//                    let vc : PostAuctionDetailVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PostAuctionDetailVC") as! PostAuctionDetailVC
-//                    vc.myAuction = AuctionModel.init(dict: data)
-//                    UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
-                    
-                    let vc : PackageVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PackageVC") as! PackageVC
-                    vc.isFromAuction = true
-                    UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
-                }
+                let vc : PackageVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PackageVC") as! PackageVC
+                vc.isFromAuction = true
+                UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
             }
         }
     }

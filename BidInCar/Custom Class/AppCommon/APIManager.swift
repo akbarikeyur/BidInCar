@@ -1080,7 +1080,7 @@ public class APIManager {
             removeLoader()
             switch response.result {
             case .success:
-//                printData(response.result.value!)
+                printData(response.result.value!)
                 if let result = response.result.value as? [String:Any] {
                 
                     if let status = result["status"] as? String {

@@ -25,6 +25,7 @@ target 'BidInCar' do
   pod 'Firebase/Messaging'
   pod 'GooglePlaces'
   
+  pod 'PayTabs'
   pod 'BIObjCHelpers'
   pod 'Mantle'
   pod 'Reachability'
@@ -33,5 +34,7 @@ target 'BidInCar' do
   pod 'PINCache'
   pod 'MBProgressHUD', '~> 1.1.0'
   pod 'ActionSheetPicker-3.0'
-  pod 'AFNetworking', '~> 3.0.4'
+  pod 'AFNetworking'
+  
+  
 end

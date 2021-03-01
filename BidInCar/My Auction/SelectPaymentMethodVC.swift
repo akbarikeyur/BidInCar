@@ -297,8 +297,6 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
     }
     
     func paytab() {
-        let bundle = Bundle(url: Bundle.main.url(forResource: "Resources", withExtension: "bundle")!)
-        
         var address = ""
         if AppModel.shared.currentUser.user_flatnumber != "" {
             address = AppModel.shared.currentUser.user_flatnumber
@@ -316,6 +314,28 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             address = address + AppModel.shared.currentUser.user_streetaddress
         }
         
+        var arrCountry = [CountryModel]()
+        for temp in getJsonFromFile("country") {
+            arrCountry.append(CountryModel.init(dict: temp))
+        }
+        var selectedCountry = CountryModel.init()
+        let index = arrCountry.firstIndex { (temp) -> Bool in
+            temp.country_name.lowercased() == AppModel.shared.currentUser.country_name.lowercased()
+        }
+        if index != nil {
+            selectedCountry = arrCountry[index!]
+        }
+        else{
+            selectedCountry.code_3 = "ARE"
+        }
+        
+        var city_name = "Dubai"
+        if AppModel.shared.currentUser.city_name != "" {
+            city_name = AppModel.shared.currentUser.city_name
+        }
+        
+        let bundle = Bundle(url: Bundle.main.url(forResource: "Resources", withExtension: "bundle")!)
+        
         self.initialSetupViewController = PTFWInitialSetupViewController.init(
             bundle: bundle,
             andWithViewFrame: UIApplication.topViewController()!.view.frame,
@@ -325,14 +345,14 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             andWithTaxAmount: 0.0,
             andWithSDKLanguage: "en",
             andWithShippingAddress: address,
-            andWithShippingCity: AppModel.shared.currentUser.city_name,
-            andWithShippingCountry: AppModel.shared.currentUser.country_name,
-            andWithShippingState: AppModel.shared.currentUser.city_name,
+            andWithShippingCity: city_name,
+            andWithShippingCountry: selectedCountry.code_3,
+            andWithShippingState: city_name,
             andWithShippingZIPCode: AppModel.shared.currentUser.user_pobox,
             andWithBillingAddress: address,
-            andWithBillingCity: AppModel.shared.currentUser.city_name,
-            andWithBillingCountry: AppModel.shared.currentUser.country_name,
-            andWithBillingState: AppModel.shared.currentUser.city_name,
+            andWithBillingCity: city_name,
+            andWithBillingCountry: selectedCountry.code_3,
+            andWithBillingState: city_name,
             andWithBillingZIPCode: AppModel.shared.currentUser.user_pobox,
             andWithOrderID: getCurrentTimeStampValue(),
             andWithPhoneNumber: AppModel.shared.currentUser.user_phonenumber,
@@ -340,7 +360,7 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             andIsTokenization:false,
             andIsPreAuth: false,
             andWithMerchantEmail: "info@bidincars.com",
-            andWithMerchantSecretKey: PAYTAB_KEY,
+            andWithMerchantSecretKey: PAYTAB_KEY, andWithMerchantRegion: "emirates",
             andWithAssigneeCode: "SDK",
             andWithThemeColor:UIColor.blue,
             andIsThemeColorLight: false)
@@ -358,14 +378,17 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             // Stop loading indicator
         }
         
-        self.initialSetupViewController.didReceiveFinishTransactionCallback = {(responseCode, result, transactionID, tokenizedCustomerEmail, tokenizedCustomerPassword, token, transactionState) in
-            printData("Response Code: \(responseCode)")
-            printData("Response Result: \(result)")
+        self.initialSetupViewController.didReceiveFinishTransactionCallback = {(responseCode, result, transactionID, tokenizedCustomerEmail, tokenizedCustomerPassword, token, transactionState, statementReference, traceCode) in
+            
+            print("Response Code: \(responseCode)")
+            print("Response Result: \(result)")
+            print("Statement Reference: \(statementReference)");
+            print("Trace Code: \(traceCode)");
             
             // In Case you are using tokenization
-            printData("Tokenization Cutomer Email: \(tokenizedCustomerEmail)");
-            printData("Tokenization Customer Password: \(tokenizedCustomerPassword)");
-            printData("TOkenization Token: \(token)");
+            print("Tokenization Cutomer Email: \(tokenizedCustomerEmail)");
+            print("Tokenization Customer Password: \(tokenizedCustomerPassword)");
+            print("Tokenization Token: \(token)");
             
             if responseCode == 100 {
                 self.paytabPaymentCompleted(String(transactionID))

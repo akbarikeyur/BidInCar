@@ -333,7 +333,7 @@ extension PaymentBuyerVC : UITableViewDelegate, UITableViewDataSource {
             cell.auctionNameLbl.text = dict.auction_title
             cell.currentBidLbl.text = dict.auction_price
             cell.yourBidLbl.text = dict.bidprice
-            cell.statusLbl.text = dict.auction_status
+            cell.statusLbl.text = dict.auction_status.capitalized
             cell.viewBtn.tag = indexPath.row
             cell.viewBtn.addTarget(self, action: #selector(clickToViewAction(_:)), for: .touchUpInside)
             cell.selectionStyle = .none

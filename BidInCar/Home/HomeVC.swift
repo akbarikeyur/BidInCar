@@ -621,7 +621,7 @@ extension HomeVC {
                 if self.selectedCategory.id == -1 {
                     self.arrAuctionData.append(auction)
                 }
-                else if auction.cattype == self.selectedCategory.id {
+                else if auction.categorytype == String(self.selectedCategory.id) {
                     self.arrAuctionData.append(auction)
                 }
                 if auction.auction_featured == "yes" {

@@ -54,7 +54,7 @@
 "B0t-ez-ZpP.text" = ".ليس لديك أي إخطارات حتى الآن";
 
 /* Class = "UILabel"; text = "You can only withdraw deposit as per remaining bidding limit."; ObjectID = "Bw4-df-wl7"; */
-"Bw4-df-wl7.text" = ".يمكنك فقط سحب الإيداع حسب حد المزايدة المتبقي";
+"Bw4-df-wl7.text" = ".يمكنك فقط سحب الإيداع حسب حد الإيداع المتبقي.";
 
 /* Class = "UILabel"; text = "Notification"; ObjectID = "Chc-h2-ZdC"; */
 "Chc-h2-ZdC.text" = "تنبيه";

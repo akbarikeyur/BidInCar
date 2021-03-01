@@ -842,6 +842,7 @@ class CountryModel : AppModel
     var country_name : String!
     var phonecode : String!
     var flag : String!
+    var code_3 : String!
     
     override init(){
         countryid = ""
@@ -849,6 +850,7 @@ class CountryModel : AppModel
         country_name = ""
         phonecode = ""
         flag = ""
+        code_3 = ""
     }
     
     init(dict : [String : Any])
@@ -858,6 +860,7 @@ class CountryModel : AppModel
         country_name = ""
         phonecode = ""
         flag = ""
+        code_3 = ""
         
         if let temp = dict["countryid"] as? String {
             countryid = temp
@@ -874,10 +877,13 @@ class CountryModel : AppModel
         if let temp = dict["flag"] as? String {
             flag = temp
         }
+        if let temp = dict["code_3"] as? String {
+            code_3 = temp
+        }
     }
     
     func dictionary() -> [String:Any]  {
-        return ["countryid":countryid!, "sortname":sortname!, "country_name":country_name!, "phonecode":phonecode!, "flag":flag!]
+        return ["countryid":countryid!, "sortname":sortname!, "country_name":country_name!, "phonecode":phonecode!, "flag":flag!, "code_3" : code_3!]
     }
 }
 
@@ -1569,14 +1575,27 @@ class BidAuctionModel : AppModel
         if let temp = dict["bidon"] as? String {
             bidon = temp
         }
-        if let temp = dict["auction_price"] as? String {
-            auction_price = temp
+        if let tempDict = dict["auction"] as? [String : Any] {
+            if let temp = tempDict["auction_price"] as? String {
+                auction_price = temp
+            }
+            if let temp = tempDict["auction_title"] as? String {
+                auction_title = temp
+            }
+            if let temp = tempDict["auction_status"] as? String {
+                auction_status = temp
+            }
         }
-        if let temp = dict["auction_title"] as? String {
-            auction_title = temp
-        }
-        if let temp = dict["auction_status"] as? String {
-            auction_status = temp
+        else{
+            if let temp = dict["auction_price"] as? String {
+                auction_price = temp
+            }
+            if let temp = dict["auction_title"] as? String {
+                auction_title = temp
+            }
+            if let temp = dict["auction_status"] as? String {
+                auction_status = temp
+            }
         }
     }
     
