@@ -150,7 +150,7 @@
 "hUB-PK-fwR.normalTitle" = "حسابات بنكية";
 
 /* Class = "UILabel"; text = "You can only withdraw deposit as per remaining bidding limit. "; ObjectID = "ilI-O8-sVK"; */
-"ilI-O8-sVK.text" = ".يمكنك فقط سحب الإيداع حسب حد المزايدة المتبقي";
+"ilI-O8-sVK.text" = ".يمكنك فقط سحب الإيداع حسب مبلغ الإيداع المتبقي.";
 
 /* Class = "UILabel"; text = "Please leave your message along with your contact details below. We will be happy to answer your questions andinquiries the soonest."; ObjectID = "jdO-sB-ChA"; */
 "jdO-sB-ChA.text" = ".يرجى ترك رسالتك مع تفاصيل الاتصال الخاصة بك أدناه. يسعدنا الرد على أسئلتك واستفساراتك في أقرب وقت ممكن";

@@ -162,6 +162,7 @@ class HomeVC: UploadImageVC {
     {
         refreshControl.endRefreshing()
         serviceCallToGetAuction("")
+        refreshTopData()
     }
     
     @objc func refreshTopData() {
@@ -329,8 +330,12 @@ class HomeVC: UploadImageVC {
     @IBAction func clickToNextCategory(_ sender: UIButton) {
         if sender.tag == 1 {
             categoryCV.scrollToItem(at: IndexPath(row: AppModel.shared.AUCTION_TYPE.count-1, section: 0), at: .left, animated: true)
-        } else {
+        }
+        else if sender.tag == 2 {
             featureCV.scrollToItem(at: IndexPath(row: arrFeatureAuctionData.count-1, section: 0), at: .left, animated: true)
+        }
+        else if sender.tag == 3 {
+            infoCV.scrollToItem(at: IndexPath(row: arrInfo.count-1, section: 0), at: .left, animated: true)
         }
     }
     
@@ -462,6 +467,9 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
                     NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_MY_PROFILE), object: nil)
                     delay(0.1) {
                         NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_BUYER_PAYMENT), object: nil)
+                        delay(0.1) {
+                            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.OPEN_ADD_DEPOSIT), object: nil)
+                        }
                     }
                 }
             }

@@ -28,6 +28,9 @@
 "logout_title" = "Logout";
 "logout_msg" = "Are you sure want to logout?";
 
+"on_noti" = "Turn on notifications";
+"off_noti" = "Turn off notifications";
+
 //Login-signup
 "enter_email" = "Please enter email";
 "enter_password" = "Please enter password";
@@ -374,6 +377,7 @@
 "profile_company_email" = "Company email";
 "profile_company_phone" = "Company phone";
 "profile_company_address" = "Company address";
+"profile_language" = "Language";
 
 "primary_billing" = "Primary";
 "primary_make_billing" = "Make Primary";

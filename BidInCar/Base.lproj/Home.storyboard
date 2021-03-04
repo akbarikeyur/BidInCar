@@ -802,7 +802,7 @@
                             </constraints>
                         </imageView>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ra1-Mk-P0W">
-                            <rect key="frame" x="10" y="140" width="310" height="40"/>
+                            <rect key="frame" x="10" y="140" width="290" height="40"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="XHX-O1-7Ph"/>
@@ -819,16 +819,34 @@
                                 <outlet property="delegate" destination="rjL-fd-RTT" id="nKw-yM-fgD"/>
                             </connections>
                         </collectionView>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGb-Y6-x7X" customClass="Button" customModule="BidInCar" customModuleProvider="target">
+                            <rect key="frame" x="300" y="140" width="20" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="S9v-f8-IAU"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
+                            <state key="normal" image="next_black"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="buttonImage" value="next_black"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="clickToNextCategory:" destination="rjL-fd-RTT" eventType="touchUpInside" id="cRW-z6-EQN"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="Ra1-Mk-P0W" secondAttribute="bottom" id="0U8-8t-Hjl"/>
                         <constraint firstItem="Ra1-Mk-P0W" firstAttribute="top" secondItem="lzS-X8-nil" secondAttribute="bottom" constant="5" id="0ee-ED-CZq"/>
-                        <constraint firstAttribute="trailing" secondItem="Ra1-Mk-P0W" secondAttribute="trailing" id="Mqg-Dp-ybY"/>
+                        <constraint firstItem="bGb-Y6-x7X" firstAttribute="bottom" secondItem="Ra1-Mk-P0W" secondAttribute="bottom" id="4FN-sj-Hgh"/>
+                        <constraint firstItem="bGb-Y6-x7X" firstAttribute="top" secondItem="Ra1-Mk-P0W" secondAttribute="top" id="61h-vC-WXM"/>
+                        <constraint firstAttribute="trailing" secondItem="Ra1-Mk-P0W" secondAttribute="trailing" constant="20" id="Mqg-Dp-ybY"/>
                         <constraint firstAttribute="trailing" secondItem="lzS-X8-nil" secondAttribute="trailing" constant="10" id="fPZ-gY-Z8X"/>
                         <constraint firstItem="lzS-X8-nil" firstAttribute="top" secondItem="o3n-hG-0XY" secondAttribute="top" id="jHD-oE-tmh"/>
                         <constraint firstItem="lzS-X8-nil" firstAttribute="leading" secondItem="o3n-hG-0XY" secondAttribute="leading" constant="10" id="nYr-r6-0NS"/>
                         <constraint firstItem="Ra1-Mk-P0W" firstAttribute="leading" secondItem="o3n-hG-0XY" secondAttribute="leading" constant="10" id="uKa-mU-jYS"/>
+                        <constraint firstAttribute="trailing" secondItem="bGb-Y6-x7X" secondAttribute="trailing" id="xMP-Nr-A4M"/>
                     </constraints>
                 </view>
             </objects>

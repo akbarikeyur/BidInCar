@@ -46,6 +46,9 @@ class PaymentBuyerVC: UIViewController {
         
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(updateDepositeAmount), name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(clickToAddDeposite(_:)), name: NSNotification.Name.init(NOTIFICATION.OPEN_ADD_DEPOSIT), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(serviceCallToGetDepositeHistory), name: NSNotification.Name.init(NOTIFICATION.REFRESH_DEPOSIE_AMOUNT), object: nil)
+        
         depositeTbl.register(UINib.init(nibName: "DepositHistoryTVC", bundle: nil), forCellReuseIdentifier: "DepositHistoryTVC")
         withdrawTbl.register(UINib.init(nibName: "WithdrawHistoryTVC", bundle: nil), forCellReuseIdentifier: "WithdrawHistoryTVC")
         auctionTblView.register(UINib.init(nibName: "CustomBidAuctionTVC", bundle: nil), forCellReuseIdentifier: "CustomBidAuctionTVC")
@@ -151,7 +154,7 @@ class PaymentBuyerVC: UIViewController {
         UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func clickToAddDeposite(_ sender: Any) {
+    @objc @IBAction func clickToAddDeposite(_ sender: Any) {
         self.view.endEditing(true)
         depositeTxt.myTxt.text = ""
         displaySubViewtoParentView(self.view, subview: depositeView)
@@ -250,7 +253,7 @@ class PaymentBuyerVC: UIViewController {
         }
     }
     
-    func serviceCallToGetDepositeHistory() {
+    @objc func serviceCallToGetDepositeHistory() {
         APIManager.shared.serviceCallToGetDepositeHistory(["userid":AppModel.shared.currentUser.userid!]) { (data) in
             self.arrDeposite = [DepositeModel]()
             for temp in data {

@@ -1427,7 +1427,7 @@ Remaining Deposit : AED 0</string>
                             <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </imageView>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hB8-QT-cye" customClass="View" customModule="BidInCar" customModuleProvider="target">
-                            <rect key="frame" x="10" y="162" width="300" height="244"/>
+                            <rect key="frame" x="10" y="184" width="300" height="200"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1X-qa-F2j" customClass="View" customModule="BidInCar" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
@@ -1484,23 +1484,8 @@ Remaining Deposit : AED 0</string>
                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_deposit_amount"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can only withdraw deposit as per remaining deposit limit." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bw4-df-wl7" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                    <rect key="frame" x="20" y="125" width="260" height="34"/>
-                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
-                                            <integer key="value" value="2"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                            <real key="value" value="12"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZw-wu-esI" customClass="View" customModule="BidInCar" customModuleProvider="target">
-                                    <rect key="frame" x="20" y="179" width="260" height="45"/>
+                                    <rect key="frame" x="20" y="135" width="260" height="45"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NuH-cB-504" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="260" height="45"/>
@@ -1544,16 +1529,13 @@ Remaining Deposit : AED 0</string>
                                 <constraint firstItem="Dk1-TN-M7s" firstAttribute="leading" secondItem="hB8-QT-cye" secondAttribute="leading" constant="20" id="27E-6c-Uma"/>
                                 <constraint firstItem="f1X-qa-F2j" firstAttribute="top" secondItem="hB8-QT-cye" secondAttribute="top" id="Gzk-PE-DXQ"/>
                                 <constraint firstAttribute="trailing" secondItem="VZw-wu-esI" secondAttribute="trailing" constant="20" id="Kfu-c4-Qoe"/>
-                                <constraint firstItem="VZw-wu-esI" firstAttribute="top" secondItem="Bw4-df-wl7" secondAttribute="bottom" constant="20" id="Mqf-JR-rQ2"/>
                                 <constraint firstItem="VZw-wu-esI" firstAttribute="leading" secondItem="hB8-QT-cye" secondAttribute="leading" constant="20" id="V8o-Ma-jn4"/>
-                                <constraint firstItem="Bw4-df-wl7" firstAttribute="leading" secondItem="hB8-QT-cye" secondAttribute="leading" constant="20" id="Ztd-ao-GhH"/>
                                 <constraint firstItem="f1X-qa-F2j" firstAttribute="leading" secondItem="hB8-QT-cye" secondAttribute="leading" id="dvG-pQ-6Q5"/>
                                 <constraint firstAttribute="trailing" secondItem="Dk1-TN-M7s" secondAttribute="trailing" constant="20" id="fn9-k8-d8p"/>
-                                <constraint firstAttribute="trailing" secondItem="Bw4-df-wl7" secondAttribute="trailing" constant="20" id="pC0-K6-S2V"/>
                                 <constraint firstAttribute="trailing" secondItem="f1X-qa-F2j" secondAttribute="trailing" id="qaC-Rc-Qnd"/>
                                 <constraint firstItem="Dk1-TN-M7s" firstAttribute="top" secondItem="f1X-qa-F2j" secondAttribute="bottom" constant="20" id="rkf-Ig-37Q"/>
                                 <constraint firstAttribute="bottom" secondItem="VZw-wu-esI" secondAttribute="bottom" constant="20" id="uqn-Lg-8Ow"/>
-                                <constraint firstItem="Bw4-df-wl7" firstAttribute="top" secondItem="Dk1-TN-M7s" secondAttribute="bottom" constant="10" id="yaj-ia-g5v"/>
+                                <constraint firstItem="VZw-wu-esI" firstAttribute="top" secondItem="Dk1-TN-M7s" secondAttribute="bottom" constant="20" id="ze3-Eu-Ghx"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1591,7 +1573,7 @@ Remaining Deposit : AED 0</string>
                                         <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dE-dS-A2E" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
-                                            <state key="normal" title="Request For Withdrawal">
+                                            <state key="normal" title="Request For Withdraw">
                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
@@ -1640,7 +1622,7 @@ Remaining Deposit : AED 0</string>
                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="placeholder_amount_withdraw"/>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can only withdraw deposit as per remaining bidding limit. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilI-O8-sVK" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can only withdraw deposit as per remaining deposit amount. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilI-O8-sVK" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                     <rect key="frame" x="20" y="135" width="260" height="34"/>
                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                     <nil key="textColor"/>

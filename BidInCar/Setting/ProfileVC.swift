@@ -23,6 +23,7 @@ struct PROFILE {
     static let COUNTRY_CODE = getTranslate("profile_country_code")
     static let PHONE = getTranslate("profile_phone_number")
     static let SAVE = getTranslate("profile_auto_save")
+    static let LAUNGUAGE = getTranslate("profile_language")
     
     static let COMPANY_NAME = getTranslate("profile_company_name")
     static let COMPANY_EMAIL = getTranslate("profile_company_email")
@@ -142,7 +143,11 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         arrUserDetail.append(dict)
         dict = [String : Any]()
         dict["title"] = PROFILE.COUNTRY_CODE
-        dict["value"] = "+" + AppModel.shared.currentUser.phone_countrycode
+        if AppModel.shared.currentUser.phone_countrycode != "" {
+            dict["value"] = "+" + AppModel.shared.currentUser.phone_countrycode
+        }else{
+            dict["value"] = ""
+        }
         arrUserDetail.append(dict)
         dict = [String : Any]()
         dict["title"] = PROFILE.PHONE
@@ -167,6 +172,12 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
             dict["value"] = AppModel.shared.currentUser.user_company.company_address
             arrUserDetail.append(dict)
         }
+        
+        
+        dict = [String : Any]()
+        dict["title"] = PROFILE.LAUNGUAGE
+        dict["value"] = AppModel.shared.currentUser.lang
+        arrUserDetail.append(dict)
         
         dict = [String : Any]()
         dict["title"] = PROFILE.SAVE
@@ -197,7 +208,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         cell.valueBtn.isHidden = true
         cell.titleLbl.textColor = LightGrayColor
         cell.titleLbl.text = arrUserDetail[indexPath.row]["title"] as? String ?? ""
-        if cell.titleLbl.text == PROFILE.EMAIL || cell.titleLbl.text == PROFILE.COUNTRY_CODE || cell.titleLbl.text == PROFILE.PHONE || cell.titleLbl.text == PROFILE.COMPANY_PHONE   {
+        if cell.titleLbl.text == PROFILE.EMAIL || cell.titleLbl.text == PROFILE.COUNTRY_CODE || cell.titleLbl.text == PROFILE.PHONE || cell.titleLbl.text == PROFILE.COMPANY_PHONE ||  cell.titleLbl.text == PROFILE.LAUNGUAGE   {
             cell.valueTxt.isUserInteractionEnabled = false
         }else{
             cell.valueTxt.isUserInteractionEnabled = true

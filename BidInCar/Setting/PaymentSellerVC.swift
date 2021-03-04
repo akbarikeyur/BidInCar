@@ -101,7 +101,7 @@ class PaymentSellerVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 //                cell.remainingAuctionLbl.text = String(dict.auctionsleft)
 //            }
             cell.expireLbl.text = dict.package_expireon
-            cell.priceLbl.text = displayPriceWithCurrency(dict.get_packages.package_price)
+            cell.priceLbl.text = displayPriceWithCurrency(String(dict.amount))
             cell.contentView.backgroundColor = WhiteColor
             cell.selectionStyle = .none
             return cell

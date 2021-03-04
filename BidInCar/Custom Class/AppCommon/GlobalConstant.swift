@@ -135,7 +135,8 @@ struct NOTIFICATION {
     static var REDIRECT_DASHBOARD_TOP_DATA            =   "REDIRECT_DASHBOARD_TOP_DATA"
     static var REDIRECT_NOTIFICATION_SCREEN            =   "REDIRECT_NOTIFICATION_SCREEN"
     static var REDIRECT_BUYER_PAYMENT            =   "REDIRECT_BUYER_PAYMENT"
-    
+    static var OPEN_ADD_DEPOSIT            =   "OPEN_ADD_DEPOSIT"
+    static var REFRESH_DEPOSIE_AMOUNT            =   "REFRESH_DEPOSIE_AMOUNT"
 }
 
 

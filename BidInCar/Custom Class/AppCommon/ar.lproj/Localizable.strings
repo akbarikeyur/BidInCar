@@ -27,6 +27,9 @@
 "logout_title" = "تسجيل خروج";
 "logout_msg" = "هل أنت متأكد أنك تريد تسجيل الخروج؟";
 
+"on_noti" = "تشغيل الإخطارات";
+"off_noti" = "قم بإيقاف تشغيل الإشعارات";
+
 //Login-signup
 "enter_email" = "الرجاء إدخال البريد الإلكتروني";
 "enter_password" = "الرجاء إدخال كلمة المرور";
@@ -368,6 +371,7 @@
 "profile_company_email" = "البريد الإلكتروني للشركة";
 "profile_company_phone" = "هاتف الشركة";
 "profile_company_address" = "عنوان الشركة";
+"profile_language" = "لغة";
 
 "primary_billing" = "ابتدائي";
 "primary_make_billing" = "اتخذ الاولويه";

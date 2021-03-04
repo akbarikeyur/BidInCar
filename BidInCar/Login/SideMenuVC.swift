@@ -21,6 +21,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var userTypeLbl: Label!
     @IBOutlet weak var addDepositeView: View!
     @IBOutlet weak var postAuctionView: View!
+    @IBOutlet weak var notiLbl: Label!
     @IBOutlet weak var notificationSwitch: UISwitch!
     
     var arrMenuData = [[String : Any]]()
@@ -77,8 +78,10 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         userNameLbl.text = AppModel.shared.currentUser.user_name
         if AppModel.shared.currentUser.notification == "on" {
             notificationSwitch.setOn(true, animated: false)
+            notiLbl.text = getTranslate("off_noti")
         }else{
             notificationSwitch.setOn(false, animated: false)
+            notiLbl.text = getTranslate("on_noti")
         }
         if isUserBuyer() {
             userTypeLbl.text = "Buyer"
@@ -176,8 +179,10 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         param["usernotification"] = notificationSwitch.isOn ? "on" : "off"
         APIManager.shared.serviceCallToUpdateNotificationSetting(param)
         if notificationSwitch.isOn {
+            notiLbl.text = getTranslate("off_noti")
             AppModel.shared.currentUser.notification = "on"
         }else{
+            notiLbl.text = getTranslate("on_noti")
             AppModel.shared.currentUser.notification = "off"
         }
         NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)

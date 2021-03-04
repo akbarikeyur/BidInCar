@@ -2298,6 +2298,7 @@ Account</string>
                     <connections>
                         <outlet property="addDepositeView" destination="943-R7-I13" id="Dxn-hF-sIx"/>
                         <outlet property="loginView" destination="e1I-dc-sGw" id="MCe-Ew-gfZ"/>
+                        <outlet property="notiLbl" destination="RZO-qL-yj2" id="vGZ-FD-N9a"/>
                         <outlet property="notificationSwitch" destination="Ot4-dA-Ehn" id="1Pu-Wm-BO0"/>
                         <outlet property="postAuctionView" destination="ld0-7T-anQ" id="2TL-Yd-R9W"/>
                         <outlet property="profilePicBtn" destination="xxC-3W-mBv" id="ukX-Xt-KwS"/>

@@ -209,11 +209,12 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
                 }
                 
             }
-            for temp in dict.pictures {
-               if temp.type == "auction" {
-                   setButtonImage(cell.profilePicBtn, temp.path)
-                   break
-               }
+            cell.profilePicBtn.setImage(nil, for: .normal)
+            if dict.pictures.count > 0 {
+                setButtonImage(cell.profilePicBtn, dict.pictures[0].path)
+            }
+            else{
+                cell.profilePicBtn.setImage(UIImage(named: IMAGE.AUCTION_PLACEHOLDER), for: .normal)
             }
             cell.nameLbl.text = dict.auction_title
             let index = AppModel.shared.AUCTION_TYPE.firstIndex { (temp) -> Bool in

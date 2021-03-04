@@ -25,11 +25,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yMl-3E-Y6P" customClass="View" customModule="BidInCar" customModuleProvider="target">
                         <rect key="frame" x="5" y="5" width="80" height="80"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8b-5D-dgX" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="X8b-5D-dgX" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                 <rect key="frame" x="5" y="53" width="70" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="207-4P-UQr"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -53,6 +50,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="X8b-5D-dgX" firstAttribute="top" secondItem="NGu-kE-ej8" secondAttribute="bottom" constant="8" id="3Ff-jB-DO7"/>
                             <constraint firstItem="X8b-5D-dgX" firstAttribute="leading" secondItem="yMl-3E-Y6P" secondAttribute="leading" constant="5" id="DR7-Rf-jfr"/>
                             <constraint firstAttribute="trailing" secondItem="X8b-5D-dgX" secondAttribute="trailing" constant="5" id="KzJ-Fh-gNH"/>
                             <constraint firstItem="NGu-kE-ej8" firstAttribute="leading" secondItem="yMl-3E-Y6P" secondAttribute="leading" constant="20" id="MDB-ms-Uhw"/>
@@ -60,7 +58,7 @@
                             <constraint firstAttribute="trailing" secondItem="NGu-kE-ej8" secondAttribute="trailing" constant="20" id="Was-HP-G7F"/>
                             <constraint firstItem="NGu-kE-ej8" firstAttribute="top" secondItem="yMl-3E-Y6P" secondAttribute="top" constant="15" id="YrA-FE-uUX"/>
                             <constraint firstAttribute="height" constant="80" id="axz-yp-8fe"/>
-                            <constraint firstAttribute="bottom" secondItem="X8b-5D-dgX" secondAttribute="bottom" constant="10" id="gkw-Zu-RNI"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="X8b-5D-dgX" secondAttribute="bottom" id="gzI-GK-iqL"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="backgroundColorTypeAdapter">

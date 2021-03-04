@@ -360,7 +360,8 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             andIsTokenization:false,
             andIsPreAuth: false,
             andWithMerchantEmail: "info@bidincars.com",
-            andWithMerchantSecretKey: PAYTAB_KEY, andWithMerchantRegion: "emirates",
+            andWithMerchantSecretKey: PAYTAB_KEY,
+            andWithMerchantRegion: "emirates",
             andWithAssigneeCode: "SDK",
             andWithThemeColor:UIColor.blue,
             andIsThemeColorLight: false)
@@ -390,7 +391,7 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             print("Tokenization Customer Password: \(tokenizedCustomerPassword)");
             print("Tokenization Token: \(token)");
             
-            if responseCode == 100 {
+            if responseCode == 100 && String(transactionID) != "" {
                 self.paytabPaymentCompleted(String(transactionID))
             }
             else{
@@ -408,11 +409,12 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
     
     func paytabPaymentCompleted(_ transactionID : String)
     {
+        paymentParam["payment_reference"] = transactionID
         if paymentType == PAYMENT.PACKAGE {
             serviceCallToPurchasePackage()
         }
         else if paymentType == PAYMENT.DEPOSITE {
-            serviceCallToDepositeAmount(transactionID)
+            serviceCallToDepositeAmount()
         }
         else if paymentType == PAYMENT.FEATURED {
             serviceCallToMakeFeaturedAuction()
@@ -421,6 +423,7 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
     
     func serviceCallToPurchasePackage()
     {
+        
         APIManager.shared.serviceCallToPurchasePackage(paymentParam) {
             displayToast("package_bought_success")
             AppDelegate().sharedDelegate().serviceCallToGetSellerData()
@@ -429,19 +432,13 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func serviceCallToDepositeAmount(_ transactionID : String)
+    func serviceCallToDepositeAmount()
     {
-        var amount = 0
-        if let deposite_amount : String = paymentParam["deposite_amount"] as? String {
-            amount = AppModel.shared.getIntValue(getBuyerTopData(), "deposite")
-            amount += Int(deposite_amount)!
-            paymentParam["deposite_amount"] = amount
-        }
-        paymentParam["payment_reference"] = transactionID
         printData(paymentParam)
         APIManager.shared.serviceCallToDepositeAmount(paymentParam) {
             displayToast("deposit_added_success")
             AppDelegate().sharedDelegate().serviceCallToGetUserProfile()
+            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REFRESH_DEPOSIE_AMOUNT), object: nil)
             self.navigationController?.popViewController(animated: true)
         }
     }
