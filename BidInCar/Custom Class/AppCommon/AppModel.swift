@@ -494,12 +494,7 @@ class AuctionModel : AppModel
         if let temp = dict["auction_title"] as? String {
             auction_title = temp
         }
-        if let temp = dict["auction_price"] as? String {
-            auction_price = temp
-        }
-        else if let temp = dict["auction_price"] as? Int {
-            auction_price = String(temp)
-        }
+        auction_price = AppModel.shared.getStringValue(dict, "auction_price")
         auction_bidprice = AppModel.shared.getStringValue(dict, "auction_bidprice")
         userid = AppModel.shared.getStringValue(dict, "userid")
         if let temp = dict["year"] as? String {
@@ -572,11 +567,9 @@ class AuctionModel : AppModel
         if let temp = dict["auction_winby"] as? String {
             auction_winby = temp
         }
-        if let temp = dict["categoryid"] as? String {
-            categoryid = temp
-        }
-        if let temp = dict["categories"] as? String {
-            categoryid = temp
+        categoryid = AppModel.shared.getStringValue(dict, "categoryid")
+        if categoryid == "" {
+            categoryid = AppModel.shared.getStringValue(dict, "categories")
         }
         if let temp = dict["category_name"] as? String {
             category_name = temp
@@ -610,18 +603,8 @@ class AuctionModel : AppModel
                 pictures.append(PictureModel.init(dict: temp))
             }
         }
-        if let temp = dict["active_auction_price"] as? String {
-            active_auction_price = temp
-        }
-        else if let temp = dict["active_auction_price"] as? Int {
-            active_auction_price = String(temp)
-        }
-        if let temp = dict["auction_bidscount"] as? String {
-            auction_bidscount = temp
-        }
-        else if let temp = dict["auction_bidscount"] as? Int {
-            auction_bidscount = String(temp)
-        }
+        active_auction_price = AppModel.shared.getStringValue(dict, "active_auction_price")
+        auction_bidscount = AppModel.shared.getStringValue(dict, "auction_bidscount")
         if let temp = dict["usertype"] as? String {
             usertype = temp
         }
@@ -639,9 +622,7 @@ class AuctionModel : AppModel
             if let temp1 = temp["bookmark"] as? String {
                 bookmark = temp1
             }
-            if let temp1 = temp["bookmarkid"] as? String {
-                bookmarkid = temp1
-            }
+            bookmarkid = AppModel.shared.getStringValue(temp, "bookmarkid")
         }
         if let tempData = dict["bidlist"] as? [[String : Any]] {
             for temp in tempData {
@@ -649,9 +630,7 @@ class AuctionModel : AppModel
             }
         }
         your_bid = AppModel.shared.getIntValue(dict, "your_bid")
-        if let temp = dict["is_bid"] as? Int {
-            is_bid = temp
-        }
+        is_bid = AppModel.shared.getIntValue(dict, "is_bid")
         if let temp = dict["auto_check_upload"] as? String {
             auto_check_upload = temp
         }
@@ -661,9 +640,7 @@ class AuctionModel : AppModel
         if let temp = dict["cattype"] as? String {
             cattype = Int(temp)
         }
-        if let temp = dict["categorytype"] as? String {
-            categorytype = temp
-        }
+        categorytype = AppModel.shared.getStringValue(dict, "categorytype")
         if let temp = dict["mechanical"] as? String {
             mechanical = temp
         }
@@ -775,12 +752,8 @@ class WinnerModel : AppModel
         if let temp = dict["status"] as? String {
             status = temp
         }
-        if let temp = dict["winneing_price"] as? String {
-            winneing_price = temp
-        }
-        if let temp = dict["winnerid"] as? String {
-            winnerid = temp
-        }
+        winneing_price = AppModel.shared.getStringValue(dict, "winneing_price")
+        winnerid = AppModel.shared.getStringValue(dict, "winnerid")
     }
     
     func dictionary() -> [String:Any]  {
@@ -812,21 +785,11 @@ class BidModel : AppModel
         bidprice = ""
         bidon = ""
         
-        if let temp = dict["bidid"] as? String {
-            bidid = temp
-        }
-        if let temp = dict["userid"] as? String {
-            userid = temp
-        }
-        if let temp = dict["auctionid"] as? String {
-            auctionid = temp
-        }
-        if let temp = dict["bidprice"] as? String {
-            bidprice = temp
-        }
-        if let temp = dict["bidon"] as? String {
-            bidon = temp
-        }
+        bidid = AppModel.shared.getStringValue(dict, "bidid")
+        userid = AppModel.shared.getStringValue(dict, "userid")
+        auctionid = AppModel.shared.getStringValue(dict, "auctionid")
+        bidprice = AppModel.shared.getStringValue(dict, "bidprice")
+        bidon = AppModel.shared.getStringValue(dict, "bidon")
     }
     
     func dictionary() -> [String:Any]  {
@@ -862,9 +825,7 @@ class CountryModel : AppModel
         flag = ""
         code_3 = ""
         
-        if let temp = dict["countryid"] as? String {
-            countryid = temp
-        }
+        countryid = AppModel.shared.getStringValue(dict, "countryid")
         if let temp = dict["sortname"] as? String {
             sortname = temp
         }
@@ -889,7 +850,6 @@ class CountryModel : AppModel
 
 class CityModel : AppModel
 {
-    //{"statesid":"1","states_name":"Andaman and Nicobar Islands","country_id":"101","cityid":"1","city_name":"Bombuflat","state_id":"1"}
     var state_id : String!
     var states_name : String!
     var country_id : String!
@@ -912,18 +872,12 @@ class CityModel : AppModel
         cityid = ""
         city_name = ""
         
-        if let temp = dict["state_id"] as? String {
-            state_id = temp
-        }
+        state_id = AppModel.shared.getStringValue(dict, "state_id")
         if let temp = dict["states_name"] as? String {
             states_name = temp
         }
-        if let temp = dict["country_id"] as? String {
-            country_id = temp
-        }
-        if let temp = dict["cityid"] as? String {
-            cityid = temp
-        }
+        country_id = AppModel.shared.getStringValue(dict, "country_id")
+        cityid = AppModel.shared.getStringValue(dict, "cityid")
         if let temp = dict["city_name"] as? String {
             city_name = temp
         }
@@ -959,9 +913,7 @@ class FaqModel : AppModel
         faq_like = ""
         faq_dislike = ""
         
-        if let temp = dict["faqid"] as? String {
-            faqid = temp
-        }
+        faqid = AppModel.shared.getStringValue(dict, "faqid")
         if let temp = dict["faq_title"] as? String {
             faq_title = temp
         }
@@ -1056,12 +1008,8 @@ class CardModel : AppModel
         if let temp = dict["type"] as? String {
             type = temp
         }
-        if let temp = dict["user_card_id"] as? String {
-            user_card_id = temp
-        }
-        if let temp = dict["userid"] as? String {
-            userid = temp
-        }
+        user_card_id = AppModel.shared.getStringValue(dict, "user_card_id")
+        userid = AppModel.shared.getStringValue(dict, "userid")
     }
 }
 
@@ -1101,9 +1049,7 @@ class CategoryModel : AppModel
         if let temp = dict["category_name"] as? String {
             category_name = temp
         }
-        if let temp = dict["categoryid"] as? String {
-            categoryid = temp
-        }
+        categoryid = AppModel.shared.getStringValue(dict, "categoryid")
     }
     
     func dictionary() -> [String:Any]  {
@@ -1132,12 +1078,8 @@ class ChildCategoryModel : AppModel
         if let temp = dict["catchild_name"] as? String {
             catchild_name = temp
         }
-        if let temp = dict["catchild_id"] as? String {
-            catchild_id = temp
-        }
-        if let temp = dict["catid"] as? String {
-            catid = temp
-        }
+        catchild_id = AppModel.shared.getStringValue(dict, "catchild_id")
+        catid = AppModel.shared.getStringValue(dict, "catid")
     }
     
     func dictionary() -> [String:Any]  {
@@ -1251,15 +1193,11 @@ class PackageModel : AppModel
         auctionsleft = 0
         featured_price = ""
         
-        if let temp = dict["packageid"] as? String {
-            packageid = temp
-        }
+        packageid = AppModel.shared.getStringValue(dict, "packageid")
         if let temp = dict["package_title"] as? String {
             package_title = temp
         }
-        if let temp = dict["catid"] as? String {
-            catid = temp
-        }
+        catid = AppModel.shared.getStringValue(dict, "catid")
         if let temp = dict["package_decription"] as? String {
             package_decription = temp
         }
@@ -1281,9 +1219,7 @@ class PackageModel : AppModel
         if let temp = dict["package_status"] as? String {
             package_status = temp
         }
-        if let temp = dict["package_price"] as? String {
-            package_price = temp
-        }
+        package_price = AppModel.shared.getStringValue(dict, "package_price")
         if let temp = dict["package_savings"] as? String {
             package_savings = temp
         }
@@ -1317,10 +1253,7 @@ class PackageModel : AppModel
         if let temp = dict["auctionsleft"] as? Int {
             auctionsleft = temp
         }
-        if let temp = dict["featured_price"] as? String {
-            featured_price = temp
-        }
-        
+        featured_price = AppModel.shared.getStringValue(dict, "featured_price")
         if let tempDict = dict["packages"] as? [String : Any] {
             days = AppModel.shared.getStringValue(tempDict, "days")
             extras = AppModel.shared.getStringValue(tempDict, "extras")
@@ -1361,9 +1294,7 @@ class PackageFeatureModel : AppModel
         featured_price_status = ""
         type = ""
         
-        if let temp = dict["featured_price_id"] as? String {
-            featured_price_id = temp
-        }
+        featured_price_id = AppModel.shared.getStringValue(dict, "featured_price_id")
         featured_price = AppModel.shared.getStringValue(dict, "featured_price")
         if let temp = dict["featured_price_createdon"] as? String {
             featured_price_createdon = temp
@@ -1436,27 +1367,11 @@ class AuctionHistoryModel : AppModel
         auction_posted = ""
         postedon = ""
         
-        if let temp = dict["posted_historyid"] as? String {
-            posted_historyid = temp
-        }
-        if let temp = dict["package_purchaseid"] as? String {
-            package_purchaseid = temp
-        }
-        if let temp = dict["package_userid"] as? String {
-            package_userid = temp
-        }
-        if let temp = dict["total_auction"] as? String {
-            total_auction = temp
-        }
-        else if let temp = dict["total_auction"] as? Int {
-            total_auction = String(temp)
-        }
-        if let temp = dict["auction_posted"] as? String {
-            auction_posted = temp
-        }
-        else if let temp = dict["auction_posted"] as? Int {
-            auction_posted = String(temp)
-        }
+        posted_historyid = AppModel.shared.getStringValue(dict, "posted_historyid")
+        package_purchaseid = AppModel.shared.getStringValue(dict, "package_purchaseid")
+        package_userid = AppModel.shared.getStringValue(dict, "package_userid")
+        total_auction = AppModel.shared.getStringValue(dict, "total_auction")
+        auction_posted = AppModel.shared.getStringValue(dict, "auction_posted")
         if let temp = dict["postedon"] as? String {
             postedon = temp
         }
@@ -1500,15 +1415,9 @@ class FeatureAuctionModel : AppModel
         auction_title = ""
         createdon = ""
         
-        if let temp = dict["deposite_amount"] as? String {
-            deposite_amount = temp
-        }
-        if let temp = dict["userid"] as? String {
-            userid = temp
-        }
-        if let temp = dict["auctionid"] as? String {
-            auctionid = temp
-        }
+        deposite_amount = AppModel.shared.getStringValue(dict, "deposite_amount")
+        userid = AppModel.shared.getStringValue(dict, "userid")
+        auctionid = AppModel.shared.getStringValue(dict, "auctionid")
         if let temp = dict["featured_price_status"] as? String {
             featured_price_status = temp
         }
@@ -1560,25 +1469,13 @@ class BidAuctionModel : AppModel
         auction_title = ""
         auction_status = ""
         
-        if let temp = dict["bidid"] as? String {
-            bidid = temp
-        }
-        if let temp = dict["userid"] as? String {
-            userid = temp
-        }
-        if let temp = dict["auctionid"] as? String {
-            auctionid = temp
-        }
-        if let temp = dict["bidprice"] as? String {
-            bidprice = temp
-        }
-        if let temp = dict["bidon"] as? String {
-            bidon = temp
-        }
+        bidid = AppModel.shared.getStringValue(dict, "bidid")
+        userid = AppModel.shared.getStringValue(dict, "userid")
+        auctionid = AppModel.shared.getStringValue(dict, "auctionid")
+        bidprice = AppModel.shared.getStringValue(dict, "bidprice")
+        bidon = AppModel.shared.getStringValue(dict, "bidon")
         if let tempDict = dict["auction"] as? [String : Any] {
-            if let temp = tempDict["auction_price"] as? String {
-                auction_price = temp
-            }
+            auction_price = AppModel.shared.getStringValue(tempDict, "auction_price")
             if let temp = tempDict["auction_title"] as? String {
                 auction_title = temp
             }
@@ -1587,9 +1484,7 @@ class BidAuctionModel : AppModel
             }
         }
         else{
-            if let temp = dict["auction_price"] as? String {
-                auction_price = temp
-            }
+            auction_price = AppModel.shared.getStringValue(dict, "auction_price")
             if let temp = dict["auction_title"] as? String {
                 auction_title = temp
             }
@@ -1616,9 +1511,9 @@ class NotificationModel : AppModel
     
     init(dict : [String : Any])
     {
-        notificationid = dict["notificationid"] as? String ?? ""
-        userid = dict["userid"] as? String ?? ""
-        auctionid = dict["auctionid"] as? String ?? ""
+        notificationid = AppModel.shared.getStringValue(dict, "notificationid")
+        userid = AppModel.shared.getStringValue(dict, "userid")
+        auctionid = AppModel.shared.getStringValue(dict, "auctionid")
         createdon = dict["createdon"] as? String ?? ""
         status = dict["status"] as? String ?? ""
         auction_title = dict["auction_title"] as? String ?? ""

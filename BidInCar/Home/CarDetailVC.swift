@@ -518,6 +518,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     func serviceCallToGetAuctionDetail()
     {
         APIManager.shared.serviceCallToGetAuctionDetail(auctionData.auctionid, (isFromPayment || isFromNotification)) { (data) in
+            
             if let tempData : [String : Any] = data["auction"] as? [String : Any] {
                 self.auctionData = AuctionModel.init(dict: tempData)
             }
@@ -557,6 +558,10 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                 self.auctionPriceLbl.text = displayPriceWithCurrency(self.auctionData.auction_price)
             }else{
                 self.auctionPriceLbl.text = displayPriceWithCurrency(self.auctionData.active_auction_price)
+            }
+            
+            if self.auctionData.bidlist.count > 0 {
+                self.auctionData.auction_bidscount = String(self.auctionData.bidlist.count)
             }
             
             if self.isFromPayment || self.isFromNotification {

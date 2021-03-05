@@ -156,11 +156,11 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             if amount == 0 {
                 return
             }
-//            if PLATFORM.isSimulator {
-//                paytabPaymentCompleted("tran1234679")
-//            }else{
+            if PLATFORM.isSimulator {
+                paytabPaymentCompleted("tran1234679")
+            }else{
                 paytab()
-//            }
+            }
         }
         else if selectedTab == 2 {
             //bank
@@ -381,15 +381,15 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
         
         self.initialSetupViewController.didReceiveFinishTransactionCallback = {(responseCode, result, transactionID, tokenizedCustomerEmail, tokenizedCustomerPassword, token, transactionState, statementReference, traceCode) in
             
-            print("Response Code: \(responseCode)")
-            print("Response Result: \(result)")
-            print("Statement Reference: \(statementReference)");
-            print("Trace Code: \(traceCode)");
+            printData("Response Code: \(responseCode)")
+            printData("Response Result: \(result)")
+            printData("Statement Reference: \(statementReference)");
+            printData("Trace Code: \(traceCode)");
             
             // In Case you are using tokenization
-            print("Tokenization Cutomer Email: \(tokenizedCustomerEmail)");
-            print("Tokenization Customer Password: \(tokenizedCustomerPassword)");
-            print("Tokenization Token: \(token)");
+            printData("Tokenization Cutomer Email: \(tokenizedCustomerEmail)");
+            printData("Tokenization Customer Password: \(tokenizedCustomerPassword)");
+            printData("Tokenization Token: \(token)");
             
             if responseCode == 100 && String(transactionID) != "" {
                 self.paytabPaymentCompleted(String(transactionID))

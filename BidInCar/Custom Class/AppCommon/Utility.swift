@@ -188,7 +188,7 @@ func openUrlInSafari(strUrl : String)
             } else {
                 // Fallback on earlier versions
                 UIApplication.shared.open(url, options: [:]) { (isOpen) in
-                    print(isOpen)
+                    printData(isOpen)
                 }
             }
         }
@@ -198,7 +198,7 @@ func openUrlInSafari(strUrl : String)
 func printData(_ items: Any..., separator: String = " ", terminator: String = "\n")
 {
     #if DEBUG
-        print(items)
+//        print(items)
     #endif
 }
 
@@ -315,7 +315,7 @@ func storeImageInDocumentDirectory(image : UIImage, imageName : String)
     let imgName = imageName + ".png"
     let fileManager = FileManager.default
     let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(imgName)
-    //print(paths)
+    //printData(paths)
     let imageData = image.pngData()
     fileManager.createFile(atPath: paths as String, contents: imageData, attributes: nil)
 }
@@ -345,7 +345,7 @@ func deleteImage(fromDirectory imageName: String) -> Bool {
         try! fileManager.removeItem(atPath: paths)
         return true
     }else{
-        print("Something wronge.")
+        printData("Something wronge.")
         return false
     }
 }
@@ -357,7 +357,7 @@ func deleteFileFromDirectory(filePath : String)
     if fileManager.fileExists(atPath: filePath){
         try! fileManager.removeItem(atPath: filePath)
     }else{
-        print("Something wronge.")
+        printData("Something wronge.")
     }
 }
 
@@ -366,7 +366,7 @@ func storeVideoInDocumentDirectory(videoUrl : URL, videoName : String)
     let video_name = videoName + ".mp4"
     let fileManager = FileManager.default
     let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(video_name)
-    //print(paths)
+    //printData(paths)
     let videoData = try? Data(contentsOf: videoUrl)
     fileManager.createFile(atPath: paths as String, contents: videoData, attributes: nil)
 }
@@ -396,7 +396,7 @@ func deleteVideo(fromDirectory videoName: String) -> Bool {
         try! fileManager.removeItem(atPath: paths)
         return true
     }else{
-        print("Something wronge.")
+        printData("Something wronge.")
         return false
     }
 }
@@ -406,7 +406,7 @@ func storeAudioInDocumentDirectory(videoData : Data, audioName : String)
     let audio_name = audioName
     let fileManager = FileManager.default
     let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(audio_name)
-    print(paths)
+    printData(paths)
     fileManager.createFile(atPath: paths as String, contents: videoData, attributes: nil)
 }
 
@@ -432,7 +432,7 @@ func deleteAudio(fromDirectory audioName: String) -> Bool {
         try! fileManager.removeItem(atPath: paths)
         return true
     }else{
-        print("Something wronge.")
+        printData("Something wronge.")
         return false
     }
 }
@@ -466,7 +466,7 @@ func getThumbnailFrom(path: String, btn : UIButton) {
 //        return thumbnail
     } catch let error {
         
-        print("*** Error generating thumbnail: \(error.localizedDescription)")
+        printData("*** Error generating thumbnail: \(error.localizedDescription)")
     }
 }
 
@@ -675,7 +675,7 @@ func convertToDictionary(text: String) -> [String: Any]? {
         do {
             return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
         } catch {
-            print(error.localizedDescription)
+            printData(error.localizedDescription)
         }
     }
     return nil
@@ -686,7 +686,7 @@ func convertToArray(text: String) -> [Any]? {
         do {
             return try JSONSerialization.jsonObject(with: data, options: []) as? [Any]
         } catch {
-            print(error.localizedDescription)
+            printData(error.localizedDescription)
         }
     }
     return nil
