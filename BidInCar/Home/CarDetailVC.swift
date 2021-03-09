@@ -11,7 +11,6 @@ import MapKit
 
 class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
 
-    
     @IBOutlet weak var titleLbl: Label!
     @IBOutlet weak var editBtn: Button!
     @IBOutlet weak var auctionPriceLbl: Label!
@@ -25,6 +24,8 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var auctionTermsLbl: Label!
     @IBOutlet weak var lotLbl: Label!
     @IBOutlet weak var depositLbl: Label!
+    @IBOutlet weak var yourBidView: UIView!
+    @IBOutlet weak var yourBidLbl: Label!
     
     @IBOutlet weak var pictureView: UIView!
     @IBOutlet weak var constraintHeightPictureView: NSLayoutConstraint!//250
@@ -76,7 +77,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         if !isFromPayment && !isFromNotification {
             setAuctionData()
         }
-        
+        updateBidView()
         serviceCallToGetAuctionDetail()
     }
     
@@ -225,6 +226,34 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             constraintHeightCarCV.constant = 0
         }else{
             constraintHeightCarCV.constant = 150
+        }
+    }
+    
+    func updateBidView() {
+        if isUserBuyer() && isUserLogin() {
+            yourBidView.isHidden = false
+            var arrData = [BidModel]()
+            for temp in auctionData.bidlist {
+                if temp.userid == AppModel.shared.currentUser.userid {
+                    arrData.append(temp)
+                }
+            }
+            if arrData.count > 1
+            {
+                arrData.sort {
+                    let elapsed0 = Int($0.bidprice)
+                    let elapsed1 = Int($1.bidprice)
+                    return elapsed0! > elapsed1!
+                }
+            }
+            if arrData.count > 0 {
+                yourBidLbl.text = getTranslate("your_bid") + String(arrData[0].bidprice)
+            }
+            else{
+                yourBidLbl.text = getTranslate("your_bid") + String("0")
+            }
+        }else{
+            yourBidView.isHidden = true
         }
     }
     
@@ -545,7 +574,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                     self.autoCheckData = self.auctionData.autocheckupload
                 }
             }
-            
+            self.updateBidView()
             var arrBid = [Int]()
             for temp in self.auctionData.bidlist {
                 arrBid.append(Int(temp.bidprice)!)

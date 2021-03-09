@@ -461,3 +461,5 @@
 "address_colon" = "Address: ";
 "error_title" = "Error";
 "not_buyer_account" = "Your account is not buyer type. Create a buyer account to Bid";
+
+"your_bid" = "Your Bid : ";
