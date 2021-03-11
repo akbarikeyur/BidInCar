@@ -45,6 +45,7 @@
 "select_city" = "Please select city";
 "select_country" = "Please select country";
 "enter_phone" = "Please enter phone number";
+"enter_phone_code" = "Please select country code";
 "enter_password" = "Please enter password";
 "enter_confirm_password" = "Please enter confirm password";
 "invalid_match_password" = "Password and confirm password must be same";

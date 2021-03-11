@@ -44,6 +44,7 @@
 "select_city" = "الرجاء تحديد المدينة";
 "select_country" = "الرجاء تحديد الدولة";
 "enter_phone" = "الرجاء إدخال رقم الهاتف";
+"enter_phone_code" = "الرجاء تحديد رمز الدولة";
 "enter_confirm_password" = "الرجاء إدخال تأكيد كلمة المرور";
 "invalid_match_password" = "يجب أن تكون كلمة المرور وتأكيد كلمة المرور متطابقتين";
 "select_account_type" = "الرجاء تحديد نوع الحساب";

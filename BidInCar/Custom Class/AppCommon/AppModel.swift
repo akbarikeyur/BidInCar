@@ -832,9 +832,7 @@ class CountryModel : AppModel
         if let temp = dict["country_name"] as? String {
             country_name = temp
         }
-        if let temp = dict["phonecode"] as? String {
-            phonecode = temp
-        }
+        phonecode = AppModel.shared.getStringValue(dict, "phonecode")
         if let temp = dict["flag"] as? String {
             flag = temp
         }
@@ -1201,12 +1199,9 @@ class PackageModel : AppModel
         if let temp = dict["package_decription"] as? String {
             package_decription = temp
         }
-        if let temp = dict["days"] as? String {
-            days = temp
-        }
-        if let temp = dict["number_of_auction"] as? String {
-            number_of_auction = temp
-        }
+        days = AppModel.shared.getStringValue(dict, "days")
+        number_of_auction = AppModel.shared.getStringValue(dict, "number_of_auction")
+        
         if let temp = dict["type"] as? String {
             type = temp
         }

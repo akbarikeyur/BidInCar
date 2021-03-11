@@ -284,6 +284,9 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         else if countryTxt.myTxt.text?.trimmed == "" {
             displayToast("select_country")
         }
+        else if  selectedCountryCode.phonecode == "" {
+            displayToast("enter_phone_code")
+        }
         else if phoneTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_phone")
         }
@@ -348,7 +351,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
                 if AppModel.shared.currentUser.userid != "" {
                     let vc : VerificationVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "VerificationVC") as! VerificationVC
                     vc.isFromSignup = true
-                    self.navigationController?.pushViewController(vc, animated: true)
+                    UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
                 }else{
                     self.navigationController?.popViewController(animated: true)
                 }

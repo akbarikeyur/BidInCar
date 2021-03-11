@@ -171,6 +171,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             arrData.append(temp.dictionary())
         }
         setCountryData(arrData)
+        APIManager.shared.serviceCallToGetCountryList { (data) in
+            setCountryData(data)
+        }
         serviceCalledForData()
     }
     
