@@ -159,7 +159,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.nameLbl.text = dict.auction_title
             cell.addressLbl.text = dict.auction_address
             cell.priceLbl.text = getTranslate("price_space") + displayPriceWithCurrency(dict.active_auction_price)
-            cell.lotLbl.text = getTranslate("lot_id_new_line") + dict.auctionid
+            cell.lotLbl.text = getTranslate("new_line_lot_id") + dict.auctionid
             cell.contentView.backgroundColor = WhiteColor
             cell.selectionStyle = .none
             return cell
@@ -227,7 +227,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
             }
             cell.addressLbl.text = dict.auction_address
             cell.currentBidLbl.text = getTranslate("current_bid_space") + displayPriceWithCurrency(dict.active_auction_price)
-            cell.lotLbl.text = getTranslate("lot_id_new_line") + dict.auctionid
+            cell.lotLbl.text = getTranslate("new_line_lot_id") + dict.auctionid
             cell.bidLbl.text = getTranslate("bid_id") + dict.auction_bidscount
             cell.bidBtn.tag = indexPath.row
             cell.bidBtn.addTarget(self, action: #selector(clickToSeeBid(_:)), for: .touchUpInside)

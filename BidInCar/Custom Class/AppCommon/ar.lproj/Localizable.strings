@@ -248,7 +248,8 @@
 "current_bid_space" = " مناقصه قائمة";
 "bid_id" = "\nالمناقصة #";
 "bid_hash" = "المناقصة #";
-"lot_id_new_line" = "\nLot #";
+"new_line_lot_id" = "كثيرا # \n";
+"lot_id_new_line" = "\nكثيرا #";
 "lot_id" = "كثيرا #";
 "highest_price" = "اغلى سعر";
 "lowest_price" = "أقل سعر";
@@ -457,3 +458,10 @@
 "error_title" = "خطأ";
 "not_buyer_account" = "حسابك ليس من نوع المشتري. إنشاء حساب المشتري للمزايدة";
 "your_bid" = " : رهانك";
+
+"winner_colon" = " :الفائز";
+"bank_name_colon" = ":اسم البنك";
+"account_name_colon" = ":إسم الحساب";
+"account_number_colon" = ":رقم حساب";
+"iban_colon" = ":آيبان";
+"swift_code_colon" = ":رمز السرعة";

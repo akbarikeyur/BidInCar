@@ -56,7 +56,7 @@ class BookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.bidLbl.text = getTranslate("bid_id") + String(dict.auction_bidscount)
         cell.bidBtn.tag = indexPath.row
         cell.bidBtn.addTarget(self, action: #selector(clickToSeeBid(_:)), for: .touchUpInside)
-        cell.lotLbl.text = getTranslate("lot_id_new_line") + dict.auctionid
+        cell.lotLbl.text = getTranslate("new_line_lot_id") + dict.auctionid
         cell.bookmarkBtn.tag = indexPath.row
         cell.bookmarkBtn.addTarget(self, action: #selector(clickToBookmark(_:)), for: .touchUpInside)
         cell.reminderBtn.tag = indexPath.row

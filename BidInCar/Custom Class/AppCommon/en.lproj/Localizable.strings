@@ -254,7 +254,8 @@
 "current_bid_space" = "Current Bid ";
 "bid_id" = "Bid #\n";
 "bid_hash" = "Bid #";
-"lot_id_new_line" = "Lot #\n";
+"new_line_lot_id" = "Lot #\n";
+"lot_id_new_line" = "\nLot #";
 "lot_id" = "Lot #";
 "highest_price" = "Highest Price";
 "lowest_price" = "Lowest Price";
@@ -464,3 +465,10 @@
 "not_buyer_account" = "Your account is not buyer type. Create a buyer account to Bid";
 
 "your_bid" = "Your Bid : ";
+
+"winner_colon" = "Winner: ";
+"bank_name_colon" = "Bank Name:";
+"account_name_colon" = "Account Name:";
+"account_number_colon" = "Account Number:";
+"iban_colon" = "IBAN:";
+"swift_code_colon" = "Swift Code:";

@@ -31,6 +31,7 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     @IBOutlet weak var faqTblView: UITableView!
     @IBOutlet weak var constraintHeightFAQTblview: NSLayoutConstraint!
     
+    @IBOutlet weak var bankNoteLbl: Label!
     @IBOutlet var sellerView: UIView!
     @IBOutlet weak var sellerTblView: UITableView!
     @IBOutlet weak var constraintHeightSellerTbl: NSLayoutConstraint!
@@ -44,7 +45,7 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     var arrAddressData = [[String : String]]()
     var arrBillingData = [[String : String]]()
-    var arrSellerData = [[String : String]]()
+    var arrBankData = [[String : String]]()
     var shippingPrice = ""
     var selectedFaqIndex = 0
     var finalPrice = 0.0
@@ -61,7 +62,7 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         faqFullTblView.register(UINib.init(nibName: "CustomFaqTVC", bundle: nil), forCellReuseIdentifier: "CustomFaqTVC")
         
         billingTblView.backgroundColor = LightPurpleColor
-        
+        bankNoteLbl.text = ""
         currentPriceLbl.attributedText = attributedStringWithColor(currentPriceLbl.text!, ["Current Price"], color: BlueColor)
         totalPriceLbl.text = "Total AED 0"
         totalPriceLbl.attributedText = attributedStringWithColor(totalPriceLbl.text!, ["Total AED"], color: DarkGrayColor, font: UIFont.init(name: APP_MEDIUM, size: 14))
@@ -87,19 +88,19 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
            }
         }
         nameLbl.text = auctionData.auction_title
-        winnerLbl.text = "Winner: " + auctionData.auction_winner.winner_name
-        lotLbl.text = "Lot #\n" + auctionData.auctionid
-        currentPriceLbl.text = displayPriceWithCurrency("current_price_space") + displayPriceWithCurrency(auctionData.auction_winner.winneing_price)
-        currentPriceLbl.attributedText = attributedStringWithColor(currentPriceLbl.text!, [displayPriceWithCurrency("current_price_space")], color: BlueColor)
+        winnerLbl.text = getTranslate("winner_colon") + auctionData.auction_winner.winner_name
+        lotLbl.text = getTranslate("new_line_lot_id") + auctionData.auctionid
+        currentPriceLbl.text = getTranslate("current_price_space") + displayPriceWithCurrency(auctionData.auction_winner.winneing_price)
+        currentPriceLbl.attributedText = attributedStringWithColor(currentPriceLbl.text!, [getTranslate("current_price_space")], color: BlueColor)
         updateRemainingTime()
-        bidCountLbl.text = displayPriceWithCurrency("bid_hash") + auctionData.auction_bidscount
-        odometerLbl.text = displayPriceWithCurrency("odometer_space") + auctionData.auction_millage + "K.M"
+        bidCountLbl.text = getTranslate("bid_hash") + auctionData.auction_bidscount
+        odometerLbl.text = getTranslate("odometer_space") + auctionData.auction_millage + "K.M"
         if let endDate : Date = getDateFromDateString(strDate: auctionData.auction_end, format: "yyyy-MM-dd") {
             closeDateLbl.text = getTranslate("closing_date_space") + getDateStringFromDate(date: endDate, format: "dd MMM yyyy")
         }else{
             closeDateLbl.text = getTranslate("closing_date_space") + auctionData.auction_end
         }
-        auctionDescLbl.text = auctionData.auction_desc
+        auctionDescLbl.text = auctionData.auction_desc.html2String
         setupBuyerDetail()
     }
     
@@ -155,46 +156,41 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         constraintHeightAddressTblView.constant = CGFloat((arrAddressData.count * 40))
     }
     
-    func setupSellerDetail()
+    func setupBankDetail(_ bankDict : [String : Any])
     {
-        arrSellerData = [[String : String]]()
+        arrBankData = [[String : String]]()
         var dict = [String:String]()
-        dict["title"] = getTranslate("name_title")
-        dict["value"] = sellerData.user_name
-        arrSellerData.append(dict)
+        dict["title"] = getTranslate("bank_name_colon")
+        dict["value"] = AppModel.shared.getStringValue(bankDict, "bank_name")
+        arrBankData.append(dict)
         
         dict = [String:String]()
-        dict["title"] = getTranslate("email_title")
-        dict["value"] = sellerData.user_email
-        arrSellerData.append(dict)
+        dict["title"] = getTranslate("account_name_colon")
+        dict["value"] = AppModel.shared.getStringValue(bankDict, "auccount_name")
+        arrBankData.append(dict)
         
         dict = [String:String]()
-        dict["title"] = getTranslate("phone_title")
-        dict["value"] = sellerData.user_phonenumber
-        arrSellerData.append(dict)
+        dict["title"] = getTranslate("account_number_colon")
+        dict["value"] = AppModel.shared.getStringValue(bankDict, "account_number")
+        arrBankData.append(dict)
         
         dict = [String:String]()
-        dict["title"] = getTranslate("street_title")
-        dict["value"] = sellerData.user_streetaddress
-        arrSellerData.append(dict)
+        dict["title"] = getTranslate("iban_colon")
+        dict["value"] = AppModel.shared.getStringValue(bankDict, "iban")
+        arrBankData.append(dict)
         
         dict = [String:String]()
-        dict["title"] = getTranslate("country_title")
-        dict["value"] = sellerData.country_name
-        arrSellerData.append(dict)
+        dict["title"] = getTranslate("swift_code_colon")
+        dict["value"] = AppModel.shared.getStringValue(bankDict, "swift")
+        arrBankData.append(dict)
         
-        dict = [String:String]()
-        dict["title"] = getTranslate("city_title")
-        dict["value"] = sellerData.city_name
-        arrSellerData.append(dict)
-        
-        dict = [String:String]()
-        dict["title"] = getTranslate("total_payment_title")
-        dict["value"] = totalPriceLbl.text?.replacingOccurrences(of: getTranslate("total_space"), with: "")
-        arrSellerData.append(dict)
-        
+        bankNoteLbl.text = AppModel.shared.getStringValue(bankDict, "note")
+        updateSellerTblHeight()
+    }
+    
+    func updateSellerTblHeight() {
         sellerTblView.reloadData()
-        constraintHeightSellerTbl.constant = CGFloat((arrSellerData.count * 40))
+        constraintHeightSellerTbl.constant = CGFloat((arrBankData.count * 40))
     }
     
     func setupBillingInfo(_ auctionDict : [String : Any])
@@ -232,9 +228,12 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     
         
         billingTblView.reloadData()
-        constraintHeightBillingTblView.constant = CGFloat((arrBillingData.count * 40))
+        constraintHeightBillingTblView.constant = CGFloat((arrBillingData.count * 45))
         totalPriceLbl.text = getTranslate("total_space") + displayPriceWithCurrency(setFlotingPrice(finalPrice))
         totalPriceLbl.attributedText = attributedStringWithColor(totalPriceLbl.text!, [getTranslate("total_space")], color: DarkGrayColor, font: UIFont.init(name: APP_MEDIUM, size: 14))
+        if let bank_detail = auctionDict["bank_details"] as? [String : Any] {
+            setupBankDetail(bank_detail)
+        }
     }
     
     //MARK:- Button click event
@@ -243,13 +242,13 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     @IBAction func clickToConfirm(_ sender: Any) {
-//        displaySubViewtoParentView(self.view, subview: sellerView)
-//        setupSellerDetail()
-        let vc : SelectPaymentMethodVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "SelectPaymentMethodVC") as! SelectPaymentMethodVC
-        vc.paymentType = PAYMENT.AUCTION
-        vc.paymentParam = ["auctionid":auctionData.auctionid!]
-        vc.amount = finalPrice
-        self.navigationController?.pushViewController(vc, animated: true)
+        displaySubViewtoParentView(self.view, subview: sellerView)
+        updateSellerTblHeight()
+//        let vc : SelectPaymentMethodVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "SelectPaymentMethodVC") as! SelectPaymentMethodVC
+//        vc.paymentType = PAYMENT.AUCTION
+//        vc.paymentParam = ["auctionid":auctionData.auctionid!]
+//        vc.amount = finalPrice
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func clickToCloseSellerView(_ sender: Any) {
@@ -269,7 +268,14 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             return arrBillingData.count
         }
         else if tableView == sellerTblView {
-            return arrSellerData.count
+            return arrBankData.count
+        }
+        else if tableView == faqTblView {
+            if arrFaqData.count > 3 {
+                return 3
+            }else{
+                return arrFaqData.count
+            }
         }
         return arrFaqData.count
     }
@@ -309,7 +315,7 @@ class PaymentSummaryVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
         else if tableView == sellerTblView {
             let cell : CustomCarDetailTVC = addressTblView.dequeueReusableCell(withIdentifier: "CustomCarDetailTVC") as! CustomCarDetailTVC
-            let dict = arrSellerData[indexPath.row]
+            let dict = arrBankData[indexPath.row]
             cell.titleLbl.text = dict["title"]
             cell.titleLbl.textColor = WhiteColor
             cell.valueLbl.text = dict["value"]
