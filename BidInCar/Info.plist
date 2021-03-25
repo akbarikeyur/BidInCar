@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>BidinCars Auctions</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -34,32 +36,35 @@
 				<string>com.googleusercontent.apps.335995289028-8q0t81lmf0jbgopkcencf17j9f1ar56j</string>
 			</array>
 		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>twitterkit-mE9Ko4ako00oeakppPYLxeeZ5://</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>twitterkit-mE9Ko4ako00oeakppPYLxeeZ5</string>
-			</array>
-		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>FacebookAppID</key>
-	<string>2442101692723395</string>
+    <key>FacebookAppID</key>
+    <string>2442101692723395</string>
+    <key>FacebookDisplayName</key>
+    <string>BidInCar</string>
+    <key>FirebaseAutomaticScreenReportingEnabled</key>
+    <false/>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fbapi20130214</string>
+        <string>fbapi20130410</string>
+        <string>fbapi20130702</string>
+        <string>fbapi20131010</string>
+        <string>fbapi20131219</string>
+        <string>fbapi20140410</string>
+        <string>fbapi20140116</string>
+        <string>fbapi20150313</string>
+        <string>fbapi20150629</string>
+        <string>fbapi20160328</string>
+        <string>fbauth</string>
+        <string>fb-messenger-share-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
 	<key>FirebaseMessagingAutoInitEnabled</key>
 	<false/>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>twitter</string>
-		<string>twitterauth</string>
-	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

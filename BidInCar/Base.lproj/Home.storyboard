@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -215,7 +216,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIw-Eb-B63" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                                <rect key="frame" x="10" y="10" width="300" height="17"/>
+                                                                <rect key="frame" x="10" y="10" width="300" height="14"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="12"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -230,7 +231,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P8K-jW-mbe">
-                                                                <rect key="frame" x="10" y="27" width="310" height="123"/>
+                                                                <rect key="frame" x="10" y="24" width="310" height="126"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="8KQ-F4-ZfM">
                                                                     <size key="itemSize" width="50" height="50"/>
@@ -245,7 +246,7 @@
                                                                 </connections>
                                                             </collectionView>
                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpK-RJ-JJd" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                                                <rect key="frame" x="300" y="27" width="20" height="123"/>
+                                                                <rect key="frame" x="300" y="24" width="20" height="126"/>
                                                                 <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="20" id="RIV-UX-mlk"/>
@@ -288,21 +289,6 @@
                                                     <outlet property="delegate" destination="rjL-fd-RTT" id="mel-42-ULx"/>
                                                 </connections>
                                             </tableView>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No auction found yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1u-OP-ipB" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="250" width="300" height="20"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
-                                                        <integer key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                        <real key="value" value="14"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -310,12 +296,9 @@
                                             <constraint firstItem="aKD-Rf-nXs" firstAttribute="leading" secondItem="ANL-84-uBS" secondAttribute="leading" id="CZJ-Qe-Pd8"/>
                                             <constraint firstItem="aKD-Rf-nXs" firstAttribute="top" secondItem="VCX-r1-ceL" secondAttribute="bottom" constant="10" id="Ika-VR-OBU"/>
                                             <constraint firstAttribute="trailing" secondItem="VCX-r1-ceL" secondAttribute="trailing" id="U7J-NS-kI1"/>
-                                            <constraint firstItem="k1u-OP-ipB" firstAttribute="top" secondItem="VCX-r1-ceL" secondAttribute="bottom" constant="100" id="WAE-eu-BKe"/>
                                             <constraint firstAttribute="bottom" secondItem="aKD-Rf-nXs" secondAttribute="bottom" id="ZYU-ci-iKy"/>
-                                            <constraint firstItem="k1u-OP-ipB" firstAttribute="leading" secondItem="ANL-84-uBS" secondAttribute="leading" constant="10" id="iHK-A9-jD2"/>
                                             <constraint firstItem="VCX-r1-ceL" firstAttribute="top" secondItem="ANL-84-uBS" secondAttribute="top" id="kpG-pw-SIH"/>
                                             <constraint firstAttribute="trailing" secondItem="aKD-Rf-nXs" secondAttribute="trailing" id="lqt-8S-8qc"/>
-                                            <constraint firstAttribute="trailing" secondItem="k1u-OP-ipB" secondAttribute="trailing" constant="10" id="pXA-jb-Jmd"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -328,16 +311,34 @@
                                     <constraint firstItem="ANL-84-uBS" firstAttribute="leading" secondItem="HFU-or-Wqi" secondAttribute="leading" id="ngT-FX-dr5"/>
                                 </constraints>
                             </scrollView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No auction found yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1u-OP-ipB" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="10" y="486" width="300" height="16.5"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="kf8-31-Id3"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rVi-CE-QNo" firstAttribute="leading" secondItem="kf8-31-Id3" secondAttribute="leading" constant="10" id="3Dx-io-zwK"/>
                             <constraint firstItem="ZjP-m1-drQ" firstAttribute="leading" secondItem="kf8-31-Id3" secondAttribute="leading" id="3Yf-aE-tdN"/>
+                            <constraint firstItem="k1u-OP-ipB" firstAttribute="centerY" secondItem="vH8-OM-oSB" secondAttribute="centerY" constant="210" id="DB3-ti-yri"/>
                             <constraint firstItem="rZu-Uk-vFL" firstAttribute="top" secondItem="ZjP-m1-drQ" secondAttribute="bottom" constant="10" id="IVQ-TO-kOu"/>
                             <constraint firstItem="kf8-31-Id3" firstAttribute="trailing" secondItem="dSM-mP-Lyp" secondAttribute="trailing" constant="10" id="J0k-JR-Z7k"/>
                             <constraint firstItem="kf8-31-Id3" firstAttribute="trailing" secondItem="rZu-Uk-vFL" secondAttribute="trailing" constant="20" id="KVI-q1-aaF"/>
                             <constraint firstItem="HFU-or-Wqi" firstAttribute="leading" secondItem="kf8-31-Id3" secondAttribute="leading" id="Mqj-k4-MtX"/>
                             <constraint firstItem="HFU-or-Wqi" firstAttribute="trailing" secondItem="kf8-31-Id3" secondAttribute="trailing" id="PK0-du-mra"/>
+                            <constraint firstItem="k1u-OP-ipB" firstAttribute="leading" secondItem="kf8-31-Id3" secondAttribute="leading" constant="10" id="Qoh-AM-hzL"/>
                             <constraint firstItem="kf8-31-Id3" firstAttribute="bottom" secondItem="HFU-or-Wqi" secondAttribute="bottom" id="STJ-k5-zuV"/>
                             <constraint firstItem="hRi-j0-9ky" firstAttribute="top" secondItem="vH8-OM-oSB" secondAttribute="top" constant="-5" id="SZE-yI-xyL"/>
                             <constraint firstItem="dSM-mP-Lyp" firstAttribute="top" secondItem="rVi-CE-QNo" secondAttribute="bottom" id="ZKV-gW-JgK"/>
@@ -354,13 +355,14 @@
                             <constraint firstItem="kf8-31-Id3" firstAttribute="trailing" secondItem="WiP-ZI-Su5" secondAttribute="trailing" id="qQ5-5M-OEp"/>
                             <constraint firstItem="dSM-mP-Lyp" firstAttribute="leading" secondItem="kf8-31-Id3" secondAttribute="leading" constant="10" id="tzh-kU-hQE"/>
                             <constraint firstItem="HFU-or-Wqi" firstAttribute="top" secondItem="dSM-mP-Lyp" secondAttribute="bottom" id="wqX-pr-S0s"/>
+                            <constraint firstItem="kf8-31-Id3" firstAttribute="trailing" secondItem="k1u-OP-ipB" secondAttribute="trailing" constant="10" id="xRi-BF-LIc"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="kf8-31-Id3"/>
                     </view>
                     <navigationItem key="navigationItem" id="2e3-Vj-CRq"/>
                     <connections>
                         <outlet property="categoryCV" destination="rVi-CE-QNo" id="S4V-iU-U0n"/>
                         <outlet property="categoryLbl" destination="TTP-vP-sEG" id="Jgs-7K-IXu"/>
+                        <outlet property="constraintCenterNoDataLbl" destination="DB3-ti-yri" id="gUu-5y-2VI"/>
                         <outlet property="constraintHeightInfoCV" destination="XHX-O1-7Ph" id="uFf-jb-gj4"/>
                         <outlet property="constraintHeightTblView" destination="1uG-mH-ivQ" id="RKj-6Y-Pir"/>
                         <outlet property="featureCV" destination="P8K-jW-mbe" id="gF5-5R-FIQ"/>
@@ -368,6 +370,7 @@
                         <outlet property="filterView" destination="rrb-td-iCk" id="SkM-sI-OSL"/>
                         <outlet property="headerView" destination="o3n-hG-0XY" id="m86-Rr-OL7"/>
                         <outlet property="infoCV" destination="Ra1-Mk-P0W" id="RkK-sT-fgj"/>
+                        <outlet property="infoNextBtn" destination="bGb-Y6-x7X" id="jk1-Gf-m3q"/>
                         <outlet property="makeLbl" destination="ySR-ed-Rls" id="M2t-v8-OWG"/>
                         <outlet property="maxPriceTxt" destination="oum-hc-FjV" id="DbQ-zM-uEF"/>
                         <outlet property="minPriceTxt" destination="7Fh-iD-NXh" id="oJt-oI-cjp"/>
@@ -390,7 +393,7 @@
                             <rect key="frame" x="0.0" y="20" width="320" height="40"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filters" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CR4-YC-NkR" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                    <rect key="frame" x="134" y="7.5" width="52" height="25.5"/>
+                                    <rect key="frame" x="135.5" y="9.5" width="49" height="21"/>
                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -431,7 +434,7 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtC-pj-hTS" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                            <rect key="frame" x="20" y="70" width="280" height="21"/>
+                            <rect key="frame" x="20" y="70" width="280" height="17.5"/>
                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -446,7 +449,7 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="223-d8-2FF" customClass="View" customModule="BidInCar" customModuleProvider="target">
-                            <rect key="frame" x="20" y="96" width="280" height="41"/>
+                            <rect key="frame" x="20" y="92.5" width="280" height="41"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Category" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTP-vP-sEG" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                     <rect key="frame" x="15" y="10" width="250" height="21"/>
@@ -493,7 +496,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coM-lH-Fwq" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                            <rect key="frame" x="20" y="152" width="280" height="21"/>
+                            <rect key="frame" x="20" y="148.5" width="280" height="17.5"/>
                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -508,7 +511,7 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azQ-Sl-MJ6" customClass="View" customModule="BidInCar" customModuleProvider="target">
-                            <rect key="frame" x="20" y="178" width="280" height="41"/>
+                            <rect key="frame" x="20" y="171" width="280" height="41"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Make" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySR-ed-Rls" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                     <rect key="frame" x="15" y="10" width="250" height="21"/>
@@ -555,7 +558,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKx-uY-9NX" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                            <rect key="frame" x="20" y="234" width="280" height="21"/>
+                            <rect key="frame" x="20" y="227" width="280" height="17.5"/>
                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -570,7 +573,7 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2p-EL-QT9" customClass="View" customModule="BidInCar" customModuleProvider="target">
-                            <rect key="frame" x="20" y="260" width="280" height="41"/>
+                            <rect key="frame" x="20" y="249.5" width="280" height="41"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Model" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TJ-1l-RPA" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                     <rect key="frame" x="15" y="10" width="250" height="21"/>
@@ -617,7 +620,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min Price" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPe-AJ-zoa" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                            <rect key="frame" x="20" y="316" width="132.5" height="21"/>
+                            <rect key="frame" x="20" y="305.5" width="132.5" height="17.5"/>
                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -632,7 +635,7 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vZm-Af-QG3" customClass="View" customModule="BidInCar" customModuleProvider="target">
-                            <rect key="frame" x="20" y="342" width="132.5" height="45"/>
+                            <rect key="frame" x="20" y="331.5" width="132.5" height="45"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Fh-iD-NXh" customClass="TextField" customModule="BidInCar" customModuleProvider="target">
                                     <rect key="frame" x="15" y="10" width="102.5" height="25"/>
@@ -668,7 +671,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max Price" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUt-tK-zUG" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                            <rect key="frame" x="167.5" y="316" width="132.5" height="21"/>
+                            <rect key="frame" x="167.5" y="305.5" width="132.5" height="17.5"/>
                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -683,7 +686,7 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkS-2I-aJR" customClass="View" customModule="BidInCar" customModuleProvider="target">
-                            <rect key="frame" x="167.5" y="342" width="132.5" height="45"/>
+                            <rect key="frame" x="167.5" y="331.5" width="132.5" height="45"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oum-hc-FjV" customClass="TextField" customModule="BidInCar" customModuleProvider="target">
                                     <rect key="frame" x="15" y="10" width="102.5" height="25"/>
@@ -746,7 +749,8 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <viewLayoutGuide key="safeArea" id="bSK-8c-3bC"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="pkS-2I-aJR" firstAttribute="leading" secondItem="vZm-Af-QG3" secondAttribute="trailing" constant="15" id="0a5-zA-FS4"/>
                         <constraint firstItem="96N-JX-ur1" firstAttribute="trailing" secondItem="bSK-8c-3bC" secondAttribute="trailing" id="0zm-n3-xfz"/>
@@ -789,7 +793,6 @@
                         <constraint firstItem="dUt-tK-zUG" firstAttribute="top" secondItem="S2p-EL-QT9" secondAttribute="bottom" constant="15" id="zf1-fP-cck"/>
                         <constraint firstItem="vZm-Af-QG3" firstAttribute="trailing" secondItem="YPe-AJ-zoa" secondAttribute="trailing" id="ztF-B9-6EY"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="bSK-8c-3bC"/>
                 </view>
                 <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o3n-hG-0XY">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
@@ -825,7 +828,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="20" id="S9v-f8-IAU"/>
                             </constraints>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
+                            <inset key="imageEdgeInsets" minX="5" minY="15" maxX="5" maxY="15"/>
                             <state key="normal" image="next_black"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="buttonImage" value="next_black"/>
@@ -864,7 +867,7 @@
                                 <rect key="frame" x="-5" y="-5" width="330" height="1314"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Czp-gh-MvU">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULV-6n-0Gc" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="44"/>
@@ -906,7 +909,7 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mitsubishi Attrage" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Shw-7F-L1N" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="10" width="240" height="25.5"/>
+                                        <rect key="frame" x="40" y="10" width="240" height="25"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -935,16 +938,16 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTq-rH-anD">
-                                <rect key="frame" x="0.0" y="44.5" width="320" height="1259.5"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="1260"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Fo-0B-kkn">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1132.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1116.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDu-NL-ven" customClass="View" customModule="BidInCar" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AED 21,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKk-mK-yyH" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="112.5" y="3" width="95" height="25.5"/>
+                                                        <rect key="frame" x="112.5" y="3" width="95.5" height="21"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -959,7 +962,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Minimum bid increment AED 100)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftA-yu-c0d" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="60.5" y="28.5" width="199.5" height="17"/>
+                                                        <rect key="frame" x="68.5" y="24" width="183" height="14"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -991,7 +994,7 @@
                                                             <action selector="clickToBookmark:" destination="2JR-zh-nhY" eventType="touchUpInside" id="Swe-Df-FjC"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haZ-pg-yUH">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haZ-pg-yUH">
                                                         <rect key="frame" x="270" y="0.0" width="50" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="0CM-3j-VdI"/>
@@ -1022,12 +1025,12 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZw-Fn-qAl">
-                                                <rect key="frame" x="0.0" y="50" width="320" height="54"/>
+                                                <rect key="frame" x="0.0" y="50" width="320" height="51"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3qq-mk-omN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="102.5" height="54"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="102.5" height="51"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 Min. 22 S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fWy-eW-JTs" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2 Min. 22 S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fWy-eW-JTs" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                                                 <rect key="frame" x="2" y="10" width="98.5" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                                 <color key="textColor" red="1" green="0.27450980392156865" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
@@ -1042,7 +1045,7 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Remaining" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFK-5l-Hes" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Time Remaining" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFK-5l-Hes" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                                                 <rect key="frame" x="2" y="27" width="98.5" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                 <color key="textColor" red="1" green="0.27450980390000002" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1058,7 +1061,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZhK-Jd-uCM" customClass="ImageView" customModule="BidInCar" customModuleProvider="target">
-                                                                <rect key="frame" x="101.5" y="10" width="1" height="34"/>
+                                                                <rect key="frame" x="101.5" y="10" width="1" height="31"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="1" id="AMj-a7-hxP"/>
                                                                 </constraints>
@@ -1084,9 +1087,9 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fy6-77-NPW">
-                                                        <rect key="frame" x="102.5" y="0.0" width="122.5" height="54"/>
+                                                        <rect key="frame" x="102.5" y="0.0" width="122.5" height="51"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07:07 pm 01 Jul 2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bay-l8-WBT" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="07:07 pm 01 Jul 2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bay-l8-WBT" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                                                 <rect key="frame" x="2" y="10" width="118.5" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                                 <color key="textColor" red="1" green="0.27450980390000002" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1101,7 +1104,7 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuA-wp-oVH" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="End Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuA-wp-oVH" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                                                 <rect key="frame" x="2" y="27" width="118.5" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                 <color key="textColor" red="1" green="0.27450980390000002" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1117,7 +1120,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hfm-kr-z6D" customClass="ImageView" customModule="BidInCar" customModuleProvider="target">
-                                                                <rect key="frame" x="121.5" y="10" width="1" height="34"/>
+                                                                <rect key="frame" x="121.5" y="10" width="1" height="31"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="1" id="PWK-OV-lJ8"/>
                                                                 </constraints>
@@ -1143,7 +1146,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFD-Wv-nop">
-                                                        <rect key="frame" x="225" y="0.0" width="95" height="54"/>
+                                                        <rect key="frame" x="225" y="0.0" width="95" height="51"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAc-fH-zKC" customClass="Button" customModule="BidInCar" customModuleProvider="target">
                                                                 <rect key="frame" x="22.5" y="10" width="50" height="20"/>
@@ -1168,7 +1171,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auction Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5L-vE-5La" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                                <rect key="frame" x="4" y="35" width="87" height="17"/>
+                                                                <rect key="frame" x="8" y="35" width="79" height="14"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -1183,7 +1186,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vj9-Bi-q9S">
-                                                                <rect key="frame" x="94" y="10" width="1" height="34"/>
+                                                                <rect key="frame" x="94" y="10" width="1" height="31"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="1" id="orq-6p-pcJ"/>
                                                                 </constraints>
@@ -1219,7 +1222,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sF1-R4-vAX">
-                                                <rect key="frame" x="0.0" y="104" width="320" height="54"/>
+                                                <rect key="frame" x="0.0" y="101" width="320" height="54"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPR-17-bmq">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
@@ -1251,7 +1254,7 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Zg-XS-nwd">
-                                                <rect key="frame" x="0.0" y="158" width="320" height="170"/>
+                                                <rect key="frame" x="0.0" y="155" width="320" height="170"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1l7-lZ-ZKd">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
@@ -1337,7 +1340,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="K4Y-DS-CvF">
-                                                <rect key="frame" x="0.0" y="328" width="320" height="125.5"/>
+                                                <rect key="frame" x="0.0" y="325" width="320" height="125.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwB-GC-Rpw" customClass="View" customModule="BidInCar" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="125.5"/>
@@ -1516,7 +1519,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pr-bg-iHi" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="463.5" width="79" height="20"/>
+                                                <rect key="frame" x="20" y="460.5" width="71.5" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                 <color key="textColor" red="0.30588235294117649" green="0.29803921568627451" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1531,7 +1534,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Doors - 5 Seats - GCC Specifications" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RX-Vw-Vls" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="488.5" width="280" height="17"/>
+                                                <rect key="frame" x="20" y="482" width="280" height="14"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1546,10 +1549,10 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rq6-ir-AnM">
-                                                <rect key="frame" x="254" y="510.5" width="56" height="22"/>
+                                                <rect key="frame" x="258" y="501" width="52" height="22"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJF-SM-zg0" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="56" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="52" height="22"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="22" id="F6e-qN-L7J"/>
                                                         </constraints>
@@ -1570,7 +1573,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="buG-Yf-Njh">
-                                                <rect key="frame" x="0.0" y="532.5" width="320" height="123"/>
+                                                <rect key="frame" x="0.0" y="523" width="320" height="119.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AYK-Mh-reH" customClass="View" customModule="BidInCar" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
@@ -1580,7 +1583,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                                 <state key="normal" image="info"/>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lot # 38374949 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tle-7A-6mI" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                                <rect key="frame" x="50" y="10" width="113" height="20"/>
+                                                                <rect key="frame" x="50" y="12" width="102" height="16.5"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -1612,7 +1615,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0d-QL-lrK" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="20" y="50" width="47.5" height="20"/>
+                                                        <rect key="frame" x="20" y="50" width="43" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                         <color key="textColor" red="0.30588235289999999" green="0.29803921570000003" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1627,7 +1630,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="otE-Mf-47R">
-                                                        <rect key="frame" x="0.0" y="75" width="320" height="48"/>
+                                                        <rect key="frame" x="0.0" y="71.5" width="320" height="48"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="kaL-Pa-fVy"/>
@@ -1654,7 +1657,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Terms &amp; Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asD-Yr-OVc" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="665.5" width="147" height="29"/>
+                                                <rect key="frame" x="20" y="652.5" width="131" height="29"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                 <color key="textColor" red="0.30588235289999999" green="0.29803921570000003" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1669,14 +1672,14 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zsq-OS-8jn">
-                                                <rect key="frame" x="20" y="665.5" width="280" height="29"/>
+                                                <rect key="frame" x="20" y="652.5" width="280" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <connections>
                                                     <action selector="clickToTermsConditions:" destination="2JR-zh-nhY" eventType="touchUpInside" id="1RC-q6-P26"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms &amp; Conditions details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWd-Er-E6m" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="699.5" width="280" height="17"/>
+                                                <rect key="frame" x="20" y="686.5" width="280" height="14"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -1691,7 +1694,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yQ1-Zi-BXY">
-                                                <rect key="frame" x="0.0" y="726.5" width="320" height="70"/>
+                                                <rect key="frame" x="0.0" y="710.5" width="320" height="70"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bvt-o8-WKc">
                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
@@ -1700,7 +1703,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                                 <rect key="frame" x="20" y="0.0" width="280" height="50"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download Inspection Report" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7P-iF-DcC" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                                        <rect key="frame" x="47" y="9" width="170.5" height="17"/>
+                                                                        <rect key="frame" x="47" y="9" width="153.5" height="14"/>
                                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -1715,7 +1718,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                                         </userDefinedRuntimeAttributes>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To view the report you will need to Download" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVC-k4-aAr" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                                        <rect key="frame" x="47" y="26" width="202" height="13"/>
+                                                                        <rect key="frame" x="47" y="23" width="180.5" height="10.5"/>
                                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="9"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -1774,13 +1777,13 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tka-Id-b37" customClass="View" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="796.5" width="280" height="128"/>
+                                                <rect key="frame" x="20" y="780.5" width="280" height="128"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mro-i5-HX2">
                                                         <rect key="frame" x="0.0" y="98" width="280" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map For Inspection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vet-uO-HjV" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                                <rect key="frame" x="10" y="6.5" width="115" height="17"/>
+                                                                <rect key="frame" x="10" y="8" width="104.5" height="14"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -1837,9 +1840,9 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zms-ep-a69" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="944.5" width="280" height="0.0"/>
+                                                <rect key="frame" x="20" y="928.5" width="280" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" systemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
@@ -1852,7 +1855,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bfD-J4-dfp" customClass="ImageView" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="944.5" width="280" height="1"/>
+                                                <rect key="frame" x="20" y="928.5" width="280" height="1"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="1V7-5U-LEK"/>
@@ -1864,7 +1867,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VHq-0e-oIU">
-                                                <rect key="frame" x="10" y="965.5" width="300" height="150"/>
+                                                <rect key="frame" x="10" y="949.5" width="300" height="150"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="BgX-sN-Uah"/>
@@ -1947,6 +1950,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="g7G-wS-l9J"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Czp-gh-MvU" firstAttribute="top" secondItem="g7G-wS-l9J" secondAttribute="top" id="7Ce-LT-jBU"/>
@@ -1961,7 +1965,6 @@ dG8gYmlkLiBEZXBvc2l0A
                             <constraint firstItem="g7G-wS-l9J" firstAttribute="bottom" secondItem="VTq-rH-anD" secondAttribute="bottom" id="qe7-ac-N37"/>
                             <constraint firstItem="Czp-gh-MvU" firstAttribute="leading" secondItem="g7G-wS-l9J" secondAttribute="leading" id="zsM-mL-dhm"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="g7G-wS-l9J"/>
                     </view>
                     <size key="freeformSize" width="320" height="1304"/>
                     <connections>
@@ -2188,7 +2191,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                             <state key="normal" title="Add Deposit">
-                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="titleColor" systemColor="darkTextColor"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
@@ -2200,7 +2203,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwn-yn-A4P">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwn-yn-A4P">
                                             <rect key="frame" x="250" y="0.0" width="50" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="LHl-Lg-CBi"/>
@@ -2212,7 +2215,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="Hwn-yn-A4P" secondAttribute="bottom" id="1DY-IP-SxM"/>
                                         <constraint firstAttribute="trailing" secondItem="Hwn-yn-A4P" secondAttribute="trailing" id="7lA-vQ-eVG"/>
@@ -2273,7 +2276,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                     </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="200" id="3i4-x5-LJN"/>
                                 <constraint firstItem="TUb-yu-CHr" firstAttribute="leading" secondItem="DRO-hi-hiM" secondAttribute="leading" id="GiG-zf-tPD"/>
@@ -2294,6 +2297,7 @@ dG8gYmlkLiBEZXBvc2l0A
                             </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="cLM-no-aAb"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="xay-jR-M8V" secondAttribute="bottom" id="3gg-gd-t7L"/>
@@ -2304,7 +2308,6 @@ dG8gYmlkLiBEZXBvc2l0A
                         <constraint firstItem="DRO-hi-hiM" firstAttribute="leading" secondItem="cLM-no-aAb" secondAttribute="leading" constant="10" id="bLp-kR-bNC"/>
                         <constraint firstItem="cLM-no-aAb" firstAttribute="trailing" secondItem="xay-jR-M8V" secondAttribute="trailing" id="dqj-Ym-2MG"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="cLM-no-aAb"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="1734" y="514"/>
@@ -2351,7 +2354,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                         <state key="normal" image="filter"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wish List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjx-VO-r70" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                        <rect key="frame" x="121" y="9.5" width="78" height="25.5"/>
+                                        <rect key="frame" x="123.5" y="14" width="73.5" height="21"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2391,7 +2394,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                 </connections>
                             </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no items in the wish list" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWY-Rb-MaE" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                <rect key="frame" x="20" y="273" width="280" height="22.5"/>
+                                <rect key="frame" x="20" y="274.5" width="280" height="19"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -2406,6 +2409,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                 </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="MaU-sa-6fL"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MaU-sa-6fL" firstAttribute="trailing" secondItem="aWY-Rb-MaE" secondAttribute="trailing" constant="20" id="69a-PK-IbY"/>
@@ -2423,7 +2427,6 @@ dG8gYmlkLiBEZXBvc2l0A
                             <constraint firstItem="aWY-Rb-MaE" firstAttribute="leading" secondItem="MaU-sa-6fL" secondAttribute="leading" constant="20" id="uXC-uv-S4y"/>
                             <constraint firstItem="MaU-sa-6fL" firstAttribute="bottom" secondItem="i16-4d-vdy" secondAttribute="bottom" id="yld-HV-K7o"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="MaU-sa-6fL"/>
                     </view>
                     <navigationItem key="navigationItem" id="509-FK-lKz"/>
                     <connections>
@@ -2447,7 +2450,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cD5-jo-pKR">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="547"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="app_bg" translatesAutoresizingMaskIntoConstraints="NO" id="2bl-Yy-Obi">
                                                 <rect key="frame" x="-5" y="-5" width="330" height="578"/>
@@ -2570,7 +2573,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mitsubishi Attrage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfs-cr-aTW" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="90" y="210" width="220" height="20"/>
+                                                <rect key="frame" x="90" y="210" width="220" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2585,7 +2588,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starting Price : AED 3000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEM-0F-6kA" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="90" y="230" width="220" height="17"/>
+                                                <rect key="frame" x="90" y="226.5" width="220" height="14"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" red="0.40784313729999999" green="0.38431372549999998" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2600,7 +2603,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lot# 12313" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2SD-b5-toB" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="90" y="247" width="220" height="17"/>
+                                                <rect key="frame" x="90" y="240.5" width="220" height="14"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -2615,16 +2618,16 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9QY-fG-YRj">
-                                                <rect key="frame" x="90" y="264" width="22" height="22"/>
+                                                <rect key="frame" x="90" y="254.5" width="22" height="22"/>
                                                 <state key="normal" image="bookmark"/>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vS-zm-1Gw">
-                                                <rect key="frame" x="0.0" y="291" width="320" height="35"/>
+                                                <rect key="frame" x="0.0" y="281.5" width="320" height="35"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ra-Qa-4jc">
                                                         <rect key="frame" x="0.0" y="0.0" width="85" height="35"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncC-T7-9Ph" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Current Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncC-T7-9Ph" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="85" height="14"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="10"/>
                                                                 <nil key="textColor"/>
@@ -2639,7 +2642,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AED 10,500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Cb-bi-25s" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="AED 10,500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Cb-bi-25s" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                                                 <rect key="frame" x="5" y="14" width="75" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                 <nil key="textColor"/>
@@ -2669,7 +2672,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOo-zQ-ZD9">
                                                         <rect key="frame" x="85" y="0.0" width="65" height="35"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bids #" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOP-gJ-fq0" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Bids #" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOP-gJ-fq0" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="65" height="14"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="10"/>
                                                                 <nil key="textColor"/>
@@ -2684,7 +2687,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="68" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NL9-VH-Xw0" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="68" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NL9-VH-Xw0" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                                                 <rect key="frame" x="5" y="14" width="55" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                 <nil key="textColor"/>
@@ -2714,7 +2717,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyV-t0-pdt">
                                                         <rect key="frame" x="150" y="0.0" width="85" height="35"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min. Increment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPG-FC-ZWP" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Min. Increment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPG-FC-ZWP" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="85" height="14"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="10"/>
                                                                 <nil key="textColor"/>
@@ -2729,7 +2732,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AED 1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8o-KP-3Xq" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="AED 1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8o-KP-3Xq" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                                                 <rect key="frame" x="5" y="14" width="75" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                 <nil key="textColor"/>
@@ -2759,7 +2762,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNk-s0-lmC">
                                                         <rect key="frame" x="235" y="0.0" width="85" height="35"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odometer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifT-GY-KuQ" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Odometer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifT-GY-KuQ" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="85" height="14"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="10"/>
                                                                 <nil key="textColor"/>
@@ -2774,7 +2777,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="188,266 K.M." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hv2-lX-mvK" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="188,266 K.M." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hv2-lX-mvK" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="14" width="85" height="17"/>
                                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                 <nil key="textColor"/>
@@ -2824,10 +2827,10 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4i-SR-egy">
-                                                <rect key="frame" x="0.0" y="326" width="320" height="24"/>
+                                                <rect key="frame" x="0.0" y="316.5" width="320" height="22"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time remaining 1 Min 3 S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="91k-UV-w1v" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="31" y="5" width="123.5" height="14"/>
+                                                        <rect key="frame" x="40.5" y="5" width="114" height="12"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="10"/>
                                                         <color key="textColor" red="0.8901960784313725" green="0.11764705882352941" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -2842,7 +2845,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pc8-kq-Mv3" customClass="ImageView" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="159.5" y="3" width="1" height="18"/>
+                                                        <rect key="frame" x="159.5" y="3" width="1" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="1" id="b3D-iv-JXj"/>
                                                         </constraints>
@@ -2853,7 +2856,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time 06:45pm 27 Aug 2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0mU-H9-uWf" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="165.5" y="5" width="144.5" height="14"/>
+                                                        <rect key="frame" x="165.5" y="5" width="144" height="12"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="10"/>
                                                         <color key="textColor" red="0.8901960784313725" green="0.11764705882352941" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -2884,7 +2887,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x64-QK-8aH" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="360" width="79" height="20"/>
+                                                <rect key="frame" x="10" y="348.5" width="71.5" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                 <color key="textColor" red="0.30588235289999999" green="0.29803921570000003" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2899,7 +2902,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Doors - 5 Seats - GCC Specifications - Air condition - Air BagsCentral Lock" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGN-jz-god" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="10" y="385" width="300" height="34"/>
+                                                <rect key="frame" x="10" y="370" width="300" height="28"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -2914,10 +2917,10 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7y-dS-YQ4">
-                                                <rect key="frame" x="0.0" y="434" width="320" height="100"/>
+                                                <rect key="frame" x="0.0" y="413" width="320" height="100"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort By:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yW5-1V-oX7" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                        <rect key="frame" x="164.5" y="8" width="35.5" height="14"/>
+                                                        <rect key="frame" x="163.5" y="9" width="36.5" height="12"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="10"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -3007,7 +3010,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                                 </constraints>
                                             </view>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGh-Zb-Z6Y" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                                <rect key="frame" x="85" y="544" width="150" height="14"/>
+                                                <rect key="frame" x="85" y="523" width="150" height="14"/>
                                                 <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="FMe-ub-MDc"/>
@@ -3074,6 +3077,7 @@ dG8gYmlkLiBEZXBvc2l0A
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="wZ7-eq-b6h"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ehb-Dm-Iff" firstAttribute="leading" secondItem="wZ7-eq-b6h" secondAttribute="leading" id="7J4-at-WAP"/>
@@ -3081,7 +3085,6 @@ dG8gYmlkLiBEZXBvc2l0A
                             <constraint firstItem="wZ7-eq-b6h" firstAttribute="trailing" secondItem="Ehb-Dm-Iff" secondAttribute="trailing" id="dVS-34-jMa"/>
                             <constraint firstItem="wZ7-eq-b6h" firstAttribute="bottom" secondItem="Ehb-Dm-Iff" secondAttribute="bottom" id="zjp-Og-VcO"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="wZ7-eq-b6h"/>
                     </view>
                     <connections>
                         <outlet property="auctionEndReminderBtn" destination="pCR-ID-Uy3" id="e9G-BG-6W0"/>
@@ -3420,6 +3423,7 @@ dG8gYmlkLiBEZXBvc2l0A
                             </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="90n-fo-O5E"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="Ahg-8w-Yqk" firstAttribute="top" secondItem="q3N-q3-eU9" secondAttribute="top" constant="60" id="0aS-hA-H24"/>
@@ -3436,7 +3440,6 @@ dG8gYmlkLiBEZXBvc2l0A
                         <constraint firstAttribute="trailing" secondItem="Ahg-8w-Yqk" secondAttribute="trailing" id="wYg-kf-TmX"/>
                         <constraint firstAttribute="trailing" secondItem="7SI-sk-scE" secondAttribute="trailing" constant="10" id="yoe-bf-xkQ"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="90n-fo-O5E"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="4733" y="171"/>
@@ -3496,7 +3499,8 @@ dG8gYmlkLiBEZXBvc2l0A
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ZNm-AW-q1g"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="QDV-7m-vGZ" firstAttribute="top" secondItem="RcZ-Pt-HM8" secondAttribute="top" id="4Cu-Ty-1bx"/>
                             <constraint firstAttribute="bottom" secondItem="QDV-7m-vGZ" secondAttribute="bottom" id="4FV-CR-Lwf"/>
@@ -3506,7 +3510,6 @@ dG8gYmlkLiBEZXBvc2l0A
                             <constraint firstItem="2Jn-hI-L4r" firstAttribute="leading" secondItem="ZNm-AW-q1g" secondAttribute="leading" id="KgJ-YT-hcG"/>
                             <constraint firstItem="QDV-7m-vGZ" firstAttribute="leading" secondItem="ZNm-AW-q1g" secondAttribute="leading" id="TlM-cL-3tz"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ZNm-AW-q1g"/>
                     </view>
                     <connections>
                         <outlet property="myMapView" destination="QDV-7m-vGZ" id="aQB-26-Cs7"/>
@@ -3535,6 +3538,264 @@ dG8gYmlkLiBEZXBvc2l0A
             <point key="canvasLocation" x="3364" y="172"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="0mU-H9-uWf">
+            <size key="intrinsicContentSize" width="144" height="12"/>
+        </designable>
+        <designable name="1B9-2s-4Ma">
+            <size key="intrinsicContentSize" width="18" height="22"/>
+        </designable>
+        <designable name="2SD-b5-toB">
+            <size key="intrinsicContentSize" width="61" height="14"/>
+        </designable>
+        <designable name="3Pr-bg-iHi">
+            <size key="intrinsicContentSize" width="71.5" height="16.5"/>
+        </designable>
+        <designable name="3QQ-Cn-ULR">
+            <size key="intrinsicContentSize" width="59.5" height="14"/>
+        </designable>
+        <designable name="3RX-Vw-Vls">
+            <size key="intrinsicContentSize" width="211" height="14"/>
+        </designable>
+        <designable name="3TJ-1l-RPA">
+            <size key="intrinsicContentSize" width="88.5" height="17.5"/>
+        </designable>
+        <designable name="4Cb-bi-25s">
+            <size key="intrinsicContentSize" width="64" height="14"/>
+        </designable>
+        <designable name="569-gs-iQM">
+            <size key="intrinsicContentSize" width="17.5" height="14"/>
+        </designable>
+        <designable name="71U-vP-SoU">
+            <size key="intrinsicContentSize" width="30" height="47"/>
+        </designable>
+        <designable name="7Oy-zg-g77">
+            <size key="intrinsicContentSize" width="96" height="32"/>
+        </designable>
+        <designable name="91k-UV-w1v">
+            <size key="intrinsicContentSize" width="114" height="12"/>
+        </designable>
+        <designable name="AFK-5l-Hes">
+            <size key="intrinsicContentSize" width="86.5" height="14"/>
+        </designable>
+        <designable name="AKx-uY-9NX">
+            <size key="intrinsicContentSize" width="42" height="17.5"/>
+        </designable>
+        <designable name="CR4-YC-NkR">
+            <size key="intrinsicContentSize" width="49" height="21"/>
+        </designable>
+        <designable name="D32-YT-D8V">
+            <size key="intrinsicContentSize" width="98" height="35"/>
+        </designable>
+        <designable name="DI7-ax-BOJ">
+            <size key="intrinsicContentSize" width="30" height="47"/>
+        </designable>
+        <designable name="Dwi-4s-hO2">
+            <size key="intrinsicContentSize" width="203.5" height="22.5"/>
+        </designable>
+        <designable name="Dxh-g3-zIO">
+            <size key="intrinsicContentSize" width="88" height="25.5"/>
+        </designable>
+        <designable name="EWd-Er-E6m">
+            <size key="intrinsicContentSize" width="143" height="14"/>
+        </designable>
+        <designable name="GlA-Gg-58k">
+            <size key="intrinsicContentSize" width="557.5" height="20"/>
+        </designable>
+        <designable name="GqO-hr-cGH">
+            <size key="intrinsicContentSize" width="50" height="50"/>
+        </designable>
+        <designable name="Hjh-aK-W38">
+            <size key="intrinsicContentSize" width="18" height="22"/>
+        </designable>
+        <designable name="HtC-pj-hTS">
+            <size key="intrinsicContentSize" width="61.5" height="17.5"/>
+        </designable>
+        <designable name="IIw-Eb-B63">
+            <size key="intrinsicContentSize" width="48" height="14"/>
+        </designable>
+        <designable name="IuA-wp-oVH">
+            <size key="intrinsicContentSize" width="51" height="14"/>
+        </designable>
+        <designable name="Kjx-VO-r70">
+            <size key="intrinsicContentSize" width="73.5" height="21"/>
+        </designable>
+        <designable name="LPG-FC-ZWP">
+            <size key="intrinsicContentSize" width="67" height="12"/>
+        </designable>
+        <designable name="NAc-fH-zKC">
+            <size key="intrinsicContentSize" width="34" height="26"/>
+        </designable>
+        <designable name="NL9-VH-Xw0">
+            <size key="intrinsicContentSize" width="13.5" height="14"/>
+        </designable>
+        <designable name="O8g-jh-P8i">
+            <size key="intrinsicContentSize" width="50" height="50"/>
+        </designable>
+        <designable name="OJF-SM-zg0">
+            <size key="intrinsicContentSize" width="52" height="26"/>
+        </designable>
+        <designable name="P1g-Ky-etw">
+            <size key="intrinsicContentSize" width="54" height="29"/>
+        </designable>
+        <designable name="Q8W-aQ-LSf">
+            <size key="intrinsicContentSize" width="17.5" height="14"/>
+        </designable>
+        <designable name="RjX-sz-n3E">
+            <size key="intrinsicContentSize" width="103" height="35"/>
+        </designable>
+        <designable name="SGN-jz-god">
+            <size key="intrinsicContentSize" width="414.5" height="14"/>
+        </designable>
+        <designable name="Shw-7F-L1N">
+            <size key="intrinsicContentSize" width="146" height="21"/>
+        </designable>
+        <designable name="TKF-Sm-41a">
+            <size key="intrinsicContentSize" width="49" height="31"/>
+        </designable>
+        <designable name="TKO-lF-Xw9">
+            <size key="intrinsicContentSize" width="72.5" height="25.5"/>
+        </designable>
+        <designable name="TTP-vP-sEG">
+            <size key="intrinsicContentSize" width="107.5" height="17.5"/>
+        </designable>
+        <designable name="ULV-6n-0Gc">
+            <size key="intrinsicContentSize" width="18" height="22"/>
+        </designable>
+        <designable name="UyC-e9-Tso">
+            <size key="intrinsicContentSize" width="51" height="22.5"/>
+        </designable>
+        <designable name="V8o-KP-3Xq">
+            <size key="intrinsicContentSize" width="54" height="14"/>
+        </designable>
+        <designable name="VEM-0F-6kA">
+            <size key="intrinsicContentSize" width="136.5" height="14"/>
+        </designable>
+        <designable name="VFd-pf-3WH">
+            <size key="intrinsicContentSize" width="96" height="32"/>
+        </designable>
+        <designable name="WiP-ZI-Su5">
+            <size key="intrinsicContentSize" width="45" height="45"/>
+        </designable>
+        <designable name="YPe-AJ-zoa">
+            <size key="intrinsicContentSize" width="63.5" height="17.5"/>
+        </designable>
+        <designable name="aWY-Rb-MaE">
+            <size key="intrinsicContentSize" width="236.5" height="19"/>
+        </designable>
+        <designable name="asD-Yr-OVc">
+            <size key="intrinsicContentSize" width="131" height="16.5"/>
+        </designable>
+        <designable name="azb-Zy-P2Q">
+            <size key="intrinsicContentSize" width="15.5" height="22"/>
+        </designable>
+        <designable name="bGb-Y6-x7X">
+            <size key="intrinsicContentSize" width="45" height="45"/>
+        </designable>
+        <designable name="bay-l8-WBT">
+            <size key="intrinsicContentSize" width="116.5" height="14"/>
+        </designable>
+        <designable name="c7P-iF-DcC">
+            <size key="intrinsicContentSize" width="153.5" height="14"/>
+        </designable>
+        <designable name="coM-lH-Fwq">
+            <size key="intrinsicContentSize" width="37" height="17.5"/>
+        </designable>
+        <designable name="cpK-RJ-JJd">
+            <size key="intrinsicContentSize" width="45" height="45"/>
+        </designable>
+        <designable name="d60-oh-Ym0">
+            <size key="intrinsicContentSize" width="50" height="50"/>
+        </designable>
+        <designable name="dUt-tK-zUG">
+            <size key="intrinsicContentSize" width="67.5" height="17.5"/>
+        </designable>
+        <designable name="e0d-QL-lrK">
+            <size key="intrinsicContentSize" width="43" height="16.5"/>
+        </designable>
+        <designable name="eKk-mK-yyH">
+            <size key="intrinsicContentSize" width="95.5" height="21"/>
+        </designable>
+        <designable name="f7Q-qZ-qS7">
+            <size key="intrinsicContentSize" width="60" height="12"/>
+        </designable>
+        <designable name="fLn-8m-gFI">
+            <size key="intrinsicContentSize" width="18.5" height="22"/>
+        </designable>
+        <designable name="fOP-gJ-fq0">
+            <size key="intrinsicContentSize" width="28.5" height="12"/>
+        </designable>
+        <designable name="fWy-eW-JTs">
+            <size key="intrinsicContentSize" width="61" height="14"/>
+        </designable>
+        <designable name="ftA-yu-c0d">
+            <size key="intrinsicContentSize" width="183" height="14"/>
+        </designable>
+        <designable name="gTd-jc-2aX">
+            <size key="intrinsicContentSize" width="48.5" height="22.5"/>
+        </designable>
+        <designable name="hv2-lX-mvK">
+            <size key="intrinsicContentSize" width="72" height="14"/>
+        </designable>
+        <designable name="ifT-GY-KuQ">
+            <size key="intrinsicContentSize" width="45.5" height="12"/>
+        </designable>
+        <designable name="k1u-OP-ipB">
+            <size key="intrinsicContentSize" width="131" height="16.5"/>
+        </designable>
+        <designable name="kfs-cr-aTW">
+            <size key="intrinsicContentSize" width="113.5" height="16.5"/>
+        </designable>
+        <designable name="ncC-T7-9Ph">
+            <size key="intrinsicContentSize" width="59" height="12"/>
+        </designable>
+        <designable name="oR3-Qg-ePC">
+            <size key="intrinsicContentSize" width="50" height="50"/>
+        </designable>
+        <designable name="p5L-vE-5La">
+            <size key="intrinsicContentSize" width="79" height="14"/>
+        </designable>
+        <designable name="pSM-ZC-N8Z">
+            <size key="intrinsicContentSize" width="72.5" height="16.5"/>
+        </designable>
+        <designable name="pWl-Mu-AY0">
+            <size key="intrinsicContentSize" width="50" height="22.5"/>
+        </designable>
+        <designable name="qVC-k4-aAr">
+            <size key="intrinsicContentSize" width="180.5" height="10.5"/>
+        </designable>
+        <designable name="rY3-ZS-I5o">
+            <size key="intrinsicContentSize" width="421" height="14"/>
+        </designable>
+        <designable name="tle-7A-6mI">
+            <size key="intrinsicContentSize" width="102" height="16.5"/>
+        </designable>
+        <designable name="vet-uO-HjV">
+            <size key="intrinsicContentSize" width="104.5" height="14"/>
+        </designable>
+        <designable name="wGh-Zb-Z6Y">
+            <size key="intrinsicContentSize" width="8" height="22"/>
+        </designable>
+        <designable name="x64-QK-8aH">
+            <size key="intrinsicContentSize" width="71.5" height="16.5"/>
+        </designable>
+        <designable name="xKp-MI-e4C">
+            <size key="intrinsicContentSize" width="348" height="179"/>
+        </designable>
+        <designable name="ySR-ed-Rls">
+            <size key="intrinsicContentSize" width="83.5" height="17.5"/>
+        </designable>
+        <designable name="yW5-1V-oX7">
+            <size key="intrinsicContentSize" width="36.5" height="12"/>
+        </designable>
+        <designable name="zUT-Rd-7RT">
+            <size key="intrinsicContentSize" width="1167" height="20"/>
+        </designable>
+        <designable name="zms-ep-a69"/>
+        <designable name="zvy-gP-G58">
+            <size key="intrinsicContentSize" width="16" height="22"/>
+        </designable>
+    </designables>
     <resources>
         <image name="app_banner" width="368" height="166"/>
         <image name="app_bg" width="954" height="966"/>
@@ -3564,5 +3825,14 @@ dG8gYmlkLiBEZXBvc2l0A
         <image name="star_off" width="15.5" height="14.5"/>
         <image name="star_on" width="15.5" height="14.5"/>
         <image name="white_shadow_up" width="421" height="351"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

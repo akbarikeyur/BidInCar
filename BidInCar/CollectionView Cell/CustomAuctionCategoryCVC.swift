@@ -20,4 +20,8 @@ class CustomAuctionCategoryCVC: UICollectionViewCell {
         // Initialization code
     }
 
+    func setupDetail(_ dict : AuctionTypeModel) {
+        setButtonImage(catImgBtn, dict.img)
+        catLbl.text = dict.name
+    }
 }

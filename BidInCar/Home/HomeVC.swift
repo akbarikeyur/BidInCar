@@ -26,8 +26,10 @@ class HomeVC: UploadImageVC {
     @IBOutlet weak var minPriceTxt: TextField!
     @IBOutlet weak var maxPriceTxt: TextField!
     @IBOutlet weak var infoCV: UICollectionView!
+    @IBOutlet weak var infoNextBtn: Button!
     @IBOutlet weak var constraintHeightInfoCV: NSLayoutConstraint!
     @IBOutlet weak var myScroll: UIScrollView!
+    @IBOutlet weak var constraintCenterNoDataLbl: NSLayoutConstraint!
     
     var arrFeatureAuctionData : [AuctionModel] = [AuctionModel]()
     var arrAuctionData : [AuctionModel] = [AuctionModel]()
@@ -42,7 +44,8 @@ class HomeVC: UploadImageVC {
     var arrModel = [ChildCategoryModel]()
     var selectedModel = ChildCategoryModel.init()
     var selectedFilterCategory = AuctionTypeModel.init(dict: [String : Any]())
-        
+    var page = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -161,6 +164,7 @@ class HomeVC: UploadImageVC {
     @objc func refreshAuctionList()
     {
         refreshControl.endRefreshing()
+        page = 1
         serviceCallToGetAuction("")
         refreshTopData()
     }
@@ -168,6 +172,7 @@ class HomeVC: UploadImageVC {
     @objc func refreshTopData() {
         if !isUserLogin() {
             self.constraintHeightInfoCV.constant = 0
+            infoNextBtn.isHidden = true
             return
         }
         if isUserBuyer() {
@@ -416,8 +421,7 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         else{
             let cell : CustomAuctionCategoryCVC = categoryCV.dequeueReusableCell(withReuseIdentifier: "CustomAuctionCategoryCVC", for: indexPath) as! CustomAuctionCategoryCVC
             let dict = AppModel.shared.AUCTION_TYPE[indexPath.row]
-            setButtonImage(cell.catImgBtn, dict.img)
-            cell.catLbl.text = dict.name
+            cell.setupDetail(dict)
             if selectedCategory.id == dict.id {
                 cell.catImgBtn.tintColor = DarkGrayColor
                 cell.catLbl.textColor = DarkGrayColor
@@ -453,10 +457,12 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
                 }
                 updateTableviewHeight()
                 noDataLbl.isHidden = (arrAuctionData.count > 0)
+                gtPageValue()
                 setupFeatureAuction()
             }
             else{
                 searchTxt.text = ""
+                page = 1
                 serviceCallToGetAuction("")
             }
         }
@@ -511,19 +517,7 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : CustomCarTVC = tblView.dequeueReusableCell(withIdentifier: "CustomCarTVC") as! CustomCarTVC
         let dict = (searchTxt.text?.trimmed != "") ? arrSearchAuctionData[indexPath.row] : arrAuctionData[indexPath.row]
-        for temp in dict.pictures {
-            if temp.type == "auction" {
-                setImageViewImage(cell.imgView, temp.path, IMAGE.AUCTION_PLACEHOLDER)
-                break
-            }
-        }
-        cell.featureView.isHidden = (dict.auction_featured != "yes")
-        cell.titleLbl.text = dict.auction_title
-        cell.timeLbl.text = getRemainingTime(dict.auction_end + " " + dict.auction_end_time) + getTranslate("left_time_space") + getDateStringFromDateWithLocalTimezone(date: getDateFromDateString(strDate: dict.auction_end, format: "YYYY-MM-dd")!, format: "dd MMM, YYYY")
-        cell.minPriceLbl.text = getTranslate("bid_count_colon") + dict.auction_bidscount
-        cell.currentBidLbl.text = getTranslate("current_price_space") + displayPriceWithCurrency(dict.active_auction_price)
-        cell.starBtn.isSelected = (dict.bookmark == "yes")
-        
+        cell.setupDetails(dict)
         cell.bidNowBtn.isHidden = false
         cell.bidNowBtn.tag = indexPath.row
         cell.bidNowBtn.addTarget(self, action: #selector(clickToBidNow(_:)), for: .touchUpInside)
@@ -533,6 +527,11 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if page != 0 && arrAuctionData.count-1 == indexPath.row {
+            serviceCallToGetAuction("")
+        }
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc : CarDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "CarDetailVC") as! CarDetailVC
         vc.auctionData = (searchTxt.text?.trimmed != "") ? arrSearchAuctionData[indexPath.row] : arrAuctionData[indexPath.row]
@@ -617,13 +616,17 @@ extension HomeVC {
             param["userid"] = AppModel.shared.currentUser.userid
         }
         if selectedCategory.id != -1 {
-            param["cattype"] = selectedCategory.id
+            param["categoryid"] = selectedCategory.id
         }
         param["filters"] = filter
+        param["page"] = page
         printData(param)
         APIManager.shared.serviceCallToGetAuction(param) { (data) in
-            self.arrAuctionData = [AuctionModel]()
-            self.arrFeatureAuctionData = [AuctionModel]()
+            if self.page == 1 {
+                self.arrAuctionData = [AuctionModel]()
+                self.arrFeatureAuctionData = [AuctionModel]()
+            }
+            
             for temp in data {
                 let auction = AuctionModel.init(dict: temp)
                 if self.selectedCategory.id == -1 {
@@ -636,7 +639,11 @@ extension HomeVC {
                     self.arrFeatureAuctionData.append(auction)
                 }
             }
-            
+            if data.count < 10 {
+                self.page = 0
+            }else{
+                self.page += 1
+            }
             let arrTemp = self.arrAuctionData
             self.arrAuctionData = [AuctionModel]()
             var arrNormal = [AuctionModel]()
@@ -662,6 +669,7 @@ extension HomeVC {
         }
         if (selectedCategory.id != -1) && (AppModel.shared.AUCTION_DATA[String(self.selectedCategory.id)] != nil) {
             arrAuctionData = AppModel.shared.AUCTION_DATA[String(self.selectedCategory.id)]!
+            gtPageValue()
             self.updateTableviewHeight()
             setupFeatureAuction()
         }
@@ -674,6 +682,17 @@ extension HomeVC {
         }
     }
     
+    func gtPageValue() {
+        if arrAuctionData.count == 0 {
+            page = 1
+        }
+        else if arrAuctionData.count % 10 == 0 {
+            page = Int(arrAuctionData.count/10) + 1
+        }else{
+            page = 0
+        }
+    }
+    
     func setupFeatureAuction() {
         arrFeatureAuctionData = [AuctionModel]()
         for temp in arrAuctionData {
@@ -683,6 +702,7 @@ extension HomeVC {
         }
         self.featureCV.reloadData()
         featureView.isHidden = (arrFeatureAuctionData.count == 0)
+        updateNoDataCenter()
     }
     
     func serviceCallToAddBookmark(_ auctionid : String, _ type : Int)
@@ -791,6 +811,7 @@ extension HomeVC {
         }
         else{
             self.constraintHeightInfoCV.constant = 0
+            infoNextBtn.isHidden = true
         }
     }
     
@@ -819,8 +840,10 @@ extension HomeVC {
         self.infoCV.reloadData()
         if self.arrInfo.count == 0 {
             self.constraintHeightInfoCV.constant = 0
+            self.infoNextBtn.isHidden = true
         }else{
             self.constraintHeightInfoCV.constant = 40
+            self.infoNextBtn.isHidden = false
         }
     }
     
@@ -832,6 +855,7 @@ extension HomeVC {
             }
         }else{
             self.constraintHeightInfoCV.constant = 0
+            self.infoNextBtn.isHidden = true
         }
     }
     
@@ -862,8 +886,18 @@ extension HomeVC {
         self.infoCV.reloadData()
         if self.arrInfo.count == 0 {
             self.constraintHeightInfoCV.constant = 0
+            self.infoNextBtn.isHidden = true
         }else{
             self.constraintHeightInfoCV.constant = 40
+            self.infoNextBtn.isHidden = false
+        }
+    }
+    
+    func updateNoDataCenter() {
+        if featureView.isHidden {
+            constraintCenterNoDataLbl.constant = 60
+        }else{
+            constraintCenterNoDataLbl.constant = 210
         }
     }
 }

@@ -10,9 +10,6 @@ import UIKit
 import IQKeyboardManagerSwift
 import NVActivityIndicatorView
 import MFSideMenu
-import FBSDKLoginKit
-import GoogleSignIn
-import TwitterKit
 import UserNotifications
 import Firebase
 import FirebaseMessaging
@@ -21,12 +18,12 @@ import GooglePlaces
 import SDWebImageWebPCoder
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var activityLoader : NVActivityIndicatorView!
     var container : MFSideMenuContainerViewController = MFSideMenuContainerViewController()
-    let fbLoginManager = LoginManager()
+    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -34,17 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = true
             
-        //Facebook Login
-        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
-        
-        //Google Login
-        GIDSignIn.sharedInstance().clientID = GOOGLE_KEY
-        GIDSignIn.sharedInstance().delegate = self
-        
         GMSPlacesClient.provideAPIKey("AIzaSyAylhQHaV99yBh7-wyhTvnto2R3-QFHHHg")
-        
-        //Twitter
-        TWTRTwitter.sharedInstance().start(withConsumerKey: TWITTER_API_KEY, consumerSecret: TWITTER_API_SECRET_KEY)
         
         let WebPCoder = SDImageWebPCoder.shared
         SDImageCodersManager.shared.addCoder(WebPCoder)
@@ -253,144 +240,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.UPDATE_CURRENT_USER_DATA), object: nil)
             }
         }
-    }
-    
-    //MARK:- Social Login
-    func loginWithFacebook()
-    {
-        fbLoginManager.logOut()
-        fbLoginManager.logIn(permissions: ["public_profile", "email"], from: window?.rootViewController) { (result, error) in
-            if let error = error {
-                showAlert("Error", message: error.localizedDescription, completion: {})
-                return
-            }
-            
-            guard let token = result?.token else {
-                return
-            }
-            
-            printData(token.tokenString)
-            
-            let request : GraphRequest = GraphRequest(graphPath: "me", parameters: ["fields" : "picture.width(500).height(500), email, id, name, first_name, last_name, gender"])
-            
-            let connection : GraphRequestConnection = GraphRequestConnection()
-            connection.add(request, completionHandler: { (connection, result, error) in
-                
-                if result != nil
-                {
-                    AppModel.shared.currentUser = UserModel.init()
-                    let dict = result as! [String : AnyObject]
-                    printData(dict)
-                    
-                    /*
-                    APIManager.shared.serviceCallToFBLogin(accessToken, { (status) in
-                        if status
-                        {
-                            self.navigateToDashBoard()
-                        }
-                        else
-                        {
-                            if let email : String = dict["email"] as? String
-                            {
-                                AppModel.shared.currentUser.email = email
-                            }
-
-                            if let temp : String = dict["first_name"] as? String
-                            {
-                                AppModel.shared.currentUser.display_name = temp
-                            }
-
-                            if let temp : String = dict["last_name"] as? String
-                            {
-                                AppModel.shared.currentUser.lname = temp
-                            }
-
-                            if let picture = dict["picture"] as? [String : Any]
-                            {
-                                if let data = picture["data"] as? [String : Any]
-                                {
-                                    if let url = data["url"]
-                                    {
-                                        AppModel.shared.currentUser.avatar = url as? String
-                                    }
-                                }
-                            }
-                            
-                            let vc : BecomeListenerVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "BecomeListenerVC") as! BecomeListenerVC
-                            vc.isFBLogin = true
-                            UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: false)
-                        }
-                    })
-                    */
-                }
-                else
-                {
-                    printData(error?.localizedDescription ?? "error")
-                }
-            })
-            connection.start()
-        }
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-      if let error = error {
-        if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
-          printData("The user has not signed in before or they have since signed out.")
-        } else {
-          printData("\(error.localizedDescription)")
-        }
-        return
-      }
-      // Perform any operations on signed in user here.
-      //let userId = user.userID                  // For client-side use only!
-//      let idToken = user.authentication.idToken // Safe to send to the server
-//      let fullName = user.profile.name
-//      let givenName = user.profile.givenName
-//      let familyName = user.profile.familyName
-//      let email = user.profile.email
-      
-    }
-          
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        printData(error.localizedDescription)
-    }
-
-    //MARK:- Twitter
-    func loginWithTwitter()
-    {
-        /*
-        TWTRTwitter.sharedInstance().logIn { (session, error) in
-            if session != nil {
-                printData(session?.userID)
-                printData(session?.userName)
-                TWTRAPIClient.withCurrentUser().requestEmail { (email, error) in
-                    if error == nil {
-                        printData(email)
-                    }else{
-                        printData(error?.localizedDescription)
-                    }
-                }
-            }
-            else{
-                printData(error?.localizedDescription)
-            }
-        }
-        */
-    }
-    
-    //MARK: - Facebook Function
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        if (url.scheme?.contains("google"))! {
-            return GIDSignIn.sharedInstance().handle(url)
-        }
-        else if (url.scheme?.contains("twitter"))! {
-            return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
-        }
-        return ApplicationDelegate.shared.application(app, open: url, options: options)
-    }
-    
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return GIDSignIn.sharedInstance().handle(url)
     }
 
     //MARK:- Change language

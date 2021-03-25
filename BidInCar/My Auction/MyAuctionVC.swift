@@ -208,15 +208,18 @@ class MyAuctionVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc : CarDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "CarDetailVC") as! CarDetailVC
-        if activeBtn.isSelected {
-            vc.auctionData = arrActiveAuction[indexPath.row]
-        }else if closedBtn.isSelected {
-            vc.auctionData = arrCloseAuction[indexPath.row]
-        }else if wonBtn.isSelected {
-            vc.auctionData = arrWonAuction[indexPath.row]
-        }
+        let vc : PaymentSummaryVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PaymentSummaryVC") as! PaymentSummaryVC
+        vc.auctionData = arrWonAuction[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
+//        let vc : CarDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "CarDetailVC") as! CarDetailVC
+//        if activeBtn.isSelected {
+//            vc.auctionData = arrActiveAuction[indexPath.row]
+//        }else if closedBtn.isSelected {
+//            vc.auctionData = arrCloseAuction[indexPath.row]
+//        }else if wonBtn.isSelected {
+//            vc.auctionData = arrWonAuction[indexPath.row]
+//        }
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc @IBAction func clickToSeeBid(_ sender: UIButton) {

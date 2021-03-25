@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import GoogleSignIn
 
-class LoginVC: UIViewController {
+class LoginVC: SocialLogin {
 
     @IBOutlet weak var unameTxt: FloatingTextfiledView!
     @IBOutlet weak var passwordTxt: FloatingTextfiledView!
@@ -49,6 +48,19 @@ class LoginVC: UIViewController {
         self.view.endEditing(true)
         let vc : SignupVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SignupVC") as! SignupVC
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func clickToSocialLogin(_ sender: UIButton) {
+        self.view.endEditing(true)
+        if sender.tag == 1 {
+            loginWithGoogle()
+        }
+        else if sender.tag == 2 {
+            loginWithFacebook()
+        }
+        else if sender.tag == 3 {
+            actionHandleAppleSignin()
+        }
     }
     
     @IBAction func clickToLogin(_ sender: UIButton) {
@@ -96,26 +108,6 @@ class LoginVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @IBAction func clickToSocialLogin(_ sender: UIButton) {
-        if sender.tag == 1
-        {
-            //facebook
-            AppDelegate().sharedDelegate().loginWithFacebook()
-        }
-        else if sender.tag == 2
-        {
-            //Twitter
-            AppDelegate().sharedDelegate().loginWithTwitter()
-        }
-        else if sender.tag == 3
-        {
-            //Google
-            GIDSignIn.sharedInstance()?.presentingViewController = self
-            // Automatically sign in the user.
-            GIDSignIn.sharedInstance()?.restorePreviousSignIn()
-            GIDSignIn.sharedInstance().signIn()
-        }
-    }
     
     /*
     // MARK: - Navigation

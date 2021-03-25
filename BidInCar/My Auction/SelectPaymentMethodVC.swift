@@ -156,11 +156,7 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             if amount == 0 {
                 return
             }
-            if PLATFORM.isSimulator {
-                paytabPaymentCompleted("tran1234679")
-            }else{
-                paytab()
-            }
+            paytab()
         }
         else if selectedTab == 2 {
             //bank
@@ -358,7 +354,7 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             andWithPhoneNumber: AppModel.shared.currentUser.user_phonenumber,
             andWithCustomerEmail: AppModel.shared.currentUser.user_email,
             andIsTokenization:false,
-            andIsPreAuth: false,
+            andIsPreAuth: true,
             andWithMerchantEmail: "info@bidincars.com",
             andWithMerchantSecretKey: PAYTAB_KEY,
             andWithMerchantRegion: "emirates",

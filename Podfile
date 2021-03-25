@@ -18,12 +18,12 @@ target 'BidInCar' do
   pod 'SDWebImageWebPCoder'
   pod 'SKPhotoBrowser'
   
-  pod 'FBSDKLoginKit'
-  pod 'GoogleSignIn'
-  pod 'TwitterKit'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   pod 'GooglePlaces'
+  
+  pod 'GoogleSignIn'
+  pod 'FBSDKLoginKit'
   
   pod 'PayTabs'
   pod 'BIObjCHelpers'

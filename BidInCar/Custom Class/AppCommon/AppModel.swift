@@ -84,8 +84,23 @@ class AppModel: NSObject {
         }
         return 0
     }
-    
 }
+
+struct AppleUserModel {
+    var socialId, socialToken, email, name: String!
+    
+    init(_ dict : [String : Any]) {
+        socialId = dict["socialId"] as? String ?? ""
+        socialToken = dict["socialToken"] as? String ?? ""
+        email = dict["email"] as? String ?? ""
+        name = dict["name"] as? String ?? ""
+    }
+    
+    func dictionary() -> [String : Any] {
+        return ["socialId":socialId!, "socialToken":socialToken!, "email":email!, "name":name!]
+    }
+}
+
 class UserModel : AppModel
 {
     var userid : String!
@@ -345,6 +360,7 @@ class AuctionModel : AppModel
     var auction_horse_power : String!
     var warranty : String!
     var auction_age : String!
+    var get_single_picture : PictureModel!
     
     override init(){
         auctionid = "0"
@@ -416,6 +432,7 @@ class AuctionModel : AppModel
         warranty = ""
         auction_age = ""
         autocheckupload = PictureModel.init()
+        get_single_picture = PictureModel.init()
     }
     
     init(dict : [String : Any])
@@ -489,6 +506,7 @@ class AuctionModel : AppModel
         warranty = ""
         auction_age = ""
         autocheckupload = PictureModel.init()
+        get_single_picture = PictureModel.init()
         
         auctionid = AppModel.shared.getStringValue(dict, "auctionid")
         if let temp = dict["auction_title"] as? String {
@@ -679,6 +697,9 @@ class AuctionModel : AppModel
         }
         if let temp = dict["autocheckupload"] as? [String : Any] {
             autocheckupload = PictureModel.init(dict: temp)
+        }
+        if let temp = dict["get_single_picture"] as? [String : Any] {
+            get_single_picture = PictureModel.init(dict: temp)
         }
     }
 }

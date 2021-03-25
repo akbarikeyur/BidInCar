@@ -26,6 +26,20 @@ class CustomBookmarkTVC: UITableViewCell {
         // Initialization code
     }
 
+    func setupDetails(_ dict : AuctionModel) {
+        for temp in dict.pictures {
+            if temp.type == "auction" {
+                setButtonBackgroundImage(profilePicBtn, temp.path, IMAGE.AUCTION_PLACEHOLDER)
+                break
+            }
+        }
+        titleLbl.text = dict.auction_title
+        addressLbl.text = dict.auction_address
+        currentBidLbl.text = getTranslate("current_bid_space") + displayPriceWithCurrency(dict.active_auction_price)
+        bidLbl.text = getTranslate("bid_id") + String(dict.auction_bidscount)
+        lotLbl.text = getTranslate("new_line_lot_id") + dict.auctionid
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

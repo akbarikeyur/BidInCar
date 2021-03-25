@@ -12,7 +12,7 @@ import AlamofireJsonToObjects
 
 //Development
 struct API {
-//    static let BASE_URL = "http://anglotestserver.website/auction_new/"
+//    static let BASE_URL = "https://bidincars.com/bidincarproduction/api/"
     static let BASE_URL = "https://bidincars.com/"
     
     static let LOGIN                        =       BASE_URL + "user/user_auth"
@@ -20,6 +20,7 @@ struct API {
     static let SEND_OTP                     =       BASE_URL + "user/sendotp"
     static let VERIFY_OTP                   =       BASE_URL + "user/verify_account"
     static let FORGOT_PASSWORD              =       BASE_URL + "user/forget_password"
+    static let CHECK_SOCIAL_LOGIN           =       BASE_URL + "user/social_login_check"
     
     static let GET_USER_PROFILE             =       BASE_URL + "user/getprofile"
     static let UPLOAD_PROFILE_PICTURE       =       BASE_URL + "user/upload_profile_pic"
@@ -41,7 +42,7 @@ struct API {
     static let UPLOAD_AUCTION_DOC           =       BASE_URL + "auctions/upload_doc"
     static let DECRESE_LEFT_AUCTION         =       BASE_URL + "payment/package_decrease"
     
-    static let SEARCH_FEATURED_AUCTION      =       BASE_URL + "auctions/searchauctions"
+    static let GET_AUCTION_LIST      =       BASE_URL + "auction/catTypeAuction"// "auctions/searchauctions"
     static let GET_AUCTION_DETAIL           =       BASE_URL + "auctions/getsingleauction"
     static let ADD_AUCTION_BID              =       BASE_URL + "auctions/insertbid"
     static let GET_AUCTION_BID              =       BASE_URL + "auctions/getbidsonly"
@@ -160,6 +161,54 @@ public class APIManager {
         let headerParams :[String : String] = getJsonHeader()
         
         Alamofire.request(API.LOGIN, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
+            
+            removeLoader()
+            switch response.result {
+            case .success:
+                printData(response.result.value!)
+                if let result = response.result.value as? [String:Any] {
+                
+                    if let status = result["status"] as? String {
+                        if(status == "success") {
+                            if let data : [String : Any] = result["data"] as? [String : Any]
+                            {
+                                AppModel.shared.currentUser = UserModel.init(dict: data)
+                                completion()
+                                return
+                            }
+                        }
+                        else if status == "error"
+                        {
+                            if let message = result["message"] as? String, message != "" {
+                                displayToast(message)
+                            }
+                            self.handleStatusCode(result)
+                        }
+                    }
+                }
+                if let error = response.result.error
+                {
+                    displayToast(error.localizedDescription)
+                    return
+                }
+                break
+            case .failure(let error):
+                printData(error)
+                break
+            }
+        }
+    }
+    
+    func serviceCallToCheckSocialLogin(_ params : [String : Any], completion: @escaping () -> Void) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        showLoader()
+        let headerParams :[String : String] = getJsonHeader()
+        
+        Alamofire.request(API.CHECK_SOCIAL_LOGIN, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             
             removeLoader()
             switch response.result {
@@ -1076,7 +1125,7 @@ public class APIManager {
         }
         showLoader()
         let headerParams :[String : String] = getJsonHeader()
-        Alamofire.request(API.SEARCH_FEATURED_AUCTION, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
+        Alamofire.request(API.GET_AUCTION_LIST, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             removeLoader()
             switch response.result {
             case .success:
@@ -1085,9 +1134,12 @@ public class APIManager {
                 
                     if let status = result["status"] as? String {
                         if(status == "success") {
-                            if let data : [[String : Any]] = result["data"] as? [[String : Any]] {
-                                completion(data)
+                            if let tempDict = result["data"] as? [String : Any] {
+                                if let data : [[String : Any]] = tempDict["data"] as? [[String : Any]] {
+                                    completion(data)
+                                }
                             }
+                            
                             return
                         }
                         else
