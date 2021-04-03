@@ -38,33 +38,35 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
-    <key>FacebookAppID</key>
-    <string>2442101692723395</string>
-    <key>FacebookDisplayName</key>
-    <string>BidInCar</string>
-    <key>FirebaseAutomaticScreenReportingEnabled</key>
-    <false/>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>fbapi</string>
-        <string>fbapi20130214</string>
-        <string>fbapi20130410</string>
-        <string>fbapi20130702</string>
-        <string>fbapi20131010</string>
-        <string>fbapi20131219</string>
-        <string>fbapi20140410</string>
-        <string>fbapi20140116</string>
-        <string>fbapi20150313</string>
-        <string>fbapi20150629</string>
-        <string>fbapi20160328</string>
-        <string>fbauth</string>
-        <string>fb-messenger-share-api</string>
-        <string>fbauth2</string>
-        <string>fbshareextension</string>
-    </array>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>FacebookAppID</key>
+	<string>2442101692723395</string>
+	<key>FacebookAutoInitEnabled</key>
+	<false/>
+	<key>FacebookDisplayName</key>
+	<string>BidInCar</string>
+	<key>FirebaseAutomaticScreenReportingEnabled</key>
+	<false/>
 	<key>FirebaseMessagingAutoInitEnabled</key>
 	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fbapi20130214</string>
+		<string>fbapi20130410</string>
+		<string>fbapi20130702</string>
+		<string>fbapi20131010</string>
+		<string>fbapi20131219</string>
+		<string>fbapi20140410</string>
+		<string>fbapi20140116</string>
+		<string>fbapi20150313</string>
+		<string>fbapi20150629</string>
+		<string>fbapi20160328</string>
+		<string>fbauth</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -75,13 +77,13 @@
 	<key>NSCalendarsUsageDescription</key>
 	<string>By Agreeing, you are allowing Bid In Car access to your calendars to add reminders.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>By agreed, you allow camera access to upload image.</string>
+	<string>Please allow application to access your camera so that you can take pictures of your vehicle to be shown to buyers in your auction.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>By agreed, you allow location access.</string>
+	<string>Please allow application to access your location so that you can add your location to be shown to buyers in your auction.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>By agreed, you allow location access.</string>
+	<string>Please allow application to access your location so that you can add your location to be shown to buyers in your auction.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>By agreed, you allow photos access to upload image.</string>
+	<string>Please allow application to access your photos so that you can upload pictures of your vehicle to be shown to buyers in your auction.</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>By Agreeing, you are allowing Bid In Car access to your calendars to add reminders.</string>
 	<key>UIAppFonts</key>

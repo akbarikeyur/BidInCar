@@ -20,7 +20,7 @@ struct API {
     static let SEND_OTP                     =       BASE_URL + "user/sendotp"
     static let VERIFY_OTP                   =       BASE_URL + "user/verify_account"
     static let FORGOT_PASSWORD              =       BASE_URL + "user/forget_password"
-    static let CHECK_SOCIAL_LOGIN           =       BASE_URL + "user/social_login_check"
+    static let CHECK_SOCIAL_LOGIN           =       BASE_URL + "api/user/social_login_check"
     
     static let GET_USER_PROFILE             =       BASE_URL + "user/getprofile"
     static let UPLOAD_PROFILE_PICTURE       =       BASE_URL + "user/upload_profile_pic"
@@ -42,7 +42,7 @@ struct API {
     static let UPLOAD_AUCTION_DOC           =       BASE_URL + "auctions/upload_doc"
     static let DECRESE_LEFT_AUCTION         =       BASE_URL + "payment/package_decrease"
     
-    static let GET_AUCTION_LIST      =       BASE_URL + "auction/catTypeAuction"// "auctions/searchauctions"
+    static let GET_AUCTION_LIST             =       BASE_URL + "api/auction/catTypeAuction"// "auctions/searchauctions"
     static let GET_AUCTION_DETAIL           =       BASE_URL + "auctions/getsingleauction"
     static let ADD_AUCTION_BID              =       BASE_URL + "auctions/insertbid"
     static let GET_AUCTION_BID              =       BASE_URL + "auctions/getbidsonly"
@@ -199,7 +199,7 @@ public class APIManager {
         }
     }
     
-    func serviceCallToCheckSocialLogin(_ params : [String : Any], completion: @escaping () -> Void) {
+    func serviceCallToCheckSocialLogin(_ params : [String : Any], completion: @escaping (_ dict : [String : Any]) -> Void) {
         if !APIManager.isConnectedToNetwork()
         {
             APIManager().networkErrorMsg()
@@ -218,12 +218,13 @@ public class APIManager {
                 
                     if let status = result["status"] as? String {
                         if(status == "success") {
-                            if let data : [String : Any] = result["data"] as? [String : Any]
-                            {
-                                AppModel.shared.currentUser = UserModel.init(dict: data)
-                                completion()
-                                return
+                            if let data = result["data"] as? [String : Any] {
+                                completion(data)
+                            }else{
+                                completion([String : Any]())
                             }
+                            
+                            return
                         }
                         else if status == "error"
                         {

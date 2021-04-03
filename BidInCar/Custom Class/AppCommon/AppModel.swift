@@ -621,6 +621,9 @@ class AuctionModel : AppModel
                 pictures.append(PictureModel.init(dict: temp))
             }
         }
+        else if let temp = dict["get_single_picture"] as? [String : Any] {
+            pictures.append(PictureModel.init(dict: temp))
+        }
         active_auction_price = AppModel.shared.getStringValue(dict, "active_auction_price")
         auction_bidscount = AppModel.shared.getStringValue(dict, "auction_bidscount")
         if let temp = dict["usertype"] as? String {

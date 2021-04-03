@@ -15,7 +15,9 @@ import Firebase
 import FirebaseMessaging
 import FirebaseInstanceID
 import GooglePlaces
+import GoogleSignIn
 import SDWebImageWebPCoder
+import FBSDKLoginKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = true
             
+        GIDSignIn.sharedInstance().clientID = GOOGLE_CLIENT_ID
         GMSPlacesClient.provideAPIKey("AIzaSyAylhQHaV99yBh7-wyhTvnto2R3-QFHHHg")
         
         let WebPCoder = SDImageWebPCoder.shared
@@ -266,6 +269,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        delay(1.0) {
 //            NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.RELOAD_AFTER_CHANGE_LANGUAGE), object: nil)
 //        }
+    }
+    
+    //MARK:- AppDelegate Method
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        if (url.scheme?.contains("google"))! {
+            return (GIDSignIn.sharedInstance()?.handle(url))!
+        }
+        else{
+            return ApplicationDelegate.shared.application(app, open: url, options: options)
+        }
     }
     
     //MARK:- Notification

@@ -21,6 +21,7 @@ Email : bidincar@gmail.com
 Password : Bidcar@2019
 */
 
+let GOOGLE_CLIENT_ID = "335995289028-8q0t81lmf0jbgopkcencf17j9f1ar56j.apps.googleusercontent.com"
 let GOOGLE_KEY = "335995289028-8q0t81lmf0jbgopkcencf17j9f1ar56j.apps.googleusercontent.com"
 
 let TWITTER_API_KEY = "mE9Ko4ako00oeakppPYLxeeZ5"

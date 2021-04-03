@@ -156,7 +156,12 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             if amount == 0 {
                 return
             }
-            paytab()
+            if PLATFORM.isSimulator {
+                paytabPaymentCompleted(getCurrentTimeStampValue())
+            }else{
+                paytab()
+            }
+            
         }
         else if selectedTab == 2 {
             //bank

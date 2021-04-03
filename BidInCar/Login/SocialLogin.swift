@@ -22,8 +22,23 @@ class SocialLogin: UIViewController, GIDSignInDelegate {
     }
     
     func serviceCallToSocialLogin(_ param : [String : Any]) {
-        APIManager.shared.serviceCallToCheckSocialLogin(param) {
-            
+        APIManager.shared.serviceCallToCheckSocialLogin(param) { (dict) in
+            if dict.count == 0 {
+                let vc : SignupVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SignupVC") as! SignupVC
+                vc.isSocial = true
+                vc.socialDict = param
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                AppModel.shared.currentUser = UserModel.init(dict: dict)
+                if AppModel.shared.currentUser.verified {
+                    setLoginUserData()
+                    AppDelegate().sharedDelegate().serviceCallToGetUserProfile()
+                    AppDelegate().sharedDelegate().navigateToDashBoard()
+                }else{
+                    let vc : VerificationVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "VerificationVC") as! VerificationVC
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
         }
     }
     
@@ -42,7 +57,7 @@ class SocialLogin: UIViewController, GIDSignInDelegate {
                 return
             }
             
-            let request : GraphRequest = GraphRequest(graphPath: "me", parameters: ["fields" : "picture.width(500).height(500), email, id, name, first_name, last_name, gender"])
+            let request : GraphRequest = GraphRequest(graphPath: "/me", parameters: ["fields" : "email, id, name"])
             
             let connection : GraphRequestConnection = GraphRequestConnection()
             connection.add(request, completionHandler: { (connection, result, error) in
@@ -56,7 +71,7 @@ class SocialLogin: UIViewController, GIDSignInDelegate {
                     
                     var param = [String : Any]()
                     param["email"] = AppModel.shared.getStringValue(dict, "email")
-                    param["socialId"] = userId
+                    param["social_login_id"] = userId
                     param["login_type"] = "Facebook"
                     printData(param)
                     self.serviceCallToSocialLogin(param)
@@ -87,7 +102,7 @@ class SocialLogin: UIViewController, GIDSignInDelegate {
             
             var param = [String : Any]()
             param["email"] = user.profile.email!
-            param["socialId"] = user.userID!
+            param["social_login_id"] = user.userID!
             param["login_type"] = "Google"
             printData(param)
             serviceCallToSocialLogin(param)
@@ -163,7 +178,7 @@ extension SocialLogin: ASAuthorizationControllerDelegate, ASAuthorizationControl
                 
                 var param = [String : Any]()
                 param["email"] = appleUser.email
-                param["socialId"] = appleUser.socialId
+                param["social_login_id"] = appleUser.socialId
                 param["login_type"] = "Apple"
                 printData(param)
                 serviceCallToSocialLogin(param)

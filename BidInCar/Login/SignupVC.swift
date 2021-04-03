@@ -22,6 +22,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var countryTxt: FloatingTextfiledView!
     @IBOutlet weak var countryCodeTxt: FloatingTextfiledView!
     @IBOutlet weak var phoneTxt: FloatingTextfiledView!
+    @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var passwordTxt: FloatingTextfiledView!
     @IBOutlet weak var confirmPasswordTxt: FloatingTextfiledView!
     @IBOutlet weak var pwdImg1: UIImageView!
@@ -45,6 +46,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var companyEmailTxt: FloatingTextfiledView!
     
     @IBOutlet weak var termsBtn: Button!
+    @IBOutlet weak var signupBtn: Button!
     
     @IBOutlet weak var signinLbl: Label!
     
@@ -54,6 +56,8 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     var selectedCountry = CountryModel.init()
     var selectedCountryCode = CountryModel.init()
     var selectedCity = CityModel.init()
+    var isSocial = false
+    var socialDict = [String : Any]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +68,13 @@ class SignupVC: UIViewController, UITextFieldDelegate {
                 setCountryData(data)
                 self.arrCountryData = getCountryData()
             }
+        }
+        if isSocial {
+            passwordView.isHidden = true
+            signupBtn.setTitle("SAVE", for: .normal)
+        }else{
+            passwordView.isHidden = false
+            signupBtn.setTitle("SIGN UP", for: .normal)
         }
         setUIDesigning()
         /*
@@ -119,6 +130,15 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             }
         }
         clickToSelectAccountType(buyerBtn)
+        
+        if isSocial {
+            emailTxt.myTxt.text = AppModel.shared.getStringValue(socialDict, "email")
+            if emailTxt.myTxt.text != "" {
+                emailTxt.isUserInteractionEnabled = false
+            }else{
+                emailTxt.isUserInteractionEnabled = true
+            }
+        }
     }
     
     //MARK:- Button click event
@@ -290,13 +310,13 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         else if phoneTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_phone")
         }
-        else if passwordTxt.myTxt.text?.trimmed == "" {
+        else if !isSocial && passwordTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_password")
         }
-        else if confirmPasswordTxt.myTxt.text?.trimmed == "" {
+        else if !isSocial && confirmPasswordTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_confirm_password")
         }
-        else if passwordTxt.myTxt.text != confirmPasswordTxt.myTxt.text {
+        else if !isSocial && passwordTxt.myTxt.text != confirmPasswordTxt.myTxt.text {
             displayToast("invalid_match_password")
         }
         else if !buyerBtn.isSelected && !sellerBtn.isSelected {
@@ -325,8 +345,13 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             param["phone_countrycode"] = selectedCountryCode.phonecode
             param["phone_countrycodeid"] = selectedCountryCode.countryid
             param["phone_number"] = phoneTxt.myTxt.text
-            param["password"] = passwordTxt.myTxt.text
-            param["confirm_password"] = confirmPasswordTxt.myTxt.text
+            if isSocial {
+                param["login_type"] = AppModel.shared.getStringValue(socialDict, "login_type")
+                param["social_login_id"] = AppModel.shared.getStringValue(socialDict, "social_login_id")
+            }else{
+                param["password"] = passwordTxt.myTxt.text
+                param["confirm_password"] = confirmPasswordTxt.myTxt.text
+            }
             param["lang"] = "eng"
             
             if buyerBtn.isSelected {
