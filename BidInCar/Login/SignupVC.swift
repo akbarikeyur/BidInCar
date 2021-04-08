@@ -289,15 +289,15 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         else if addressTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_address")
         }
-        else if buildingNameTxt.myTxt.text?.trimmed == "" {
-            displayToast("enter_building")
-        }
-        else if flatNoTxt.myTxt.text?.trimmed == "" {
-            displayToast("enter_flat_number")
-        }
-        else if poBoxTxt.myTxt.text?.trimmed == "" {
-            displayToast("enter_po_box")
-        }
+//        else if buildingNameTxt.myTxt.text?.trimmed == "" {
+//            displayToast("enter_building")
+//        }
+//        else if flatNoTxt.myTxt.text?.trimmed == "" {
+//            displayToast("enter_flat_number")
+//        }
+//        else if poBoxTxt.myTxt.text?.trimmed == "" {
+//            displayToast("enter_po_box")
+//        }
         else if cityTxt.myTxt.text?.trimmed == "" {
             displayToast("select_city")
         }

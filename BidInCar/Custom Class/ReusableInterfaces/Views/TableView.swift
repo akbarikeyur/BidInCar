@@ -35,6 +35,28 @@ class TableView: UITableView {
             setBackgroundColor(backgroundColorType: backgroundColorType)
         }
     }
+    
+    @IBInspectable var borderColorTypeAdapter : Int32 = 0 {
+        didSet {
+            self.borderColorType = ColorType(rawValue: self.borderColorTypeAdapter)
+        }
+    }
+    var borderColorType : ColorType? {
+        didSet {
+            setBorderColor(borderColorType: borderColorType)
+        }
+    }
+    @IBInspectable var borderWidth : CGFloat = 0 {
+        didSet {
+            self.layer.borderWidth = borderWidth
+        }
+    }
+    
+    @IBInspectable var cornerRadius : CGFloat = 0 {
+        didSet {
+            setCornerRadius(cornerRadius)
+        }
+    }
 }
 
 

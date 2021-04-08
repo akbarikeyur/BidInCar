@@ -13,7 +13,7 @@ import AlamofireJsonToObjects
 //Development
 struct API {
 //    static let BASE_URL = "https://bidincars.com/bidincarproduction/api/"
-    static let BASE_URL = "https://bidincars.com/"
+    static let BASE_URL = "https://www.bidincars.com/"
     
     static let LOGIN                        =       BASE_URL + "user/user_auth"
     static let SIGNUP                       =       BASE_URL + "user/registers"

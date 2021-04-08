@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="BuyerPackageTVC" customModule="BidInCar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxb-VL-z5O">
+                        <rect key="frame" x="0.0" y="0.0" width="20" height="180"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6xd-VT-ai4" customClass="ImageView" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="9.5" y="0.0" width="1" height="85"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="8S8-RD-MZV"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="backgroundColorTypeAdapter">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1P-DR-E71" customClass="View" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="5" y="85" width="10" height="10"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="cAZ-3h-dha"/>
+                                    <constraint firstAttribute="height" constant="10" id="yaU-2b-HMN"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hOV-6S-snr" customClass="ImageView" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="9.5" y="95" width="1" height="85"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="uV6-rs-d4t"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="backgroundColorTypeAdapter">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="t1P-DR-E71" firstAttribute="top" secondItem="6xd-VT-ai4" secondAttribute="bottom" id="9Vs-b2-HRM"/>
+                            <constraint firstItem="hOV-6S-snr" firstAttribute="centerX" secondItem="yxb-VL-z5O" secondAttribute="centerX" id="AA8-La-nxc"/>
+                            <constraint firstItem="t1P-DR-E71" firstAttribute="centerY" secondItem="yxb-VL-z5O" secondAttribute="centerY" id="Jrj-5w-abZ"/>
+                            <constraint firstAttribute="width" constant="20" id="M7S-de-Smb"/>
+                            <constraint firstItem="t1P-DR-E71" firstAttribute="centerX" secondItem="yxb-VL-z5O" secondAttribute="centerX" id="REr-T2-VqD"/>
+                            <constraint firstItem="hOV-6S-snr" firstAttribute="top" secondItem="t1P-DR-E71" secondAttribute="bottom" id="oTP-Wr-hA3"/>
+                            <constraint firstItem="6xd-VT-ai4" firstAttribute="centerX" secondItem="yxb-VL-z5O" secondAttribute="centerX" id="vbq-y6-JUi"/>
+                            <constraint firstItem="6xd-VT-ai4" firstAttribute="top" secondItem="yxb-VL-z5O" secondAttribute="top" id="vmQ-sm-rSc"/>
+                            <constraint firstAttribute="bottom" secondItem="hOV-6S-snr" secondAttribute="bottom" id="zB5-3y-TKG"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMX-aV-lYg">
+                        <rect key="frame" x="20" y="10" width="290" height="160"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_arrow_package" translatesAutoresizingMaskIntoConstraints="NO" id="vQn-Zi-7gF">
+                                <rect key="frame" x="0.0" y="0.0" width="290" height="160"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FREE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cHg-hu-2ze" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="20" y="10" width="125" height="16.5"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                                <color key="textColor" red="0.40784313729999999" green="0.38431372549999998" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="am"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dL1-ks-7j1" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="155" y="10" width="125" height="16.5"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="am"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Validity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9a0-aU-8iD" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="20" y="41.5" width="125" height="14"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bC2-wp-5zR" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="155" y="41.5" width="38" height="14"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Auction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3a1-p1-66f" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="20" y="55.5" width="125" height="14"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="a86-6l-n9D" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="155" y="55.5" width="125" height="14"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum Bid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hVx-vj-A2X" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="20" y="69.5" width="125" height="14"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$5000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6lO-wd-s6r" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="155" y="69.5" width="125" height="14"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Documentation Fee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1Fm-ti-lVl" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="20" y="83.5" width="125" height="14"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nGX-EM-k0W" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="155" y="83.5" width="125" height="14"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Refundable Deposit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qIC-YW-U7n" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="20" y="97.5" width="125" height="14"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20% of the bid amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MZk-Bv-UaB" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="155" y="97.5" width="125" height="14"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority Support" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Xdx-xB-KRx" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="20" y="111.5" width="125" height="14"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PwL-ie-Ruv" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                <rect key="frame" x="155" y="111.5" width="125" height="14"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="ar"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cHg-hu-2ze" firstAttribute="leading" secondItem="JMX-aV-lYg" secondAttribute="leading" constant="20" id="0eh-18-W7d"/>
+                            <constraint firstItem="nGX-EM-k0W" firstAttribute="leading" secondItem="1Fm-ti-lVl" secondAttribute="trailing" constant="10" id="1uY-7y-gFL"/>
+                            <constraint firstItem="3a1-p1-66f" firstAttribute="leading" secondItem="9a0-aU-8iD" secondAttribute="leading" id="26g-FC-cCA"/>
+                            <constraint firstItem="PwL-ie-Ruv" firstAttribute="top" secondItem="Xdx-xB-KRx" secondAttribute="top" id="7cs-uK-gee"/>
+                            <constraint firstItem="Xdx-xB-KRx" firstAttribute="top" secondItem="qIC-YW-U7n" secondAttribute="bottom" id="8xI-5H-1s1"/>
+                            <constraint firstAttribute="trailing" secondItem="6lO-wd-s6r" secondAttribute="trailing" constant="10" id="AFI-aS-buK"/>
+                            <constraint firstAttribute="trailing" secondItem="dL1-ks-7j1" secondAttribute="trailing" constant="10" id="AVR-yd-iOL"/>
+                            <constraint firstItem="9a0-aU-8iD" firstAttribute="top" secondItem="cHg-hu-2ze" secondAttribute="bottom" constant="15" id="AZj-TD-gv2"/>
+                            <constraint firstItem="vQn-Zi-7gF" firstAttribute="top" secondItem="JMX-aV-lYg" secondAttribute="top" id="B1A-uI-g7c"/>
+                            <constraint firstItem="a86-6l-n9D" firstAttribute="top" secondItem="3a1-p1-66f" secondAttribute="top" id="Dp7-yc-CPD"/>
+                            <constraint firstItem="a86-6l-n9D" firstAttribute="leading" secondItem="3a1-p1-66f" secondAttribute="trailing" constant="10" id="H1c-TR-CS5"/>
+                            <constraint firstAttribute="trailing" secondItem="PwL-ie-Ruv" secondAttribute="trailing" constant="10" id="Im1-ji-suQ"/>
+                            <constraint firstItem="nGX-EM-k0W" firstAttribute="leading" secondItem="dL1-ks-7j1" secondAttribute="leading" id="JLb-Sv-Csi"/>
+                            <constraint firstItem="hVx-vj-A2X" firstAttribute="top" secondItem="3a1-p1-66f" secondAttribute="bottom" id="K9Z-5V-Xmm"/>
+                            <constraint firstItem="qIC-YW-U7n" firstAttribute="top" secondItem="1Fm-ti-lVl" secondAttribute="bottom" id="MQ4-wi-iiK"/>
+                            <constraint firstItem="PwL-ie-Ruv" firstAttribute="leading" secondItem="Xdx-xB-KRx" secondAttribute="trailing" constant="10" id="NxH-Xu-28h"/>
+                            <constraint firstItem="6lO-wd-s6r" firstAttribute="top" secondItem="hVx-vj-A2X" secondAttribute="top" id="OjM-51-O3r"/>
+                            <constraint firstAttribute="trailing" secondItem="nGX-EM-k0W" secondAttribute="trailing" constant="10" id="P0W-hg-cah"/>
+                            <constraint firstItem="9a0-aU-8iD" firstAttribute="leading" secondItem="cHg-hu-2ze" secondAttribute="leading" id="P12-LW-jRy"/>
+                            <constraint firstItem="bC2-wp-5zR" firstAttribute="leading" secondItem="9a0-aU-8iD" secondAttribute="trailing" constant="10" id="Ppe-vv-LlE"/>
+                            <constraint firstItem="cHg-hu-2ze" firstAttribute="top" secondItem="JMX-aV-lYg" secondAttribute="top" constant="10" id="S3L-T5-Fkt"/>
+                            <constraint firstItem="6lO-wd-s6r" firstAttribute="leading" secondItem="dL1-ks-7j1" secondAttribute="leading" id="USr-IM-tPV"/>
+                            <constraint firstItem="bC2-wp-5zR" firstAttribute="top" secondItem="9a0-aU-8iD" secondAttribute="top" id="Zmq-Lx-GNZ"/>
+                            <constraint firstItem="a86-6l-n9D" firstAttribute="leading" secondItem="dL1-ks-7j1" secondAttribute="leading" id="ak6-hA-27T"/>
+                            <constraint firstItem="nGX-EM-k0W" firstAttribute="top" secondItem="1Fm-ti-lVl" secondAttribute="top" id="cd0-vK-29L"/>
+                            <constraint firstItem="6lO-wd-s6r" firstAttribute="leading" secondItem="hVx-vj-A2X" secondAttribute="trailing" constant="10" id="dWS-Cj-HfJ"/>
+                            <constraint firstItem="MZk-Bv-UaB" firstAttribute="leading" secondItem="dL1-ks-7j1" secondAttribute="leading" id="dcu-5C-cet"/>
+                            <constraint firstItem="hVx-vj-A2X" firstAttribute="leading" secondItem="9a0-aU-8iD" secondAttribute="leading" id="hIQ-TR-QfT"/>
+                            <constraint firstItem="3a1-p1-66f" firstAttribute="top" secondItem="9a0-aU-8iD" secondAttribute="bottom" id="iyl-Mw-ReJ"/>
+                            <constraint firstItem="1Fm-ti-lVl" firstAttribute="leading" secondItem="9a0-aU-8iD" secondAttribute="leading" id="kN5-Qi-FW9"/>
+                            <constraint firstItem="vQn-Zi-7gF" firstAttribute="leading" secondItem="JMX-aV-lYg" secondAttribute="leading" id="l2O-JO-FFX"/>
+                            <constraint firstItem="PwL-ie-Ruv" firstAttribute="leading" secondItem="dL1-ks-7j1" secondAttribute="leading" id="maV-cR-73j"/>
+                            <constraint firstAttribute="trailing" secondItem="vQn-Zi-7gF" secondAttribute="trailing" id="mp1-Af-xdq"/>
+                            <constraint firstItem="qIC-YW-U7n" firstAttribute="leading" secondItem="9a0-aU-8iD" secondAttribute="leading" id="nBu-VK-9Ze"/>
+                            <constraint firstItem="dL1-ks-7j1" firstAttribute="top" secondItem="JMX-aV-lYg" secondAttribute="top" constant="10" id="pl4-wk-ZJp"/>
+                            <constraint firstItem="bC2-wp-5zR" firstAttribute="leading" secondItem="dL1-ks-7j1" secondAttribute="leading" id="rgA-MA-Rbu"/>
+                            <constraint firstAttribute="bottom" secondItem="vQn-Zi-7gF" secondAttribute="bottom" id="sgI-Tv-HOc"/>
+                            <constraint firstItem="dL1-ks-7j1" firstAttribute="leading" secondItem="cHg-hu-2ze" secondAttribute="trailing" constant="10" id="uWx-rb-bAx"/>
+                            <constraint firstAttribute="trailing" secondItem="MZk-Bv-UaB" secondAttribute="trailing" constant="10" id="uhk-y1-EkT"/>
+                            <constraint firstItem="1Fm-ti-lVl" firstAttribute="top" secondItem="hVx-vj-A2X" secondAttribute="bottom" id="wAK-Ii-HZd"/>
+                            <constraint firstItem="MZk-Bv-UaB" firstAttribute="leading" secondItem="qIC-YW-U7n" secondAttribute="trailing" constant="10" id="xj7-XP-fdK"/>
+                            <constraint firstItem="MZk-Bv-UaB" firstAttribute="top" secondItem="qIC-YW-U7n" secondAttribute="top" id="ymR-4b-GAm"/>
+                            <constraint firstItem="Xdx-xB-KRx" firstAttribute="leading" secondItem="9a0-aU-8iD" secondAttribute="leading" id="zB3-ro-twh"/>
+                            <constraint firstAttribute="trailing" secondItem="a86-6l-n9D" secondAttribute="trailing" constant="10" id="zEy-5P-cei"/>
+                            <constraint firstItem="dL1-ks-7j1" firstAttribute="width" secondItem="cHg-hu-2ze" secondAttribute="width" id="zNz-yS-ZLQ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="yxb-VL-z5O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="6LU-EI-ZyT"/>
+                    <constraint firstItem="JMX-aV-lYg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Ce6-oR-AJe"/>
+                    <constraint firstAttribute="trailing" secondItem="JMX-aV-lYg" secondAttribute="trailing" constant="10" id="GYb-K9-PDb"/>
+                    <constraint firstAttribute="bottom" secondItem="yxb-VL-z5O" secondAttribute="bottom" id="YV0-0b-HkS"/>
+                    <constraint firstItem="yxb-VL-z5O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="YcV-SH-S0R"/>
+                    <constraint firstAttribute="bottom" secondItem="JMX-aV-lYg" secondAttribute="bottom" constant="10" id="gCn-Fn-iPl"/>
+                    <constraint firstItem="JMX-aV-lYg" firstAttribute="leading" secondItem="yxb-VL-z5O" secondAttribute="trailing" id="ppb-Xt-TFK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bottomImg" destination="hOV-6S-snr" id="9iu-bh-Z25"/>
+                <outlet property="imgView" destination="vQn-Zi-7gF" id="l5C-5h-gj2"/>
+                <outlet property="priceLbl" destination="dL1-ks-7j1" id="Kv0-oW-TM3"/>
+                <outlet property="selectView" destination="t1P-DR-E71" id="8fz-HA-1m2"/>
+                <outlet property="title1Lbl" destination="9a0-aU-8iD" id="pfp-wY-NDE"/>
+                <outlet property="title2Lbl" destination="3a1-p1-66f" id="kqe-Fh-TDO"/>
+                <outlet property="title3Lbl" destination="hVx-vj-A2X" id="mxf-Bw-A8q"/>
+                <outlet property="title4Lbl" destination="1Fm-ti-lVl" id="4Dc-i6-WAu"/>
+                <outlet property="title5Lbl" destination="qIC-YW-U7n" id="aaR-Lp-OHh"/>
+                <outlet property="title6Lbl" destination="Xdx-xB-KRx" id="VNR-79-Fc7"/>
+                <outlet property="topImg" destination="6xd-VT-ai4" id="Qmz-ED-vit"/>
+                <outlet property="typeLbl" destination="cHg-hu-2ze" id="qhv-I7-vMg"/>
+                <outlet property="value1Lbl" destination="bC2-wp-5zR" id="sGX-g9-ibZ"/>
+                <outlet property="value2Lbl" destination="a86-6l-n9D" id="pYk-fr-9gW"/>
+                <outlet property="value3Lbl" destination="6lO-wd-s6r" id="l6b-5Z-LdP"/>
+                <outlet property="value4Lbl" destination="nGX-EM-k0W" id="UVy-SM-mHN"/>
+                <outlet property="value5Lbl" destination="MZk-Bv-UaB" id="zsh-Uv-gIL"/>
+                <outlet property="value6Lbl" destination="PwL-ie-Ruv" id="sF5-lD-TiE"/>
+            </connections>
+            <point key="canvasLocation" x="116" y="112"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="1Fm-ti-lVl">
+            <size key="intrinsicContentSize" width="105.5" height="14"/>
+        </designable>
+        <designable name="3a1-p1-66f">
+            <size key="intrinsicContentSize" width="101.5" height="14"/>
+        </designable>
+        <designable name="6lO-wd-s6r">
+            <size key="intrinsicContentSize" width="33.5" height="14"/>
+        </designable>
+        <designable name="9a0-aU-8iD">
+            <size key="intrinsicContentSize" width="38.5" height="14"/>
+        </designable>
+        <designable name="MZk-Bv-UaB">
+            <size key="intrinsicContentSize" width="124" height="14"/>
+        </designable>
+        <designable name="PwL-ie-Ruv">
+            <size key="intrinsicContentSize" width="16" height="14"/>
+        </designable>
+        <designable name="Xdx-xB-KRx">
+            <size key="intrinsicContentSize" width="84.5" height="14"/>
+        </designable>
+        <designable name="a86-6l-n9D">
+            <size key="intrinsicContentSize" width="7" height="14"/>
+        </designable>
+        <designable name="bC2-wp-5zR">
+            <size key="intrinsicContentSize" width="38.5" height="14"/>
+        </designable>
+        <designable name="cHg-hu-2ze">
+            <size key="intrinsicContentSize" width="35" height="16.5"/>
+        </designable>
+        <designable name="dL1-ks-7j1">
+            <size key="intrinsicContentSize" width="35.5" height="16.5"/>
+        </designable>
+        <designable name="hVx-vj-A2X">
+            <size key="intrinsicContentSize" width="74.5" height="14"/>
+        </designable>
+        <designable name="nGX-EM-k0W">
+            <size key="intrinsicContentSize" width="27" height="14"/>
+        </designable>
+        <designable name="qIC-YW-U7n">
+            <size key="intrinsicContentSize" width="106.5" height="14"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="left_arrow_package" width="310" height="173"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

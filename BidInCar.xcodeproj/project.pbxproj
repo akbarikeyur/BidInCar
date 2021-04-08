@@ -28,6 +28,14 @@
 		183EBF0B2358A7B800F34909 /* FloatingTextview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EBF0A2358A7B800F34909 /* FloatingTextview.swift */; };
 		183EBF0D2358AC2F00F34909 /* ContactUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EBF0C2358AC2F00F34909 /* ContactUsVC.swift */; };
 		18404C1925ECEE7E0092BA73 /* country.json in Resources */ = {isa = PBXBuildFile; fileRef = 18404C1825ECEE7E0092BA73 /* country.json */; };
+		18431FAE261F1A4E006A582A /* LuckyDrawUserTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18431FAC261F1A4E006A582A /* LuckyDrawUserTVC.swift */; };
+		18431FAF261F1A4E006A582A /* LuckyDrawUserTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18431FAD261F1A4E006A582A /* LuckyDrawUserTVC.xib */; };
+		18431FB2261F1F5F006A582A /* LuckyDrawVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18431FB1261F1F5F006A582A /* LuckyDrawVC.swift */; };
+		18431FB7261F21C1006A582A /* QuarterTabCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18431FB5261F21C1006A582A /* QuarterTabCVC.swift */; };
+		18431FB8261F21C1006A582A /* QuarterTabCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18431FB6261F21C1006A582A /* QuarterTabCVC.xib */; };
+		18431FBC261F2C86006A582A /* BuyerPackageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18431FBB261F2C86006A582A /* BuyerPackageVC.swift */; };
+		18431FC1261F2DA3006A582A /* BuyerPackageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18431FBF261F2DA3006A582A /* BuyerPackageTVC.swift */; };
+		18431FC2261F2DA3006A582A /* BuyerPackageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18431FC0261F2DA3006A582A /* BuyerPackageTVC.xib */; };
 		184B2C7F23572A1F00A374E9 /* CustomImageCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B2C7D23572A1F00A374E9 /* CustomImageCVC.swift */; };
 		184B2C8023572A1F00A374E9 /* CustomImageCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184B2C7E23572A1F00A374E9 /* CustomImageCVC.xib */; };
 		184B2C82235738B600A374E9 /* CarDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B2C81235738B600A374E9 /* CarDetailVC.swift */; };
@@ -179,6 +187,14 @@
 		183EBF0A2358A7B800F34909 /* FloatingTextview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextview.swift; sourceTree = "<group>"; };
 		183EBF0C2358AC2F00F34909 /* ContactUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsVC.swift; sourceTree = "<group>"; };
 		18404C1825ECEE7E0092BA73 /* country.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = country.json; sourceTree = "<group>"; };
+		18431FAC261F1A4E006A582A /* LuckyDrawUserTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyDrawUserTVC.swift; sourceTree = "<group>"; };
+		18431FAD261F1A4E006A582A /* LuckyDrawUserTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LuckyDrawUserTVC.xib; sourceTree = "<group>"; };
+		18431FB1261F1F5F006A582A /* LuckyDrawVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyDrawVC.swift; sourceTree = "<group>"; };
+		18431FB5261F21C1006A582A /* QuarterTabCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuarterTabCVC.swift; sourceTree = "<group>"; };
+		18431FB6261F21C1006A582A /* QuarterTabCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuarterTabCVC.xib; sourceTree = "<group>"; };
+		18431FBB261F2C86006A582A /* BuyerPackageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerPackageVC.swift; sourceTree = "<group>"; };
+		18431FBF261F2DA3006A582A /* BuyerPackageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerPackageTVC.swift; sourceTree = "<group>"; };
+		18431FC0261F2DA3006A582A /* BuyerPackageTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyerPackageTVC.xib; sourceTree = "<group>"; };
 		184B2C7D23572A1F00A374E9 /* CustomImageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageCVC.swift; sourceTree = "<group>"; };
 		184B2C7E23572A1F00A374E9 /* CustomImageCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomImageCVC.xib; sourceTree = "<group>"; };
 		184B2C81235738B600A374E9 /* CarDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailVC.swift; sourceTree = "<group>"; };
@@ -363,6 +379,8 @@
 			isa = PBXGroup;
 			children = (
 				1828F8832382C91F00299E26 /* PackageVC.swift */,
+				18431FBB261F2C86006A582A /* BuyerPackageVC.swift */,
+				18431FBE261F2D6B006A582A /* TableviewCell */,
 			);
 			path = Package;
 			sourceTree = "<group>";
@@ -376,6 +394,33 @@
 				79C6259B25CD6C5C001712BC /* CustomMultiAuctionPackageTVC.xib */,
 			);
 			path = Package;
+			sourceTree = "<group>";
+		};
+		18431FAA261F1A20006A582A /* Tableview Cell */ = {
+			isa = PBXGroup;
+			children = (
+				18431FAC261F1A4E006A582A /* LuckyDrawUserTVC.swift */,
+				18431FAD261F1A4E006A582A /* LuckyDrawUserTVC.xib */,
+			);
+			path = "Tableview Cell";
+			sourceTree = "<group>";
+		};
+		18431FB4261F21A1006A582A /* Collectionview Cell */ = {
+			isa = PBXGroup;
+			children = (
+				18431FB5261F21C1006A582A /* QuarterTabCVC.swift */,
+				18431FB6261F21C1006A582A /* QuarterTabCVC.xib */,
+			);
+			path = "Collectionview Cell";
+			sourceTree = "<group>";
+		};
+		18431FBE261F2D6B006A582A /* TableviewCell */ = {
+			isa = PBXGroup;
+			children = (
+				18431FBF261F2DA3006A582A /* BuyerPackageTVC.swift */,
+				18431FC0261F2DA3006A582A /* BuyerPackageTVC.xib */,
+			);
+			path = TableviewCell;
 			sourceTree = "<group>";
 		};
 		185523A82388F0030089F17A /* Add Auction */ = {
@@ -643,6 +688,9 @@
 				18CB9143235C5C240005C9D0 /* PaymentBuyerVC.swift */,
 				18CB9147235C60BD0005C9D0 /* SettingsVC.swift */,
 				18A6E2DF235D851A00268205 /* PrivacyPolicyVC.swift */,
+				18431FB1261F1F5F006A582A /* LuckyDrawVC.swift */,
+				18431FB4261F21A1006A582A /* Collectionview Cell */,
+				18431FAA261F1A20006A582A /* Tableview Cell */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -789,6 +837,7 @@
 				18C6556623B9FE8C007E5920 /* CustomBidPriceCVC.xib in Resources */,
 				18B245012355C19600AEFDC6 /* Poppins-Light.ttf in Resources */,
 				18404C1925ECEE7E0092BA73 /* country.json in Resources */,
+				18431FC2261F2DA3006A582A /* BuyerPackageTVC.xib in Resources */,
 				7989901125CFC99700B3CBB5 /* CustomBidAuctionTVC.xib in Resources */,
 				189BD0B5235B2DA600887112 /* CustomCardCVC.xib in Resources */,
 				79C6258A25CD6C39001712BC /* CustomBookmarkTVC.xib in Resources */,
@@ -802,6 +851,7 @@
 				18F9E1EF2355BE5200B5E071 /* Assets.xcassets in Resources */,
 				7989901625CFCA4100B3CBB5 /* DepositHistoryTVC.xib in Resources */,
 				7989901B25CFCACA00B3CBB5 /* WithdrawHistoryTVC.xib in Resources */,
+				18431FAF261F1A4E006A582A /* LuckyDrawUserTVC.xib in Resources */,
 				18B245022355C19600AEFDC6 /* Poppins-Medium.ttf in Resources */,
 				7989902525CFCC2A00B3CBB5 /* CustomDraftAuctionTVC.xib in Resources */,
 				799643092550497F00B772B1 /* buyer_info.json in Resources */,
@@ -809,6 +859,7 @@
 				79C6256C25CD5ABA001712BC /* Auction.storyboard in Resources */,
 				79C6257625CD6C18001712BC /* CustomCarTVC.xib in Resources */,
 				79C6258F25CD6C42001712BC /* CustomPrivacyPolicyTVC.xib in Resources */,
+				18431FB8261F21C1006A582A /* QuarterTabCVC.xib in Resources */,
 				7989900725CFC7DA00B3CBB5 /* CustomFeaturedAuctionTVC.xib in Resources */,
 				188CFC632356037700C18B2A /* CustomCarCVC.xib in Resources */,
 				7996430B25504A6B00B772B1 /* seller_info.json in Resources */,
@@ -906,6 +957,7 @@
 				79EA850F25889AC0005A0543 /* WithdrawHistoryTVC.swift in Sources */,
 				18B244E42355C19600AEFDC6 /* View.swift in Sources */,
 				18B244F32355C19600AEFDC6 /* FloatRatingView.swift in Sources */,
+				18431FC1261F2DA3006A582A /* BuyerPackageTVC.swift in Sources */,
 				18B8074723575792001C76BF /* NotificationVC.swift in Sources */,
 				18B244DD2355C19600AEFDC6 /* NSError+RUI.swift in Sources */,
 				18B244FD2355C19600AEFDC6 /* Preference.swift in Sources */,
@@ -968,10 +1020,12 @@
 				18CB9148235C60BD0005C9D0 /* SettingsVC.swift in Sources */,
 				18B244E82355C19600AEFDC6 /* TableViewCell.swift in Sources */,
 				18B244DB2355C19600AEFDC6 /* String+RUI.swift in Sources */,
+				18431FB2261F1F5F006A582A /* LuckyDrawVC.swift in Sources */,
 				18B244E02355C19600AEFDC6 /* UIView+ParentController.swift in Sources */,
 				18B244EC2355C19600AEFDC6 /* TextField.swift in Sources */,
 				18F9E1EA2355BE5000B5E071 /* WelcomeVC.swift in Sources */,
 				189CDB4523DEE40300E1138C /* CustomBidAuctionTVC.swift in Sources */,
+				18431FAE261F1A4E006A582A /* LuckyDrawUserTVC.swift in Sources */,
 				18B244F52355C19600AEFDC6 /* DisablePasteForTextField.swift in Sources */,
 				18F9E1E82355BE5000B5E071 /* AppDelegate.swift in Sources */,
 				794BFA76255D24A0004AAB91 /* VerificationVC.swift in Sources */,
@@ -982,6 +1036,7 @@
 				18B244DC2355C19600AEFDC6 /* Lable.swift in Sources */,
 				18C6556523B9FE8C007E5920 /* CustomBidPriceCVC.swift in Sources */,
 				189BD0B7235B36C100887112 /* BillingInfoVC.swift in Sources */,
+				18431FB7261F21C1006A582A /* QuarterTabCVC.swift in Sources */,
 				18C7BD3B23606F1F008C4783 /* CarPaymentVC.swift in Sources */,
 				188CFC502355DF5F00C18B2A /* FloatingTextfiledView.swift in Sources */,
 				18B244EE2355C19600AEFDC6 /* ImageView.swift in Sources */,
@@ -991,6 +1046,7 @@
 				189BD0AF235B1AA000887112 /* MyProfileVC.swift in Sources */,
 				181AD90523586DB60006CACF /* CustomSideMenuTVC.swift in Sources */,
 				18B244E72355C19600AEFDC6 /* PlaceholderTextView.swift in Sources */,
+				18431FBC261F2C86006A582A /* BuyerPackageVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1315,7 +1371,7 @@
 				CODE_SIGN_ENTITLEMENTS = BidInCar/BidInCar.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.3;
 				DEVELOPMENT_TEAM = 3J4DQ98WN9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1344,7 +1400,7 @@
 				CODE_SIGN_ENTITLEMENTS = BidInCar/BidInCar.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.3;
 				DEVELOPMENT_TEAM = 3J4DQ98WN9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
