@@ -22,7 +22,7 @@ class SocialLogin: UIViewController, GIDSignInDelegate {
     }
     
     func serviceCallToSocialLogin(_ param : [String : Any]) {
-        APIManager.shared.serviceCallToCheckSocialLogin(param) { (dict) in
+        LoginAPIManager.shared.serviceCallToCheckSocialLogin(param) { (dict) in
             if dict.count == 0 {
                 let vc : SignupVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SignupVC") as! SignupVC
                 vc.isSocial = true

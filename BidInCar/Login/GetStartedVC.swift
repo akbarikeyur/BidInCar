@@ -18,16 +18,19 @@ class GetStartedVC: UIViewController {
     
     //MARK:- Button click event
     @IBAction func clickToLogin(_ sender: Any) {
+        addButtonEvent(EVENT.TITLE.LOGIN, EVENT.ACTION.LOGIN, String(describing: self))
         let vc : LoginVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func clickToSignup(_ sender: Any) {
+        addButtonEvent(EVENT.TITLE.SIGNUP, EVENT.ACTION.SIGNUP, String(describing: self))
         let vc : SignupVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SignupVC") as! SignupVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func clickToSkip(_ sender: Any) {
+        addButtonEvent(EVENT.TITLE.SKIP_HOME, EVENT.ACTION.SKIP_HOME, String(describing: self))
         AppDelegate().sharedDelegate().navigateToDashBoard()
     }
     

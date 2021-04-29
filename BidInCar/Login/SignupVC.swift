@@ -15,10 +15,12 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lnameTxt: FloatingTextfiledView!
     @IBOutlet weak var emailTxt: FloatingTextfiledView!
     @IBOutlet weak var addressTxt: FloatingTextfiledView!
+    @IBOutlet weak var addressView: UIView!
     @IBOutlet weak var buildingNameTxt: FloatingTextfiledView!
     @IBOutlet weak var flatNoTxt: FloatingTextfiledView!
     @IBOutlet weak var poBoxTxt: FloatingTextfiledView!
     @IBOutlet weak var cityTxt: FloatingTextfiledView!
+    
     @IBOutlet weak var countryTxt: FloatingTextfiledView!
     @IBOutlet weak var countryCodeTxt: FloatingTextfiledView!
     @IBOutlet weak var phoneTxt: FloatingTextfiledView!
@@ -96,6 +98,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     
     func setUIDesigning()
     {
+        addressView.isHidden = true
         emailTxt.myTxt.keyboardType = .emailAddress
         flatNoTxt.myTxt.keyboardType = .numbersAndPunctuation
         phoneTxt.myTxt.keyboardType = .phonePad
@@ -253,6 +256,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func clickToLogin(_ sender: UIButton) {
         self.view.endEditing(true)
+        addButtonEvent(EVENT.TITLE.LOGIN, EVENT.ACTION.LOGIN, String(describing: self))
         if isFromLogin {
             self.navigationController?.popViewController(animated: true)
         }else{
@@ -266,6 +270,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func clickToTermsCondition(_ sender: Any) {
+        addButtonEvent(EVENT.TITLE.TERMS, EVENT.ACTION.TERMS, String(describing: self))
         let vc : PrivacyPolicyVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PrivacyPolicyVC") as! PrivacyPolicyVC
         vc.isBackDisplay = true
         screenType = 1
@@ -286,9 +291,9 @@ class SignupVC: UIViewController, UITextFieldDelegate {
         else if !emailTxt.myTxt.text!.isValidEmail {
             displayToast("invalid_email")
         }
-        else if addressTxt.myTxt.text?.trimmed == "" {
-            displayToast("enter_address")
-        }
+//        else if addressTxt.myTxt.text?.trimmed == "" {
+//            displayToast("enter_address")
+//        }
 //        else if buildingNameTxt.myTxt.text?.trimmed == "" {
 //            displayToast("enter_building")
 //        }
@@ -298,9 +303,9 @@ class SignupVC: UIViewController, UITextFieldDelegate {
 //        else if poBoxTxt.myTxt.text?.trimmed == "" {
 //            displayToast("enter_po_box")
 //        }
-        else if cityTxt.myTxt.text?.trimmed == "" {
-            displayToast("select_city")
-        }
+//        else if cityTxt.myTxt.text?.trimmed == "" {
+//            displayToast("select_city")
+//        }
         else if countryTxt.myTxt.text?.trimmed == "" {
             displayToast("select_country")
         }
@@ -372,7 +377,7 @@ class SignupVC: UIViewController, UITextFieldDelegate {
                 param["company_phone"] = companyPhoneTxt.myTxt.text
             }
             printData(param)
-            APIManager.shared.serviceCallToUserSignup(param) {
+            LoginAPIManager.shared.serviceCallToUserSignup(param) {
                 if AppModel.shared.currentUser.userid != "" {
                     let vc : VerificationVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "VerificationVC") as! VerificationVC
                     vc.isFromSignup = true

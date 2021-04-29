@@ -27,6 +27,7 @@ class SettingsVC: UIViewController {
     }
     
     @IBAction func clickToSelectOption(_ sender: UIButton) {
+        addButtonEvent(EVENT.TITLE.NOTIFICATION_SETTING, EVENT.ACTION.NOTIFICATION_SETTING, String(describing: self))
         participateBtn.isSelected = !participateBtn.isSelected
         var param = [String : Any]()
         param["userid"] = AppModel.shared.currentUser.userid
@@ -65,6 +66,7 @@ class SettingsVC: UIViewController {
             param["userid"] = AppModel.shared.currentUser.userid!
             param["current_password"] = currentPwdTxt.myTxt.text
             param["ppassword"] = newPwdTxt.myTxt.text
+            addButtonEvent(EVENT.TITLE.CHANGE_PASSWORD, EVENT.ACTION.CHANGE_PASSWORD, String(describing: self))
             APIManager.shared.serviceCallToChangePassword(param) {
                 displayToast("change_pwd_success")
                 self.currentPwdTxt.myTxt.text = ""

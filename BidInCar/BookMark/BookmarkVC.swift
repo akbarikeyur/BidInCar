@@ -54,18 +54,21 @@ class BookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        addButtonEvent(EVENT.TITLE.AUCTION_DETAIL, EVENT.ACTION.AUCTION_DETAIL, String(describing: self))
         let vc : CarDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "CarDetailVC") as! CarDetailVC
         vc.auctionData = arrAuctionData[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc @IBAction func clickToSeeBid(_ sender: UIButton) {
+        addButtonEvent(EVENT.TITLE.BID_DEAIL, EVENT.ACTION.BID_DEAIL, String(describing: self))
         let vc : BookmarkDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "BookmarkDetailVC") as! BookmarkDetailVC
         vc.auction = arrAuctionData[sender.tag]
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func clickToReminder(_ sender: UIButton) {
+        addButtonEvent(EVENT.TITLE.BID_DEAIL, EVENT.ACTION.BID_DEAIL, String(describing: self))
         let vc : BookmarkDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "BookmarkDetailVC") as! BookmarkDetailVC
         vc.auction = arrAuctionData[sender.tag]
         vc.isForReminder = true
@@ -107,6 +110,7 @@ class BookmarkVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func serviceCallToRemoveBookmark(_ auctionid : String, _ bookmarkid : String)
     {
+        addButtonEvent(EVENT.TITLE.REMOVE_WISHLIST, EVENT.ACTION.REMOVE_WISHLIST, String(describing: self))
         var param = [String : Any]()
         param["bookmarkid"] = bookmarkid
         APIManager.shared.serviceCallToRemoveBookmark(param) { (data) in

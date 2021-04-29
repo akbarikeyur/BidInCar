@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 
 
-let APP_VERSION = 1.0
-let BUILD_VERSION = 1
+let APP_VERSION = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 let DEVICE_ID = UIDevice.current.identifierForVendor?.uuidString
 let APPLE_LANGUAGE_KEY = "AppleLanguages"
 
@@ -23,6 +22,7 @@ Password : Bidcar@2019
 
 let GOOGLE_CLIENT_ID = "335995289028-8q0t81lmf0jbgopkcencf17j9f1ar56j.apps.googleusercontent.com"
 let GOOGLE_KEY = "335995289028-8q0t81lmf0jbgopkcencf17j9f1ar56j.apps.googleusercontent.com"
+let PLACE_API_KEY = "AIzaSyDti7gNKl64KDYjmUO04Xtgo6msBP2hON0" //"AIzaSyAylhQHaV99yBh7-wyhTvnto2R3-QFHHHg"
 
 let TWITTER_API_KEY = "mE9Ko4ako00oeakppPYLxeeZ5"
 let TWITTER_API_SECRET_KEY = "BU21tyVhNnZC7qIczK71oBEPsCh9mBCONX85n1LxTPEL0xSGKL"
@@ -38,8 +38,8 @@ let PAYPAL_SECRET = "EJcHmbghyDMOs9zxGqKsu7793Rff6V8RlrdtOQmCic_IdWUd_ROqc7JaBBK
 
 let PAYTAB_KEY = "VxmCXzfYr4rMSsyHanFmqXNbL1A62L4XjrAg0QfsUGeN9MvjaaFA8tLTumZw74uqv4HwVWYPDcDMY858iLJreukIRkfZpJqUO7qJ"
 
-let TERMS_URL = "https://bidincars.com/api_termsandcondition"
-let POLICY_URL = "https://bidincars.com/api_privacy_policy"
+let TERMS_URL = "https://www.bidincars.com/api_termsandcondition"
+let POLICY_URL = "https://www.bidincars.com/api_privacy_policy"
 
 let MONTH_ARRAY = [NSLocalizedString("month_jan", comment: ""), NSLocalizedString("month_feb", comment: ""), NSLocalizedString("month_mar", comment: ""), NSLocalizedString("month_apr", comment: ""), NSLocalizedString("month_may", comment: ""), NSLocalizedString("month_jun", comment: ""), NSLocalizedString("month_jul", comment: ""), NSLocalizedString("month_aug", comment: ""), NSLocalizedString("month_sept", comment: ""), NSLocalizedString("month_oct", comment: ""), NSLocalizedString("month_nov", comment: ""), NSLocalizedString("month_dec", comment: "")]
 

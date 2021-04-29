@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="90" height="70"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_car1" translatesAutoresizingMaskIntoConstraints="NO" id="hAr-N0-9HS">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temp_car1" translatesAutoresizingMaskIntoConstraints="NO" id="hAr-N0-9HS">
                         <rect key="frame" x="2" y="2" width="86" height="66"/>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Yb-Td-Oaf">
@@ -26,6 +26,7 @@
                     </imageView>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="6Yb-Td-Oaf" firstAttribute="trailing" secondItem="hAr-N0-9HS" secondAttribute="trailing" id="0Ms-Ky-LYL"/>
@@ -37,7 +38,6 @@
                 <constraint firstItem="6Yb-Td-Oaf" firstAttribute="top" secondItem="hAr-N0-9HS" secondAttribute="top" id="xDa-jS-8Yw"/>
                 <constraint firstAttribute="trailing" secondItem="hAr-N0-9HS" secondAttribute="trailing" constant="2" id="zc5-g1-sJO"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="imgView" destination="hAr-N0-9HS" id="roA-bM-1b7"/>
                 <outlet property="transperentImgView" destination="6Yb-Td-Oaf" id="BR1-ch-RWY"/>

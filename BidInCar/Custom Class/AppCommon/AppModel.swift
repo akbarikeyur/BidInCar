@@ -13,12 +13,14 @@ class AppModel: NSObject {
     var currentUser : UserModel!
     var AUCTION_DATA : [String : [AuctionModel]]!
     var AUCTION_TYPE : [AuctionTypeModel]!
+    var isTokenUpdate : Bool!
     
     func resetAllModel()
     {
         currentUser = UserModel.init()
         AUCTION_DATA = [String : [AuctionModel]]()
         AUCTION_TYPE = [AuctionTypeModel]()
+        isTokenUpdate = false
     }
     
     func getIntValue(_ dict : [String : Any], _ key : String) -> Int {
@@ -515,10 +517,9 @@ class AuctionModel : AppModel
         auction_price = AppModel.shared.getStringValue(dict, "auction_price")
         auction_bidprice = AppModel.shared.getStringValue(dict, "auction_bidprice")
         userid = AppModel.shared.getStringValue(dict, "userid")
-        if let temp = dict["year"] as? String {
-            year = temp
-        } else if let temp = dict["auction_year"] as? String {
-            year = temp
+        year = AppModel.shared.getStringValue(dict, "year")
+        if year == "" {
+            year = AppModel.shared.getStringValue(dict, "auction_year")
         }
         auctioncategoryid = AppModel.shared.getStringValue(dict, "auctioncategoryid")
         auctioncategorychildid = AppModel.shared.getStringValue(dict, "auctioncategorychildid")
@@ -632,17 +633,13 @@ class AuctionModel : AppModel
         if let temp = dict["delete_authority"] as? String {
             delete_authority = temp
         }
-        if let temp = dict["bookmark"] as? String {
-            bookmark = temp
-        }
+        bookmark = AppModel.shared.getStringValue(dict, "bookmark")
         bookmarkid = AppModel.shared.getStringValue(dict, "bookmarkid")
         if let temp = dict["auction_winner"] as? [String : Any] {
             auction_winner = WinnerModel.init(dict: temp)
         }
         if let temp = dict["bookmarks"] as? [String : Any] {
-            if let temp1 = temp["bookmark"] as? String {
-                bookmark = temp1
-            }
+            bookmark = AppModel.shared.getStringValue(temp, "bookmark")
             bookmarkid = AppModel.shared.getStringValue(temp, "bookmarkid")
         }
         if let tempData = dict["bidlist"] as? [[String : Any]] {
@@ -1018,12 +1015,8 @@ class CardModel : AppModel
         if let temp = dict["email"] as? String {
             email = temp
         }
-        if let temp = dict["exp_month"] as? String {
-            exp_month = temp
-        }
-        if let temp = dict["exp_year"] as? String {
-            exp_year = temp
-        }
+        exp_month = AppModel.shared.getStringValue(dict, "exp_month")
+        exp_year = AppModel.shared.getStringValue(dict, "exp_year")
         if let temp = dict["name_on_card"] as? String {
             name_on_card = temp
         }
@@ -1582,5 +1575,23 @@ class WithdrawModel : AppModel
         withdrawl_amount = AppModel.shared.getStringValue(dict, "withdrawl_amount")
         status = dict["status"] as? String ?? ""
         created_at = dict["created_at"] as? String ?? ""
+    }
+}
+
+
+struct ImageModel {
+    var id : Int!
+    var name, url : String!
+    var image : UIImage?
+    
+    init(_ dict : [String : Any]) {
+        id = dict["id"] as? Int ?? 0
+        name = dict["name"] as? String ?? ""
+        url = dict["url"] as? String ?? ""
+        if let temp = dict["image"] as? UIImage {
+            image = temp
+        }else{
+            image = nil
+        }
     }
 }

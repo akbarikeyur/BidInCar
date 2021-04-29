@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = true
             
         GIDSignIn.sharedInstance().clientID = GOOGLE_CLIENT_ID
-        GMSPlacesClient.provideAPIKey("AIzaSyAylhQHaV99yBh7-wyhTvnto2R3-QFHHHg")
+        GMSPlacesClient.provideAPIKey(PLACE_API_KEY)
         
         let WebPCoder = SDImageWebPCoder.shared
         SDImageCodersManager.shared.addCoder(WebPCoder)
@@ -100,6 +100,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         activityLoader.stopAnimating()
         activityLoader.removeFromSuperview()
         activityLoader = nil
+    }
+    
+    //MARK:- Log Event
+    func logEvent(_ event : String, _ param : [String : Any]?) {
+        Analytics.logEvent(event, parameters: param)
     }
     
     //MARK:- Navigation
@@ -249,6 +254,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func changeLanguage()
     {
         if L102Language.currentAppleLanguage() == "en" || L102Language.currentAppleLanguage().contains("en") {
+            addButtonEvent(EVENT.TITLE.CHANGE_ARABIC, EVENT.ACTION.CHANGE_ARABIC, String(describing: self))
             UserDefaults.standard.set(["ar"], forKey: "AppleLanguages")
             UserDefaults.standard.synchronize()
             // Update the language by swaping bundle
@@ -256,6 +262,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UIView.appearance().semanticContentAttribute = .forceRightToLeft
         }
         else{
+            addButtonEvent(EVENT.TITLE.CHANGE_ENGLISH, EVENT.ACTION.CHANGE_ENGLISH, String(describing: self))
             UserDefaults.standard.set(["en"], forKey: "AppleLanguages")
             UserDefaults.standard.synchronize()
             // Update the language by swaping bundle

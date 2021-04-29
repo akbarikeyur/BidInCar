@@ -139,6 +139,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBAction func clickToLogout(_ sender: UIButton) {
         self.menuContainerViewController.toggleLeftSideMenuCompletion(nil)
         showAlertWithOption("logout_title", message: "logout_msg", completionConfirm: {
+            addButtonEvent(EVENT.TITLE.LOGOUT, EVENT.ACTION.LOGOUT, String(describing: self))
             AppDelegate().sharedDelegate().logoutFromApp()
         }) {
             
@@ -152,6 +153,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             //AppDelegate().sharedDelegate().showLoginPopup("post_auction_login_msg")
             return
         }
+        addButtonEvent(EVENT.TITLE.POST_AUCTION, EVENT.ACTION.POST_AUCTION, String(describing: self))
         let navController = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PostAuctionVCNav") as! UINavigationController
         navController.isNavigationBarHidden = true
         menuContainerViewController.centerViewController = navController
@@ -164,6 +166,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //            AppDelegate().sharedDelegate().showLoginPopup("add_deposite_login_msg")
             return
         }
+        addButtonEvent(EVENT.TITLE.ADD_DEPOSIT, EVENT.ACTION.ADD_DEPOSIT, String(describing: self))
         let navController = STORYBOARD.HOME.instantiateViewController(withIdentifier: "HomeVCNav") as! UINavigationController
         navController.isNavigationBarHidden = true
         menuContainerViewController.centerViewController = navController
@@ -174,6 +177,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func changeNotification(_ sender: Any) {
+        addButtonEvent(EVENT.TITLE.NOTIFICATION_SETTING, EVENT.ACTION.NOTIFICATION_SETTING, String(describing: self))
         var param = [String : Any]()
         param["userid"] = AppModel.shared.currentUser.userid
         param["usernotification"] = notificationSwitch.isOn ? "on" : "off"
@@ -217,6 +221,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let dict = arrMenuData[indexPath.row]
         switch (dict["title"] as? String ?? "") {
             case getTranslate("menu_home"):
+                addButtonEvent(EVENT.TITLE.HOME, EVENT.ACTION.HOME, String(describing: self))
                 let navController = STORYBOARD.HOME.instantiateViewController(withIdentifier: "HomeVCNav") as! UINavigationController
                 navController.isNavigationBarHidden = true
                 menuContainerViewController.centerViewController = navController
@@ -228,8 +233,10 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 }
                 var navController = UINavigationController()
                 if isUserBuyer() {
+                    addButtonEvent(EVENT.TITLE.MY_AUCTION_BUYER, EVENT.ACTION.MY_AUCTION_BUYER, String(describing: self))
                     navController = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "MyAuctionVCNav") as! UINavigationController
                 }else{
+                    addButtonEvent(EVENT.TITLE.MY_AUCTION_SELLER, EVENT.ACTION.MY_AUCTION_SELLER, String(describing: self))
                     navController = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "MyAuctionSellerVCNav") as! UINavigationController
                 }
                 navController.isNavigationBarHidden = true
@@ -240,6 +247,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     AppDelegate().sharedDelegate().showLoginPopup("bookmark_list_login_msg")
                     return
                 }
+                addButtonEvent(EVENT.TITLE.WISHLIST, EVENT.ACTION.WISHLIST, String(describing: self))
                 let navController = STORYBOARD.HOME.instantiateViewController(withIdentifier: "BookmarkVCNav") as! UINavigationController
                 navController.isNavigationBarHidden = true
                 menuContainerViewController.centerViewController = navController
@@ -268,17 +276,20 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     AppDelegate().sharedDelegate().showLoginPopup("my_profile_login_msg")
                     return
                 }
+                addButtonEvent(EVENT.TITLE.MY_PROFILE, EVENT.ACTION.MY_PROFILE, String(describing: self))
                 let navController = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "MyProfileVCNav") as! UINavigationController
                 navController.isNavigationBarHidden = true
                 menuContainerViewController.centerViewController = navController
                 break
             case getTranslate("menu_contact"):
+                addButtonEvent(EVENT.TITLE.CONTACT_US, EVENT.ACTION.CONTACT_US, String(describing: self))
                 let navController = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "ContactUsVCNav") as! UINavigationController
                 navController.isNavigationBarHidden = true
                 menuContainerViewController.centerViewController = navController
                 break
             case getTranslate("menu_terms"):
 //                openUrlInSafari(strUrl: TERMS_URL)
+                addButtonEvent(EVENT.TITLE.TERMS, EVENT.ACTION.TERMS, String(describing: self))
                 let navController = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PrivacyPolicyVCNav") as! UINavigationController
                 navController.isNavigationBarHidden = true
                 screenType = 1
@@ -286,6 +297,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 break
             case getTranslate("menu_privacy"):
 //                openUrlInSafari(strUrl: POLICY_URL )
+                addButtonEvent(EVENT.TITLE.POLICY, EVENT.ACTION.POLICY, String(describing: self))
                 let navController = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PrivacyPolicyVCNav") as! UINavigationController
                 navController.isNavigationBarHidden = true
                 screenType = 0
@@ -299,6 +311,7 @@ class SideMenuVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 break
             case getTranslate("menu_logout"):
                 showAlertWithOption("logout_title", message: "logout_msg", completionConfirm: {
+                    addButtonEvent(EVENT.TITLE.LOGOUT, EVENT.ACTION.LOGOUT, String(describing: self))
                     AppDelegate().sharedDelegate().logoutFromApp()
                 }) {
                     

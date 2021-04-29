@@ -70,8 +70,13 @@ class PaymentBuyerVC: UIViewController {
     @objc func updateDepositeAmount()
     {
         let user_deposit = AppModel.shared.getStringValue(getBuyerTopData(), "deposite")
-        depositeAmountLbl.text = getTranslate("info_deposit_amount") + displayPriceWithCurrency(user_deposit)
-        depositeAmountLbl.attributedText = attributedStringWithColor(depositeAmountLbl.text!, [getTranslate("info_deposit_amount")], color: LightGrayColor)
+        if user_deposit == "" {
+            depositeAmountLbl.text = getTranslate("info_deposit_amount") + displayPriceWithCurrency("0")
+        }else{
+            depositeAmountLbl.text = getTranslate("info_deposit_amount") + displayPriceWithCurrency(user_deposit)
+            depositeAmountLbl.attributedText = attributedStringWithColor(depositeAmountLbl.text!, [getTranslate("info_deposit_amount")], color: LightGrayColor)
+        }
+        
     }
     
     //MARK:- Button click event
@@ -145,6 +150,7 @@ class PaymentBuyerVC: UIViewController {
     }
     
     @objc @IBAction func clickToViewAction(_ sender: UIButton) {
+        addButtonEvent(EVENT.TITLE.AUCTION_DETAIL, EVENT.ACTION.AUCTION_DETAIL, String(describing: self))
         let dict = arrBidAuction[sender.tag]
         let tempAuction = AuctionModel.init()
         tempAuction.auctionid = dict.auctionid
@@ -227,6 +233,7 @@ class PaymentBuyerVC: UIViewController {
             }
             self.totalDepositLbl.text = getTranslate("total_deposit") + displayPriceWithCurrency(setFlotingPrice(Double(totalDeposit)))
         }else{
+            self.totalDepositLbl.text = getTranslate("total_deposit") + displayPriceWithCurrency(setFlotingPrice(Double(totalDeposit)))
             self.totalDepositLbl.isHidden = true
         }
         
@@ -238,8 +245,8 @@ class PaymentBuyerVC: UIViewController {
             self.totalWithdrawLbl.text = getTranslate("total_withdrawal") + displayPriceWithCurrency(setFlotingPrice(Double(totalWithdraw))) + "\n" + getTranslate("total_remaining_deposit") + displayPriceWithCurrency(setFlotingPrice(Double(totalDeposit-totalWithdraw)))
         }else{
             self.totalWithdrawLbl.isHidden = true
+            self.totalWithdrawLbl.text = getTranslate("total_withdrawal") + displayPriceWithCurrency(setFlotingPrice(Double(totalWithdraw)))
         }
-        
     }
     
     func serviceCallToGetBidAuction()
@@ -249,6 +256,7 @@ class PaymentBuyerVC: UIViewController {
             for temp in data {
                 self.arrBidAuction.append(BidAuctionModel.init(dict: temp))
             }
+            self.bidsBtn.isSelected = (self.arrBidAuction.count > 0)
             self.setAuctionViewheight()
         }
     }
@@ -260,7 +268,7 @@ class PaymentBuyerVC: UIViewController {
                 self.arrDeposite.append(DepositeModel.init(dict: temp))
             }
             self.setupAmountData()
-            
+            self.depositBtn.isSelected = (self.arrDeposite.count > 0)
             self.setDepositViewheight()
         }
     }
@@ -272,6 +280,7 @@ class PaymentBuyerVC: UIViewController {
                 self.arrWithdraw.append(WithdrawModel.init(dict: temp))
             }
             self.setupAmountData()
+            self.withdrawBtn.isSelected = (self.arrWithdraw.count > 0)
             self.setWithdrawViewheight()
         }
     }

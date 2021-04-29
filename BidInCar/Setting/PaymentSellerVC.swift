@@ -119,35 +119,37 @@ class PaymentSellerVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         //resetAllData()
         sender.isSelected = !sender.isSelected
         if sender == packageBtn {
-            if packageBtn.isSelected {
-                packageView.isHidden = false
-                packageTblView.reloadData()
-                setpackageViewheight()
-            }else{
-                packageView.isHidden = true
-                constraintHeightPackageTbl.constant = 0
-            }
+            setpackageViewheight()
         }
         else if sender == featuredBtn {
-            if featuredBtn.isSelected {
-                featuredView.isHidden = false
-                featureTblView.reloadData()
-                setFeatureViewheight()
-            }else{
-                featuredView.isHidden = true
-                constraintHeightFeatureTbl.constant = 0
-            }
+            setFeatureViewheight()
         }
     }
     
     func setpackageViewheight()
     {
-        constraintHeightPackageTbl.constant = CGFloat((Int(packageCellheight) * arrPackage.count) + 42)
+        if packageBtn.isSelected {
+            packageView.isHidden = false
+            packageTblView.reloadData()
+            constraintHeightPackageTbl.constant = CGFloat((Int(packageCellheight) * arrPackage.count) + 42)
+        }else{
+            packageView.isHidden = true
+            constraintHeightPackageTbl.constant = 0
+        }
+        
     }
     
     func setFeatureViewheight()
     {
-        constraintHeightFeatureTbl.constant = CGFloat((Int(featureCellheight) * arrFeatureAuction.count) + 52)
+        if featuredBtn.isSelected {
+            featuredView.isHidden = false
+            featureTblView.reloadData()
+            constraintHeightFeatureTbl.constant = CGFloat((Int(featureCellheight) * arrFeatureAuction.count) + 52)
+        }else{
+            featuredView.isHidden = true
+            constraintHeightFeatureTbl.constant = 0
+        }
+        
     }
     
     func resetAllData()
@@ -175,6 +177,7 @@ class PaymentSellerVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 self.featureTblView.reloadData()
                 self.constraintHeightFeatureTbl.constant = CGFloat((120*self.arrFeatureAuction.count) + 72)
             }
+            self.featuredBtn.isSelected = (self.arrFeatureAuction.count > 0)
             self.setFeatureViewheight()
         }
     }
@@ -196,6 +199,7 @@ class PaymentSellerVC: UIViewController, UITableViewDelegate, UITableViewDataSou
                 self.packageTblView.reloadData()
                 self.setpackageViewheight()
             }
+            self.packageBtn.isSelected = (self.arrPackage.count > 0)
             self.setpackageViewheight()
         }
     }

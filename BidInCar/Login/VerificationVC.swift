@@ -38,7 +38,7 @@ class VerificationVC: UIViewController {
             var param = [String : Any]()
             param["otpnumber"] = codeTxt.myTxt.text
             
-            APIManager.shared.serviceCallToVerifyAccount(param) {
+            LoginAPIManager.shared.serviceCallToVerifyAccount(param) {
                 setLoginUserData()
                 AppDelegate().sharedDelegate().serviceCallToGetUserProfile()
                 AppDelegate().sharedDelegate().navigateToDashBoard()
@@ -59,7 +59,7 @@ class VerificationVC: UIViewController {
     func serviceCallToSendOtp() {
         var param = [String : Any]()
         param["userid"] = AppModel.shared.currentUser.userid
-        APIManager.shared.serviceCallToSendOtp(param) {
+        LoginAPIManager.shared.serviceCallToSendOtp(param) {
             
         }
     }

@@ -21,7 +21,6 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet weak var auctionStatusBtn: Button!
     @IBOutlet weak var auctionDescLbl: Label!
     @IBOutlet weak var seeMoreBtn: UIButton!
-    @IBOutlet weak var auctionTermsLbl: Label!
     @IBOutlet weak var lotLbl: Label!
     @IBOutlet weak var depositLbl: Label!
     @IBOutlet weak var yourBidView: UIView!
@@ -49,6 +48,8 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet var depositeView: UIView!
     @IBOutlet weak var depositeTxt: FloatingTextfiledView!
     @IBOutlet weak var termsConditionLbl: Label!
+    @IBOutlet weak var noteLbl: Label!
+    @IBOutlet weak var seeMoreNoteBtn: UIButton!
     
     var auctionData : AuctionModel = AuctionModel.init()
     var auctionDetailData : [[String : Any]] = [[String : Any]]()
@@ -67,7 +68,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         carCV.register(UINib.init(nibName: "CustomCarCVC", bundle: nil), forCellWithReuseIdentifier: "CustomCarCVC")
         tblView.register(UINib.init(nibName: "CustomCarDetailTVC", bundle: nil), forCellReuseIdentifier: "CustomCarDetailTVC")
         
-        termsConditionLbl.attributedText = getAttributeStringWithColor(termsConditionLbl.text!, [termsConditionLbl.text!], color: UIColor.blue, font: termsConditionLbl.font, isUnderLine: true)
+        setupMultipleTapLabel()
         depositLbl.attributedText = getAttributeStringWithColor(depositLbl.text!, [getTranslate("deposit_title")], color: BlueColor, font: depositLbl.font, isUnderLine: true)
         
         setTextFieldPlaceholderColor(myBidTxt, LightGrayColor)
@@ -125,6 +126,14 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }else{
             seeMoreBtn.isHidden = true
             auctionDescLbl.numberOfLines = 0
+        }
+        noteLbl.text = getTranslate("auction_note")
+        if noteLbl.getHeight() > 65 {
+            seeMoreNoteBtn.isHidden = false
+            noteLbl.numberOfLines = 3
+        }else{
+            seeMoreNoteBtn.isHidden = true
+            noteLbl.numberOfLines = 0
         }
         lotLbl.text = getTranslate("lot_title") + String(auctionData.auctionid)
         auctionDetailData = [[String : Any]]()
@@ -212,9 +221,8 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             }
         }
         
-        tblView.reloadData()
+        updateTblHeight()
         
-        auctionTermsLbl.text = ""// auctionData.auction_terms.html2String
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: Double(self.auctionData.auction_lat)!, longitude: Double(self.auctionData.auction_long)!)
         self.myMapView.addAnnotation(annotation)
@@ -226,6 +234,32 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             constraintHeightCarCV.constant = 0
         }else{
             constraintHeightCarCV.constant = 150
+        }
+    }
+    
+    func setupMultipleTapLabel() {
+        termsConditionLbl.text = "By clicking BID NOW, you are agreeing to BidinCars Terms & Conditions and Privacy policy."
+        termsConditionLbl.attributedText = getAttributeStringWithColor(termsConditionLbl.text!, ["Terms & Conditions", "Privacy policy"], color: UIColor.blue, font: termsConditionLbl.font, isUnderLine: true)
+        let tapAction = UITapGestureRecognizer(target: self, action: #selector(self.tapLabel(gesture:)))
+        termsConditionLbl.isUserInteractionEnabled = true
+        termsConditionLbl.addGestureRecognizer(tapAction)
+    }
+    
+    @objc @IBAction func tapLabel(gesture: UITapGestureRecognizer) {
+        if gesture.didTapAttributedTextInLabel(label: termsConditionLbl, targetText: "Terms & Conditions") {
+            //Terms & Conditions
+            addButtonEvent(EVENT.TITLE.TERMS, EVENT.ACTION.TERMS, String(describing: self))
+            let vc : PrivacyPolicyVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PrivacyPolicyVC") as! PrivacyPolicyVC
+            vc.isBackDisplay = true
+            screenType = 1
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else if gesture.didTapAttributedTextInLabel(label: termsConditionLbl, targetText: "Privacy policy.") {
+            //Privacy policy
+            addButtonEvent(EVENT.TITLE.POLICY, EVENT.ACTION.POLICY, String(describing: self))
+            let vc : PrivacyPolicyVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PrivacyPolicyVC") as! PrivacyPolicyVC
+            vc.isBackDisplay = true
+            screenType = 0
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -291,12 +325,13 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }
     }
     
-    @IBAction func clickToTermsConditions(_ sender: Any) {
-        self.view.endEditing(true)
-        screenType = 1
-        let vc : PrivacyPolicyVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "PrivacyPolicyVC") as! PrivacyPolicyVC
-        vc.isBackDisplay = true
-        self.navigationController?.pushViewController(vc, animated: true)
+    @IBAction func clickToSeeNoteMoreLess(_ sender: UIButton) {
+        seeMoreNoteBtn.isSelected = !seeMoreNoteBtn.isSelected
+        if seeMoreNoteBtn.isSelected {
+            noteLbl.numberOfLines = 0
+        }else{
+            noteLbl.numberOfLines = 3
+        }
     }
     
     @IBAction func clickToBookmark(_ sender: UIButton) {
@@ -306,7 +341,8 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             return
         }
         bookmarkBtn.isSelected = !bookmarkBtn.isSelected
-        if sender.isSelected {
+        if bookmarkBtn.isSelected {
+            addButtonEvent(EVENT.TITLE.ADD_WISHLIST, EVENT.ACTION.ADD_WISHLIST, String(describing: self))
             var param = [String : Any]()
             param["auctionid"] = auctionData.auctionid
             param["userid"] = AppModel.shared.currentUser.userid
@@ -317,6 +353,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
             }
         }
         else{
+            addButtonEvent(EVENT.TITLE.REMOVE_WISHLIST, EVENT.ACTION.REMOVE_WISHLIST, String(describing: self))
             var param = [String : Any]()
             param["bookmarkid"] = auctionData.bookmarkid
             APIManager.shared.serviceCallToRemoveBookmark(param) { (data) in
@@ -357,6 +394,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
                 displaySubViewtoParentView(self.view, subview: bidNowView)
             }
             else{
+                addButtonEvent(EVENT.TITLE.BIDNOW, EVENT.ACTION.BIDNOW, String(describing: self))
                 serviceCallToAddAuctionBid()
             }
         }
@@ -382,7 +420,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         }
         else{
             depositeView.removeFromSuperview()
-            
+            addButtonEvent(EVENT.TITLE.ADD_DEPOSIT, EVENT.ACTION.ADD_DEPOSIT, String(describing: self))
             var param = [String : Any]()
             param["userid"] = AppModel.shared.currentUser.userid
             param["deposite_amount"] = depositeTxt.myTxt.text
@@ -408,6 +446,7 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     
     @IBAction func clickToDownloadReport(_ sender: Any) {
+        addButtonEvent(EVENT.TITLE.INSPECT_REPORT, EVENT.ACTION.INSPECT_REPORT, String(describing: self))
         if autoCheckData.apid != "" {
             openUrlInSafari(strUrl: autoCheckData.path)
         }else{
@@ -533,20 +572,36 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         return auctionDetailData.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : CustomCarDetailTVC = tblView.dequeueReusableCell(withIdentifier: "CustomCarDetailTVC") as! CustomCarDetailTVC
         cell.titleLbl.text = auctionDetailData[indexPath.row]["title"] as? String
         cell.valueLbl.text = auctionDetailData[indexPath.row]["value"] as? String
-        constraintHeightTblView.constant = tblView.contentSize.height + 5
+        
         cell.contentView.backgroundColor = WhiteColor
         cell.selectionStyle = .none
         return cell
     }
     
+    func updateTblHeight() {
+        constraintHeightTblView.constant = CGFloat.greatestFiniteMagnitude
+        tblView.reloadData()
+        tblView.layoutIfNeeded()
+        constraintHeightTblView.constant = tblView.contentSize.height
+    }
+    
     //MARK:- Service called
     func serviceCallToGetAuctionDetail()
     {
-        APIManager.shared.serviceCallToGetAuctionDetail(auctionData.auctionid, (isFromPayment || isFromNotification)) { (data) in
+        var param : [String : Any] = [String : Any]()
+        param["auctionid"] = auctionData.auctionid
+        if isUserLogin() {
+            param["userid"] = AppModel.shared.currentUser.userid
+        }
+        APIManager.shared.serviceCallToGetAuctionDetail(param, (isFromPayment || isFromNotification)) { (data) in
             
             if let tempData : [String : Any] = data["auction"] as? [String : Any] {
                 self.auctionData = AuctionModel.init(dict: tempData)
@@ -635,4 +690,44 @@ class CarDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         // Pass the selected object to the new view controller.
     }
     */
+}
+
+extension UITapGestureRecognizer {
+    func didTapAttributedTextInLabel(label: UILabel, targetText: String) -> Bool {
+        guard let attributedString = label.attributedText, let lblText = label.text else { return false }
+        let targetRange = (lblText as NSString).range(of: targetText)
+        //IMPORTANT label correct font for NSTextStorage needed
+        let mutableAttribString = NSMutableAttributedString(attributedString: attributedString)
+        mutableAttribString.addAttributes(
+            [NSAttributedString.Key.font: label.font ?? UIFont.smallSystemFontSize],
+            range: NSRange(location: 0, length: attributedString.length)
+        )
+        // Create instances of NSLayoutManager, NSTextContainer and NSTextStorage
+        let layoutManager = NSLayoutManager()
+        let textContainer = NSTextContainer(size: CGSize.zero)
+        let textStorage = NSTextStorage(attributedString: mutableAttribString)
+
+        // Configure layoutManager and textStorage
+        layoutManager.addTextContainer(textContainer)
+        textStorage.addLayoutManager(layoutManager)
+
+        // Configure textContainer
+        textContainer.lineFragmentPadding = 0.0
+        textContainer.lineBreakMode = label.lineBreakMode
+        textContainer.maximumNumberOfLines = label.numberOfLines
+        let labelSize = label.bounds.size
+        textContainer.size = labelSize
+
+        // Find the tapped character location and compare it to the specified range
+        let locationOfTouchInLabel = self.location(in: label)
+        let textBoundingBox = layoutManager.usedRect(for: textContainer)
+        let textContainerOffset = CGPoint(x: (labelSize.width - textBoundingBox.size.width) * 0.5 - textBoundingBox.origin.x,
+                                          y: (labelSize.height - textBoundingBox.size.height) * 0.5 - textBoundingBox.origin.y);
+        let locationOfTouchInTextContainer = CGPoint(x: locationOfTouchInLabel.x - textContainerOffset.x, y:
+            locationOfTouchInLabel.y - textContainerOffset.y);
+        let indexOfCharacter = layoutManager.characterIndex(for: locationOfTouchInTextContainer, in: textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
+
+        return NSLocationInRange(indexOfCharacter, targetRange)
+    }
+
 }

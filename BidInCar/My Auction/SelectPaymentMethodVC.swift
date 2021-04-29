@@ -156,11 +156,11 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
             if amount == 0 {
                 return
             }
-            if PLATFORM.isSimulator {
-                paytabPaymentCompleted(getCurrentTimeStampValue())
-            }else{
+//            if PLATFORM.isSimulator {
+//                paytabPaymentCompleted(getCurrentTimeStampValue())
+//            }else{
                 paytab()
-            }
+//            }
             
         }
         else if selectedTab == 2 {
@@ -298,6 +298,16 @@ class SelectPaymentMethodVC: UIViewController, UITextFieldDelegate {
     }
     
     func paytab() {
+        
+        if AppModel.shared.currentUser.user_pobox == "" {
+            displayToast("Please update your PO Box number in your profile")
+            return
+        }
+        if AppModel.shared.currentUser.user_phonenumber == "" {
+            displayToast("Please update your phone number in your profile")
+            return
+        }
+        
         var address = ""
         if AppModel.shared.currentUser.user_flatnumber != "" {
             address = AppModel.shared.currentUser.user_flatnumber

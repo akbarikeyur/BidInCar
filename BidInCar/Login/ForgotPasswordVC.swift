@@ -33,7 +33,7 @@ class ForgotPasswordVC: UIViewController {
             displayToast("invalid_email")
         }
         else {
-            APIManager.shared.serviceCallToForgotPassword(["email" : emailTxt.myTxt.text!]) {
+            LoginAPIManager.shared.serviceCallToForgotPassword(["email" : emailTxt.myTxt.text!]) {
                 self.navigationController?.popViewController(animated: true)
             }
         }

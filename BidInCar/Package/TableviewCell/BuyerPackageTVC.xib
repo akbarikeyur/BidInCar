@@ -251,7 +251,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20% of the bid amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MZk-Bv-UaB" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5% of the bid amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MZk-Bv-UaB" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                 <rect key="frame" x="155" y="97.5" width="125" height="14"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -381,50 +381,6 @@
             <point key="canvasLocation" x="116" y="112"/>
         </tableViewCell>
     </objects>
-    <designables>
-        <designable name="1Fm-ti-lVl">
-            <size key="intrinsicContentSize" width="105.5" height="14"/>
-        </designable>
-        <designable name="3a1-p1-66f">
-            <size key="intrinsicContentSize" width="101.5" height="14"/>
-        </designable>
-        <designable name="6lO-wd-s6r">
-            <size key="intrinsicContentSize" width="33.5" height="14"/>
-        </designable>
-        <designable name="9a0-aU-8iD">
-            <size key="intrinsicContentSize" width="38.5" height="14"/>
-        </designable>
-        <designable name="MZk-Bv-UaB">
-            <size key="intrinsicContentSize" width="124" height="14"/>
-        </designable>
-        <designable name="PwL-ie-Ruv">
-            <size key="intrinsicContentSize" width="16" height="14"/>
-        </designable>
-        <designable name="Xdx-xB-KRx">
-            <size key="intrinsicContentSize" width="84.5" height="14"/>
-        </designable>
-        <designable name="a86-6l-n9D">
-            <size key="intrinsicContentSize" width="7" height="14"/>
-        </designable>
-        <designable name="bC2-wp-5zR">
-            <size key="intrinsicContentSize" width="38.5" height="14"/>
-        </designable>
-        <designable name="cHg-hu-2ze">
-            <size key="intrinsicContentSize" width="35" height="16.5"/>
-        </designable>
-        <designable name="dL1-ks-7j1">
-            <size key="intrinsicContentSize" width="35.5" height="16.5"/>
-        </designable>
-        <designable name="hVx-vj-A2X">
-            <size key="intrinsicContentSize" width="74.5" height="14"/>
-        </designable>
-        <designable name="nGX-EM-k0W">
-            <size key="intrinsicContentSize" width="27" height="14"/>
-        </designable>
-        <designable name="qIC-YW-U7n">
-            <size key="intrinsicContentSize" width="106.5" height="14"/>
-        </designable>
-    </designables>
     <resources>
         <image name="left_arrow_package" width="310" height="173"/>
         <systemColor name="systemBackgroundColor">

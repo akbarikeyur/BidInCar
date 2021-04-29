@@ -41,6 +41,7 @@ class PrivacyPolicyVC: UIViewController {
     }
     
     @IBAction func clickToNotification(_ sender: Any) {
+        addButtonEvent(EVENT.TITLE.NOTIFICATION, EVENT.ACTION.NOTIFICATION, String(describing: self))
         let vc : NotificationVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "NotificationVC") as! NotificationVC
         self.navigationController?.pushViewController(vc, animated: true)
     }

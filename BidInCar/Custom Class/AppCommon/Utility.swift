@@ -564,11 +564,27 @@ func setImageViewImage(_ imgView : UIImageView, _ strUrl : String, _ placeHolder
     if strUrl == "" {
         imgView.image = UIImage(named: placeHolderImg)
     }
-    imgView.sd_setImage(with: URL(string: strUrl), placeholderImage: UIImage.init(named: placeHolderImg )) { (image, error, SDImageCacheType, url) in
-        if image != nil {
-            imgView.image = image?.imageCropped(toFit: CGSize(width: imgView.frame.size.width, height: imgView.frame.size.height))
-        }else{
-            imgView.image = UIImage(named: placeHolderImg)
+    //Progressive Download
+    //This flag enables progressive download, the image is displayed progressively during download as a browser would do. By default, the image is only displayed once completely downloaded.
+    //so this flag provide a better experience to end user
+    let options: SDWebImageOptions = [.progressiveLoad,.scaleDownLargeImages]
+    let placeholder = UIImage(named: placeHolderImg)
+    DispatchQueue.global().async {
+        imgView.sd_setImage(with: URL(string: strUrl), placeholderImage: placeholder, options: options) { (image, _, cacheType,_ ) in
+            guard image != nil else {
+                return
+            }
+            //Loading cache images for better and fast performace
+            guard cacheType != .memory, cacheType != .disk else {
+                DispatchQueue.main.async {
+                    imgView.image = image
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                imgView.image = image
+            }
+            return
         }
     }
 }
@@ -578,12 +594,28 @@ func setImageViewImageWithAspectfit(_ imgView : UIImageView, _ strUrl : String, 
     if strUrl == "" {
         imgView.image = UIImage(named: placeHolderImg)
     }
-    imgView.sd_setImage(with: URL(string: strUrl), placeholderImage: UIImage.init(named: placeHolderImg )) { (image, error, SDImageCacheType, url) in
-        if image != nil {
-            imgView.image = image
-            imgView.contentMode = .scaleAspectFit
-        }else{
-            imgView.image = UIImage(named: placeHolderImg)
+    //Progressive Download
+    //This flag enables progressive download, the image is displayed progressively during download as a browser would do. By default, the image is only displayed once completely downloaded.
+    //so this flag provide a better experience to end user
+    let options: SDWebImageOptions = [.progressiveLoad,.scaleDownLargeImages]
+    let placeholder = UIImage(named: placeHolderImg)
+    imgView.contentMode = .scaleAspectFit
+    DispatchQueue.global().async {
+        imgView.sd_setImage(with: URL(string: strUrl), placeholderImage: placeholder, options: options) { (image, _, cacheType,_ ) in
+            guard image != nil else {
+                return
+            }
+            //Loading cache images for better and fast performace
+            guard cacheType != .memory, cacheType != .disk else {
+                DispatchQueue.main.async {
+                    imgView.image = image
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                imgView.image = image
+            }
+            return
         }
     }
 }
@@ -593,15 +625,29 @@ func setButtonBackgroundImage(_ button : UIButton, _ strUrl : String, _ placehol
     if strUrl == "" {
         button.setBackgroundImage(UIImage(named: placeholder), for: .normal)
     }
-    button.sd_setBackgroundImage(with: URL(string: strUrl), for: UIControl.State.normal, completed: { (image, error, SDImageCacheType, url) in
-        if image != nil{
-            button.setBackgroundImage(image?.imageCropped(toFit: CGSize(width: button.frame.size.width, height: button.frame.size.height)), for: .normal)
+    //Progressive Download
+    //This flag enables progressive download, the image is displayed progressively during download as a browser would do. By default, the image is only displayed once completely downloaded.
+    //so this flag provide a better experience to end user
+    let options: SDWebImageOptions = [.progressiveLoad,.scaleDownLargeImages]
+    let placeholder = UIImage(named: placeholder)
+    DispatchQueue.global().async {
+        button.sd_setBackgroundImage(with: URL(string: strUrl), for: UIControl.State.normal, placeholderImage: placeholder, options: options) { (image, _, cacheType,_ ) in
+            guard image != nil else {
+                return
+            }
+            //Loading cache images for better and fast performace
+            guard cacheType != .memory, cacheType != .disk else {
+                DispatchQueue.main.async {
+                    button.setBackgroundImage(image?.imageCropped(toFit: CGSize(width: button.frame.size.width, height: button.frame.size.height)), for: .normal)
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                button.setBackgroundImage(image?.imageCropped(toFit: CGSize(width: button.frame.size.width, height: button.frame.size.height)), for: .normal)
+            }
+            return
         }
-        else
-        {
-            button.setBackgroundImage(UIImage(named: placeholder), for: .normal)
-        }
-    })
+    }
 }
 
 func setButtonImage(_ button : UIButton, _ strUrl : String)
@@ -612,15 +658,6 @@ func setButtonImage(_ button : UIButton, _ strUrl : String)
             button.contentMode = .scaleAspectFit
         }
     }
-//    button.sd_setBackgroundImage(with: URL(string: strUrl), for: UIControl.State.normal, completed: { (image, error, SDImageCacheType, url) in
-//        if image != nil{
-//            button.setBackgroundImage(image?.imageCropped(toFit: CGSize(width: button.frame.size.width, height: button.frame.size.height)), for: .normal)
-//        }
-//        else
-//        {
-//            button.setBackgroundImage(nil, for: .normal)
-//        }
-//    })
 }
 
 func modifyCreditCardString(creditCardString : String) -> String {

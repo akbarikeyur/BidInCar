@@ -74,31 +74,34 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         var headerFrame = headerView.frame
         addressLbl.text = ""
         addressLbl.numberOfLines = 0
-        if AppModel.shared.currentUser.user_flatnumber != "" {
-            addressLbl.text = AppModel.shared.currentUser.user_flatnumber
-        }
-        if AppModel.shared.currentUser.user_buildingname != "" {
-            if addressLbl.text != "" {
-                addressLbl.text = addressLbl.text! + " "
-            }
-            addressLbl.text = addressLbl.text! + AppModel.shared.currentUser.user_buildingname
-        }
-        if AppModel.shared.currentUser.user_streetaddress != "" {
-            if addressLbl.text != "" {
-                addressLbl.text = addressLbl.text! + " "
-            }
-            addressLbl.text = addressLbl.text! + AppModel.shared.currentUser.user_streetaddress
-        }
-        if AppModel.shared.currentUser.user_pobox != "" {
-            if addressLbl.text != "" {
-                addressLbl.text = addressLbl.text! + " "
-            }
-            addressLbl.text = addressLbl.text! + AppModel.shared.currentUser.user_pobox
+//        if AppModel.shared.currentUser.user_flatnumber != "" {
+//            addressLbl.text = AppModel.shared.currentUser.user_flatnumber
+//        }
+//        if AppModel.shared.currentUser.user_buildingname != "" {
+//            if addressLbl.text != "" {
+//                addressLbl.text = addressLbl.text! + " "
+//            }
+//            addressLbl.text = addressLbl.text! + AppModel.shared.currentUser.user_buildingname
+//        }
+//        if AppModel.shared.currentUser.user_streetaddress != "" {
+//            if addressLbl.text != "" {
+//                addressLbl.text = addressLbl.text! + " "
+//            }
+//            addressLbl.text = addressLbl.text! + AppModel.shared.currentUser.user_streetaddress
+//        }
+//        if AppModel.shared.currentUser.user_pobox != "" {
+//            if addressLbl.text != "" {
+//                addressLbl.text = addressLbl.text! + " "
+//            }
+//            addressLbl.text = addressLbl.text! + AppModel.shared.currentUser.user_pobox
+//        }
+        if AppModel.shared.currentUser.country_name != "" {
+            addressLbl.text = AppModel.shared.currentUser.country_name
         }
         if addressLbl.text != "" {
-            addressLbl.text = getTranslate("address_colon") + addressLbl.text!
+            addressLbl.text = getTranslate("address_colon") + addressLbl.text! + "\n"
         }
-        addressLbl.text = addressLbl.text! + "\n" + getTranslate("type_colon") + (isUserBuyer() ? getTranslate("type_buyer") : getTranslate("type_seller"))
+        addressLbl.text = addressLbl.text! + getTranslate("type_colon") + (isUserBuyer() ? getTranslate("type_buyer") : getTranslate("type_seller"))
         constraintHeightAddress.constant = addressLbl.getHeight()
         headerFrame.size.width = SCREEN.WIDTH
         headerFrame.size.height = headerFrame.size.height - 34 + constraintHeightAddress.constant
@@ -117,30 +120,30 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
         dict["title"] = PROFILE.EMAIL
         dict["value"] = AppModel.shared.currentUser.user_email
         arrUserDetail.append(dict)
-        dict = [String : Any]()
-        dict["title"] = PROFILE.ADDRESS
-        dict["value"] = AppModel.shared.currentUser.user_streetaddress
-        arrUserDetail.append(dict)
-        dict = [String : Any]()
-        dict["title"] = PROFILE.BUILDING
-        dict["value"] = AppModel.shared.currentUser.user_buildingname
-        arrUserDetail.append(dict)
-        dict = [String : Any]()
-        dict["title"] = PROFILE.FLAT
-        dict["value"] = AppModel.shared.currentUser.user_flatnumber
-        arrUserDetail.append(dict)
-        dict = [String : Any]()
-        dict["title"] = PROFILE.PO
-        dict["value"] = AppModel.shared.currentUser.user_pobox
-        arrUserDetail.append(dict)
+//        dict = [String : Any]()
+//        dict["title"] = PROFILE.ADDRESS
+//        dict["value"] = AppModel.shared.currentUser.user_streetaddress
+//        arrUserDetail.append(dict)
+//        dict = [String : Any]()
+//        dict["title"] = PROFILE.BUILDING
+//        dict["value"] = AppModel.shared.currentUser.user_buildingname
+//        arrUserDetail.append(dict)
+//        dict = [String : Any]()
+//        dict["title"] = PROFILE.FLAT
+//        dict["value"] = AppModel.shared.currentUser.user_flatnumber
+//        arrUserDetail.append(dict)
+//        dict = [String : Any]()
+//        dict["title"] = PROFILE.PO
+//        dict["value"] = AppModel.shared.currentUser.user_pobox
+//        arrUserDetail.append(dict)
         dict = [String : Any]()
         dict["title"] = PROFILE.COUNTRY
         dict["value"] = AppModel.shared.currentUser.country_name
         arrUserDetail.append(dict)
-        dict = [String : Any]()
-        dict["title"] = PROFILE.CITY
-        dict["value"] = AppModel.shared.currentUser.city_name
-        arrUserDetail.append(dict)
+//        dict = [String : Any]()
+//        dict["title"] = PROFILE.CITY
+//        dict["value"] = AppModel.shared.currentUser.city_name
+//        arrUserDetail.append(dict)
         dict = [String : Any]()
         dict["title"] = PROFILE.COUNTRY_CODE
         if AppModel.shared.currentUser.phone_countrycode != "" {
@@ -247,6 +250,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     
     //MARK:- Button clickc event
     @IBAction func clickToEditProfile(_ sender: Any) {
+        addButtonEvent(EVENT.TITLE.EDIT_PROFILE, EVENT.ACTION.EDIT_PROFILE, String(describing: self))
         editBtn.isHidden = true
         isEditProfile = !isEditProfile
         tblView.reloadData()

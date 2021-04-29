@@ -86,6 +86,8 @@ struct API {
     
     static let GET_NOTIFICATION             =       BASE_URL + "notification/getnotification"
     static let UPDATE_NOTIFICATION          =       BASE_URL + "user/updatenotificationsettings"
+    
+    static let REGISTER_DEVICE              =       BASE_URL + "api/user/registerDevice"
 }
 
 
@@ -150,285 +152,7 @@ public class APIManager {
         return false
     }
 
-    //MARK:- Login Module
-    func serviceCallToUserLogin(_ params : [String : Any], completion: @escaping () -> Void) {
-        if !APIManager.isConnectedToNetwork()
-        {
-            APIManager().networkErrorMsg()
-            return
-        }
-        showLoader()
-        let headerParams :[String : String] = getJsonHeader()
-        
-        Alamofire.request(API.LOGIN, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
-            
-            removeLoader()
-            switch response.result {
-            case .success:
-                printData(response.result.value!)
-                if let result = response.result.value as? [String:Any] {
-                
-                    if let status = result["status"] as? String {
-                        if(status == "success") {
-                            if let data : [String : Any] = result["data"] as? [String : Any]
-                            {
-                                AppModel.shared.currentUser = UserModel.init(dict: data)
-                                completion()
-                                return
-                            }
-                        }
-                        else if status == "error"
-                        {
-                            if let message = result["message"] as? String, message != "" {
-                                displayToast(message)
-                            }
-                            self.handleStatusCode(result)
-                        }
-                    }
-                }
-                if let error = response.result.error
-                {
-                    displayToast(error.localizedDescription)
-                    return
-                }
-                break
-            case .failure(let error):
-                printData(error)
-                break
-            }
-        }
-    }
     
-    func serviceCallToCheckSocialLogin(_ params : [String : Any], completion: @escaping (_ dict : [String : Any]) -> Void) {
-        if !APIManager.isConnectedToNetwork()
-        {
-            APIManager().networkErrorMsg()
-            return
-        }
-        showLoader()
-        let headerParams :[String : String] = getJsonHeader()
-        
-        Alamofire.request(API.CHECK_SOCIAL_LOGIN, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
-            
-            removeLoader()
-            switch response.result {
-            case .success:
-                printData(response.result.value!)
-                if let result = response.result.value as? [String:Any] {
-                
-                    if let status = result["status"] as? String {
-                        if(status == "success") {
-                            if let data = result["data"] as? [String : Any] {
-                                completion(data)
-                            }else{
-                                completion([String : Any]())
-                            }
-                            
-                            return
-                        }
-                        else if status == "error"
-                        {
-                            if let message = result["message"] as? String, message != "" {
-                                displayToast(message)
-                            }
-                            self.handleStatusCode(result)
-                        }
-                    }
-                }
-                if let error = response.result.error
-                {
-                    displayToast(error.localizedDescription)
-                    return
-                }
-                break
-            case .failure(let error):
-                printData(error)
-                break
-            }
-        }
-    }
-    
-    func serviceCallToUserSignup(_ params : [String : Any], completion: @escaping () -> Void) {
-        if !APIManager.isConnectedToNetwork()
-        {
-            APIManager().networkErrorMsg()
-            return
-        }
-        showLoader()
-        let headerParams : [String : String] = ["Content-Type":"application/json", "Accept" : "application/json"]
-        printData(params)
-        Alamofire.request(API.SIGNUP, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
-            
-            removeLoader()
-            switch response.result {
-            case .success:
-                printData(response.result.value!)
-                if let result = response.result.value as? [String:Any] {
-                
-                    if let status = result["status"] as? String {
-                        if(status == "success") {
-                            if let data : [String : Any] = result["data"] as? [String : Any]
-                            {
-                                AppModel.shared.currentUser = UserModel.init(dict: data)
-                                completion()
-                                return
-                            }
-                        }
-                        else if status == "error"
-                        {
-                            if let message = result["message"] as? String, message != "" {
-                                displayToast(message)
-                            }
-                            self.handleStatusCode(result)
-                        }
-                    }
-                }
-                if let error = response.result.error
-                {
-                    displayToast(error.localizedDescription)
-                    return
-                }
-                break
-            case .failure(let error):
-                printData(error)
-                break
-            }
-        }
-    }
-    
-    func serviceCallToSendOtp(_ params : [String : Any], completion: @escaping () -> Void) {
-        if !APIManager.isConnectedToNetwork()
-        {
-            APIManager().networkErrorMsg()
-            return
-        }
-        showLoader()
-        let headerParams :[String : String] = getJsonHeader()
-        
-        Alamofire.request(API.SEND_OTP, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
-            
-            removeLoader()
-            switch response.result {
-            case .success:
-                printData(response.result.value!)
-                if let result = response.result.value as? [String:Any] {
-                
-                    if let status = result["status"] as? String {
-                        if(status == "success") {
-                            completion()
-                            return
-                        }
-                        else if status == "error"
-                        {
-                            if let message = result["message"] as? String, message != "" {
-                                displayToast(message)
-                            }
-                            self.handleStatusCode(result)
-                        }
-                    }
-                }
-                if let error = response.result.error
-                {
-                    displayToast(error.localizedDescription)
-                    return
-                }
-                break
-            case .failure(let error):
-                printData(error)
-                break
-            }
-        }
-    }
-    
-    func serviceCallToVerifyAccount(_ params : [String : Any], completion: @escaping () -> Void) {
-        if !APIManager.isConnectedToNetwork()
-        {
-            APIManager().networkErrorMsg()
-            return
-        }
-        showLoader()
-        let headerParams :[String : String] = getJsonHeader()
-        
-        Alamofire.request(API.VERIFY_OTP, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
-            
-            removeLoader()
-            switch response.result {
-            case .success:
-                printData(response.result.value!)
-                if let result = response.result.value as? [String:Any] {
-                
-                    if let status = result["status"] as? String {
-                        if(status == "success") {
-                            completion()
-                            return
-                        }
-                        else if status == "error"
-                        {
-                            if let message = result["message"] as? String, message != "" {
-                                displayToast(message)
-                            }
-                            self.handleStatusCode(result)
-                        }
-                    }
-                }
-                if let error = response.result.error
-                {
-                    displayToast(error.localizedDescription)
-                    return
-                }
-                break
-            case .failure(let error):
-                printData(error)
-                break
-            }
-        }
-    }
-    
-    func serviceCallToForgotPassword(_ params : [String : Any], completion: @escaping () -> Void) {
-        if !APIManager.isConnectedToNetwork()
-        {
-            APIManager().networkErrorMsg()
-            return
-        }
-        showLoader()
-        let headerParams :[String : String] = getJsonHeader()
-        
-        Alamofire.request(API.FORGOT_PASSWORD, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
-            removeLoader()
-            switch response.result {
-            case .success:
-                printData(response.result.value!)
-                if let result = response.result.value as? [String:Any] {
-                
-                    if let status = result["status"] as? String {
-                        if(status == "success") {
-                            if let message = result["message"] as? String, message != "" {
-                                displayToast(message)
-                            }
-                            completion()
-                            return
-                        }
-                        else if status == "error"
-                        {
-                            if let message = result["message"] as? String, message != "" {
-                                displayToast(message)
-                            }
-                            self.handleStatusCode(result)
-                        }
-                    }
-                }
-                if let error = response.result.error
-                {
-                    displayToast(error.localizedDescription)
-                    return
-                }
-                break
-            case .failure(let error):
-                printData(error)
-                break
-            }
-        }
-    }
     
     //MARK:- Profile
     func serviceCallToGetUserProfile(_ userId : String, _ completion: @escaping (_ data : [String : Any]) -> Void) {
@@ -1162,7 +886,7 @@ public class APIManager {
         }
     }
     
-    func serviceCallToGetAuctionDetail(_ auctionid : String, _ isLoaderDisplay : Bool, _ completion: @escaping (_ data : [String : Any]) -> Void) {
+    func serviceCallToGetAuctionDetail(_ param : [String : Any], _ isLoaderDisplay : Bool, _ completion: @escaping (_ data : [String : Any]) -> Void) {
         if !APIManager.isConnectedToNetwork()
         {
             APIManager().networkErrorMsg()
@@ -1172,7 +896,7 @@ public class APIManager {
             showLoader()
         }
         let headerParams :[String : String] = getJsonHeader()
-        Alamofire.request(API.GET_AUCTION_DETAIL, method: .post, parameters: ["auctionid":auctionid], encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
+        Alamofire.request(API.GET_AUCTION_DETAIL, method: .post, parameters: param, encoding: JSONEncoding.default, headers: headerParams).responseJSON { (response) in
             removeLoader()
             switch response.result {
             case .success:
@@ -2494,6 +2218,192 @@ public class APIManager {
             case .failure(let error):
                 printData(error)
                 break
+            }
+        }
+    }
+    
+    //MARK:- Get request
+    func callGetRequest(_ api : String, _ isLoaderDisplay : Bool, _ completion: @escaping (_ result : [String:Any]) -> Void) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        if isLoaderDisplay {
+            showLoader()
+        }
+        
+        Alamofire.request(api, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: getJsonHeader()).responseJSON { (response) in
+            removeLoader()
+            switch response.result {
+            case .success:
+                if let result = response.result.value as? [String:Any] {
+                    completion(result)
+                    return
+                }
+                if let error = response.result.error
+                {
+                    displayToast(error.localizedDescription)
+                    return
+                }
+                break
+            case .failure(let error):
+                printData(error)
+                break
+            }
+        }
+    }
+    
+    //MARK:- Post request
+    func callPostRequest(_ api : String, _ params : [String : Any], _ isLoaderDisplay : Bool, _ completion: @escaping (_ result : [String:Any]) -> Void) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        if isLoaderDisplay {
+            showLoader()
+        }
+        Alamofire.request(api, method: .post, parameters: params, encoding: JSONEncoding.default, headers: getJsonHeader()).responseJSON { (response) in
+            removeLoader()
+            switch response.result {
+            case .success:
+                if let result = response.result.value as? [String:Any] {
+                    completion(result)
+                    return
+                }
+                if let error = response.result.error
+                {
+                    displayToast(error.localizedDescription)
+                    return
+                }
+                break
+            case .failure(let error):
+                printData(error)
+                break
+            }
+        }
+    }
+    
+    //MARK:- Multipart request
+    func callMultipartRequest(_ api : String, _ params : [String : Any], _ isLoaderDisplay : Bool, _ completion: @escaping (_ result : [String:Any]) -> Void) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        if isLoaderDisplay {
+            showLoader()
+        }
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            for (key, value) in params {
+                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+            }
+        }, usingThreshold: UInt64.init(), to: api, method: .post, headers: getJsonHeader()) { (result) in
+            switch result{
+            case .success(let upload, _, _):
+                upload.uploadProgress(closure: { (Progress) in
+                    printData("Upload Progress: \(Progress.fractionCompleted)")
+                })
+                upload.responseJSON { response in
+                    removeLoader()
+                    if let result = response.result.value as? [String:Any] {
+                        completion(result)
+                        return
+                    }
+                    else if let error = response.error{
+                        displayToast(error.localizedDescription)
+                        return
+                    }
+                }
+            case .failure(let error):
+                removeLoader()
+                printData(error.localizedDescription)
+                break
+            }
+        }
+    }
+    
+    func callMultipartRequestWithImage(_ api : String, _ params : [String : Any], _ arrImg : [ImageModel], _ isLoaderDisplay : Bool, _ completion: @escaping (_ result : [String:Any]) -> Void) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        if isLoaderDisplay {
+            showLoader()
+        }
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            for (key, value) in params {
+                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+            }
+            for temp in arrImg {
+                if let image = temp.image, temp.name != "" {
+                    if let imageData = image.jpegData(compressionQuality: 1.0) {
+                        multipartFormData.append(imageData, withName: temp.name, fileName: (temp.name + ".jpg"), mimeType: "image/jpg")
+                    }
+                }
+            }
+        }, usingThreshold: UInt64.init(), to: api, method: .post, headers: getMultipartHeader()) { (result) in
+            switch result{
+                case .success(let upload, _, _):
+                    upload.uploadProgress(closure: { (Progress) in
+                        printData("Upload Progress: \(Progress.fractionCompleted)")
+                    })
+                    upload.responseJSON { response in
+                        removeLoader()
+                        if let result = response.result.value as? [String:Any] {
+                            completion(result)
+                            return
+                        }
+                        else if let error = response.error{
+                            displayToast(error.localizedDescription)
+                            return
+                        }
+                    }
+                case .failure(let error):
+                    removeLoader()
+                    printData(error.localizedDescription)
+                    break
+            }
+        }
+    }
+    
+    func callMultipartRequestWithDoccument(_ api : String, _ params : [String : Any], _ url : URL, _ name : String, _ isLoaderDisplay : Bool, _ completion: @escaping (_ result : [String:Any]) -> Void) {
+        if !APIManager.isConnectedToNetwork()
+        {
+            APIManager().networkErrorMsg()
+            return
+        }
+        if isLoaderDisplay {
+            showLoader()
+        }
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            for (key, value) in params {
+                multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+            }
+            multipartFormData.append(url, withName: name)
+        }, usingThreshold: UInt64.init(), to: api, method: .post, headers: getMultipartHeader()) { (result) in
+            switch result{
+                case .success(let upload, _, _):
+                    upload.uploadProgress(closure: { (Progress) in
+                        printData("Upload Progress: \(Progress.fractionCompleted)")
+                    })
+                    upload.responseJSON { response in
+                        removeLoader()
+                        if let result = response.result.value as? [String:Any] {
+                            completion(result)
+                            return
+                        }
+                        else if let error = response.error{
+                            displayToast(error.localizedDescription)
+                            return
+                        }
+                    }
+                case .failure(let error):
+                    removeLoader()
+                    printData(error.localizedDescription)
+                    break
             }
         }
     }

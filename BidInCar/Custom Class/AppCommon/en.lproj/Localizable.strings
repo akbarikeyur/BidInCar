@@ -293,7 +293,7 @@
 
 "create_auction" = "Create Auction";
 "update_auction" = "Update Auction";
-"engine_number" = "Engine Number No.";
+"engine_number" = "Engine Number";
 "exterior_colour" = "Exterior colour";
 
 "2_doors" = "2 doors";
@@ -472,3 +472,5 @@
 "account_number_colon" = "Account Number:";
 "iban_colon" = "IBAN:";
 "swift_code_colon" = "Swift Code:";
+
+"auction_note" = "This vehicle shall be sold as is and need to collect from where is. All bids on the auction shall be final.\n\nBidders are solely responsible to asses, verify and confirm the vehicle details and condition before bidding.\nBidinCars offers no warranty or guarantee on any items selling on its online auction platform.\n\nMaking a bid on an auction constitute a legal obligation to buy the item for the specified price if the seller accept this offer at the end of the auction.\nOnce the seller is accepted the bid, bidder is liable to proceed with purchase process and has no provision to revoke or cancel the bid at any case. Total deposit shall be impounded if fails to fulfill this.";

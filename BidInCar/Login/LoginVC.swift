@@ -46,6 +46,7 @@ class LoginVC: SocialLogin {
     //MARK:- Button click event
     @IBAction func clickToSignup(_ sender: Any) {
         self.view.endEditing(true)
+        addButtonEvent(EVENT.TITLE.SIGNUP, EVENT.ACTION.SIGNUP, String(describing: self))
         let vc : SignupVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "SignupVC") as! SignupVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -53,18 +54,22 @@ class LoginVC: SocialLogin {
     @IBAction func clickToSocialLogin(_ sender: UIButton) {
         self.view.endEditing(true)
         if sender.tag == 1 {
+            addButtonEvent(EVENT.TITLE.GOOGLE_LOGIN, EVENT.ACTION.GOOGLE_LOGIN, String(describing: self))
             loginWithGoogle()
         }
         else if sender.tag == 2 {
+            addButtonEvent(EVENT.TITLE.FACEBOOK_LOGIN, EVENT.ACTION.FACEBOOK_LOGIN, String(describing: self))
             loginWithFacebook()
         }
         else if sender.tag == 3 {
+            addButtonEvent(EVENT.TITLE.APPLE_LOGIN, EVENT.ACTION.APPLE_LOGIN, String(describing: self))
             actionHandleAppleSignin()
         }
     }
     
     @IBAction func clickToLogin(_ sender: UIButton) {
         self.view.endEditing(true)
+        addButtonEvent(EVENT.TITLE.EMAIL_LOGIN, EVENT.ACTION.EMAIL_LOGIN, String(describing: self))
         if unameTxt.myTxt.text?.trimmed == "" {
             displayToast("enter_email")
         }
@@ -77,7 +82,7 @@ class LoginVC: SocialLogin {
             param["password"] = passwordTxt.myTxt.text
             param["user_token"] = getPushToken()
             printData(param)
-            APIManager.shared.serviceCallToUserLogin(param) {
+            LoginAPIManager.shared.serviceCallToUserLogin(param) {
                 if AppModel.shared.currentUser.verified {
                     setLoginUserData()
                     AppDelegate().sharedDelegate().serviceCallToGetUserProfile()
@@ -100,10 +105,12 @@ class LoginVC: SocialLogin {
     }
     
     @IBAction func clickToKeepLogin(_ sender: Any) {
+        addButtonEvent(EVENT.TITLE.KEEP_LOGIN, EVENT.ACTION.KEEP_LOGIN, String(describing: self))
         keepBtn.isSelected = !keepBtn.isSelected
     }
     
     @IBAction func clickToForgotPassword(_ sender: Any) {
+        addButtonEvent(EVENT.TITLE.FORGOT_PASSWORD, EVENT.ACTION.FORGOT_PASSWORD, String(describing: self))
         let vc : ForgotPasswordVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "ForgotPasswordVC") as! ForgotPasswordVC
         self.navigationController?.pushViewController(vc, animated: true)
     }

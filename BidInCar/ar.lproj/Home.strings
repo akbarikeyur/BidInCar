@@ -191,8 +191,8 @@
 /* Class = "UILabel"; text = "To view the report you will need to Download"; ObjectID = "qVC-k4-aAr"; */
 "qVC-k4-aAr.text" = "لعرض التقرير سوف تحتاج إلى تنزيل";
 
-/* Class = "UILabel"; text = "Your account should have 20% balance of the amountyou wish to bid. Deposit"; ObjectID = "rY3-ZS-I5o"; */
-"rY3-ZS-I5o.text" = "يجب أن يحتوي حسابك على 20٪ رصيد من المبلغ الذي ترغب في تقديمه. الوديعة";
+/* Class = "UILabel"; text = "Your account should have 5% balance of the amountyou wish to bid. Deposit"; ObjectID = "rY3-ZS-I5o"; */
+"rY3-ZS-I5o.text" = "يجب أن يحتوي حسابك على 5٪ رصيد من المبلغ الذي ترغب في تقديمه. الوديعة";
 
 /* Class = "UILabel"; text = "Lot # 38374949 "; ObjectID = "tle-7A-6mI"; */
 "tle-7A-6mI.text" = "Lot # 38374949 ";

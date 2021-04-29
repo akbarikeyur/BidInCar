@@ -33,7 +33,6 @@ class HomeVC: UploadImageVC {
     
     var arrFeatureAuctionData : [AuctionModel] = [AuctionModel]()
     var arrAuctionData : [AuctionModel] = [AuctionModel]()
-    var arrSearchAuctionData : [AuctionModel] = [AuctionModel]()
     var selectedCategory = AuctionTypeModel.init(dict: [String : Any]())
     var refreshControl = UIRefreshControl.init()
     var arrInfo = [InfoModel]()
@@ -45,6 +44,8 @@ class HomeVC: UploadImageVC {
     var selectedModel = ChildCategoryModel.init()
     var selectedFilterCategory = AuctionTypeModel.init(dict: [String : Any]())
     var page = 1
+    var filterParam : [String : Any]?
+    var timer : Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,6 +94,11 @@ class HomeVC: UploadImageVC {
             }
             refreshTopData()
         }
+        
+        if AppModel.shared.isTokenUpdate == nil || !AppModel.shared.isTokenUpdate {
+            AppModel.shared.isTokenUpdate = true
+            LoginAPIManager.shared.serviceCallToRegisterDevice()
+        }
     }
     
     @objc func updateAuctionData(_ noti : Notification)
@@ -103,12 +109,6 @@ class HomeVC: UploadImageVC {
             }
             if index != nil {
                 self.arrAuctionData[index!] = auction
-                let index2 = self.arrSearchAuctionData.firstIndex { (temp) -> Bool in
-                    temp.auctionid == auction.auctionid
-                }
-                if index2 != nil {
-                    self.arrSearchAuctionData[index2!] = auction
-                }
             }
             updateTableviewHeight()
             categoryCV.reloadData()
@@ -149,12 +149,6 @@ class HomeVC: UploadImageVC {
             }
             if index != nil {
                 self.arrAuctionData.remove(at: index!)
-                let index2 = self.arrSearchAuctionData.firstIndex { (temp) -> Bool in
-                    temp.auctionid == auction.auctionid
-                }
-                if index2 != nil {
-                    self.arrSearchAuctionData.remove(at: index2!)
-                }
             }
             updateTableviewHeight()
             categoryCV.reloadData()
@@ -165,7 +159,9 @@ class HomeVC: UploadImageVC {
     {
         refreshControl.endRefreshing()
         page = 1
-        serviceCallToGetAuction("")
+        searchTxt.text = ""
+        self.view.endEditing(true)
+        serviceCallToGetAuction(nil)
         refreshTopData()
     }
     
@@ -202,16 +198,18 @@ class HomeVC: UploadImageVC {
             AppDelegate().sharedDelegate().navigateToLogin()
             return
         }
+        addButtonEvent(EVENT.TITLE.NOTIFICATION, EVENT.ACTION.NOTIFICATION, String(describing: self))
         let vc : NotificationVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "NotificationVC") as! NotificationVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func clickToReload(_ sender: Any) {
-        serviceCallToGetAuction("")
+        serviceCallToGetAuction(nil)
         refreshTopData()
     }
     
     @IBAction func clickToFilter(_ sender: Any) {
+        addButtonEvent(EVENT.TITLE.FILTER, EVENT.ACTION.FILTER, String(describing: self))
         if arrMake.count == 0 {
             if selectedFilterCategory.id == -1 {
                 selectedFilterCategory = AppModel.shared.AUCTION_TYPE.first!
@@ -304,7 +302,6 @@ class HomeVC: UploadImageVC {
         else{
             //{"auction_title":"","carmake":"0","carmodel":null,"min_price":"","max_price":"","cattype":"1"}
             var param = [String : Any]()
-            param["auction_title"] = ""
             param["cattype"] = selectedFilterCategory.id
             if selectedMake.categoryid != "" {
                 param["carmake"] = selectedMake.categoryid
@@ -323,13 +320,13 @@ class HomeVC: UploadImageVC {
                 param["min_price"] = ""
                 param["max_price"] = ""
             }
+            searchTxt.text = ""
+            page = 1
             selectedCategory = selectedFilterCategory
             categoryCV.reloadData()
-            serviceCallToGetAuction(APIManager.shared.convertToJson(param))
+            serviceCallToGetAuction(param)
             filterView.removeFromSuperview()
         }
-        
-        
     }
     
     @IBAction func clickToNextCategory(_ sender: UIButton) {
@@ -347,12 +344,17 @@ class HomeVC: UploadImageVC {
     @objc func textFieldDidChange(_ textField: UITextField)
     {
         if textField == searchTxt {
-            arrSearchAuctionData = [AuctionModel]()
-            arrSearchAuctionData = arrAuctionData.filter({ (result) -> Bool in
-                let nameTxt: NSString = result.auction_title! as NSString
-                return (nameTxt.range(of: textField.text!, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
-            })
-            updateTableviewHeight()
+            if textField.text!.trimmed.count > 2 {
+                if timer != nil {
+                    timer?.invalidate()
+                }
+                timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { (time) in
+                    if self.searchTxt.text?.trimmed != "" {
+                        self.page = 1
+                        self.serviceCallToGetAuction([String : Any]())
+                    }
+                })
+            }
         }
     }
     
@@ -438,6 +440,7 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.view.endEditing(true)
         if collectionView == featureCV {
+            addButtonEvent(EVENT.TITLE.AUCTION_DETAIL, EVENT.ACTION.AUCTION_DETAIL, String(describing: self))
             let vc : CarDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "CarDetailVC") as! CarDetailVC
             vc.auctionData = arrFeatureAuctionData[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
@@ -448,28 +451,22 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             categoryCV.reloadData()
             if let data = AppModel.shared.AUCTION_DATA[String(self.selectedCategory.id)], data.count > 0 {
                 arrAuctionData = data
-                if searchTxt.text?.trimmed != "" {
-                    arrSearchAuctionData = [AuctionModel]()
-                    arrSearchAuctionData = arrAuctionData.filter({ (result) -> Bool in
-                        let nameTxt: NSString = result.auction_title! as NSString
-                        return (nameTxt.range(of: searchTxt.text!, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
-                    })
-                }
                 updateTableviewHeight()
                 noDataLbl.isHidden = (arrAuctionData.count > 0)
                 gtPageValue()
                 setupFeatureAuction()
             }
             else{
-                searchTxt.text = ""
+//                searchTxt.text = ""
                 page = 1
-                serviceCallToGetAuction("")
+                serviceCallToGetAuction(nil)
             }
         }
         else if collectionView == infoCV {
             if isUserBuyer() {
                 let tempInfo = arrInfo[indexPath.row]
                 if tempInfo.name == getTranslate("info_deposit_amount") || tempInfo.name == getTranslate("info_total_bidding_limit") {
+                    addButtonEvent(EVENT.TITLE.ADD_DEPOSIT, EVENT.ACTION.ADD_DEPOSIT, String(describing: self))
                     NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_TO_MY_PROFILE), object: nil)
                     delay(0.1) {
                         NotificationCenter.default.post(name: NSNotification.Name.init(NOTIFICATION.REDIRECT_BUYER_PAYMENT), object: nil)
@@ -482,6 +479,7 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
             else {
                 let tempInfo = arrInfo[indexPath.row]
                 if tempInfo.name == getTranslate("info_package") {
+                    addButtonEvent(EVENT.TITLE.PACKAGE, EVENT.ACTION.PACKAGE, String(describing: self))
                     let vc : PackageVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "PackageVC") as! PackageVC
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
@@ -504,9 +502,6 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource, UIColle
 //MARK:- Tablewview method
 extension HomeVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchTxt.text?.trimmed != "" {
-            return arrSearchAuctionData.count
-        }
         return arrAuctionData.count
     }
 
@@ -516,7 +511,7 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : CustomCarTVC = tblView.dequeueReusableCell(withIdentifier: "CustomCarTVC") as! CustomCarTVC
-        let dict = (searchTxt.text?.trimmed != "") ? arrSearchAuctionData[indexPath.row] : arrAuctionData[indexPath.row]
+        let dict = arrAuctionData[indexPath.row]
         cell.setupDetails(dict)
         cell.bidNowBtn.isHidden = false
         cell.bidNowBtn.tag = indexPath.row
@@ -529,12 +524,13 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if page != 0 && arrAuctionData.count-1 == indexPath.row {
-            serviceCallToGetAuction("")
+            serviceCallToGetAuction(filterParam)
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        addButtonEvent(EVENT.TITLE.AUCTION_DETAIL, EVENT.ACTION.AUCTION_DETAIL, String(describing: self))
         let vc : CarDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "CarDetailVC") as! CarDetailVC
-        vc.auctionData = (searchTxt.text?.trimmed != "") ? arrSearchAuctionData[indexPath.row] : arrAuctionData[indexPath.row]
+        vc.auctionData = arrAuctionData[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -549,15 +545,15 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
             }
             return
         }
-        
+        addButtonEvent(EVENT.TITLE.AUCTION_DETAIL, EVENT.ACTION.AUCTION_DETAIL, String(describing: self))
         let vc : CarDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "CarDetailVC") as! CarDetailVC
-        vc.auctionData = (searchTxt.text?.trimmed != "") ? arrSearchAuctionData[sender.tag] : arrAuctionData[sender.tag]
+        vc.auctionData = arrAuctionData[sender.tag]
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
     @IBAction func clickToStarTVC(_ sender: UIButton) {
         self.view.endEditing(true)
-        let dict = (searchTxt.text?.trimmed != "") ? arrSearchAuctionData[sender.tag] : arrAuctionData[sender.tag]
+        let dict = arrAuctionData[sender.tag]
         if sender.isSelected {
             serviceCallToRemoveBookmark(dict.auctionid, dict.bookmarkid, 2)
         }else{
@@ -568,11 +564,7 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
     
     func updateTableviewHeight() {
         tblView.reloadData()
-        if searchTxt.text?.trimmed == "" {
-            constraintHeightTblView.constant = CGFloat((130 * arrAuctionData.count) + 200)
-        }else{
-            constraintHeightTblView.constant = CGFloat((130 * arrSearchAuctionData.count) + 200)
-        }
+        constraintHeightTblView.constant = CGFloat((130 * arrAuctionData.count) + 200)
     }
 }
 
@@ -599,18 +591,28 @@ extension HomeVC {
                     self.serviceCallToSelectMake()
                 }
                 self.categoryCV.reloadData()
-                self.serviceCallToGetAuction("")
+                self.serviceCallToGetAuction(nil)
             }
         }else{
             selectedCategory = AppModel.shared.AUCTION_TYPE.first!
             categoryCV.reloadData()
-            serviceCallToGetAuction("")
+            serviceCallToGetAuction(nil)
         }
     }
     
-    func serviceCallToGetAuction(_ filter : String)
+    func serviceCallToGetAuction(_ filter : [String : Any]?)
     {
+        self.view.endEditing(true)
         var param = [String : Any]()
+        if filter != nil {
+            filterParam = filter
+            param = filter!
+        }else{
+            filterParam = nil
+        }
+        if searchTxt.text != "" {
+            param["auction_title"] = searchTxt.text
+        }
         param["auctionstatus"] = "active"
         if isUserLogin() {
             param["userid"] = AppModel.shared.currentUser.userid
@@ -618,7 +620,6 @@ extension HomeVC {
         if selectedCategory.id != -1 {
             param["categoryid"] = selectedCategory.id
         }
-        param["filters"] = filter
         param["page"] = page
         printData(param)
         APIManager.shared.serviceCallToGetAuction(param) { (data) in
@@ -711,6 +712,7 @@ extension HomeVC {
             AppDelegate().sharedDelegate().showLoginPopup("bookmark_login_msg")
             return
         }
+        addButtonEvent(EVENT.TITLE.ADD_WISHLIST, EVENT.ACTION.ADD_WISHLIST, String(describing: self))
         var param = [String : Any]()
         param["auctionid"] = auctionid
         param["userid"] = AppModel.shared.currentUser.userid
@@ -723,13 +725,6 @@ extension HomeVC {
                 if index != nil {
                     self.arrAuctionData[index!].bookmark = "yes"
                     self.arrAuctionData[index!].bookmarkid = String(bookmarkId)
-                    let index1 = self.arrSearchAuctionData.firstIndex { (temp) -> Bool in
-                        temp.auctionid == auctionid
-                    }
-                    if index1 != nil {
-                        self.arrSearchAuctionData[index1!].bookmark = "yes"
-                        self.arrSearchAuctionData[index1!].bookmarkid = String(bookmarkId)
-                    }
                 }
                 self.updateTableviewHeight()
                 
@@ -747,6 +742,7 @@ extension HomeVC {
     
     func serviceCallToRemoveBookmark(_ auctionid : String, _ bookmarkid : String, _ type : Int)
     {
+        addButtonEvent(EVENT.TITLE.REMOVE_WISHLIST, EVENT.ACTION.REMOVE_WISHLIST, String(describing: self))
         var param = [String : Any]()
         param["bookmarkid"] = bookmarkid
         APIManager.shared.serviceCallToRemoveBookmark(param) { (data) in
@@ -758,13 +754,6 @@ extension HomeVC {
                 if index != nil {
                     self.arrAuctionData[index!].bookmark = "no"
                     self.arrAuctionData[index!].bookmarkid = ""
-                    let index1 = self.arrSearchAuctionData.firstIndex { (temp) -> Bool in
-                        temp.auctionid == auctionid
-                    }
-                    if index1 != nil {
-                        self.arrSearchAuctionData[index1!].bookmark = "no"
-                        self.arrSearchAuctionData[index1!].bookmarkid = ""
-                    }
                 }
                 self.updateTableviewHeight()
                 

@@ -93,6 +93,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     @IBAction func clickToNotification(_ sender: Any) {
+        addButtonEvent(EVENT.TITLE.NOTIFICATION, EVENT.ACTION.NOTIFICATION, String(describing: self))
         let vc : NotificationVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "NotificationVC") as! NotificationVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -247,6 +248,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
             self.navigationController?.pushViewController(vc, animated: true)
             
         }else{
+            addButtonEvent(EVENT.TITLE.AUCTION_DETAIL, EVENT.ACTION.AUCTION_DETAIL, String(describing: self))
             let vc : CarDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "CarDetailVC") as! CarDetailVC
             vc.auctionData = ((activeBtn.isSelected) ? arrActiveAuction : arrCloseAuction)[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
@@ -254,6 +256,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
     }
 
     @objc @IBAction func clickToSeeBid(_ sender: UIButton) {
+        addButtonEvent(EVENT.TITLE.BID_DEAIL, EVENT.ACTION.BID_DEAIL, String(describing: self))
         let vc : BookmarkDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "BookmarkDetailVC") as! BookmarkDetailVC
         if activeBtn.isSelected {
             vc.auction = arrActiveAuction[sender.tag]
@@ -312,6 +315,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     @IBAction func clickToPayMakeFeatured(_ sender: Any) {
+        addButtonEvent(EVENT.TITLE.MAKE_FEATURE, EVENT.ACTION.MAKE_FEATURE, String(describing: self))
         featureContainerView.removeFromSuperview()
         let vc : SelectPaymentMethodVC = STORYBOARD.AUCTION.instantiateViewController(withIdentifier: "SelectPaymentMethodVC") as! SelectPaymentMethodVC
         vc.paymentType = PAYMENT.FEATURED
@@ -337,6 +341,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         
         if sender.isSelected {
+            addButtonEvent(EVENT.TITLE.ADD_WISHLIST, EVENT.ACTION.ADD_WISHLIST, String(describing: self))
             var param = [String : Any]()
             param["auctionid"] = dict.auctionid
             param["userid"] = AppModel.shared.currentUser.userid
@@ -353,6 +358,7 @@ class MyAuctionSellerVC: UIViewController, UITableViewDelegate, UITableViewDataS
             }
         }
         else{
+            addButtonEvent(EVENT.TITLE.REMOVE_WISHLIST, EVENT.ACTION.REMOVE_WISHLIST, String(describing: self))
             var param = [String : Any]()
             param["bookmarkid"] = dict.bookmarkid
             APIManager.shared.serviceCallToRemoveBookmark(param) { (data) in

@@ -89,6 +89,7 @@ class MyAuctionVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     @IBAction func clickToNotification(_ sender: Any) {
+        addButtonEvent(EVENT.TITLE.NOTIFICATION, EVENT.ACTION.NOTIFICATION, String(describing: self))
         let vc : NotificationVC = STORYBOARD.SETTING.instantiateViewController(withIdentifier: "NotificationVC") as! NotificationVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -223,6 +224,7 @@ class MyAuctionVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     @objc @IBAction func clickToSeeBid(_ sender: UIButton) {
+        addButtonEvent(EVENT.TITLE.BID_DEAIL, EVENT.ACTION.BID_DEAIL, String(describing: self))
         let vc : BookmarkDetailVC = STORYBOARD.HOME.instantiateViewController(withIdentifier: "BookmarkDetailVC") as! BookmarkDetailVC
         if activeBtn.isSelected {
             vc.auction = arrActiveAuction[sender.tag]
@@ -287,6 +289,7 @@ class MyAuctionVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         }
         
         if sender.isSelected {
+            addButtonEvent(EVENT.TITLE.ADD_WISHLIST, EVENT.ACTION.ADD_WISHLIST, String(describing: self))
             var param = [String : Any]()
             param["auctionid"] = dict.auctionid
             param["userid"] = AppModel.shared.currentUser.userid
@@ -303,6 +306,7 @@ class MyAuctionVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             }
         }
         else{
+            addButtonEvent(EVENT.TITLE.REMOVE_WISHLIST, EVENT.ACTION.REMOVE_WISHLIST, String(describing: self))
             var param = [String : Any]()
             param["bookmarkid"] = dict.bookmarkid
             APIManager.shared.serviceCallToRemoveBookmark(param) { (data) in

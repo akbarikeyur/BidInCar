@@ -294,7 +294,12 @@ class PostAuctionDetailVC: UIViewController {
     
     func serviceCallToGetAuctionDetail()
     {
-        APIManager.shared.serviceCallToGetAuctionDetail(myAuction.auctionid, false) { (data) in
+        var param : [String : Any] = [String : Any]()
+        param["auctionid"] = myAuction.auctionid
+        if isUserLogin() {
+            param["userid"] = AppModel.shared.currentUser.userid
+        }
+        APIManager.shared.serviceCallToGetAuctionDetail(param, false) { (data) in
             if let tempData : [String : Any] = data["auction"] as? [String : Any] {
                 self.myAuction = AuctionModel.init(dict: tempData)
             }

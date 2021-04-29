@@ -36,5 +36,7 @@ target 'BidInCar' do
   pod 'ActionSheetPicker-3.0'
   pod 'AFNetworking'
   
+  pod 'Firebase/Analytics'
+  pod 'GoogleTagManager'
   
 end
