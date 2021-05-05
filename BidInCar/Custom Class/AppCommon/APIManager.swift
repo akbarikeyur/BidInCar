@@ -22,6 +22,8 @@ struct API {
     static let FORGOT_PASSWORD              =       BASE_URL + "user/forget_password"
     static let CHECK_SOCIAL_LOGIN           =       BASE_URL + "api/user/social_login_check"
     
+    static let CHECK_APP_UPDATE             =       BASE_URL + "api/user/getAppUpdate"
+    
     static let GET_USER_PROFILE             =       BASE_URL + "user/getprofile"
     static let UPLOAD_PROFILE_PICTURE       =       BASE_URL + "user/upload_profile_pic"
     static let UPDATE_PROFILE               =       BASE_URL + "user/update_profile"

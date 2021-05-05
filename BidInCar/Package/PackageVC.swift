@@ -90,19 +90,19 @@ class PackageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             displayToast("select_package")
         }
         else{
-            var amount = 0
+            var amount : Float = 0.0
             if singleAuctionBtn.isSelected {
-                amount = Int(selectedSingle.package_price) ?? 0
+                amount = Float(selectedSingle.package_price)!
                 if selectedSingle.isFeatured {
-                    amount += Int(singlePackage.featured_price.featured_price)!
+                    amount += Float(singlePackage.featured_price.featured_price)!
                 }
                 if selectedSingle.isSocial {
-                    amount += Int(singlePackage.social_media_promotion.featured_price)!
+                    amount += Float(singlePackage.social_media_promotion.featured_price)!
                 }
             }else{
-                amount = Int(selectedPackage.package_price) ?? 0
+                amount = Float(selectedPackage.package_price) ?? 0.0
             }
-            
+            amount += amount*5/100
             var param = [String : Any]()
             if singleAuctionBtn.isSelected {
                 param["packageid"] = selectedSingle.packageid
@@ -172,13 +172,16 @@ class PackageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     cell.socialValueLbl.text = single_social_desc
                 }
             }
-            var totalPrice : Int = Int(dict.package_price)!
+            var totalPrice : Float = Float(dict.package_price)!
             if dict.isFeatured {
-                totalPrice += Int(singlePackage.featured_price.featured_price)!
+                totalPrice += Float(singlePackage.featured_price.featured_price)!
             }
             if dict.isSocial {
-                totalPrice += Int(singlePackage.social_media_promotion.featured_price)!
+                totalPrice += Float(singlePackage.social_media_promotion.featured_price)!
             }
+            let vatValue = totalPrice*5/100
+            cell.vatLbl.text = displayPriceWithCurrency(String(vatValue))
+            totalPrice += vatValue
             cell.totalLbl.text = getTranslate("total_space") + displayPriceWithCurrency(String(totalPrice))
             cell.socialBtn.isSelected = dict.isSocial
             cell.socialBtn.tag = indexPath.row
@@ -206,8 +209,12 @@ class PackageVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             cell.validityLbl.text = dict.days + getTranslate("space_day")
             cell.amountLbl.text = displayPriceWithCurrency(dict.package_price)
             cell.savingLbl.text = displayPriceWithCurrency(dict.package_savings) + "+"
+            var totalPrice : Float = Float(dict.package_price)!
+            let vatValue = totalPrice*5/100
+            cell.vatLbl.text = displayPriceWithCurrency(String(vatValue))
+            totalPrice += vatValue
             cell.descLbl.text = dict.package_decription
-            cell.totalLbl.text = getTranslate("total_space") + displayPriceWithCurrency(dict.package_price)
+            cell.totalLbl.text = getTranslate("total_space") + displayPriceWithCurrency(String(totalPrice))
             if let tempExtra : [String] = convertToArray(text: dict.extras) as? [String] {
                 for temp in tempExtra {
                     cell.descLbl.text = cell.descLbl.text! + "\n - " + temp

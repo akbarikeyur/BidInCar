@@ -20,6 +20,7 @@ class CustomSingleAuctionPackageTVC: UITableViewCell {
     @IBOutlet weak var totalAuctionLbl: Label!
     @IBOutlet weak var validityLbl: Label!
     @IBOutlet weak var bidderLbl: Label!
+    @IBOutlet weak var vatLbl: Label!
     @IBOutlet weak var amountLbl: Label!
     @IBOutlet weak var featuredTitleLbl: Label!
     @IBOutlet weak var featuredValueLbl: Label!

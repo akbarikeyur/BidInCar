@@ -20,6 +20,7 @@ class CustomMultiAuctionPackageTVC: UITableViewCell {
     @IBOutlet weak var totalAuctionLbl: Label!
     @IBOutlet weak var validityLbl: Label!
     @IBOutlet weak var amountLbl: Label!
+    @IBOutlet weak var vatLbl: Label!
     @IBOutlet weak var descLbl: Label!
     @IBOutlet weak var savingLbl: Label!
     @IBOutlet weak var totalLbl: Label!

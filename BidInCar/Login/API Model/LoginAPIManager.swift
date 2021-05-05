@@ -162,5 +162,18 @@ public class LoginAPIManager {
         }
     }
     
+    func serviceCallToCheckAppUpdateStatus(_ completion: @escaping (_ isUpdate : Bool) -> Void) {
+        
+        var param = [String : Any]()
+        param["type"] = "ios"
+        APIManager.shared.callPostRequest(API.CHECK_APP_UPDATE, param, false) { (dict) in
+            printData(dict)
+            if let status = dict["status"] as? String, status == "success" {
+                if let data = dict["data"] as? [String : Any] {
+                    completion(data["forcefully"] as? Bool ?? false)
+                }
+            }
+        }
+    }
     
 }

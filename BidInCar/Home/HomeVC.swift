@@ -9,11 +9,14 @@
 import UIKit
 import DropDown
 
+enum VersionError: Error {
+    case invalidResponse, invalidBundleInfo
+}
+
 class HomeVC: UploadImageVC {
 
     @IBOutlet weak var categoryCV: UICollectionView!
     @IBOutlet weak var tblView: UITableView!
-    @IBOutlet weak var constraintHeightTblView: NSLayoutConstraint!
     @IBOutlet var headerView: UIView!
     @IBOutlet weak var searchTxt: UITextField!
     @IBOutlet var noDataLbl: UILabel!
@@ -28,7 +31,6 @@ class HomeVC: UploadImageVC {
     @IBOutlet weak var infoCV: UICollectionView!
     @IBOutlet weak var infoNextBtn: Button!
     @IBOutlet weak var constraintHeightInfoCV: NSLayoutConstraint!
-    @IBOutlet weak var myScroll: UIScrollView!
     @IBOutlet weak var constraintCenterNoDataLbl: NSLayoutConstraint!
     
     var arrFeatureAuctionData : [AuctionModel] = [AuctionModel]()
@@ -74,7 +76,7 @@ class HomeVC: UploadImageVC {
         
         refreshControl.tintColor = BlueColor
         refreshControl.addTarget(self, action: #selector(refreshAuctionList), for: .valueChanged)
-        myScroll.refreshControl = refreshControl
+        tblView.refreshControl = refreshControl
         
         if arrAuctionData.count == 0 {
             if AppModel.shared.AUCTION_DATA.count == 0 {
@@ -99,6 +101,10 @@ class HomeVC: UploadImageVC {
             AppModel.shared.isTokenUpdate = true
             LoginAPIManager.shared.serviceCallToRegisterDevice()
         }
+        if !Platform.isSimulator {
+            checkForUpdate()
+        }
+        
     }
     
     @objc func updateAuctionData(_ noti : Notification)
@@ -358,6 +364,26 @@ class HomeVC: UploadImageVC {
         }
     }
     
+    func checkForUpdate() {
+        DispatchQueue.global().async {
+            do {
+                let update = try isUpdateAvailable()
+                print("update",update)
+                DispatchQueue.main.async {
+                    if update{
+                        LoginAPIManager.shared.serviceCallToCheckAppUpdateStatus { (isForcefully) in
+                            let vc : AppUpdateVC = STORYBOARD.MAIN.instantiateViewController(withIdentifier: "AppUpdateVC") as! AppUpdateVC
+                            vc.isForcefully = isForcefully
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        }
+                    }
+                }
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -564,7 +590,6 @@ extension HomeVC : UITableViewDelegate, UITableViewDataSource {
     
     func updateTableviewHeight() {
         tblView.reloadData()
-        constraintHeightTblView.constant = CGFloat((130 * arrAuctionData.count) + 200)
     }
 }
 
@@ -627,19 +652,18 @@ extension HomeVC {
                 self.arrAuctionData = [AuctionModel]()
                 self.arrFeatureAuctionData = [AuctionModel]()
             }
-            
-            for temp in data {
-                let auction = AuctionModel.init(dict: temp)
-                if self.selectedCategory.id == -1 {
-                    self.arrAuctionData.append(auction)
-                }
-                else if auction.categorytype == String(self.selectedCategory.id) {
-                    self.arrAuctionData.append(auction)
-                }
-                if auction.auction_featured == "yes" {
-                    self.arrFeatureAuctionData.append(auction)
+            if self.page != 0 {
+                for temp in data {
+                    let auction = AuctionModel.init(dict: temp)
+                    if self.selectedCategory.id == -1 {
+                        self.arrAuctionData.append(auction)
+                    }
+                    else if auction.categorytype == String(self.selectedCategory.id) {
+                        self.arrAuctionData.append(auction)
+                    }
                 }
             }
+            
             if data.count < 10 {
                 self.page = 0
             }else{
@@ -703,6 +727,16 @@ extension HomeVC {
         }
         self.featureCV.reloadData()
         featureView.isHidden = (arrFeatureAuctionData.count == 0)
+        tblView.tableHeaderView = nil
+        var newFrame = headerView.frame
+        if featureView.isHidden {
+            newFrame.size.height = 180
+        }else{
+            newFrame.size.height = 330
+        }
+        headerView.frame = newFrame
+        tblView.tableHeaderView = headerView
+        tblView.reloadData()
         updateNoDataCenter()
     }
     
@@ -863,8 +897,8 @@ extension HomeVC {
                 tempInfo.value = AppModel.shared.getStringValue(data, "package_name")
             }
             else if tempInfo.name == getTranslate("info_remaining_auctions") {
-                let value : Int = AppModel.shared.getIntValue(data, "auctionsleft")
-                if value <= 35 {
+                let auctionsleft = AppModel.shared.getStringValue(data, "auctionsleft")
+                if auctionsleft != "", let value : Int = Int(auctionsleft), value <= 35 {
                     tempInfo.value = String(value)
                 }else{
                     tempInfo.value = getTranslate("unlimited_value")

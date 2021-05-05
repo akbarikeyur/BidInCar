@@ -10,15 +10,33 @@ import UIKit
 
 class AppUpdateVC: UIViewController {
 
+    @IBOutlet weak var versionLbl: Label!
+    @IBOutlet weak var backBtn: Button!
+    
+    var isForcefully = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        versionLbl.text = ""
+        if let info = Bundle.main.infoDictionary {
+            let currentVersion = info["CFBundleShortVersionString"] as? String
+            versionLbl.text = "New Version " + currentVersion!
+        }
+        
+        backBtn.isHidden = isForcefully
     }
     
     //MARK:- Button click event
-    @IBAction func clickToUpdate(_ sender: Any) {
+    @IBAction func clickToBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func clickToUpdate(_ sender: Any) {
+        
+        openUrlInSafari(strUrl: APP_STORE_URL)
     }
 
     /*

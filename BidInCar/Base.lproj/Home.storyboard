@@ -192,6 +192,14 @@
                                     <action selector="clickToNextCategory:" destination="rjL-fd-RTT" eventType="touchUpInside" id="eG8-YS-cpZ"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aKD-Rf-nXs">
+                                <rect key="frame" x="0.0" y="155" width="320" height="413"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="rjL-fd-RTT" id="EvE-DJ-oqy"/>
+                                    <outlet property="delegate" destination="rjL-fd-RTT" id="mel-42-ULx"/>
+                                </connections>
+                            </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dSM-mP-Lyp" customClass="ImageView" customModule="BidInCar" customModuleProvider="target">
                                 <rect key="frame" x="10" y="154" width="300" height="1"/>
                                 <constraints>
@@ -203,114 +211,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFU-or-Wqi">
-                                <rect key="frame" x="0.0" y="155" width="320" height="413"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ANL-84-uBS">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="413"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VCX-r1-ceL">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SbA-lo-Fww">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIw-Eb-B63" customClass="Label" customModule="BidInCar" customModuleProvider="target">
-                                                                <rect key="frame" x="10" y="10" width="300" height="14"/>
-                                                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="12"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
-                                                                        <integer key="value" value="2"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="al"/>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                                                                        <real key="value" value="12"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </label>
-                                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P8K-jW-mbe">
-                                                                <rect key="frame" x="10" y="24" width="310" height="126"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="8KQ-F4-ZfM">
-                                                                    <size key="itemSize" width="50" height="50"/>
-                                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                                </collectionViewFlowLayout>
-                                                                <cells/>
-                                                                <connections>
-                                                                    <outlet property="dataSource" destination="rjL-fd-RTT" id="abG-S6-L9i"/>
-                                                                    <outlet property="delegate" destination="rjL-fd-RTT" id="o3v-pI-ZFW"/>
-                                                                </connections>
-                                                            </collectionView>
-                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpK-RJ-JJd" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                                                                <rect key="frame" x="300" y="24" width="20" height="126"/>
-                                                                <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="20" id="RIV-UX-mlk"/>
-                                                                </constraints>
-                                                                <inset key="imageEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
-                                                                <state key="normal" image="next_black"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonImage" value="next_black"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="clickToNextCategory:" destination="rjL-fd-RTT" eventType="touchUpInside" id="PIF-OR-A49"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstItem="cpK-RJ-JJd" firstAttribute="top" secondItem="P8K-jW-mbe" secondAttribute="top" id="0f7-ce-sW3"/>
-                                                            <constraint firstAttribute="trailing" secondItem="cpK-RJ-JJd" secondAttribute="trailing" id="2D1-ZL-RvR"/>
-                                                            <constraint firstAttribute="bottom" secondItem="P8K-jW-mbe" secondAttribute="bottom" id="9nc-dD-i5T"/>
-                                                            <constraint firstItem="cpK-RJ-JJd" firstAttribute="bottom" secondItem="P8K-jW-mbe" secondAttribute="bottom" id="EFf-bB-qGJ"/>
-                                                            <constraint firstAttribute="trailing" secondItem="P8K-jW-mbe" secondAttribute="trailing" id="MN4-KJ-dZK"/>
-                                                            <constraint firstItem="IIw-Eb-B63" firstAttribute="top" secondItem="SbA-lo-Fww" secondAttribute="top" constant="10" id="NNX-Bk-KXt"/>
-                                                            <constraint firstAttribute="height" constant="150" id="VIP-3p-3WR"/>
-                                                            <constraint firstItem="P8K-jW-mbe" firstAttribute="top" secondItem="IIw-Eb-B63" secondAttribute="bottom" id="bEz-pH-8aq"/>
-                                                            <constraint firstAttribute="trailing" secondItem="IIw-Eb-B63" secondAttribute="trailing" constant="10" id="qOL-oE-fcR"/>
-                                                            <constraint firstItem="IIw-Eb-B63" firstAttribute="leading" secondItem="SbA-lo-Fww" secondAttribute="leading" constant="10" id="sjz-lb-7wX"/>
-                                                            <constraint firstItem="P8K-jW-mbe" firstAttribute="leading" secondItem="SbA-lo-Fww" secondAttribute="leading" constant="10" id="xvy-Jx-Yhy"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
-                                            </stackView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aKD-Rf-nXs">
-                                                <rect key="frame" x="0.0" y="160" width="320" height="253"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="253" id="1uG-mH-ivQ"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="rjL-fd-RTT" id="EvE-DJ-oqy"/>
-                                                    <outlet property="delegate" destination="rjL-fd-RTT" id="mel-42-ULx"/>
-                                                </connections>
-                                            </tableView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="VCX-r1-ceL" firstAttribute="leading" secondItem="ANL-84-uBS" secondAttribute="leading" id="0ua-XL-YYq"/>
-                                            <constraint firstItem="aKD-Rf-nXs" firstAttribute="leading" secondItem="ANL-84-uBS" secondAttribute="leading" id="CZJ-Qe-Pd8"/>
-                                            <constraint firstItem="aKD-Rf-nXs" firstAttribute="top" secondItem="VCX-r1-ceL" secondAttribute="bottom" constant="10" id="Ika-VR-OBU"/>
-                                            <constraint firstAttribute="trailing" secondItem="VCX-r1-ceL" secondAttribute="trailing" id="U7J-NS-kI1"/>
-                                            <constraint firstAttribute="bottom" secondItem="aKD-Rf-nXs" secondAttribute="bottom" id="ZYU-ci-iKy"/>
-                                            <constraint firstItem="VCX-r1-ceL" firstAttribute="top" secondItem="ANL-84-uBS" secondAttribute="top" id="kpG-pw-SIH"/>
-                                            <constraint firstAttribute="trailing" secondItem="aKD-Rf-nXs" secondAttribute="trailing" id="lqt-8S-8qc"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="ANL-84-uBS" firstAttribute="width" secondItem="HFU-or-Wqi" secondAttribute="width" id="8nx-fB-EPE"/>
-                                    <constraint firstItem="ANL-84-uBS" firstAttribute="top" secondItem="HFU-or-Wqi" secondAttribute="top" id="VIG-pk-RHb"/>
-                                    <constraint firstAttribute="bottom" secondItem="ANL-84-uBS" secondAttribute="bottom" id="gTu-5P-Jel"/>
-                                    <constraint firstAttribute="trailing" secondItem="ANL-84-uBS" secondAttribute="trailing" id="hEP-zM-yYt"/>
-                                    <constraint firstItem="ANL-84-uBS" firstAttribute="leading" secondItem="HFU-or-Wqi" secondAttribute="leading" id="ngT-FX-dr5"/>
-                                </constraints>
-                            </scrollView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No auction found yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1u-OP-ipB" customClass="Label" customModule="BidInCar" customModuleProvider="target">
                                 <rect key="frame" x="10" y="486" width="300" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
@@ -332,14 +232,13 @@
                         <constraints>
                             <constraint firstItem="rVi-CE-QNo" firstAttribute="leading" secondItem="kf8-31-Id3" secondAttribute="leading" constant="10" id="3Dx-io-zwK"/>
                             <constraint firstItem="ZjP-m1-drQ" firstAttribute="leading" secondItem="kf8-31-Id3" secondAttribute="leading" id="3Yf-aE-tdN"/>
+                            <constraint firstItem="aKD-Rf-nXs" firstAttribute="trailing" secondItem="kf8-31-Id3" secondAttribute="trailing" id="BV5-Ic-v8s"/>
                             <constraint firstItem="k1u-OP-ipB" firstAttribute="centerY" secondItem="vH8-OM-oSB" secondAttribute="centerY" constant="210" id="DB3-ti-yri"/>
+                            <constraint firstItem="aKD-Rf-nXs" firstAttribute="bottom" secondItem="kf8-31-Id3" secondAttribute="bottom" id="Hg2-Xc-PHr"/>
                             <constraint firstItem="rZu-Uk-vFL" firstAttribute="top" secondItem="ZjP-m1-drQ" secondAttribute="bottom" constant="10" id="IVQ-TO-kOu"/>
                             <constraint firstItem="kf8-31-Id3" firstAttribute="trailing" secondItem="dSM-mP-Lyp" secondAttribute="trailing" constant="10" id="J0k-JR-Z7k"/>
                             <constraint firstItem="kf8-31-Id3" firstAttribute="trailing" secondItem="rZu-Uk-vFL" secondAttribute="trailing" constant="20" id="KVI-q1-aaF"/>
-                            <constraint firstItem="HFU-or-Wqi" firstAttribute="leading" secondItem="kf8-31-Id3" secondAttribute="leading" id="Mqj-k4-MtX"/>
-                            <constraint firstItem="HFU-or-Wqi" firstAttribute="trailing" secondItem="kf8-31-Id3" secondAttribute="trailing" id="PK0-du-mra"/>
                             <constraint firstItem="k1u-OP-ipB" firstAttribute="leading" secondItem="kf8-31-Id3" secondAttribute="leading" constant="10" id="Qoh-AM-hzL"/>
-                            <constraint firstItem="kf8-31-Id3" firstAttribute="bottom" secondItem="HFU-or-Wqi" secondAttribute="bottom" id="STJ-k5-zuV"/>
                             <constraint firstItem="hRi-j0-9ky" firstAttribute="top" secondItem="vH8-OM-oSB" secondAttribute="top" constant="-5" id="SZE-yI-xyL"/>
                             <constraint firstItem="dSM-mP-Lyp" firstAttribute="top" secondItem="rVi-CE-QNo" secondAttribute="bottom" id="ZKV-gW-JgK"/>
                             <constraint firstItem="kf8-31-Id3" firstAttribute="trailing" secondItem="rVi-CE-QNo" secondAttribute="trailing" constant="15" id="czp-Ir-R0v"/>
@@ -351,10 +250,11 @@
                             <constraint firstItem="ZjP-m1-drQ" firstAttribute="top" secondItem="kf8-31-Id3" secondAttribute="top" id="kcH-Tt-xC3"/>
                             <constraint firstItem="rZu-Uk-vFL" firstAttribute="leading" secondItem="kf8-31-Id3" secondAttribute="leading" constant="20" id="kvU-zh-Oc7"/>
                             <constraint firstItem="kf8-31-Id3" firstAttribute="trailing" secondItem="ZjP-m1-drQ" secondAttribute="trailing" id="lib-3i-XyG"/>
+                            <constraint firstItem="aKD-Rf-nXs" firstAttribute="top" secondItem="dSM-mP-Lyp" secondAttribute="bottom" id="nrA-U9-F3k"/>
+                            <constraint firstItem="aKD-Rf-nXs" firstAttribute="leading" secondItem="kf8-31-Id3" secondAttribute="leading" id="o8T-dS-AEe"/>
                             <constraint firstItem="WiP-ZI-Su5" firstAttribute="bottom" secondItem="rVi-CE-QNo" secondAttribute="bottom" id="orF-0Y-Pza"/>
                             <constraint firstItem="kf8-31-Id3" firstAttribute="trailing" secondItem="WiP-ZI-Su5" secondAttribute="trailing" id="qQ5-5M-OEp"/>
                             <constraint firstItem="dSM-mP-Lyp" firstAttribute="leading" secondItem="kf8-31-Id3" secondAttribute="leading" constant="10" id="tzh-kU-hQE"/>
-                            <constraint firstItem="HFU-or-Wqi" firstAttribute="top" secondItem="dSM-mP-Lyp" secondAttribute="bottom" id="wqX-pr-S0s"/>
                             <constraint firstItem="kf8-31-Id3" firstAttribute="trailing" secondItem="k1u-OP-ipB" secondAttribute="trailing" constant="10" id="xRi-BF-LIc"/>
                         </constraints>
                     </view>
@@ -364,7 +264,6 @@
                         <outlet property="categoryLbl" destination="TTP-vP-sEG" id="Jgs-7K-IXu"/>
                         <outlet property="constraintCenterNoDataLbl" destination="DB3-ti-yri" id="gUu-5y-2VI"/>
                         <outlet property="constraintHeightInfoCV" destination="XHX-O1-7Ph" id="uFf-jb-gj4"/>
-                        <outlet property="constraintHeightTblView" destination="1uG-mH-ivQ" id="RKj-6Y-Pir"/>
                         <outlet property="featureCV" destination="P8K-jW-mbe" id="gF5-5R-FIQ"/>
                         <outlet property="featureView" destination="SbA-lo-Fww" id="Wsw-8o-XNc"/>
                         <outlet property="filterView" destination="rrb-td-iCk" id="SkM-sI-OSL"/>
@@ -375,7 +274,6 @@
                         <outlet property="maxPriceTxt" destination="oum-hc-FjV" id="DbQ-zM-uEF"/>
                         <outlet property="minPriceTxt" destination="7Fh-iD-NXh" id="oJt-oI-cjp"/>
                         <outlet property="modelLbl" destination="3TJ-1l-RPA" id="x39-16-xMr"/>
-                        <outlet property="myScroll" destination="HFU-or-Wqi" id="Tok-jH-C87"/>
                         <outlet property="noDataLbl" destination="k1u-OP-ipB" id="yoB-vx-kdZ"/>
                         <outlet property="searchTxt" destination="6r5-pb-o11" id="btM-WE-tjA"/>
                         <outlet property="tblView" destination="aKD-Rf-nXs" id="TUD-qo-OV3"/>
@@ -795,17 +693,86 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o3n-hG-0XY">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="T0L-FK-0JY">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SbA-lo-Fww">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Featured" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIw-Eb-B63" customClass="Label" customModule="BidInCar" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="10" width="300" height="14"/>
+                                            <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="textColorTypeAdapter">
+                                                    <integer key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="fontTypeAdapter" value="al"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                                    <real key="value" value="12"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="P8K-jW-mbe">
+                                            <rect key="frame" x="10" y="24" width="310" height="126"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="8KQ-F4-ZfM">
+                                                <size key="itemSize" width="50" height="50"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="rjL-fd-RTT" id="abG-S6-L9i"/>
+                                                <outlet property="delegate" destination="rjL-fd-RTT" id="o3v-pI-ZFW"/>
+                                            </connections>
+                                        </collectionView>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpK-RJ-JJd" customClass="Button" customModule="BidInCar" customModuleProvider="target">
+                                            <rect key="frame" x="300" y="24" width="20" height="126"/>
+                                            <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="RIV-UX-mlk"/>
+                                            </constraints>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="50" maxX="0.0" maxY="50"/>
+                                            <state key="normal" image="next_black"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="buttonImage" value="next_black"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="clickToNextCategory:" destination="rjL-fd-RTT" eventType="touchUpInside" id="PIF-OR-A49"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="cpK-RJ-JJd" firstAttribute="top" secondItem="P8K-jW-mbe" secondAttribute="top" id="0f7-ce-sW3"/>
+                                        <constraint firstAttribute="trailing" secondItem="cpK-RJ-JJd" secondAttribute="trailing" id="2D1-ZL-RvR"/>
+                                        <constraint firstAttribute="bottom" secondItem="P8K-jW-mbe" secondAttribute="bottom" id="9nc-dD-i5T"/>
+                                        <constraint firstItem="cpK-RJ-JJd" firstAttribute="bottom" secondItem="P8K-jW-mbe" secondAttribute="bottom" id="EFf-bB-qGJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="P8K-jW-mbe" secondAttribute="trailing" id="MN4-KJ-dZK"/>
+                                        <constraint firstItem="IIw-Eb-B63" firstAttribute="top" secondItem="SbA-lo-Fww" secondAttribute="top" constant="10" id="NNX-Bk-KXt"/>
+                                        <constraint firstAttribute="height" constant="150" id="VIP-3p-3WR"/>
+                                        <constraint firstItem="P8K-jW-mbe" firstAttribute="top" secondItem="IIw-Eb-B63" secondAttribute="bottom" id="bEz-pH-8aq"/>
+                                        <constraint firstAttribute="trailing" secondItem="IIw-Eb-B63" secondAttribute="trailing" constant="10" id="qOL-oE-fcR"/>
+                                        <constraint firstItem="IIw-Eb-B63" firstAttribute="leading" secondItem="SbA-lo-Fww" secondAttribute="leading" constant="10" id="sjz-lb-7wX"/>
+                                        <constraint firstItem="P8K-jW-mbe" firstAttribute="leading" secondItem="SbA-lo-Fww" secondAttribute="leading" constant="10" id="xvy-Jx-Yhy"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_banner" translatesAutoresizingMaskIntoConstraints="NO" id="lzS-X8-nil">
-                            <rect key="frame" x="10" y="0.0" width="300" height="135"/>
+                            <rect key="frame" x="10" y="150" width="300" height="135"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="135" id="9JY-g6-qpf"/>
                             </constraints>
                         </imageView>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ra1-Mk-P0W">
-                            <rect key="frame" x="10" y="140" width="290" height="40"/>
+                            <rect key="frame" x="10" y="290" width="290" height="40"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="XHX-O1-7Ph"/>
@@ -823,7 +790,7 @@
                             </connections>
                         </collectionView>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGb-Y6-x7X" customClass="Button" customModule="BidInCar" customModuleProvider="target">
-                            <rect key="frame" x="300" y="140" width="20" height="40"/>
+                            <rect key="frame" x="300" y="290" width="20" height="40"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="20" id="S9v-f8-IAU"/>
@@ -846,10 +813,13 @@
                         <constraint firstItem="bGb-Y6-x7X" firstAttribute="top" secondItem="Ra1-Mk-P0W" secondAttribute="top" id="61h-vC-WXM"/>
                         <constraint firstAttribute="trailing" secondItem="Ra1-Mk-P0W" secondAttribute="trailing" constant="20" id="Mqg-Dp-ybY"/>
                         <constraint firstAttribute="trailing" secondItem="lzS-X8-nil" secondAttribute="trailing" constant="10" id="fPZ-gY-Z8X"/>
-                        <constraint firstItem="lzS-X8-nil" firstAttribute="top" secondItem="o3n-hG-0XY" secondAttribute="top" id="jHD-oE-tmh"/>
                         <constraint firstItem="lzS-X8-nil" firstAttribute="leading" secondItem="o3n-hG-0XY" secondAttribute="leading" constant="10" id="nYr-r6-0NS"/>
+                        <constraint firstItem="T0L-FK-0JY" firstAttribute="top" secondItem="o3n-hG-0XY" secondAttribute="top" id="ow3-Ke-jrp"/>
                         <constraint firstItem="Ra1-Mk-P0W" firstAttribute="leading" secondItem="o3n-hG-0XY" secondAttribute="leading" constant="10" id="uKa-mU-jYS"/>
+                        <constraint firstAttribute="trailing" secondItem="T0L-FK-0JY" secondAttribute="trailing" id="vrW-Bp-KiH"/>
                         <constraint firstAttribute="trailing" secondItem="bGb-Y6-x7X" secondAttribute="trailing" id="xMP-Nr-A4M"/>
+                        <constraint firstItem="lzS-X8-nil" firstAttribute="top" secondItem="T0L-FK-0JY" secondAttribute="bottom" id="zCx-Zs-vat"/>
+                        <constraint firstItem="T0L-FK-0JY" firstAttribute="leading" secondItem="o3n-hG-0XY" secondAttribute="leading" id="zyJ-yw-MZ4"/>
                     </constraints>
                 </view>
             </objects>

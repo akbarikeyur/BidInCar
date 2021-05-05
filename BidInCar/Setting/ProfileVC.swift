@@ -132,10 +132,10 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
 //        dict["title"] = PROFILE.FLAT
 //        dict["value"] = AppModel.shared.currentUser.user_flatnumber
 //        arrUserDetail.append(dict)
-//        dict = [String : Any]()
-//        dict["title"] = PROFILE.PO
-//        dict["value"] = AppModel.shared.currentUser.user_pobox
-//        arrUserDetail.append(dict)
+        dict = [String : Any]()
+        dict["title"] = PROFILE.PO
+        dict["value"] = AppModel.shared.currentUser.user_pobox
+        arrUserDetail.append(dict)
         dict = [String : Any]()
         dict["title"] = PROFILE.COUNTRY
         dict["value"] = AppModel.shared.currentUser.country_name

@@ -13,6 +13,7 @@ import UIKit
 let APP_VERSION = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 let DEVICE_ID = UIDevice.current.identifierForVendor?.uuidString
 let APPLE_LANGUAGE_KEY = "AppleLanguages"
+let APP_STORE_URL = "https://apps.apple.com/us/app/bidincars-auctions/id1559354497"
 
 /*
 Social Account

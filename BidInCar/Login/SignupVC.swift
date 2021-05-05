@@ -300,9 +300,9 @@ class SignupVC: UIViewController, UITextFieldDelegate {
 //        else if flatNoTxt.myTxt.text?.trimmed == "" {
 //            displayToast("enter_flat_number")
 //        }
-//        else if poBoxTxt.myTxt.text?.trimmed == "" {
-//            displayToast("enter_po_box")
-//        }
+        else if poBoxTxt.myTxt.text?.trimmed == "" {
+            displayToast("enter_po_box")
+        }
 //        else if cityTxt.myTxt.text?.trimmed == "" {
 //            displayToast("select_city")
 //        }
@@ -349,6 +349,9 @@ class SignupVC: UIViewController, UITextFieldDelegate {
             param["city"] = cityTxt.myTxt.text
             param["phone_countrycode"] = selectedCountryCode.phonecode
             param["phone_countrycodeid"] = selectedCountryCode.countryid
+            if (phoneTxt.myTxt.text!.contains("+" + selectedCountryCode.phonecode)) {
+                phoneTxt.myTxt.text = phoneTxt.myTxt.text?.replacingOccurrences(of: ("+" + selectedCountryCode.phonecode), with: "")
+            }
             param["phone_number"] = phoneTxt.myTxt.text
             if isSocial {
                 param["login_type"] = AppModel.shared.getStringValue(socialDict, "login_type")
