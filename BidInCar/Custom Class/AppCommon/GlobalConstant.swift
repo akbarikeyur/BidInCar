@@ -23,21 +23,21 @@ Password : Bidcar@2019
 
 let GOOGLE_CLIENT_ID = "335995289028-8q0t81lmf0jbgopkcencf17j9f1ar56j.apps.googleusercontent.com"
 let GOOGLE_KEY = "335995289028-8q0t81lmf0jbgopkcencf17j9f1ar56j.apps.googleusercontent.com"
-let PLACE_API_KEY = "AIzaSyDti7gNKl64KDYjmUO04Xtgo6msBP2hON0" //"AIzaSyAylhQHaV99yBh7-wyhTvnto2R3-QFHHHg"
+let PLACE_API_KEY = ""
 
-let TWITTER_API_KEY = "mE9Ko4ako00oeakppPYLxeeZ5"
-let TWITTER_API_SECRET_KEY = "BU21tyVhNnZC7qIczK71oBEPsCh9mBCONX85n1LxTPEL0xSGKL"
-let TWITTER_ACCESS_TOKEN = "1190881448661848064-dHUwLCyujB5e8RMw67aIjmCsEVapjK"
-let TWITTER_ACCESS_SECRET_TOKEN = "IWNPQlN5nKTISnZbqR3lwbOED4IIS1NnR3k7DLWbHDXrf"
+let TWITTER_API_KEY = ""
+let TWITTER_API_SECRET_KEY = ""
+let TWITTER_ACCESS_TOKEN = ""
+let TWITTER_ACCESS_SECRET_TOKEN = ""
 
 //Sandbox
 //let PAYPAL_CLIENT_ID = "ASkI6VdfQAeRyNDe5Enbel_8DOG_8uwd6OnHewxnUsd8GdKajObFyCCpMgiNhnr5kpBJ3LfAfgyDCrmA"
 //let PAYPAL_SECRET = "EMT6w-Fo4NxdNJkOoQL4DGEHPXbLMh9zdi3bU1azcaJ_JMxQtb371iUekDiiucN-KzyagSW0JJFgNXQq"
 //Live
-let PAYPAL_CLIENT_ID = "AbVf36WY8U_488ArYrh5iZ1azxmyZ-6MgO5gQRStHgnBfgnrDZFfL01K5f6cTs8bAvnPUvVLhS1bdTYY"
-let PAYPAL_SECRET = "EJcHmbghyDMOs9zxGqKsu7793Rff6V8RlrdtOQmCic_IdWUd_ROqc7JaBBKSaLmlR2vudFKInEmgjrc_"
+let PAYPAL_CLIENT_ID = ""
+let PAYPAL_SECRET = ""
 
-let PAYTAB_KEY = "VxmCXzfYr4rMSsyHanFmqXNbL1A62L4XjrAg0QfsUGeN9MvjaaFA8tLTumZw74uqv4HwVWYPDcDMY858iLJreukIRkfZpJqUO7qJ"
+let PAYTAB_KEY = ""
 
 let TERMS_URL = "https://www.bidincars.com/api_termsandcondition"
 let POLICY_URL = "https://www.bidincars.com/api_privacy_policy"
